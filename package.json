@@ -1,0 +1,27 @@
+{
+    "name": "wordpress-hybrid-client",
+    "version": "0.0.1",
+    "description": "AngularJS client using the new Material Design and based on the json-rest-api plugin: https://wordpress.org/plugins/json-rest-api/ with CORS enabled.",
+    "main": "index.js",
+    "keywords": [
+        "wp-api",
+        "angular",
+        "angularjs",
+        "rest",
+        "restfull",
+        "hybrid",
+        "material design",
+        "client"
+    ],
+    "author": "Julien Renaux <contact@julienrenaux.fr>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/shprink/wordpress-hybrid-client"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/shprink/wordpress-hybrid-client/issues"
+    },
+    "homepage": "https://github.com/shprink/wordpress-hybrid-client"
+}

@@ -14,6 +14,7 @@ require 'wp-api-angularjs'
 
 # Style entry point
 require './scss/bootstrap'
+require 'angular-material/angular-material.css'
 
 # Create namespace
 window.WPHC = {}
@@ -37,8 +38,11 @@ app.config ($stateProvider) ->
 app.config (WpApiProvider, CONF) ->
     RestangularProvider = WpApiProvider.getRestangularProvider()
     RestangularProvider.setBaseUrl(CONF.ApiBaseUrl)
+    RestangularProvider.setRestangularFields
+        id: "ID"
 
 app.controller 'WPHCMainController', require "./main.controller"
+app.directive 'wphcLoader', require "./directives/loader/loader.coffee"
 
 config = require "../config"
 

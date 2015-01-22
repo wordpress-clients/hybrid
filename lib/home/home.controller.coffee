@@ -1,7 +1,7 @@
 module.exports = ($log, $scope, $wpApiPosts) ->
     $log.info 'WPHCHomeController'
     vm = @
-    vm.posts = {}
+    vm.posts = undefined
 
     $scope.$on '$ionicView.loaded', () ->
         $wpApiPosts.$getList()

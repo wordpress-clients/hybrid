@@ -56,6 +56,6 @@
         "underscore": "^1.7.0",
         "util": "^0.10.3",
         "webpack": "^1.4.13",
-        "wp-api-angularjs": "^1.0.0-rc1"
+        "wp-api-angularjs": "^1.0.0-rc2"
     }
 }

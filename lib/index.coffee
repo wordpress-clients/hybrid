@@ -8,9 +8,7 @@ require 'angular-ui-router'
 require 'ionic/js/ionic'
 require 'ionic/js/ionic-angular'
 
-require 'underscore'
-require 'restangular'
-require 'wp-api-angularjs'
+require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
 
 # Style entry point
 require './scss/bootstrap'

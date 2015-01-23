@@ -5,6 +5,7 @@ require 'angular-sanitize'
 require 'angular-aria'
 require 'angular-material/angular-material'
 require 'angular-ui-router'
+require 'angular-translate'
 require 'ionic/js/ionic'
 require 'ionic/js/ionic-angular'
 
@@ -22,6 +23,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   'ngMaterial'
   'ui.router'
   'wp-api-angularjs'
+  'pascalprecht.translate'
   require('./home/home.module').name
   require('./menu/menu.module').name
 ]
@@ -39,9 +41,12 @@ app.config ($stateProvider) ->
             template: require "./menu/menu.html"
             controller: "WPHCMenuController as menu"
 
-app.config (WpApiProvider, CONF) ->
+app.config (WpApiProvider, $WPHCConfig, $translateProvider) ->
+    ###
+    REST CONF
+    ###
     RestangularProvider = WpApiProvider.getRestangularProvider()
-    RestangularProvider.setBaseUrl CONF.ApiBaseUrl
+    RestangularProvider.setBaseUrl $WPHCConfig.api.baseUrl
     RestangularProvider.setFullResponse true
     RestangularProvider.addResponseInterceptor (data, operation, what, url, response, deferred) ->
         data.wpApiHeaders =
@@ -51,10 +56,26 @@ app.config (WpApiProvider, CONF) ->
     RestangularProvider.setRestangularFields
         id: "ID"
 
+    ###
+    TRANSLATION CONF
+    ###
+    languages = []
+    languagesMapping = {}
+    for language, mapping of $WPHCConfig.translation.available
+        languages.push language
+        angular.extend languagesMapping, mapping
+        $translateProvider.translations language, require './translations/' + language
+
+    $translateProvider
+        .preferredLanguage $WPHCConfig.translation.prefered
+        .registerAvailableLanguageKeys languages, languagesMapping
+        .fallbackLanguage 'en'
+
+
 app.controller 'WPHCMainController', require "./main.controller"
 
 app.directive 'wphcLoader', require "./directives/loader/loader.coffee"
 
 config = require "../config"
 
-app.constant 'CONF', angular.extend config, WPHC.config || {}
+app.constant '$WPHCConfig', angular.extend config, WPHC.config || {}

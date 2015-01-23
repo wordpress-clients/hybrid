@@ -1,4 +1,5 @@
-module.exports = ($log) ->
+module.exports = ($log, $WPHCConfig) ->
     $log.info '$WPHCMenu'
     getList: () ->
-        console.log 'getting menu'
+        $log.debug $WPHCConfig.menu, '$WPHCConfig.menu'
+        $WPHCConfig.menu

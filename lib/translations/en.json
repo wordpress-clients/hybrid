@@ -1,0 +1,12 @@
+{
+    "home": {
+        "title": "Home"
+    },
+    "menu": {
+        "title": "Menu",
+        "home": "Home",
+        "tags": "Tags",
+        "categories": "Categories"
+    }
+
+}

@@ -1,4 +1,4 @@
-<ion-view view-title="Home">
+<ion-view view-title="{{'home.title' | translate}}">
     <wphc-loader ng-if="!home.posts"></wphc-loader>
     <ion-content>
         <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>

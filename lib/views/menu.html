@@ -9,28 +9,9 @@
                 </button>
             </ion-nav-buttons>
         </ion-nav-bar>
-        <ion-nav-view name="menuContent"></ion-nav-view>
+        <ion-nav-view name="content"></ion-nav-view>
     </ion-side-menu-content>
+    <ion-side-menu side="left" expose-aside-when="large" ui-view="menu">
 
-    <ion-side-menu side="left" expose-aside-when="large">
-        <ion-header-bar class="bar-stable">
-            <h1 class="title">Left</h1>
-        </ion-header-bar>
-        <ion-content>
-            <ion-list>
-                <ion-item nav-clear menu-close ng-click="login()">
-                    Login
-                </ion-item>
-                <ion-item nav-clear menu-close href="#/app/search">
-                    Search
-                </ion-item>
-                <ion-item nav-clear menu-close href="#/app/browse">
-                    Browse
-                </ion-item>
-                <ion-item nav-clear menu-close href="#/app/playlists">
-                    Playlists
-                </ion-item>
-            </ion-list>
-        </ion-content>
     </ion-side-menu>
 </ion-side-menus>

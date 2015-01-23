@@ -3,7 +3,7 @@ module.exports = ($stateProvider, $urlRouterProvider) ->
     .state 'public.home',
         url: "/home"
         views:
-            'menuContent':
+            'content':
                 template: require "./home"
                 controller: "WPHCHomeController as home"
                 # controllerAs: "home"

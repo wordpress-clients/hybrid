@@ -25,6 +25,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   'ui.router'
   'wp-api-angularjs'
   require('./home/home.module').name
+  require('./menu/menu.module').name
 ]
 
 app.config ($stateProvider) ->
@@ -32,8 +33,13 @@ app.config ($stateProvider) ->
     .state 'public',
     url: "/public"
     abstract: true
-    template: require "./views/menu"
-    controller: "WPHCMainController as main"
+    views:
+        '@' :
+            template: require "./views/menu"
+            controller: "WPHCMainController as main"
+        'menu@public':
+            template: require "./menu/menu.html"
+            controller: "WPHCMenuController as menu"
 
 app.config (WpApiProvider, CONF) ->
     RestangularProvider = WpApiProvider.getRestangularProvider()
@@ -42,6 +48,7 @@ app.config (WpApiProvider, CONF) ->
         id: "ID"
 
 app.controller 'WPHCMainController', require "./main.controller"
+
 app.directive 'wphcLoader', require "./directives/loader/loader.coffee"
 
 config = require "../config"

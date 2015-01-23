@@ -41,7 +41,13 @@ app.config ($stateProvider) ->
 
 app.config (WpApiProvider, CONF) ->
     RestangularProvider = WpApiProvider.getRestangularProvider()
-    RestangularProvider.setBaseUrl(CONF.ApiBaseUrl)
+    RestangularProvider.setBaseUrl CONF.ApiBaseUrl
+    RestangularProvider.setFullResponse true
+    RestangularProvider.addResponseInterceptor (data, operation, what, url, response, deferred) ->
+        data.wpApiHeaders =
+            total: response.headers 'X-WP-Total'
+            pages: response.headers 'X-WP-TotalPages'
+        data
     RestangularProvider.setRestangularFields
         id: "ID"
 

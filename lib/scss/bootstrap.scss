@@ -15,9 +15,12 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 $positive: #387ef5 !default;
-
+$bar-height: 64px;
+$bar-padding-portrait: 10px;
+// $bar-default-bg: ;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../../bower_components/ionic/fonts" !default;
-
 // Include all of Ionic
 @import "ionic/scss/ionic";
+@import "./bar";
+@import "./md-override";

@@ -1,7 +1,7 @@
 <ion-view view-title="{{'home.title' | translate}}">
-    <wphc-loader ng-if="!home.posts"></wphc-loader>
+    <wphc-loader ng-if="!taxonomiesSlug.list"></wphc-loader>
     <ion-content>
         <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
-        <wphc-posts posts="home.posts"></wphc-posts>
+        <wphc-posts posts="taxonomiesSlug.list"></wphc-posts>
     </ion-content>
 </ion-view>

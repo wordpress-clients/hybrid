@@ -25,6 +25,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   'wp-api-angularjs'
   'pascalprecht.translate'
   require('./home/home.module').name
+  require('./taxonomies/taxonomies.module').name
   require('./menu/menu.module').name
 ]
 
@@ -41,6 +42,9 @@ app.config ($stateProvider) ->
             template: require "./menu/menu.html"
             controller: "WPHCMenuController as menu"
 
+###
+CONF
+###
 app.config (WpApiProvider, $WPHCConfig, $translateProvider) ->
     ###
     REST CONF
@@ -71,11 +75,20 @@ app.config (WpApiProvider, $WPHCConfig, $translateProvider) ->
         .registerAvailableLanguageKeys languages, languagesMapping
         .fallbackLanguage 'en'
 
-
+###
+CONTROLLERS
+###
 app.controller 'WPHCMainController', require "./main.controller"
 
+###
+DIRECTIVES
+###
 app.directive 'wphcLoader', require "./directives/loader/loader.coffee"
+app.directive 'wphcPosts', require "./directives/posts/posts.coffee"
+app.directive 'wphcTaxonomies', require "./directives/taxonomies/taxonomies.coffee"
 
+###
+CONSTANTS
+###
 config = require "../config"
-
 app.constant '$WPHCConfig', angular.extend config, WPHC.config || {}

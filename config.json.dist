@@ -1,3 +1,22 @@
 {
-    "ApiBaseUrl": "yourWpApi/wp-json"
+    "api": {
+        "baseUrl": "yourWpApi/wp-json"
+    },
+    "menu": {
+        "menu.home": "public.home",
+        "menu.categories": "public.taxonomies({ term: 'category' })",
+        "menu.tags": "public.taxonomies({ term: 'post_tag' })"
+    },
+    "translation": {
+        "available": {
+            "en": {
+                "en_US": "en",
+                "en_UK": "en"
+            },
+            "fr": {
+                "fr_FR": "fr"
+            }
+        },
+        "prefered": "en"
+    }
 }

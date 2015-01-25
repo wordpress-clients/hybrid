@@ -8,7 +8,6 @@ module.exports = ($log, $scope, $wpApiPosts) ->
         .then (response) ->
             $log.debug response.data, 'posts loaded successfully'
             vm.posts = response.data
-            $log.debug response.data.wpApiHeaders, 'headers'
         .catch () ->
             $log.debug 'posts error'
 

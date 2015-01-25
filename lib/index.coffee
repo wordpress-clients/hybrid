@@ -26,6 +26,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   'pascalprecht.translate'
   require('./home/home.module').name
   require('./taxonomies/taxonomies.module').name
+  require('./post/post.module').name
   require('./menu/menu.module').name
 ]
 
@@ -85,6 +86,7 @@ DIRECTIVES
 ###
 app.directive 'wphcLoader', require "./directives/loader/loader.coffee"
 app.directive 'wphcPosts', require "./directives/posts/posts.coffee"
+app.directive 'wphcPost', require "./directives/post/post.coffee"
 app.directive 'wphcTaxonomies', require "./directives/taxonomies/taxonomies.coffee"
 
 ###

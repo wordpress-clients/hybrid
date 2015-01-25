@@ -1,0 +1,12 @@
+<div class="post padding">
+    <div class="item item-image" ng-if="post.featured_image.is_image">
+        <img ng-src="{{post.featured_image.attachment_meta.sizes.medium.url}}">
+    </div>
+    <h2 class="item-title">{{post.title}}</h2>
+    <a class="item item-author" md-ink-ripple ui-sref="public.author({id: post.author.ID})" ng-class="{'item-avatar' : post.author.avatar}">
+        <img src="{{post.author.avatar}}" ng-if="post.author.avatar">
+        <h2>{{post.author.name}}</h2>
+        <p>{{post.author.description}}</p>
+    </a>
+    <div ng-bind-html="post.content"></div>
+</div>

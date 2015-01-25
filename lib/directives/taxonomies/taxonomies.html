@@ -1,6 +1,7 @@
 <div class="list">
-    <a class="item item-icon-left" md-ink-ripple ui-sref="public.taxonomies.slug({ slug: taxonomy.slug })" ng-repeat="taxonomy in taxonomies">
+    <a class="item item-icon-left" md-ink-ripple ui-sref="public.taxonomies.slug({ slug: taxonomy.slug })" ng-repeat="taxonomy in taxonomies | orderBy:['count']:true ">
         <h2>{{taxonomy.name}}</h2>
         <p>{{taxonomy.description}}</p>
+        <span class="badge badge-positive">{{taxonomy.count}}</span>
     </a>
 </div>

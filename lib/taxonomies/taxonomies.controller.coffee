@@ -8,7 +8,8 @@ module.exports = ($log, $scope, $wpApiTaxonomies, $WPHCTaxonomies, $state) ->
     $scope.$on '$ionicView.loaded', () ->
         $wpApiTaxonomies.$getTermList($state.params.term)
         .then (response) ->
-            vm.list = response.data
+            vm.list = response.data.filter (item) ->
+                item.count > 0 # remove useless taxo
         .catch () ->
             $log.debug 'posts error'
     return @

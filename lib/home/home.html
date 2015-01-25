@@ -1,7 +1,8 @@
 <ion-view view-title="{{'home.title' | translate}}">
     <wphc-loader ng-if="!home.posts"></wphc-loader>
     <ion-content>
-        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="home.doRefresh()"></ion-refresher>
         <wphc-posts posts="home.posts"></wphc-posts>
+        <ion-infinite-scroll on-infinite="home.loadMore()" distance="1%"></ion-infinite-scroll>
     </ion-content>
 </ion-view>

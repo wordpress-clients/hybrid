@@ -1,4 +1,4 @@
-<ion-view view-title="{{'home.title' | translate}}">
+<ion-view view-title="{{ taxonomiesSlug.title | translate}}">
     <wphc-loader ng-if="!taxonomiesSlug.list"></wphc-loader>
     <ion-content>
         <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>

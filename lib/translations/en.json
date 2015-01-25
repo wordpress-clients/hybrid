@@ -7,6 +7,20 @@
         "home": "Home",
         "tags": "Tags",
         "categories": "Categories"
+    },
+    "taxonomie": {
+        "categories": {
+            "title": "Categories"
+        },
+        "category": {
+            "title": "Category: {{name}}"
+        },
+        "tags": {
+            "title": "Tags"
+        },
+        "tag": {
+            "title": "Tag: {{name}}"
+        }
     }
 
 }

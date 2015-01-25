@@ -1,8 +1,9 @@
-module.exports = ($log, $scope, $wpApiPosts, $state) ->
+module.exports = ($log, $scope, $wpApiPosts, $WPHCTaxonomies, $state) ->
     $log.info 'WPHCTaxonomiesSlugController'
 
     vm = @
     vm.list = undefined
+    vm.title = $WPHCTaxonomies.getTitle $state.params.term, $state.params.slug
 
     $scope.$on '$ionicView.loaded', () ->
         # if the slug is empty we redirect to the list

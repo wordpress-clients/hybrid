@@ -27,6 +27,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   require('./home/home.module').name
   require('./taxonomies/taxonomies.module').name
   require('./post/post.module').name
+  require('./posts/posts.module').name
   require('./menu/menu.module').name
 ]
 

@@ -1,38 +1,37 @@
-module.exports = ($log, $scope, $wpApiPosts) ->
+module.exports = ($log, $scope, $WPHCPosts) ->
     $log.info 'WPHCHomeController'
     isLoadingMore = false
-    vm = @
-    vm.posts = undefined
-    vm.page = 1
-    vm.doRefresh = () ->
-        vm.page = 1
-        vm.posts = undefined
-        vm.loadMore().finally () ->
-            $scope.$broadcast 'scroll.refreshComplete'
-
+    page = 1
     doLoadMore = () ->
         # prevent multiple call when the server takes some time to answer
         if isLoadingMore
             return
         $log.debug 'loadMore'
         isLoadingMore = true
-        $wpApiPosts.$getList
-            page: vm.page
-            "filter[posts_per_page]": 5
-            "filter[orderby]": "date"
-            "filter[order]": "desc"
-            "filter[post_status]": "publish"
+        $WPHCPosts.getList vm.getQuery()
         .then (response) ->
+            $log.debug response.data, response.isPaginationOver , 'posts, isPaginationOver'
             vm.posts = if vm.posts then vm.posts.concat(response.data) else response.data
-            vm.page++
+            if response.isPaginationOver
+                vm.isPaginationOver = true
+            page++
             $scope.$broadcast 'scroll.infiniteScrollComplete'
         .catch () ->
             $log.debug 'posts error'
         .finally () ->
             isLoadingMore = false
 
+    vm = @
+    vm.posts = undefined
+    vm.title = 'home.title'
+    vm.getQuery = () ->
+        $WPHCPosts.getQuery page
+    vm.isPaginationOver = false
+    vm.doRefresh = () ->
+        page = 1
+        vm.posts = undefined
+        vm.loadMore().finally () ->
+            $scope.$broadcast 'scroll.refreshComplete'
     # Make sure several call cannot be triggered at the same time
     vm.loadMore = ionic.throttle doLoadMore, 1000
-
-
-    return vm
+    return @

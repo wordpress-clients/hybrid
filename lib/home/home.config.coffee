@@ -4,8 +4,7 @@ module.exports = ($stateProvider, $urlRouterProvider) ->
         url: "/home"
         views:
             'content':
-                template: require "./home"
-                controller: "WPHCHomeController as home"
-                # controllerAs: "home"
+                template: require "../posts/posts.html"
+                controller: "WPHCPostsController as posts"
 
     $urlRouterProvider.otherwise('/public/home') ;

@@ -13,5 +13,5 @@ module.exports = ($stateProvider) ->
         url: "/:slug"
         views:
             'content@public':
-                template: require "./taxonomies.slug"
-                controller: "WPHCTaxonomiesSlugController as taxonomiesSlug"
+                template: require "../posts/posts.html"
+                controller: "WPHCTaxonomiesPostsController as posts"

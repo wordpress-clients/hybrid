@@ -1,8 +1,0 @@
-<ion-view view-title="{{ taxonomiesSlug.title | translate}}">
-    <wphc-loader ng-if="!taxonomiesSlug.posts"></wphc-loader>
-    <ion-content>
-        <ion-refresher pulling-text="Pull to refresh..." on-refresh="taxonomiesSlug.doRefresh()"></ion-refresher>
-        <wphc-posts posts="taxonomiesSlug.posts"></wphc-posts>
-        <ion-infinite-scroll ng-if="!taxonomiesSlug.noMorePostsToLoad" on-infinite="taxonomiesSlug.loadMore()" distance="1%"></ion-infinite-scroll>
-    </ion-content>
-</ion-view>

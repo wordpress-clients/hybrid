@@ -4,6 +4,7 @@ module.exports = ($log, $scope, $wpApiPosts, $WPHCTaxonomies, $state) ->
     vm = @
     vm.posts = undefined
     vm.noMorePostsToLoad = false
+    vm.perPage = 5
     vm.page = 1
     vm.title = $WPHCTaxonomies.getTitle $state.params.term, $state.params.slug
 
@@ -16,14 +17,14 @@ module.exports = ($log, $scope, $wpApiPosts, $WPHCTaxonomies, $state) ->
 
     doLoadMore = () ->
         # prevent multiple call when the server takes some time to answer
-        if isLoadingMore
+        if isLoadingMore || vm.noMorePostsToLoad
             return
         $log.debug 'loadMore'
 
         isLoadingMore = true
         query =
             page: vm.page
-            "filter[posts_per_page]": 5
+            "filter[posts_per_page]": vm.perPage
             "filter[orderby]": "date"
             "filter[order]": "desc"
             "filter[post_status]": "publish"
@@ -35,14 +36,11 @@ module.exports = ($log, $scope, $wpApiPosts, $WPHCTaxonomies, $state) ->
 
         $wpApiPosts.$getList query
         .then (response) ->
-            # If there is no data we skip or if the data is the same we skip
-            if response.data.length is 0
+            # If there is no data or less then expected we stop loading
+            if response.data.length is 0 or response.data.length < vm.perPage
                 vm.noMorePostsToLoad = true
-            else if vm.posts && response.data[response.data.length - 1].ID is vm.posts[vm.posts.length - 1].ID
-                vm.noMorePostsToLoad = true
-            else
-                vm.posts = if vm.posts then vm.posts.concat(response.data) else response.data
-                vm.page++
+            vm.posts = if vm.posts then vm.posts.concat(response.data) else response.data
+            vm.page++
         .catch () ->
             $log.debug 'posts error'
         .finally () ->

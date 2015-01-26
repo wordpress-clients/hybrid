@@ -6,6 +6,3 @@ module.exports = ($stateProvider, $urlRouterProvider) ->
             'content':
                 template: require "./post"
                 controller: "WPHCPostController as post"
-                resolve:
-                    post : ($wpApiPosts, $stateParams) ->
-                        $wpApiPosts.$get $stateParams.id

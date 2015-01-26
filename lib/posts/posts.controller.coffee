@@ -1,12 +1,13 @@
 module.exports = ($log, $scope, $WPHCPosts) ->
     $log.info 'WPHCHomeController'
     isLoadingMore = false
-    page = 1
     doLoadMore = () ->
         # prevent multiple call when the server takes some time to answer
-        if isLoadingMore
+        if isLoadingMore || vm.isPaginationOver
             return
         $log.debug 'loadMore'
+        $log.debug 'isLoadingMore', isLoadingMore
+        $log.debug 'vm.isPaginationOver', vm.isPaginationOver
         isLoadingMore = true
         $WPHCPosts.getList vm.getQuery()
         .then (response) ->
@@ -14,7 +15,7 @@ module.exports = ($log, $scope, $WPHCPosts) ->
             vm.posts = if vm.posts then vm.posts.concat(response.data) else response.data
             if response.isPaginationOver
                 vm.isPaginationOver = true
-            page++
+            vm.page++
             $scope.$broadcast 'scroll.infiniteScrollComplete'
         .catch () ->
             $log.debug 'posts error'
@@ -22,13 +23,14 @@ module.exports = ($log, $scope, $WPHCPosts) ->
             isLoadingMore = false
 
     vm = @
+    vm.page = 1
     vm.posts = undefined
     vm.title = 'home.title'
     vm.getQuery = () ->
-        $WPHCPosts.getQuery page
+        $WPHCPosts.getQuery vm.page
     vm.isPaginationOver = false
     vm.doRefresh = () ->
-        page = 1
+        vm.page = 1
         vm.posts = undefined
         vm.loadMore().finally () ->
             $scope.$broadcast 'scroll.refreshComplete'

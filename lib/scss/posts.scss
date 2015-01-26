@@ -2,6 +2,9 @@
     .item-footer {
         > button {
             padding: 15px;
+            .badge {
+                top: 16px;
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-module.exports = ($log, $scope, $WPHCMenu) ->
+module.exports = angular.module('wordpress-hybrid-client.menu').controller 'WPHCMenuController', ($log, $scope, $WPHCMenu) ->
     $log.info 'WPHCMenuController'
     vm = @
     vm.test = 'test'

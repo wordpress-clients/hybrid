@@ -1,4 +1,4 @@
-module.exports = ($log, $scope, $wpApiPosts, $state, $sce) ->
+module.exports = angular.module('wordpress-hybrid-client.post').controller 'WPHCPostController', ($log, $scope, $wpApiPosts, $state, $sce) ->
     $log.info 'WPHCPostController'
     vm = @
     vm.post = undefined

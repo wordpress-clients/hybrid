@@ -1,4 +1,4 @@
-module.exports = ($stateProvider, $urlRouterProvider) ->
+module.exports = angular.module('wordpress-hybrid-client.home').config ($stateProvider, $urlRouterProvider) ->
     $stateProvider
     .state 'public.home',
         url: "/home"

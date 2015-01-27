@@ -10,7 +10,7 @@
         <script src="cordova.js"></script>
     </head>
 
-    <body ng-app="wordpress-hybrid-client">
+    <body ng-app="wordpress-hybrid-client" ng-strict-di>
         <ion-nav-view></ion-nav-view>
         {% for (var chunk in o.htmlWebpackPlugin.assets) { %}
         <script src="{%=o.htmlWebpackPlugin.assets[chunk]%}"></script>

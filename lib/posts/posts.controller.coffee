@@ -1,4 +1,4 @@
-module.exports = ($log, $scope, $WPHCPosts) ->
+module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPHCPostsController', ($log, $scope, $WPHCPosts) ->
     $log.info 'WPHCHomeController'
     isLoadingMore = false
     doLoadMore = () ->

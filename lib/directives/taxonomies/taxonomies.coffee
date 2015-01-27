@@ -5,10 +5,10 @@
 @description
 Display posts list
 @example
-                                            < pre >
+                                             < pre >
 </pre >
 ###
-module.exports = ($log, $state) ->
+module.exports = angular.module('wordpress-hybrid-client').directive 'wphcTaxonomies', ($log, $state) ->
     restrict: 'E'
     transclude: true
     replace: true

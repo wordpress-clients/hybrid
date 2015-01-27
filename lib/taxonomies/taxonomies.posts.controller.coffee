@@ -1,4 +1,4 @@
-module.exports = ($log, $scope, $controller, $WPHCTaxonomies, $state, $WPHCPosts) ->
+module.exports = angular.module('wordpress-hybrid-client.taxonomies').controller 'WPHCTaxonomiesPostsController', ($log, $scope, $controller, $WPHCTaxonomies, $state, $WPHCPosts) ->
     parent = $controller 'WPHCPostsController',
         $scope: $scope
     parent.title = $WPHCTaxonomies.getTitle $state.params.term, $state.params.slug

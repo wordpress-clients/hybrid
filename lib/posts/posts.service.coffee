@@ -1,4 +1,4 @@
-module.exports = ($log, $wpApiPosts, $q, $WPHCConfig) ->
+module.exports = angular.module('wordpress-hybrid-client.posts').factory '$WPHCPosts', ($log, $wpApiPosts, $q, $WPHCConfig) ->
     $log.info '$WPHCPosts'
     getQuery: (page) ->
         page: page

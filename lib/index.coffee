@@ -82,19 +82,21 @@ app.config (WpApiProvider, $WPHCConfig, $translateProvider, $ionicConfigProvider
         .preferredLanguage $WPHCConfig.translation.prefered
         .registerAvailableLanguageKeys languages, languagesMapping
         .fallbackLanguage 'en'
+        .determinePreferredLanguage()
 
 ###
 CONTROLLERS
 ###
-app.controller 'WPHCMainController', require "./main.controller"
+app.controller 'WPHCMainController' , ($log) ->
+    $log.info 'main controller'
 
 ###
 DIRECTIVES
 ###
-app.directive 'wphcLoader', require "./directives/loader/loader.coffee"
-app.directive 'wphcPosts', require "./directives/posts/posts.coffee"
-app.directive 'wphcPost', require "./directives/post/post.coffee"
-app.directive 'wphcTaxonomies', require "./directives/taxonomies/taxonomies.coffee"
+require "./directives/loader/loader.coffee"
+require "./directives/posts/posts.coffee"
+require "./directives/post/post.coffee"
+require "./directives/taxonomies/taxonomies.coffee"
 
 ###
 CONSTANTS

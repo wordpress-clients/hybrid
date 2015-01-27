@@ -1,4 +1,4 @@
-module.exports = ($log, $filter) ->
+module.exports = angular.module('wordpress-hybrid-client.taxonomies').factory '$WPHCTaxonomies', ($log, $filter) ->
     $log.info '$WPHCTaxonomies'
 
     getTitle: (term, slug) ->

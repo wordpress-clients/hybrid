@@ -5,10 +5,10 @@
 @description
 Display a post
 @example
-       < pre >
+        < pre >
 </pre >
 ###
-module.exports = ($log) ->
+module.exports = angular.module('wordpress-hybrid-client').directive 'wphcPost', ($log) ->
     restrict: 'E'
     transclude: true
     replace: true

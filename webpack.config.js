@@ -1,13 +1,15 @@
 var path = require('path'),
+    webpack = require("webpack"),
     libPath = path.join(__dirname, 'lib'),
     wwwPath = path.join(__dirname, 'www'),
     pkg = require('./package.json'),
-    HtmlWebpackPlugin = require('html-webpack-plugin');
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
+    ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 module.exports = {
     entry: path.join(libPath, 'index.coffee'),
     output: {
-        path: path.join(wwwPath, 'js'),
+        path: wwwPath,
         filename: 'bundle.js'
     },
     module: {
@@ -55,9 +57,14 @@ module.exports = {
             'node_modules'
         ]
     },
-    plugins: [new HtmlWebpackPlugin({
-        filename: 'index.html',
-        pkg: pkg,
-        template: path.join(libPath, 'index.html')
-    })]
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            pkg: pkg,
+            template: path.join(libPath, 'index.html')
+        }),
+        new ngAnnotatePlugin({
+            add: true
+        }),
+    ]
 };

@@ -1,4 +1,4 @@
-module.exports = ($stateProvider) ->
+module.exports = angular.module('wordpress-hybrid-client.taxonomies').config ($stateProvider) ->
     $stateProvider
     # .state 'public.taxonomies',
     #     url: "/taxonomies"

@@ -5,10 +5,10 @@
 @description
 Display posts list
 @example
-          < pre >
+                                            < pre >
 </pre >
 ###
-module.exports = ($log) ->
+module.exports = ($log, $state) ->
     restrict: 'E'
     transclude: true
     replace: true
@@ -18,6 +18,13 @@ module.exports = ($log) ->
         term: '='
         onClick: "&"
     template: require './taxonomies.html'
-    link: (scope, element, attrs) ->
-        $log.debug scope
-        return
+    controller: ($scope, $element, $attrs, $state) ->
+        $scope.isCurrentState = (slug) ->
+            if $state.params.term is $scope.term and $state.params.slug is slug
+                true
+            else
+                false
+
+        $scope.triggerOnClick = (taxonomy) ->
+            if typeof $scope.onClick is 'function' and !$scope.isCurrentState(taxonomy.slug)
+                $scope.onClick()

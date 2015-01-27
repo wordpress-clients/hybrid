@@ -1,25 +1,16 @@
 {
-    "home": {
-        "title": "Home"
+    "pullToRefresh": "Pull to refresh!",
+    "title": {
+        "home": "Home",
+        "menu": "Menu",
+        "categories": "Categories",
+        "category": "Category: {{name}}",
+        "tags": "Tags",
+        "tag": "Tag: {{name}}"
     },
     "menu": {
-        "title": "Menu",
         "home": "Home",
         "tags": "Tags",
         "categories": "Categories"
-    },
-    "taxonomie": {
-        "categories": {
-            "title": "Categories"
-        },
-        "category": {
-            "title": "Category: {{name}}"
-        },
-        "tags": {
-            "title": "Tags"
-        },
-        "tag": {
-            "title": "Tag: {{name}}"
-        }
     }
 }

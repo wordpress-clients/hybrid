@@ -7,6 +7,9 @@
         "menu.categories": "public.taxonomies({ term: 'category' })",
         "menu.tags": "public.taxonomies({ term: 'post_tag' })"
     },
+    "cache": {
+        "views": 10
+    },
     "posts": {
         "posts_per_page": 5,
         "orderby": "date",

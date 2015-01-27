@@ -1,12 +1,16 @@
 {
-    "home": {
-        "title": "Accueil"
+    "pullToRefresh": "Tirer pour rafraîchir!",
+    "title": {
+        "home": "Accueil",
+        "menu": "Menu",
+        "categories": "Categories",
+        "category": "Categorie: {{name}}",
+        "tags": "Tags",
+        "tag": "Tag: {{name}}"
     },
     "menu": {
-        "title": "Menu",
         "home": "Accueil",
         "tags": "Tags",
         "categories": "Categories"
     }
-
 }

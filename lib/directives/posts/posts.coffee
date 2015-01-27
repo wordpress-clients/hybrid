@@ -14,23 +14,18 @@ module.exports = ($log) ->
         posts: "="
         layout: '='
     template: require './posts.html'
-    controller: ($scope, $element, $attrs, $ionicModal) ->
+    controller: ($scope, $element, $attrs, $ionicModal, $state) ->
 
-        $scope.taxonomies =
-            list: [],
-            title: ''
-            term: ''
+        $scope.modal = $ionicModal.fromTemplate require('./posts.modal.taxonomies.html'),
+            scope: $scope,
+            animation: 'slide-in-up'
 
         $scope.showTaxonomies = (translation, list, term) ->
-            $scope.modal = $ionicModal.fromTemplate require('./posts.modal.taxonomies.html'),
-                scope: $scope,
-                animation: 'slide-in-up'
-            $log.info 'showTaxonomies'
-            $scope.taxonomies.list = []
-            $scope.modal.show().then () ->
-                $scope.taxonomies.title = translation
-                $scope.taxonomies.list = list
-                $scope.taxonomies.term = term
+            $scope.taxonomies =
+                title: translation
+                term: term
+                list: list
+            $scope.modal.show()
 
-        $scope.$on 'modal.hidden', () ->
+        $scope.$on '$destroy', () ->
             $scope.modal.remove()

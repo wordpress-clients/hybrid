@@ -49,7 +49,11 @@ app.config ($stateProvider) ->
 ###
 CONF
 ###
-app.config (WpApiProvider, $WPHCConfig, $translateProvider) ->
+app.config (WpApiProvider, $WPHCConfig, $translateProvider, $ionicConfigProvider) ->
+    ###
+    IONIC CONF
+    ###
+    $ionicConfigProvider.views.maxCache($WPHCConfig.cache.views) ;
     ###
     REST CONF
     ###

@@ -25,7 +25,7 @@ module.exports = ($log, $scope, $WPHCPosts) ->
     vm = @
     vm.page = 1
     vm.posts = undefined
-    vm.title = 'home.title'
+    vm.title = 'title.home'
     vm.getQuery = () ->
         $WPHCPosts.getQuery vm.page
     vm.isPaginationOver = false

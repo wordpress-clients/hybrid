@@ -5,9 +5,9 @@ module.exports = ($log, $filter) ->
         trans = ''
         switch term
             when "post_tag"
-                trans = if slug then 'taxonomie.tag.title' else 'taxonomie.tags.title'
+                trans = if slug then 'title.tag' else 'title.tags'
             when "category"
-                trans = if slug then 'taxonomie.category.title' else 'taxonomie.categories.title'
+                trans = if slug then 'title.category' else 'title.categories'
         $log.debug trans, term, '$WPHCTaxonomies getTitle'
 
         if slug

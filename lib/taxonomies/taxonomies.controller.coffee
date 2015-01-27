@@ -4,6 +4,7 @@ module.exports = ($log, $scope, $wpApiTaxonomies, $WPHCTaxonomies, $state) ->
     vm = @
     vm.list = undefined
     vm.title = $WPHCTaxonomies.getTitle $state.params.term
+    vm.term = $state.params.term
 
     $scope.$on '$ionicView.loaded', () ->
         $wpApiTaxonomies.$getTermList($state.params.term)

@@ -8,6 +8,8 @@ require 'angular-ui-router'
 require 'angular-translate'
 require 'ionic/js/ionic'
 require 'ionic/js/ionic-angular'
+require 'moment'
+require 'angular-moment'
 
 require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
 

@@ -23,10 +23,13 @@ $ionicons-font-path: "../../bower_components/ionic/fonts" !default;
 // Include all of Ionic
 @import "ionic/scss/ionic";
 // local
+@import "./mixins";
 @import "./bar";
 @import "./helpers";
 @import "./post";
 @import "./posts";
+@import "./responsivity";
+@import "./ionic-override";
 @import "./md-override";
 // Bootstarp support
 @import "bootstrap-sass/assets/stylesheets/bootstrap/variables";

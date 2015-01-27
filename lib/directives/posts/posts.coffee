@@ -5,17 +5,32 @@
 @description
 Display posts list
 @example
- < pre >
-</pre >
+"<pre></pre>"
 ###
 module.exports = ($log) ->
     restrict: 'E'
     transclude: true
-    replace: true
     scope:
         posts: "="
         layout: '='
     template: require './posts.html'
-    link: (scope, element, attrs) ->
-        $log.debug scope
-        return
+    controller: ($scope, $element, $attrs, $ionicModal) ->
+
+        $scope.taxonomies =
+            list: [],
+            title: ''
+            term: ''
+
+        $scope.showTaxonomies = (translation, list, term) ->
+            $scope.modal = $ionicModal.fromTemplate require('./posts.modal.taxonomies.html'),
+                scope: $scope,
+                animation: 'slide-in-up'
+            $log.info 'showTaxonomies'
+            $scope.taxonomies.list = []
+            $scope.modal.show().then () ->
+                $scope.taxonomies.title = translation
+                $scope.taxonomies.list = list
+                $scope.taxonomies.term = term
+
+        $scope.$on 'modal.hidden', () ->
+            $scope.modal.remove()

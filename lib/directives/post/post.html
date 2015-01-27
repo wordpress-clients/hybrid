@@ -6,7 +6,7 @@
     <div class="item item-author" ng-class="{'item-avatar' : post.author.avatar}">
         <img src="{{post.author.avatar}}" ng-if="post.author.avatar">
         <h2>{{post.author.name}}</h2>
-        <p>{{post.author.description}}</p>
+        <span am-time-ago="post.date"></span>
     </div>
     <div ng-bind-html="post.content"></div>
 </div>

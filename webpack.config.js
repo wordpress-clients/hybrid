@@ -14,36 +14,42 @@ module.exports = {
     },
     module: {
         loaders: [{
-            test: /[\/]angular\.js$/,
-            loader: 'expose?angular!exports?window.angular'
-        }, {
-            test: /[\/]underscore\.js$/,
-            loader: 'expose?_'
-        }, {
-            test: /[\/]hammer\.js$/,
-            loader: 'expose?Hammer'
-        }, {
-            test: /[\/]ionic\.js$/,
-            loader: 'exports?ionic' // For non commonJs
-        }, {
-            test: /\.html$/,
-            loader: 'html'
-        }, {
-            test: /\.json$/,
-            loader: "json"
-        }, {
-            test: /\.css$/,
-            loader: "style!css"
-        }, {
-            test: /\.coffee$/,
-            loader: "coffee"
-        }, {
-            test: /\.scss$/,
-            loader: "style!css!sass?outputStyle=expanded"
-        }, {
-            test: [/ionicons\.svg/, /ionicons\.eot/, /ionicons\.ttf/, /ionicons\.woff/],
-            loader: 'file?name=fonts/[name].[ext]'
-        }]
+                test: /[\/]angular\.js$/,
+                loader: 'expose?angular!exports?window.angular'
+            }, {
+                test: /[\/]underscore\.js$/,
+                loader: 'expose?_'
+            }, {
+                test: /[\/]hammer\.js$/,
+                loader: 'expose?Hammer'
+            }, {
+                test: /[\/]ionic\.js$/,
+                loader: 'exports?ionic' // For non commonJs
+            },
+            //  {
+            //     test: /\.html$/,
+            //     loader: 'html'
+            //         // },
+            {
+                test: /\.html$/,
+                loader: 'file?name=templates/[name]-[hash:6].html'
+            }, {
+                test: /\.json$/,
+                loader: "json"
+            }, {
+                test: /\.css$/,
+                loader: "style!css"
+            }, {
+                test: /\.coffee$/,
+                loader: "coffee"
+            }, {
+                test: /\.scss$/,
+                loader: "style!css!sass?outputStyle=expanded"
+            }, {
+                test: [/ionicons\.svg/, /ionicons\.eot/, /ionicons\.ttf/, /ionicons\.woff/],
+                loader: 'file?name=fonts/[name].[ext]'
+            }
+        ]
     },
     resolve: {
         extensions: ['', '.js', '.json', '.scss', '.coffee', '.html'],

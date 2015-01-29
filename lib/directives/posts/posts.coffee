@@ -13,12 +13,14 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcPosts'
     scope:
         posts: "="
         layout: '='
-    template: require './posts.html'
+    templateUrl: require './posts.html'
     controller: ($scope, $element, $attrs, $ionicModal, $state) ->
 
-        $scope.modal = $ionicModal.fromTemplate require('./posts.modal.taxonomies.html'),
+        $ionicModal.fromTemplateUrl require('./posts.modal.taxonomies.html'),
             scope: $scope,
             animation: 'slide-in-up'
+        .then (modal) ->
+            $scope.modal = modal
 
         $scope.showTaxonomies = (translation, list, term) ->
             $scope.taxonomies =

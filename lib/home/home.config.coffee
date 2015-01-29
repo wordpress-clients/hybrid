@@ -4,7 +4,7 @@ module.exports = angular.module('wordpress-hybrid-client.home').config ($statePr
         url: "/home"
         views:
             'content':
-                template: require "../posts/posts.html"
+                templateUrl: require "../posts/posts.html"
                 controller: "WPHCPostsController as posts"
 
     $urlRouterProvider.otherwise('/public/home') ;

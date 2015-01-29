@@ -12,4 +12,4 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcLoader
     restrict: 'E'
     transclude: true
     replace: true
-    template: require './loader.html'
+    templateUrl: require './loader.html'

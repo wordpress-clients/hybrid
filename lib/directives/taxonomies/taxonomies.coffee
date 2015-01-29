@@ -17,7 +17,7 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcTaxono
         layout: '='
         term: '='
         onClick: "&"
-    template: require './taxonomies.html'
+    templateUrl: require './taxonomies.html'
     controller: ($scope, $element, $attrs, $state) ->
         $scope.isCurrentState = (slug) ->
             if $state.params.term is $scope.term and $state.params.slug is slug

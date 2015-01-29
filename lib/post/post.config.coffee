@@ -4,5 +4,5 @@ module.exports = angular.module('wordpress-hybrid-client.post').config ($statePr
         url: "/post/:id"
         views:
             'content':
-                template: require "./post"
+                templateUrl: require "./post"
                 controller: "WPHCPostController as post"

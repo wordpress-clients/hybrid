@@ -40,10 +40,10 @@ app.config ($stateProvider) ->
     abstract: true
     views:
         '@' :
-            template: require "./views/menu"
+            templateUrl: require "./views/ion-menu.html"
             controller: "WPHCMainController as main"
         'menu@public':
-            template: require "./menu/menu.html"
+            templateUrl: require "./menu/menu.html"
             controller: "WPHCMenuController as menu"
 
 ###

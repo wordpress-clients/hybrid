@@ -8,13 +8,36 @@
         "menu.tags": "public.taxonomies({ term: 'post_tag' })"
     },
     "cache": {
-        "views": 10
+        "views": 10,
+        "data": {
+            "capacity": 1000,
+            "maxAge": 21600000,
+            "deleteOnExpire": "aggressive",
+            "recycleFreq": 1000,
+            "cacheFlushInterval": null,
+            "storageMode": "localStorage",
+            "verifyIntegrity": true
+        }
+    },
+    "post": {
+        "cache": {
+            "maxAge": 172800000
+        }
+    },
+    "taxonomies": {
+        "cache": {
+            "maxAge": 172800000
+        }
     },
     "posts": {
         "posts_per_page": 5,
         "orderby": "date",
         "orderby": "desc",
-        "post_status": "publish"
+        "post_status": "publish",
+        "cache": {
+            "capacity": 100,
+            "maxAge": 86400000
+        }
     },
     "translation": {
         "available": {

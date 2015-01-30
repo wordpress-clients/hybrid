@@ -1,4 +1,5 @@
 module.exports = angular.module('wordpress-hybrid-client.taxonomies').controller 'WPHCTaxonomiesController', ($log, $scope, $wpApiTaxonomies, $WPHCTaxonomies, $state) ->
+
     $log.info 'WPHCTaxonomiesController'
 
     vm = @
@@ -7,10 +8,11 @@ module.exports = angular.module('wordpress-hybrid-client.taxonomies').controller
     vm.term = $state.params.term
 
     $scope.$on '$ionicView.loaded', () ->
-        $wpApiTaxonomies.$getTermList($state.params.term)
+        $WPHCTaxonomies.getList($state.params.term)
         .then (response) ->
             vm.list = response.data.filter (item) ->
                 item.count > 0 # remove useless taxo
         .catch () ->
             $log.debug 'posts error'
+
     return @

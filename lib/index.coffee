@@ -1,4 +1,3 @@
-require 'hammerjs'
 require 'angular'
 require 'angular-animate'
 require 'angular-sanitize'
@@ -6,6 +5,7 @@ require 'angular-aria'
 require 'angular-material/angular-material'
 require 'angular-ui-router'
 require 'angular-translate'
+require 'angular-cache'
 require 'ionic/js/ionic'
 require 'ionic/js/ionic-angular'
 require 'moment'
@@ -26,6 +26,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   'ui.router'
   'wp-api-angularjs'
   'pascalprecht.translate'
+  'angular-data.DSCacheFactory'
   require('./home/home.module').name
   require('./taxonomies/taxonomies.module').name
   require('./post/post.module').name
@@ -47,16 +48,15 @@ app.config ($stateProvider) ->
             controller: "WPHCMenuController as menu"
 
 ###
-CONF
+IONIC CONF
 ###
-app.config (WpApiProvider, $WPHCConfig, $translateProvider, $ionicConfigProvider) ->
-    ###
-    IONIC CONF
-    ###
-    $ionicConfigProvider.views.maxCache($WPHCConfig.cache.views) ;
-    ###
-    REST CONF
-    ###
+app.config ($WPHCConfig, $ionicConfigProvider) ->
+    $ionicConfigProvider.views.maxCache $WPHCConfig.cache.views
+
+###
+REST CONF
+###
+app.config ($WPHCConfig, WpApiProvider, $ionicConfigProvider) ->
     RestangularProvider = WpApiProvider.getRestangularProvider()
     RestangularProvider.setBaseUrl $WPHCConfig.api.baseUrl
     RestangularProvider.setFullResponse true
@@ -68,9 +68,10 @@ app.config (WpApiProvider, $WPHCConfig, $translateProvider, $ionicConfigProvider
     RestangularProvider.setRestangularFields
         id: "ID"
 
-    ###
-    TRANSLATION CONF
-    ###
+###
+TRANSLATION CONF
+###
+app.config ($WPHCConfig, $translateProvider) ->
     languages = []
     languagesMapping = {}
     for language, mapping of $WPHCConfig.translation.available
@@ -83,6 +84,12 @@ app.config (WpApiProvider, $WPHCConfig, $translateProvider, $ionicConfigProvider
         .registerAvailableLanguageKeys languages, languagesMapping
         .fallbackLanguage 'en'
         .determinePreferredLanguage()
+
+###
+CACHE CONF
+###
+app.config ($WPHCConfig, DSCacheFactoryProvider) ->
+    DSCacheFactoryProvider.setCacheDefaults $WPHCConfig.cache.data
 
 ###
 CONTROLLERS

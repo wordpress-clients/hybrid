@@ -17,6 +17,10 @@ require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
 require './scss/bootstrap'
 require 'angular-material/angular-material.css'
 
+# App loader
+require '!file?name=css/[name].css!autoprefixer!sass!./appLoader/appLoader.scss'
+require '!file?name=js/[name].js!./appLoader/appLoader.js'
+
 # Create namespace
 window.WPHC = {}
 
@@ -110,3 +114,12 @@ CONSTANTS
 ###
 config = require "../config"
 app.constant '$WPHCConfig', angular.extend config, WPHC.config || {}
+
+
+###
+RUN
+###
+app.run () ->
+    # Clean up appLoading
+    angular.element(document.querySelector 'html').removeClass 'app-loading'
+    angular.element(document.querySelector '#appLoader').remove()

@@ -2,7 +2,8 @@ var gulp = require('gulp'),
     path = require('path'),
     gutil = require("gulp-util"),
     header = require('gulp-header'),
-    webpack = require('gulp-webpack'),
+    webpack = require('webpack'),
+    gulpWebpack = require('gulp-webpack'),
     extend = require('util')._extend,
     pkg = require('./package.json'),
     wwwPath = path.join(__dirname, 'www'),
@@ -26,9 +27,11 @@ gulp.task('build', ['build:prod']);
 
 gulp.task("build:prod", function(callback) {
     var webpackConfigExtended = extend(webpackConfig, webpackProdConfig);
+    webpackConfigExtended.plugins.push(new webpack.optimize.DedupePlugin());
+    webpackConfigExtended.plugins.push(new webpack.optimize.UglifyJsPlugin());
 
     return gulp.src(webpackConfigExtended.entry)
-        .pipe(webpack(webpackConfigExtended))
+        .pipe(gulpWebpack(webpackConfigExtended))
         // .pipe(header(banner, {
         //     pkg: pkg
         // }))

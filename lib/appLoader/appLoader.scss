@@ -1,0 +1,77 @@
+// http://codepen.io/Mattykins/pen/wfJqk
+$ncirc: 6;
+$color: white;
+@import "../scss/mixins";
+html.app-loading body,
+html.app-loading {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+html.app-loading body {
+    background: radial-gradient(hsl(200,40%,20%), hsl(200,30%,6%));
+    box-shadow: inset 0 0 90px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 0;
+}
+#appLoader {
+    // animation: spin 5s infinite linear;
+    width: 100px;
+    height: 102px;
+    border-radius: 100%;
+    position: absolute;
+    top: 45%;
+    left: calc(50% - 50px);
+    #appLoaderPourcent {
+        margin-top: 44px;
+        text-align: center;
+        font-size: 20px;
+        color: $color;
+    }
+}
+#appLoader.finished {
+    animation: loaderZoomOut 1s;
+    #appLoaderPourcent {
+        display: none;
+    }
+}
+.circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    .inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        border: 5px solid transparentize($color, 0.3);
+        border-right: none;
+        border-top: none;
+        background-clip: padding;
+        box-shadow: inset 0 0 10px transparentize($color, 0.85);
+    }
+}
+@keyframes loaderSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes loaderZoomOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale3d(0,0,0);
+    }
+}
+@for $i from 0 through $ncirc {
+    .circle:nth-of-type(#{$i}) {
+        transform: rotate($i * 70deg);
+        .inner {
+            animation: loaderSpin 2s infinite linear;
+        }
+    }
+}

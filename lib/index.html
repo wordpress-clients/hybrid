@@ -1,21 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html class="app-loading">
 
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <title>{%=o.htmlWebpackPlugin.options.pkg.title %}</title>
+        <link href="css/appLoader.css" rel="stylesheet">
+        <script>
+            var wordpressHybridClient = {};
+            wordpressHybridClient.version = "{%= o.htmlWebpackPlugin.options.pkg.version %}";
+            wordpressHybridClient.js = {}
+            wordpressHybridClient.js.name = "{%= o.htmlWebpackPlugin.assets['main'].name %}";
+            wordpressHybridClient.js.size = "{%= o.htmlWebpackPlugin.assets['main'].size %}";
+        </script>
 
         <!-- cordova script (this will be a 404 during development) -->
-        <script src="cordova.js"></script>
+        <!-- <script src="cordova.js"></script>  -->
     </head>
 
-    <body ng-app="wordpress-hybrid-client" ng-strict-di>
+    <body ng-strict-di>
+        <div id='appLoader'>
+            <div class='circle'>
+                <div class='inner'></div>
+            </div>
+            <div class='circle'>
+                <div class='inner'></div>
+            </div>
+            <div class='circle'>
+                <div class='inner'></div>
+            </div>
+            <div class='circle'>
+                <div class='inner'></div>
+            </div>
+            <div id='appLoaderPourcent'>0</div>
+        </div>
+        <script src="js/appLoader.js"></script>
         <ion-nav-view></ion-nav-view>
         {% for (var chunk in o.htmlWebpackPlugin.assets) { %}
-        <script src="{%=o.htmlWebpackPlugin.assets[chunk]%}"></script>
+        <!-- <script src="{%=o.htmlWebpackPlugin.assets[chunk]%}"></script> -->
         {% } %}
     </body>
-    <!-- {%= o.htmlWebpackPlugin.options.pkg.name + ' v' + o.htmlWebpackPlugin.options.pkg.version + ' built on ' + new Date() %} -->
+    <!-- {%= o.htmlWebpackPlugin.options.pkg.name + ' v' + o.htmlWebpackPlugin.options.pkg.version + ' size: ' + o.htmlWebpackPlugin.assets['main'].size + ' built on ' + new Date() %} -->
 
 </html>

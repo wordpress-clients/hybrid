@@ -1,4 +1,4 @@
-<div masonry='{{::masonryOptions}}'>
+<div masonry='{{::masonryOptions}}' masonry-bind-resize="{{isOn}}">
     <div masonry-tile class="list card card-posts" ng-repeat="post in posts">
         <div md-ink-ripple ui-sref="public.post({ id: post.ID })">
             <div class="item item-image" ng-if="post.featured_image.is_image">

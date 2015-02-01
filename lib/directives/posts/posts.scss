@@ -9,16 +9,16 @@ wphc-posts {
             width: 100%;
         }
     }
-    @media (min-width: $grid-responsive-sm-break) and (max-width: $grid-responsive-md-break) {
+    @media (min-width: $grid-responsive-sm-break) {
         .card {
             // margin: 0;
-            width: 50%;
+            width: calc(50% - 10px);
         }
     }
-    @media (min-width: $grid-responsive-md-break) {
+    @media (min-width: $grid-responsive-lg-break) {
         .card {
             // margin: 0;
-            width: 33%;
+            width: calc(33% - 11px);
         }
     }
 }

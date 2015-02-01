@@ -12,11 +12,11 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcPosts'
     transclude: true
     scope:
         posts: "="
+        isOn: "="
         layout: '='
     templateUrl: require './posts.html'
     controller: ($scope, $element, $attrs, $ionicModal, $state) ->
-
-
+        $log.debug $scope, '$scope wphcPosts'
         $ionicModal.fromTemplateUrl require('./posts.modal.taxonomies.html'),
             scope: $scope,
             animation: 'slide-in-up'
@@ -32,7 +32,16 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcPosts'
 
         $scope.masonryOptions =
             transitionDuration: "0.5s"
-            gutter: 0
+            gutter: 20
+            isResizeBound: false
 
         $scope.$on '$destroy', () ->
             $scope.modal.remove()
+
+        # $attrs.$observe 'isOn', (value, oldValue) ->
+        #     console.log value, oldValue, 'isON attr'
+        #     $scope.isOn = value
+
+        $scope.$watch 'isOn', (value, oldValue) ->
+            console.log value, oldValue, 'isON'
+            $scope.isOn = value

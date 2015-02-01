@@ -36,4 +36,13 @@ module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPH
             $scope.$broadcast 'scroll.refreshComplete'
     # Make sure several call cannot be triggered at the same time
     vm.loadMore = ionic.throttle doLoadMore, 1000
+
+    $scope.$on '$ionicView.enter', () ->
+        $log.debug '$ionicView.enter posts'
+        vm.viewEntered = true
+
+    $scope.$on '$ionicView.leave', () ->
+        $log.debug '$ionicView.leave posts'
+        vm.viewEntered = false
+
     return @

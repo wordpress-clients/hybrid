@@ -1,0 +1,24 @@
+wphc-posts {
+    // margin-left: 10px;
+    .card {
+        margin: 0 0 20px;
+    }
+    @media (max-width: $grid-responsive-sm-break) {
+        .card {
+            // margin: 0;
+            width: 100%;
+        }
+    }
+    @media (min-width: $grid-responsive-sm-break) and (max-width: $grid-responsive-md-break) {
+        .card {
+            // margin: 0;
+            width: 50%;
+        }
+    }
+    @media (min-width: $grid-responsive-md-break) {
+        .card {
+            // margin: 0;
+            width: 33%;
+        }
+    }
+}

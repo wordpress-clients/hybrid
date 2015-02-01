@@ -23,3 +23,15 @@
     @include responsive-invisibility('.hidden-lg');
     @include responsive-visibility('.visible-lg');
 }
+/* TOOLBAR */
+ion-header-bar {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+[nav-view="cached"] ion-header-bar,
+[nav-bar="cached"] ion-header-bar,
+[nav-bar="leaving"] ion-header-bar {
+    box-shadow: none;
+}
+.scroll-refresher {
+    top: -75px;
+}

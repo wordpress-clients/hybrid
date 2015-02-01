@@ -49,6 +49,12 @@ module.exports = {
             test: /[\/]hammer\.js$/,
             loader: 'expose?Hammer'
         }, {
+            test: /[\/]masonry\.js$/,
+            loader: 'expose?Masonry'
+        }, {
+            test: /[\/]imagesloaded.pkgd\.js$/,
+            loader: 'expose?imagesLoaded'
+        }, {
             test: /[\/]ionic\.js$/,
             loader: 'exports?ionic' // For non commonJs
         }, {
@@ -65,7 +71,7 @@ module.exports = {
             loader: "coffee"
         }, {
             test: /\.scss$/,
-            loader: "style!css!autoprefixer!sass?outputStyle=expanded"
+            loader: "style!css!autoprefixer!sass?outputStyle=expanded&recursive=sass-json-vars"
         }, {
             test: [/ionicons\.svg/, /ionicons\.eot/, /ionicons\.ttf/, /ionicons\.woff/],
             loader: 'file?name=fonts/[name].[ext]'

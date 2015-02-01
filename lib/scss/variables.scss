@@ -1,0 +1,40 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:
+
+FOR THE MOMENT WE HAVE DUPLICATE PALETTE (on in the config.json file the other here)
+https://github.com/acdlite/json-sass
+https://github.com/rbalicki2/gulp-json-sass
+*/
+$palette-50: #ffebee;
+$palette-100: #ffcdd2;
+$palette-200: #ef9a9a;
+$palette-300: #e57373;
+$palette-400: #ef5350;
+$palette-500: #f44336;
+$palette-600: #e53935;
+$palette-700: #d32f2f;
+$palette-800: #c62828;
+$palette-900: #b71c1c;
+$palette-A100: #ff8a80;
+$palette-A200: #ff5252;
+$palette-A400: #ff1744;
+$palette-A700: #d50000;
+$positive: $palette-500 !default;
+$bar-height: 64px;
+$bar-padding-portrait: 10px;
+// $bar-default-bg: ;
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../../bower_components/ionic/fonts" !default;

@@ -6,10 +6,13 @@ require 'angular-material/angular-material'
 require 'angular-ui-router'
 require 'angular-translate'
 require 'angular-cache'
+require 'angular-moment'
 require 'ionic/js/ionic'
 require 'ionic/js/ionic-angular'
 require 'moment'
-require 'angular-moment'
+require 'imagesloaded/imagesloaded.pkgd'
+require 'masonry/masonry'
+require 'angular-masonry-directive/src/angular-masonry-directive.js'
 
 require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
 
@@ -28,6 +31,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   'ionic'
   'ngMaterial'
   'ui.router'
+  'masonry'
   'wp-api-angularjs'
   'pascalprecht.translate'
   'angular-data.DSCacheFactory'
@@ -96,6 +100,15 @@ app.config ($WPHCConfig, DSCacheFactoryProvider) ->
     DSCacheFactoryProvider.setCacheDefaults $WPHCConfig.cache.data
 
 ###
+PALETTE CONF
+###
+app.config ($WPHCConfig, $mdThemingProvider) ->
+    $mdThemingProvider.definePalette 'WPHCPalette', $WPHCConfig.palette
+    $mdThemingProvider
+    .theme('default')
+    .primaryColor('WPHCPalette')
+
+###
 CONTROLLERS
 ###
 app.controller 'WPHCMainController' , ($log) ->
@@ -122,4 +135,4 @@ RUN
 app.run () ->
     # Clean up appLoading
     angular.element(document.querySelector 'html').removeClass 'app-loading'
-    angular.element(document.querySelector '#appLoader').remove()
+    angular.element(document.querySelector '#appLoaderWrapper').remove()

@@ -30,7 +30,7 @@
         }
     },
     "posts": {
-        "posts_per_page": 5,
+        "posts_per_page": 6,
         "orderby": "date",
         "orderby": "desc",
         "post_status": "publish",

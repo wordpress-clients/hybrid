@@ -19,20 +19,21 @@
     </head>
 
     <body ng-strict-di>
-        <div id='appLoader'>
-            <div class='circle'>
-                <div class='inner'></div>
-            </div>
-            <div class='circle'>
-                <div class='inner'></div>
-            </div>
-            <div class='circle'>
-                <div class='inner'></div>
-            </div>
-            <div class='circle'>
-                <div class='inner'></div>
-            </div>
-            <div id='appLoaderPourcent'>0</div>
+        <div id='appLoaderWrapper'>
+            <app-loader md-mode="determinate" id='appLoader' value="0" role="progressbar">
+                <div class="md-spinner-wrapper">
+                    <div id='appLoaderPourcent'>0</div>
+                    <div class="md-inner">
+                        <div class="md-gap"></div>
+                        <div class="md-left">
+                            <div class="md-half-circle"></div>
+                        </div>
+                        <div class="md-right">
+                            <div class="md-half-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </app-loader>
         </div>
         <script src="js/appLoader.js"></script>
         <ion-nav-view></ion-nav-view>

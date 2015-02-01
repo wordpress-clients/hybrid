@@ -16,6 +16,7 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcPosts'
     templateUrl: require './posts.html'
     controller: ($scope, $element, $attrs, $ionicModal, $state) ->
 
+
         $ionicModal.fromTemplateUrl require('./posts.modal.taxonomies.html'),
             scope: $scope,
             animation: 'slide-in-up'
@@ -28,6 +29,10 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcPosts'
                 term: term
                 list: list
             $scope.modal.show()
+
+        $scope.masonryOptions =
+            transitionDuration: "0.5s"
+            gutter: 0
 
         $scope.$on '$destroy', () ->
             $scope.modal.remove()

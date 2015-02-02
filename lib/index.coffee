@@ -10,7 +10,6 @@ require 'angular-moment'
 require 'ionic/js/ionic'
 require 'ionic/js/ionic-angular'
 require 'moment'
-require 'masonry/masonry'
 
 require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
 
@@ -115,7 +114,7 @@ app.controller 'WPHCMainController' , ($log) ->
 ###
 DIRECTIVES
 ###
-require "./directives/masonry/masonry.coffee"
+require "./directives/masonry/masonry.module.coffee"
 require "./directives/loader/loader.coffee"
 require "./directives/posts/posts.coffee"
 require "./directives/post/post.coffee"

@@ -25,7 +25,7 @@ var banner = ['/**',
 ].join('\n');
 
 gulp.task('default', ['build']);
-gulp.task('build', ['cleanDist', 'build:prod', 'minify-css']);
+gulp.task('build', ['cleanDist', 'build:prod']);
 
 gulp.task('cleanDist', function() {
     return gulp.src(wwwPath, {
@@ -40,9 +40,9 @@ gulp.task("build:prod", function(callback) {
 
     return gulp.src(webpackConfigExtended.entry)
         .pipe(gulpWebpack(webpackConfigExtended))
-        .pipe(header(banner, {
-            pkg: pkg
-        }))
+        // .pipe(header(banner, {
+        //     pkg: pkg
+        // }))
         .pipe(gulp.dest(wwwPath));
 });
 

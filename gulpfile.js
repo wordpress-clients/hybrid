@@ -2,9 +2,11 @@ var gulp = require('gulp'),
     path = require('path'),
     gutil = require("gulp-util"),
     header = require('gulp-header'),
+    rimraf = require('gulp-rimraf'),
     webpack = require('webpack'),
     gulpWebpack = require('gulp-webpack'),
     extend = require('util')._extend,
+    minifyCSS = require('gulp-minify-css'),
     pkg = require('./package.json'),
     wwwPath = path.join(__dirname, 'www'),
     clone = require('clone'),
@@ -23,7 +25,13 @@ var banner = ['/**',
 ].join('\n');
 
 gulp.task('default', ['build']);
-gulp.task('build', ['build:prod']);
+gulp.task('build', ['cleanDist', 'build:prod', 'minify-css']);
+
+gulp.task('cleanDist', function() {
+    return gulp.src(wwwPath, {
+        read: false
+    }).pipe(rimraf());
+});
 
 gulp.task("build:prod", function(callback) {
     var webpackConfigExtended = extend(webpackConfig, webpackProdConfig);
@@ -32,8 +40,14 @@ gulp.task("build:prod", function(callback) {
 
     return gulp.src(webpackConfigExtended.entry)
         .pipe(gulpWebpack(webpackConfigExtended))
-        // .pipe(header(banner, {
-        //     pkg: pkg
-        // }))
+        .pipe(header(banner, {
+            pkg: pkg
+        }))
         .pipe(gulp.dest(wwwPath));
+});
+
+gulp.task('minify-css', function() {
+    return gulp.src(path.join(wwwPath, 'css/*.css'))
+        .pipe(minifyCSS())
+        .pipe(gulp.dest(path.join(wwwPath, 'css')));
 });

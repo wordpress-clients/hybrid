@@ -8,6 +8,6 @@ var path = require('path'),
 
 module.exports = {
     output: {
-        filename: 'bundle.min.js'
+        filename: 'bundle-[hash:6].min.js'
     }
 };

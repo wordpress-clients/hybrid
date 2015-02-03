@@ -6,7 +6,7 @@ var path = require('path'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
-HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function (compiler, webpackStatsJson) {
+HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function(compiler, webpackStatsJson) {
     var assets = {};
     for (var chunk in webpackStatsJson.assetsByChunkName) {
         var chunkValue = webpackStatsJson.assetsByChunkName[chunk];
@@ -22,12 +22,16 @@ HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function (compiler, webpac
         }
         for (var i = 0; i < webpackStatsJson.assets.length; i++) {
             var asset = webpackStatsJson.assets[i];
+            if (asset.name.indexOf('css/style') === 0) {
+                assets['css'] = asset;
+            }
             // console.log(asset);
             if (asset.name === chunkValue) {
                 assets[chunk] = asset;
             }
         }
     }
+    console.log(assets)
     return assets;
 };
 
@@ -64,7 +68,7 @@ module.exports = {
             loader: "coffee"
         }, {
             test: /\.scss$/,
-            loader: "file?name=css/[name]-[hash:6].css!css!autoprefixer!sass?outputStyle=expanded&recursive=sass-json-vars"
+            loader: "file?name=css/style-[hash:6].css!autoprefixer!sass?outputStyle=expanded&recursive=sass-json-vars"
         }, {
             test: [/ionicons\.svg/, /ionicons\.eot/, /ionicons\.ttf/, /ionicons\.woff/],
             loader: 'file?name=fonts/[name].[ext]'

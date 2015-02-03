@@ -1,3 +1,5 @@
+require 'masonry/masonry'
+
 module.exports = angular.module('masonry').directive 'masonry', ($log, $timeout) ->
     restrict: 'A'
     link: (scope, elem, attrs) ->

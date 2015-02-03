@@ -7,74 +7,27 @@ module.exports = angular.module('masonry').directive 'masonry', ($log, $timeout)
         bindResize: '='
     controller: ($scope, $element) ->
         $log.info 'masonry controller'
-        container = $element[0];
         options = angular.extend
-            itemSelector: container.querySelector('.card')
+            itemSelector: $element[0].querySelector('.card')
             , angular.fromJson($scope.options)
 
-        masonry = new Masonry container, options
+        $scope.masonry = new Masonry $element[0], options
 
         @getMasonryInstance = ->
-            masonry
+            $scope.masonry
 
-        debounceTimeout = 0
-        @update = () ->
-            $timeout.cancel debounceTimeout if debounceTimeout
-            debounceTimeout = $timeout () ->
-                debounceTimeout = 0;
-                masonry.reloadItems()
-                masonry.layout()
-                $element.children(options.itemSelector).css 'visibility', 'visible'
-            , 120
+        update = () ->
+            $log.info 'masonry update'
+            $element.css 'height', 0
+            $scope.masonry.reloadItems()
+            $scope.masonry.layout()
+            $element.children(options.itemSelector).css 'visibility', 'visible'
 
-        @scope.removeBrick = () ->
-            $timeout () ->
-                masonry.reloadItems()
-                masonry.layout()
-            , 500
+        @update = ionic.debounce update, 250
 
-        @appendBricks = (ele) ->
-            masonry.appended ele
-
-        @update()
+        $scope.$on '$destroy', () ->
+            $scope.masonry.destroy()
 
         $scope.$watch 'bindResize', (value, oldValue) ->
             $log.debug value, 'masonryBindResize'
-            if (value is true) then masonry.bindResize() else masonry.unbindResize()
-
-    # link: (scope, elem, attrs) ->
-    #     $log.debug scope, attrs, 'masonry scope attr'
-    #     container = elem[0];
-    #     options = angular.extend
-    #         itemSelector: container.querySelector('.card')
-    #         , angular.fromJson(attrs.masonry)
-    #
-    #     masonry = scope.masonry = new Masonry(container, options) ;
-    #
-    #     debounceTimeout = 0
-    #     scope.update = () ->
-    #         $timeout.cancel debounceTimeout if debounceTimeout
-    #         debounceTimeout = $timeout () ->
-    #             debounceTimeout = 0;
-    #             masonry.reloadItems()
-    #             masonry.layout()
-    #             elem.children(options.itemSelector).css 'visibility', 'visible'
-    #         , 120
-    #
-    #     scope.removeBrick = () ->
-    #         $timeout () ->
-    #             masonry.reloadItems()
-    #             masonry.layout()
-    #         , 500
-    #
-    #     scope.appendBricks = (ele) ->
-    #         masonry.appended ele
-    #
-    #     scope.$on 'masonry.layout', () ->
-    #         masonry.layout()
-    #
-    #     scope.update()
-    #
-    #     scope.$watch 'isOn', (value, oldValue) ->
-    #         $log.debug value, 'masonryBindResize'
-    #         if (value is true) then masonry.bindResize() else masonry.unbindResize()
+            if (value is true) then $scope.masonry.bindResize() else $scope.masonry.unbindResize()

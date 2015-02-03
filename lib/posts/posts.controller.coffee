@@ -1,10 +1,12 @@
-module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPHCPostsController', ($log, $scope, $WPHCPosts) ->
+module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPHCPostsController', ($log, $scope, $WPHCPosts, $q) ->
     $log.info 'WPHCHomeController'
     isLoadingMore = false
     doLoadMore = () ->
         # prevent multiple call when the server takes some time to answer
         if isLoadingMore || vm.isPaginationOver
-            return
+            deferred = $q.defer()
+            deferred.resolve null
+            return deferred.promise
         $log.debug 'loadMore'
         $log.debug 'isLoadingMore', isLoadingMore
         $log.debug 'vm.isPaginationOver', vm.isPaginationOver
@@ -32,6 +34,7 @@ module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPH
     vm.doRefresh = () ->
         vm.page = 1
         vm.posts = undefined
+        vm.isPaginationOver = false
         vm.loadMore().finally () ->
             $scope.$broadcast 'scroll.refreshComplete'
     # Make sure several call cannot be triggered at the same time

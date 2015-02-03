@@ -31,16 +31,11 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcPosts'
             $scope.modal.show()
 
         $scope.masonryOptions =
-            transitionDuration: "0.5s"
             gutter: 20
             isResizeBound: false
 
         $scope.$on '$destroy', () ->
             $scope.modal.remove()
-
-        # $attrs.$observe 'isOn', (value, oldValue) ->
-        #     console.log value, oldValue, 'isON attr'
-        #     $scope.isOn = value
 
         $scope.$watch 'isOn', (value, oldValue) ->
             console.log value, oldValue, 'isON'

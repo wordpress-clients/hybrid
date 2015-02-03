@@ -5,7 +5,7 @@
 @description
 Display a post
 @example
-        < pre >
+         < pre >
 </pre >
 ###
 module.exports = angular.module('wordpress-hybrid-client').directive 'wphcPost', ($log) ->

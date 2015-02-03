@@ -1,29 +1,27 @@
-<div masonry='{{::masonryOptions}}' masonry-bind-resize="{{isOn}}">
-    <div masonry-tile class="list card card-posts" ng-repeat="post in posts">
-        <div md-ink-ripple ui-sref="public.post({ id: post.ID })">
-            <div class="item item-image" ng-if="post.featured_image.is_image">
-                <img ng-src="{{post.featured_image.attachment_meta.sizes.medium.url}}">
-            </div>
-            <div class="item item-text-wrap">
-                <h1 class="item-title">{{post.title}}</h1>
-            </div>
-            <div class="item item-author" ng-class="{'item-avatar' : post.author.avatar}">
-                <img src="{{post.author.avatar}}" ng-if="post.author.avatar">
-                <h2>{{post.author.name}}</h2>
-                <span am-time-ago="post.date"></span>
-            </div>
-            <div class="item item-text-wrap" ng-bind-html="post.excerpt"></div>
+<div class="list card card-posts" ng-repeat="post in posts">
+    <div ui-sref="public.post({ id: post.ID })">
+        <div class="item item-image" ng-if="post.featured_image.is_image">
+            <img ng-src="{{post.featured_image.attachment_meta.sizes.medium.url}}">
         </div>
+        <div class="item item-text-wrap">
+            <h1 class="item-title">{{post.title}}</h1>
+        </div>
+        <div class="item item-author" ng-class="{'item-avatar' : post.author.avatar}">
+            <img src="{{post.author.avatar}}" ng-if="post.author.avatar">
+            <h2>{{post.author.name}}</h2>
+            <span am-time-ago="post.date"></span>
+        </div>
+        <div class="item item-text-wrap" ng-bind-html="post.excerpt"></div>
+    </div>
 
-        <div class="item item-divider no-padding item-footer" layout="row" layout-fill>
-            <md-button flex ng-click="showTaxonomies('title.categories', post.terms.category, 'category')">
-                <i class="icon ion-folder"></i> {{'menu.categories' | translate}}
-                <span class="badge badge-positive">{{post.terms.category.length}}</span>
-            </md-button>
-            <md-button flex ng-click="showTaxonomies('title.tags', post.terms.post_tag, 'post_tag')">
-                <i class="icon ion-pricetags"></i> {{'menu.tags' | translate}}
-                <span class="badge badge-positive">{{post.terms.post_tag.length}}</span>
-            </md-button>
-        </div>
+    <div class="item item-divider no-padding item-footer" layout="row" layout-fill>
+        <md-button flex ng-click="showTaxonomies('title.categories', post.terms.category, 'category')">
+            <i class="icon ion-folder"></i> {{'menu.categories' | translate}}
+            <span class="badge badge-positive">{{post.terms.category.length}}</span>
+        </md-button>
+        <md-button flex ng-click="showTaxonomies('title.tags', post.terms.post_tag, 'post_tag')">
+            <i class="icon ion-pricetags"></i> {{'menu.tags' | translate}}
+            <span class="badge badge-positive">{{post.terms.post_tag.length}}</span>
+        </md-button>
     </div>
 </div>

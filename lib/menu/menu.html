@@ -3,7 +3,7 @@
 </ion-header-bar>
 <ion-content>
     <ion-list>
-        <ion-item ng-repeat="(trans,route) in ::menu.getMenu()" md-ink-ripple nav-clear menu-close ui-sref="{{route}}">
+        <ion-item ng-repeat="(trans,route) in ::menu.getMenu()" nav-clear menu-close ui-sref="{{route}}">
             {{trans | translate}}
         </ion-item>
     </ion-list>

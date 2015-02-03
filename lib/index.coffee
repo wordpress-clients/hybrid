@@ -10,7 +10,6 @@ require 'angular-moment'
 require 'ionic/js/ionic'
 require 'ionic/js/ionic-angular'
 require 'moment'
-require 'masonry/masonry'
 
 require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
 
@@ -29,7 +28,6 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   'ionic'
   'ngMaterial'
   'ui.router'
-  'masonry'
   'wp-api-angularjs'
   'pascalprecht.translate'
   'angular-data.DSCacheFactory'
@@ -52,6 +50,12 @@ app.config ($stateProvider) ->
         'menu@public':
             templateUrl: require "./menu/menu.html"
             controller: "WPHCMenuController as menu"
+
+###
+ANGULAR CONF
+###
+app.config ($WPHCConfig, $logProvider) ->
+    $logProvider.debugEnabled $WPHCConfig.debugEnabled
 
 ###
 IONIC CONF
@@ -107,7 +111,7 @@ app.config ($WPHCConfig, $mdThemingProvider) ->
     .primaryColor('WPHCPalette')
 
 ###
-CONTROLLERS
+MAIN CONTROLLER
 ###
 app.controller 'WPHCMainController' , ($log) ->
     $log.info 'main controller'
@@ -115,7 +119,6 @@ app.controller 'WPHCMainController' , ($log) ->
 ###
 DIRECTIVES
 ###
-require "./directives/masonry/masonry.coffee"
 require "./directives/loader/loader.coffee"
 require "./directives/posts/posts.coffee"
 require "./directives/post/post.coffee"

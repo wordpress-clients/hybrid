@@ -92,7 +92,7 @@ html.app-loading body {
 }
 app-loader {
     &.finished {
-        animation: loaderZoomOut 1s;
+        // animation: loaderZoomOut 100ms;
         #appLoaderPourcent {
             display: none;
         }

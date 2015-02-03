@@ -6,7 +6,7 @@ var path = require('path'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
-HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function(compiler, webpackStatsJson) {
+HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function (compiler, webpackStatsJson) {
     var assets = {};
     for (var chunk in webpackStatsJson.assetsByChunkName) {
         var chunkValue = webpackStatsJson.assetsByChunkName[chunk];
@@ -27,7 +27,6 @@ HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function(compiler, webpack
                 assets[chunk] = asset;
             }
         }
-
     }
     return assets;
 };
@@ -40,39 +39,36 @@ module.exports = {
     },
     module: {
         loaders: [{
-                test: /[\/]angular\.js$/,
-                loader: 'expose?angular!exports?window.angular'
-            }
-
-            , {
-                test: /[\/]masonry\.js$/,
-                loader: 'expose?Masonry'
-            }, {
-                test: /[\/]imagesloaded.pkgd\.js$/,
-                loader: 'expose?imagesLoaded'
-            }, {
-                test: /[\/]ionic\.js$/,
-                loader: 'exports?ionic' // For non commonJs
-            }, {
-                test: /\.html$/,
-                loader: 'file?name=templates/[name]-[hash:6].html'
-            }, {
-                test: /\.json$/,
-                loader: "json"
-            }, {
-                test: /\.css$/,
-                loader: "style!css"
-            }, {
-                test: /\.coffee$/,
-                loader: "coffee"
-            }, {
-                test: /\.scss$/,
-                loader: "style!css!autoprefixer!sass?outputStyle=expanded&recursive=sass-json-vars"
-            }, {
-                test: [/ionicons\.svg/, /ionicons\.eot/, /ionicons\.ttf/, /ionicons\.woff/],
-                loader: 'file?name=fonts/[name].[ext]'
-            }
-        ]
+            test: /[\/]angular\.js$/,
+            loader: 'expose?angular!exports?window.angular'
+        }, {
+            test: /[\/]masonry\.js$/,
+            loader: 'expose?Masonry'
+        }, {
+            test: /[\/]imagesloaded.pkgd\.js$/,
+            loader: 'expose?imagesLoaded'
+        }, {
+            test: /[\/]ionic\.js$/,
+            loader: 'exports?ionic' // For non commonJs
+        }, {
+            test: /\.html$/,
+            loader: 'file?name=templates/[name]-[hash:6].html'
+        }, {
+            test: /\.json$/,
+            loader: "json"
+        }, {
+            test: /\.css$/,
+            loader: "style!css"
+        }, {
+            test: /\.coffee$/,
+            loader: "coffee"
+        }, {
+            test: /\.scss$/,
+            loader: "file?name=css/[name]-[hash:6].css!css!autoprefixer!sass?outputStyle=expanded&recursive=sass-json-vars"
+        }, {
+            test: [/ionicons\.svg/, /ionicons\.eot/, /ionicons\.ttf/, /ionicons\.woff/],
+            loader: 'file?name=fonts/[name].[ext]'
+        }]
     },
     resolve: {
         extensions: ['', '.js', '.json', '.scss', '.coffee', '.html'],
@@ -95,5 +91,6 @@ module.exports = {
         new ngAnnotatePlugin({
             add: true
         }),
+        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|fr/)
     ]
 };

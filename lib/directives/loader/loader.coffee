@@ -5,7 +5,7 @@
 @description
 A simple loader
 @example
- < pre >
+  < pre >
 </pre >
 ###
 module.exports = angular.module('wordpress-hybrid-client').directive 'wphcLoader', () ->

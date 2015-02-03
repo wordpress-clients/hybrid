@@ -1,24 +1,11 @@
 wphc-posts {
-    // margin-left: 10px;
-    .card {
-        margin: 0 0 20px;
-    }
     @media (max-width: $grid-responsive-sm-break) {
-        .card {
-            // margin: 0;
-            width: 100%;
-        }
+        
     }
     @media (min-width: $grid-responsive-sm-break) {
-        .card {
-            // margin: 0;
-            width: calc(50% - 10px);
-        }
+        
     }
     @media (min-width: $grid-responsive-lg-break) {
-        .card {
-            // margin: 0;
-            width: calc(33% - 11px);
-        }
+        
     }
 }

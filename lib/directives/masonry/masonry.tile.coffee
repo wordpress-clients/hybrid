@@ -1,26 +1,22 @@
 imagesLoaded = require 'imagesloaded'
 
 module.exports = angular.module('masonry').directive 'masonryTile', ($log) ->
-    restrict: 'A'
-    # require: '^masonry',
-    link: (scope, elem) ->
-        elem.css 'visibility', 'hidden'
-        master = elem.parent('*[masonry]:first').scope()
-        update = master.update
-        removeBrick = master.removeBrick
-        appendBricks = master.appendBricks
+    restrict: 'AC'
+    require: '^masonry'
+    link: (scope, element, attrs, parentCtrl) ->
+        $log.debug scope, 'masonryTile scope'
+        element.css 'visibility', 'masonryTile hidden'
 
-        $log.debug elem.get(0), 'elem.get(0)'
+        masonry = parentCtrl.getMasonryInstance()
+        update = parentCtrl.update
+        appendBricks = parentCtrl.appendBricks
 
-        imgLoad = imagesLoaded elem.get(0)
-        # if update
-        #     imgLoad.on 'done', update
-        #     # imagesLoaded elem.get(0), update
-        #     elem.ready update
-        # if appendBricks
-        #     imgLoad.on 'done', () ->
-        #         appendBricks(elem)
-            # imagesLoaded elem.get(0), appendBricks(elem)
+        if scope.post.featured_image.is_image
+            img = element[0].querySelector('.item-image > img')
+            imgLoad = imagesLoaded img
+            imgLoad.on 'done', update
+        else
+            element.ready update
 
         scope.$on '$destroy', () ->
             removeBrick() if (typeof removeBrick is 'function')

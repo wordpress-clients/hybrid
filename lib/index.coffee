@@ -7,6 +7,7 @@ require 'angular-ui-router'
 require 'angular-translate'
 require 'angular-cache'
 require 'angular-moment'
+require 'angular-deckgrid/angular-deckgrid'
 require 'ionic/js/ionic'
 require 'ionic/js/ionic-angular'
 require 'moment'
@@ -28,6 +29,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   'ionic'
   'ngMaterial'
   'ui.router'
+  'masonry'
   'wp-api-angularjs'
   'pascalprecht.translate'
   'angular-data.DSCacheFactory'
@@ -119,6 +121,7 @@ app.controller 'WPHCMainController' , ($log) ->
 ###
 DIRECTIVES
 ###
+require "./directives/masonry/masonry.module.coffee"
 require "./directives/loader/loader.coffee"
 require "./directives/posts/posts.coffee"
 require "./directives/post/post.coffee"

@@ -3,9 +3,16 @@
         "baseUrl": "yourWpApi/wp-json"
     },
     "menu": {
-        "menu.home": "public.home",
-        "menu.categories": "public.taxonomies({ term: 'category' })",
-        "menu.tags": "public.taxonomies({ term: 'post_tag' })"
+        "wordpress": {
+            "menu.home": "public.home",
+            "menu.categories": "public.taxonomies({ term: 'category' })",
+            "menu.tags": "public.taxonomies({ term: 'post_tag' })"
+        },
+        "social": {
+            "facebook": "https://www.facebook.com/julienrenauxblog",
+            "twitter": "https://www.facebook.com/julienrenauxblog",
+            "googleplus": "https://www.facebook.com/julienrenauxblog"
+        }
     },
     "cache": {
         "views": 10,

@@ -8,6 +8,21 @@ cordova platform add android
 cp config.json.dist config.json
 ```
 
+## Run
+```
+# live reload version
+webpack-dev-server
+
+# Dump files within the www folder
+webpack
+
+# Prod version
+gulp
+
+# Ios/Android overview
+ionic serve --lab
+```
+
 ## Contribute
 
 ```

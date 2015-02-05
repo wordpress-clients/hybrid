@@ -6,7 +6,7 @@ var path = require('path'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
-HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function(compiler, webpackStatsJson) {
+HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function (compiler, webpackStatsJson) {
     var assets = {};
     for (var chunk in webpackStatsJson.assetsByChunkName) {
         var chunkValue = webpackStatsJson.assetsByChunkName[chunk];
@@ -25,13 +25,11 @@ HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function(compiler, webpack
             if (asset.name.indexOf('css/style') === 0) {
                 assets['css'] = asset;
             }
-            // console.log(asset);
             if (asset.name === chunkValue) {
                 assets[chunk] = asset;
             }
         }
     }
-    console.log(assets)
     return assets;
 };
 

@@ -35,6 +35,8 @@ $palette-A700: #d50000;
 $positive: $palette-500 !default;
 $bar-height: 64px;
 $bar-padding-portrait: 10px;
+// Custom break point
+$grid-responsive-xl-break: 1450px !default;
 // $bar-default-bg: ;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../../bower_components/ionic/fonts" !default;

@@ -3,4 +3,4 @@ module.exports = angular.module('wordpress-hybrid-client.menu').factory '$WPHCMe
     getWordpress: () ->
         $WPHCConfig.menu.wordpress
     getSocial: () ->
-        $WPHCConfig.menu.social
+        $WPHCConfig.menu.social || []

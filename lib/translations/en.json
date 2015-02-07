@@ -12,5 +12,8 @@
         "home": "Home",
         "tags": "Tags",
         "categories": "Categories"
+    },
+    "posts": {
+        "empty": "There is no posts here!"
     }
 }

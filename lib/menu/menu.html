@@ -15,9 +15,8 @@
     </ion-list>
 
 </ion-content>
-
-<div class="bar bar-footer bar-stable">
+<div class="bar bar-footer bar-stable" ng-if="::menu.hasSocial">
     <div class="button-bar">
-        <a class="button" ng-repeat="(icon,link) in ::menu.getSocial()" target="_blank" ng-href="{{link}}"><i class="ion-social-{{icon}}"></i></a>
+        <a class="button" ng-repeat="socialNetwork in ::menu.getSocial()" target="_blank" ng-href="{{socialNetwork.url}}"><i class="ion-social-{{socialNetwork.name}}"></i></a>
     </div>
 </div>

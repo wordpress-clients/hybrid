@@ -1,3 +1,5 @@
+md5 = require 'MD5'
+
 module.exports = angular.module('wordpress-hybrid-client.posts').factory '$WPHCPosts', ($log, $wpApiPosts, $q, $WPHCConfig, DSCacheFactory) ->
     $log.info '$WPHCPosts'
 
@@ -16,7 +18,8 @@ module.exports = angular.module('wordpress-hybrid-client.posts').factory '$WPHCP
     getList: (query) ->
         queryString = JSON.stringify query
         deferred = $q.defer()
-        listCache = getCache().get 'list-' + queryString
+        hash = md5 $WPHCConfig.api.baseUrl + queryString
+        listCache = getCache().get 'list-' + hash
         $log.debug listCache, 'Post cache'
         if listCache
             deferred.resolve listCache
@@ -24,6 +27,6 @@ module.exports = angular.module('wordpress-hybrid-client.posts').factory '$WPHCP
             $wpApiPosts.$getList query
             .then (response) ->
                 response.isPaginationOver = (response.data.length is 0 or response.data.length < $WPHCConfig.posts.posts_per_page)
-                getCache().put 'list-' + queryString, response
+                getCache().put 'list-' + hash, response
                 deferred.resolve response
         deferred.promise

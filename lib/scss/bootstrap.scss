@@ -11,7 +11,8 @@
 @import "./ionic-override";
 @import "./md-override";
 // directives
-@import "../directives/posts/posts";
+@import "../directives/posts/style";
+@import "../directives/emptyList/style";
 // module
 @import "../menu/menu";
 // Bootstarp support

@@ -1,5 +1,6 @@
 <ion-view view-title="{{ taxonomies.title | translate}}">
     <wphc-loader ng-if="!taxonomies.list"></wphc-loader>
+    <wphc-empty-list list="taxonomies.list"></wphc-empty-list>
     <ion-content>
         <wphc-taxonomies taxonomies="taxonomies.list" term="taxonomies.term"></wphc-taxonomies>
     </ion-content>

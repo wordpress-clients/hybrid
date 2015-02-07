@@ -12,5 +12,8 @@
         "home": "Accueil",
         "tags": "Tags",
         "categories": "Categories"
+    },
+    "posts": {
+        "empty": "La liste est vide!"
     }
 }

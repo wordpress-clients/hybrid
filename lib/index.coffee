@@ -121,6 +121,7 @@ app.controller 'WPHCMainController' , ($log) ->
 DIRECTIVES
 ###
 require "./directives/masonry/masonry.module.coffee"
+require "./directives/emptyList/emptyList.coffee"
 require "./directives/loader/loader.coffee"
 require "./directives/posts/posts.coffee"
 require "./directives/post/post.coffee"

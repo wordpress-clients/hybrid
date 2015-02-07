@@ -1,5 +1,6 @@
 <ion-view view-title="{{posts.title | translate}}">
     <wphc-loader ng-if="!posts.posts"></wphc-loader>
+    <wphc-empty-list list="posts.posts"></wphc-empty-list>
     <ion-content class="padding">
         <ion-refresher pulling-text="{{ 'pullToRefresh' | translate}}" on-refresh="posts.doRefresh()"></ion-refresher>
         <wphc-posts posts="posts.posts" is-on="posts.viewEntered"></wphc-posts>

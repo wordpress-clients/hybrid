@@ -8,11 +8,16 @@
             "menu.categories": "public.taxonomies({ term: 'category' })",
             "menu.tags": "public.taxonomies({ term: 'post_tag' })"
         },
-        "social": {
-            "facebook": "https://www.facebook.com/julienrenauxblog",
-            "twitter": "https://www.facebook.com/julienrenauxblog",
-            "googleplus": "https://www.facebook.com/julienrenauxblog"
-        }
+        "social": [{
+            "name": "facebook",
+            "url": "https://www.facebook.com/julienrenauxblog"
+        }, {
+            "name": "twitter",
+            "url": "https://www.facebook.com/julienrenauxblog"
+        }, {
+            "name": "googleplus",
+            "url": "https://www.facebook.com/julienrenauxblog"
+        }]
     },
     "cache": {
         "views": 10,

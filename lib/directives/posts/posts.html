@@ -1,4 +1,4 @@
-<div masonry options='::masonryOptions' bind-resize="isOn" list="posts">
+<div masonry options='{{masonryOptions}}' bind-resize="isOn" list="posts">
     <div masonry-tile class="list card card-posts" ng-repeat="post in posts">
         <div ui-sref="public.post({ id: post.ID })">
             <div class="item item-image" ng-if="post.featured_image.is_image">
@@ -14,15 +14,14 @@
             </div>
             <div class="item item-text-wrap" ng-bind-html="post.excerpt"></div>
         </div>
-        <div class="item item-divider no-padding item-footer" layout="row" layout-fill>
-            <md-button flex ng-click="showTaxonomies('title.categories', post.terms.category, 'category')">
-                <i class="icon ion-folder"></i> {{'menu.categories' | translate}}
-                <span class="badge badge-positive">{{post.terms.category.length}}</span>
-            </md-button>
-            <md-button flex ng-click="showTaxonomies('title.tags', post.terms.post_tag, 'post_tag')">
-                <i class="icon ion-pricetags"></i> {{'menu.tags' | translate}}
-                <span class="badge badge-positive">{{post.terms.post_tag.length}}</span>
-            </md-button>
-        </div>
+
+        <button ng-click="showTaxonomies('title.categories', post.terms.category, 'category')">
+            <i class="icon ion-folder"></i>
+            <span class="badge badge-positive">{{post.terms.category.length}}</span>
+        </button>
+        <button ng-click="showTaxonomies('title.tags', post.terms.post_tag, 'post_tag')">
+            <i class="icon ion-pricetags"></i>
+            <span class="badge badge-positive">{{post.terms.post_tag.length}}</span>
+        </button>
     </div>
 </div>

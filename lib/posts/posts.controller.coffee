@@ -7,13 +7,13 @@ module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPH
             deferred = $q.defer()
             deferred.resolve null
             return deferred.promise
-        $log.debug 'loadMore'
-        $log.debug 'isLoadingMore', isLoadingMore
-        $log.debug 'vm.isPaginationOver', vm.isPaginationOver
+        # $log.debug 'loadMore'
+        # $log.debug 'isLoadingMore', isLoadingMore
+        # $log.debug 'vm.isPaginationOver', vm.isPaginationOver
         isLoadingMore = true
         $WPHCPosts.getList vm.getQuery()
         .then (response) ->
-            $log.debug response.data, response.isPaginationOver , 'posts, isPaginationOver'
+            # $log.debug response.data, response.isPaginationOver , 'posts, isPaginationOver'
             vm.posts = if vm.posts then vm.posts.concat(response.data) else response.data
             if response.isPaginationOver
                 vm.isPaginationOver = true
@@ -42,10 +42,18 @@ module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPH
 
     $scope.$on '$ionicView.enter', () ->
         $log.debug '$ionicView.enter posts'
-        vm.viewEntered = true
+        $scope.$apply ->
+            vm.viewEntered = true
 
-    $scope.$on '$ionicView.leave', () ->
-        $log.debug '$ionicView.leave posts'
-        vm.viewEntered = false
+    # DOES NOT WORK CORRECTLY: https://github.com/driftyco/ionic/issues/2818
+    # $scope.$on '$ionicView.leave', () ->
+    #     $log.debug '$ionicView.leave posts'
+    #     $scope.$apply ->
+    #         vm.viewEntered = false
+
+    $scope.$on '$stateChangeStart', () ->
+        $log.debug '$stateChangeStart posts'
+        $scope.$apply ->
+            vm.viewEntered = false
 
     return @

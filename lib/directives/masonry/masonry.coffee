@@ -3,7 +3,7 @@ require 'masonry/masonry'
 module.exports = angular.module('masonry').directive 'masonry', ($log, $timeout) ->
     restrict: 'A'
     scope:
-        options: '='
+        options: '@'
         bindResize: '='
     controller: ($scope, $element) ->
         $log.info 'masonry controller'
@@ -29,5 +29,8 @@ module.exports = angular.module('masonry').directive 'masonry', ($log, $timeout)
             $scope.masonry.destroy()
 
         $scope.$watch 'bindResize', (value, oldValue) ->
-            $log.debug value, 'masonryBindResize'
-            if (value is true) then $scope.masonry.bindResize() else $scope.masonry.unbindResize()
+            if value is true
+                update()
+                $scope.masonry.bindResize()
+            else
+                $scope.masonry.unbindResize()

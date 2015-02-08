@@ -6,7 +6,8 @@
     <div class="item item-author" ng-class="{'item-avatar' : post.author.avatar}">
         <img src="{{post.author.avatar}}" ng-if="post.author.avatar">
         <h2>{{post.author.name}}</h2>
-        <span am-time-ago="post.date"></span>
+        {{post.date | date : format : timezone}}
     </div>
+    <hr/>
     <div ng-bind-html="post.content"></div>
 </div>

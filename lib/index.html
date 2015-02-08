@@ -14,7 +14,6 @@
             wordpressHybridClient.js.name = "{%= o.htmlWebpackPlugin.assets['main'].name %}";
             wordpressHybridClient.js.size = "{%= o.htmlWebpackPlugin.assets['main'].size %}";
         </script>
-
         <!-- cordova script (this will be a 404 during development) -->
         <!-- <script src="cordova.js"></script>  -->
     </head>
@@ -38,6 +37,7 @@
         </div>
         <script src="js/appLoader.js"></script>
         <ion-nav-view></ion-nav-view>
+        <angular-memory-stats></angular-memory-stats>
         {% for (var chunk in o.htmlWebpackPlugin.assets) { %}
         <!-- <script src="{%=o.htmlWebpackPlugin.assets[chunk]%}"></script> -->
         {% } %}

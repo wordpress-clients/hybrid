@@ -7,6 +7,7 @@ require 'angular-ui-router'
 require 'angular-translate'
 require 'angular-cache'
 require 'angular-moment'
+require 'angular-memory-stats'
 require 'ionic/js/ionic'
 require 'ionic/js/ionic-angular'
 require 'moment'
@@ -14,7 +15,7 @@ require 'moment'
 require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
 
 # Style entry point
-require './scss/bootstrap'
+require './scss/bootstrap_twbs_support'
 require 'angular-material/angular-material.css'
 
 # App loader
@@ -27,6 +28,7 @@ window.WPHC = {}
 module.exports = app = angular.module 'wordpress-hybrid-client', [
   'ionic'
   'ngMaterial'
+  'angular-memory-stats'
   'ui.router'
   'masonry'
   'wp-api-angularjs'
@@ -103,13 +105,26 @@ app.config ($WPHCConfig, DSCacheFactoryProvider) ->
     DSCacheFactoryProvider.setCacheDefaults $WPHCConfig.cache.data
 
 ###
-PALETTE CONF
+STYLE CONF
 ###
 app.config ($WPHCConfig, $mdThemingProvider) ->
-    $mdThemingProvider.definePalette 'WPHCPalette', $WPHCConfig.palette
+    $mdThemingProvider.definePalette 'WPHCPalette', $WPHCConfig.style.palette
     $mdThemingProvider
     .theme('default')
     .primaryColor('WPHCPalette')
+
+    if $WPHCConfig.style.googleFont
+        window.WebFontConfig =
+            google:
+                families: $WPHCConfig.style.googleFont.families
+        wf = document.createElement 'script'
+        wf.src = if 'https:' == document.location.protocol then 'https' else 'http'
+        wf.src += '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js'
+        wf.type = 'text/javascript'
+        wf.async = 'true'
+        s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore wf, s
+        document.body.style.fontFamily = $WPHCConfig.style.googleFont.fontFamily
 
 ###
 MAIN CONTROLLER

@@ -6,7 +6,6 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <title>{%=o.htmlWebpackPlugin.options.pkg.title %}</title>
         <link href="css/appLoader.css" rel="stylesheet">
-        <link href="{%= o.htmlWebpackPlugin.assets['css'].name %}" rel="stylesheet">
         <script>
             var wordpressHybridClient = {};
             wordpressHybridClient.version = "{%= o.htmlWebpackPlugin.options.pkg.version %}";
@@ -39,7 +38,7 @@
         <ion-nav-view></ion-nav-view>
         <angular-memory-stats></angular-memory-stats>
         {% for (var chunk in o.htmlWebpackPlugin.assets) { %}
-        <!-- <script src="{%=o.htmlWebpackPlugin.assets[chunk]%}"></script> -->
+        <!-- <script src="{%=o.htmlWebpackPlugin.assets[chunk].name%}"></script>-->
         {% } %}
     </body>
     <!-- {%= o.htmlWebpackPlugin.options.pkg.name + ' v' + o.htmlWebpackPlugin.options.pkg.version + ' size: ' + o.htmlWebpackPlugin.assets['main'].size + ' built on ' + new Date() %} -->

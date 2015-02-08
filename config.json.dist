@@ -22,7 +22,7 @@
     "cache": {
         "views": 10,
         "data": {
-            "capacity": 1000,
+            "capacity": 100,
             "maxAge": 21600000,
             "deleteOnExpire": "aggressive",
             "recycleFreq": 1000,
@@ -33,7 +33,8 @@
     },
     "post": {
         "cache": {
-            "maxAge": 172800000
+            "maxAge": 172800000,
+            "capacity": 10
         }
     },
     "taxonomies": {
@@ -66,8 +67,8 @@
     "style": {
         "bootstrapSupport": true,
         "googleFont": {
-            "families": ["Lobster::latin"],
-            "fontFamily": "'Lobster', cursive"
+            "families": ["Raleway::latin"],
+            "fontFamily": "'Raleway', sans-serif"
         },
         "palette": {
             "50": "ffebee",

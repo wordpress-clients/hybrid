@@ -1,6 +1,7 @@
 wphc-posts {
     .card {
         margin: 0 0 20px;
+        cursor: pointer;
     }
     @media (max-width: $grid-responsive-sm-break) {
         .card {

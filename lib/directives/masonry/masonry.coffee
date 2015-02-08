@@ -30,7 +30,7 @@ module.exports = angular.module('masonry').directive 'masonry', ($log, $timeout)
 
         $scope.$watch 'bindResize', (value, oldValue) ->
             if value is true
-                update()
+                update() if oldValue is false
                 $scope.masonry.bindResize()
             else
                 $scope.masonry.unbindResize()

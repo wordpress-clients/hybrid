@@ -1,3 +1,5 @@
+md5 = require 'MD5'
+
 module.exports = angular.module('wordpress-hybrid-client.post').factory '$WPHCPost', ($log, $wpApiPosts, $q, $WPHCConfig, DSCacheFactory) ->
     $log.info '$WPHCPost'
 
@@ -8,13 +10,14 @@ module.exports = angular.module('wordpress-hybrid-client.post').factory '$WPHCPo
 
     get: (id) ->
         deferred = $q.defer()
-        itemCache = getCache().get 'item-' + id
+        hash = md5 $WPHCConfig.api.baseUrl + id
+        itemCache = getCache().get 'item-' + hash
         $log.debug itemCache, 'Post cache'
         if itemCache
             deferred.resolve itemCache
         else
             $wpApiPosts.$get id
             .then (response) ->
-                getCache().put 'item-' + id, response
+                getCache().put 'item-' + hash, response
                 deferred.resolve response
         deferred.promise

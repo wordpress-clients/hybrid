@@ -1,3 +1,5 @@
+md5 = require 'MD5'
+
 module.exports = angular.module('wordpress-hybrid-client.taxonomies').factory '$WPHCTaxonomies', ($log, $filter, $wpApiTaxonomies, $q, $WPHCConfig, DSCacheFactory) ->
     $log.info '$WPHCTaxonomies'
 
@@ -23,13 +25,14 @@ module.exports = angular.module('wordpress-hybrid-client.taxonomies').factory '$
 
     getList: (term) ->
         deferred = $q.defer()
-        listCache = getCache().get 'list-' + term
+        hash = md5 $WPHCConfig.api.baseUrl + term
+        listCache = getCache().get 'list-' + hash
         $log.debug listCache, 'Taxo cache'
         if listCache
             deferred.resolve listCache
         else
             $wpApiTaxonomies.$getTermList term
             .then (response) ->
-                getCache().put 'list-' + term, response
+                getCache().put 'list-' + hash, response
                 deferred.resolve response
         deferred.promise

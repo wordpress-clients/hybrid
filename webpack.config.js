@@ -6,7 +6,7 @@ var path = require('path'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
-HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function (compiler, webpackStatsJson) {
+HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function(compiler, webpackStatsJson) {
     var assets = {};
     for (var chunk in webpackStatsJson.assetsByChunkName) {
         var chunkValue = webpackStatsJson.assetsByChunkName[chunk];
@@ -66,7 +66,7 @@ module.exports = {
             loader: "coffee"
         }, {
             test: /\.scss$/,
-            loader: "file?name=css/style-[hash:6].css!autoprefixer!sass?outputStyle=expanded&recursive=sass-json-vars"
+            loader: "style!css!autoprefixer!sass?outputStyle=expanded&recursive=sass-json-vars"
         }, {
             test: [/ionicons\.svg/, /ionicons\.eot/, /ionicons\.ttf/, /ionicons\.woff/],
             loader: 'file?name=fonts/[name].[ext]'

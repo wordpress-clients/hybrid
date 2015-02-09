@@ -2,6 +2,7 @@
     "api": {
         "baseUrl": ""
     },
+    "env": "dev",
     "menu": {
         "wordpress": {
             "menu.home": "public.home",

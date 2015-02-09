@@ -32,4 +32,5 @@ platforms/
 plugins/
 bower_components/
 config.json
+config.prod.json
 www/

@@ -35,9 +35,6 @@ gulp.task('cleanDist', function() {
 
 gulp.task("build:prod", function(callback) {
     var webpackConfigExtended = extend(webpackConfig, webpackProdConfig);
-    webpackConfigExtended.plugins.push(new webpack.optimize.DedupePlugin());
-    webpackConfigExtended.plugins.push(new webpack.optimize.UglifyJsPlugin());
-
     return gulp.src(webpackConfigExtended.entry)
         .pipe(gulpWebpack(webpackConfigExtended))
         // .pipe(header(banner, {

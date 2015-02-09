@@ -105,6 +105,13 @@ app.config ($WPHCConfig, DSCacheFactoryProvider) ->
     DSCacheFactoryProvider.setCacheDefaults $WPHCConfig.cache.data
 
 ###
+MEMORY STATS CONF
+###
+app.config ($WPHCConfig, angularMemoryStatsProvider) ->
+    if $WPHCConfig.env is 'prod'
+        angularMemoryStatsProvider.enable false
+
+###
 STYLE CONF
 ###
 app.config ($WPHCConfig, $mdThemingProvider) ->
@@ -145,7 +152,7 @@ require "./directives/taxonomies/taxonomies.coffee"
 ###
 CONSTANTS
 ###
-config = require "../config"
+config = if IS_PROD then require "../config.prod" else require "../config"
 app.constant '$WPHCConfig', angular.extend config, WPHC.config || {}
 
 

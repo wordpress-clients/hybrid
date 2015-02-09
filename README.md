@@ -6,6 +6,8 @@ ionic start wordpress-hybrid-client sidemenu
 cordova platform add ios
 cordova platform add android
 cp config.json.dist config.json
+# for prod build
+cp config.json.dist config.prod.json
 ```
 
 ## Run

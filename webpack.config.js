@@ -93,6 +93,9 @@ module.exports = {
         new ngAnnotatePlugin({
             add: true
         }),
-        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|fr/)
+        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|fr/),
+        new webpack.DefinePlugin({
+            IS_PROD: false
+        })
     ]
 };

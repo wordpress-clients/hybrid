@@ -1,11 +1,13 @@
 <ion-header-bar class="bar-positive">
-    <h1 class="title">{{"title.menu" | translate}}</h1>
+    <h1 class="title">{{"menu.title" | translate}}</h1>
 </ion-header-bar>
 <ion-content>
     <form ng-submit="menu.search()">
         <md-input-container>
             <label><i class="icon ion-search placeholder-icon"></i> {{'menu.search' | translate}}</label>
-            <input type="text" ng-model="menu.searchQuery">
+            <input type="text" ng-model="menu.searchQuery" wphc-input-esc />
+            <button type="button" class="button button-assertive button-outline" ng-click="menu.clearSearch()"><i class="icon ion-close"></i>
+            </button>
         </md-input-container>
     </form>
     <ion-list flex>
@@ -13,7 +15,6 @@
             {{trans | translate}}
         </ion-item>
     </ion-list>
-
 </ion-content>
 <div class="bar bar-footer bar-stable" ng-if="::menu.hasSocial">
     <div class="button-bar">

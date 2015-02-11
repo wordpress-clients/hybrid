@@ -142,11 +142,12 @@ app.controller 'WPHCMainController' , ($log) ->
 DIRECTIVES
 ###
 require "./directives/masonry/masonry.module.coffee"
+require "./directives/taxonomies/taxonomies.coffee"
 require "./directives/emptyList/emptyList.coffee"
+require "./directives/inputEsc/inputEsc.coffee"
 require "./directives/loader/loader.coffee"
 require "./directives/posts/posts.coffee"
 require "./directives/post/post.coffee"
-require "./directives/taxonomies/taxonomies.coffee"
 
 ###
 CONSTANTS

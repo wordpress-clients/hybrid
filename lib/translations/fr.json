@@ -1,14 +1,13 @@
 {
     "pullToRefresh": "Tirer pour rafraîchir!",
     "title": {
-
-        "menu": "Menu",
         "categories": "Categories",
         "category": "Categorie: {{name}}",
         "tags": "Tags",
         "tag": "Tag: {{name}}"
     },
     "menu": {
+        "title": "Menu",
         "posts": "Accueil",
         "tags": "Tags",
         "search": "Chercher",

@@ -1,13 +1,13 @@
 {
     "pullToRefresh": "Pull to refresh!",
     "title": {
-        "menu": "Menu",
         "categories": "Categories",
         "category": "Category: {{name}}",
         "tags": "Tags",
         "tag": "Tag: {{name}}"
     },
     "menu": {
+        "title": "Menu",
         "posts": "Home",
         "tags": "Tags",
         "search": "Search",

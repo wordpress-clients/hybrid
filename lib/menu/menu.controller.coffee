@@ -3,12 +3,12 @@ module.exports = angular.module('wordpress-hybrid-client.menu').controller 'WPHC
     vm = @
     vm.searchQuery = ''
     vm.hasSocial = undefined
+    vm.clearSearch = ->
+        vm.searchQuery = ''
     vm.search = ->
         if (vm.searchQuery)
             $state.go 'public.search',
                 search: vm.searchQuery
-        else
-            $state.go 'public.posts',
     vm.getWordpress = ->
         $WPHCMenu.getWordpress()
     vm.hasSocial = ->

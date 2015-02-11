@@ -45,8 +45,8 @@ module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPH
 
     $scope.$on '$ionicView.enter', () ->
         $log.debug '$ionicView.enter posts'
-        $scope.$apply ->
-            vm.viewEntered = true
+        # $scope.$apply ->
+        vm.viewEntered = true
 
     # DOES NOT WORK CORRECTLY: https://github.com/driftyco/ionic/issues/2818
     # $scope.$on '$ionicView.leave', () ->

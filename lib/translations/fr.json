@@ -1,7 +1,7 @@
 {
     "pullToRefresh": "Tirer pour rafraîchir!",
     "title": {
-        "home": "Accueil",
+
         "menu": "Menu",
         "categories": "Categories",
         "category": "Categorie: {{name}}",
@@ -9,11 +9,16 @@
         "tag": "Tag: {{name}}"
     },
     "menu": {
-        "home": "Accueil",
+        "posts": "Accueil",
         "tags": "Tags",
+        "search": "Chercher",
         "categories": "Categories"
     },
+    "search": {
+        "title": "Chercher"
+    },
     "posts": {
+        "title": "Accueil",
         "empty": "La liste est vide!"
     }
 }

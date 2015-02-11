@@ -34,7 +34,6 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   'wp-api-angularjs'
   'pascalprecht.translate'
   'angular-data.DSCacheFactory'
-  require('./home/home.module').name
   require('./taxonomies/taxonomies.module').name
   require('./post/post.module').name
   require('./posts/posts.module').name
@@ -118,7 +117,7 @@ app.config ($WPHCConfig, $mdThemingProvider) ->
     $mdThemingProvider.definePalette 'WPHCPalette', $WPHCConfig.style.palette
     $mdThemingProvider
     .theme('default')
-    .primaryColor('WPHCPalette')
+    .primaryPalette('WPHCPalette')
 
     if $WPHCConfig.style.googleFont
         window.WebFontConfig =

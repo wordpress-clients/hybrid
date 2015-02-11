@@ -5,7 +5,7 @@
     "env": "dev",
     "menu": {
         "wordpress": {
-            "menu.home": "public.home",
+            "menu.posts": "public.posts",
             "menu.categories": "public.taxonomies({ term: 'category' })",
             "menu.tags": "public.taxonomies({ term: 'post_tag' })"
         },

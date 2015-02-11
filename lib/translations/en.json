@@ -1,7 +1,6 @@
 {
     "pullToRefresh": "Pull to refresh!",
     "title": {
-        "home": "Home",
         "menu": "Menu",
         "categories": "Categories",
         "category": "Category: {{name}}",
@@ -9,11 +8,16 @@
         "tag": "Tag: {{name}}"
     },
     "menu": {
-        "home": "Home",
+        "posts": "Home",
         "tags": "Tags",
+        "search": "Search",
         "categories": "Categories"
     },
+    "search": {
+        "title": "Search"
+    },
     "posts": {
+        "title": "Home",
         "empty": "There is no posts here!"
     }
 }

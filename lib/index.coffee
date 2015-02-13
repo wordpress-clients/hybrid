@@ -106,8 +106,9 @@ app.config ($WPHCConfig, DSCacheFactoryProvider) ->
 ###
 MEMORY STATS CONF
 ###
-app.config ($WPHCConfig, angularMemoryStatsProvider) ->
+app.config ($WPHCConfig, angularMemoryStatsProvider, $compileProvider) ->
     if $WPHCConfig.env is 'prod'
+        $compileProvider.debugInfoEnabled false
         angularMemoryStatsProvider.enable false
 
 ###

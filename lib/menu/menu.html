@@ -11,13 +11,13 @@
         </md-input-container>
     </form>
     <ion-list flex>
-        <ion-item ng-repeat="(trans,route) in ::menu.getWordpress()" nav-clear menu-close ui-sref="{{route}}">
-            {{trans | translate}}
+        <ion-item ng-repeat="wordpress in ::menu.getWordpress()" ng-class="::{'item-icon-left': wordpress.icon}" nav-clear menu-close ui-sref="{{::wordpress.uiSref}}">
+            <i class="{{::wordpress.icon}}" ng-if="wordpress.icon"></i> {{::wordpress.trans | translate}}
         </ion-item>
     </ion-list>
 </ion-content>
 <div class="bar bar-footer bar-stable" ng-if="::menu.hasSocial">
     <div class="button-bar">
-        <a class="button" ng-repeat="socialNetwork in ::menu.getSocial()" target="_blank" ng-href="{{socialNetwork.url}}"><i class="ion-social-{{socialNetwork.name}}"></i></a>
+        <a class="button" ng-repeat="socialNetwork in ::menu.getSocial()" target="_blank" ng-href="{{::socialNetwork.url}}"><i class="ion-social-{{::socialNetwork.name}}"></i></a>
     </div>
 </div>

@@ -1,17 +1,26 @@
 {
     "pullToRefresh": "Pull to refresh!",
-    "title": {
-        "categories": "Categories",
-        "category": "Category: {{name}}",
-        "tags": "Tags",
-        "tag": "Tag: {{name}}"
-    },
     "menu": {
         "title": "Menu",
-        "posts": "Home",
+        "home": "Home",
         "tags": "Tags",
         "search": "Search",
         "categories": "Categories"
+    },
+    "tags": {
+        "title": "Tags"
+    },
+    "tag": {
+        "title": "Tag: {{name}}"
+    },
+    "categories": {
+        "title": "Categories"
+    },
+    "category": {
+        "title": "Category: {{name}}"
+    },
+    "home": {
+        "title": "Home"
     },
     "search": {
         "title": "Search"

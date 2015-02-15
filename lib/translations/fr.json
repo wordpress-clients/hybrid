@@ -1,17 +1,26 @@
 {
     "pullToRefresh": "Tirer pour rafraîchir!",
-    "title": {
-        "categories": "Categories",
-        "category": "Categorie: {{name}}",
-        "tags": "Tags",
-        "tag": "Tag: {{name}}"
-    },
     "menu": {
         "title": "Menu",
-        "posts": "Accueil",
+        "home": "Accueil",
         "tags": "Tags",
         "search": "Chercher",
         "categories": "Categories"
+    },
+    "tags": {
+        "title": "Tags"
+    },
+    "tag": {
+        "title": "Tag: {{name}}"
+    },
+    "categories": {
+        "title": "Categories"
+    },
+    "category": {
+        "title": "Categorie: {{name}}"
+    },
+    "home": {
+        "title": "Accueil"
     },
     "search": {
         "title": "Chercher"

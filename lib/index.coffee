@@ -160,7 +160,15 @@ app.constant '$WPHCConfig', angular.extend config, WPHC.config || {}
 ###
 RUN
 ###
-app.run () ->
+app.run ($rootScope, $log, $WPHCConfig) ->
+
+    # handling debug events
+    if $WPHCConfig.debugEnabled
+        $rootScope.$on '$stateNotFound', (event, unfoundState, fromState, fromParams) ->
+            $log.info '$stateNotFound', unfoundState
+        $rootScope.$on '$stateChangeError', (event, toState, toParams, fromState, fromParams, error) ->
+            $log.info '$stateChangeError', error
+
     # Clean up appLoading
     angular.element(document.querySelector 'html').removeClass 'app-loading'
     angular.element(document.querySelector '#appLoaderWrapper').remove()

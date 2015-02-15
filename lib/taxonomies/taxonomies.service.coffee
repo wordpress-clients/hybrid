@@ -12,9 +12,9 @@ module.exports = angular.module('wordpress-hybrid-client.taxonomies').factory '$
         trans = ''
         switch term
             when "post_tag"
-                trans = if slug then 'title.tag' else 'title.tags'
+                trans = if slug then 'tag.title' else 'tags.title'
             when "category"
-                trans = if slug then 'title.category' else 'title.categories'
+                trans = if slug then 'category.title' else 'categories.title'
         $log.debug trans, term, '$WPHCTaxonomies getTitle'
 
         if slug

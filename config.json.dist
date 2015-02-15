@@ -4,11 +4,19 @@
     },
     "env": "dev",
     "menu": {
-        "wordpress": {
-            "menu.posts": "public.posts",
-            "menu.categories": "public.taxonomies({ term: 'category' })",
-            "menu.tags": "public.taxonomies({ term: 'post_tag' })"
-        },
+        "wordpress": [{
+            "trans": "menu.home",
+            "uiSref": "public.posts",
+            "icon": "icon ion-home"
+        }, {
+            "trans": "menu.categories",
+            "uiSref": "public.taxonomies({ term: 'category' })",
+            "icon": "icon ion-folder"
+        }, {
+            "trans": "menu.tags",
+            "uiSref": "public.taxonomies({ term: 'post_tag' })",
+            "icon": "icon ion-pricetags"
+        }],
         "social": [{
             "name": "facebook",
             "url": "https://www.facebook.com/julienrenauxblog"
@@ -49,7 +57,7 @@
         "orderby": "desc",
         "post_status": "publish",
         "cache": {
-            "capacity": 100,
+            "capacity": 25,
             "maxAge": 86400000
         }
     },

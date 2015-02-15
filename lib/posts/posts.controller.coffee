@@ -27,7 +27,7 @@ module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPH
     vm = @
     vm.page = 1
     vm.posts = undefined
-    vm.title = if $state.current.name is 'public.search' then 'search.title' else 'posts.title'
+    vm.title = if $state.current.name is 'public.search' then 'search.title' else 'home.title'
     vm.getQuery = () ->
         query = $WPHCPosts.getQuery vm.page
         if $state.current.name is 'public.search'

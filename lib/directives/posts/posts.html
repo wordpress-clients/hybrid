@@ -5,7 +5,7 @@
                 <img ng-src="{{post.featured_image.attachment_meta.sizes.medium.url}}">
             </div>
             <div class="item item-text-wrap">
-                <h1 class="item-title">{{post.title}}</h1>
+                <h1 class="item-title" ng-bind-html="post.title"></h1>
             </div>
             <div class="item item-author" ng-class="{'item-avatar' : post.author.avatar}">
                 <img src="{{post.author.avatar}}" ng-if="post.author.avatar">
@@ -15,13 +15,13 @@
             <div class="item item-text-wrap" ng-bind-html="post.excerpt"></div>
         </div>
 
-        <button ng-click="showTaxonomies('title.categories', post.terms.category, 'category')">
+        <!-- <button ng-click="showTaxonomies('title.categories', post.terms.category, 'category')">
             <i class="icon ion-folder"></i>
             <span class="badge badge-positive">{{post.terms.category.length}}</span>
         </button>
         <button ng-click="showTaxonomies('title.tags', post.terms.post_tag, 'post_tag')">
             <i class="icon ion-pricetags"></i>
             <span class="badge badge-positive">{{post.terms.post_tag.length}}</span>
-        </button>
+        </button> -->
     </div>
 </div>

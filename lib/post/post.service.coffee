@@ -12,7 +12,7 @@ module.exports = angular.module('wordpress-hybrid-client.post').factory '$WPHCPo
         deferred = $q.defer()
         hash = md5 $WPHCConfig.api.baseUrl + id
         itemCache = getCache().get 'item-' + hash
-        $log.debug itemCache, 'Post cache'
+        $log.debug 'Post cache', itemCache
         if itemCache
             deferred.resolve itemCache
         else

@@ -8,5 +8,8 @@ module.exports = angular.module('wordpress-hybrid-client.post').controller 'WPHC
         .then (response) ->
             vm.post = response.data
             vm.post.content = $sce.trustAsHtml vm.post.content
+        .catch ->
+            $log.debug 'WPHCPostController post catch'
+            vm.post = {}
 
     return vm

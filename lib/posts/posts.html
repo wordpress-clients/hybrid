@@ -4,6 +4,6 @@
     <ion-content has-bouncing="true" class="padding">
         <ion-refresher pulling-text="{{ 'pullToRefresh' | translate}}" on-refresh="posts.doRefresh()"></ion-refresher>
         <wphc-posts posts="posts.posts" is-on="posts.viewEntered"></wphc-posts>
-        <ion-infinite-scroll ng-if="!posts.isPaginationOver" on-infinite="posts.loadMore()" distance="1%"></ion-infinite-scroll>
+        <ion-infinite-scroll ng-if="!posts.isPaginationOver" on-infinite="posts.loadMore()" distance="1%">test</ion-infinite-scroll>
     </ion-content>
 </ion-view>

@@ -5,9 +5,10 @@
 @description
 Display a post
 @example
-         < pre >
+          < pre >
 </pre >
 ###
+require "./style.scss"
 module.exports = angular.module('wordpress-hybrid-client').directive 'wphcPost', ($log) ->
     restrict: 'E'
     transclude: true

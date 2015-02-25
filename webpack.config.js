@@ -6,7 +6,7 @@ var path = require('path'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
-HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function(compiler, webpackStatsJson) {
+HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function (compiler, webpackStatsJson) {
     var assets = {};
     for (var chunk in webpackStatsJson.assetsByChunkName) {
         var chunkValue = webpackStatsJson.assetsByChunkName[chunk];
@@ -36,7 +36,7 @@ HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function(compiler, webpack
 module.exports = {
     entry: path.join(libPath, 'index.coffee'),
     output: {
-        path: wwwPath,
+        path: path.join(wwwPath, 'js'),
         filename: 'bundle-[hash:6].js'
     },
     module: {

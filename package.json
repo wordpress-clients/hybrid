@@ -1,75 +1,74 @@
 {
-    "name": "wordpress-hybrid-client",
-    "version": "0.0.1",
-    "title": "wordpress-hybrid-client",
-    "description": "AngularJS client using the new Material Design and based on the json-rest-api plugin: https://wordpress.org/plugins/json-rest-api/ with CORS enabled.",
-    "main": "index.js",
-    "script": {
-        "install": "bower install",
-        "update": "bower update"
-    },
-    "keywords": [
-        "wp-api",
-        "angular",
-        "angularjs",
-        "rest",
-        "restfull",
-        "hybrid",
-        "material design",
-        "client"
-    ],
-    "author": "Julien Renaux <contact@julienrenaux.fr>",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/shprink/wordpress-hybrid-client"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/shprink/wordpress-hybrid-client/issues"
-    },
-    "homepage": "https://github.com/shprink/wordpress-hybrid-client",
-    "devDependencies": {
-        "angular": "~1.3.13",
-        "angular-animate": "^1.3.13",
-        "angular-aria": "^1.3.13",
-        "angular-cache": "^3.2.4",
-        "angular-moment": "^0.9.0",
-        "angular-sanitize": "^1.3.13",
-        "angular-translate": "^2.5.2",
-        "angular-ui-router": "^0.2.13",
-        "autoprefixer-loader": "^1.1.0",
-        "bootstrap-sass": "^3.3.3",
-        "clone": "^0.2.0",
-        "coffee-loader": "^0.7.2",
-        "coffee-script": "^1.8.0",
-        "css-loader": "git://github.com/shprink/css-loader",
-        "exports-loader": "^0.6.2",
-        "expose-loader": "^0.6.0",
-        "file-loader": "^0.8.1",
-        "gulp": "^3.8.10",
-        "gulp-header": "^1.2.2",
-        "gulp-minify-css": "^0.4.4",
-        "gulp-rimraf": "^0.1.1",
-        "gulp-util": "^3.0.1",
-        "gulp-webpack": "^1.1.2",
-        "hammerjs": "^2.0.4",
-        "html-loader": "^0.2.3",
-        "html-webpack-plugin": "^1.1.0",
-        "imagesloaded": "^3.1.8",
-        "json-loader": "^0.5.1",
-        "moment": "^2.9.0",
-        "ng-annotate": "^0.15.2",
-        "ng-annotate-webpack-plugin": "^0.1.2",
-        "path": "^0.4.9",
-        "sass-loader": "^0.3.1",
-        "shprink-css-loader": "git://github.com/shprink/css-loader",
-        "style-loader": "^0.8.3",
-        "util": "^0.10.3",
-        "webpack": "^1.4.13",
-        "wp-api-angularjs": "^1.0.0-rc3"
-    },
-    "dependencies": {
-        "MD5": "^1.2.1",
-        "angular-memory-stats": "^1.0.0-rc4"
-    }
+  "name": "wordpress-hybrid-client",
+  "version": "0.0.1",
+  "title": "wordpress-hybrid-client",
+  "description": "AngularJS client using the new Material Design and based on the json-rest-api plugin: https://wordpress.org/plugins/json-rest-api/ with CORS enabled.",
+  "main": "index.js",
+  "script": {
+    "install": "bower install",
+    "update": "bower update"
+  },
+  "keywords": [
+    "wp-api",
+    "angular",
+    "angularjs",
+    "rest",
+    "restfull",
+    "hybrid",
+    "material design",
+    "client"
+  ],
+  "author": "Julien Renaux <contact@julienrenaux.fr>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shprink/wordpress-hybrid-client"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shprink/wordpress-hybrid-client/issues"
+  },
+  "homepage": "https://github.com/shprink/wordpress-hybrid-client",
+  "devDependencies": {
+    "autoprefixer-loader": "^1.1.0",
+    "clone": "^0.2.0",
+    "coffee-loader": "^0.7.2",
+    "coffee-script": "^1.8.0",
+    "css-loader": "^0.9.1",
+    "exports-loader": "^0.6.2",
+    "expose-loader": "^0.6.0",
+    "file-loader": "^0.8.1",
+    "gulp": "^3.8.10",
+    "gulp-header": "^1.2.2",
+    "gulp-minify-css": "^0.4.4",
+    "gulp-rimraf": "^0.1.1",
+    "gulp-util": "^3.0.1",
+    "gulp-webpack": "^1.1.2",
+    "html-loader": "^0.2.3",
+    "html-webpack-plugin": "^1.1.0",
+    "json-loader": "^0.5.1",
+    "ng-annotate": "^0.15.2",
+    "ng-annotate-webpack-plugin": "^0.1.2",
+    "path": "^0.4.9",
+    "sass-loader": "^0.3.1",
+    "style-loader": "^0.8.3",
+    "util": "^0.10.3",
+    "webpack": "^1.4.13"
+  },
+  "dependencies": {
+    "angular": "~1.3.13",
+    "angular-animate": "^1.3.13",
+    "angular-material": "^0.8.0",
+    "angular-aria": "^1.3.13",
+    "angular-cache": "^3.2.4",
+    "angular-moment": "^0.9.0",
+    "angular-sanitize": "^1.3.13",
+    "angular-translate": "^2.5.2",
+    "angular-ui-router": "^0.2.13",
+    "bootstrap-sass": "^3.3.3",
+    "MD5": "^1.2.1",
+    "moment": "^2.9.0",
+    "imagesloaded": "^3.1.8",
+    "angular-memory-stats": "^1.0.0-rc4",
+    "wp-api-angularjs": "^1.0.0-rc3"
+  }
 }

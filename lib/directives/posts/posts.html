@@ -12,7 +12,7 @@
                 <h2>{{post.author.name}}</h2>
                 {{post.date | date : format : timezone}}
             </div>
-            <div class="item item-text-wrap" ng-bind-html="post.excerpt"></div>
+            <div class="item item-text-wrap" ng-if="post.excerpt" ng-bind-html="post.excerpt"></div>
         </div>
 
         <!-- <button ng-click="showTaxonomies('title.categories', post.terms.category, 'category')">

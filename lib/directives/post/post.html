@@ -9,5 +9,7 @@
         {{post.date | date : format : timezone}}
     </div>
     <hr/>
+    <span class="label label-info" ng-repeat="tag in post.terms.post_tag">{{tag.name}}</span>
+    <span class="label label-info" ng-repeat="category in post.terms.category">{{category.name}}</span>
     <div ng-bind-html="post.content"></div>
 </div>

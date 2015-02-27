@@ -2,7 +2,7 @@ require 'angular'
 require 'angular-animate'
 require 'angular-sanitize'
 require 'angular-aria'
-require 'angular-material/angular-material'
+# require 'angular-material/angular-material'
 require 'angular-ui-router'
 require 'angular-translate'
 require 'angular-cache'
@@ -16,7 +16,7 @@ require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
 
 # Style entry point
 require './scss/bootstrap_twbs_support'
-require 'angular-material/angular-material.css'
+# require 'angular-material/angular-material.css'
 
 # App loader
 require '!file?name=css/[name].css!autoprefixer!sass!./appLoader/appLoader.scss'
@@ -27,7 +27,7 @@ window.WPHC = {}
 
 module.exports = app = angular.module 'wordpress-hybrid-client', [
   'ionic'
-  'ngMaterial'
+  # 'ngMaterial'
   'angular-memory-stats'
   'ui.router'
   'masonry'
@@ -114,12 +114,7 @@ app.config ($WPHCConfig, angularMemoryStatsProvider, $compileProvider) ->
 ###
 STYLE CONF
 ###
-app.config ($WPHCConfig, $mdThemingProvider) ->
-    $mdThemingProvider.definePalette 'WPHCPalette', $WPHCConfig.style.palette
-    $mdThemingProvider
-    .theme('default')
-    .primaryPalette('WPHCPalette')
-
+app.config ($WPHCConfig) ->
     if $WPHCConfig.style.googleFont
         window.WebFontConfig =
             google:

@@ -7,9 +7,9 @@ ion-side-menu {
             line-height: 45px;
         }
     }
-    md-input-container {
+    form {
         padding-bottom: 0;
-        &.md-input-has-value {
+        &.input-has-value {
             button {
                 animation-name: fadeInRight;
                 animation-duration: 1s;
@@ -25,6 +25,9 @@ ion-side-menu {
             top: 7px !important;
             right: 5px;
             // display: none !important;
+        }
+        > input[type="text"] {
+            height: 50px;
         }
     }
     .md-input-has-value {

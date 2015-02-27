@@ -4,6 +4,7 @@ module.exports = angular.module('wordpress-hybrid-client.menu').controller 'WPHC
     vm.searchQuery = ''
     vm.hasSocial = undefined
     vm.clearSearch = ->
+        console.log 'log'
         vm.searchQuery = ''
     vm.search = ->
         if (vm.searchQuery)

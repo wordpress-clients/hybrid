@@ -2,15 +2,13 @@
     <h1 class="title">{{"menu.title" | translate}}</h1>
 </ion-header-bar>
 <ion-content has-bouncing="true">
-    <form ng-submit="menu.search()">
-        <md-input-container>
-            <label><i class="icon ion-search placeholder-icon"></i> {{'menu.search' | translate}}</label>
-            <input type="text" ng-model="menu.searchQuery" wphc-input-esc />
+
+    <ion-list flex>
+        <form ng-submit="menu.search()" class="item item-input" ng-class="{'input-has-value' : menu.searchQuery}">
+            <input type="text" ng-model="menu.searchQuery" wphc-input-esc placeholder="{{'menu.search' | translate}}" />
             <button type="button" class="button button-assertive button-outline" ng-click="menu.clearSearch()"><i class="icon ion-close"></i>
             </button>
-        </md-input-container>
-    </form>
-    <ion-list flex>
+        </form>
         <ion-item ng-repeat="wordpress in ::menu.getWordpress()" ng-class="::{'item-icon-left': wordpress.icon}" nav-clear menu-close ui-sref="{{::wordpress.uiSref}}">
             <i class="{{::wordpress.icon}}" ng-if="wordpress.icon"></i> {{::wordpress.trans | translate}}
         </ion-item>

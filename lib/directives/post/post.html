@@ -8,8 +8,13 @@
         <h2>{{post.author.name}}</h2>
         {{post.date | date : format : timezone}}
     </div>
-    <hr/>
-    <span class="label label-info" ng-repeat="tag in post.terms.post_tag">{{tag.name}}</span>
-    <span class="label label-info" ng-repeat="category in post.terms.category">{{category.name}}</span>
+    <div class="taxonomies-wrapper">
+        <label>{{'menu.categories' | translate}} : </label>
+        <button class="button button-small button-light" ng-repeat="category in post.terms.category" ui-sref="public.taxonomies.slug({ slug: category.slug, term: 'category' })">{{category.name}}</button>
+    </div>
+    <div class="taxonomies-wrapper">
+        <label>{{'menu.tags' | translate}} : </label>
+        <button class="button button-small button-light" ng-repeat="tag in post.terms.post_tag" ui-sref="public.taxonomies.slug({ slug: tag.slug, term: 'post_tag' })">{{tag.name}}</button>
+    </div>
     <div ng-bind-html="post.content"></div>
 </div>

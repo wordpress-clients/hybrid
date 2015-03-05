@@ -22,11 +22,9 @@ require './scss/bootstrap_twbs_support'
 require '!file?name=css/[name].css!autoprefixer!sass!./appLoader/appLoader.scss'
 require '!file?name=js/[name].js!./appLoader/appLoader.js'
 
-# Create namespace
-window.WPHC = {}
-
 module.exports = app = angular.module 'wordpress-hybrid-client', [
   'ionic'
+  require('./config').name
   # 'ngMaterial'
   'angular-memory-stats'
   'ui.router'
@@ -38,6 +36,8 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   require('./post/post.module').name
   require('./posts/posts.module').name
   require('./menu/menu.module').name
+  require('./analytics/analytics.module').name
+  require('./cordova/cordova.module').name
 ]
 
 app.config ($stateProvider) ->
@@ -144,13 +144,6 @@ require "./directives/inputEsc/inputEsc.coffee"
 require "./directives/loader/loader.coffee"
 require "./directives/posts/posts.coffee"
 require "./directives/post/post.coffee"
-
-###
-CONSTANTS
-###
-config = if IS_PROD then require "../config.prod" else require "../config"
-app.constant '$WPHCConfig', angular.extend config, WPHC.config || {}
-
 
 ###
 RUN

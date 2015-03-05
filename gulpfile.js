@@ -25,21 +25,25 @@ var banner = ['/**',
 ].join('\n');
 
 gulp.task('default', ['build']);
-gulp.task('build', ['cleanDist', 'build:prod']);
+gulp.task('build', ['cleanWww', 'webpack:dev']);
+gulp.task('build:prod', ['cleanWww', 'webpack:prod']);
 
-gulp.task('cleanDist', function() {
+gulp.task('cleanWww', function() {
     return gulp.src(wwwPath, {
         read: false
     }).pipe(rimraf());
 });
 
-gulp.task("build:prod", function(callback) {
+gulp.task("webpack:dev", function(callback) {
+    return gulp.src(webpackConfig.entry)
+        .pipe(gulpWebpack(webpackConfig))
+        .pipe(gulp.dest(wwwPath));
+});
+
+gulp.task("webpack:prod", function(callback) {
     var webpackConfigExtended = extend(webpackConfig, webpackProdConfig);
     return gulp.src(webpackConfigExtended.entry)
         .pipe(gulpWebpack(webpackConfigExtended))
-        // .pipe(header(banner, {
-        //     pkg: pkg
-        // }))
         .pipe(gulp.dest(wwwPath));
 });
 

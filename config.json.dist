@@ -3,6 +3,7 @@
         "baseUrl": ""
     },
     "env": "dev",
+    "debugEnabled" : false,
     "menu": {
         "wordpress": [{
             "trans": "menu.home",
@@ -78,6 +79,16 @@
         "googleFont": {
             "families": ["Raleway::latin"],
             "fontFamily": "'Raleway', sans-serif"
+        }
+    },
+    "analytics": {
+        "trackingId": "",
+        "userId": "",
+        "virtualPageTracking": true
+    },
+    "cordova": {
+        "statubar": {
+            "show": true
         }
     }
 }

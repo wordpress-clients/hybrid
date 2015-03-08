@@ -87,11 +87,6 @@
         "virtualPageTracking": true
     },
     "cordova": {
-        "android": {
-            "keystorePath": "~/.ssh/",
-            "keyAlias": "",
-            "appName": ""
-        },
         "statubar": {
             "show": true
         }

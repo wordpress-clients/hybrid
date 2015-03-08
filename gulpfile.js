@@ -27,7 +27,7 @@ var banner = ['/**',
 
 gulp.task('default', ['build']);
 gulp.task('build', ['cleanWww', 'webpack:dev']);
-gulp.task('build:prod', ['cleanWww', 'webpack:prod', 'android:signature']);
+gulp.task('build:prod', ['cleanWww', 'webpack:prod']);
 
 gulp.task('cleanWww', function() {
     return gulp.src(wwwPath, {
@@ -52,13 +52,4 @@ gulp.task('minify-css', function() {
     return gulp.src(path.join(wwwPath, 'css/*.css'))
         .pipe(minifyCSS())
         .pipe(gulp.dest(path.join(wwwPath, 'css')));
-});
-
-gulp.task('android:signature', function(callback) {
-    configProd = require("./config.prod.json");
-    var keystorePath = configProd.cordova.android.keystorePath;
-    var keyAlias = configProd.cordova.android.keyAlias;
-    var appName = configProd.cordova.android.appName;
-    console.log("[RUNNING]: jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore " + keystorePath + " " + appName + ".apk " + keyAlias);
-    exec("jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore " + keystorePath + " " + appName + ".apk " + keyAlias, callback);
 });

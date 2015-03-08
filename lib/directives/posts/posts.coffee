@@ -35,6 +35,7 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcPosts'
 
         $scope.masonryOptions =
             gutter: 20
+            transitionDuration: 0
             isResizeBound: false
 
         $scope.$on '$destroy', () ->

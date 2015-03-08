@@ -32,7 +32,10 @@ engine/
 node_modules/
 platforms/
 plugins/
+build/
 bower_components/
 config.json
 config.prod.json
 www/
+*.keystore
+release.sh

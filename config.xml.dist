@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<widget id="com.shprinkinc.wordpresshybridclient" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>wordpress-hybrid-client</name>
+<widget id="YourAppId" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>YourAppName</name>
     <description>
-        AngularJS client using Ionic Framework and based on the json-rest-api plugin: https://wordpress.org/plugins/json-rest-api/ with CORS enabled.
+        Your description.
     </description>
-    <author email="contact@julienrenaux.fr" href="http://julienrenaux.fr/">
-        Julien Renaux
+    <author email="youEmail@" href="yourUrl">
+        YourName
     </author>
     <content src="index.html" />
     <access origin="*" />

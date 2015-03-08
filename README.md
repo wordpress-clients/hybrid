@@ -25,6 +25,10 @@ gulp
 ionic serve --lab
 ```
 
+# Publish your app
+
+http://developer.android.com/tools/publishing/app-signing.html#cert
+
 ## Contribute
 
 ```

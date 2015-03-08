@@ -35,3 +35,9 @@ ion-header-bar {
 .scroll-refresher {
     top: -75px;
 }
+.item {
+    p {
+        color: #333;
+        line-height: $line-height-small;
+    }
+}

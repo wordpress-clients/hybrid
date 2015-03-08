@@ -2,7 +2,7 @@
     "name": "wordpress-hybrid-client",
     "private": "true",
     "dependencies": {
-        "ionic": "driftyco/ionic-bower#1.0.0-beta.14",
+        "ionic": "driftyco/ionic-bower#v1.0.0-beta.14",
         "masonry": "~3.2.2"
     }
 }

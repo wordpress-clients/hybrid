@@ -6,6 +6,5 @@ module.exports = app = angular.module 'wordpress-hybrid-client.cordova', [
 ]
 
 require './cordova.statusbar'
-require './cordova.analytics'
 require './cordova.splashscreen'
 require './cordova.network-information'

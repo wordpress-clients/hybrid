@@ -1,10 +1,10 @@
 <div class="post padding">
-    <div class="item item-image" ng-if="post.featured_image.is_image">
-        <img ng-src="{{post.featured_image.attachment_meta.sizes.medium.url}}">
+    <div class="item item-image" ng-if="::post.featured_image.is_image" ng-style="::{'background-image': 'url({{post.featured_image.attachment_meta.sizes.medium.url}})'}">
+        <div class="img-border"></div>
+        <h1 class="item-title" ng-bind-html="::post.title"></h1>
     </div>
-    <h1 class="item-title">{{post.title}}</h1>
-    <div class="item item-author" ng-class="{'item-avatar' : post.author.avatar}">
-        <img src="{{post.author.avatar}}" ng-if="post.author.avatar">
+    <div class="item item-author" ng-class="::{'item-avatar' : post.author.avatar}">
+        <img src="{{::post.author.avatar}}" ng-if="::post.author.avatar">
         <h2>{{post.author.name}}</h2>
         {{post.date | date : format : timezone}}
     </div>
@@ -16,5 +16,5 @@
         <label>{{'menu.tags' | translate}} : </label>
         <button class="button button-small button-light" ng-repeat="tag in post.terms.post_tag" ui-sref="public.taxonomies.slug({ slug: tag.slug, term: 'post_tag' })">{{tag.name}}</button>
     </div>
-    <div ng-bind-html="post.content"></div>
+    <div ng-if="::post.excerpt" ng-bind-html="::post.content"></div>
 </div>

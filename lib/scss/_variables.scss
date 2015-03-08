@@ -40,8 +40,26 @@ $grid-responsive-xl-break: 1450px !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../../bower_components/ionic/fonts" !default;
 $font-family-base: inherit;
-$base-background-color: #eee !default;
+$base-background-color: white !default;
 $base-color: #333 !default;
+// Loader
+// ------------------------------
+$loader-width: 50px;
+$loader-height: 50px;
+$loader-zIndex: 9999;
+$loader-bg: $base-background-color;
+$loader-stroke: $positive;
+$loader-fill: $positive;
+// Post
+// ------------------------------
+$post-title-size: 24px;
+$post-title-color: $base-color;
+$post-img-height: 200px;
+$post-img-bg: white;
+$post-img-title-size: $post-title-size;
+$post-img-title-padding: 20px;
+$post-img-title-color: white;
+$post-img-title-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 // Item
 // ------------------------------
 // $item-default-text: red;

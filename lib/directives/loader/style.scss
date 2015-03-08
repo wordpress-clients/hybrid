@@ -1,0 +1,13 @@
+@import "../../scss/variables.scss";
+@import "ionic/scss/variables.scss";
+.wphc-loader {
+    background-color: $loader-bg;
+    z-index: $loader-zIndex;
+    position: absolute;
+    .spinner svg {
+        width: $loader-width;
+        height: $loader-height;
+        stroke: $loader-stroke;
+        fill: $loader-fill;
+    }
+}

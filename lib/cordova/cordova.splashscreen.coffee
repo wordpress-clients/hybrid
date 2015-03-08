@@ -4,4 +4,4 @@ module.exports = angular.module 'wordpress-hybrid-client.cordova'
             return
         $log.info 'cordova splashscreen'
 
-        $cordovaSplashscreen.show()
+        $cordovaSplashscreen.hide()

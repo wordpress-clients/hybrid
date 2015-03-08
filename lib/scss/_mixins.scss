@@ -12,3 +12,45 @@
     background: radial-gradient(center, circle cover, $from 0%, $to 100%);
     background-color: $from;
 }
+@mixin post-item($img-border-path) {
+    h1 {
+        text-align: left;
+        font-size: $post-title-size;
+        color: $post-title-color;
+    }
+    .item-image {
+        height: $post-img-height;
+        background-color: $post-img-bg;
+        background-size: cover;
+        position: relative;
+        .img-border {
+            background: url("#{$img-border-path}") bottom left repeat-x;
+            border-bottom-color: rgba(0,0,0,.4);
+            border: 1px solid #000;
+            border-color: rgba(0, 0, 0, .25);
+            border-top-color: rgba(0, 0, 0, .1);
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        > h1 {
+            position: absolute;
+            color: $post-img-title-color;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: $post-img-title-padding;
+            font-size: $post-img-title-size;
+            font-weight: bold;
+            white-space: normal;
+            text-shadow: $post-img-title-shadow;
+        }
+    }
+    .item-footer {
+        text-align: right;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}

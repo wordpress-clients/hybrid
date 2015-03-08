@@ -1,5 +1,6 @@
 @import "../../scss/variables.scss";
 @import "ionic/scss/variables.scss";
+@import "../../scss/mixins.scss";
 .post {
     .item-author {
         background: none;
@@ -19,4 +20,5 @@
             line-height: $button-small-height - $button-border-width - 1;
         }
     }
+    @include post-item("../../img/post-img-border.png");
 }

@@ -5,9 +5,10 @@
 @description
 A simple loader
 @example
-  < pre >
+       < pre >
 </pre >
 ###
+require "./style.scss"
 module.exports = angular.module('wordpress-hybrid-client').directive 'wphcLoader', () ->
     restrict: 'E'
     transclude: true

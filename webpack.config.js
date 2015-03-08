@@ -6,7 +6,7 @@ var path = require('path'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
-HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function (compiler, webpackStatsJson) {
+HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function(compiler, webpackStatsJson) {
     var assets = {};
     for (var chunk in webpackStatsJson.assetsByChunkName) {
         var chunkValue = webpackStatsJson.assetsByChunkName[chunk];
@@ -58,6 +58,9 @@ module.exports = {
         }, {
             test: /\.json$/,
             loader: "json"
+        }, {
+            test: /\.(png|jpg)$/,
+            loader: 'file?name=img/[name].[ext]' // inline base64 URLs for <=10kb images, direct URLs for the rest
         }, {
             test: /\.css$/,
             loader: "style!css"

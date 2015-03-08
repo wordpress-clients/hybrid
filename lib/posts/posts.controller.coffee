@@ -1,4 +1,4 @@
-module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPHCPostsController', ($log, $scope, $WPHCPosts, $q, $state) ->
+module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPHCPostsController', ($log, $scope, $WPHCPosts, $q, $state, $timeout) ->
     $log.info 'WPHCHomeController'
     isLoadingMore = false
     doLoadMore = () ->
@@ -42,6 +42,11 @@ module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPH
             $scope.$broadcast 'scroll.refreshComplete'
     # Make sure several call cannot be triggered at the same time
     vm.loadMore = ionic.throttle doLoadMore, 1000
+
+    $scope.$on '$ionicView.loaded', () ->
+        $timeout ->
+            vm.loadMore()
+        , 750
 
     $scope.$on '$ionicView.enter', () ->
         $log.debug '$ionicView.enter posts'

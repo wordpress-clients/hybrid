@@ -25,7 +25,17 @@ gulp
 ionic serve --lab
 ```
 
-# Publish your app
+# Generate apps
+
+## Create Apk (android)
+
+
+
+```
+ionic build android --release
+```
+
+## Publish
 
 http://developer.android.com/tools/publishing/app-signing.html#cert
 

@@ -35,17 +35,6 @@ ion-header-bar {
 .scroll-refresher {
     top: -75px;
 }
-.platform-android {
-    .bar {
-        // https://github.com/driftyco/ionic/pull/3255
-        .title {
-            padding-top: 10px;
-        }
-        .buttons {
-            top: 10px;
-        }
-    }
-}
 .item {
     p {
         color: #333;

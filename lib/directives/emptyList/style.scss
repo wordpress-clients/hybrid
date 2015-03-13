@@ -1,4 +1,9 @@
-wphc-empty-list {
+@import "../../scss/variables.scss";
+@import "ionic/scss/variables.scss";
+.wphc-empty-list {
+    background-color: $emptyList-bg;
+    z-index: $emptyList-zIndex;
+    position: absolute;
     color: #888;
     p.empty-icon {
         font-size: 110px;

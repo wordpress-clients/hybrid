@@ -46,10 +46,14 @@ $base-color: #333 !default;
 // ------------------------------
 $loader-width: 50px;
 $loader-height: 50px;
-$loader-zIndex: 9999;
+$loader-zIndex: 1002;
 $loader-bg: $base-background-color;
 $loader-stroke: $positive;
 $loader-fill: $positive;
+// Loader
+// ----------------------
+$emptyList-bg: $base-background-color;
+$emptyList-zIndex: 1001;
 // Post
 // ------------------------------
 $post-title-size: 24px;

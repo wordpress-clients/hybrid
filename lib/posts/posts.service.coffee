@@ -1,12 +1,12 @@
 md5 = require 'MD5'
 
-module.exports = angular.module('wordpress-hybrid-client.posts').factory '$WPHCPosts', ($log, $wpApiPosts, $q, $WPHCConfig, DSCacheFactory) ->
+module.exports = angular.module('wordpress-hybrid-client.posts').factory '$WPHCPosts', ($log, $wpApiPosts, $q, $WPHCConfig, CacheFactory) ->
     $log.info '$WPHCPosts'
 
     getCache = () ->
-        if DSCacheFactory.get 'posts'
-            return DSCacheFactory.get 'posts'
-        DSCacheFactory 'posts', $WPHCConfig.posts.cache
+        if CacheFactory.get 'posts'
+            return CacheFactory.get 'posts'
+        CacheFactory 'posts', $WPHCConfig.posts.cache
 
     getQuery: (page) ->
         page: page

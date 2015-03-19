@@ -1,12 +1,12 @@
 md5 = require 'MD5'
 
-module.exports = angular.module('wordpress-hybrid-client.taxonomies').factory '$WPHCTaxonomies', ($log, $filter, $wpApiTaxonomies, $q, $WPHCConfig, DSCacheFactory) ->
+module.exports = angular.module('wordpress-hybrid-client.taxonomies').factory '$WPHCTaxonomies', ($log, $filter, $wpApiTaxonomies, $q, $WPHCConfig, CacheFactory) ->
     $log.info '$WPHCTaxonomies'
 
     getCache = () ->
-        if DSCacheFactory.get 'taxonomies'
-            return DSCacheFactory.get 'taxonomies'
-        DSCacheFactory 'taxonomies', $WPHCConfig.taxonomies.cache
+        if CacheFactory.get 'taxonomies'
+            return CacheFactory.get 'taxonomies'
+        CacheFactory 'taxonomies', $WPHCConfig.taxonomies.cache
 
     getTitle: (term, slug) ->
         trans = ''

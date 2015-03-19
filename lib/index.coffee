@@ -31,7 +31,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   'masonry'
   'wp-api-angularjs'
   'pascalprecht.translate'
-  'angular-data.DSCacheFactory'
+  'angular-cache'
   require('./taxonomies/taxonomies.module').name
   require('./post/post.module').name
   require('./posts/posts.module').name
@@ -100,8 +100,8 @@ app.config ($WPHCConfig, $translateProvider) ->
 ###
 CACHE CONF
 ###
-app.config ($WPHCConfig, DSCacheFactoryProvider) ->
-    DSCacheFactoryProvider.setCacheDefaults $WPHCConfig.cache.data
+app.config ($WPHCConfig, CacheFactoryProvider) ->
+    angular.extend(CacheFactoryProvider.defaults, $WPHCConfig.cache.data)
 
 ###
 MEMORY STATS CONF

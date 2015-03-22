@@ -9,7 +9,7 @@
             <button type="button" class="button button-assertive button-outline" ng-click="menu.clearSearch()"><i class="icon ion-close"></i>
             </button>
         </form>
-        <ion-item ng-repeat="wordpress in ::menu.getWordpress()" ng-class="::{'item-icon-left': wordpress.icon}" nav-clear menu-close ui-sref="{{::wordpress.uiSref}}">
+        <ion-item ng-repeat="wordpress in ::menu.getWordpress()" ng-class="::{'item-icon-left': wordpress.icon}" nav-clear menu-close ui-sref="{{::wordpress.uiSref}}" ui-sref-active="active">
             <i class="{{::wordpress.icon}}" ng-if="wordpress.icon"></i> {{::wordpress.trans | translate}}
         </ion-item>
     </ion-list>

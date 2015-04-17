@@ -5,7 +5,7 @@
         </md-button>
     </ion-header-bar>
     <wphc-loader ng-if="!taxonomies.list.length"></wphc-loader>
-    <ion-content has-bouncing="true">
+    <ion-content >
         <wphc-taxonomies taxonomies="taxonomies.list" on-click="modal.hide()" term="taxonomies.term"></wphc-taxonomies>
     </ion-content>
 </ion-modal-view>

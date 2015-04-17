@@ -1,4 +1,4 @@
-module.exports = angular.module('wordpress-hybrid-client.post').controller 'WPHCPostController', ($log, $scope, $WPHCPost, $state, $sce, $timeout) ->
+module.exports = angular.module('wordpress-hybrid-client.post').controller 'WPHCPostController', ($log, $scope, $WPHCPost, $state, $sce, $timeout, $anchorScroll) ->
     $log.info 'WPHCPostController'
     vm = @
     vm.post = undefined
@@ -8,7 +8,6 @@ module.exports = angular.module('wordpress-hybrid-client.post').controller 'WPHC
             $WPHCPost.get $state.params.id
             .then (response) ->
                 vm.post = response.data
-                vm.post.content = $sce.trustAsHtml vm.post.content
             .catch ->
                 $log.debug 'WPHCPostController post catch'
                 vm.post = {}

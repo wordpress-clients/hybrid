@@ -1,8 +1,7 @@
 <ion-header-bar class="bar-positive">
     <h1 class="title">{{"menu.title" | translate}}</h1>
 </ion-header-bar>
-<ion-content has-bouncing="true">
-
+<ion-content>
     <ion-list flex>
         <form ng-submit="menu.search()" class="item item-input" ng-class="{'input-has-value' : menu.searchQuery}">
             <input type="text" ng-model="menu.searchQuery" wphc-input-esc placeholder="{{'menu.search' | translate}}" />
@@ -12,10 +11,11 @@
         <ion-item ng-repeat="wordpress in ::menu.getWordpress()" ng-class="::{'item-icon-left': wordpress.icon}" nav-clear menu-close ui-sref="{{::wordpress.uiSref}}" ui-sref-active="active">
             <i class="{{::wordpress.icon}}" ng-if="wordpress.icon"></i> {{::wordpress.trans | translate}}
         </ion-item>
+        <div class="item item-divider">
+            {{"menu.socialNetwork" | translate}}
+        </div>
+        <ion-item class="item item-input" ng-if="::menu.hasSocial" ng-class="::{'item-icon-left': socialNetwork.icon}" ng-repeat="socialNetwork in ::menu.getSocial()" target="_blank" ng-href="{{::socialNetwork.url}}">
+            <i class="{{::socialNetwork.icon}}"></i> {{::socialNetwork.name}}
+        </ion-item>
     </ion-list>
 </ion-content>
-<div class="bar bar-footer bar-stable" ng-if="::menu.hasSocial">
-    <div class="button-bar">
-        <a class="button" ng-repeat="socialNetwork in ::menu.getSocial()" target="_blank" ng-href="{{::socialNetwork.url}}"><i class="ion-social-{{::socialNetwork.name}}"></i></a>
-    </div>
-</div>

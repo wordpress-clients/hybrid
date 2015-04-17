@@ -10,25 +10,22 @@ wphc-posts {
     }
     @media (max-width: $grid-responsive-sm-break) {
         .card {
-            width: 100%;
-            .item-image {
-                
-            }
+            
         }
     }
     @media (min-width: $grid-responsive-sm-break) {
         .card {
-            width: calc(50% - 10px);
+            
         }
     }
     @media (min-width: $grid-responsive-lg-break) {
         .card {
-            width: calc(33% - 11px);
+            
         }
     }
     @media (min-width: $grid-responsive-xl-break) {
         .card {
-            width: calc(25% - 15px);
+            
         }
     }
 }

@@ -25,10 +25,8 @@ require '!file?name=js/[name].js!./appLoader/appLoader.js'
 module.exports = app = angular.module 'wordpress-hybrid-client', [
   'ionic'
   require('./config').name
-  # 'ngMaterial'
   'angular-memory-stats'
   'ui.router'
-  'masonry'
   'wp-api-angularjs'
   'pascalprecht.translate'
   'angular-cache'
@@ -131,19 +129,25 @@ app.config ($WPHCConfig) ->
 ###
 MAIN CONTROLLER
 ###
-app.controller 'WPHCMainController' , ($log) ->
+app.controller 'WPHCMainController' , ($log, $WPHCConfig) ->
     $log.info 'main controller'
+
+    vm = @
+    vm.exposeAsideWhen = $WPHCConfig.menu.exposeAsideWhen || 'large'
 
 ###
 DIRECTIVES
 ###
-require "./directives/masonry/masonry.module.coffee"
+require "./directives/bindAndCompileHtml/bindAndCompileHtml.coffee"
 require "./directives/taxonomies/taxonomies.coffee"
 require "./directives/emptyList/emptyList.coffee"
 require "./directives/inputEsc/inputEsc.coffee"
+require "./directives/hideWhen/hideWhen.coffee"
+require "./directives/showWhen/showWhen.coffee"
 require "./directives/loader/loader.coffee"
 require "./directives/posts/posts.coffee"
 require "./directives/post/post.coffee"
+require "./directives/href/href.coffee"
 
 ###
 RUN

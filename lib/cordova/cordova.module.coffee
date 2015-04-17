@@ -5,6 +5,8 @@ module.exports = app = angular.module 'wordpress-hybrid-client.cordova', [
     'ngCordova'
 ]
 
-require './cordova.statusbar'
-require './cordova.splashscreen'
-require './cordova.network-information'
+if ionic.Platform.isWebView()
+    require './cordova.statusbar'
+    require './cordova.splashscreen'
+    require './cordova.inappbrowser'
+    require './cordova.network-information'

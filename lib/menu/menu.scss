@@ -1,12 +1,5 @@
 @import "../scss/animations.scss";
 ion-side-menu {
-    .bar.bar-footer {
-        z-index: 10;
-        .button {
-            font-size: 30px;
-            line-height: 45px;
-        }
-    }
     form {
         padding-bottom: 0;
         &.input-has-value {

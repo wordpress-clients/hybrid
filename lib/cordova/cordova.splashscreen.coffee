@@ -1,5 +1,6 @@
 module.exports = angular.module 'wordpress-hybrid-client.cordova'
-    .run ($log, $WPHCConfig, $cordovaSplashscreen) ->
+    .run ($log, $WPHCConfig, $cordovaSplashscreen, $ionicPlatform) ->
         $log.info 'cordova splashscreen'
 
-        $cordovaSplashscreen.hide()
+        $ionicPlatform.ready () ->
+            $cordovaSplashscreen.hide()

@@ -15,14 +15,17 @@ cp config.json.dist config.prod.json
 # live reload version
 webpack-dev-server
 
-# Dump files within the www folder
-webpack
+# Dump dev files within the www folder
+gulp build
 
-# Prod version
-gulp
+# Dump Prod files within the www folder
+gulp build:prod
 
 # Ios/Android overview
 ionic serve --lab
+
+# Run on device (make sure your device is listed: ```$ adb devices```)
+ionic run android
 ```
 
 # Generate apps

@@ -5,6 +5,7 @@
     "env": "dev",
     "debugEnabled" : false,
     "menu": {
+        "exposeAsideWhen": "(min-width:900px)",
         "wordpress": [{
             "trans": "menu.home",
             "uiSref": "public.posts",

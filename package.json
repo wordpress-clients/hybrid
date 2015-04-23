@@ -81,5 +81,11 @@
     "org.apache.cordova.splashscreen",
     "org.apache.cordova.inappbrowser",
     "com.ionic.keyboard"
+  ],
+  "cordovaPlatforms": [
+    {
+      "platform": "android",
+      "locator": "./engine/cordova-android-c0.6.1/"
+    }
   ]
 }

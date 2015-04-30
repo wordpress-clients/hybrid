@@ -76,11 +76,11 @@
     "https://github.com/danwilson/google-analytics-plugin.git",
     "com.google.playservices",
     "./engine/cordova-crosswalk-engine-c0.6.1",
-    "org.apache.cordova.statusbar",
     "org.apache.cordova.network-information",
     "org.apache.cordova.splashscreen",
     "org.apache.cordova.inappbrowser",
-    "com.ionic.keyboard"
+    "com.ionic.keyboard",
+    "org.apache.cordova.statusbar"
   ],
   "cordovaPlatforms": [
     {

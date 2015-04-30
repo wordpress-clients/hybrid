@@ -1,9 +1,9 @@
 <ion-view view-title="{{posts.title | translate}}">
-    <wphc-loader ng-if="!posts.posts"></wphc-loader>
+    <wphc-loader ng-if="!posts.posts" on-load="posts.init"></wphc-loader>
     <wphc-empty-list list="posts.posts"></wphc-empty-list>
-    <ion-content  class="padding content-grey">
+    <ion-content class="padding content-grey">
         <ion-refresher pulling-text="{{ 'pullToRefresh' | translate}}" on-refresh="posts.doRefresh()"></ion-refresher>
-        <wphc-posts posts="posts.posts" is-on="posts.viewEntered"></wphc-posts>
-        <ion-infinite-scroll immediate-check="false" ng-if="!posts.isPaginationOver" on-infinite="posts.loadMore()" distance="1%">test</ion-infinite-scroll>
+        <wphc-posts posts="posts.posts"></wphc-posts>
+        <ion-infinite-scroll immediate-check="false" ng-if="posts.posts && !posts.isPaginationOver" on-infinite="posts.loadMore()" distance="1%">test</ion-infinite-scroll>
     </ion-content>
 </ion-view>

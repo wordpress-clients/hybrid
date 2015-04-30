@@ -14,7 +14,6 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcPosts'
     transclude: true
     scope:
         posts: "="
-        isOn: "="
         layout: '='
     templateUrl: require './posts.html'
     controller: ($scope, $element, $attrs, $ionicModal, $state) ->

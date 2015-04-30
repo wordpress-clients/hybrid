@@ -15,7 +15,6 @@ module.exports = angular.module('wordpress-hybrid-client.taxonomies').factory '$
                 trans = if slug then 'tag.title' else 'tags.title'
             when "category"
                 trans = if slug then 'category.title' else 'categories.title'
-        $log.debug trans, term, '$WPHCTaxonomies getTitle'
 
         if slug
             $filter('translate') trans,
@@ -27,7 +26,6 @@ module.exports = angular.module('wordpress-hybrid-client.taxonomies').factory '$
         deferred = $q.defer()
         hash = md5 $WPHCConfig.api.baseUrl + term
         listCache = getCache().get 'list-' + hash
-        $log.debug listCache, 'Taxo cache'
         if listCache
             deferred.resolve listCache
         else
@@ -35,4 +33,6 @@ module.exports = angular.module('wordpress-hybrid-client.taxonomies').factory '$
             .then (response) ->
                 getCache().put 'list-' + hash, response
                 deferred.resolve response
+            .catch (error) ->
+                deferred.reject error
         deferred.promise

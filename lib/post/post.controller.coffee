@@ -2,15 +2,9 @@ module.exports = angular.module('wordpress-hybrid-client.post').controller 'WPHC
     $log.info 'WPHCPostController'
     vm = @
     vm.post = undefined
-
-    $scope.$on '$ionicView.loaded', () ->
-        $timeout ->
-            $WPHCPost.get $state.params.id
-            .then (response) ->
-                vm.post = response.data
-            .catch ->
-                $log.debug 'WPHCPostController post catch'
-                vm.post = {}
-        , 750
+    vm.init = ->
+        return $WPHCPost.get $state.params.id
+        .then (response) ->
+            vm.post = response.data
 
     return vm

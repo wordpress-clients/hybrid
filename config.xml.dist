@@ -9,12 +9,16 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="orientation" value="portrait" />
     <preference name="fullscreen" value="false" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
+    <preference name="SplashScreen" value="screen" />
+    <!-- ANDROID -->
+    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-windowSoftInputMode" value="adjustNothing" />
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" onload="true" />
     </feature>

@@ -1,5 +1,7 @@
 {
     "pullToRefresh": "Pull to refresh!",
+    "retry": "Retry",
+    "attemptToConnect": "Attempt to connect {{attempt}} of {{attemptMax}}.",
     "menu": {
         "title": "Menu",
         "home": "Home",

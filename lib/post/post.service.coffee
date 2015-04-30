@@ -20,4 +20,6 @@ module.exports = angular.module('wordpress-hybrid-client.post').factory '$WPHCPo
             .then (response) ->
                 getCache().put 'item-' + hash, response
                 deferred.resolve response
+            .catch (error) ->
+                deferred.reject error
         deferred.promise

@@ -68,6 +68,8 @@ REST CONF
 ###
 app.config ($WPHCConfig, WpApiProvider, $ionicConfigProvider) ->
     RestangularProvider = WpApiProvider.getRestangularProvider()
+    RestangularProvider.setDefaultHttpFields
+        timeout: $WPHCConfig.api.timeout
     RestangularProvider.setBaseUrl $WPHCConfig.api.baseUrl
     RestangularProvider.setFullResponse true
     RestangularProvider.addResponseInterceptor (data, operation, what, url, response, deferred) ->

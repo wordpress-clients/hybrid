@@ -32,6 +32,9 @@ ionic run android
 
 ## Create Apk (android)
 
+### Keyboard adjustement
+
+Open ```platforms/android/AndroidManifest.xml``` and change ```android:windowSoftInputMode="adjustResize"``` into ```android:windowSoftInputMode="adjustNothing"``` it will prevent losing the menu to close when searching on tablets.
 
 
 ```
@@ -48,3 +51,11 @@ http://developer.android.com/tools/publishing/app-signing.html#cert
 npm install
 webpack-dev-server
 ```
+
+### ToDo
+
+- [X] Attempt to connect with retry button
+- [ ] Comment system
+- [ ] Sass variable injection from json
+- [ ] Templating
+- [ ] Social buttons

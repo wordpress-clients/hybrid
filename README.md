@@ -2,12 +2,16 @@
 
 ```
 npm install -g cordova ionic webpack webpack-dev-server
-ionic start wordpress-hybrid-client sidemenu
-cordova platform add ios
-cordova platform add android
+
+# Dev App config
 cp config.json.dist config.json
-# for prod build
+# Prod App config
 cp config.json.dist config.prod.json
+# Hybrid config
+cp config.xml.dist config.xml
+# Release script
+cp release.sh.dist release.sh
+
 ```
 
 ## Run
@@ -38,19 +42,23 @@ Open ```platforms/android/AndroidManifest.xml``` and change ```android:windowSof
 
 
 ```
-ionic build android --release
+# Make sure your change the path to your signing key. Change ```~/.ssh/android_wphc.keystore``` to whatever your Android key is.
+sh ./release.sh
 ```
-
-## Publish
-
-http://developer.android.com/tools/publishing/app-signing.html#cert
 
 ## Contribute
 
-```
-npm install
-webpack-dev-server
-```
+WordPress hybrid Client is Open Source, If you are interested in helping, please read the following:
+
+### Pull Request Guidelines
+
+When in doubt, keep your pull requests small. To give a PR the best chance of getting accepted, do not bundle more than one "feature" or bug fix per PR. Doing so makes it very hard to accept it if one of the fixes has issues.
+
+It's always best to create two smaller PRs than one big one.
+
+### Style
+
+Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 
 ### ToDo
 

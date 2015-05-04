@@ -68,3 +68,4 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [ ] Templating
 - [ ] Social buttons
 - [ ] Contact form
+- [ ] About Page

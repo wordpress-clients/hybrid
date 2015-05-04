@@ -1,6 +1,7 @@
 module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPHCPostsController', ($log, $scope, $WPHCPosts, $q, $state, $timeout) ->
     $log.info 'WPHCHomeController'
     isLoadingMore = false
+    vm = @
 
     getQuery = () ->
         query = $WPHCPosts.getQuery vm.page
@@ -23,13 +24,13 @@ module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPH
             deferred.resolve null
             return deferred.promise
         isLoadingMore = true
-        return $WPHCPosts.getList getQuery()
+        return $WPHCPosts.getList vm.getQuery()
         .then loadSuccess
         .finally () ->
             isLoadingMore = false
 
     init = ->
-        return $WPHCPosts.getList getQuery()
+        return $WPHCPosts.getList vm.getQuery()
             .then loadSuccess
 
     doRefresh = ->
@@ -40,11 +41,11 @@ module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPH
         vm.loadMore().finally () ->
             $scope.$broadcast 'scroll.refreshComplete'
 
-    vm = @
     vm.page = 1
     vm.posts = undefined
     vm.title = if $state.current.name is 'public.search' then 'search.title' else 'home.title'
     vm.isPaginationOver = false
+    vm.getQuery = getQuery
     vm.doRefresh = doRefresh
     vm.init = init
     vm.loadMore = ionic.throttle doLoadMore, 1000

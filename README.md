@@ -64,6 +64,7 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 
 - [X] Attempt to connect with retry button
 - [ ] Comment system
-- [ ] Sass variable injection from json
+- [ ] Sass variable injection from json (or parsing CSS to replace variable on the fly)
 - [ ] Templating
 - [ ] Social buttons
+- [ ] Contact form

@@ -28,6 +28,7 @@ var banner = ['/**',
 gulp.task('default', ['build']);
 gulp.task('build', ['cleanWww', 'webpack:dev']);
 gulp.task('build:prod', ['cleanWww', 'webpack:prod']);
+gulp.task('bump', require('gulp-cordova-bump'));
 
 gulp.task('cleanWww', function() {
     return gulp.src(wwwPath, {

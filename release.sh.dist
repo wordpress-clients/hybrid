@@ -2,6 +2,12 @@
 
 set -e
 
+read -p "Release major, minor or patch? " version
+version=${version:-"patch"}
+
+# updgrade version before release
+gulp bump --${version}
+
 # package the app
 gulp build:prod
 

@@ -2,6 +2,6 @@
     <ion-nav-title>{{ post.post.title | translate}}</ion-nav-title>
     <wphc-loader ng-if="!post.post" on-load="post.init"></wphc-loader>
     <ion-content>
-        <wphc-post post="post.post" ng-if="post.post"></wphc-posts>
+        <wphc-post post="post.post" ng-if="post.post"></wphc-post>
     </ion-content>
 </ion-view>

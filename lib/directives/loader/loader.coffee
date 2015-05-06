@@ -11,7 +11,7 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcLoader
     restrict: 'E'
     transclude: true
     replace: true
-    templateUrl: require './loader.html'
+    template: require './loader.html'
     scope:
         onLoad: "&"
     controller: ($scope, $element, $attrs, $state, $log, $WPHCConfig, $timeout) ->
@@ -37,7 +37,6 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcLoader
                 $scope.attempt = 0
                 $scope.isAttemptMaxReached = false
             $log.info 'wphcLoader attempt: ' + $scope.attempt
-            console.log($scope.onLoad, 'onLoad')
             onLoad().then success
             .catch ->
                 error()

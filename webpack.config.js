@@ -44,17 +44,11 @@ module.exports = {
             test: /[\/]angular\.js$/,
             loader: 'expose?angular!exports?window.angular'
         }, {
-            test: /[\/]masonry\.js$/,
-            loader: 'expose?Masonry'
-        }, {
-            test: /[\/]imagesloaded.pkgd\.js$/,
-            loader: 'expose?imagesLoaded'
-        }, {
             test: /[\/]ionic\.js$/,
             loader: 'exports?ionic' // For non commonJs
         }, {
             test: /\.html$/,
-            loader: 'file?name=templates/[name]-[hash:6].html'
+            loader: 'html'
         }, {
             test: /\.json$/,
             loader: "json"

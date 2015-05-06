@@ -20,5 +20,14 @@
             line-height: $button-small-height - $button-border-width - 1;
         }
     }
+    section.footer {
+        text-align: center;
+        border-top: 1px solid $gray-lighter;
+        padding-top: 15px;
+        margin-top: 5px;
+        .button-open-browser {
+            
+        }
+    }
     @include post-item("../../img/post-img-border.png");
 }

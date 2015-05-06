@@ -7,11 +7,11 @@ module.exports = angular.module('wordpress-hybrid-client.taxonomies').config ($s
         url: "/taxonomies/:term"
         views:
             'content@public':
-                templateUrl: require "./taxonomies"
+                template: require "./taxonomies"
                 controller: "WPHCTaxonomiesController as taxonomies"
     .state 'public.taxonomies.slug',
         url: "/:slug"
         views:
             'content@public':
-                templateUrl: require "../posts/posts.html"
+                template: require "../posts/posts.html"
                 controller: "WPHCTaxonomiesPostsController as posts"

@@ -20,7 +20,7 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcHref',
                 if element.length is 0
                     return
                 $ionicScrollDelegate.scrollTo 0, element[0].offsetTop, true
-        else if ionic.Platform.isWebView() && !isAnchor
+        else
             $element.on 'click', (event) ->
                 event.preventDefault()
                 $cordovaInAppBrowser.open $attrs.href, '_system'

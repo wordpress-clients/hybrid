@@ -31,5 +31,8 @@
     "posts": {
         "title": "Home",
         "empty": "There is no posts here!"
+    },
+    "post": {
+        "openInBrowser": "Open in browser"
     }
 }

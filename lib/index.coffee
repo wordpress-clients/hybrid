@@ -2,7 +2,6 @@ require 'angular'
 require 'angular-animate'
 require 'angular-sanitize'
 require 'angular-aria'
-# require 'angular-material/angular-material'
 require 'angular-ui-router'
 require 'angular-translate'
 require 'angular-cache'
@@ -15,12 +14,11 @@ require 'moment'
 require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
 
 # Style entry point
-require './scss/bootstrap_twbs_support'
-# require 'angular-material/angular-material.css'
+require './scss/bootstrap'
 
 # App loader
-require '!file?name=css/[name].css!autoprefixer!sass!./appLoader/appLoader.scss'
-require '!file?name=js/[name].js!./appLoader/appLoader.js'
+# require '!file?name=css/[name].css!autoprefixer!sass!./appLoader/appLoader.scss'
+# require '!file?name=js/[name].js!./appLoader/appLoader.js'
 
 module.exports = app = angular.module 'wordpress-hybrid-client', [
   'ionic'
@@ -34,7 +32,6 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   require('./post/post.module').name
   require('./posts/posts.module').name
   require('./menu/menu.module').name
-  require('./analytics/analytics.module').name
   require('./cordova/cordova.module').name
 ]
 
@@ -45,10 +42,10 @@ app.config ($stateProvider) ->
     abstract: true
     views:
         '@' :
-            templateUrl: require "./views/ion-menu.html"
+            template: require "./views/ion-menu.html"
             controller: "WPHCMainController as main"
         'menu@public':
-            templateUrl: require "./menu/menu.html"
+            template: require "./menu/menu.html"
             controller: "WPHCMenuController as menu"
 
 ###

@@ -3,10 +3,12 @@ module.exports = angular.module 'wordpress-hybrid-client.analytics'
         if !$WPHCConfig.analytics or !$WPHCConfig.analytics.trackingId
             return
 
-        if ionic.Platform.isWebView()
-            return
-
+        $analyticsProvider.developerMode $WPHCConfig.debugEnabled
         $analyticsProvider.virtualPageviews $WPHCConfig.analytics.virtualPageTracking
+
+    .run ($WPHCConfig) ->
+        if !$WPHCConfig.analytics or !$WPHCConfig.analytics.trackingId
+            return
 
         ((i, s, o, g, r, a, m) ->
             i['GoogleAnalyticsObject'] = r

@@ -17,4 +17,9 @@
         <button class="button button-small button-light" ng-repeat="tag in post.terms.post_tag" ui-sref="public.taxonomies.slug({ slug: tag.slug, term: 'post_tag' })">{{tag.name}}</button>
     </div>
     <div ng-if="::post.excerpt" bind-and-compile-html="::(post.content | prepLink)"></div>
+    <section class="footer">
+        <a class="button button-positive button-open-browser" wphc-href href="{{::post.link}}">
+            {{'post.openInBrowser' | translate}}
+        </a>
+    </section>
 </div>

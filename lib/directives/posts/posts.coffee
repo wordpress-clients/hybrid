@@ -15,15 +15,12 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcPosts'
     scope:
         posts: "="
         layout: '='
-    templateUrl: require './posts.html'
+    template: require './posts.html'
     controller: ($scope, $element, $attrs, $ionicModal, $state) ->
         $log.debug $scope, '$scope wphcPosts'
-        $ionicModal.fromTemplateUrl require('./posts.modal.taxonomies.html'),
+        $scope.modal = $ionicModal.fromTemplate require('./posts.modal.taxonomies.html'),
             scope: $scope,
             animation: 'slide-in-up'
-        .then (modal) ->
-            $log.info 'instanciate wphcPosts'
-            $scope.modal = modal
 
         $scope.showTaxonomies = (translation, list, term) ->
             $scope.taxonomies =

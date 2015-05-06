@@ -15,4 +15,4 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcEmptyL
     replace: true
     scope:
         list: '='
-    templateUrl: require './emptyList.html'
+    template: require './emptyList.html'

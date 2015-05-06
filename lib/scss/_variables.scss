@@ -33,6 +33,14 @@ $palette-A200: #ff5252;
 $palette-A400: #ff1744;
 $palette-A700: #d50000;
 $positive: $palette-500 !default;
+// Grays
+// ------------------------------
+$gray-base: #000 !default;
+$gray-darker: lighten($gray-base, 13.5%) !default;
+$gray-dark: lighten($gray-base, 20%) !default;
+$gray: lighten($gray-base, 33.5%) !default;
+$gray-light: lighten($gray-base, 46.7%) !default;
+$gray-lighter: lighten($gray-base, 93.5%) !default;
 $bar-height: 64px;
 $bar-padding-portrait: 10px;
 // Custom break point
@@ -74,3 +82,12 @@ $layout-breakpoint-sm: 600px !default;
 $layout-breakpoint-md: 960px !default;
 $layout-breakpoint-lg: 1200px !default;
 $layout-gutter-width: ($baseline-grid * 2) !default;
+// Code
+// ------------------------------
+$code-font-family: Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$code-color: #c7254e !default;
+$code-bg: #f9f2f4 !default;
+$pre-bg: #f5f5f5 !default;
+$pre-color: $gray-dark !default;
+$pre-border-color: #ccc !default;
+$pre-scrollable-max-height: 340px !default;

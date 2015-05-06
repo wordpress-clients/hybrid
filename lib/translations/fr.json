@@ -31,5 +31,8 @@
     "posts": {
         "title": "Accueil",
         "empty": "La liste est vide!"
+    },
+    "post": {
+        "openInBrowser": "Ouvrir dans un navigateur"
     }
 }

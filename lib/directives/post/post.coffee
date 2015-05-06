@@ -17,4 +17,4 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcPost',
     scope:
         post: "="
         layout: '='
-    templateUrl: require './post.html'
+    template: require './post.html'

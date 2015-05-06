@@ -5,7 +5,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <title>{%=o.htmlWebpackPlugin.options.pkg.title %}</title>
-        <link href="css/appLoader.css" rel="stylesheet">
         <script>
             var wordpressHybridClient = {};
             wordpressHybridClient.version = "{%= o.htmlWebpackPlugin.options.pkg.version %}";
@@ -17,25 +16,11 @@
         <script src="cordova.js"></script>
     </head>
 
-    <body ng-strict-di>
-        <div id='appLoaderWrapper'>
-            <app-loader md-mode="determinate" id='appLoader' value="0" role="progressbar">
-                <div class="md-spinner-wrapper">
-                    <div id='appLoaderPercent'>0</div>
-                    <div class="md-inner">
-                        <div class="md-gap"></div>
-                        <div class="md-left">
-                            <div class="md-half-circle"></div>
-                        </div>
-                        <div class="md-right">
-                            <div class="md-half-circle"></div>
-                        </div>
-                    </div>
-                </div>
-            </app-loader>
-        </div>
-        <script src="js/appLoader.js"></script>
+    <body ng-strict-di ng-app="wordpress-hybrid-client">
         <ion-nav-view></ion-nav-view>
+        {% for (var chunk in o.htmlWebpackPlugin.assets) { %}
+        <script src="{%=o.htmlWebpackPlugin.assets[chunk].name%}"></script>
+        {% } %}
     </body>
     <!-- {%= o.htmlWebpackPlugin.options.pkg.name + ' v' + o.htmlWebpackPlugin.options.pkg.version + ' size: ' + o.htmlWebpackPlugin.assets['main'].size + ' built on ' + new Date() %} -->
 

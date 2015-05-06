@@ -1,4 +1,4 @@
-<div class="wphc-loader" layout="column" layout-align="center center" layout-fill>
+<div ng-style="::{height:getContentHeight() + 'px'}" class="wphc-loader" layout="column" layout-align="center center" layout-fill>
     <ion-spinner ng-if="!promiseLoad" ng-hide="isAttemptMaxReached"></ion-spinner>
     <span ng-if="promiseLoad" layout="column" layout-align="center center">
         <ion-spinner ng-hide="isAttemptMaxReached"></ion-spinner>

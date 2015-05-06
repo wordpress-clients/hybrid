@@ -5,7 +5,7 @@
 @description
 A simple loader
 @example
-              < pre >
+                      < pre >
 </pre >
 ###
 
@@ -16,3 +16,6 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcEmptyL
     scope:
         list: '='
     template: require './emptyList.html'
+    controller: ($scope, $element) ->
+        $scope.getContentHeight = ->
+            return $element.parent().parent()[0].offsetHeight;

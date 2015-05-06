@@ -1,6 +1,9 @@
 .no-padding {
     padding: 0 !important;
 }
-.content-grey {
-    background-color: #eee;
+.bg-gray-light {
+    background-color: $gray-light;
+}
+.bg-gray-lighter {
+    background-color: $gray-lighter;
 }

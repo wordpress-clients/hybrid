@@ -26,7 +26,9 @@
         "title": "Home"
     },
     "search": {
-        "title": "Search"
+        "inputPlaceholder": "Search",
+        "title": "Search",
+        "titleQuery": "Search: {{query}}"
     },
     "posts": {
         "title": "Home",

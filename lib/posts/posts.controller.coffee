@@ -4,13 +4,9 @@ module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPH
     vm = @
 
     getQuery = () ->
-        query = $WPHCPosts.getQuery vm.page
-        if $state.current.name is 'public.search'
-            query['filter[s]'] = $state.params.search
-        query
+        $WPHCPosts.getQuery vm.page
 
     loadSuccess = (response) ->
-        # $log.debug response.data, response.isPaginationOver , 'posts, isPaginationOver'
         vm.posts = if vm.posts then vm.posts.concat(response.data) else response.data
         if response.isPaginationOver
             vm.isPaginationOver = true
@@ -30,6 +26,8 @@ module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPH
             isLoadingMore = false
 
     init = ->
+        vm.page = 1
+        vm.isPaginationOver = false
         return $WPHCPosts.getList vm.getQuery()
             .then loadSuccess
 
@@ -43,7 +41,7 @@ module.exports = angular.module('wordpress-hybrid-client.posts').controller 'WPH
 
     vm.page = 1
     vm.posts = undefined
-    vm.title = if $state.current.name is 'public.search' then 'search.title' else 'home.title'
+    vm.title = 'home.title'
     vm.isPaginationOver = false
     vm.getQuery = getQuery
     vm.doRefresh = doRefresh

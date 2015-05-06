@@ -55,12 +55,12 @@ $base-color: #333 !default;
 $loader-width: 50px;
 $loader-height: 50px;
 $loader-zIndex: 1002;
-$loader-bg: $base-background-color;
+$loader-bg: $gray-lighter;
 $loader-stroke: $positive;
 $loader-fill: $positive;
-// Loader
+// Empty list directive
 // ----------------------
-$emptyList-bg: $base-background-color;
+$emptyList-bg: $gray-lighter;
 $emptyList-zIndex: 1001;
 // Post
 // ------------------------------

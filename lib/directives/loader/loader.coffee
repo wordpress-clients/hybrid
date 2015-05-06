@@ -15,6 +15,8 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcLoader
     scope:
         onLoad: "&"
     controller: ($scope, $element, $attrs, $state, $log, $WPHCConfig, $timeout) ->
+        $scope.getContentHeight = ->
+            return $element.parent().parent()[0].offsetHeight;
         $scope.promiseLoad = $attrs.onLoad?
         $log.info 'wphcLoader controller loaded', $scope.promiseLoad
         if !$scope.promiseLoad
@@ -49,4 +51,6 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcLoader
                 else
                     $scope.isAttemptMaxReached = true
 
-        $scope.load()
+        $timeout ->
+            $scope.load()
+        , 500

@@ -3,10 +3,14 @@
         <ion-nav-bar class="bar-positive">
             <ion-nav-back-button>
             </ion-nav-back-button>
-
-            <ion-nav-buttons side="primary">
+            <ion-nav-buttons side="left">
                 <button menu-toggle="left" class="button button-clear" wphc-hide-when="{{main.exposeAsideWhen}}">
                     <i class="icon ion-navicon-round"></i>
+                </button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <button ui-sref="public.search" ui-sref-active="ng-hide" class="button button-clear">
+                    <i class="icon ion-ios-search-strong"></i>
                 </button>
             </ion-nav-buttons>
         </ion-nav-bar>

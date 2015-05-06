@@ -41,3 +41,6 @@ ion-header-bar {
         line-height: $line-height-small;
     }
 }
+.bar .title + .buttons {
+    top: 10px;
+}

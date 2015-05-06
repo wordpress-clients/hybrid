@@ -16,10 +16,6 @@ require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
 # Style entry point
 require './scss/bootstrap'
 
-# App loader
-# require '!file?name=css/[name].css!autoprefixer!sass!./appLoader/appLoader.scss'
-# require '!file?name=js/[name].js!./appLoader/appLoader.js'
-
 module.exports = app = angular.module 'wordpress-hybrid-client', [
   'ionic'
   require('./config').name
@@ -31,6 +27,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   require('./taxonomies/taxonomies.module').name
   require('./post/post.module').name
   require('./posts/posts.module').name
+  require('./search/search.module').name
   require('./menu/menu.module').name
   require('./cordova/cordova.module').name
 ]

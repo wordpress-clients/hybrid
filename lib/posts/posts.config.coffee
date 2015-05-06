@@ -6,11 +6,5 @@ module.exports = angular.module('wordpress-hybrid-client.posts').config ($stateP
             'content':
                 template: require "./posts.html"
                 controller: "WPHCPostsController as posts"
-    .state 'public.search',
-        url: "/search/:search"
-        views:
-            'content':
-                template: require "./posts.html"
-                controller: "WPHCPostsController as posts"
 
-    $urlRouterProvider.otherwise('/public/posts') ;
+    $urlRouterProvider.otherwise '/public/posts'

@@ -43,7 +43,7 @@ Open ```platforms/android/AndroidManifest.xml``` and change ```android:windowSof
 
 ```
 # Make sure your change the path to your signing key. Change ```~/.ssh/android_wphc.keystore``` to whatever your Android key is.
-sh ./release.sh
+node run-script build
 ```
 
 ## Contribute

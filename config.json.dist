@@ -20,14 +20,20 @@
             "icon": "icon ion-pricetags"
         }],
         "social": [{
-            "name": "facebook",
+            "platform": "facebook",
+            "name": "julienrenauxblog",
+            "icon": "icon ion-social-facebook",
             "url": "https://www.facebook.com/julienrenauxblog"
         }, {
-            "name": "twitter",
-            "url": "https://www.facebook.com/julienrenauxblog"
+            "platform": "twitter",
+            "name": "julienrenaux",
+            "icon": "icon ion-social-twitter",
+            "url": "https://twitter.com/julienrenaux"
         }, {
-            "name": "googleplus",
-            "url": "https://www.facebook.com/julienrenauxblog"
+            "platform": "googleplus",
+            "name": "julienrenaux",
+            "icon": "icon ion-social-googleplus",
+            "url": "https://www.google.com/+julienrenaux"
         }]
     },
     "cache": {
@@ -76,7 +82,6 @@
         "prefered": "en"
     },
     "style": {
-        "bootstrapSupport": true,
         "googleFont": {
             "families": ["Raleway::latin"],
             "fontFamily": "'Raleway', sans-serif"

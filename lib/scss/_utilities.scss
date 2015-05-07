@@ -1,0 +1,15 @@
+.center-block {
+    @include center-block;
+}
+.pull-right {
+    float: right !important;
+}
+.pull-left {
+    float: left !important;
+}
+.ng-invisible {
+    visibility: hidden;
+}
+.affix {
+    position: fixed;
+}

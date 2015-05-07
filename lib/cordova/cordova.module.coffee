@@ -5,9 +5,12 @@ module.exports = app = angular.module 'wordpress-hybrid-client.cordova', [
     'ngCordova'
 ]
 
+# Allow web debug
 if ionic.Platform.isWebView()
     require './cordova.statusbar'
     require './cordova.splashscreen'
     require './cordova.analytics'
     require './cordova.inappbrowser'
     require './cordova.network-information'
+
+require './cordova.socialsharing'

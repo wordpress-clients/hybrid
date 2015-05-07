@@ -6,19 +6,8 @@
         background: none;
         border-bottom: 1px solid $item-light-border;
     }
-    .taxonomies-wrapper {
-        padding: 5px 0;
-        border-bottom: 1px solid $item-light-border;
-        margin-bottom: 5px;
-        button {
-            margin: 5px 0 5px 5px;
-            min-width: 50px;
-        }
-        label {
-            margin: 5px 0 5px 5px;
-            min-height: $button-small-height + 2;
-            line-height: $button-small-height - $button-border-width - 1;
-        }
+    .item-toolbar {
+        margin: 0 0 40px;
     }
     section.footer {
         text-align: center;

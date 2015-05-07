@@ -1,6 +1,7 @@
 {
     "pullToRefresh": "Pull to refresh!",
     "retry": "Retry",
+    "error": "Something wrong happened, please try again.",
     "attemptToConnect": "Attempt to connect {{attempt}} of {{attemptMax}}.",
     "menu": {
         "title": "Menu",
@@ -29,6 +30,9 @@
         "inputPlaceholder": "Search",
         "title": "Search",
         "titleQuery": "Search: {{query}}"
+    },
+    "sharing": {
+        "shared": "Shared!"
     },
     "posts": {
         "title": "Home",

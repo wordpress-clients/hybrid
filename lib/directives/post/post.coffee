@@ -5,7 +5,7 @@
 @description
 Display a post
 @example
-           < pre >
+               < pre >
 </pre >
 ###
 require "./style.scss"
@@ -18,3 +18,10 @@ module.exports = angular.module('wordpress-hybrid-client').directive 'wphcPost',
         post: "="
         layout: '='
     template: require './post.html'
+    controller: ($scope, $element, $attrs, $WPHCTaxonomies, $WPHCSocialSharing) ->
+
+        $scope.showTaxonomies = (translation, list, term) ->
+            $WPHCTaxonomies.showTaxonomiesInModal translation, list, term
+
+        $scope.share = (platform, title, link) ->
+            $WPHCSocialSharing.share platform, title, link

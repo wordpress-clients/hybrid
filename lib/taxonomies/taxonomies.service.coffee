@@ -1,12 +1,28 @@
 md5 = require 'MD5'
 
-module.exports = angular.module('wordpress-hybrid-client.taxonomies').factory '$WPHCTaxonomies', ($log, $filter, $wpApiTaxonomies, $q, $WPHCConfig, CacheFactory) ->
+module.exports = angular.module('wordpress-hybrid-client.taxonomies').factory '$WPHCTaxonomies', ($log, $rootScope, $filter, $wpApiTaxonomies, $q, $WPHCConfig, CacheFactory, $ionicModal) ->
     $log.info '$WPHCTaxonomies'
+
+    modal = null
 
     getCache = () ->
         if CacheFactory.get 'taxonomies'
             return CacheFactory.get 'taxonomies'
         CacheFactory 'taxonomies', $WPHCConfig.taxonomies.cache
+
+    showTaxonomiesInModal: (translation, list, term) ->
+        # init the modal only on demand
+        if !modal
+            modal = $ionicModal.fromTemplate require('./taxonomies.modal.html'),
+                scope: $rootScope.$new()
+                animation: 'slide-in-up'
+            modal.scope.modal = modal
+
+        modal.scope.taxonomies =
+            title: translation
+            term: term
+            list: list
+        modal.show()
 
     getTitle: (term, slug) ->
         trans = ''

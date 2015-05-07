@@ -1,6 +1,7 @@
 {
     "pullToRefresh": "Tirer pour rafraîchir!",
     "retry": "Réessayez",
+    "error": "Quelque chose d'inattendu est survenu, veuillez réessayer.",
     "attemptToConnect": "Tentative de connection {{attempt}} sur {{attemptMax}}.",
     "menu": {
         "title": "Menu",
@@ -29,6 +30,9 @@
         "inputPlaceholder": "Recherche",
         "title": "Recherche",
         "titleQuery": "Recherche: {{query}}"
+    },
+    "sharing": {
+        "shared": "partagé avec succès!"
     },
     "posts": {
         "title": "Accueil",

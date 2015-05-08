@@ -5,9 +5,11 @@
     .item-author {
         background: none;
         border-bottom: 1px solid $item-light-border;
+        margin-bottom: 20px;
+        margin-top: -10px;
     }
     .item-toolbar {
-        margin: 0 0 40px;
+        margin: 15px 0;
     }
     section.footer {
         text-align: center;

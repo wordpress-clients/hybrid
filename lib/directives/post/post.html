@@ -3,19 +3,6 @@
         <div class="img-border"></div>
         <h1 class="item-title" ng-bind-html="::post.title"></h1>
     </div>
-    <div class="item item-author" ng-class="::{'item-avatar' : post.author.avatar}">
-        <img src="{{::post.author.avatar}}" ng-if="::post.author.avatar">
-        <h2>{{post.author.name}}</h2>
-        {{post.date | date : format : timezone}}
-    </div>
-    <!-- <div class="taxonomies-wrapper">
-        <label>{{'menu.categories' | translate}} : </label>
-        <button class="button button-small button-light" ng-repeat="category in post.terms.category" ui-sref="public.taxonomies.slug({ slug: category.slug, term: 'category' })">{{category.name}}</button>
-    </div>
-    <div class="taxonomies-wrapper">
-        <label>{{'menu.tags' | translate}} : </label>
-        <button class="button button-small button-light" ng-repeat="tag in post.terms.post_tag" ui-sref="public.taxonomies.slug({ slug: tag.slug, term: 'post_tag' })">{{tag.name}}</button>
-    </div> -->
     <div class="item item-divider item-toolbar">
         <button class="button button-clear" ng-if="::post.terms.category.length" ng-click="showTaxonomies( 'categories.title', post.terms.category, 'category') ">
             <i class="icon ion-folder"></i>
@@ -33,7 +20,30 @@
             <i class="icon ion-social-twitter"></i>
         </button>
     </div>
+    <div class="item item-author" ng-class="::{'item-avatar' : post.author.avatar}">
+        <img src="{{::post.author.avatar}}" ng-if="::post.author.avatar">
+        <h2>{{post.author.name}}</h2>
+        {{post.date | date : format : timezone}}
+    </div>
     <div ng-if="::post.excerpt" bind-and-compile-html="::(post.content | prepLink)"></div>
+
+    <div class="item item-divider item-toolbar">
+        <button class="button button-clear" ng-if="::post.terms.category.length" ng-click="showTaxonomies( 'categories.title', post.terms.category, 'category') ">
+            <i class="icon ion-folder"></i>
+        </button>
+        <button class="button button-clear" ng-if="::post.terms.post_tag.length" ng-click="showTaxonomies( 'tags.title', post.terms.post_tag, 'post_tag') ">
+            <i class="icon ion-pricetags"></i>
+        </button>
+        <button class="button button-clear pull-right" ng-click="share('native', post.title, post.link) ">
+            <i class="icon ion-android-share-alt"></i>
+        </button>
+        <button class="button button-clear pull-right" ng-click="share('facebook', post.title, post.link) ">
+            <i class="icon ion-social-facebook"></i>
+        </button>
+        <button class="button button-clear pull-right" ng-click="share('twitter', post.title, post.link) ">
+            <i class="icon ion-social-twitter"></i>
+        </button>
+    </div>
     <section class="footer">
         <a class="button button-positive button-open-browser" wphc-href href="{{::post.link}}">
             {{'post.openInBrowser' | translate}}

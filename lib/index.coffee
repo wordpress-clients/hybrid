@@ -10,6 +10,7 @@ require 'angular-memory-stats'
 require 'ionic/js/ionic'
 require 'ionic/js/ionic-angular'
 require 'moment'
+require './font/font.coffee'
 
 require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
 
@@ -104,23 +105,6 @@ app.config ($WPHCConfig, angularMemoryStatsProvider, $compileProvider) ->
     if $WPHCConfig.env is 'prod'
         $compileProvider.debugInfoEnabled false
         angularMemoryStatsProvider.enable false
-
-###
-STYLE CONF
-###
-app.config ($WPHCConfig) ->
-    if $WPHCConfig.style.googleFont
-        window.WebFontConfig =
-            google:
-                families: $WPHCConfig.style.googleFont.families
-        wf = document.createElement 'script'
-        wf.src = if 'https:' == document.location.protocol then 'https' else 'http'
-        wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js'
-        wf.type = 'text/javascript'
-        wf.async = 'true'
-        s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore wf, s
-        document.body.style.fontFamily = $WPHCConfig.style.googleFont.fontFamily
 
 ###
 MAIN CONTROLLER

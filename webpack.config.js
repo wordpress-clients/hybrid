@@ -66,6 +66,9 @@ module.exports = {
             test: /\.scss$/,
             loader: "style!css!autoprefixer!sass"
         }, {
+            test: [/Roboto\.ttf/, /Roboto\.woff/, /Roboto\.woff2/],
+            loader: 'file?name=fonts/[name].[ext]'
+        }, {
             test: [/ionicons\.svg/, /ionicons\.eot/, /ionicons\.ttf/, /ionicons\.woff/],
             loader: 'file?name=fonts/[name].[ext]'
         }]

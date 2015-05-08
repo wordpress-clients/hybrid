@@ -81,12 +81,6 @@
         },
         "prefered": "en"
     },
-    "style": {
-        "googleFont": {
-            "families": ["Raleway::latin"],
-            "fontFamily": "'Raleway', sans-serif"
-        }
-    },
     "analytics": {
         "trackingId": "",
         "userId": "",
@@ -94,7 +88,8 @@
     },
     "cordova": {
         "statubar": {
-            "show": true
+            "show": true,
+            "color": "#455a64"
         }
     }
 }

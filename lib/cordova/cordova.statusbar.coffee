@@ -3,8 +3,7 @@ module.exports = angular.module 'wordpress-hybrid-client.cordova'
         $log.info 'cordova statusbar'
 
         $ionicPlatform.ready () ->
-            $cordovaStatusbar.style(1)
-            $cordovaStatusbar.styleColor('orange')
+            $cordovaStatusbar.styleHex $WPHCConfig.cordova.statubar.color
             if $WPHCConfig.cordova.statubar.show
                 $cordovaStatusbar.show()
             else

@@ -11,6 +11,8 @@ cp config.json.dist config.prod.json
 cp config.xml.dist config.xml
 # Release script
 cp release.sh.dist release.sh
+# Sass overwrite
+cp sass_overwrite.scss.dist sass_overwrite.scss
 
 ```
 
@@ -63,9 +65,10 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 ### ToDo
 
 - [X] Attempt to connect with retry button
-- [ ] Comment system
-- [ ] Sass variable injection from json (or parsing CSS to replace variable on the fly)
-- [ ] Templating
 - [X] Social buttons
+- [X] Sass variable injection from json (or parsing CSS to replace variable on the fly)
+- [ ] Comment system
+- [ ] Templating
 - [ ] Contact form
 - [ ] About Page
+- [ ] Push Notifications

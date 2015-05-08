@@ -41,3 +41,4 @@ www/
 *.keystore
 release.sh
 config.xml
+sass_overwrite.scss

@@ -4,13 +4,13 @@
 <ion-content>
     <ion-list flex>
         <ion-item ng-repeat="wordpress in ::menu.getWordpress()" ng-class="::{'item-icon-left': wordpress.icon}" nav-clear menu-close ui-sref="{{::wordpress.uiSref}}" ui-sref-active="active">
-            <i class="{{::wordpress.icon}}" ng-if="wordpress.icon"></i> {{::wordpress.trans | translate}}
+            <i class="balanced {{::wordpress.icon}}" ng-if="wordpress.icon"></i> {{::wordpress.trans | translate}}
         </ion-item>
         <div class="item item-divider">
             {{"menu.socialNetwork" | translate}}
         </div>
         <ion-item class="item item-input" ng-if="::menu.hasSocial" ng-class="::{'item-icon-left': socialNetwork.icon}" ng-repeat="socialNetwork in ::menu.getSocial()" target="_blank" ng-href="{{::socialNetwork.url}}">
-            <i class="{{::socialNetwork.icon}}"></i> {{::socialNetwork.name}}
+            <i class="balanced {{::socialNetwork.icon}}"></i> {{::socialNetwork.name}}
         </ion-item>
     </ion-list>
 </ion-content>

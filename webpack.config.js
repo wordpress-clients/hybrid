@@ -1,4 +1,5 @@
 var path = require('path'),
+    fs = require('fs'),
     webpack = require("webpack"),
     libPath = path.join(__dirname, 'lib'),
     wwwPath = path.join(__dirname, 'www'),
@@ -63,7 +64,7 @@ module.exports = {
             loader: "coffee"
         }, {
             test: /\.scss$/,
-            loader: "style!css!autoprefixer!sass?outputStyle=expanded&recursive=sass-json-vars"
+            loader: "style!css!autoprefixer!sass"
         }, {
             test: [/ionicons\.svg/, /ionicons\.eot/, /ionicons\.ttf/, /ionicons\.woff/],
             loader: 'file?name=fonts/[name].[ext]'

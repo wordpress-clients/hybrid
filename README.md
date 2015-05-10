@@ -66,9 +66,12 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 
 - [X] Attempt to connect with retry button
 - [X] Social buttons
-- [X] Sass variable injection from json (or parsing CSS to replace variable on the fly)
-- [ ] Comment system
+- [X] Overwrite Sass variables
+- [ ] About Page
+- [ ] Personnalized Logo
+- [ ] Comment system (FB, WP, Disqus)
 - [ ] Templating
 - [ ] Contact form
-- [ ] About Page
 - [ ] Push Notifications
+- [ ] Offline
+- [ ] Ability to add ads

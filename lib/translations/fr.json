@@ -9,7 +9,8 @@
         "tags": "Tags",
         "search": "Chercher",
         "socialNetwork": "Réseau social",
-        "categories": "Categories"
+        "categories": "Categories",
+        "settings": "Paramètres"
     },
     "tags": {
         "title": "Tags"
@@ -40,5 +41,9 @@
     },
     "post": {
         "openInBrowser": "Ouvrir dans un navigateur"
+    },
+    "about": {
+        "title": "A propos",
+        "credit": "{{appTitle}} est fièrement propulsé par {{wphc}} et WordPress"
     }
 }

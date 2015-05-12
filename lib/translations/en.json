@@ -9,7 +9,8 @@
         "tags": "Tags",
         "search": "Search",
         "socialNetwork": "Social Network",
-        "categories": "Categories"
+        "categories": "Categories",
+        "settings": "Settings"
     },
     "tags": {
         "title": "Tags"
@@ -40,5 +41,9 @@
     },
     "post": {
         "openInBrowser": "Open in browser"
+    },
+    "about": {
+        "title": "About",
+        "credit": "{{appTitle}} is proudly powered by {{wphc}} and WordPress"
     }
 }

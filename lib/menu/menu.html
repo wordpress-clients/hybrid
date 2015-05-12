@@ -9,8 +9,14 @@
         <div class="item item-divider">
             {{"menu.socialNetwork" | translate}}
         </div>
-        <ion-item class="item item-input" ng-if="::menu.hasSocial" ng-class="::{'item-icon-left': socialNetwork.icon}" ng-repeat="socialNetwork in ::menu.getSocial()" target="_blank" ng-href="{{::socialNetwork.url}}">
+        <ion-item class="item" ng-if="::menu.hasSocial" ng-class="::{'item-icon-left': socialNetwork.icon}" ng-repeat="socialNetwork in ::menu.getSocial()" target="_blank" ng-href="{{::socialNetwork.url}}">
             <i class="balanced {{::socialNetwork.icon}}"></i> {{::socialNetwork.name}}
+        </ion-item>
+        <div class="item item-divider" ng-if="::menu.hasSettings">
+            {{"menu.settings" | translate}}
+        </div>
+        <ion-item class="item" ng-if="::menu.hasSettings" ng-class="::{'item-icon-left': setting.icon}" nav-clear menu-close ng-repeat="setting in ::menu.getSettings()" ui-sref="{{::setting.uiSref}}">
+            <i class="balanced {{::setting.icon}}"></i> {{::setting.trans | translate}}
         </ion-item>
     </ion-list>
 </ion-content>

@@ -1,0 +1,10 @@
+<ion-view view-title="{{::'about.title' | translate}}">
+    <ion-content class="padding">
+        <div bind-and-compile-html="::(about.content  | prepLink)"></div>
+    </ion-content>
+    <ion-footer-bar class="bar-balanced">
+        <div class="title">
+            <p translate="about.credit" translate-values="{ appTitle: '{{::main.appTitle}}', wphc: '<a href=\' http://wphc.julienrenaux.fr\' target=\'_blank\'>WPHC</a>'}"></p>
+        </div>
+    </ion-footer-bar>
+</ion-view>

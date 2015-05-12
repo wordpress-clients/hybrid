@@ -31,6 +31,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   require('./search/search.module').name
   require('./menu/menu.module').name
   require('./cordova/cordova.module').name
+  require('./about/about.module').name
 ]
 
 app.config ($stateProvider) ->
@@ -57,6 +58,8 @@ IONIC CONF
 ###
 app.config ($WPHCConfig, $ionicConfigProvider) ->
     $ionicConfigProvider.views.maxCache $WPHCConfig.cache.views
+    $ionicConfigProvider.views.forwardCache $WPHCConfig.cache.forward
+    # $ionicConfigProvider.scrolling.jsScrolling false
 
 ###
 REST CONF
@@ -114,6 +117,8 @@ app.controller 'WPHCMainController' , ($log, $WPHCConfig) ->
 
     vm = @
     vm.exposeAsideWhen = $WPHCConfig.menu.exposeAsideWhen || 'large'
+    vm.appTitle = $WPHCConfig.title || null
+    vm.appVersion = wordpressHybridClient.version || null
 
 ###
 DIRECTIVES

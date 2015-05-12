@@ -4,6 +4,7 @@
     },
     "env": "dev",
     "debugEnabled" : false,
+    "title": "Your Blog title",
     "menu": {
         "exposeAsideWhen": "(min-width:900px)",
         "wordpress": [{
@@ -38,6 +39,7 @@
     },
     "cache": {
         "views": 10,
+        "forward": false,
         "data": {
             "capacity": 100,
             "maxAge": 21600000,

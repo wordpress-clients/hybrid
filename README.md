@@ -75,3 +75,4 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [ ] Push Notifications
 - [ ] Offline
 - [ ] Ability to add ads
+- [ ] App rate

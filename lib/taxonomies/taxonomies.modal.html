@@ -1,11 +1,11 @@
 <ion-modal-view>
     <ion-header-bar class="bar-positive">
         <h1 class="title">{{ taxonomies.title | translate}}</h1>
-        <md-button class="button button-clear" ng-click="modal.hide()"><i class="icon ion-close-round"></i>
-        </md-button>
+        <button class="button button-clear" ng-click="modal.hide()"><i class="icon ion-close-round"></i>
+        </button>
     </ion-header-bar>
-    <wphc-loader ng-if="!taxonomies.list.length"></wphc-loader>
-    <ion-content >
+    <ion-content>
+        <wphc-loader ng-if="!taxonomies.list.length"></wphc-loader>
         <wphc-taxonomies taxonomies="taxonomies.list" on-click="modal.hide()" term="taxonomies.term"></wphc-taxonomies>
     </ion-content>
 </ion-modal-view>

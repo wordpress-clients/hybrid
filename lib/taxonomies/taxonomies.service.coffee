@@ -20,9 +20,12 @@ module.exports = angular.module('wordpress-hybrid-client.taxonomies').factory '$
 
         modal.scope.taxonomies =
             title: translation
-            term: term
-            list: list
-        modal.show()
+            term : null
+            list : []
+
+        modal.show().then ->
+            modal.scope.taxonomies.term = term
+            modal.scope.taxonomies.list = list
 
     getTitle: (term, slug) ->
         trans = ''

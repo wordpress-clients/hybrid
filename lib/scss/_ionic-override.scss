@@ -41,6 +41,10 @@ ion-header-bar {
         line-height: $line-height-small;
     }
 }
-.bar .title + .buttons {
+.bar .title+.button:last-child,
+.bar>.button+.button:last-child,
+.bar>.button.pull-right,
+.bar .buttons.pull-right,
+.bar .title+.buttons {
     top: 10px;
 }

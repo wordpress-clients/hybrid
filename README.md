@@ -1,6 +1,6 @@
 ## installation
 
-[INSTALLATION.md](INSTALLATION.md)
+Read the manuel: [INSTALLATION.md](INSTALLATION.md)
 
 ## Run
 ```
@@ -19,7 +19,7 @@ ionic run android
 
 ## Release Android & iOS
 
-<RELEASE.md>
+Read the manuel: [RELEASE.md](RELEASE.md)
 
 ## Contribute
 
@@ -42,6 +42,8 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Overwrite Sass variables
 - [X] About Page
 - [X] Params Page
+- [X] Language switch
+- [X] Accessibility (Post font size)
 - [ ] Image cache ngImgCache
 - [ ] Personnalized Logo
 - [ ] Comment system (FB, WP, Disqus)

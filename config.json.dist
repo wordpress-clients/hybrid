@@ -1,12 +1,23 @@
 {
     "api": {
-        "baseUrl": ""
+        "baseUrl": "",
+        "timeout": 3000,
+        "maxAttempt": 3
     },
     "env": "dev",
     "debugEnabled" : false,
     "title": "Your Blog title",
     "menu": {
         "exposeAsideWhen": "(min-width:900px)",
+        "settings": {
+            "about": {
+                "enabled": true,
+                "credit": true
+            },
+            "parameters": {
+                "enabled": true
+            }
+        },
         "wordpress": [{
             "trans": "menu.home",
             "uiSref": "public.posts",

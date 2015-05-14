@@ -1,14 +1,12 @@
 module.exports = angular.module('wordpress-hybrid-client.menu').controller 'WPHCMenuController', ($log, $scope, $WPHCMenu ) ->
     $log.info 'WPHCMenuController'
     vm = @
-    vm.hasSocial = undefined
-    vm.hasSettings = undefined
     vm.getWordpress = ->
         $WPHCMenu.getWordpress()
     vm.hasSocial = ->
-        vm.hasSocial = $WPHCMenu.getSocial().length?
+        if $WPHCMenu.getSocial().length then true else false
     vm.hasSettings = ->
-        vm.hasSettings = $WPHCMenu.getSettings().length?
+        if $WPHCMenu.getSettings().length then true else false
     vm.getSettings = ->
         $WPHCMenu.getSettings()
     vm.getSocial = ->

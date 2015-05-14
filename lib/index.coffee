@@ -31,7 +31,10 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   require('./search/search.module').name
   require('./menu/menu.module').name
   require('./cordova/cordova.module').name
+  require('./params/params.module').name
   require('./about/about.module').name
+  require('./language/language.module').name
+  require('./accessibility/accessibility.module').name
 ]
 
 app.config ($stateProvider) ->
@@ -59,7 +62,7 @@ IONIC CONF
 app.config ($WPHCConfig, $ionicConfigProvider) ->
     $ionicConfigProvider.views.maxCache $WPHCConfig.cache.views
     $ionicConfigProvider.views.forwardCache $WPHCConfig.cache.forward
-    # $ionicConfigProvider.scrolling.jsScrolling false
+    $ionicConfigProvider.scrolling.jsScrolling false
 
 ###
 REST CONF
@@ -81,19 +84,15 @@ app.config ($WPHCConfig, WpApiProvider, $ionicConfigProvider) ->
 ###
 TRANSLATION CONF
 ###
-app.config ($WPHCConfig, $translateProvider) ->
-    languages = []
-    languagesMapping = {}
-    for language, mapping of $WPHCConfig.translation.available
-        languages.push language
-        angular.extend languagesMapping, mapping
+app.config ($translateProvider, $WPHCLanguageProvider) ->
+    languages = $WPHCLanguageProvider.getLanguages()
+    for i, language of languages
         $translateProvider.translations language, require './translations/' + language
 
     $translateProvider
-        .preferredLanguage $WPHCConfig.translation.prefered
-        .registerAvailableLanguageKeys languages, languagesMapping
+        .preferredLanguage $WPHCLanguageProvider.getPreferedLanguage()
+        .registerAvailableLanguageKeys languages, $WPHCLanguageProvider.getLanguagesMapping()
         .fallbackLanguage 'en'
-        .determinePreferredLanguage()
 
 ###
 CACHE CONF
@@ -117,8 +116,10 @@ app.controller 'WPHCMainController' , ($log, $WPHCConfig) ->
 
     vm = @
     vm.exposeAsideWhen = $WPHCConfig.menu.exposeAsideWhen || 'large'
-    vm.appTitle = $WPHCConfig.title || null
     vm.appVersion = wordpressHybridClient.version || null
+    vm.appConfig = $WPHCConfig
+    vm.appTitle = vm.appConfig.title || null
+    vm
 
 ###
 DIRECTIVES
@@ -137,7 +138,7 @@ require "./directives/href/href.coffee"
 ###
 RUN
 ###
-app.run ($rootScope, $log, $WPHCConfig) ->
+app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $WPHCAccessibility, $cordovaSplashscreen) ->
 
     # handling debug events
     if $WPHCConfig.debugEnabled
@@ -145,6 +146,13 @@ app.run ($rootScope, $log, $WPHCConfig) ->
             $log.info '$stateNotFound', unfoundState
         $rootScope.$on '$stateChangeError', (event, toState, toParams, fromState, fromParams, error) ->
             $log.info '$stateChangeError', error
+
+    $WPHCAccessibility.updateBodyClass()
+    # For web debug
+    if !ionic.Platform.isWebView()
+        $translate.use $WPHCLanguage.getLocale()
+    else
+        $cordovaSplashscreen.hide()
 
     # Clean up appLoading
     angular.element(document.querySelector 'html').removeClass 'app-loading'

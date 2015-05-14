@@ -21,7 +21,7 @@ pre {
     display: block;
     padding: 0;
     margin: 0;
-    font-size: ($font-size-base - 1);
+    font-size: inherit;
     // 14px to 13px
     line-height: $line-height-base;
     word-break: break-all;

@@ -8,7 +8,7 @@
         "home": "Home",
         "tags": "Tags",
         "search": "Search",
-        "socialNetwork": "Social Network",
+        "socialNetworks": "Social Networks",
         "categories": "Categories",
         "settings": "Settings"
     },
@@ -44,6 +44,23 @@
     },
     "about": {
         "title": "About",
-        "credit": "{{appTitle}} is proudly powered by {{wphc}} and WordPress"
+        "credit": "Powered by {{wphc}} and WordPress"
+    },
+    "params": {
+        "title": "Parameters",
+        "offlineMode": "Offline mode (soon)",
+        "fontSize": "Font size",
+        "language": "Language"
+    },
+    "languages": {
+        "en": "English",
+        "fr": "French"
+    },
+    "fontSize": {
+        "small": "Small",
+        "medium": "Medium",
+        "large": "Large",
+        "x-large": "Xlarge",
+        "xx-large": "XXlarge"
     }
 }

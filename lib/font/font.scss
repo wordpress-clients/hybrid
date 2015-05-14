@@ -2,18 +2,70 @@
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    src: local('Roboto'), local('Roboto-Regular'), url("Roboto.ttf") format('truetype');
+    src: local('Roboto'), local('Roboto-Regular'), url("./Roboto.ttf") format('truetype');
 }
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    src: local('Roboto'), local('Roboto-Regular'), url("Roboto.woff2") format('woff2'), url("Roboto.woff") format('woff');
+    src: local('Roboto'), local('Roboto-Regular'), url("./Roboto.woff2") format('woff2'), url("./Roboto.woff") format('woff');
 }
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    src: local('Roboto'), local('Roboto-Regular'), url("Roboto.woff2") format('woff2');
+    src: local('Roboto'), local('Roboto-Regular'), url("./Roboto.woff2") format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+body {
+    font-size: 100%;
+    .post-content {
+        h1,
+        .h1 {
+            font-size: 2.60em;
+        }
+        // ~36px
+        h2,
+        .h2 {
+            font-size: 2.15em;
+        }
+        // ~30px
+        h3,
+        .h3 {
+            font-size: 1.70em;
+        }
+        // ~24px
+        h4,
+        .h4 {
+            font-size: 1.25em;
+        }
+        // ~18px
+        h5,
+        .h5 {
+            font-size: 1em;
+        }
+        h6,
+        .h6 {
+            font-size: 0.85em;
+        }
+        * {
+            font-size: inherit;
+            line-height: 1.5em;
+        }
+    }
+    &.font-small {
+        font-size: 95%;
+    }
+    &.font-medium {
+        font-size: 100%;
+    }
+    &.font-large {
+        font-size: 110%;
+    }
+    &.font-x-large {
+        font-size: 120%;
+    }
+    &.font-xx-large {
+        font-size: 130%;
+    }
 }

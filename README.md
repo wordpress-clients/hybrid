@@ -1,52 +1,25 @@
-## install
+## installation
 
-```
-npm install -g cordova ionic webpack webpack-dev-server
-
-# Dev App config
-cp config.json.dist config.json
-# Prod App config
-cp config.json.dist config.prod.json
-# Hybrid config
-cp config.xml.dist config.xml
-# Release script
-cp release.sh.dist release.sh
-# Sass overwrite
-cp sass_overwrite.scss.dist sass_overwrite.scss
-
-```
+<INSTALLATION.md>
 
 ## Run
 ```
-# live reload version
-webpack-dev-server
+# live reload version (http://localhost:9100/)
+npm run-script devserver
 
 # Dump dev files within the www folder
-gulp build
+npm run-script dumpdev
 
 # Dump Prod files within the www folder
-gulp build:prod
-
-# Ios/Android overview
-ionic serve --lab
+npm run-script dumpprod
 
 # Run on device (make sure your device is listed: ```$ adb devices```)
 ionic run android
 ```
 
-# Generate apps
+## Release Android & iOS
 
-## Create Apk (android)
-
-### Keyboard adjustement
-
-Open ```platforms/android/AndroidManifest.xml``` and change ```android:windowSoftInputMode="adjustResize"``` into ```android:windowSoftInputMode="adjustNothing"``` it will prevent losing the menu to close when searching on tablets.
-
-
-```
-# Make sure your change the path to your signing key. Change ```~/.ssh/android_wphc.keystore``` to whatever your Android key is.
-node run-script build
-```
+<RELEASE.md>
 
 ## Contribute
 
@@ -68,6 +41,8 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Social buttons
 - [X] Overwrite Sass variables
 - [X] About Page
+- [X] Params Page
+- [ ] Image cache ngImgCache
 - [ ] Personnalized Logo
 - [ ] Comment system (FB, WP, Disqus)
 - [ ] Templating

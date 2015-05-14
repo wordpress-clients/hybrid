@@ -25,7 +25,7 @@
         <h2>{{post.author.name}}</h2>
         {{post.date | date : format : timezone}}
     </div>
-    <div ng-if="::post.excerpt" bind-and-compile-html="::(post.content | prepLink)"></div>
+    <div class="post-content" ng-if="::post.excerpt" bind-and-compile-html="::(post.content | prepLink)"></div>
 
     <div class="item item-divider item-toolbar">
         <button class="button button-clear" ng-if="::post.terms.category.length" ng-click="showTaxonomies( 'categories.title', post.terms.category, 'category') ">

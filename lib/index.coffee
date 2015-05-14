@@ -106,9 +106,8 @@ app.config ($WPHCConfig, CacheFactoryProvider) ->
 MEMORY STATS CONF
 ###
 app.config ($WPHCConfig, angularMemoryStatsProvider, $compileProvider) ->
-    if $WPHCConfig.env is 'prod'
-        $compileProvider.debugInfoEnabled false
-        angularMemoryStatsProvider.enable false
+    $compileProvider.debugInfoEnabled $WPHCConfig.debugEnabled
+    angularMemoryStatsProvider.enable $WPHCConfig.debugEnabled
 
 ###
 MAIN CONTROLLER
@@ -140,7 +139,7 @@ require "./directives/href/href.coffee"
 ###
 RUN
 ###
-app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $WPHCAccessibility, $cordovaSplashscreen) ->
+app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $ionicPlatform, $WPHCAccessibility, $cordovaSplashscreen) ->
 
     # handling debug events
     if $WPHCConfig.debugEnabled
@@ -150,11 +149,13 @@ app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $WPHCAccessib
             $log.info '$stateChangeError', error
 
     $WPHCAccessibility.updateBodyClass()
-    # For web debug
-    if !ionic.Platform.isWebView()
-        $translate.use $WPHCLanguage.getLocale()
-    else
-        $cordovaSplashscreen.hide()
+
+    $ionicPlatform.ready () ->
+        # For web debug
+        if !ionic.Platform.isWebView()
+            $translate.use $WPHCLanguage.getLocale()
+        else
+            $cordovaSplashscreen.hide()
 
     # Clean up appLoading
     angular.element(document.querySelector 'html').removeClass 'app-loading'

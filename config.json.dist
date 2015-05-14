@@ -4,7 +4,6 @@
         "timeout": 3000,
         "maxAttempt": 3
     },
-    "env": "dev",
     "debugEnabled" : false,
     "title": "Your Blog title",
     "menu": {
@@ -95,6 +94,7 @@
         "prefered": "en"
     },
     "analytics": {
+        "enabled": false,
         "trackingId": "",
         "userId": "",
         "virtualPageTracking": true

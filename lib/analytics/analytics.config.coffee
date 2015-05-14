@@ -1,13 +1,13 @@
 module.exports = angular.module 'wordpress-hybrid-client.analytics'
     .config ($WPHCConfig, $analyticsProvider) ->
-        if !$WPHCConfig.analytics or !$WPHCConfig.analytics.trackingId
+        if !$WPHCConfig.analytics.enabled or !$WPHCConfig.analytics.trackingId
             return
 
         $analyticsProvider.developerMode $WPHCConfig.debugEnabled
         $analyticsProvider.virtualPageviews $WPHCConfig.analytics.virtualPageTracking
 
     .run ($WPHCConfig) ->
-        if !$WPHCConfig.analytics or !$WPHCConfig.analytics.trackingId
+        if !$WPHCConfig.analytics.enabled or !$WPHCConfig.analytics.trackingId
             return
 
         ((i, s, o, g, r, a, m) ->

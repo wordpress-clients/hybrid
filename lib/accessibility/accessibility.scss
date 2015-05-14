@@ -1,0 +1,57 @@
+body {
+    font-size: 100%;
+    .post-content {
+        h1,
+        .h1 {
+            font-size: 2.60em;
+        }
+        // ~36px
+        h2,
+        .h2 {
+            font-size: 2.15em;
+        }
+        // ~30px
+        h3,
+        .h3 {
+            font-size: 1.70em;
+        }
+        // ~24px
+        h4,
+        .h4 {
+            font-size: 1.25em;
+        }
+        // ~18px
+        h5,
+        .h5 {
+            font-size: 1em;
+        }
+        h6,
+        .h6 {
+            font-size: 0.85em;
+        }
+        * {
+            font-size: inherit;
+            line-height: 1.5em;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    &.font-small {
+        font-size: 95%;
+    }
+    &.font-medium {
+        font-size: 100%;
+    }
+    &.font-large {
+        font-size: 110%;
+    }
+    &.font-x-large {
+        font-size: 120%;
+    }
+    &.font-xx-large {
+        font-size: 130%;
+    }
+}

@@ -45,6 +45,7 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Language switch
 - [X] Accessibility (Post font size)
 - [ ] Image cache ngImgCache
+- [ ] Table of content for posts
 - [ ] Personnalized Logo
 - [ ] Comment system (FB, WP, Disqus)
 - [ ] Templating

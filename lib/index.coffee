@@ -6,6 +6,7 @@ require 'angular-ui-router'
 require 'angular-translate'
 require 'angular-cache'
 require 'angular-moment'
+require 'angular-filter'
 require 'angular-memory-stats'
 require 'ionic/js/ionic'
 require 'ionic/js/ionic-angular'
@@ -25,6 +26,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   'wp-api-angularjs'
   'pascalprecht.translate'
   'angular-cache'
+  'angular.filter'
   require('./taxonomies/taxonomies.module').name
   require('./post/post.module').name
   require('./posts/posts.module').name

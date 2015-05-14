@@ -49,7 +49,7 @@
     "params": {
         "title": "Parameters",
         "offlineMode": "Offline mode (soon)",
-        "fontSize": "Font size",
+        "fontSize": "Posts font size",
         "language": "Language"
     },
     "languages": {

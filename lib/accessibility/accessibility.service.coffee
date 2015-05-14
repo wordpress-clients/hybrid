@@ -20,8 +20,23 @@ module.exports = angular.module('wordpress-hybrid-client.accessibility')
             return @fontSize
 
         getFontSizeList : ->
-            "small" : "fontSize.small"
-            "medium" : "fontSize.medium"
-            "large" : "fontSize.large"
-            "x-large" : "fontSize.x-large"
-            "xx-large" : "fontSize.xx-large"
+            "small" :
+                trans : "fontSize.small"
+                value: "small"
+                order: 0
+            "medium" :
+                trans : "fontSize.medium"
+                value: "medium"
+                order: 1
+            "large" :
+                trans : "fontSize.large"
+                value: "large"
+                order: 2
+            "x-large" :
+                trans : "fontSize.x-large"
+                value: "x-large"
+                order: 3
+            "xx-large" :
+                trans : "fontSize.xx-large"
+                value: "xx-large"
+                order: 4

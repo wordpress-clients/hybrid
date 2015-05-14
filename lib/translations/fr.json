@@ -47,9 +47,9 @@
         "credit": "Propulsé par {{wphc}} et WordPress"
     },
     "params": {
-        "title": "Parametres",
+        "title": "Paramètres",
         "offlineMode": "Mode offline (bientot)",
-        "fontSize": "Taille du text",
+        "fontSize": "Taille du texte des articles",
         "language": "Langue"
     },
     "languages": {

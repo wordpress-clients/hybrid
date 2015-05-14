@@ -15,7 +15,7 @@
                 <div class="input-label">
                     {{'params.fontSize' | translate}}
                 </div>
-                <select ng-model="params.selected.fontSize" ng-change="params.changeFontSize()" ng-options="key as value | translate for (key , value) in params.fontSize">
+                <select ng-model="params.selected.fontSize" ng-change="params.changeFontSize()" ng-options="object.value as object.trans | translate for object in params.fontSize | toArray | orderBy:'order'">
                 </select>
             </div>
         </div>

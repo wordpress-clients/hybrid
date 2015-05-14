@@ -1,6 +1,6 @@
 ## installation
 
-<INSTALLATION.md>
+[INSTALLATION.md](INSTALLATION.md)
 
 ## Run
 ```

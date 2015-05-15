@@ -1,10 +1,18 @@
-## installation
+## Installation
 
 Read the manuel: [INSTALLATION.md](INSTALLATION.md)
 
-## Run
+## Configuration
 
-Read the manuel: [DEBUG.md](DEBUG.md)
+Read the manuel: [CONFIGURATION.md](CONFIGURATION.md)
+
+## Development
+
+Read the manuel: [DEVELOPMENT.md](DEVELOPMENT.md)
+
+## Build Android & iOS
+
+Read the manuel: [BUILD.md](BUILD.md)
 
 ## Release Android & iOS
 
@@ -34,6 +42,7 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Language switch
 - [X] Accessibility (Post font size)
 - [ ] Image cache ngImgCache
+- [ ] Docker support for easier installation
 - [ ] Table of content for posts
 - [ ] Personnalized Logo
 - [ ] Comment system (FB, WP, Disqus)

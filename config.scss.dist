@@ -1,4 +1,5 @@
 // http://www.materialpalette.com/blue-grey/teal
+// Here you can also overwrite ionic's variables
 // $palette-primary-dark: #455a64 !default;
 // $palette-primary-color: #607d8b !default;
 // $palette-primary-light: #cfd8dc !default;

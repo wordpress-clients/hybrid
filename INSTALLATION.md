@@ -1,26 +1,29 @@
-## install
+## Installation
+
+NB: The following installation was made for OSX and Linux (Debian/Ubuntu). There is no Windows support.
+
+### Preriquisites
+
+* NodeJS
+* NPM
+
+### Clone repository
 
 ```
-npm install -g cordova ionic webpack webpack-dev-server
-
-# Dev App config
-cp config.json.dist config.json
-# Prod App config
-cp config.json.dist config.prod.json
-# Hybrid config
-cp config.xml.dist config.xml
-# Release script
-cp release.sh.dist release.sh
-# Sass overwrite
-cp sass_overwrite.scss.dist sass_overwrite.scss
-# About page
-cp about.md.dist about.md
-
+git clone git@github.com:shprink/wordpress-hybrid-client.git
 ```
 
-## Config
+### Run install.sh
 
-There are two config files, ```config.json``` and ```sass_overwrite.scss```
+```
+sh ./install.sh
+```
+
+### Config files
+
+Now that the installation is done two files
+
+There are two config files, ```config.json``` for the application configuration and ```config.scss``` for the style configuration.
 
 ### Installing the Web service
 

@@ -12,7 +12,7 @@ gulp bump --${version}
 gulp build:prod
 
 # Build the app
-ionic build android --release
+ionic build android ios --release
 
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/.ssh/android_wphc.keystore platforms/android/build/outputs/apk/android-x86-release-unsigned.apk wphc
 jarsigner -verify -certs platforms/android/build/outputs/apk/android-x86-release-unsigned.apk

@@ -1,5 +1,13 @@
 # Release
 
+Male sure you have ios and/or android platforms installed.
+
+```
+ionic platform add ios android
+```
+
+All the necessary plugins will be installed as well.
+
 ## Android
 
 ### Get and save licence key
@@ -22,4 +30,4 @@ npm run-script build
 
 ## iOS
 
-coming
+https://developer.apple.com/programs/ios/gettingstarted/

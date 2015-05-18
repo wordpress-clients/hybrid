@@ -12,7 +12,7 @@ All the necessary plugins will be installed as well.
 
 ### Get and save licence key
 
-https://support.google.com/googleplay/android-developer/answer/186113?hl=en
+<https://support.google.com/googleplay/android-developer/answer/186113?hl=en>
 
 Copy and past the key within your ```~/.ssh``` folder with that name ```android_wphc.keystore```
 
@@ -30,8 +30,8 @@ npm run-script build
 
 ## iOS
 
-https://developer.apple.com/programs/ios/gettingstarted/
+<https://developer.apple.com/programs/ios/gettingstarted/>
 
-https://developer.apple.com/library/mac/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/CreatingiTunesConnectRecord.html#//apple_ref/doc/uid/TP40011225-CH13
+<https://developer.apple.com/library/mac/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/CreatingiTunesConnectRecord.html#//apple_ref/doc/uid/TP40011225-CH13>
 
-http://codewithchris.com/submit-your-app-to-the-app-store/
+<http://codewithchris.com/submit-your-app-to-the-app-store/>

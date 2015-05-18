@@ -14,6 +14,7 @@ gulp build:prod
 # Build the app
 ionic build android ios --release
 
+# Android
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ~/.ssh/android_wphc.keystore platforms/android/build/outputs/apk/android-x86-release-unsigned.apk wphc
 jarsigner -verify -certs platforms/android/build/outputs/apk/android-x86-release-unsigned.apk
 ~/Library/Android/sdk/build-tools/21.1.2/zipalign -vf 4 platforms/android/build/outputs/apk/android-x86-release-unsigned.apk build/wphc-android-x86.apk

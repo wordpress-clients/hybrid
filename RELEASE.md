@@ -31,3 +31,7 @@ npm run-script build
 ## iOS
 
 https://developer.apple.com/programs/ios/gettingstarted/
+
+https://developer.apple.com/library/mac/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/CreatingiTunesConnectRecord.html#//apple_ref/doc/uid/TP40011225-CH13
+
+http://codewithchris.com/submit-your-app-to-the-app-store/

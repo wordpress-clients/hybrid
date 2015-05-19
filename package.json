@@ -1,6 +1,6 @@
 {
     "name": "wordpress-hybrid-client",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "title": "wordpress-hybrid-client",
     "description": "AngularJS client using Ionic Framework and based on the json-rest-api plugin: https://wordpress.org/plugins/json-rest-api/ with CORS enabled.",
     "main": "index.js",
@@ -97,8 +97,10 @@
         "org.apache.cordova.globalization",
         "org.apache.cordova.inappbrowser"
     ],
-    "cordovaPlatforms": [{
-        "platform": "android",
-        "locator": "./engine/cordova-android-c0.6.1/"
-    }]
+    "cordovaPlatforms": [
+        {
+            "platform": "android",
+            "locator": "./engine/cordova-android-c0.6.1/"
+        }
+    ]
 }

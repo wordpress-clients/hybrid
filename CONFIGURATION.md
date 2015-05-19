@@ -119,12 +119,67 @@ Social buttons on the left side menu. You can add any social network account the
 
 ### post
 
+```
+"cache": { // Overwrite global cache. Can be empty
+    "maxAge": 172800000,
+    "capacity": 10
+}
+```
+
 ### taxonomies
+
+```
+"cache": {  // Overwrite global cache. Can be empty
+    "maxAge": 172800000
+}
+```
 
 ### posts
 
+```
+"posts_per_page": 6,
+"orderby": "date",
+"orderby": "desc",
+"post_status": "publish",
+"cache": { // Overwrite global cache. Can be empty
+    "capacity": 25,
+    "maxAge": 86400000
+}
+```
+
 ### translation
+
+The languages you want to see in the parameters. So far we only support English and French.
+
+```
+"available": {
+    "en": {
+        "en_US": "en",
+        "en_UK": "en"
+    },
+    "fr": {
+        "fr_FR": "fr"
+    }
+},
+"prefered": "en"
+```
 
 ### analytics
 
+Enable Google Analytics
+
+```
+"enabled": false,
+"trackingId": "UA-7727182-6",
+"userId": "",
+"virtualPageTracking": true
+```
+
 ### cordova
+
+```
+"statubar": { // Status bar options
+    "show": true,
+    "color": "#455a64"
+}
+```

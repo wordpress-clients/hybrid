@@ -6,7 +6,7 @@ read -p "Release major, minor or patch? " version
 version=${version:-"patch"}
 
 # updgrade version before release
-gulp bump --${version}
+gulp cordova:release --${version}
 
 # package the app
 gulp build:prod

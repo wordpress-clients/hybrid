@@ -114,6 +114,15 @@ Social buttons on the left side menu. You can add any social network account the
     "cacheFlushInterval": null,
     "storageMode": "localStorage",
     "verifyIntegrity": true
+},
+"img" :{
+    "localCacheFolder": "imgcache",           /* name of the cache folder */
+    "useDataURI": false,                      /* use src="data:.."? otherwise will use src="filesystem:.." */
+    "chromeQuota": 10 * 1024 * 1024,          /* allocated cache space : here 10MB */
+    "usePersistentCache": true,               /* false = use temporary cache storage */
+    "cacheClearSize": 0,                      /* size in MB that triggers cache clear on init, 0 to disable */
+    "headers": {},                            /* HTTP headers for the download requests -- e.g: headers: { 'Accept': 'application/jpg' } */
+    "skipURIencoding": false                  /* enable if URIs are already encoded (skips call to sanitizeURI) */
 }
 ```
 

@@ -45,6 +45,9 @@ module.exports = {
             test: /[\/]angular\.js$/,
             loader: 'expose?angular!exports?window.angular'
         }, {
+            test: /[\/]imgcache\.js$/,
+            loader: 'expose?ImgCache'
+        }, {
             test: /[\/]ionic\.js$/,
             loader: 'exports?ionic' // For non commonJs
         }, {

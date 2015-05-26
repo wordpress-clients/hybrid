@@ -37,6 +37,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   require('./about/about.module').name
   require('./language/language.module').name
   require('./accessibility/accessibility.module').name
+  require('./cacheImg/cacheImg.module').name
 ]
 
 app.config ($stateProvider) ->

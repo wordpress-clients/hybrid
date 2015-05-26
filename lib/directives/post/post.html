@@ -21,7 +21,7 @@
         </button>
     </div>
     <div class="item item-author" ng-class="::{'item-avatar' : post.author.avatar}">
-        <img src="{{::post.author.avatar}}" ng-if="::post.author.avatar">
+        <img wphc-img-cache ng-src="{{::post.author.avatar}}" ng-if="::post.author.avatar">
         <h2>{{post.author.name}}</h2>
         {{post.date | date : format : timezone}}
     </div>

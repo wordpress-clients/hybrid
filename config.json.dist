@@ -50,6 +50,15 @@
     "cache": {
         "views": 10,
         "forward": false,
+        "img": {
+            "localCacheFolder": "imgcache",
+            "useDataURI": false,
+            "chromeQuota": 10485760,
+            "usePersistentCache": true,
+            "cacheClearSize": 0,
+            "headers": {},
+            "skipURIencoding": false
+        },
         "data": {
             "capacity": 100,
             "maxAge": 21600000,

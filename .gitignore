@@ -32,7 +32,6 @@ engine/
 node_modules/
 platforms/
 plugins/
-build/
 resources/
 bower_components/
 config.json

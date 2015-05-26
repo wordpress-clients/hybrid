@@ -28,10 +28,45 @@ Open ```platforms/android/AndroidManifest.xml``` and change ```android:windowSof
 npm run-script build
 ```
 
+Then answer to the prompt.
+
 ## iOS
+
+### Documentation
 
 <https://developer.apple.com/programs/ios/gettingstarted/>
 
 <https://developer.apple.com/library/mac/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/CreatingiTunesConnectRecord.html#//apple_ref/doc/uid/TP40011225-CH13>
 
 <http://codewithchris.com/submit-your-app-to-the-app-store/>
+
+### Install sigh
+
+Sigh allow to sign .app with a provisioning file via the terminal
+
+```
+# https://github.com/KrauseFx/sigh
+sudo gem install sigh
+```
+
+### Move the distribution provisioning file to the build folder
+
+Go get the distribution provisioning file from <https://developer.apple.com/account/overview.action> then move it to the ```./build``` folder under the name ```release.mobileprovision```
+
+### Build PROD IPA
+
+```
+npm run-script build
+```
+
+Then answer to the prompt.
+
+### Use XCode or Application Loader
+
+Once the IPA is signed, all you need to do is sending the package to Apple for review.
+
+### Frequent errors
+
+#### Submitting iOS app to app store application identifier invalid
+
+<http://stackoverflow.com/questions/20120128/submitting-ios-app-to-app-store-application-identifier-invalid>

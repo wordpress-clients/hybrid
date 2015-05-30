@@ -1,5 +1,5 @@
 <ion-side-menus enable-menu-with-back-views="true">
-    <ion-side-menu-content>
+    <ion-side-menu-content ng-if="::appLoaded">
         <ion-nav-bar class="bar-positive">
             <ion-nav-back-button>
             </ion-nav-back-button>
@@ -16,7 +16,7 @@
         </ion-nav-bar>
         <ion-nav-view name="content"></ion-nav-view>
     </ion-side-menu-content>
-    <ion-side-menu side="left" expose-aside-when="{{main.exposeAsideWhen}}" ui-view="menu">
+    <ion-side-menu ng-if="::appLoaded" side="left" expose-aside-when="{{main.exposeAsideWhen}}" ui-view="menu">
 
     </ion-side-menu>
 </ion-side-menus>

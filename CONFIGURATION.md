@@ -65,7 +65,7 @@ The media query used to determine when to always display the left menu.
 "exposeAsideWhen": "(min-width:900px)"
 ```
 
-Settings configuration.
+#### Settings configuration.
 
 ```
 "settings": {
@@ -80,7 +80,35 @@ Settings configuration.
 }
 ```
 
-Social buttons on the left side menu. You can add any social network account there. The icons must be FontAwesome's icons.
+#### Wordpress entries
+
+For now the homepage is mandatory and cannot be a specific page.
+
+You can add to the list, a specific category, a specific tag or lists.
+
+```
+"wordpress": [{
+    "trans": "menu.home",
+    "uiSref": "public.posts",
+    "icon": "icon ion-home"
+},{
+    "trans": "Your category",
+    "uiSref": "public.taxonomies.slug({ term: 'category', slug: 'your-category-slug' })",
+    "icon": "icon ion-iphone"
+}, {
+    "trans": "menu.categories",
+    "uiSref": "public.taxonomies({ term: 'category' })",
+    "icon": "icon ion-folder"
+}, {
+    "trans": "menu.tags",
+    "uiSref": "public.taxonomies({ term: 'post_tag' })",
+    "icon": "icon ion-pricetags"
+}],
+```
+
+#### Social buttons
+
+You can add any social network account there. The icons must be from ionicons.com
 
 ```
 "social": [{

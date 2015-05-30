@@ -10,6 +10,7 @@ module.exports = angular.module 'wordpress-hybrid-client.cacheImg'
         ImgCache.options.skipURIencoding = $WPHCConfig.cache.img.skipURIencoding;
 
         $ionicPlatform.ready ->
+            $log.debug 'ImgCache initialising'
             ImgCache.init ->
                 $log.debug 'ImgCache init: success!'
             , ->

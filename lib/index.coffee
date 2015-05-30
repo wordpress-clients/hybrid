@@ -38,6 +38,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   require('./language/language.module').name
   require('./accessibility/accessibility.module').name
   require('./cacheImg/cacheImg.module').name
+  require('./init/init.module').name
 ]
 
 app.config ($stateProvider) ->
@@ -140,7 +141,8 @@ require "./directives/href/href.coffee"
 ###
 RUN
 ###
-app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $ionicPlatform, $WPHCAccessibility, $cordovaSplashscreen) ->
+app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $ionicPlatform, $WPHCAccessibility, $cordovaSplashscreen, $WPHCInit) ->
+    $rootScope.appLoaded = undefined
 
     # handling debug events
     if $WPHCConfig.debugEnabled
@@ -152,12 +154,14 @@ app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $ionicPlatfor
     $WPHCAccessibility.updateBodyClass()
 
     $ionicPlatform.ready () ->
-        # For web debug
-        if !ionic.Platform.isWebView()
-            $translate.use $WPHCLanguage.getLocale()
-        else
-            $cordovaSplashscreen.hide()
+        $WPHCInit.init().finally ()->
+            $rootScope.appLoaded = true;
+            # For web debug
+            if !ionic.Platform.isWebView()
+                $translate.use $WPHCLanguage.getLocale()
+            else
+                $cordovaSplashscreen.hide()
 
     # Clean up appLoading
-    angular.element(document.querySelector 'html').removeClass 'app-loading'
-    angular.element(document.querySelector '#appLoaderWrapper').remove()
+    # angular.element(document.querySelector 'html').removeClass 'app-loading'
+    # angular.element(document.querySelector '#appLoaderWrapper').remove()

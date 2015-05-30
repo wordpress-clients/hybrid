@@ -9,3 +9,18 @@ module.exports = angular.module 'wordpress-hybrid-client.cacheImg'
                     else
                         ImgCache.cacheFile src, ->
                             ImgCache.useCachedFile el
+    .directive 'wphcImgBackgroundCache', ->
+        restrict: 'A'
+        link: (scope, el, attrs) ->
+            setBackgroundImage = (src) ->
+                el.css
+                    'background-image': "url('#{src}')"
+
+            attrs.$observe 'wphcImgBackgroundCache', (src) ->
+                ImgCache.isCached src, (path, success) ->
+                    if success
+                        ImgCache.getCachedFileURL src, (src, srcCached)->
+                            setBackgroundImage srcCached
+                    else
+                        ImgCache.cacheFile src, ->
+                        setBackgroundImage src

@@ -39,9 +39,10 @@ gulp.task('build:prod', ['cleanWww', 'webpack:prod']);
 gulp.task('bump', require('gulp-cordova-bump'));
 
 gulp.task('cleanWww', function() {
-    return gulp.src(wwwPath, {
+    return gulp.src(path.join(wwwPath, '*'), {
         read: false
-    }).pipe(rimraf());
+    })
+    .pipe(rimraf());
 });
 
 gulp.task("webpack:dev", function(callback) {

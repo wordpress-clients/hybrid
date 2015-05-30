@@ -21,6 +21,10 @@
             "trans": "menu.home",
             "uiSref": "public.posts",
             "icon": "icon ion-home"
+        },{
+            "trans": "Your category",
+            "uiSref": "public.taxonomies.slug({ term: 'category', slug: 'your-category-slug' })",
+            "icon": "icon ion-iphone"
         }, {
             "trans": "menu.categories",
             "uiSref": "public.taxonomies({ term: 'category' })",

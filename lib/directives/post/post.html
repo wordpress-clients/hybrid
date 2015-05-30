@@ -1,5 +1,5 @@
 <div class="post padding">
-    <div class="item item-image" ng-if="::post.featured_image.is_image" ng-style="::{'background-image': 'url({{post.featured_image.attachment_meta.sizes.medium.url}})'}">
+    <div class="item item-image" ng-if="::post.featured_image.is_image" wphc-img-background-cache="{{post.featured_image.attachment_meta.sizes.medium.url}}">
         <div class="img-border"></div>
         <h1 class="item-title" ng-bind-html="::post.title"></h1>
     </div>

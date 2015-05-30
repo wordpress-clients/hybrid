@@ -1,22 +1,22 @@
 ## Installation
 
-Read the manuel: [INSTALLATION.md](INSTALLATION.md)
+Read the manual: [INSTALLATION.md](INSTALLATION.md)
 
 ## Configuration
 
-Read the manuel: [CONFIGURATION.md](CONFIGURATION.md)
+Read the manual: [CONFIGURATION.md](CONFIGURATION.md)
 
 ## Development
 
-Read the manuel: [DEVELOPMENT.md](DEVELOPMENT.md)
+Read the manual: [DEVELOPMENT.md](DEVELOPMENT.md)
 
 ## Build Android & iOS
 
-Read the manuel: [BUILD.md](BUILD.md)
+Read the manual: [BUILD.md](BUILD.md)
 
 ## Release Android & iOS
 
-Read the manuel: [RELEASE.md](RELEASE.md)
+Read the manual: [RELEASE.md](RELEASE.md)
 
 ## Contribute
 

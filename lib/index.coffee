@@ -7,7 +7,7 @@ require 'angular-translate'
 require 'angular-cache'
 require 'angular-moment'
 require 'angular-filter'
-require 'angular-memory-stats'
+require 'angular-performance-stats'
 require 'ionic/js/ionic'
 require 'ionic/js/ionic-angular'
 require 'moment'
@@ -21,7 +21,7 @@ require './scss/bootstrap'
 module.exports = app = angular.module 'wordpress-hybrid-client', [
   'ionic'
   require('./config').name
-  'angular-memory-stats'
+  'angular-performance-stats'
   'ui.router'
   'wp-api-angularjs'
   'pascalprecht.translate'
@@ -107,9 +107,9 @@ app.config ($WPHCConfig, CacheFactoryProvider) ->
 ###
 MEMORY STATS CONF
 ###
-app.config ($WPHCConfig, angularMemoryStatsProvider, $compileProvider) ->
+app.config ($WPHCConfig, angularPerformanceStatsProvider, $compileProvider) ->
     $compileProvider.debugInfoEnabled $WPHCConfig.debugEnabled
-    angularMemoryStatsProvider.enable $WPHCConfig.debugEnabled
+    angularPerformanceStatsProvider.enable $WPHCConfig.debugEnabled
 
 ###
 MAIN CONTROLLER
@@ -141,7 +141,7 @@ require "./directives/href/href.coffee"
 ###
 RUN
 ###
-app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $ionicPlatform, $WPHCAccessibility, $cordovaSplashscreen, $WPHCInit) ->
+app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $ionicPlatform, $WPHCAccessibility, $cordovaSplashscreen, angularPerformanceStats, $WPHCInit) ->
     $rootScope.appLoaded = undefined
 
     # handling debug events
@@ -152,6 +152,7 @@ app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $ionicPlatfor
             $log.info '$stateChangeError', error
 
     $WPHCAccessibility.updateBodyClass()
+    angularPerformanceStats.run()
 
     $ionicPlatform.ready () ->
         $WPHCInit.init().finally ()->

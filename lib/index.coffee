@@ -26,6 +26,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   'wp-api-angularjs'
   'pascalprecht.translate'
   'angular-cache'
+  'angularMoment'
   'angular.filter'
   require('./taxonomies/taxonomies.module').name
   require('./post/post.module').name

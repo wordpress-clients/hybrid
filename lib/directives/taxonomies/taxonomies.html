@@ -1,5 +1,5 @@
 <div class="list">
-    <a class="item item-icon-left repeat-animation" ng-class="::{'active disabled': isCurrentState(taxonomy.slug)}" ng-disabled="isCurrentState(taxonomy.slug)" ui-sref="public.taxonomies.slug({ slug: taxonomy.slug, term: term })" ng-repeat="taxonomy in taxonomies | orderBy:['count']:true "
+    <a class="item item-icon-left repeat-animation" ng-class="::{'active disabled': isCurrentState(taxonomy.slug)}" ng-disabled="isCurrentState(taxonomy.slug)" ui-sref="public.taxonomies.slug({ slug: taxonomy.slug, term: term })" ng-repeat="taxonomy in taxonomies | orderBy:['count']:true track by taxonomy.ID"
     ng-click="triggerOnClick(taxonomy)">
         <h2>{{taxonomy.name}}</h2>
         <small class="balanced" bind-and-compile-html="::(taxonomy.description | prepLink)"></small>

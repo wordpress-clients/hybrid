@@ -1,6 +1,6 @@
 module.exports = angular.module 'wordpress-hybrid-client.language'
     .provider '$WPHCLanguage', ($WPHCConfig, $translateProvider) ->
-        locale = localStorage.getItem("locale") || 'en'
+
         languages = []
         languagesTranslated = {}
         languagesMapping = {}
@@ -11,23 +11,31 @@ module.exports = angular.module 'wordpress-hybrid-client.language'
             languagesTranslated[language] = 'languages.' + language
             angular.extend languagesMapping, mapping
 
-        getLanguages : ->
-            languages
-
-        getLanguagesMapping : ->
-            languagesMapping
-
-        getPreferedLanguage : ->
+        getPreferedLanguage = ->
             $WPHCConfig.translation.prefered
 
-        $get : ->
+        getLanguages = ->
+            languages
+
+        getLanguagesMapping = ->
+            languagesMapping
+
+        getPreferedLanguage : getPreferedLanguage
+        getLanguages : getLanguages
+        getLanguagesMapping: getLanguagesMapping
+
+        $get : (amMoment) ->
+            locale: localStorage.getItem("locale") || 'en'
+            getPreferedLanguage : getPreferedLanguage
+            getLanguages : getLanguages
+            getLanguagesMapping: getLanguagesMapping
             getLanguagesList : ->
                 languagesTranslated
             hasLocale: ->
-                localStorage.getItem("locale")
+                localStorage.getItem "locale"
             getLocale: ->
-                locale
-            setLocale: (locale) ->
-                localStorage.setItem "locale", locale
-                locale = locale
-                $translateProvider.use locale
+                @locale
+            setLocale: (@locale) ->
+                localStorage.setItem "locale", @locale
+                $translateProvider.use @locale
+                amMoment.changeLocale @locale

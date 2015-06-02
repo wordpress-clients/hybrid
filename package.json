@@ -99,7 +99,8 @@
     "org.apache.cordova.inappbrowser",
     "org.apache.cordova.file-transfer",
     "org.apache.cordova.file",
-    "org.apache.cordova.device"
+    "org.apache.cordova.device",
+    "https://github.com/pushandplay/cordova-plugin-apprate.git"
   ],
   "cordovaPlatforms": [
     {

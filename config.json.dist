@@ -117,5 +117,16 @@
             "show": true,
             "color": "#455a64"
         }
+    },
+    "appRate": {
+        "language": "en",
+        "appName": "Your Blog title",
+        "openStoreInApp": true,
+        "usesUntilPrompt": 3,
+        "promptForNewVersion": true,
+        "useCustomRateDialog": "",
+        "iosURL": "",
+        "androidURL": "",
+        "windowsURL": ""
     }
 }

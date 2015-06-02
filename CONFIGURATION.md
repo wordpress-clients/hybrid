@@ -214,9 +214,37 @@ Enable Google Analytics
 
 ### cordova
 
+#### StatuBar
+
 ```
 "statubar": { // Status bar options
     "show": true,
     "color": "#455a64"
+}
+```
+
+#### appRate
+
+* ***language*** ```String``` Language of Dialog - eg 'en', 'fr', 'it'
+* ***appName***	```String``` Custom application title
+* ***openStoreInApp***	```Boolean``` Leave app or not
+* ***usesUntilPrompt***	```Integer``` Number of runs of app before dialog is displayed
+* ***promptForNewVersion***	```Boolean``` Show dialog again if new app version
+* ***useCustomRateDialog***	```String``` Use custom view for rate dialog
+* ***iosURL***	```String``` Application id in AppStore
+* ***androidURL***	```String``` Application URL in GooglePlay
+* ***windowsURL***	```String``` Application URL in WindowsStore
+
+```
+"appRate": {
+    "language": "en",
+    "appName": "Your Blog title",
+    "openStoreInApp": true,
+    "usesUntilPrompt": 3,
+    "promptForNewVersion": true,
+    "useCustomRateDialog": "",
+    "iosURL": "",
+    "androidURL": "",
+    "windowsURL": ""
 }
 ```

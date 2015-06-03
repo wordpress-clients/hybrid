@@ -118,6 +118,7 @@
             "color": "#455a64"
         },
         "appRate": {
+            "enabled": true,
             "language": "en",
             "appName": "Your Blog title",
             "openStoreInApp": true,

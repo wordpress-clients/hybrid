@@ -42,6 +42,7 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Language switch
 - [X] Accessibility (Post font size)
 - [X] Image cache ngImgCache
+- [X] App rate
 - [ ] Docker support for easier installation
 - [ ] Table of content for posts
 - [ ] Personnalized Logo
@@ -51,4 +52,3 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [ ] Push Notifications
 - [ ] Offline
 - [ ] Ability to add ads
-- [ ] App rate

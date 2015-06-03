@@ -225,6 +225,7 @@ Enable Google Analytics
 
 #### appRate
 
+* ***enabled*** ```Boolean``` Enable/Disable appRate
 * ***language*** ```String``` Language of Dialog - eg 'en', 'fr', 'it'
 * ***appName***	```String``` Custom application title
 * ***openStoreInApp***	```Boolean``` Leave app or not
@@ -237,6 +238,7 @@ Enable Google Analytics
 
 ```
 "appRate": {
+    "enabled": true,
     "language": "en",
     "appName": "Your Blog title",
     "openStoreInApp": true,

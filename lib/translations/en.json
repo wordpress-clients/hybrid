@@ -37,7 +37,8 @@
     },
     "posts": {
         "title": "Home",
-        "empty": "There is no posts here!"
+        "empty": "There is no posts here!",
+        "featured": "Featured"
     },
     "post": {
         "openInBrowser": "Open in browser"

@@ -1,4 +1,9 @@
 FROM node:0.10.38
+
+RUN groupadd -r wphcuser && useradd -r -g wphcuser wphcuser
+
+USER wphcuser
+
 MAINTAINER Julien Renaux <contact@julienrenaux.fr>
 RUN mkdir /wphc
 

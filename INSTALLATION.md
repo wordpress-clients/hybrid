@@ -37,13 +37,13 @@ Install [Docker](https://www.docker.com/) on your system.
 ### Pull images
 
 ```
-Docker pull shprink/wphc
+sudo docker pull shprink/wphc
 ```
 
 ### Run
 
 ```
-docker run -it -v /local/path/to/wordpress-hybrid-client:/wphc shprink/wphc bash
+sudo docker run -it -v /local/path/to/wordpress-hybrid-client:/wphc shprink/wphc bash
 ```
 
 Now you should be inside you docker, try listing folders to make sure they are accessible:

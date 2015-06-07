@@ -18,6 +18,26 @@ Read the manual: [BUILD.md](BUILD.md)
 
 Read the manual: [RELEASE.md](RELEASE.md)
 
+## Project public API
+
+### Run dev server
+
+```
+npm run-script devserver
+```
+
+### Dump dev files in www
+
+```
+npm run-script dumpdev
+```
+
+### Dump prod files in www
+
+```
+npm run-script dumpprod
+```
+
 ## Contribute
 
 WordPress hybrid Client is Open Source, If you are interested in helping, please read the following:

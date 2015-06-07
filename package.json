@@ -37,6 +37,7 @@
     "coffee-script": "^1.8.0",
     "cordova": "^5.0.0",
     "css-loader": "^0.9.1",
+    "del": "^1.2.0",
     "exports-loader": "^0.6.2",
     "expose-loader": "^0.6.0",
     "file-loader": "^0.8.1",
@@ -47,7 +48,6 @@
     "gulp-git": "^1.2.3",
     "gulp-header": "^1.2.2",
     "gulp-minify-css": "^0.4.4",
-    "gulp-rimraf": "^0.1.1",
     "gulp-tag-version": "^1.2.1",
     "gulp-util": "^3.0.1",
     "gulp-webpack": "^1.1.2",
@@ -64,6 +64,7 @@
     "semver": "^4.3.4",
     "style-loader": "^0.8.3",
     "util": "^0.10.3",
+    "vinyl-paths": "^1.0.0",
     "webpack": "^1.7.3",
     "webpack-dev-server": "^1.6.6",
     "xml2js": "^0.4.8"

@@ -2,9 +2,9 @@
 
 set -e
 
-npm install -g cordova ionic webpack webpack-dev-server
-
 npm install
+
+bower install
 
 # Dev App config
 cp config.json.dist config.json

@@ -43,7 +43,7 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Accessibility (Post font size)
 - [X] Image cache ngImgCache
 - [X] App rate
-- [ ] Docker support for easier installation
+- [X] Docker support for easier installation
 - [ ] Table of content for posts
 - [ ] Personnalized Logo
 - [ ] Comment system (FB, WP, Disqus)

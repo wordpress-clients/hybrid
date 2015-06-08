@@ -65,7 +65,7 @@
     "style-loader": "^0.8.3",
     "util": "^0.10.3",
     "vinyl-paths": "^1.0.0",
-    "webpack": "^1.7.3",
+    "webpack": "~1.7.3",
     "webpack-dev-server": "^1.6.6",
     "xml2js": "^0.4.8"
   },

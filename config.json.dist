@@ -79,6 +79,12 @@
             "capacity": 10
         }
     },
+    "syntaxHighlighter": {
+        "classPrefix": "hljs-",
+        "tabReplace": "    ",
+        "useBR": false,
+        "languages": ["javascript", "html", "coffeescript", "html", "css", "scss", "json", "apache", "bash", "markdown", "less", "php", "apache", "typescript"]
+    },
     "taxonomies": {
         "cache": {
             "maxAge": 172800000

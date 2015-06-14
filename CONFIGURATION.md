@@ -250,3 +250,20 @@ Enable Google Analytics
     "windowsURL": ""
 }
 ```
+### syntaxHighlighter
+
+Programming language auto detection for tech blogs
+
+* ***tabReplace***: a string used to replace TAB characters in indentation.
+* ***useBR***: a flag to generate <br> tags instead of new-line characters in the output, useful when code is marked up using a non-<pre> container.
+* ***classPrefix***: a string prefix added before class names in the generated markup, used for backwards compatibility with stylesheets.
+* ***languages***: an array of language names and aliases restricting auto detection to only these languages.
+
+```
+"syntaxHighlighter": {
+    "classPrefix": "hljs-",
+    "tabReplace": "    ",
+    "useBR": false,
+    "languages": ["javascript", "html", "coffeescript", "html", "css", "scss", "json", "apache", "bash", "markdown", "less", "php", "apache", "typescript"]
+}
+```

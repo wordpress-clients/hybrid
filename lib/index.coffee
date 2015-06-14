@@ -39,6 +39,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   require('./language/language.module').name
   require('./accessibility/accessibility.module').name
   require('./cacheImg/cacheImg.module').name
+  require('./syntaxHighlighter/syntaxHighlighter.module').name
   require('./init/init.module').name
 ]
 

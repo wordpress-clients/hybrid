@@ -64,6 +64,7 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Image cache ngImgCache
 - [X] App rate
 - [X] Docker support for easier installation
+- [X] Syntax highlighter for tech blogs
 - [ ] Table of content for posts
 - [ ] Personnalized Logo
 - [ ] Comment system (FB, WP, Disqus)

@@ -6,7 +6,6 @@ You have the choice to install WPHC directly on your machine (node, npm, bower a
 
 * NodeJS
 * NPM
-* Bower
 
 ### Clone repository
 

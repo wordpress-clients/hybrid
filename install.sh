@@ -4,8 +4,6 @@ set -e
 
 npm install
 
-bower install
-
 # Dev App config
 cp config.json.dist config.json
 # Prod App config

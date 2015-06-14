@@ -4,6 +4,7 @@ var path = require('path'),
     libPath = path.join(__dirname, 'lib'),
     wwwPath = path.join(__dirname, 'www'),
     pkg = require('./package.json'),
+    projectConfig = require('./config.json'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
@@ -17,6 +18,9 @@ module.exports = {
         loaders: [{
             test: /[\/]angular\.js$/,
             loader: 'expose?angular!exports?window.angular'
+        }, {
+            test: /[\/]highlight\.js$/,
+            loader: 'expose?hljs'
         }, {
             test: /[\/]imgcache\.js$/,
             loader: 'expose?ImgCache'
@@ -73,9 +77,13 @@ module.exports = {
         new ngAnnotatePlugin({
             add: true
         }),
-        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|fr/),
+        new webpack.ContextReplacementPlugin(/moment\/locale$/, getRegexAutorizedLanguages()),
         new webpack.DefinePlugin({
             IS_PROD: false
         })
     ]
 };
+
+function getRegexAutorizedLanguages() {
+    return new RegExp(Object.keys(projectConfig.translation.available).join('|'));
+}

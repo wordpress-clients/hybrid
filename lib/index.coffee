@@ -1,3 +1,6 @@
+# Create namespace
+window.WPHC = window.WPHC || {}
+
 require 'angular'
 require 'angular-animate'
 require 'angular-sanitize'
@@ -13,6 +16,8 @@ require 'ionic-sdk/release/js/ionic-angular'
 require 'moment'
 require './font/font.coffee'
 
+# lodash is a restangular dependency that is bundled in wp-api-angularjs.bundle
+require 'expose?_!lodash'
 require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
 
 # Style entry point
@@ -60,7 +65,7 @@ app.config ($stateProvider) ->
 ANGULAR CONF
 ###
 app.config ($WPHCConfig, $logProvider) ->
-    $logProvider.debugEnabled $WPHCConfig.debugEnabled
+    $logProvider.debugEnabled _.get($WPHCConfig, 'debugEnabled') || false
 
 ###
 IONIC CONF

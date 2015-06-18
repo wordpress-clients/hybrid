@@ -86,9 +86,10 @@
     "imagesloaded": "^3.1.8",
     "imgcache.js": "^1.0.0",
     "ionic-sdk": "^1.0.0",
+    "lodash": "^3.9.3",
     "moment": "^2.9.0",
     "ng-cordova": "^0.1.12-alpha",
-    "wp-api-angularjs": "^1.0.0-beta1"
+    "wp-api-angularjs": "^1.0.0"
   },
   "cordovaPlugins": [
     "https://github.com/danwilson/google-analytics-plugin.git",
@@ -105,7 +106,8 @@
     "org.apache.cordova.file-transfer",
     "org.apache.cordova.file",
     "org.apache.cordova.device",
-    "https://github.com/pushandplay/cordova-plugin-apprate.git"
+    "https://github.com/pushandplay/cordova-plugin-apprate.git",
+    "https://github.com/phonegap-build/PushPlugin.git"
   ],
   "cordovaPlatforms": [
     {

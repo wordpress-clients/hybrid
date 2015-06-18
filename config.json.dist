@@ -134,6 +134,17 @@
             "iosURL": "",
             "androidURL": "",
             "windowsURL": ""
+        },
+        "pushNotifications": {
+            "enabled": true,
+            "android": {
+                "senderID": "replace_with_sender_id"
+            },
+            "ios": {
+                "badge": true,
+                "sound": true,
+                "alert": true
+            }
         }
     }
 }

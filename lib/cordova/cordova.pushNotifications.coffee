@@ -11,16 +11,19 @@ module.exports = angular.module 'wordpress-hybrid-client.cordova'
         if !androidConfig && !iosConfig
             return
 
-        confirmNewContent = (postId , postTitle) ->
+        openPost = (postId) ->
+            $state.go 'public.post',
+                id : postId
+
+        confirmNewContent = (postId , postMsg) ->
             title = $filter('translate') 'pushNotifications.newContent.title'
             text = $filter('translate') 'pushNotifications.newContent.text',
-                postTitle: postTitle
+                postTitle: postMsg
                 appTitle: _.get $WPHCConfig, 'title' || ''
             buttonYes = $filter('translate') 'yes'
             buttonNo = $filter('translate') 'no'
-            navigator.notification.confirm text, () ->
-                $state.go 'public.post',
-                    id : postId
+            navigator.notification.confirm text, (confirmation) ->
+                openPost postId if confirmation is 1
             , title, [buttonYes, buttonNo]
 
         register = (os ,token) ->
@@ -61,10 +64,9 @@ module.exports = angular.module 'wordpress-hybrid-client.cordova'
                     when 'message'
                         $log.debug 'Push notif message', notification
                         if notification.foreground
-                            confirmNewContent notification.payload.id, notification.payload.title
+                            confirmNewContent notification.payload.id, notification.payload.message
                         else
-                            # notification.payload.id
-                            # notification.payload.title
+                            openPost notification.payload.id
                         break
                     when 'error'
                         $log.debug 'Push notif error', notification

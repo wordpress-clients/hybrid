@@ -24,28 +24,28 @@ require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
 require './scss/bootstrap'
 
 module.exports = app = angular.module 'wordpress-hybrid-client', [
-  'ionic'
-  require('./config').name
-  'angular-performance-stats'
-  'ui.router'
-  'wp-api-angularjs'
-  'pascalprecht.translate'
-  'angular-cache'
-  'angularMoment'
-  'angular.filter'
-  require('./taxonomies/taxonomies.module').name
-  require('./post/post.module').name
-  require('./posts/posts.module').name
-  require('./search/search.module').name
-  require('./menu/menu.module').name
-  require('./cordova/cordova.module').name
-  require('./params/params.module').name
-  require('./about/about.module').name
-  require('./language/language.module').name
-  require('./accessibility/accessibility.module').name
-  require('./cacheImg/cacheImg.module').name
-  require('./syntaxHighlighter/syntaxHighlighter.module').name
-  require('./init/init.module').name
+    'ionic'
+    require('./config').name
+    'angular-performance-stats'
+    'ui.router'
+    'wp-api-angularjs'
+    'pascalprecht.translate'
+    'angular-cache'
+    'angularMoment'
+    'angular.filter'
+    require('./taxonomies/taxonomies.module').name
+    require('./post/post.module').name
+    require('./posts/posts.module').name
+    require('./search/search.module').name
+    require('./menu/menu.module').name
+    require('./cordova/cordova.module').name
+    require('./params/params.module').name
+    require('./about/about.module').name
+    require('./language/language.module').name
+    require('./accessibility/accessibility.module').name
+    require('./cacheImg/cacheImg.module').name
+    require('./syntaxHighlighter/syntaxHighlighter.module').name
+    require('./init/init.module').name
 ]
 
 app.config ($stateProvider) ->
@@ -71,8 +71,8 @@ app.config ($WPHCConfig, $logProvider) ->
 IONIC CONF
 ###
 app.config ($WPHCConfig, $ionicConfigProvider) ->
-    $ionicConfigProvider.views.maxCache $WPHCConfig.cache.views
-    $ionicConfigProvider.views.forwardCache $WPHCConfig.cache.forward
+    $ionicConfigProvider.views.maxCache _.get($WPHCConfig, 'cache.views') || 10
+    $ionicConfigProvider.views.forwardCache _.get($WPHCConfig, 'cache.forward') || false
     $ionicConfigProvider.scrolling.jsScrolling false
 
 ###
@@ -81,8 +81,8 @@ REST CONF
 app.config ($WPHCConfig, WpApiProvider, $ionicConfigProvider) ->
     RestangularProvider = WpApiProvider.getRestangularProvider()
     RestangularProvider.setDefaultHttpFields
-        timeout: $WPHCConfig.api.timeout
-    RestangularProvider.setBaseUrl $WPHCConfig.api.baseUrl
+        timeout: _.get($WPHCConfig, 'api.timeout') || 5000
+    RestangularProvider.setBaseUrl _.get($WPHCConfig, 'api.baseUrl') || null
     RestangularProvider.setFullResponse true
     RestangularProvider.addResponseInterceptor (data, operation, what, url, response, deferred) ->
         data.wpApiHeaders =
@@ -104,19 +104,20 @@ app.config ($translateProvider, $WPHCLanguageProvider) ->
         .preferredLanguage $WPHCLanguageProvider.getPreferedLanguage()
         .registerAvailableLanguageKeys languages, $WPHCLanguageProvider.getLanguagesMapping()
         .fallbackLanguage 'en'
+        .useSanitizeValueStrategy 'sanitize'
 
 ###
 CACHE CONF
 ###
 app.config ($WPHCConfig, CacheFactoryProvider) ->
-    angular.extend(CacheFactoryProvider.defaults, $WPHCConfig.cache.data)
+    angular.extend(CacheFactoryProvider.defaults, _.get($WPHCConfig, 'cache.data') || {})
 
 ###
 MEMORY STATS CONF
 ###
 app.config ($WPHCConfig, angularPerformanceStatsProvider, $compileProvider) ->
-    $compileProvider.debugInfoEnabled $WPHCConfig.debugEnabled
-    angularPerformanceStatsProvider.enable $WPHCConfig.debugEnabled
+    $compileProvider.debugInfoEnabled _.get($WPHCConfig, 'debugEnabled') || false
+    angularPerformanceStatsProvider.enable _.get($WPHCConfig, 'debugEnabled') || false
 
 ###
 MAIN CONTROLLER
@@ -125,7 +126,7 @@ app.controller 'WPHCMainController' , ($log, $WPHCConfig) ->
     $log.info 'main controller'
 
     vm = @
-    vm.exposeAsideWhen = $WPHCConfig.menu.exposeAsideWhen || 'large'
+    vm.exposeAsideWhen = _.get($WPHCConfig, 'menu.exposeAsideWhen') || 'large'
     vm.appVersion = wordpressHybridClient.version || null
     vm.appConfig = $WPHCConfig
     vm.appTitle = vm.appConfig.title || null

@@ -138,7 +138,7 @@
         "pushNotifications": {
             "enabled": true,
             "android": {
-                "senderID": "replace_with_sender_id"
+                "senderID": "replace_with_sender_id (12 digits number)"
             },
             "ios": {
                 "badge": true,

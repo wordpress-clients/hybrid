@@ -59,6 +59,7 @@
     "markdown-loader": "^0.1.2",
     "ng-annotate": "^0.15.2",
     "ng-annotate-webpack-plugin": "^0.1.2",
+    "node-gcm": "^0.9.15",
     "path": "^0.4.9",
     "sass-loader": "^0.5.0",
     "semver": "^4.3.4",

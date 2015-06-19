@@ -112,3 +112,37 @@ gulp.task('cordova:release', function() {
         return incConfigXml('major');
     }
 })
+
+gulp.task('push:android', function() {
+    if (!gutil.env.apiKey || gutil.env.apiKey === true) {
+        throw new Error('You must specify the android Api key, refer to the documentation');
+    }
+    if (!gutil.env.deviceId || gutil.env.deviceId === true) {
+        throw new Error('You must specify the android ID, refer to the documentation');
+    }
+
+    console.log('apiKey', gutil.env.apiKey);
+    console.log('deviceId', gutil.env.deviceId);
+
+    var gcm = require('node-gcm')
+
+    var message = new gcm.Message({
+        collapseKey: 'demo',
+        delayWhileIdle: true,
+        timeToLive: 3,
+        data: {
+            key1: 'message1',
+            key2: 'message2'
+        }
+    });
+
+    var sender = new gcm.Sender(gutil.env.apiKey);
+
+    sender.send(message, (gutil.env.deviceId instanceof Array) ? gutil.env.deviceId : [gutil.env.deviceId], 5, function(err, result) {
+        if (err) {
+            console.error('Failed, status code', err);
+        } else {
+            console.log('Success', result);
+        }
+    });
+})

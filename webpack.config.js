@@ -4,35 +4,9 @@ var path = require('path'),
     libPath = path.join(__dirname, 'lib'),
     wwwPath = path.join(__dirname, 'www'),
     pkg = require('./package.json'),
+    projectConfig = require('./config.json'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
-
-HtmlWebpackPlugin.prototype.htmlWebpackPluginAssets = function(compiler, webpackStatsJson) {
-    var assets = {};
-    for (var chunk in webpackStatsJson.assetsByChunkName) {
-        var chunkValue = webpackStatsJson.assetsByChunkName[chunk];
-
-        // Webpack outputs an array for each chunk when using sourcemaps
-        if (chunkValue instanceof Array) {
-            // Is the main bundle always the first element?
-            chunkValue = chunkValue[0];
-        }
-
-        if (compiler.options.output.publicPath) {
-            chunkValue = compiler.options.output.publicPath + chunkValue;
-        }
-        for (var i = 0; i < webpackStatsJson.assets.length; i++) {
-            var asset = webpackStatsJson.assets[i];
-            if (asset.name.indexOf('css/style') === 0) {
-                assets['css'] = asset;
-            }
-            if (asset.name === chunkValue) {
-                assets[chunk] = asset;
-            }
-        }
-    }
-    return assets;
-};
 
 module.exports = {
     entry: path.join(libPath, 'index.coffee'),
@@ -44,6 +18,9 @@ module.exports = {
         loaders: [{
             test: /[\/]angular\.js$/,
             loader: 'expose?angular!exports?window.angular'
+        }, {
+            test: /[\/]highlight\.js$/,
+            loader: 'expose?hljs'
         }, {
             test: /[\/]imgcache\.js$/,
             loader: 'expose?ImgCache'
@@ -100,9 +77,13 @@ module.exports = {
         new ngAnnotatePlugin({
             add: true
         }),
-        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|fr/),
+        new webpack.ContextReplacementPlugin(/moment\/locale$/, getRegexAutorizedLanguages()),
         new webpack.DefinePlugin({
             IS_PROD: false
         })
     ]
 };
+
+function getRegexAutorizedLanguages() {
+    return new RegExp(Object.keys(projectConfig.translation.available).join('|'));
+}

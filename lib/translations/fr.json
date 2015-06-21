@@ -37,7 +37,8 @@
     },
     "posts": {
         "title": "Accueil",
-        "empty": "La liste est vide!"
+        "empty": "La liste est vide!",
+        "featured": "A la Une"
     },
     "post": {
         "openInBrowser": "Ouvrir dans un navigateur"

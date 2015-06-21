@@ -1,5 +1,5 @@
 @import "../../scss/variables.scss";
-@import "ionic/scss/variables.scss";
+@import "ionic-sdk/scss/variables.scss";
 @import "../../scss/mixins.scss";
 wphc-posts {
     .card {
@@ -7,5 +7,11 @@ wphc-posts {
         cursor: pointer;
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
         @include post-item("../../img/post-img-border.png");
+    }
+    .sticky-post{
+        right: 16px !important;
+        > i{
+            margin-right: 5px;
+        }
     }
 }

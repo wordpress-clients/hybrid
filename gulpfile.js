@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     path = require('path'),
     gutil = require("gulp-util"),
     header = require('gulp-header'),
-    rimraf = require('gulp-rimraf'),
+    del = require('del'),
+    vinylPaths = require('vinyl-paths'),
     webpack = require('webpack'),
     semver = require('semver'),
     gulpWebpack = require('gulp-webpack'),
@@ -40,9 +41,9 @@ gulp.task('bump', require('gulp-cordova-bump'));
 
 gulp.task('cleanWww', function() {
     return gulp.src(path.join(wwwPath, '*'), {
-        read: false
-    })
-    .pipe(rimraf());
+            read: false
+        })
+        .pipe(vinylPaths(del));
 });
 
 gulp.task("webpack:dev", function(callback) {
@@ -65,7 +66,7 @@ gulp.task('minify-css', function() {
 });
 
 function inc(importance) {
-    return gulp.src(['./package.json', './bower.json'])
+    return gulp.src(['./package.json'])
         .pipe(bump({
             type: importance
         }))

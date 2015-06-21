@@ -1,6 +1,6 @@
-## Installation
+You have the choice to install WPHC directly on your machine (node, npm, bower are required) or you can install WPHC via bower with no other preriquisites than Docker itself.
 
-NB: The following installation was made for OSX and Linux (Debian/Ubuntu). There is no Windows support.
+## Local Installation
 
 ### Preriquisites
 
@@ -15,8 +15,48 @@ git clone git@github.com:shprink/wordpress-hybrid-client.git
 
 ### Run install.sh
 
+The installation will not install anything globally to avoid potential version conflicts.
+
 ```
 sh ./install.sh
+```
+
+## Docker Installation
+
+### Preriquisites
+
+* Docker
+
+Install [Docker](https://www.docker.com/) on your system.
+
+* [Install instructions](https://docs.docker.com/installation/mac/) for Mac OS X
+* [Install instructions](https://docs.docker.com/installation/ubuntulinux/) for Ubuntu Linux
+* [Install instructions](https://docs.docker.com/installation/) for other platforms
+
+### Pull images
+
+```
+sudo docker pull shprink/wphc
+```
+
+### Run
+
+```
+sudo docker run -it -v /local/path/to/wordpress-hybrid-client:/wphc shprink/wphc bash
+```
+
+Now you should be inside you docker, try listing folders to make sure they are accessible:
+
+```
+root@c5d7db4eaf05:/wphc$ ls -la
+```
+
+You should see the WPHC files listed. If not and using boot2docker please read this <https://gist.github.com/codeinthehole/7ea69f8a21c67cc07293>
+
+You are now ready to install WPHC:
+
+```
+root@c5d7db4eaf05:/wphc$ sh ./install.sh
 ```
 
 ### Config files

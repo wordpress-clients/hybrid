@@ -8,11 +8,13 @@ require 'angular-cache'
 require 'angular-moment'
 require 'angular-filter'
 require 'angular-performance-stats'
-require 'ionic/js/ionic'
-require 'ionic/js/ionic-angular'
+require 'ionic-sdk/release/js/ionic'
+require 'ionic-sdk/release/js/ionic-angular'
 require 'moment'
 require './font/font.coffee'
 
+# lodash is a restangular dependency that is bundled in wp-api-angularjs.bundle
+require 'expose?_!lodash'
 require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
 
 # Style entry point
@@ -39,6 +41,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
   require('./language/language.module').name
   require('./accessibility/accessibility.module').name
   require('./cacheImg/cacheImg.module').name
+  require('./syntaxHighlighter/syntaxHighlighter.module').name
   require('./init/init.module').name
 ]
 

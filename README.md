@@ -18,6 +18,26 @@ Read the manual: [BUILD.md](BUILD.md)
 
 Read the manual: [RELEASE.md](RELEASE.md)
 
+## Project public API
+
+### Run dev server
+
+```
+npm run-script devserver
+```
+
+### Dump dev files in www
+
+```
+npm run-script dumpdev
+```
+
+### Dump prod files in www
+
+```
+npm run-script dumpprod
+```
+
 ## Contribute
 
 WordPress hybrid Client is Open Source, If you are interested in helping, please read the following:
@@ -42,7 +62,9 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Language switch
 - [X] Accessibility (Post font size)
 - [X] Image cache ngImgCache
-- [ ] Docker support for easier installation
+- [X] App rate
+- [X] Docker support for easier installation
+- [X] Syntax highlighter for tech blogs
 - [ ] Table of content for posts
 - [ ] Personnalized Logo
 - [ ] Comment system (FB, WP, Disqus)
@@ -51,4 +73,3 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [ ] Push Notifications
 - [ ] Offline
 - [ ] Ability to add ads
-- [ ] App rate

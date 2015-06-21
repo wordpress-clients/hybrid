@@ -1,0 +1,4 @@
+web:
+  build: .
+  ports:
+    - ":8080"

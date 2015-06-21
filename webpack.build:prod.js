@@ -3,6 +3,7 @@ var path = require('path'),
     libPath = path.join(__dirname, 'lib'),
     distPath = path.join(__dirname, 'dist'),
     pkg = require('./package.json'),
+    projectConfig = require('./config.prod.json'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
@@ -19,7 +20,7 @@ module.exports = {
         new ngAnnotatePlugin({
             add: true
         }),
-        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|fr/),
+        new webpack.ContextReplacementPlugin(/moment\/locale$/, getRegexAutorizedLanguages()),
         new webpack.DefinePlugin({
             IS_PROD: true
         }),
@@ -28,3 +29,7 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin()
     ]
 };
+
+function getRegexAutorizedLanguages() {
+    return new RegExp(Object.keys(projectConfig.translation.available).join('|'));
+}

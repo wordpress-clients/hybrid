@@ -1,3 +1,11 @@
+<a name="1.2.0"></a>
+### 1.2.0  (2015-06-21)
+
+[milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/1.2.0)
+
+* Adding Docker support (There is still problems with mapping users to be able to edit files outside and inside docker)
+* Syntax highlighter
+
 <a name="1.1.0"></a>
 ### 1.1.0  (2015-06-01)
 

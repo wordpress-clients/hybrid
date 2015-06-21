@@ -108,6 +108,9 @@
             },
             "fr": {
                 "fr_FR": "fr"
+            },
+            "zh": {
+                "zh_CN": "zh"
             }
         },
         "prefered": "en"

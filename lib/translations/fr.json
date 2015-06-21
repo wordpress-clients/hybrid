@@ -63,7 +63,8 @@
     },
     "languages": {
         "en": "Anglais",
-        "fr": "Français"
+        "fr": "Français",
+        "zh": "Chinois"
     },
     "fontSize": {
         "small": "Petit",

@@ -66,7 +66,7 @@ gulp.task('minify-css', function() {
 });
 
 function inc(importance) {
-    return gulp.src(['./package.json', './bower.json'])
+    return gulp.src(['./package.json'])
         .pipe(bump({
             type: importance
         }))

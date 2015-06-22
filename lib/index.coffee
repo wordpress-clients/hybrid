@@ -104,7 +104,7 @@ app.config ($translateProvider, $WPHCLanguageProvider) ->
         .preferredLanguage $WPHCLanguageProvider.getPreferedLanguage()
         .registerAvailableLanguageKeys languages, $WPHCLanguageProvider.getLanguagesMapping()
         .fallbackLanguage 'en'
-        .useSanitizeValueStrategy 'sanitize'
+        .useSanitizeValueStrategy 'escape'
 
 ###
 CACHE CONF
@@ -117,7 +117,7 @@ MEMORY STATS CONF
 ###
 app.config ($WPHCConfig, angularPerformanceStatsProvider, $compileProvider) ->
     $compileProvider.debugInfoEnabled _.get($WPHCConfig, 'debugEnabled') || false
-    angularPerformanceStatsProvider.enable _.get($WPHCConfig, 'debugEnabled') || false
+    angularPerformanceStatsProvider.enable false
 
 ###
 MAIN CONTROLLER

@@ -25,7 +25,7 @@ Open ```platforms/android/AndroidManifest.xml``` and change ```android:windowSof
 ### Build PROD APKs
 
 ```
-npm run-script build
+npm run build
 ```
 
 Then answer to the prompt.
@@ -56,7 +56,7 @@ Go get the distribution provisioning file from <https://developer.apple.com/acco
 ### Build PROD IPA
 
 ```
-npm run-script build
+npm run build
 ```
 
 Then answer to the prompt.

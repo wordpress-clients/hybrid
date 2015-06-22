@@ -53,7 +53,7 @@
     },
     "about": {
         "title": "About",
-        "credit": "Powered by {{wphc}} and WordPress"
+        "credit": "Powered by <a href='http://wphc.julienrenaux.fr' target='_blank'>WPHC</a> and WordPress"
     },
     "params": {
         "title": "Parameters",

@@ -1,41 +1,57 @@
 ## Installation
 
-Read the manual: [INSTALLATION.md](INSTALLATION.md)
+Read the manual: <INSTALLATION.md>
 
 ## Configuration
 
-Read the manual: [CONFIGURATION.md](CONFIGURATION.md)
+Read the manual: <CONFIGURATION.md>
 
 ## Development
 
-Read the manual: [DEVELOPMENT.md](DEVELOPMENT.md)
+Read the manual: <DEVELOPMENT.md>
+
+## Push Notifications
+
+Read the manual: <PUSHNOTIFICATIONS.md>
 
 ## Build Android & iOS
 
-Read the manual: [BUILD.md](BUILD.md)
+Read the manual: <BUILD.md>
 
 ## Release Android & iOS
 
-Read the manual: [RELEASE.md](RELEASE.md)
+Read the manual: <RELEASE.md>
 
 ## Project public API
 
 ### Run dev server
 
 ```
-npm run-script devserver
+npm run devserver
 ```
 
 ### Dump dev files in www
 
 ```
-npm run-script dumpdev
+npm run dumpdev
 ```
 
 ### Dump prod files in www
 
 ```
-npm run-script dumpprod
+npm run dumpprod
+```
+
+### Run Android
+
+```
+npm run runAndroid
+```
+
+### Run iOS
+
+```
+npm run runIOS
 ```
 
 ## Contribute

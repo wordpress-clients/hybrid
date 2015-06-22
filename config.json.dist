@@ -1,6 +1,6 @@
 {
     "api": {
-        "baseUrl": "",
+        "baseUrl": "http://yourDomain.com/wp-json",
         "timeout": 3000,
         "maxAttempt": 3
     },
@@ -137,8 +137,9 @@
         },
         "pushNotifications": {
             "enabled": true,
+            "baseUrl" : "http://yourDomain.com/pnfw",
             "android": {
-                "senderID": "replace_with_sender_id (12 digits number)"
+                "senderID": ""
             },
             "ios": {
                 "badge": true,

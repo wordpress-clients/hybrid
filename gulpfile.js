@@ -82,6 +82,7 @@ function incConfigXml(importance) {
     parserXml.parseString(config, function(err, result) {
         newVer = semver.inc(result.widget.$.version, importance);
     });
+
     return gulp.src('./config.xml')
         .pipe(xeditor([{
             path: '.',

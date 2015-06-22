@@ -1,16 +1,18 @@
+## Install the WordPress plugin
+
+Open your Wordpress admin page and install "Push Notifications for WordPress (Lite)" then activate it.
+
 ## Android
 
-If you have not already done so, you'll need to set up a Google API project, to generate your senderID. [Follow these steps](http://developer.android.com/guide/google/gcm/gs.html) to do so. T
+If you have not already done so, you'll need to set up a Google API project, to generate your senderID. [Follow these steps](http://developer.android.com/guide/google/gcm/gs.html) to do so.
 
-In this example, be sure and substitute your own senderID. Get your senderID by signing into to your [google dashboard](https://code.google.com/apis/console/).
+In this example, be sure and substitute your own senderID. Get your senderID by signing into to your [Google dashboard](https://code.google.com/apis/console/).
 
 The senderID is found at *Overview->Dashboard->Project Number* or <https://developers.google.com/mobile/add> and follow the steps to get Cloud messaging senderID and apiKey.
 
 ** Tip: ** The senderID is a 12 digit number
 
-### Install the WordPress plugin
-
-Open your Wordpress admin page and install "Push Notifications for WordPress (Lite)" then activate it.
+### Configure the WordPress plugin
 
 Go to ```Push Notifications > Settings``` and check the following checkboxes:
 

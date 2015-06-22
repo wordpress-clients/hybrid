@@ -42,3 +42,4 @@ config.xml
 config.scss
 about.md
 iOS
+cordova.plugin.backup

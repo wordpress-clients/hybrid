@@ -1,5 +1,5 @@
 module.exports = angular.module 'wordpress-hybrid-client.cordova'
-    .run ($log, $WPHCConfig, $cordovaPush, $rootScope, $http, $filter, $state, $q) ->
+    .run ($log, $WPHCConfig, $cordovaPush, $rootScope, $http, $filter, $state, $q, $ionicPlatform) ->
         $log.info 'cordova push notifications'
 
         if !_.get $WPHCConfig, 'cordova.pushNotifications.enabled'
@@ -43,33 +43,60 @@ module.exports = angular.module 'wordpress-hybrid-client.cordova'
                     os: os
                     token: token
 
-        document.addEventListener "deviceready", () ->
-            ###
-            # ANDROID
-            ###
-            $cordovaPush.register(androidConfig).then (result) ->
-                $log.debug('android push notification registration success', result);
-                return
-            , (err) ->
-                $log.debug('android push notification registration error', err);
-                return
-            $rootScope.$on '$cordovaPush:notificationReceived', (event, notification) ->
-                switch notification.event
-                    when 'registered'
-                        return if !notification.regid.length
-                        $log.debug 'registration ID', notification.regid
-                        register('Android', notification.regid).success ->
-                            $log.info 'Push notif Token stored'
-                        break
-                    when 'message'
-                        $log.debug 'Push notif message', notification
-                        if notification.foreground
-                            confirmNewContent notification.payload.id, notification.payload.message
-                        else
-                            openPost notification.payload.id
-                        break
-                    when 'error'
-                        $log.debug 'Push notif error', notification
-                        break
-                return
+        $ionicPlatform.ready () ->
+            if ionic.Platform.isAndroid()
+                $cordovaPush.register(androidConfig).then (result) ->
+                    $log.debug('android push notification registration success', result);
+                    return
+                , (err) ->
+                    $log.error('android push notification registration error', err);
+                    return
+                $rootScope.$on '$cordovaPush:notificationReceived', (event, notification) ->
+                    switch notification.event
+                        when 'registered'
+                            return if !notification.regid.length
+                            $log.debug 'registration ID', notification.regid
+                            register('Android', notification.regid).success ->
+                                $log.info 'Push notif Token stored'
+                            break
+                        when 'message'
+                            $log.debug 'Push notif message', notification
+                            if notification.foreground
+                                confirmNewContent notification.payload.id, notification.payload.message
+                            else
+                                openPost notification.payload.id
+                            break
+                        when 'error'
+                            $log.debug 'Push notif error', notification
+                            break
+                    return
+            else if ionic.Platform.isIOS()
+                alert('ios');
+                $cordovaPush.register(iosConfig).then (deviceToken) ->
+                    register('iOS', deviceToken).success ->
+                        alert 'Push notif Token stored'
+                        $log.info 'Push notif Token stored'
+                    $log.debug('iOS push notification registration success', deviceToken);
+                    alert 'iOS push notification registration success ' + deviceToken
+                    return
+                , (err) ->
+                    alert 'iOS push notification registration error ' + err
+                    $log.error('iOS push notification registration error', err);
+                    return
+                $rootScope.$on '$cordovaPush:notificationReceived', (event, notification) ->
+                    $log.debug 'Push notif message', notification
+                    alert 'Push notif message' + JSON.stringify notification
+                    if notification.alert
+                        navigator.notification.alert notification.alert
+                    if notification.sound
+                        snd = new Media(event.sound)
+                        snd.play()
+                    if notification.badge
+                        $cordovaPush.setBadgeNumber(notification.badge).then (result) ->
+                            # Success!
+                            return
+                        , (err) ->
+                            # An error occurred. Show a message to the user
+                            return
+
         , false

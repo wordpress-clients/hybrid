@@ -1,26 +1,26 @@
 ## Installation
 
-Read the manual: <INSTALLATION.md>
+Read the manual: [INSTALLATION.md](INSTALLATION.md)
 
 ## Configuration
 
-Read the manual: <CONFIGURATION.md>
+Read the manual: [CONFIGURATION.md](CONFIGURATION.md)
 
 ## Development
 
-Read the manual: <DEVELOPMENT.md>
+Read the manual: [DEVELOPMENT.md](DEVELOPMENT.md)
 
 ## Push Notifications
 
-Read the manual: <PUSHNOTIFICATIONS.md>
+Read the manual: [PUSHNOTIFICATIONS.md](PUSHNOTIFICATIONS.md)
 
 ## Build Android & iOS
 
-Read the manual: <BUILD.md>
+Read the manual: [BUILD.md](BUILD.md)
 
 ## Release Android & iOS
 
-Read the manual: <RELEASE.md>
+Read the manual: [RELEASE.md](RELEASE.md)
 
 ## Project public API
 

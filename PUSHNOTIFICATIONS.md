@@ -48,3 +48,19 @@ gulp push:android --apiKey W91bFWEFWN3gIkOqYPAPFJFW91bFWEFW --deviceId APFJFW91b
 ```
 
 ** Tip: ** You can add any number of devices using ```--deviceId``` several times
+
+## iOS
+
+### Configure the WordPress plugin
+
+Go to ```Push Notifications > Settings``` and check the following checkboxes:
+
+* Basic Options > Send push notifications when a new post is published
+* Basic Options > iOS devices
+* Send Push Notifications for > Posts
+
+### Create .pem
+
+[Get .perm files](http://stackoverflow.com/questions/21250510/generate-pem-file-used-to-setup-apple-push-notification)
+
+Once you have got your .pem files upload them in the ```iOS Push Notifications``` section

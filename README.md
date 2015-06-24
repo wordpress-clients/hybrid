@@ -85,11 +85,11 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] App rate
 - [X] Docker support for easier installation
 - [X] Syntax highlighter for tech blogs
+- [X] Push Notifications
 - [ ] Table of content for posts
 - [ ] Personnalized Logo
 - [ ] Comment system (FB, WP, Disqus)
 - [ ] Templating
 - [ ] Contact form
-- [ ] Push Notifications
 - [ ] Offline
 - [ ] Ability to add ads

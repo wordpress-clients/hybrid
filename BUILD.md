@@ -41,12 +41,12 @@ Plug your device in if you have one (make sure your device is listed by running:
 
 ```
 # Dump dev files within the www folder
-npm run-script dumpdev
+npm run dumpdev
 
-ionic run android
+npm run runAndroid
 ```
 
-NB: If you want to test the minification you could also run the prod version on debug mode by using ```npm run-script dumpprod``` instead of ```npm run-script dumpdev```
+NB: If you want to test the minification you could also run the prod version on debug mode by using ```npm run dumpprod``` instead of ```npm run dumpdev```
 
 ### Debug
 
@@ -81,12 +81,12 @@ Plug your device in if you have one or let iOS simulator handle it.
 
 ```
 # Dump dev files within the www folder
-npm run-script dumpdev
+npm run dumpdev
 
-ionic emulate ios
+npm run emulateIOS
 ```
 
-NB: If you want to test the minification you could also run the prod version on debug mode by using ```npm run-script dumpprod``` instead of ```npm run-script dumpdev```
+NB: If you want to test the minification you could also run the prod version on debug mode by using ```npm run dumpprod``` instead of ```npm run dumpdev```
 
 ### Build and run on device dev version (Non minified and debug ON)
 
@@ -99,9 +99,9 @@ For details about various requirements to deploy to a device, refer to the Cordo
 
 ```
 # Dump dev files within the www folder
-npm run-script dumpdev
+npm run dumpdev
 
-ionic run ios
+npm run runIOS
 ```
 
 ### Debug

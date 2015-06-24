@@ -14,6 +14,10 @@ Read the manual: [CONFIGURATION.md](CONFIGURATION.md)
 
 Read the manual: [DEVELOPMENT.md](DEVELOPMENT.md)
 
+## Push Notifications
+
+Read the manual: [PUSHNOTIFICATIONS.md](PUSHNOTIFICATIONS.md)
+
 ## Build Android & iOS
 
 Read the manual: [BUILD.md](BUILD.md)
@@ -27,19 +31,31 @@ Read the manual: [RELEASE.md](RELEASE.md)
 ### Run dev server
 
 ```
-npm run-script devserver
+npm run devserver
 ```
 
 ### Dump dev files in www
 
 ```
-npm run-script dumpdev
+npm run dumpdev
 ```
 
 ### Dump prod files in www
 
 ```
-npm run-script dumpprod
+npm run dumpprod
+```
+
+### Run Android
+
+```
+npm run runAndroid
+```
+
+### Run iOS
+
+```
+npm run runIOS
 ```
 
 ## Contribute
@@ -69,11 +85,11 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] App rate
 - [X] Docker support for easier installation
 - [X] Syntax highlighter for tech blogs
+- [X] Push Notifications
 - [ ] Table of content for posts
 - [ ] Personnalized Logo
 - [ ] Comment system (FB, WP, Disqus)
 - [ ] Templating
 - [ ] Contact form
-- [ ] Push Notifications
 - [ ] Offline
 - [ ] Ability to add ads

@@ -15,7 +15,7 @@ gulp cordova:release --${version}
 gulp build:prod
 
 # Build the app
-ionic build ${platforms} --device --release
+npm run ionicBuild ${platforms}
 
 if [ "${platforms}" == "android" -o "${platforms}" == "android ios" ]; then
     # Android

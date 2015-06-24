@@ -7,7 +7,7 @@ Now that the installation is done, make sure the project is running
 live reload in memory (no files are dumped in www folder)
 
 ```
-npm run-script devserver
+npm run devserver
 ```
 
 Open http://localhost:9100/ and check if everything run as expected.

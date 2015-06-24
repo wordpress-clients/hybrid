@@ -1,6 +1,6 @@
 {
     "api": {
-        "baseUrl": "",
+        "baseUrl": "http://yourDomain.com/wp-json",
         "timeout": 3000,
         "maxAttempt": 3
     },
@@ -108,6 +108,9 @@
             },
             "fr": {
                 "fr_FR": "fr"
+            },
+            "zh": {
+                "zh_CN": "zh"
             }
         },
         "prefered": "en"
@@ -134,6 +137,18 @@
             "iosURL": "",
             "androidURL": "",
             "windowsURL": ""
+        },
+        "pushNotifications": {
+            "enabled": true,
+            "baseUrl" : "http://yourDomain.com/pnfw",
+            "android": {
+                "senderID": ""
+            },
+            "ios": {
+                "badge": true,
+                "sound": true,
+                "alert": true
+            }
         }
     }
 }

@@ -7,16 +7,18 @@
         <title>{%=o.htmlWebpackPlugin.options.pkg.title %}</title>
         <script>
             var wordpressHybridClient = {};
-            wordpressHybridClient.version = "{%= o.htmlWebpackPlugin.options.pkg.version %}";
+            wordpressHybridClient.version = "{%= o.htmlWebpackPlugin.options.appVersion %}";
         </script>
         <!-- cordova script (this will be a 404 during development) -->
         <script src="cordova.js"></script>
     </head>
+
     <body ng-strict-di ng-app="wordpress-hybrid-client">
         <ion-nav-view></ion-nav-view>
-        {% for (var chunk in o.htmlWebpackPlugin.files) { %}
-        <script src="{%=o.htmlWebpackPlugin.files[chunk]%}"></script>
+        {% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
+        <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
         {% } %}
     </body>
     <!-- {%= o.htmlWebpackPlugin.options.pkg.name + ' v' + o.htmlWebpackPlugin.options.pkg.version + ' built on ' + new Date() %} -->
+
 </html>

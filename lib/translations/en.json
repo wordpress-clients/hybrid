@@ -3,6 +3,8 @@
     "retry": "Retry",
     "error": "Something wrong happened, please try again.",
     "attemptToConnect": "Attempt to connect {{attempt}} of {{attemptMax}}.",
+    "yes": "Yes",
+    "no" : "No",
     "menu": {
         "title": "Menu",
         "home": "Home",
@@ -11,6 +13,12 @@
         "socialNetworks": "Social Networks",
         "categories": "Categories",
         "settings": "Settings"
+    },
+    "pushNotifications": {
+        "newContent": {
+            "title": "New content!",
+            "text": "A new Post/Page: '{{postTitle}}' has been released on {{appTitle}}, do you want to open it?"
+        }
     },
     "tags": {
         "title": "Tags"
@@ -45,7 +53,7 @@
     },
     "about": {
         "title": "About",
-        "credit": "Powered by {{wphc}} and WordPress"
+        "credit": "Powered by <a href='http://wphc.julienrenaux.fr' target='_blank'>WPHC</a> and WordPress"
     },
     "params": {
         "title": "Parameters",
@@ -55,7 +63,8 @@
     },
     "languages": {
         "en": "English",
-        "fr": "French"
+        "fr": "French",
+        "zh": "Chinese"
     },
     "fontSize": {
         "small": "Small",

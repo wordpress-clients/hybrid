@@ -37,7 +37,7 @@ module.exports = angular.module('wordpress-hybrid-client.taxonomies').factory '$
 
         if slug
             $filter('translate') trans,
-                name: slug
+                name: decodeURIComponent slug
         else
             $filter('translate') trans
 

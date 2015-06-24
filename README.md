@@ -1,3 +1,7 @@
+## Chat
+
+[![Join the chat at https://gitter.im/livingobjects/angular-memory-stats](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/shprink/wordpress-hybrid-client?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Installation
 
 Read the manual: [INSTALLATION.md](INSTALLATION.md)
@@ -9,6 +13,10 @@ Read the manual: [CONFIGURATION.md](CONFIGURATION.md)
 ## Development
 
 Read the manual: [DEVELOPMENT.md](DEVELOPMENT.md)
+
+## Push Notifications
+
+Read the manual: [PUSHNOTIFICATIONS.md](PUSHNOTIFICATIONS.md)
 
 ## Build Android & iOS
 
@@ -23,19 +31,31 @@ Read the manual: [RELEASE.md](RELEASE.md)
 ### Run dev server
 
 ```
-npm run-script devserver
+npm run devserver
 ```
 
 ### Dump dev files in www
 
 ```
-npm run-script dumpdev
+npm run dumpdev
 ```
 
 ### Dump prod files in www
 
 ```
-npm run-script dumpprod
+npm run dumpprod
+```
+
+### Run Android
+
+```
+npm run runAndroid
+```
+
+### Run iOS
+
+```
+npm run runIOS
 ```
 
 ## Contribute
@@ -59,17 +79,17 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Overwrite Sass variables
 - [X] About Page
 - [X] Params Page
-- [X] Language switch
+- [X] Language switch [English|French|Chinese]
 - [X] Accessibility (Post font size)
 - [X] Image cache ngImgCache
 - [X] App rate
 - [X] Docker support for easier installation
 - [X] Syntax highlighter for tech blogs
+- [X] Push Notifications
 - [ ] Table of content for posts
 - [ ] Personnalized Logo
 - [ ] Comment system (FB, WP, Disqus)
 - [ ] Templating
 - [ ] Contact form
-- [ ] Push Notifications
 - [ ] Offline
 - [ ] Ability to add ads

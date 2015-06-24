@@ -3,6 +3,8 @@
     "retry": "Réessayez",
     "error": "Quelque chose d'inattendu est survenu, veuillez réessayer.",
     "attemptToConnect": "Tentative de connection {{attempt}} sur {{attemptMax}}.",
+    "yes": "Oui",
+    "no" : "Non",
     "menu": {
         "title": "Menu",
         "home": "Accueil",
@@ -11,6 +13,12 @@
         "socialNetworks": "Réseaux sociaux",
         "categories": "Categories",
         "settings": "Paramètres"
+    },
+    "pushNotifications": {
+        "newContent": {
+            "title": "Nouveau contenu!",
+            "text": "Un nouvel Article/Page '{{postTitle}}' vient d'être publié sur {{appTitle}}, voulez-vous le consulter?"
+        }
     },
     "tags": {
         "title": "Tags"
@@ -55,7 +63,8 @@
     },
     "languages": {
         "en": "Anglais",
-        "fr": "Français"
+        "fr": "Français",
+        "zh": "Chinois"
     },
     "fontSize": {
         "small": "Petit",

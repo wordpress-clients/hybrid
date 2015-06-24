@@ -71,32 +71,27 @@ module.exports = angular.module 'wordpress-hybrid-client.cordova'
                             break
                     return
             else if ionic.Platform.isIOS()
-                alert('ios');
                 $cordovaPush.register(iosConfig).then (deviceToken) ->
                     register('iOS', deviceToken).success ->
-                        alert 'Push notif Token stored'
                         $log.info 'Push notif Token stored'
                     $log.debug('iOS push notification registration success', deviceToken);
-                    alert 'iOS push notification registration success ' + deviceToken
                     return
                 , (err) ->
-                    alert 'iOS push notification registration error ' + err
                     $log.error('iOS push notification registration error', err);
                     return
                 $rootScope.$on '$cordovaPush:notificationReceived', (event, notification) ->
                     $log.debug 'Push notif message', notification
-                    alert 'Push notif message' + JSON.stringify notification
                     if notification.alert
-                        navigator.notification.alert notification.alert
-                    if notification.sound
-                        snd = new Media(event.sound)
-                        snd.play()
+                        if notification.foreground
+                            confirmNewContent notification.id, notification.alert
+                        else
+                            openPost notification.id
                     if notification.badge
                         $cordovaPush.setBadgeNumber(notification.badge).then (result) ->
-                            # Success!
+                            $log.debug 'Push notif badge ok', result
                             return
                         , (err) ->
-                            # An error occurred. Show a message to the user
+                            $log.debug 'Push notif badge error', err
                             return
 
         , false

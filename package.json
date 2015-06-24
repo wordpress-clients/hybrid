@@ -12,7 +12,10 @@
         "dumpprod": "gulp build:prod",
         "runAndroid": "ionic run android",
         "runIOS": "ionic run ios",
-        "emulateIOS": "ionic emulate ios"
+        "emulateIOS": "ionic emulate ios",
+        "addPlugin": "ionic plugin add",
+        "rmPlugin": "ionic plugin rm",
+        "listPlugin": "ionic plugin list"
     },
     "keywords": [
         "wp-api",

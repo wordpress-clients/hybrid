@@ -2,7 +2,7 @@
     "pullToRefresh": "下拉刷新！",
     "retry": "重试",
     "error": "系统遭遇未知错误，请重试。",
-    "attemptToConnect": "正在尝试第 {{attemptMax}} 次连接（最多 {{attempt}} 次）",
+    "attemptToConnect": "正在尝试第 {{attempt}} 次连接（最多 {{attemptMax}} 次）",
     "yes": "是",
     "no" : "否",
     "menu": {
@@ -59,12 +59,12 @@
         "title": "参数",
         "offlineMode": "离线模式（即将发布）",
         "fontSize": "文章字号",
-        "language": "语言"
+        "language": "界面语言"
     },
     "languages": {
         "en": "英语",
         "fr": "法语",
-        "zh": "简体中文"
+        "zh": "中文"
     },
     "fontSize": {
         "small": "小",

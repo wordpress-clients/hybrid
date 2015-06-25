@@ -1,4 +1,4 @@
-You have the choice to install WPHC directly on your machine (node, npm, bower are required) or you can install WPHC via bower with no other preriquisites than Docker itself.
+You have the choice to install WPHC directly on your machine (node, and npm are required) or you can experiment installation of WPHC via bower with no other preriquisites than Docker itself.
 
 ## Local Installation
 
@@ -26,6 +26,8 @@ sh ./install.sh
 ### Preriquisites
 
 * Docker
+
+BEWARE: Installing with Docker is experimental. There is still a problem on mapping users in and out the container. If you happen to have experience with Docker and you want to help please let me know. Until then you are on your own with Docker ;)
 
 Install [Docker](https://www.docker.com/) on your system.
 

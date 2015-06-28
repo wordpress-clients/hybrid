@@ -1,3 +1,11 @@
+<a name="1.3.0"></a>
+### 1.3.0  (2015-06-24)
+
+[milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/1.3.0)
+
+* Adding Push Notifications iOS/Android <https://github.com/shprink/wordpress-hybrid-client/issues/9>
+* Chinese support <https://github.com/shprink/wordpress-hybrid-client/issues/18>
+
 <a name="1.2.0"></a>
 ### 1.2.0  (2015-06-21)
 

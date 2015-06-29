@@ -31,12 +31,6 @@
             <button class="button button-clear pull-left" ng-if="::post.terms.post_tag.length" ng-click="showTaxonomies( 'tags.title', post.terms.post_tag, 'post_tag') ">
                 <i class="icon ion-pricetags"></i>
             </button>
-            <button class="button button-clear" ng-click="share('twitter', post.title, post.link) ">
-                <i class="icon ion-social-twitter"></i>
-            </button>
-            <button class="button button-clear" ng-click="share('facebook', post.title, post.link) ">
-                <i class="icon ion-social-facebook"></i>
-            </button>
             <button class="button button-clear" ng-click="share('native', post.title, post.link) ">
                 <i class="icon ion-android-share-alt"></i>
             </button>

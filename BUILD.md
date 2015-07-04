@@ -1,7 +1,7 @@
 # Build
 
 ```
-ionic platform add ios android
+npm run addPlatform ios android
 ```
 
 All the necessary plugins will be installed as well.

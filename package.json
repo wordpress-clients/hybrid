@@ -15,7 +15,8 @@
         "emulateIOS": "ionic emulate ios",
         "addPlugin": "ionic plugin add",
         "rmPlugin": "ionic plugin rm",
-        "listPlugin": "ionic plugin list"
+        "listPlugin": "ionic plugin list",
+        "addPlatform": "ionic platform add"
     },
     "keywords": [
         "wp-api",

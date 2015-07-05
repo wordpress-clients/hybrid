@@ -6,8 +6,7 @@ var path = require('path'),
     pkg = require('./package.json'),
     parserXml = require('xml2js'),
     projectConfig = require('./config.json'),
-    HtmlWebpackPlugin = require('html-webpack-plugin'),
-    ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
+    HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: path.join(libPath, 'index.coffee'),
@@ -31,7 +30,7 @@ module.exports = {
         }, {
             test: /\.html$/,
             loader: 'html'
-        }, {
+        },{
             test: /\.md$/,
             loader: "html!markdown"
         }, {
@@ -45,7 +44,7 @@ module.exports = {
             loader: "style!css"
         }, {
             test: /\.coffee$/,
-            loader: "coffee"
+            loader: "ng-annotate?add=true!coffee"
         }, {
             test: /\.scss$/,
             loader: "style!css!autoprefixer!sass"
@@ -75,9 +74,6 @@ module.exports = {
             pkg: pkg,
             appVersion: getAppVersion(),
             template: path.join(libPath, 'index.html')
-        }),
-        new ngAnnotatePlugin({
-            add: true
         }),
         new webpack.ContextReplacementPlugin(/moment\/locale$/, getRegexAutorizedLanguages()),
         new webpack.DefinePlugin({

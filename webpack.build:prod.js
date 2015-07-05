@@ -20,9 +20,6 @@ module.exports = {
             appVersion: getAppVersion(),
             template: path.join(libPath, 'index.html')
         }),
-        new ngAnnotatePlugin({
-            add: true
-        }),
         new webpack.ContextReplacementPlugin(/moment\/locale$/, getRegexAutorizedLanguages()),
         new webpack.DefinePlugin({
             IS_PROD: true

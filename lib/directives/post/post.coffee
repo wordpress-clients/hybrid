@@ -8,7 +8,6 @@ Display a post
                < pre >
 </pre >
 ###
-require "./style.scss"
 require "./post.filter"
 module.exports = angular.module('wordpress-hybrid-client').directive 'wphcPost', ($log) ->
     restrict: 'E'

@@ -7,8 +7,6 @@ Display posts list
 @example
 "<pre></pre>"
 ###
-
-require "./style.scss"
 module.exports = angular.module('wordpress-hybrid-client').directive 'wphcPosts', ($log) ->
     restrict: 'E'
     transclude: true

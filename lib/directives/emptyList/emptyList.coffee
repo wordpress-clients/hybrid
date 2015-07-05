@@ -8,8 +8,6 @@ A simple loader
                       < pre >
 </pre >
 ###
-
-require "./style.scss"
 module.exports = angular.module('wordpress-hybrid-client').directive 'wphcEmptyList', () ->
     restrict: 'E'
     replace: true

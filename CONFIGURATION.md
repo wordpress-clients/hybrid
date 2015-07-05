@@ -65,7 +65,63 @@ The media query used to determine when to always display the left menu.
 "exposeAsideWhen": "(min-width:900px)"
 ```
 
-#### Settings configuration.
+They are three types of mnu item (internal|external|separator).
+
+* **internal**: can be any page of the application (home|category|tag|parameters|about)
+* **external**: Any www website
+* **separator**: Separate menu items
+
+```
+"list": [{
+    "type": "internal",
+    "trans": "menu.home",
+    "route": "public.posts",
+    "icon": "icon ion-home"
+}, {
+    "type": "internal",
+    "trans": "Front End",
+    "route": "public.taxonomies.slug({ term: 'category', slug: 'front-end' })",
+    "icon": "icon ion-social-dribbble"
+}, {
+    "type": "internal",
+    "trans": "Mobile",
+    "route": "public.taxonomies.slug({ term: 'category', slug: 'mobile' })",
+    "icon": "icon ion-iphone"
+}, {
+    "type": "internal",
+    "trans": "menu.categories",
+    "route": "public.taxonomies({ term: 'category' })",
+    "icon": "icon ion-folder"
+}, {
+    "type": "internal",
+    "trans": "menu.tags",
+    "route": "public.taxonomies({ term: 'post_tag' })",
+    "icon": "icon ion-pricetags"
+}, {
+    "type": "separator",
+    "trans": "Separator"
+}, {
+    "type": "external",
+    "trans": "My blog",
+    "href": "http://julienrenaux.fr",
+    "icon": "icon ion-link"
+}, {
+    "type": "internal",
+    "trans": "params.title",
+    "route": "public.params",
+    "icon": "icon ion-gear-b"
+}, {
+    "type": "internal",
+    "trans": "about.title",
+    "route": "public.about",
+    "icon": "icon ion-information"
+}]
+```
+
+NB: The icons must be from ionicons.com
+NB: For now the homepage is mandatory and cannot be a specific page.
+
+### Settings configuration.
 
 ```
 "settings": {
@@ -78,55 +134,6 @@ The media query used to determine when to always display the left menu.
         "defaultFontSize": "medium"
     }
 }
-```
-
-#### Wordpress entries
-
-For now the homepage is mandatory and cannot be a specific page.
-
-You can add to the list, a specific category, a specific tag or lists.
-
-```
-"wordpress": [{
-    "trans": "menu.home",
-    "uiSref": "public.posts",
-    "icon": "icon ion-home"
-},{
-    "trans": "Your category",
-    "uiSref": "public.taxonomies.slug({ term: 'category', slug: 'your-category-slug' })",
-    "icon": "icon ion-iphone"
-}, {
-    "trans": "menu.categories",
-    "uiSref": "public.taxonomies({ term: 'category' })",
-    "icon": "icon ion-folder"
-}, {
-    "trans": "menu.tags",
-    "uiSref": "public.taxonomies({ term: 'post_tag' })",
-    "icon": "icon ion-pricetags"
-}],
-```
-
-#### Social buttons
-
-You can add any social network account there. The icons must be from ionicons.com
-
-```
-"social": [{
-    "platform": "facebook",
-    "name": "julienrenauxblog", // What would be displayed on the menu
-    "icon": "icon ion-social-facebook",
-    "url": "https://www.facebook.com/julienrenauxblog"
-}, {
-    "platform": "twitter",
-    "name": "julienrenaux",
-    "icon": "icon ion-social-twitter",
-    "url": "https://twitter.com/julienrenaux"
-}, {
-    "platform": "googleplus",
-    "name": "julienrenaux",
-    "icon": "icon ion-social-googleplus",
-    "url": "https://www.google.com/+julienrenaux"
-}]
 ```
 
 ### cache [Object]

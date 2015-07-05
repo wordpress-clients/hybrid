@@ -1,7 +1,7 @@
 module.exports = angular.module('wordpress-hybrid-client.accessibility')
     .factory '$WPHCAccessibility', ($log, $WPHCConfig, $document) ->
         $log.info '$WPHCAccessibility'
-        fontSize: localStorage.getItem("fontSize") || $WPHCConfig.menu.settings.parameters.defaultFontSize
+        fontSize: localStorage.getItem("fontSize") || $WPHCConfig.settings.parameters.defaultFontSize
 
         setFontSize: (@fontSize) ->
             $log.info 'setting font size', @fontSize

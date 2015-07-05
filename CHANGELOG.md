@@ -1,3 +1,19 @@
+<a name="1.4.0"></a>
+### 1.4.0  (not released yet)
+
+[milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/1.4.0)
+
+#### Breaking Changes
+
+* Refactor Menu config <https://github.com/shprink/wordpress-hybrid-client/issues/27>
+
+The menu configuration is now located in ```menu.list``` within the config.json file. You will need to update it accordingly to the following changes:
+
+1. ```menu.settings``` changed to ```settings``` in the config.json file
+1. ```menu.wordpress``` is removed from config.json file
+1. ```menu.social``` is removed from config.json file
+1. ```menu.list``` is the new menu declaration object
+
 <a name="1.3.0"></a>
 ### 1.3.0  (2015-06-24)
 

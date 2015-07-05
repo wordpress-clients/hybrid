@@ -2,7 +2,7 @@
     <ion-content class="padding has-footer">
         <div bind-and-compile-html="::(about.content  | prepLink)"></div>
     </ion-content>
-    <ion-footer-bar align-title="center" class="bar-balanced" ng-if="::main.appConfig.menu.settings.about.credit">
+    <ion-footer-bar align-title="center" class="bar-balanced" ng-if="::main.appConfig.settings.about.credit">
         <div class="title">
             <p translate="about.credit" translate-values="{ wphc: '<a href=\'http://wphc.julienrenaux.fr\' target=\'_blank\'>WPHC</a>'}"></p>
         </div>

@@ -8,48 +8,53 @@
     "title": "Your Blog title",
     "menu": {
         "exposeAsideWhen": "(min-width:900px)",
-        "settings": {
-            "about": {
-                "enabled": true,
-                "credit": true
-            },
-            "parameters": {
-                "enabled": true
-            }
-        },
-        "wordpress": [{
+        "list": [{
+            "type": "internal",
             "trans": "menu.home",
-            "uiSref": "public.posts",
+            "route": "public.posts",
             "icon": "icon ion-home"
-        },{
-            "trans": "Your category",
-            "uiSref": "public.taxonomies.slug({ term: 'category', slug: 'your-category-slug' })",
+        }, {
+            "type": "internal",
+            "trans": "Mobile",
+            "route": "public.taxonomies.slug({ term: 'category', slug: 'mobile' })",
             "icon": "icon ion-iphone"
         }, {
+            "type": "internal",
             "trans": "menu.categories",
-            "uiSref": "public.taxonomies({ term: 'category' })",
+            "route": "public.taxonomies({ term: 'category' })",
             "icon": "icon ion-folder"
         }, {
+            "type": "internal",
             "trans": "menu.tags",
-            "uiSref": "public.taxonomies({ term: 'post_tag' })",
+            "route": "public.taxonomies({ term: 'post_tag' })",
             "icon": "icon ion-pricetags"
-        }],
-        "social": [{
-            "platform": "facebook",
-            "name": "julienrenauxblog",
-            "icon": "icon ion-social-facebook",
-            "url": "https://www.facebook.com/julienrenauxblog"
         }, {
-            "platform": "twitter",
-            "name": "julienrenaux",
-            "icon": "icon ion-social-twitter",
-            "url": "https://twitter.com/julienrenaux"
+            "type": "separator",
+            "trans": "Separator"
         }, {
-            "platform": "googleplus",
-            "name": "julienrenaux",
-            "icon": "icon ion-social-googleplus",
-            "url": "https://www.google.com/+julienrenaux"
+            "type": "external",
+            "trans": "My blog",
+            "href": "http://julienrenaux.fr",
+            "icon": "icon ion-link"
+        }, {
+            "type": "internal",
+            "trans": "params.title",
+            "route": "public.params",
+            "icon": "icon ion-gear-b"
+        }, {
+            "type": "internal",
+            "trans": "about.title",
+            "route": "public.about",
+            "icon": "icon ion-information"
         }]
+    },
+    "settings": {
+        "about": {
+            "credit": true
+        },
+        "parameters": {
+            "defaultFontSize": "medium"
+        }
     },
     "cache": {
         "views": 10,

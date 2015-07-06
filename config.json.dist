@@ -11,10 +11,11 @@
         "settings": {
             "about": {
                 "enabled": true,
-                "credit": true
+                "credit": false
             },
             "parameters": {
-                "enabled": true
+                "enabled": true,
+                "defaultFontSize": "medium"
             }
         },
         "wordpress": [{

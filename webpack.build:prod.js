@@ -6,8 +6,7 @@ var path = require('path'),
     pkg = require('./package.json'),
     parserXml = require('xml2js'),
     projectConfig = require('./config.prod.json'),
-    HtmlWebpackPlugin = require('html-webpack-plugin'),
-    ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
+    HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     output: {

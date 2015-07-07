@@ -11,7 +11,7 @@
                     </ion-item>
                 </span>
                 <span ng-switch-when="external">
-                    <ion-item class="item" ng-class="::{'item-icon-left': menu.icon}" target="_blank" ng-href="{{::menu.href}}">
+                    <ion-item wphc-href-in-app class="item" ng-class="::{'item-icon-left': menu.icon}" target="_blank" ng-href="{{::menu.href}}">
                         <i class="balanced {{::menu.icon}}" ng-if="::menu.icon"></i> {{menu.trans | translate}}
                     </ion-item>
                 </span>

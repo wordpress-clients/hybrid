@@ -32,5 +32,5 @@ if [ "${platforms}" == "ios" -o "${platforms}" == "android ios" ]; then
     rm -r ./build/ios.app
     mv ./platforms/ios/build/device/*.app ./build/ios.app
     xcrun -sdk iphoneos PackageApplication -v $PWD/build/ios.app
-    sigh resign ./build/ios.ipa -p "release.mobileprovision"
+    sigh resign ./build/ios.ipa
 fi

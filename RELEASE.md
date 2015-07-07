@@ -49,10 +49,6 @@ Sigh allow to sign .app with a provisioning file via the terminal
 sudo gem install sigh
 ```
 
-### Move the distribution provisioning file to the build folder
-
-Go get the distribution provisioning file from <https://developer.apple.com/account/overview.action> then move it to the ```./build``` folder under the name ```release.mobileprovision```
-
 ### Build PROD IPA
 
 ```

@@ -64,8 +64,10 @@ app.config ($stateProvider) ->
 ###
 ANGULAR CONF
 ###
-app.config ($WPHCConfig, $logProvider) ->
-    $logProvider.debugEnabled _.get($WPHCConfig, 'debugEnabled') || false
+app.config ($WPHCConfig, $logProvider, $compileProvider) ->
+    debugEnabled = _.get($WPHCConfig, 'debugEnabled') || false
+    $logProvider.debugEnabled debugEnabled
+    $compileProvider.debugInfoEnabled debugEnabled
 
 ###
 IONIC CONF

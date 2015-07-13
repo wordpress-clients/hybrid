@@ -9,6 +9,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <allow-navigation href="http://example.com/*" />
     <preference name="orientation" value="portrait" />
     <preference name="fullscreen" value="false" />
     <preference name="webviewbounce" value="false" />

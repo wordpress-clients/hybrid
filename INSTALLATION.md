@@ -10,7 +10,7 @@ You have the choice to install WPHC directly on your machine (node, and npm are 
 ### Clone repository
 
 ```
-git clone git@github.com:shprink/wordpress-hybrid-client.git
+git clone https://github.com/shprink/wordpress-hybrid-client.git
 ```
 
 ### Run install.sh

@@ -3,6 +3,8 @@
 
 [milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/1.4.0)
 
+* New command to install cordova ```npm run installCordova```
+
 #### Breaking Changes
 
 * Refactor Menu config <https://github.com/shprink/wordpress-hybrid-client/issues/27>

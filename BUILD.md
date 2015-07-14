@@ -1,7 +1,7 @@
 # Build
 
 ```
-npm run ionic platform add ios android
+npm run installCordova
 ```
 
 All the necessary plugins will be installed as well.

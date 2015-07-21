@@ -83,6 +83,11 @@
             "verifyIntegrity": true
         }
     },
+    "bookmark": {
+        "cache": {
+            "capacity": 10
+        }
+    },
     "post": {
         "cache": {
             "maxAge": 172800000,

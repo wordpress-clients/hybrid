@@ -4,6 +4,7 @@
 [milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/1.4.0)
 
 * New command to install cordova ```npm run installCordova```
+* New meta to add into config.xml ``` <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" />```
 
 #### Breaking Changes
 

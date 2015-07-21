@@ -11,7 +11,7 @@ var path = require('path'),
 module.exports = {
     entry: path.join(libPath, 'index.coffee'),
     output: {
-        path: path.join(wwwPath, 'js'),
+        path: wwwPath,
         filename: 'bundle-[hash:6].js'
     },
     module: {

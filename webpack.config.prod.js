@@ -5,13 +5,12 @@ var path = require('path'),
     distPath = path.join(__dirname, 'dist'),
     pkg = require('./package.json'),
     parserXml = require('xml2js'),
+    extend = require('util')._extend,
     projectConfig = require('./config.prod.json'),
+    webpackConfig = require('./webpack.config.js'),
     HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
-    output: {
-        filename: 'bundle-[hash:6].min.js'
-    },
+module.exports = extend(webpackConfig, {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
@@ -27,7 +26,7 @@ module.exports = {
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin()
     ]
-};
+});
 
 function getRegexAutorizedLanguages() {
     return new RegExp(Object.keys(projectConfig.translation.available).join('|'));

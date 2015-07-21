@@ -36,4 +36,4 @@ npm run cordova plugin add com.ionic.keyboard@1.0.4
 npm run cordova plugin add cordova-plugin-googleplayservices@19.0.1
 npm run cordova plugin add https://github.com/apache/cordova-plugin-statusbar.git#r1.0.1
 npm run cordova plugin add https://github.com/phonegap-build/PushPlugin.git#2.4.0
-npm run cordova plugin add https://github.com/danwilson/google-analytics-plugin.git#51813421cbab5db6ef6a3255abc0b372104f2a59
+npm run cordova plugin add cordova-plugin-google-analytics@0.7.1

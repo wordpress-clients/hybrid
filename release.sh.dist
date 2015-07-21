@@ -12,7 +12,7 @@ platforms=${platforms:-"android ios"}
 gulp cordova:release --${version}
 
 # package the app
-gulp build:prod
+npm run dumpprod
 
 # Build the app
 npm run ionicBuild ${platforms}

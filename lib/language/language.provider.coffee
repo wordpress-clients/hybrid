@@ -39,7 +39,7 @@ module.exports = angular.module 'wordpress-hybrid-client.language'
                 localStorage.setItem "locale", @locale
                 $translateProvider.use @locale
                 # specific to chinese so far
-                if @locale = 'zh'
+                if @locale is 'zh'
                     amMoment.changeLocale 'zh-cn'
                 else
                     amMoment.changeLocale @locale

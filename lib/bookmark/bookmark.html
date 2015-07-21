@@ -6,7 +6,7 @@
         <div class="list">
             <div class="item item-button-right" collection-repeat="post in bookmarkCtrl.posts" ui-sref="public.post({ id: post.ID, post: post })">
                 <span ng-bind-html="post.title"></span>
-                <p class="text-muted" translate="bookmark.bookmarkedDate" translate-values="{date: (post.bookmarked | amDateFormat:'LL')}"></p>
+                <p class="text-muted">{{post.bookmarked | amTimeAgo}}</p>
                 <button class="button button-outline button-assertive" ng-click="$event.stopPropagation(); bookmarkCtrl.remove(post)">
                     <i class="icon ion-close-round"></i>
                 </button>

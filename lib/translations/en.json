@@ -23,7 +23,6 @@
     },
     "bookmark": {
         "title": "Bookmarks",
-        "bookmarkedDate" : "Bookmarked on: {{date}}",
         "emptyList" : "Nothing bookmarked yet!",
         "bookmarked" : "Bookmarked!",
         "removed" : "Bookmark removed!"

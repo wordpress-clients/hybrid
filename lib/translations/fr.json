@@ -23,7 +23,6 @@
     },
     "bookmark": {
         "title": "Signets",
-        "bookmarkedDate" : "Signet ajouté le: {{date}}",
         "emptyList" : "Aucun signet pour le moment!",
         "bookmarked" : "Signet ajouté!",
         "removed" : "Signet supprimé!"

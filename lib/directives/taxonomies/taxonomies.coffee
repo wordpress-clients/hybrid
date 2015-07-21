@@ -8,7 +8,7 @@ Display posts list
                                               < pre >
 </pre >
 ###
-module.exports = angular.module('wordpress-hybrid-client').directive 'wphcTaxonomies', ($log, $state) ->
+module.exports = angular.module('wordpress-hybrid-client.directives').directive 'wphcTaxonomies', ($log, $state) ->
     restrict: 'E'
     transclude: true
     replace: true

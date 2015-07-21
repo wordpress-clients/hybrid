@@ -8,7 +8,7 @@ A simple loader
                       < pre >
 </pre >
 ###
-module.exports = angular.module('wordpress-hybrid-client').directive 'wphcEmptyList', () ->
+module.exports = angular.module('wordpress-hybrid-client.directives').directive 'wphcEmptyList', () ->
     restrict: 'E'
     replace: true
     scope:

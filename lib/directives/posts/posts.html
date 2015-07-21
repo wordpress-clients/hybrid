@@ -25,15 +25,7 @@
             <div class="item item-text-wrap" ng-if="::post.excerpt" ng-bind-html="::post.excerpt"></div>
         </div>
         <div class="item item-divider item-footer">
-            <button class="button button-clear pull-left" ng-if="::post.terms.category.length" ng-click="showTaxonomies( 'categories.title', post.terms.category, 'category') ">
-                <i class="icon ion-folder"></i>
-            </button>
-            <button class="button button-clear pull-left" ng-if="::post.terms.post_tag.length" ng-click="showTaxonomies( 'tags.title', post.terms.post_tag, 'post_tag') ">
-                <i class="icon ion-pricetags"></i>
-            </button>
-            <button class="button button-clear" ng-click="share('native', post.title, post.link) ">
-                <i class="icon ion-android-share-alt"></i>
-            </button>
+            <wphc-post-toolbar post="::post" show-share show-bookmark></wphc-post-toolbar>
         </div>
     </div>
 </div>

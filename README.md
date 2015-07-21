@@ -91,10 +91,10 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Docker support for easier installation
 - [X] Syntax highlighter for tech blogs
 - [X] Push Notifications
+- [X] Offline
 - [ ] Table of content for posts
 - [ ] Personnalized Logo
 - [ ] Comment system (FB, WP, Disqus)
 - [ ] Templating
 - [ ] Contact form
-- [ ] Offline
 - [ ] Ability to add ads

@@ -15,9 +15,18 @@ module.exports = {
         filename: 'bundle-[hash:6].js'
     },
     module: {
+        noParse: [
+            /localforage\/dist\/localforage.js/
+        ],
         loaders: [{
             test: /[\/]angular\.js$/,
             loader: 'expose?angular!exports?window.angular'
+        }, {
+            test: /[\/]localforage.js/,
+            loader: 'exports?localforage'
+        }, {
+            test: /[\/]angular-localForage.js/,
+            loader: 'imports?define=>false'
         }, {
             test: /[\/]highlight\.js$/,
             loader: 'expose?hljs'
@@ -30,7 +39,7 @@ module.exports = {
         }, {
             test: /\.html$/,
             loader: 'html'
-        },{
+        }, {
             test: /\.md$/,
             loader: "html!markdown"
         }, {
@@ -66,7 +75,10 @@ module.exports = {
         moduleDirectories: [
             'bower_components',
             'node_modules'
-        ]
+        ],
+        alias: {
+            'localforage': 'localforage/dist/localforage.js'
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({

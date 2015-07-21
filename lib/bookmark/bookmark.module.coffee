@@ -1,9 +1,4 @@
-require "localforage"
-require "angular-localforage"
-
-module.exports = angular.module 'wordpress-hybrid-client.bookmark', [
-    'LocalForageModule'
-]
+module.exports = angular.module 'wordpress-hybrid-client.bookmark', []
 
 require "./bookmark.config.coffee"
 require "./bookmark.service.coffee"

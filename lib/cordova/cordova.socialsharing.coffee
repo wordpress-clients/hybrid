@@ -1,5 +1,5 @@
 module.exports = angular.module 'wordpress-hybrid-client.cordova'
-    .factory '$WPHCSocialSharing', ($log, $WPHCConfig, $ionicPlatform, $cordovaSocialSharing, $cordovaToast, $filter) ->
+    .factory '$WPHCSocialSharing', ($log, $WPHCConfig, $ionicPlatform, $cordovaSocialSharing, $cordovaToast, $filter, $window) ->
         $log.info 'cordova socialsharing'
 
         share: (platform, title, link) ->
@@ -15,6 +15,6 @@ module.exports = angular.module 'wordpress-hybrid-client.cordova'
 
             if promise
                 promise.then ->
-                    $cordovaToast.showLongBottom($filter('translate') 'sharing.shared')
+                    $cordovaToast.showLongBottom($filter('translate') 'sharing.shared') if _.get $window, 'plugins.toast'
                 .catch ->
-                    $cordovaToast.showLongBottom($filter('translate') 'error')
+                    $cordovaToast.showLongBottom($filter('translate') 'error') if _.get $window, 'plugins.toast'

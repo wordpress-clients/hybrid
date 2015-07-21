@@ -7,13 +7,14 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
     bindToController: true
     controllerAs: 'postToolbarCtrl'
     template: require './postToolbar.html'
-    controller: ($scope, $element, $attrs, $WPHCTaxonomies, $WPHCSocialSharing) ->
+    controller: ($scope, $element, $attrs, $WPHCTaxonomies, $WPHCSocialSharing, $WPHCBookmark) ->
 
+        @isBookmarked = $WPHCBookmark.isBookmarked @post
         @hasBookmark = angular.isDefined $attrs.showBookmark
         @hasShare = angular.isDefined $attrs.showShare
         @showTaxonomies = (translation, list, term) ->
             $WPHCTaxonomies.showTaxonomiesInModal translation, list, term
-        @bookmark = (post) ->
-            $WPHCBookmark.save post
+        @bookmark = () ->
+            @isBookmarked = $WPHCBookmark.toggle @post
         @share = (platform, title, link) ->
             $WPHCSocialSharing.share platform, title, link

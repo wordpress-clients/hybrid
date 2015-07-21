@@ -10,7 +10,7 @@
         "home": "Home",
         "tags": "Tags",
         "search": "Search",
-        "bookmark": "Bookmark",
+        "bookmarks": "Bookmarks",
         "socialNetworks": "Social Networks",
         "categories": "Categories",
         "settings": "Settings"
@@ -20,6 +20,13 @@
             "title": "New content!",
             "text": "A new Post/Page: '{{postTitle}}' has been released on {{appTitle}}, do you want to open it?"
         }
+    },
+    "bookmark": {
+        "title": "Bookmarks",
+        "bookmarkedDate" : "Bookmarked on: {{date}}",
+        "emptyList" : "Nothing bookmarked yet!",
+        "bookmarked" : "Bookmarked!",
+        "removed" : "Bookmark removed!"
     },
     "tags": {
         "title": "Tags"

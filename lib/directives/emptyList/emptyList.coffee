@@ -13,7 +13,11 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
     replace: true
     scope:
         list: '='
+        text: '@'
+        icon: '@'
+    bindToController: true
+    controllerAs: 'emptyListCtrl'
     template: require './emptyList.html'
-    controller: ($scope, $element) ->
-        $scope.getContentHeight = ->
+    controller: ($scope, $element, $attrs) ->
+        @getContentHeight = ->
             return $element.parent().parent()[0].offsetHeight;

@@ -10,7 +10,7 @@
         "home": "首页",
         "tags": "标签",
         "search": "搜索",
-        "bookmark": "书签",
+        "bookmarks": "书签",
         "socialNetworks": "社交网络",
         "categories": "分类",
         "settings": "设置"
@@ -20,6 +20,13 @@
         "title": "新内容发布！",
         "text": "【{{appTitle}}】刚刚发表了文章《{{postTitle}}》，现在就打开阅读吧？"
         }
+    },
+    "bookmark": {
+        "title": "书签",
+        "bookmarkedDate" : "Bookmarked on: {{date}}",
+        "emptyList" : "Nothing bookmarked yet!",
+        "bookmarked" : "Bookmarked!",
+        "removed" : "Bookmark removed!"
     },
     "tags": {
         "title": "标签"

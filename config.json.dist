@@ -30,8 +30,8 @@
             "icon": "icon ion-pricetags"
         }, {
             "type": "internal",
-            "trans": "menu.bookmark",
-            "route": "public.bookmark",
+            "trans": "menu.bookmarks",
+            "route": "public.bookmarks",
             "icon": "icon ion-bookmark"
         }, {
             "type": "separator",

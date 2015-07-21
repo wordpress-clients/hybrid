@@ -10,7 +10,7 @@
         "home": "Accueil",
         "tags": "Tags",
         "search": "Chercher",
-        "bookmark": "Marque-page ",
+        "bookmarks": "Signets",
         "socialNetworks": "Réseaux sociaux",
         "categories": "Categories",
         "settings": "Paramètres"
@@ -20,6 +20,13 @@
             "title": "Nouveau contenu!",
             "text": "Un nouvel Article/Page '{{postTitle}}' vient d'être publié sur {{appTitle}}, voulez-vous le consulter?"
         }
+    },
+    "bookmark": {
+        "title": "Signets",
+        "bookmarkedDate" : "Signet ajouté le: {{date}}",
+        "emptyList" : "Aucun signet pour le moment!",
+        "bookmarked" : "Signet ajouté!",
+        "removed" : "Signet supprimé!"
     },
     "tags": {
         "title": "Tags"

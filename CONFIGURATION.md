@@ -98,6 +98,11 @@ They are three types of mnu item (internal|external|separator).
     "route": "public.taxonomies({ term: 'post_tag' })",
     "icon": "icon ion-pricetags"
 }, {
+    "type": "internal",
+    "trans": "menu.bookmarks",
+    "route": "public.bookmarks",
+    "icon": "icon ion-bookmark"
+}, {
     "type": "separator",
     "trans": "Separator"
 }, {
@@ -168,6 +173,18 @@ NB: For now the homepage is mandatory and cannot be a specific page.
     "maxAge": 172800000,
     "capacity": 10
 }
+```
+
+### Bookmark
+
+The bookmark cache has a difference from others. maxAge is infinite and cannot be overwritten.
+
+```
+"bookmark": {  // Overwrite global cache. Can be empty
+    "cache": {
+        "capacity": 10
+    }
+},
 ```
 
 ### taxonomies

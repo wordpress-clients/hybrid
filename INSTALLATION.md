@@ -35,8 +35,6 @@ sh ./install.sh
 
 ### Config files
 
-Now that the installation is done two files
-
 There are two config files, ```config.json``` for the application configuration and ```config.scss``` for the style configuration.
 
 ### Installing the Web service

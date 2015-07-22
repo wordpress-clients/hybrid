@@ -24,19 +24,36 @@ To know all WPHC internal varaibles checkout ```lib/scss/_variables.scss```
 
 ## Config.js
 
-The config file has several first level keys:
+Here is a simple view of what you can configure:
 
-* api
 * debugEnabled
 * title
+* api
+    * baseUrl
+    * timeout
+    * maxAttempt
 * menu
+    * exposeAsideWhen
+    * list
+* settings
 * cache
+    * views
+    * forward
+    * img
+    * data
+* bookmark
 * post
+* syntaxHighlighter
 * taxonomies
 * posts
 * translation
+    * available
+    * prefered
 * analytics
 * cordova
+    * statubar
+    * appRate
+    * pushNotifications
 
 
 ### api [Object]

@@ -9,7 +9,6 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" />
     <allow-navigation href="http://example.com/*" />
     <preference name="orientation" value="portrait" />
     <preference name="fullscreen" value="false" />

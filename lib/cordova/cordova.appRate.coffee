@@ -7,7 +7,9 @@ module.exports = angular.module 'wordpress-hybrid-client.cordova'
             preferences = _.get $WPHCConfig, 'cordova.appRate'
             $cordovaAppRateProvider.setPreferences preferences
         , false
-    .run ($cordovaAppRate, $WPHCConfig) ->
+    .run ($cordovaAppRate, $WPHCConfig, $ionicPlatform) ->
         if !_.get $WPHCConfig, 'cordova.appRate.enabled'
             return
-        $cordovaAppRate.promptForRating()
+        $ionicPlatform.ready () ->
+            $cordovaAppRate.promptForRating()
+        , false

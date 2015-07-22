@@ -6,7 +6,7 @@
 A simple loader
 </pre >
 ###
-module.exports = angular.module('wordpress-hybrid-client').directive 'wphcLoader', ($log) ->
+module.exports = angular.module('wordpress-hybrid-client.directives').directive 'wphcLoader', ($log) ->
     restrict: 'E'
     transclude: true
     replace: true

@@ -1,4 +1,4 @@
-module.exports = app = angular.module 'wordpress-hybrid-client.posts', [
+module.exports = angular.module 'wordpress-hybrid-client.posts', [
     'wp-api-angularjs'
 ]
 

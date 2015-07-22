@@ -5,7 +5,7 @@
 @description
 modify href behavior
 ###
-module.exports = angular.module('wordpress-hybrid-client')
+module.exports = angular.module('wordpress-hybrid-client.directives')
     .directive 'wphcHrefInApp', () ->
         restrict: 'A'
         controller: ($scope, $element, $attrs, $log, $cordovaInAppBrowser, $ionicScrollDelegate) ->

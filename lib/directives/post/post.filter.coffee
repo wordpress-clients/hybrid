@@ -1,4 +1,4 @@
-module.exports = angular.module 'wordpress-hybrid-client'
+module.exports = angular.module 'wordpress-hybrid-client.directives'
     .filter 'prepLink', ->
         return (text) ->
             element = angular.element '<div></div>'

@@ -32,6 +32,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
     'angularMoment'
     'angular.filter'
     require('./taxonomies/taxonomies.module').name
+    require('./bookmark/bookmark.module').name
     require('./post/post.module').name
     require('./posts/posts.module').name
     require('./search/search.module').name
@@ -44,6 +45,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
     require('./cacheImg/cacheImg.module').name
     require('./syntaxHighlighter/syntaxHighlighter.module').name
     require('./init/init.module').name
+    require('./directives/directives.module').name
 ]
 
 app.config ($stateProvider) ->
@@ -130,20 +132,6 @@ app.controller 'WPHCMainController' , ($log, $WPHCConfig) ->
     vm.appConfig = $WPHCConfig
     vm.appTitle = vm.appConfig.title || null
     vm
-
-###
-DIRECTIVES
-###
-require "./directives/bindAndCompileHtml/bindAndCompileHtml.coffee"
-require "./directives/taxonomies/taxonomies.coffee"
-require "./directives/emptyList/emptyList.coffee"
-require "./directives/inputEsc/inputEsc.coffee"
-require "./directives/hideWhen/hideWhen.coffee"
-require "./directives/showWhen/showWhen.coffee"
-require "./directives/loader/loader.coffee"
-require "./directives/posts/posts.coffee"
-require "./directives/post/post.coffee"
-require "./directives/href/href.coffee"
 
 ###
 RUN

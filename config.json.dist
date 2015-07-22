@@ -29,6 +29,11 @@
             "route": "public.taxonomies({ term: 'post_tag' })",
             "icon": "icon ion-pricetags"
         }, {
+            "type": "internal",
+            "trans": "menu.bookmarks",
+            "route": "public.bookmarks",
+            "icon": "icon ion-bookmark"
+        }, {
             "type": "separator",
             "trans": "Separator"
         }, {
@@ -76,6 +81,11 @@
             "cacheFlushInterval": null,
             "storageMode": "localStorage",
             "verifyIntegrity": true
+        }
+    },
+    "bookmark": {
+        "cache": {
+            "capacity": 10
         }
     },
     "post": {

@@ -1,12 +1,6 @@
 # Release
 
-Male sure you have ios and/or android platforms installed.
-
-```
-ionic platform add ios android
-```
-
-All the necessary plugins will be installed as well.
+Male sure you have ios and/or android platforms installed. If you have correctly ran ```npm run installCordova``` it should be fine otherwise go back to [BUILD.md](BUILD.md).
 
 ## Android
 
@@ -20,7 +14,7 @@ NB: You can put the key wherever you want and even give it another name but if y
 
 ### Keyboard adjustement
 
-Open ```platforms/android/AndroidManifest.xml``` and change ```android:windowSoftInputMode="adjustResize"``` into ```android:windowSoftInputMode="adjustNothing"``` it will prevent losing the menu to close when searching on tablets.
+Open ```platforms/android/AndroidManifest.xml``` and change ```android:windowSoftInputMode="adjustResize"``` into ```android:windowSoftInputMode="adjustNothing"``` it will prevent screen hiccup when searching.
 
 ### Build PROD APKs
 

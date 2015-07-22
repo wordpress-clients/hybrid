@@ -1,5 +1,5 @@
 
-module.exports = angular.module('wordpress-hybrid-client').directive 'bindAndCompileHtml', ($compile) ->
+module.exports = angular.module('wordpress-hybrid-client.directives').directive 'bindAndCompileHtml', ($compile) ->
     restrict: 'A'
     link: (scope, element, attrs) ->
         scope.$watch attrs.bindAndCompileHtml, (newValue, oldValue) ->

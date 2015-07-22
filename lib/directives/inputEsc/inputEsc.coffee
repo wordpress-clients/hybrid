@@ -8,7 +8,7 @@ Blur input on Esc
                     < pre >
 </pre >
 ###
-module.exports = angular.module('wordpress-hybrid-client').directive 'wphcInputEsc', ->
+module.exports = angular.module('wordpress-hybrid-client.directives').directive 'wphcInputEsc', ->
     restrict: 'A'
     link: (scope, elem, attrs) ->
         ESCAPE_KEY = 27

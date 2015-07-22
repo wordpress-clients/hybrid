@@ -1,6 +1,3 @@
-@import "../../scss/variables.scss";
-@import "ionic-sdk/scss/variables.scss";
-@import "../../scss/mixins.scss";
 .post {
     .item-author {
         background: none;
@@ -17,8 +14,8 @@
         padding-top: 15px;
         margin-top: 5px;
         .button-open-browser {
-            
+
         }
     }
-    @include post-item("../../img/post-img-border.png");
+    @include post-item("../img/post-img-border.png");
 }

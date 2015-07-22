@@ -1,10 +1,19 @@
-module.exports = angular.module('wordpress-hybrid-client.post').controller 'WPHCPostController', ($log, $scope, $WPHCPost, $state, $sce, $timeout, $anchorScroll) ->
+module.exports = angular.module('wordpress-hybrid-client.post').controller 'WPHCPostController', ($log, $scope, $q, $WPHCPost, $state, $stateParams) ->
     $log.info 'WPHCPostController'
     vm = @
     vm.post = undefined
     vm.init = ->
-        return $WPHCPost.get $state.params.id
-        .then (response) ->
+        if $stateParams.post
+            $log.info 'load post via object'
+            deferred = $q.defer()
+            deferred.resolve
+                data: $stateParams.post
+            promise = deferred.promise
+        else
+            $log.info 'load post via id'
+            promise = $WPHCPost.get $stateParams.id
+
+        promise.then (response) ->
             vm.post = response.data
 
     return vm

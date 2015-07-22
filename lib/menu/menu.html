@@ -3,20 +3,24 @@
 </ion-header-bar>
 <ion-content>
     <ion-list flex>
-        <ion-item ng-repeat="wordpress in ::menu.getWordpress() track by $index" ng-class="::{'item-icon-left': wordpress.icon}" nav-clear menu-close ui-sref="{{::wordpress.uiSref}}" ui-sref-active="active">
-            <i class="balanced {{::wordpress.icon}}" ng-if="wordpress.icon"></i> {{wordpress.trans | translate}}
-        </ion-item>
-        <div class="item item-divider">
-            {{"menu.socialNetworks" | translate}}
-        </div>
-        <ion-item class="item" ng-if="::menu.hasSocial()" ng-class="::{'item-icon-left': socialNetwork.icon}" ng-repeat="socialNetwork in ::menu.getSocial() track by $index" target="_blank" ng-href="{{::socialNetwork.url}}">
-            <i class="balanced {{::socialNetwork.icon}}"></i> {{::socialNetwork.name}}
-        </ion-item>
-        <div class="item item-divider" ng-if="::menu.hasSettings()">
-            {{"menu.settings" | translate}}
-        </div>
-        <ion-item class="item" ng-if="::menu.hasSettings()" ng-class="::{'item-icon-left': setting.icon}" nav-clear menu-close ng-repeat="setting in ::menu.getSettings() track by $index" ui-sref="{{::setting.uiSref}}">
-            <i class="balanced {{::setting.icon}}"></i> {{setting.trans | translate}}
-        </ion-item>
+        <span ng-repeat="menu in ::menu.list track by $index">
+            <span ng-switch="menu.type">
+                <span ng-switch-when="internal">
+                    <ion-item class="item" ng-class="::{'item-icon-left': menu.icon}" nav-clear menu-close ui-sref="{{::menu.route}}" ui-sref-active="active">
+                        <i class="balanced {{::menu.icon}}" ng-if="::menu.icon"></i> {{menu.trans | translate}}
+                    </ion-item>
+                </span>
+                <span ng-switch-when="external">
+                    <ion-item wphc-href-in-app class="item" ng-class="::{'item-icon-left': menu.icon}" target="_blank" ng-href="{{::menu.href}}">
+                        <i class="balanced {{::menu.icon}}" ng-if="::menu.icon"></i> {{menu.trans | translate}}
+                    </ion-item>
+                </span>
+                <span ng-switch-when="separator">
+                    <div class="item item-divider">
+                        {{menu.trans | translate}}
+                    </div>
+                </span>
+            </span>
+        </span>
     </ion-list>
 </ion-content>

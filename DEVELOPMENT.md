@@ -10,4 +10,4 @@ live reload in memory (no files are dumped in www folder)
 npm run devserver
 ```
 
-Open http://localhost:9100/ and check if everything run as expected.
+Open http://localhost:8080/ and check if everything run as expected.

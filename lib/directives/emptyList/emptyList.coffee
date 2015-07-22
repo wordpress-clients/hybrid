@@ -8,14 +8,16 @@ A simple loader
                       < pre >
 </pre >
 ###
-
-require "./style.scss"
-module.exports = angular.module('wordpress-hybrid-client').directive 'wphcEmptyList', () ->
+module.exports = angular.module('wordpress-hybrid-client.directives').directive 'wphcEmptyList', () ->
     restrict: 'E'
     replace: true
     scope:
         list: '='
+        text: '@'
+        icon: '@'
+    bindToController: true
+    controllerAs: 'emptyListCtrl'
     template: require './emptyList.html'
-    controller: ($scope, $element) ->
-        $scope.getContentHeight = ->
+    controller: ($scope, $element, $attrs) ->
+        @getContentHeight = ->
             return $element.parent().parent()[0].offsetHeight;

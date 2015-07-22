@@ -1,5 +1,5 @@
 <div list="posts">
-    <div class="list card card-posts repeat-animation" ng-repeat="post in posts track by post.ID">
+    <div class="list card card-posts repeat-animation" ng-repeat="post in posts track by $index">
         <div ui-sref="public.post(::{ id: post.ID })">
             <div class="item item-image" ng-if="::post.featured_image.is_image" wphc-img-background-cache="{{post.featured_image.attachment_meta.sizes.medium.url}}">
                 <div class="img-border"></div>
@@ -25,21 +25,7 @@
             <div class="item item-text-wrap" ng-if="::post.excerpt" ng-bind-html="::post.excerpt"></div>
         </div>
         <div class="item item-divider item-footer">
-            <button class="button button-clear pull-left" ng-if="::post.terms.category.length" ng-click="showTaxonomies( 'categories.title', post.terms.category, 'category') ">
-                <i class="icon ion-folder"></i>
-            </button>
-            <button class="button button-clear pull-left" ng-if="::post.terms.post_tag.length" ng-click="showTaxonomies( 'tags.title', post.terms.post_tag, 'post_tag') ">
-                <i class="icon ion-pricetags"></i>
-            </button>
-            <button class="button button-clear" ng-click="share('twitter', post.title, post.link) ">
-                <i class="icon ion-social-twitter"></i>
-            </button>
-            <button class="button button-clear" ng-click="share('facebook', post.title, post.link) ">
-                <i class="icon ion-social-facebook"></i>
-            </button>
-            <button class="button button-clear" ng-click="share('native', post.title, post.link) ">
-                <i class="icon ion-android-share-alt"></i>
-            </button>
+            <wphc-post-toolbar post="::post" show-share show-bookmark></wphc-post-toolbar>
         </div>
     </div>
 </div>

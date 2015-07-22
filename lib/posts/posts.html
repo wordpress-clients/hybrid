@@ -1,4 +1,5 @@
-<ion-view view-title="{{posts.title | translate}}">
+<ion-view>
+    <ion-nav-title>{{ posts.title | translate}}</ion-nav-title>
     <ion-content class="padding bg-gray-lighter">
         <wphc-empty-list list="posts.posts"></wphc-empty-list>
         <wphc-loader ng-if="!posts.posts" on-load="posts.init"></wphc-loader>

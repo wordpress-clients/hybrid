@@ -2,6 +2,11 @@
 
 [![Join the chat at https://gitter.im/livingobjects/angular-memory-stats](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/shprink/wordpress-hybrid-client?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+## Built with WPHC
+
+* https://play.google.com/store/apps/details?id=com.shprinkinc.wordpresshybridclient
+* http://hiwaldorf.com/app/
+
 ## Installation
 
 Read the manual: [INSTALLATION.md](INSTALLATION.md)
@@ -83,13 +88,12 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Accessibility (Post font size)
 - [X] Image cache ngImgCache
 - [X] App rate
-- [X] Docker support for easier installation
 - [X] Syntax highlighter for tech blogs
 - [X] Push Notifications
+- [X] Offline
 - [ ] Table of content for posts
 - [ ] Personnalized Logo
 - [ ] Comment system (FB, WP, Disqus)
 - [ ] Templating
 - [ ] Contact form
-- [ ] Offline
 - [ ] Ability to add ads

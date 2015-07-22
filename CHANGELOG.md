@@ -1,3 +1,26 @@
+<a name="1.4.0"></a>
+### 1.4.0  (not released yet)
+
+[milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/1.4.0)
+
+* New command to install cordova ```npm run installCordova```
+* Offline mode (Bookmarks) <https://github.com/shprink/wordpress-hybrid-client/issues/10>
+* release.sh.dist changed
+* Adding Whitelist Cordova plugin  <https://github.com/shprink/wordpress-hybrid-client/issues/33>
+* Update Crosswalk
+* Fix appRate
+
+#### Breaking Changes
+
+* Refactor Menu config <https://github.com/shprink/wordpress-hybrid-client/issues/27>
+
+The menu configuration is now located in ```menu.list``` within the config.json file. You will need to update it accordingly to the following changes:
+
+1. ```menu.settings``` changed to ```settings``` in the config.json file
+1. ```menu.wordpress``` is removed from config.json file
+1. ```menu.social``` is removed from config.json file
+1. ```menu.list``` is the new menu declaration object
+
 <a name="1.3.0"></a>
 ### 1.3.0  (2015-06-24)
 

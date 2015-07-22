@@ -5,4 +5,3 @@ module.exports = app = angular.module 'wordpress-hybrid-client.search', [
 require "./search.config.coffee"
 require "./search.controller.coffee"
 require "./search.service.coffee"
-require "./search.scss"

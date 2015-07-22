@@ -1,7 +1,7 @@
 @import "../../config.scss";
 @import "./variables";
 // Include all of Ionic
-@import "ionic-sdk/scss/ionic";
+@import "../../node_modules/ionic-sdk/scss/ionic";
 // local
 @import "./_layout";
 @import "./_mixins";
@@ -12,3 +12,9 @@
 @import "./_utilities";
 @import "./_responsivity";
 @import "./_ionic-override";
+// UI
+@import '../directives/directives';
+@import '../bookmark/bookmark';
+@import '../menu/menu';
+@import '../search/search';
+@import '../accessibility/accessibility';

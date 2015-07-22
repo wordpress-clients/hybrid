@@ -31,6 +31,7 @@ node_modules
 engine/
 node_modules/
 platforms/
+platforms_backup/
 plugins/
 resources/
 bower_components/

@@ -4,5 +4,12 @@ module.exports = angular.module 'wordpress-hybrid-client.cordova'
             return
 
         document.addEventListener "deviceready", () ->
-            $cordovaAppRateProvider.setPreferences $WPHCConfig.cordova.appRate
+            preferences = _.get $WPHCConfig, 'cordova.appRate'
+            $cordovaAppRateProvider.setPreferences preferences
+        , false
+    .run ($cordovaAppRate, $WPHCConfig, $ionicPlatform) ->
+        if !_.get $WPHCConfig, 'cordova.appRate.enabled'
+            return
+        $ionicPlatform.ready () ->
+            $cordovaAppRate.promptForRating()
         , false

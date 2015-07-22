@@ -1,56 +1,65 @@
 {
     "api": {
         "baseUrl": "http://yourDomain.com/wp-json",
-        "timeout": 3000,
+        "timeout": 10000,
         "maxAttempt": 3
     },
     "debugEnabled" : false,
     "title": "Your Blog title",
     "menu": {
         "exposeAsideWhen": "(min-width:900px)",
-        "settings": {
-            "about": {
-                "enabled": true,
-                "credit": false
-            },
-            "parameters": {
-                "enabled": true,
-                "defaultFontSize": "medium"
-            }
-        },
-        "wordpress": [{
+        "list": [{
+            "type": "internal",
             "trans": "menu.home",
-            "uiSref": "public.posts",
+            "route": "public.posts",
             "icon": "icon ion-home"
-        },{
-            "trans": "Your category",
-            "uiSref": "public.taxonomies.slug({ term: 'category', slug: 'your-category-slug' })",
+        }, {
+            "type": "internal",
+            "trans": "Mobile",
+            "route": "public.taxonomies.slug({ term: 'category', slug: 'mobile' })",
             "icon": "icon ion-iphone"
         }, {
+            "type": "internal",
             "trans": "menu.categories",
-            "uiSref": "public.taxonomies({ term: 'category' })",
+            "route": "public.taxonomies({ term: 'category' })",
             "icon": "icon ion-folder"
         }, {
+            "type": "internal",
             "trans": "menu.tags",
-            "uiSref": "public.taxonomies({ term: 'post_tag' })",
+            "route": "public.taxonomies({ term: 'post_tag' })",
             "icon": "icon ion-pricetags"
-        }],
-        "social": [{
-            "platform": "facebook",
-            "name": "julienrenauxblog",
-            "icon": "icon ion-social-facebook",
-            "url": "https://www.facebook.com/julienrenauxblog"
         }, {
-            "platform": "twitter",
-            "name": "julienrenaux",
-            "icon": "icon ion-social-twitter",
-            "url": "https://twitter.com/julienrenaux"
+            "type": "internal",
+            "trans": "menu.bookmarks",
+            "route": "public.bookmarks",
+            "icon": "icon ion-bookmark"
         }, {
-            "platform": "googleplus",
-            "name": "julienrenaux",
-            "icon": "icon ion-social-googleplus",
-            "url": "https://www.google.com/+julienrenaux"
+            "type": "separator",
+            "trans": "Separator"
+        }, {
+            "type": "external",
+            "trans": "My blog",
+            "href": "http://julienrenaux.fr",
+            "icon": "icon ion-link"
+        }, {
+            "type": "internal",
+            "trans": "params.title",
+            "route": "public.params",
+            "icon": "icon ion-gear-b"
+        }, {
+            "type": "internal",
+            "trans": "about.title",
+            "route": "public.about",
+            "icon": "icon ion-information"
         }]
+    },
+    "settings": {
+        "about": {
+            "credit": true
+        },
+        "parameters": {
+            "defaultFontSize": "medium"
+        }
     },
     "cache": {
         "views": 10,
@@ -72,6 +81,11 @@
             "cacheFlushInterval": null,
             "storageMode": "localStorage",
             "verifyIntegrity": true
+        }
+    },
+    "bookmark": {
+        "cache": {
+            "capacity": 10
         }
     },
     "post": {

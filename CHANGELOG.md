@@ -6,6 +6,7 @@
 * New command to install cordova ```npm run installCordova```
 * Offline mode (Bookmarks) <https://github.com/shprink/wordpress-hybrid-client/issues/10>
 * release.sh.dist changed
+* Fix appRate
 
 #### Breaking Changes
 

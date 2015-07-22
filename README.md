@@ -88,7 +88,6 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Accessibility (Post font size)
 - [X] Image cache ngImgCache
 - [X] App rate
-- [X] Docker support for easier installation
 - [X] Syntax highlighter for tech blogs
 - [X] Push Notifications
 - [X] Offline

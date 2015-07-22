@@ -13,7 +13,8 @@
 @import "./_responsivity";
 @import "./_ionic-override";
 // UI
-@import '../directives/directives.scss';
-@import '../menu/menu.scss';
-@import '../search/search.scss';
-@import '../accessibility/accessibility.scss';
+@import '../directives/directives';
+@import '../bookmark/bookmark';
+@import '../menu/menu';
+@import '../search/search';
+@import '../accessibility/accessibility';

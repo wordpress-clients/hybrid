@@ -28,14 +28,14 @@ module.exports = angular.module('wordpress-hybrid-client.bookmark')
             _.remove list,
                 ID: post.ID
             getCache().put 'list', list
-            $cordovaToast.showLongBottom($filter('translate') 'bookmark.removed') if _.get $window, 'plugins.toast'
+            $cordovaToast.showShortBottom($filter('translate') 'bookmark.removed') if _.get $window, 'plugins.toast'
 
         add : (post) ->
             post.bookmarked = moment().format()
             list = getCache().get('list') || []
             list.unshift post
             getCache().put 'list', list
-            $cordovaToast.showLongBottom($filter('translate') 'bookmark.bookmarked') if _.get $window, 'plugins.toast'
+            $cordovaToast.showShortBottom($filter('translate') 'bookmark.bookmarked') if _.get $window, 'plugins.toast'
 
         getList: () ->
             deferred = $q.defer()

@@ -15,6 +15,6 @@ module.exports = angular.module 'wordpress-hybrid-client.cordova'
 
             if promise
                 promise.then ->
-                    $cordovaToast.showLongBottom($filter('translate') 'sharing.shared') if _.get $window, 'plugins.toast'
+                    $cordovaToast.showShortBottom($filter('translate') 'sharing.shared') if _.get $window, 'plugins.toast'
                 .catch ->
-                    $cordovaToast.showLongBottom($filter('translate') 'error') if _.get $window, 'plugins.toast'
+                    $cordovaToast.showShortBottom($filter('translate') 'error') if _.get $window, 'plugins.toast'

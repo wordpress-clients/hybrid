@@ -3,7 +3,7 @@
 set -e
 
 read -p "Release major, minor or patch? " version
-version=${version:-"patch"}
+version=${version:-""}
 
 read -p "Which platforms do you want to build? (android ios): " platforms
 platforms=${platforms:-"android ios"}

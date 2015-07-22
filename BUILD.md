@@ -43,7 +43,7 @@ Plug your device in if you have one (make sure your device is listed by running:
 # Dump dev files within the www folder
 npm run dumpdev
 
-npm run ionic run android
+npm run runAndroid
 ```
 
 NB: If you want to test the minification you could also run the prod version on debug mode by using ```npm run dumpprod``` instead of ```npm run dumpdev```
@@ -73,7 +73,7 @@ sudo npm install -g ios-sim npm install ios-deploy
 
 ### Open project in Xcode
 
-If you have ran ```ionic platform add ios android``` correctly you should have a Xcode project file located in ```/platforms/ios/*.xcodeproj```. Open it by double clicking it.
+If you have ran ```npm run installCordova``` correctly you should have a Xcode project file located in ```/platforms/ios/*.xcodeproj```. Open it by double clicking it.
 
 ### Build and run emulated dev version (Non minified and debug ON)
 
@@ -83,7 +83,7 @@ Plug your device in if you have one or let iOS simulator handle it.
 # Dump dev files within the www folder
 npm run dumpdev
 
-npm run ionic emulate ios
+npm run emulateIOS
 ```
 
 NB: If you want to test the minification you could also run the prod version on debug mode by using ```npm run dumpprod``` instead of ```npm run dumpdev```
@@ -101,7 +101,7 @@ For details about various requirements to deploy to a device, refer to the Cordo
 # Dump dev files within the www folder
 npm run dumpdev
 
-npm run ionic run ios
+npm run runIOS
 ```
 
 ### URL whitelist
@@ -119,5 +119,5 @@ More details: https://github.com/apache/cordova-plugin-whitelist
 To have logs dunp in the terminal you can use ```--consolelogs``` options
 
 ```
-npm run ionic run ios -- --consolelogs
+npm run runIOS -- --consolelogs
 ```

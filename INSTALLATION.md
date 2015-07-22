@@ -20,9 +20,10 @@ v1.1.0
 v1.2.0
 v1.3.0
 v1.3.1
+v1.4.0
 
 # checkout the latest version available
-$ git checkout v1.3.1
+$ git checkout v1.4.0
 ```
 
 ### Run install.sh

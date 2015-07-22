@@ -1,5 +1,5 @@
 <a name="1.4.0"></a>
-### 1.4.0  (not released yet)
+### 1.4.0  (2015-07-22)
 
 [milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/1.4.0)
 

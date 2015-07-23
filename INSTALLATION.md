@@ -1,9 +1,11 @@
-## Local Installation
+## Installation
+
+This installation works on both OSX and Linux. Windows is not supported yet, if you want to help with that let us know: <https://github.com/shprink/wordpress-hybrid-client/issues/39>
 
 ### Preriquisites
 
-* NodeJS
-* NPM
+* NodeJS (tested on v0.10.33)
+* NPM (tested on 2.1.9)
 
 ### Clone repository
 

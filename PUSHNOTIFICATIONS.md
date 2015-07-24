@@ -30,7 +30,7 @@ Do not forget to save.
 ```
 npm run dumpdev
 
-ionic run android
+npm run runAndroid
 ```
 
 Open the console via Chrome dev tools ```chrome://inspect/#devices``` and inspect your device.

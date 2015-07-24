@@ -36,32 +36,37 @@ Read the manual: [RELEASE.md](RELEASE.md)
 ### Run dev server
 
 ```
+# Dev server
 npm run devserver
-```
 
-### Dump dev files in www
-
-```
+# Dump files in www
 npm run dumpdev
-```
-
-### Dump prod files in www
-
-```
 npm run dumpprod
-```
 
-### Run Android
-
-```
+# Run Cordova
 npm run runAndroid
-```
-
-### Run iOS
-
-```
 npm run runIOS
+
+# Cordova build
+npm run buildAndroid
+npm run buildProdAndroid
+npm run buildIOS
+npm run buildProdIOS
+npm run buildAll
+npm run buildProdAll
+
+# Cordova Platform
+npm run platformAddAndroid
+npm run platformAddIOS
+npm run platformAddAll
+
+# Cordova Plugin
+npm run pluginAddAll
 ```
+
+## Support
+
+[![Flattr WPHC](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=shprink&url=https%3A%2F%2Fgithub.com%2Fshprink%2Fwordpress-hybrid-client)
 
 ## Contribute
 

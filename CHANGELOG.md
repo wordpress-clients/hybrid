@@ -1,3 +1,14 @@
+<a name="1.4.2"></a>
+### 1.4.2  (2015-07-24)
+
+* Installation is now Linux ready.
+* Adding more npm command (listed in README.md)
+
+<a name="1.4.1"></a>
+### 1.4.1  (2015-07-23)
+
+* Update doc
+
 <a name="1.4.0"></a>
 ### 1.4.0  (2015-07-22)
 

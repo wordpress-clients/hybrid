@@ -10,13 +10,24 @@
         "devserver": "webpack-dev-server --port 8080 --json --progress",
         "dumpdev": "rm -rf www/* && webpack --progress --colors -d",
         "dumpprod": "rm -rf www/* && webpack --progress --colors --config webpack.config.prod.js -p",
+
         "runAndroid": "cordova run android",
         "runIOS": "cordova run ios",
         "cordova": "cordova",
-        "cordovaBuild": "cordova build --device",
-        "cordovaBuildProd": "cordova build --device --release",
-        "cordovaPluginAdd": "cordova plugin add",
-        "cordovaPlatformAdd": "cordova platform add",
+
+        "buildAndroid": "cordova build android --device",
+        "buildProdAndroid": "cordova build android --device --release",
+        "buildIOS": "cordova build ios --device",
+        "buildProdIOS": "cordova build ios --device --release",
+        "buildAll": "cordova build android ios --device",
+        "buildProdAll": "cordova build android ios --device --release",
+
+        "pluginAddAll": "cordova plugin add cordova-plugin-crosswalk-webview@1.2.0 cordova-plugin-whitelist@1.0.0 cordova-plugin-inappbrowser@0.6.0 cordova-plugin-splashscreen@1.0.0 cordova-plugin-file@1.3.3 cordova-plugin-file-transfer@0.5.0 cordova-plugin-device@0.3.0 cordova-plugin-globalization@0.3.4 cordova-plugin-console@0.2.13 cordova-plugin-network-information@0.2.15 cordova-plugin-dialogs@0.3.0 org.pushandplay.cordova.apprate@1.1.7 nl.x-services.plugins.toast@2.0.4 nl.x-services.plugins.socialsharing@4.3.18 com.ionic.keyboard@1.0.4 cordova-plugin-googleplayservices@19.0.1 https://github.com/apache/cordova-plugin-statusbar.git#r1.0.1 https://github.com/phonegap-build/PushPlugin.git#2.4.0 cordova-plugin-google-analytics@0.7.1",
+
+        "platformAddAndroid": "cordova platform add android",
+        "platformAddIOS": "cordova platform add ios",
+        "platformAddAll": "cordova platform add android ios",
+
         "ionicBuild": "cordova build --device --release",
         "emulateIOS": "cordova emulate ios",
         "rmPlugin": "cordova plugin rm",

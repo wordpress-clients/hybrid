@@ -63,6 +63,10 @@ npm run runAndroid
 npm run runIOS
 ```
 
+## Support
+
+<a href="https://flattr.com/submit/auto?user_id=shprink&url=https%3A%2F%2Fgithub.com%2Fshprink%2Fwordpress-hybrid-client" target="_blank"><img src="//button.flattr.com/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"></a>
+
 ## Contribute
 
 WordPress hybrid Client is Open Source, If you are interested in helping, please read the following:

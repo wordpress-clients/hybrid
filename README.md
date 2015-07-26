@@ -37,8 +37,6 @@ Read the manual: [RELEASE.md](RELEASE.md)
 
 ## Project public API
 
-### Run dev server
-
 ```
 # Dev server
 npm run devserver

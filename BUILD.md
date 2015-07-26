@@ -68,7 +68,7 @@ If your device is connected and in USB mode you will see your application that y
 #### iOS simulator
 
 ```
-sudo npm install -g ios-sim npm install ios-deploy
+sudo npm install -g ios-sim ios-deploy
 ```
 
 ### Open project in Xcode

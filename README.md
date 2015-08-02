@@ -35,6 +35,10 @@ Read the manual: [BUILD.md](BUILD.md)
 
 Read the manual: [RELEASE.md](RELEASE.md)
 
+## Splashscreens and Icons
+
+Read the manual: [SPLASHICONS.md](SPLASHICONS.md)
+
 ## Project public API
 
 ```

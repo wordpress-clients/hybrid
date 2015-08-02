@@ -19,11 +19,11 @@ There are some online tools that can help you generating splashscreens and icons
 sudo npm install ionic -g
 ```
 
-## Create templates
+### Create templates
 
 Create two files (either .psd, .ai or .png) within the ```resources``` directory. One named ```icon``` that needs to follow [this template](http://code.ionicframework.com/resources/icon.psd) and the other named ```splash``` that needs to follow [this template](http://code.ionicframework.com/resources/splash.psd)
 
-## Run
+### Run
 
 ```
 # generate both icons and splashscreens

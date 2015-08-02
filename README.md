@@ -1,3 +1,7 @@
+# WordPress Hybrid Client
+
+![screenshots](http://julienrenaux.fr/wp-content/uploads/2015/07/devices.jpg)
+
 ## Chat
 
 [![Join the chat at https://gitter.im/livingobjects/angular-memory-stats](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/shprink/wordpress-hybrid-client?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -32,8 +36,6 @@ Read the manual: [BUILD.md](BUILD.md)
 Read the manual: [RELEASE.md](RELEASE.md)
 
 ## Project public API
-
-### Run dev server
 
 ```
 # Dev server

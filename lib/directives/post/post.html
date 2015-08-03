@@ -16,6 +16,7 @@
     <div class="item item-divider item-toolbar">
         <wphc-post-toolbar post="::post" show-share show-bookmark></wphc-post-toolbar>
     </div>
+    <wphc-comments post-id="{{::post.ID}}"></wphc-comments>
     <section class="footer">
         <a class="button button-positive button-open-browser" wphc-href href="{{::post.link}}">
             {{'post.openInBrowser' | translate}}

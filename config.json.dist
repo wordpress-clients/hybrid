@@ -89,6 +89,9 @@
         }
     },
     "post": {
+        "comments": {
+            "enabled": true
+        },
         "cache": {
             "maxAge": 172800000,
             "capacity": 10

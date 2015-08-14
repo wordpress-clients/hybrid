@@ -3,3 +3,14 @@
         border: none;
     }
 }
+.wp-caption.aligncenter {
+    position: relative;
+    margin-bottom: 1.5em;
+    max-width: 100%;
+    overflow: hidden;
+}
+.wp-caption .wp-caption-text {
+    margin: 10px 0;
+    text-align: center;
+    font-style: italic;
+}

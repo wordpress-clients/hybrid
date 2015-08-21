@@ -51,7 +51,8 @@ npm run dumpprod
 
 # Run Cordova
 npm run runAndroid
-npm run runIOS
+npm run runIosEmulator
+npm run runIosDevice
 
 # Cordova build
 npm run buildAndroid

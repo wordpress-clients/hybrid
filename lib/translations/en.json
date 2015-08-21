@@ -56,6 +56,7 @@
         "featured": "Featured"
     },
     "post": {
+        "comments": "Comments",
         "openInBrowser": "Open in browser"
     },
     "about": {

@@ -43,6 +43,7 @@ Here is a simple view of what you can configure:
     * data
 * bookmark
 * post
+    * comments
 * syntaxHighlighter
 * taxonomies
 * posts
@@ -186,6 +187,10 @@ NB: For now the homepage is mandatory and cannot be a specific page.
 ### post
 
 ```
+"comments": {
+    "enabled": true,
+    "depth": 2
+},
 "cache": { // Overwrite global cache. Can be empty
     "maxAge": 172800000,
     "capacity": 10

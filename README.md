@@ -103,9 +103,9 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Syntax highlighter for tech blogs
 - [X] Push Notifications
 - [X] Offline
+- [X] Comments. Submitting is not supported yet.
 - [ ] Table of content for posts
 - [ ] Personnalized Logo
-- [ ] Comment system (FB, WP, Disqus)
 - [ ] Templating
 - [ ] Contact form
 - [ ] Ability to add ads

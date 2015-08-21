@@ -10,10 +10,12 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
     controller: ($log, $scope, $element, $WPHCPost, $WPHCConfig) ->
         vm = @
         vm.postId = parseInt vm.postId
-        vm.comments = []
+        vm.comments = null
         depth = _.get($WPHCConfig, 'post.comments.depth') || 2
         $WPHCPost.getComments vm.postId
             .then (comments) ->
+                if !comments.lenght
+                    vm.comments = []
                 commentsTemp = []
                 for comment in comments by -1
                     commentsTemp[comment.ID] = comment

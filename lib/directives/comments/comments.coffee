@@ -7,20 +7,23 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
     template: require './comments.html'
     bindToController: true
     controllerAs: 'commentsCtrl'
-    controller: ($log, $scope, $element, $WPHCPost) ->
+    controller: ($log, $scope, $element, $WPHCPost, $WPHCConfig) ->
         vm = @
         vm.postId = parseInt vm.postId
         vm.comments = []
+        depth = _.get($WPHCConfig, 'post.comments.depth') || 2
         $WPHCPost.getComments vm.postId
             .then (comments) ->
                 commentsTemp = []
                 for comment in comments by -1
+                    commentsTemp[comment.ID] = comment
+                    comment.children = []
                     if comment.parent is 0
-                        comment.children = []
-                        commentsTemp[comment.ID] = comment
+                        comment.level = 1
                         vm.comments.push comment
                     else
                         parent = commentsTemp[comment.parent]
+                        comment.level = parent.level + 1
+                        continue if depth is parent.level
                         parent.children.push comment
-                # delete commentsTemp
                 $log.debug 'wphcComments:comments', vm.comments

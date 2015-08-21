@@ -26,7 +26,6 @@ module.exports = angular.module('wordpress-hybrid-client.post').factory '$WPHCPo
                 data = _.filter response.data.plain(),
                     status: 'approved'
                     type: 'comment'
-                console.log('eee', response, data)
                 getCommentsCache().put 'item-comments-' + hash, data
                 deferred.resolve data
             .catch (error) ->

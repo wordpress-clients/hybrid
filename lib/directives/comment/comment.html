@@ -1,7 +1,8 @@
-<ion-list>
-    <ion-item class="item-avatar">
+<div>
+    <ion-item class="item-avatar item-text-wrap">
         <img wphc-img-cache ng-src="{{::commentCtrl.comment.author.avatar}}" ng-if="::commentCtrl.comment.author.avatar">
+        <h2>{{::commentCtrl.comment.author.name}}</h2>
         <span bind-and-compile-html="::commentCtrl.comment.content"></span>
-        <wphc-comment ng-if="commentCtrl.comment.children.length" ng-repeat="comment in commentCtrl.comment.children" comment="comment"></wphc-comment>
+        <wphc-comment ng-if="commentCtrl.comment.children.length" ng-repeat="comment in commentCtrl.comment.children" comment="comment" class="level-{{::comment.level}}"></wphc-comment>
     </ion-item>
-</ion-list>
+</div>

@@ -1,9 +1,9 @@
 {
     "pullToRefresh": "Desliza para refrescar",
     "retry": "Reintentar",
-    "error": "Ha ocurrido un error, int�ntalo de nuevo.",
+    "error": "Ha ocurrido un error, inténtalo de nuevo.",
     "attemptToConnect": "Attempt to connect {{attempt}} of {{attemptMax}}.",
-    "yes": "S�",
+    "yes": "Sí",
     "no" : "No",
     "menu": {
         "title": "Menu",
@@ -12,19 +12,19 @@
         "search": "Buscar",
         "bookmarks": "Favoritos",
         "socialNetworks": "Redes Sociales",
-        "categories": "Categor�as",
-        "settings": "Configuraci�n"
+        "categories": "Categorías",
+        "settings": "Configuración"
     },
     "pushNotifications": {
         "newContent": {
-            "title": "Nueva publicaci�n!",
-            "text": "Se ha publicado un nuevo art�culo: '{{postTitle}}' en {{appTitle}}, �quieres leerlo?"
+            "title": "Nueva publicación!",
+            "text": "Se ha publicado un nuevo artículo: '{{postTitle}}' en {{appTitle}}, ¿quieres leerlo?"
         }
     },
     "bookmark": {
         "title": "Favoritos",
-        "emptyList" : "No has guardado nada a�n!",
-        "bookmarked" : "A�adido a favoritos!",
+        "emptyList" : "No has guardado nada aún!",
+        "bookmarked" : "Añadido a favoritos!",
         "removed" : "Eliminado de favoritos!"
     },
     "tags": {
@@ -34,10 +34,10 @@
         "title": "Etiqueta: {{name}}"
     },
     "categories": {
-        "title": "Categor�as"
+        "title": "Categorías"
     },
     "category": {
-        "title": "Categor�a {{name}}"
+        "title": "Categoría {{name}}"
     },
     "home": {
         "title": "Inicio"
@@ -56,7 +56,6 @@
         "featured": "Destacado"
     },
     "post": {
-        "comments": "Comentarios",
         "openInBrowser": "Abrir en el navegador"
     },
     "about": {
@@ -64,19 +63,19 @@
         "credit": "Powered by <a href='http://wphc.julienrenaux.fr' target='_blank'>WPHC</a> and WordPress"
     },
     "params": {
-        "title": "Par�metros",
-        "offlineMode": "Modo Offline (pr�ximamente)",
-        "fontSize": "Tama�o de la fuente",
+        "title": "Parámetros",
+        "offlineMode": "Modo Offline (próximamente)",
+        "fontSize": "Tamaño de la fuente",
         "language": "Idioma"
     },
     "languages": {
         "en": "English",
         "fr": "French",
         "zh": "Chinese",
-		"es": "Spanish"
+	"es": "Spanish"
     },
     "fontSize": {
-        "small": "Peque�a",
+        "small": "Pequeña",
         "medium": "Mediana",
         "large": "Grande",
         "x-large": "Muy grande",

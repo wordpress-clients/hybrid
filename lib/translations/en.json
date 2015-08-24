@@ -72,7 +72,8 @@
     "languages": {
         "en": "English",
         "fr": "French",
-        "zh": "Chinese"
+        "zh": "Chinese",
+        "es": "Spanish"
     },
     "fontSize": {
         "small": "Small",

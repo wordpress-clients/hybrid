@@ -130,6 +130,9 @@
             },
             "zh": {
                 "zh_CN": "zh"
+            },
+            "es": {
+                "es": "es"
             }
         },
         "prefered": "en"

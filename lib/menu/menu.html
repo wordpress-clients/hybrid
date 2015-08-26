@@ -6,7 +6,7 @@
         <span ng-repeat="menu in ::menu.list track by $index">
             <span ng-switch="menu.type">
                 <span ng-switch-when="internal">
-                    <ion-item class="item" ng-class="::{'item-icon-left': menu.icon}" nav-clear menu-close ui-sref="{{::menu.route}}" ui-sref-active="active">
+                    <ion-item class="item" ng-class="::{'item-icon-left': menu.icon}" nav-clear menu-close ui-sref="{{::menu.route}}" ui-sref-active-eq="active">
                         <i class="balanced {{::menu.icon}}" ng-if="::menu.icon"></i> {{menu.trans | translate}}
                     </ion-item>
                 </span>

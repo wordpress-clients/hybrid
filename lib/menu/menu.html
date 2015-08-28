@@ -2,25 +2,5 @@
     <h1 class="title">{{main.appTitle}}</h1>
 </ion-header-bar>
 <ion-content>
-    <ion-list flex>
-        <span ng-repeat="menu in ::menu.list track by $index">
-            <span ng-switch="menu.type">
-                <span ng-switch-when="internal">
-                    <ion-item class="item" ng-class="::{'item-icon-left': menu.icon}" nav-clear menu-close ui-sref="{{::menu.route}}" ui-sref-active-eq="active">
-                        <i class="balanced {{::menu.icon}}" ng-if="::menu.icon"></i> {{menu.trans | translate}}
-                    </ion-item>
-                </span>
-                <span ng-switch-when="external">
-                    <ion-item wphc-href-in-app class="item" ng-class="::{'item-icon-left': menu.icon}" target="_blank" ng-href="{{::menu.href}}">
-                        <i class="balanced {{::menu.icon}}" ng-if="::menu.icon"></i> {{menu.trans | translate}}
-                    </ion-item>
-                </span>
-                <span ng-switch-when="separator">
-                    <div class="item item-divider">
-                        {{menu.trans | translate}}
-                    </div>
-                </span>
-            </span>
-        </span>
-    </ion-list>
+    <wphc-menu list="menu.list"></wphc-menu>
 </ion-content>

@@ -8,6 +8,7 @@ $palette-primary-background: white !default;
 $palette-accent-color: #009688 !default;
 $palette-secondary-text: #727272 !default;
 $palette-divider-color: #eaeaea !default;
+
 // Ionic palette match
 $light: $palette-primary-icon;
 $stable: $palette-divider-color;
@@ -16,18 +17,22 @@ $energized: $palette-accent-color;
 $balanced: $palette-secondary-text;
 $dark: $palette-primary-dark;
 $positive: $palette-primary-color;
+
 // Base
 // ------------------------------
 $base-background-color: $palette-primary-background;
 $base-color: $palette-primary-text;
 $font-family-sans-serif: "Roboto", "Helvetica Neue", "Segoe UI", sans-serif !default;
+
 // $font-size-base: 15px !default;
 $line-height-base: 1.828571429 !default;
+
 // 20/14
 // ------------------------------
 $item-default-bg: $palette-primary-background;
 $item-default-border: $palette-divider-color;
 $item-default-text: $palette-primary-text;
+
 // Grays
 // ------------------------------
 $gray-base: #000 !default;
@@ -38,11 +43,14 @@ $gray-light: lighten($gray-base, 46.7%) !default;
 $gray-lighter: lighten($gray-base, 93.5%) !default;
 $bar-height: 64px !default;
 $bar-padding-portrait: 10px !default;
+
 // Custom break point
 $grid-responsive-xl-break: 1450px !default;
+
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../../node_modules/ionic-sdk/release/fonts" !default;
 $font-family-base: inherit;
+
 // Loader
 // ------------------------------
 $loader-width: 50px;
@@ -51,10 +59,12 @@ $loader-zIndex: 1002;
 $loader-bg: $gray-lighter;
 $loader-stroke: $positive;
 $loader-fill: $positive;
+
 // Empty list directive
 // ----------------------
 $emptyList-bg: $gray-lighter;
 $emptyList-zIndex: 1001;
+
 // Post
 // ------------------------------
 $post-title-size: 24px;
@@ -65,6 +75,7 @@ $post-img-title-size: $post-title-size;
 $post-img-title-padding: 20px;
 $post-img-title-color: white;
 $post-img-title-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
 // Layout
 // ------------------------------
 $baseline-grid: 8px !default;
@@ -72,6 +83,7 @@ $layout-breakpoint-sm: 600px !default;
 $layout-breakpoint-md: 960px !default;
 $layout-breakpoint-lg: 1200px !default;
 $layout-gutter-width: ($baseline-grid * 2) !default;
+
 // Code
 // ------------------------------
 $code-font-family: Menlo, Monaco, Consolas, "Courier New", monospace !default;
@@ -81,3 +93,13 @@ $pre-bg: #f5f5f5 !default;
 $pre-color: $gray-dark !default;
 $pre-border-color: #ccc !default;
 $pre-scrollable-max-height: 340px !default;
+
+// Menu
+// -------------------------------
+$menu-icon-color: $balanced;
+$menu-starting-bg-color: white;
+$menu-starting-darken-amount: 4%;
+$menu-icon-level-color: lighten($menu-icon-color, 10%);
+$menu-max-depth: 6;
+$menu-pane-expand-duration:  0.5s  !default;
+$menu-pane-hover-duration:   0.25s !default;

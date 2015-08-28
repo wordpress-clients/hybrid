@@ -1,6 +1,7 @@
 require "angular-recursion"
 module.exports = angular.module 'wordpress-hybrid-client.directives', [
-    "RecursionHelper"
+    "RecursionHelper",
+    'vAccordion'
 ]
 
 require "./bindAndCompileHtml/bindAndCompileHtml.coffee"
@@ -15,4 +16,5 @@ require "./comment/comment.coffee"
 require "./loader/loader.coffee"
 require "./posts/posts.coffee"
 require "./post/post.coffee"
+require "./menu/menu.coffee"
 require "./href/href.coffee"

@@ -104,7 +104,7 @@
     "lodash": "^3.9.3",
     "moment": "^2.9.0",
     "ng-cordova": "^0.1.17-alpha",
-    "v-accordion": "^1.2.7",
+    "v-accordion": "~1.2.7",
     "wp-api-angularjs": "^1.0.0"
   }
 }

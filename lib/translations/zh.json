@@ -60,8 +60,7 @@
         "openInBrowser": "用浏览器打开"
     },
     "about": {
-        "title": "关于",
-        "credit": "由{{wphc}}及WordPress强力驱动"
+        "title": "关于"
     },
     "params": {
         "title": "参数",

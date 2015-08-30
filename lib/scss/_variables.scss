@@ -24,9 +24,6 @@ $base-background-color: $palette-primary-background;
 $base-color: $palette-primary-text;
 $font-family-sans-serif: "Roboto", "Helvetica Neue", "Segoe UI", sans-serif !default;
 
-// $font-size-base: 15px !default;
-$line-height-base: 1.828571429 !default;
-
 // 20/14
 // ------------------------------
 $item-default-bg: $palette-primary-background;
@@ -53,9 +50,9 @@ $font-family-base: inherit;
 
 // Loader
 // ------------------------------
-$loader-width: 50px;
-$loader-height: 50px;
-$loader-zIndex: 1002;
+$loader-width: 50px !default;
+$loader-height: 50px !default;
+$loader-zIndex: 1002 !default;
 $loader-bg: $gray-lighter;
 $loader-stroke: $positive;
 $loader-fill: $positive;
@@ -63,18 +60,18 @@ $loader-fill: $positive;
 // Empty list directive
 // ----------------------
 $emptyList-bg: $gray-lighter;
-$emptyList-zIndex: 1001;
+$emptyList-zIndex: 1001 !default;
 
 // Post
 // ------------------------------
-$post-title-size: 24px;
+$post-title-size: 24px !default;
 $post-title-color: $base-color;
-$post-img-height: 200px;
-$post-img-bg: white;
+$post-img-height: 200px !default;
+$post-img-bg: white !default;
 $post-img-title-size: $post-title-size;
-$post-img-title-padding: 20px;
-$post-img-title-color: white;
-$post-img-title-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+$post-img-title-padding: 20px !default;
+$post-img-title-color: white !default;
+$post-img-title-shadow: 0 0 5px rgba(0, 0, 0, 0.3) !default;
 
 // Layout
 // ------------------------------
@@ -97,9 +94,9 @@ $pre-scrollable-max-height: 340px !default;
 // Menu
 // -------------------------------
 $menu-icon-color: $balanced;
-$menu-starting-bg-color: white;
-$menu-starting-darken-amount: 4%;
-$menu-icon-level-color: lighten($menu-icon-color, 10%);
-$menu-max-depth: 6;
-$menu-pane-expand-duration:  0.5s  !default;
-$menu-pane-hover-duration:   0.25s !default;
+$menu-starting-bg-color: white !default;
+$menu-starting-darken-amount: 4% !default;
+$menu-icon-level-color: lighten($menu-icon-color, 10%) !default;
+$menu-max-depth: 6 !default;
+$menu-pane-expand-duration: 0.5s !default;
+$menu-pane-hover-duration: 0.25s !default;

@@ -1,12 +1,12 @@
-<a name="1.4.5"></a>
-### 1.4.5  (unknown)
+<a name="1.5.0"></a>
+### 1.5.0  (2015-08-30)
 
 [milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/1.5.0)
 
 * Comments <https://github.com/shprink/wordpress-hybrid-client/issues/6>
+* Side menu with up to 6 levels menu <https://github.com/shprink/wordpress-hybrid-client/issues/41>
 * Cordova plugin Update
-* Adding spanish translation
-
+* Adding Spanish translation
 
 <a name="1.4.2"></a>
 ### 1.4.2  (2015-07-24)

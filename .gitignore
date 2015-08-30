@@ -43,3 +43,4 @@ config.scss
 about.md
 iOS
 cordova.plugin.backup
+before_build.md

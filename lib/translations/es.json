@@ -59,8 +59,7 @@
         "openInBrowser": "Abrir en el navegador"
     },
     "about": {
-        "title": "Acerca de",
-        "credit": "Powered by <a href='http://wphc.julienrenaux.fr' target='_blank'>WPHC</a> and WordPress"
+        "title": "Acerca de"
     },
     "params": {
         "title": "Parámetros",

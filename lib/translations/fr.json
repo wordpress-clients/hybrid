@@ -60,8 +60,7 @@
         "openInBrowser": "Ouvrir dans un navigateur"
     },
     "about": {
-        "title": "A propos",
-        "credit": "Propulsé par {{wphc}} et WordPress"
+        "title": "A propos"
     },
     "params": {
         "title": "Paramètres",

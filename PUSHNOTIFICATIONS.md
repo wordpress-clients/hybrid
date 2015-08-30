@@ -61,6 +61,6 @@ Go to ```Push Notifications > Settings``` and check the following checkboxes:
 
 ### Create .pem
 
-[Get .perm files](http://stackoverflow.com/questions/21250510/generate-pem-file-used-to-setup-apple-push-notification)
+[Get .pem files](http://stackoverflow.com/questions/21250510/generate-pem-file-used-to-setup-apple-push-notification)
 
 Once you have got your .pem files upload them in the ```iOS Push Notifications``` section

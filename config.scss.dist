@@ -9,3 +9,4 @@
 // $palette-accent-color: #009688 !default;
 // $palette-secondary-text: #727272 !default;
 // $palette-divider-color: #EAEAEA !default;
+// $bar-height: 64px !default;

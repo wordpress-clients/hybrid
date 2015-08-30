@@ -33,7 +33,6 @@ node_modules/
 platforms/
 platforms_backup/
 plugins/
-resources/
 bower_components/
 config.json
 config.prod.json
@@ -44,3 +43,4 @@ config.scss
 about.md
 iOS
 cordova.plugin.backup
+before_build.md

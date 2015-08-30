@@ -7,3 +7,8 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
         post: "="
         layout: '='
     template: require './post.html'
+    bindToController: true
+    controllerAs: 'postCtrl'
+    controller: ($WPHCConfig) ->
+        vm = @
+        vm.enabled = _.get($WPHCConfig, 'post.comments.enabled')

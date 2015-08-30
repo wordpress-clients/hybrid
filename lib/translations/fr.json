@@ -56,11 +56,11 @@
         "featured": "A la Une"
     },
     "post": {
+        "comments": "Commentaires",
         "openInBrowser": "Ouvrir dans un navigateur"
     },
     "about": {
-        "title": "A propos",
-        "credit": "Propulsé par {{wphc}} et WordPress"
+        "title": "A propos"
     },
     "params": {
         "title": "Paramètres",
@@ -71,7 +71,8 @@
     "languages": {
         "en": "Anglais",
         "fr": "Français",
-        "zh": "Chinois"
+        "zh": "Chinois",
+        "es": "Espagnol"
     },
     "fontSize": {
         "small": "Petit",

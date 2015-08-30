@@ -1,3 +1,7 @@
+# WordPress Hybrid Client
+
+![screenshots](http://julienrenaux.fr/wp-content/uploads/2015/07/devices.jpg)
+
 ## Chat
 
 [![Join the chat at https://gitter.im/livingobjects/angular-memory-stats](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/shprink/wordpress-hybrid-client?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -31,9 +35,11 @@ Read the manual: [BUILD.md](BUILD.md)
 
 Read the manual: [RELEASE.md](RELEASE.md)
 
-## Project public API
+## Splashscreens and Icons
 
-### Run dev server
+Read the manual: [SPLASHICONS.md](SPLASHICONS.md)
+
+## Project public API
 
 ```
 # Dev server
@@ -45,7 +51,8 @@ npm run dumpprod
 
 # Run Cordova
 npm run runAndroid
-npm run runIOS
+npm run runIosEmulator
+npm run runIosDevice
 
 # Cordova build
 npm run buildAndroid
@@ -96,9 +103,9 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Syntax highlighter for tech blogs
 - [X] Push Notifications
 - [X] Offline
+- [X] Comments. Submitting is not supported yet.
 - [ ] Table of content for posts
 - [ ] Personnalized Logo
-- [ ] Comment system (FB, WP, Disqus)
 - [ ] Templating
 - [ ] Contact form
 - [ ] Ability to add ads

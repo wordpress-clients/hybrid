@@ -14,15 +14,20 @@
             "route": "public.posts",
             "icon": "icon ion-home"
         }, {
-            "type": "internal",
-            "trans": "Mobile",
-            "route": "public.taxonomies.slug({ term: 'category', slug: 'mobile' })",
-            "icon": "icon ion-iphone"
-        }, {
-            "type": "internal",
+            "type": "folder",
             "trans": "menu.categories",
-            "route": "public.taxonomies({ term: 'category' })",
-            "icon": "icon ion-folder"
+            "icon": "icon ion-folder",
+            "list": [{
+                "type": "internal",
+                "trans": "Mobile",
+                "route": "public.taxonomies.slug({ term: 'category', slug: 'mobile' })",
+                "icon": "icon ion-iphone"
+            }, {
+                "type": "internal",
+                "trans": "All",
+                "route": "public.taxonomies({ term: 'category' })",
+                "icon": "icon ion-folder"
+            }]
         }, {
             "type": "internal",
             "trans": "menu.tags",
@@ -89,6 +94,10 @@
         }
     },
     "post": {
+        "comments": {
+            "enabled": true,
+            "depth": 2
+        },
         "cache": {
             "maxAge": 172800000,
             "capacity": 10
@@ -126,6 +135,9 @@
             },
             "zh": {
                 "zh_CN": "zh"
+            },
+            "es": {
+                "es": "es"
             }
         },
         "prefered": "en"

@@ -1,0 +1,115 @@
+@mixin item($color, $amount) {
+    > .item {
+        background-color: $color;
+        border-color: darken($color, $amount + 7%);
+        i.icon {
+            color: darken($menu-icon-color, $amount + 2%);
+        }
+        &.active{
+            background-color: darken($color, $amount + 10%);
+        }
+        &:after {
+            color: darken($menu-icon-level-color, $amount + 2%);
+        }
+        &.item-divider {
+            background-color: darken($color, $amount + 6%);
+            border-color: darken($color, $amount + 10%);
+        }
+    }
+}
+@mixin recursive-item($from:1, $to:6, $color: #FFFFFF, $amount: 4%) {
+    @if $from < $to {
+        v-pane {
+            $color: darken($color, $amount);
+            @include item($color, $amount);
+            @include recursive-item($from+1, $to, $color, $amount + 1%);
+        }
+    }
+}
+wphc-menu {
+    v-accordion {
+        v-pane {
+            transition: transform $menu-pane-expand-duration;
+            &.is-expanded-add > v-pane-content,
+            &.is-expanded-remove > v-pane-content {
+                transition: max-height $menu-pane-expand-duration;
+            }
+            &.is-expandable {
+                > v-pane-header {
+                    padding-right: 30px;
+                    &:after {
+                        transform-origin: 50% 50%;
+                        transition: all $menu-pane-hover-duration;
+                        color: $menu-icon-level-color;
+                        content: "\f3d3";
+                        font-family: "Ionicons";
+                        position: absolute;
+                        right: 11px;
+                        top: 17px;
+                        font-size: 30px;
+                    }
+                }
+                > v-pane-content > div {
+                    will-change: transform, opacity;
+                    opacity: 0;
+                    transform: translate3d(0, 30px, 0);
+                    transition: transform $menu-pane-expand-duration, opacity $menu-pane-expand-duration;
+                }
+            }
+            &.is-expanded {
+                > v-pane-header {
+                    &:after {
+                        transform: rotate(90deg);
+
+                        // content: "\f3d0";
+                    }
+                }
+                > v-pane-content > div {
+                    opacity: 1;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+            i.icon {
+                color: $menu-icon-color;
+            }
+            @include item($menu-starting-bg-color, 0%);
+            @include recursive-item(1, $menu-max-depth, $menu-starting-bg-color, $menu-starting-darken-amount);
+        }
+    }
+}
+v-accordion {
+    display: block;
+}
+v-pane {
+    display: block;
+    &.is-expanded {
+        > v-pane-content > div {
+            visibility: visible;
+        }
+    }
+}
+v-pane-header {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    &:focus {
+        outline: none;
+    }
+    &[disabled] {
+        pointer-events: none;
+    }
+    > div {
+        display: block;
+    }
+}
+v-pane-content {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    max-height: 0;
+    > div {
+        visibility: none;
+    }
+}

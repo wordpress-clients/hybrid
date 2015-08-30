@@ -57,9 +57,6 @@ app.config ($stateProvider) ->
         '@' :
             template: require "./views/ion-menu.html"
             controller: "WPHCMainController as main"
-        'menu@public':
-            template: require "./menu/menu.html"
-            controller: "WPHCMenuController as menu"
 
 ###
 ANGULAR CONF
@@ -80,7 +77,7 @@ app.config ($WPHCConfig, $ionicConfigProvider) ->
 ###
 REST CONF
 ###
-app.config ($WPHCConfig, WpApiProvider, $ionicConfigProvider) ->
+app.config ($WPHCConfig, WpApiProvider) ->
     RestangularProvider = WpApiProvider.getRestangularProvider()
     RestangularProvider.setDefaultHttpFields
         timeout: _.get($WPHCConfig, 'api.timeout') || 5000

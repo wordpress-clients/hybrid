@@ -56,11 +56,11 @@
         "featured": "推荐"
     },
     "post": {
+        "comments": "评论",
         "openInBrowser": "用浏览器打开"
     },
     "about": {
-        "title": "关于",
-        "credit": "由{{wphc}}及WordPress强力驱动"
+        "title": "关于"
     },
     "params": {
         "title": "参数",
@@ -71,7 +71,8 @@
     "languages": {
         "en": "英语",
         "fr": "法语",
-        "zh": "中文"
+        "zh": "中文",
+        "es": "西班牙语"
     },
     "fontSize": {
         "small": "小",

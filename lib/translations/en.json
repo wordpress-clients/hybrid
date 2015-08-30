@@ -56,11 +56,11 @@
         "featured": "Featured"
     },
     "post": {
+        "comments": "Comments",
         "openInBrowser": "Open in browser"
     },
     "about": {
-        "title": "About",
-        "credit": "Powered by <a href='http://wphc.julienrenaux.fr' target='_blank'>WPHC</a> and WordPress"
+        "title": "About"
     },
     "params": {
         "title": "Parameters",
@@ -71,7 +71,8 @@
     "languages": {
         "en": "English",
         "fr": "French",
-        "zh": "Chinese"
+        "zh": "Chinese",
+        "es": "Spanish"
     },
     "fontSize": {
         "small": "Small",

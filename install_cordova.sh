@@ -17,12 +17,12 @@ rm -rf plugins/
 # install platforms and plugin
 echo "installing platforms "$platforms
 
-if [ "${platforms}" == "android" ]; then
+if [[ " ${platforms[*]} " == *" android "* ]]; then
     npm run platformAddAndroid
-elif [ "${platforms}" == "ios" ]; then
+fi
+
+if [[ " ${platforms[*]} " == *" ios "* ]]; then
     npm run platformAddIOS
-elif [ "${platforms}" == "android ios" ]; then
-    npm run platformAddAll
 fi
 
 npm run pluginAddAll

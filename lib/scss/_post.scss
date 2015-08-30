@@ -2,4 +2,61 @@
     .item-author {
         border: none;
     }
+    .wp-caption.aligncenter {
+        position: relative;
+        margin-bottom: 1.0em;
+        max-width: 100%;
+        overflow: hidden;
+    }
+    .wp-caption .wp-caption-text {
+        margin: 10px 0;
+        text-align: center;
+        font-style: italic;
+    }
+
+    // Lists
+    // -------------------------
+    // Unordered and Ordered lists
+    ul,
+    ol {
+        margin-top: 0;
+        margin-left: ($line-height-computed * 2);
+        margin-bottom: ($line-height-computed / 2);
+        ul,
+        ol {
+            margin-bottom: 0;
+        }
+    }
+    ol {
+        list-style: decimal;
+    }
+    ul {
+        list-style: disc;
+    }
+    em {
+        font-style: italic;
+    }
+
+    // Description Lists
+    dl {
+        margin-top: 0; // Remove browser default
+        margin-bottom: $line-height-computed;
+    }
+    dt,
+    dd {
+        line-height: $line-height-base;
+    }
+    dt {
+        font-weight: bold;
+    }
+    dd {
+        margin-left: 0; // Undo browser default
+    }
+
+    // Addresses
+    address {
+        margin-bottom: $line-height-computed;
+        font-style: normal;
+        line-height: $line-height-base;
+    }
 }

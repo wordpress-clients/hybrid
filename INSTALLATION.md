@@ -42,7 +42,7 @@ There are two config files, ```config.json``` for the application configuration 
 
 ### Installing the Web service
 
-Install this plugin <https://wordpress.org/plugins/json-rest-api/> to your WordPress website then add the address to the ```config.json``` file:
+Install this plugin <https://wordpress.org/plugins/json-rest-api/> (only version 1.2.x) to your WordPress website then add the address to the ```config.json``` file:
 
 ```
 "api": {

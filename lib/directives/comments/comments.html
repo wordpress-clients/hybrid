@@ -1,0 +1,4 @@
+<div>
+    <h3 ng-if="::commentsCtrl.comments.length">{{'post.comments' | translate}}</h3>
+    <wphc-comment ng-repeat="comment in commentsCtrl.comments" comment="comment" class="level-{{::comment.level}}"></wphc-comment>
+</div>

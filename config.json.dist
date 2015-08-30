@@ -14,7 +14,7 @@
             "route": "public.posts",
             "icon": "icon ion-home"
         }, {
-            "type": "internal",
+            "type": "folder",
             "trans": "menu.categories",
             "icon": "icon ion-folder",
             "list": [{

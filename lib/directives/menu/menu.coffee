@@ -15,11 +15,3 @@ module.exports = angular.module 'wordpress-hybrid-client.directives'
             RecursionHelper.compile el
         controller: ($log, $scope, $element) ->
             vm = @
-    .directive 'wphcMenuSref', () ->
-        restrict: 'A'
-        scope: false
-        controller: ($log, $scope, $element, $attrs, $ionicSideMenuDelegate) ->
-            $attrs.$observe 'wphcMenuSrefIsExpandable', (value) =>
-                isExpandable = parseInt(value) > 0
-                $element.on 'click', (event) ->
-                    if isExpandable then event.preventDefault() else $ionicSideMenuDelegate.toggleLeft()

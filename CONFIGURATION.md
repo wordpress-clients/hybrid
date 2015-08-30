@@ -83,10 +83,11 @@ The media query used to determine when to always display the left menu.
 "exposeAsideWhen": "(min-width:900px)"
 ```
 
-They are three types of mnu item (internal|external|separator).
+They are four types of menu item (internal|external|folder|separator).
 
 * **internal**: can be any page of the application (home|category|tag|parameters|about)
 * **external**: Any www website
+* **folder**: Create a menu sublevel (you can add up to six levels)
 * **separator**: Separate menu items
 
 ```
@@ -96,20 +97,20 @@ They are three types of mnu item (internal|external|separator).
     "route": "public.posts",
     "icon": "icon ion-home"
 }, {
-    "type": "internal",
-    "trans": "Front End",
-    "route": "public.taxonomies.slug({ term: 'category', slug: 'front-end' })",
-    "icon": "icon ion-social-dribbble"
-}, {
-    "type": "internal",
-    "trans": "Mobile",
-    "route": "public.taxonomies.slug({ term: 'category', slug: 'mobile' })",
-    "icon": "icon ion-iphone"
-}, {
-    "type": "internal",
+    "type": "folder",
     "trans": "menu.categories",
-    "route": "public.taxonomies({ term: 'category' })",
-    "icon": "icon ion-folder"
+    "icon": "icon ion-folder",
+    "list": [{
+        "type": "internal",
+        "trans": "Mobile",
+        "route": "public.taxonomies.slug({ term: 'category', slug: 'mobile' })",
+        "icon": "icon ion-iphone"
+    }, {
+        "type": "internal",
+        "trans": "All",
+        "route": "public.taxonomies({ term: 'category' })",
+        "icon": "icon ion-folder"
+    }]
 }, {
     "type": "internal",
     "trans": "menu.tags",

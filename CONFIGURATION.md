@@ -28,6 +28,7 @@ Here is a simple view of what you can configure:
 
 * debugEnabled
 * title
+* ionicConfig
 * api
     * baseUrl
     * timeout
@@ -74,6 +75,47 @@ Make sure this option is TRUE for ```config.json``` and FALSE for ```config.prod
 ### title [String]
 
 Your website title. The title will appear on the top of the left navigation menu
+
+### ionicConfig [Object]
+
+allow overwriting ionic configuration <http://ionicframework.com/docs/api/provider/$ionicConfigProvider/>
+
+Setting ```null``` will keep ionic default value.
+
+```
+"views": {
+    "transition": null,
+    "maxCache": null,
+    "forwardCache": true
+},
+"scrolling": {
+    "jsScrolling": false
+},
+"backButton": {
+    "icon": null,
+    "text": null,
+    "previousTitleText": null
+},
+"form": {
+    "checkbox": null,
+    "toggle": null
+},
+"spinner": {
+    "icon": null
+},
+"tabs": {
+    "style": null,
+    "position": null
+},
+"templates": {
+    "maxPrefetch": null
+},
+"navBar": {
+    "alignTitle": null,
+    "positionPrimaryButtons": null,
+    "positionSecondaryButtons": null
+}
+```
 
 ### menu [Object]
 

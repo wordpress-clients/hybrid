@@ -69,10 +69,7 @@ app.config ($WPHCConfig, $logProvider, $compileProvider) ->
 ###
 IONIC CONF
 ###
-app.config ($WPHCConfig, $ionicConfigProvider) ->
-    $ionicConfigProvider.views.maxCache _.get($WPHCConfig, 'cache.views') || 10
-    $ionicConfigProvider.views.forwardCache _.get($WPHCConfig, 'cache.forward') || false
-    $ionicConfigProvider.scrolling.jsScrolling false
+app.config require('./config/ionic.config.coffee');
 
 ###
 REST CONF

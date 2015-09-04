@@ -4,7 +4,7 @@ var path = require('path'),
     libPath = path.join(__dirname, 'lib'),
     wwwPath = path.join(__dirname, 'www'),
     pkg = require('./package.json'),
-    parserXml = require('xml2js'),
+    cordovaLib = require('cordova').cordova_lib,
     projectConfig = require('./config.json'),
     HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -87,10 +87,6 @@ function getRegexAutorizedLanguages() {
 }
 
 function getAppVersion() {
-    var version,
-        config = fs.readFileSync(__dirname + '/config.xml');
-    parserXml.parseString(config, function(err, result) {
-        version = result.widget.$.version;
-    });
-    return version;
+    var config = new cordovaLib.configparser(__dirname + '/config.xml');
+    return config.version();
 }

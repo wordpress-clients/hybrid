@@ -9,8 +9,8 @@
     "ionicConfig": {
         "views": {
             "transition": null,
-            "maxCache": null,
-            "forwardCache": true
+            "maxCache": 10,
+            "forwardCache": false
         },
         "scrolling": {
             "jsScrolling": false

@@ -6,26 +6,9 @@ var gulp = require('gulp'),
     cordovaLib = require('cordova').cordova_lib,
     exec = require('child_process').exec,
     pkg = require('./package.json'),
-    wwwPath = path.join(__dirname, 'www'),
-    clone = require('clone'),
-    git = require('gulp-git'),
-    bump = require('gulp-bump'),
-    filter = require('gulp-filter'),
-    tag_version = require('gulp-tag-version');
+    wwwPath = path.join(__dirname, 'www');
 
 gulp.task('default', ['cordova:release']);
-gulp.task('bump', require('gulp-cordova-bump'));
-
-function inc(importance) {
-    return gulp.src(['./package.json'])
-        .pipe(bump({
-            type: importance
-        }))
-        .pipe(gulp.dest('./'))
-        .pipe(git.commit('bumps package version'))
-        .pipe(filter('package.json'))
-        .pipe(tag_version());
-}
 
 function incConfigXml(importance) {
     var config = new cordovaLib.configparser(__dirname + '/config.xml');

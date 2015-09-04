@@ -3,46 +3,18 @@ var gulp = require('gulp'),
     path = require('path'),
     gutil = require("gulp-util"),
     semver = require('semver'),
-    xeditor = require("gulp-xml-editor"),
-    parserXml = require('xml2js'),
+    cordovaLib = require('cordova').cordova_lib,
     exec = require('child_process').exec,
     pkg = require('./package.json'),
-    wwwPath = path.join(__dirname, 'www'),
-    clone = require('clone'),
-    git = require('gulp-git'),
-    bump = require('gulp-bump'),
-    filter = require('gulp-filter'),
-    tag_version = require('gulp-tag-version');
+    wwwPath = path.join(__dirname, 'www');
 
 gulp.task('default', ['cordova:release']);
-gulp.task('bump', require('gulp-cordova-bump'));
-
-function inc(importance) {
-    return gulp.src(['./package.json'])
-        .pipe(bump({
-            type: importance
-        }))
-        .pipe(gulp.dest('./'))
-        .pipe(git.commit('bumps package version'))
-        .pipe(filter('package.json'))
-        .pipe(tag_version());
-}
 
 function incConfigXml(importance) {
-    var newVer = '';
-    var config = fs.readFileSync(__dirname + '/config.xml');
-    parserXml.parseString(config, function(err, result) {
-        newVer = semver.inc(result.widget.$.version, importance);
-    });
-
-    return gulp.src('./config.xml')
-        .pipe(xeditor([{
-            path: '.',
-            attr: {
-                'version': newVer
-            }
-        }]))
-        .pipe(gulp.dest('./'));
+    var config = new cordovaLib.configparser(__dirname + '/config.xml');
+    var newVer = semver.inc(config.version(), importance);
+    config.setVersion(newVer);
+    return config.write();
 }
 
 // ONLY FOR THE OWNER FOR THIS REPO

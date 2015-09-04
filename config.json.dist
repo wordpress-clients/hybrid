@@ -6,6 +6,40 @@
     },
     "debugEnabled" : false,
     "title": "Your Blog title",
+    "ionicConfig": {
+        "views": {
+            "transition": null,
+            "maxCache": 10,
+            "forwardCache": false
+        },
+        "scrolling": {
+            "jsScrolling": false
+        },
+        "backButton": {
+            "icon": null,
+            "text": null,
+            "previousTitleText": null
+        },
+        "form": {
+            "checkbox": null,
+            "toggle": null
+        },
+        "spinner": {
+            "icon": null
+        },
+        "tabs": {
+            "style": null,
+            "position": null
+        },
+        "templates": {
+            "maxPrefetch": null
+        },
+        "navBar": {
+            "alignTitle": null,
+            "positionPrimaryButtons": null,
+            "positionSecondaryButtons": null
+        }
+    },
     "menu": {
         "exposeAsideWhen": "(min-width:900px)",
         "list": [{
@@ -67,8 +101,6 @@
         }
     },
     "cache": {
-        "views": 10,
-        "forward": false,
         "img": {
             "localCacheFolder": "imgcache",
             "useDataURI": false,

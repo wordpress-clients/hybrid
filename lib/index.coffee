@@ -1,17 +1,12 @@
 # Create namespace
 window.WPHC = window.WPHC || {}
 
-require 'angular'
-require 'angular-animate'
-require 'angular-sanitize'
+require 'ionic-sdk/release/js/ionic.bundle'
 require 'angular-aria'
-require 'angular-ui-router'
 require 'angular-translate'
 require 'angular-cache'
 require 'angular-moment'
 require 'angular-filter'
-require 'ionic-sdk/release/js/ionic'
-require 'ionic-sdk/release/js/ionic-angular'
 require 'moment'
 require './font/font.coffee'
 
@@ -69,10 +64,7 @@ app.config ($WPHCConfig, $logProvider, $compileProvider) ->
 ###
 IONIC CONF
 ###
-app.config ($WPHCConfig, $ionicConfigProvider) ->
-    $ionicConfigProvider.views.maxCache _.get($WPHCConfig, 'cache.views') || 10
-    $ionicConfigProvider.views.forwardCache _.get($WPHCConfig, 'cache.forward') || false
-    $ionicConfigProvider.scrolling.jsScrolling false
+app.config require('./config/ionic.config.coffee');
 
 ###
 REST CONF

@@ -1,3 +1,15 @@
+<a name="1.5.1"></a>
+### 1.5.1  (2015-09-03)
+
+[milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/1.5.1)
+
+* Replace libxmljs <https://github.com/shprink/wordpress-hybrid-client/issues/56>
+* Ability to modify ionic configuration through config.json <https://github.com/shprink/wordpress-hybrid-client/issues/55>
+
+#### Breaking Changes
+
+* "cache.views" and "cache.forward" configuration (within config.json) were move to "ionicConfig.views.maxCache" and "ionicConfig.views.forwardCache" respectively
+
 <a name="1.5.0"></a>
 ### 1.5.0  (2015-08-30)
 

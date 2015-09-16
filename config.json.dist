@@ -170,6 +170,9 @@
             },
             "es": {
                 "es": "es"
+            },
+            "pl": {
+                "pl_PL": "pl"
             }
         },
         "prefered": "en"

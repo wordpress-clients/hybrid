@@ -67,7 +67,7 @@ If your device is connected and in USB mode you will see your application that y
 
 ### iOS9
 
-iOS9 requires Xcode 7.x. If your webservice is not encripted via SSL (https) you will need to add the following to you plist file (```platforms/ios/<yourAppName>/<yourAppName>-Info.plist):
+iOS9 requires Xcode 7.x. If your webservice is not encripted via SSL (https) you will need to add the following to you plist file (```platforms/ios/<yourAppName>/<yourAppName>-Info.plist```):
 
 ```
 <key>NSAppTransportSecurity</key>

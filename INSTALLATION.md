@@ -33,7 +33,7 @@ $ git checkout v1.4.0
 The installation will not install anything globally to avoid potential version conflicts.
 
 ```
-sh ./install.sh
+npm run installWPHC
 ```
 
 During the installation you might have the following error on OSX:

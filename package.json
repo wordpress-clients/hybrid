@@ -6,6 +6,7 @@
     "main": "index.js",
     "scripts": {
         "build": "bash ./release.sh",
+        "installWPHC": "bash ./install.sh",
         "installCordova": "bash ./install_cordova.sh",
         "devserver": "webpack-dev-server --port 8080 --json --progress",
         "dumpdev": "rm -rf www/* && webpack --progress --colors -d",

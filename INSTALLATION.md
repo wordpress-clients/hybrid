@@ -7,7 +7,7 @@ If you have problems with the installation, this tutorial <http://www.sitepoint.
 ### Preriquisites
 
 * NodeJS (recommended: 4.1.0)
-* NPM (recommended: 2.14.4)
+* NPM (recommended: 3.3.3 `sudo npm install -g npm`)
 
 ### Clone repository
 

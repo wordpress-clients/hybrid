@@ -78,6 +78,8 @@ iOS9 requires Xcode 7.x. If your webservice is not encripted via SSL (https) you
 </dict>
 ```
 
+Also you will need to disabled bitcode: `Project > Build Settings > Build Options > Enable Bitcode = No`
+
 #### iOS simulator
 
 ```

@@ -5,6 +5,7 @@
 
 * Update dependencies: Angular 1.4, Ionic 1.1 etc <https://github.com/shprink/wordpress-hybrid-client/issues/58>
 * Translation: Use wildcarts to cover all regions (e.g: en_* will use en.json) <https://github.com/shprink/wordpress-hybrid-client/issues/67>
+* iOS9 support: <https://github.com/shprink/wordpress-hybrid-client/issues/68>
 
 <a name="1.5.1"></a>
 ### 1.5.1  (2015-09-03)

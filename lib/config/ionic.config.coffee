@@ -5,7 +5,6 @@ module.exports = ($WPHCConfig, $ionicConfigProvider) ->
     viewsForwardCache = _.get $WPHCConfig, 'ionicConfig.views.forwardCache'
     scrollingJsScrolling = _.get $WPHCConfig, 'ionicConfig.scrolling.jsScrolling'
     backButtonIcon = _.get $WPHCConfig, 'ionicConfig.backButton.icon'
-    backButtonText = _.get $WPHCConfig, 'ionicConfig.backButton.text'
     backButtonPreviousTitleText = _.get $WPHCConfig, 'ionicConfig.backButton.previousTitleText'
     formCheckbox = _.get $WPHCConfig, 'ionicConfig.form.checkbox'
     formToggle = _.get $WPHCConfig, 'ionicConfig.form.toggle'
@@ -22,7 +21,6 @@ module.exports = ($WPHCConfig, $ionicConfigProvider) ->
     $ionicConfigProvider.views.forwardCache viewsForwardCache if _.isBoolean viewsForwardCache
     $ionicConfigProvider.scrolling.jsScrolling scrollingJsScrolling if _.isBoolean scrollingJsScrolling
     $ionicConfigProvider.backButton.icon backButtonIcon if _.isString backButtonIcon
-    $ionicConfigProvider.backButton.text backButtonText if _.isString backButtonText
     $ionicConfigProvider.backButton.previousTitleText backButtonPreviousTitleText if _.isBoolean backButtonPreviousTitleText
     $ionicConfigProvider.form.checkbox formCheckbox if _.isString formCheckbox
     $ionicConfigProvider.form.toggle formToggle if _.isString formToggle

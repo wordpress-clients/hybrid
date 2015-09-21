@@ -1,6 +1,7 @@
 {
     "pullToRefresh": "Pociągnij aby odświeżyć.",
     "retry": "Spróbuj ponownie.",
+    "back": "Back",
     "error": "O nie! Stało się coś strasznego! Spróbuj ponownie..",
     "attemptToConnect": "{{attempt}} próba połączenia z {{attemptMax}}.",
     "yes": "Tak",

@@ -17,7 +17,6 @@
         },
         "backButton": {
             "icon": null,
-            "text": null,
             "previousTitleText": null
         },
         "form": {

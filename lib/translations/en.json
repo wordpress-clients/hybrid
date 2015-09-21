@@ -1,6 +1,7 @@
 {
     "pullToRefresh": "Pull to refresh!",
     "retry": "Retry",
+    "back": "Back",
     "error": "Something wrong happened, please try again.",
     "attemptToConnect": "Attempt to connect {{attempt}} of {{attemptMax}}.",
     "yes": "Yes",

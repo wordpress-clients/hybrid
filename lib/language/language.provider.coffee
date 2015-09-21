@@ -24,7 +24,7 @@ module.exports = angular.module 'wordpress-hybrid-client.language'
         getLanguages : getLanguages
         getLanguagesMapping: getLanguagesMapping
 
-        $get : (amMoment) ->
+        $get : (amMoment, $ionicConfig, $filter) ->
             locale: localStorage.getItem("locale") || 'en'
             getPreferedLanguage : getPreferedLanguage
             getLanguages : getLanguages
@@ -38,6 +38,7 @@ module.exports = angular.module 'wordpress-hybrid-client.language'
             setLocale: (@locale) ->
                 localStorage.setItem "locale", @locale
                 $translateProvider.use @locale
+                $ionicConfig.backButton.text $filter('translate') 'back'
                 # specific to chinese so far
                 if @locale is 'zh'
                     amMoment.changeLocale 'zh-cn'

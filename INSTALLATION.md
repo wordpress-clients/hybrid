@@ -4,8 +4,8 @@ This installation works on both OSX and Linux. Windows is not supported yet, if 
 
 ### Preriquisites
 
-* NodeJS (tested on v0.10.33)
-* NPM (tested on 2.1.9)
+* NodeJS (recommended: 4.1.0)
+* NPM (recommended: 2.14.4)
 
 ### Clone repository
 
@@ -35,6 +35,10 @@ The installation will not install anything globally to avoid potential version c
 ```
 sh ./install.sh
 ```
+
+During the installation you might have the following error on OSX:
+
+* `ld: library not found for -lgcc_s.10.5`: Installing XCode 7 might solve the problem
 
 ### Config files
 

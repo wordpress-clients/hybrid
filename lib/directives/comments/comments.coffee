@@ -29,3 +29,4 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
                         continue if depth is parent.level
                         parent.children.push comment
                 $log.debug 'wphcComments:comments', vm.comments
+        return @

@@ -2,6 +2,8 @@
 
 This installation works on both OSX and Linux. Windows is not supported yet, if you want to help with that let us know: <https://github.com/shprink/wordpress-hybrid-client/issues/39>
 
+If you have problems with the installation, this tutorial <http://www.sitepoint.com/wordpress-hybrid-client-wordpress-powered-ios-android-apps/> might help.
+
 ### Preriquisites
 
 * NodeJS (recommended: 4.1.0)
@@ -23,9 +25,10 @@ v1.2.0
 v1.3.0
 v1.3.1
 v1.4.0
+etc.
 
 # checkout the latest version available
-$ git checkout v1.4.0
+$ git checkout <the-latest-version>
 ```
 
 ### Run install.sh

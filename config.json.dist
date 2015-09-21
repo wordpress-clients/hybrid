@@ -159,20 +159,19 @@
     "translation": {
         "available": {
             "en": {
-                "en_US": "en",
-                "en_UK": "en"
+                "en_*": "en"
             },
             "fr": {
-                "fr_FR": "fr"
+                "fr_*": "fr"
             },
             "zh": {
-                "zh_CN": "zh"
+                "zh_*": "zh"
             },
             "es": {
-                "es": "es"
+                "es_*": "es"
             },
             "pl": {
-                "pl_PL": "pl"
+                "pl_*": "pl"
             }
         },
         "prefered": "en"

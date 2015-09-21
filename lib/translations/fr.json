@@ -1,6 +1,7 @@
 {
     "pullToRefresh": "Tirer pour rafraîchir!",
     "retry": "Réessayez",
+    "back": "Retour",
     "error": "Quelque chose d'inattendu est survenu, veuillez réessayer.",
     "attemptToConnect": "Tentative de connection {{attempt}} sur {{attemptMax}}.",
     "yes": "Oui",

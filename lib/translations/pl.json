@@ -1,0 +1,86 @@
+{
+    "pullToRefresh": "Pociągnij aby odświeżyć.",
+    "retry": "Spróbuj ponownie.",
+    "back": "Back",
+    "error": "O nie! Stało się coś strasznego! Spróbuj ponownie..",
+    "attemptToConnect": "{{attempt}} próba połączenia z {{attemptMax}}.",
+    "yes": "Tak",
+    "no" : "Nie",
+    "menu": {
+        "title": "Menu",
+        "home": "Home",
+        "tags": "Tagi",
+        "search": "Szukaj",
+        "bookmarks": "Zakładki",
+        "socialNetworks": "Społeczności",
+        "categories": "Kategorie",
+        "settings": "Ustawienia"
+    },
+    "pushNotifications": {
+        "newContent": {
+            "title": "Coś nowego!",
+            "text": "Hej! W {{appTitle}} właśnie pojawiło się coś nowego: '{{postTitle}}' stuknij aby otworzyć."
+        }
+    },
+    "bookmark": {
+        "title": "Zakładki",
+        "emptyList" : "Nic tu jeszcze nie ma. Śmiało, dodaj coś.",
+        "bookmarked" : "Słodko. Dodano do zakładek!",
+        "removed" : "Zakładka usunięta!"
+    },
+    "tags": {
+        "title": "Tagi"
+    },
+    "tag": {
+        "title": "Tag: {{name}}"
+    },
+    "categories": {
+        "title": "Kategorie"
+    },
+    "category": {
+        "title": "Kategoria: {{name}}"
+    },
+    "home": {
+        "title": "Home"
+    },
+    "search": {
+        "inputPlaceholder": "Szukaj",
+        "title": "Szukaj",
+        "titleQuery": "Szukaj: {{query}}"
+    },
+    "sharing": {
+        "shared": "Udostępniono!"
+    },
+    "posts": {
+        "title": "Home",
+        "empty": "Nic tu nie ma :(",
+        "featured": "Wyróżnione"
+    },
+    "post": {
+        "comments": "Komentarze",
+        "openInBrowser": "Otwórz w przeglądarce"
+    },
+    "about": {
+        "title": "Info"
+    },
+    "params": {
+        "title": "Parametry",
+        "offlineMode": "Tryb Offline (wkrótce)",
+        "fontSize": "Rozmiar czcionki postów",
+        "language": "Język"
+    },
+    "languages": {
+        "en": "English",
+        "fr": "French",
+        "zh": "Chinese",
+        "es": "Spanish",
+        "pl": "Polski"
+    },
+    "fontSize": {
+        "small": "Mała",
+        "medium": "Średnia",
+        "large": "Duża",
+        "x-large": "XL",
+        "xx-large": "XXL"
+    }
+}

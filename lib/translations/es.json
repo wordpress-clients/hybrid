@@ -1,6 +1,7 @@
 {
     "pullToRefresh": "Desliza para refrescar",
     "retry": "Reintentar",
+    "back": "Regresar",
     "error": "Ha ocurrido un error, inténtalo de nuevo.",
     "attemptToConnect": "Attempt to connect {{attempt}} of {{attemptMax}}.",
     "yes": "Sí",

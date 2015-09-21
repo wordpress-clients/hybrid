@@ -93,7 +93,6 @@ Setting ```null``` will keep ionic default value.
 },
 "backButton": {
     "icon": null,
-    "text": null,
     "previousTitleText": null
 },
 "form": {

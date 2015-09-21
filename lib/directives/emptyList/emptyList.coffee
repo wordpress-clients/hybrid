@@ -21,3 +21,4 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
     controller: ($scope, $element, $attrs) ->
         @getContentHeight = ->
             return $element.parent().parent()[0].offsetHeight;
+        return @

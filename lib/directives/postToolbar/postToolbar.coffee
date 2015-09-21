@@ -18,3 +18,4 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
             @isBookmarked = $WPHCBookmark.toggle @post
         @share = (platform, title, link) ->
             $WPHCSocialSharing.share platform, title, link
+        return @

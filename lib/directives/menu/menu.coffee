@@ -15,3 +15,4 @@ module.exports = angular.module 'wordpress-hybrid-client.directives'
             RecursionHelper.compile el
         controller: ($log, $scope, $element) ->
             vm = @
+            return @

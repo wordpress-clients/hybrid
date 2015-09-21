@@ -2,27 +2,8 @@
     form {
         padding: 5px;
         margin: 0;
-        &.input-has-value {
-            button {
-                animation-name: fadeInRight;
-                animation-duration: 1s;
-                animation-fill-mode: both;
-            }
-            > label {
-                margin-right: 45px;
-                input {
-                    width: 100%;
-                }
-            }
-        }
-        button {
-            animation-name: fadeOutRight;
-            animation-duration: 1s;
-            animation-fill-mode: both;
-            position: absolute !important;
-            top: 7px !important;
-            right: 5px;
-            // display: none !important;
+        input[type=search]{
+            width: 100%;
         }
     }
 }

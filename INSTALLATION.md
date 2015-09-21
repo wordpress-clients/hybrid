@@ -2,10 +2,12 @@
 
 This installation works on both OSX and Linux. Windows is not supported yet, if you want to help with that let us know: <https://github.com/shprink/wordpress-hybrid-client/issues/39>
 
+If you have problems with the installation, this tutorial <http://www.sitepoint.com/wordpress-hybrid-client-wordpress-powered-ios-android-apps/> might help.
+
 ### Preriquisites
 
-* NodeJS (tested on v0.10.33)
-* NPM (tested on 2.1.9)
+* NodeJS (recommended: 4.1.0)
+* NPM (recommended: 2.14.4)
 
 ### Clone repository
 
@@ -23,9 +25,10 @@ v1.2.0
 v1.3.0
 v1.3.1
 v1.4.0
+etc.
 
 # checkout the latest version available
-$ git checkout v1.4.0
+$ git checkout <the-latest-version>
 ```
 
 ### Run install.sh
@@ -33,8 +36,12 @@ $ git checkout v1.4.0
 The installation will not install anything globally to avoid potential version conflicts.
 
 ```
-sh ./install.sh
+npm run installWPHC
 ```
+
+During the installation you might have the following error on OSX:
+
+* `ld: library not found for -lgcc_s.10.5`: Installing XCode 7 might solve the problem
 
 ### Config files
 

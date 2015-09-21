@@ -53,15 +53,12 @@ wphc-menu {
                     will-change: transform, opacity;
                     opacity: 0;
                     transform: translate3d(0, 30px, 0);
-                    transition: transform $menu-pane-expand-duration, opacity $menu-pane-expand-duration;
                 }
             }
             &.is-expanded {
                 > v-pane-header {
                     &:after {
                         transform: rotate(90deg);
-
-                        // content: "\f3d0";
                     }
                 }
                 > v-pane-content > div {
@@ -75,41 +72,5 @@ wphc-menu {
             @include item($menu-starting-bg-color, 0%);
             @include recursive-item(1, $menu-max-depth, $menu-starting-bg-color, $menu-starting-darken-amount);
         }
-    }
-}
-v-accordion {
-    display: block;
-}
-v-pane {
-    display: block;
-    &.is-expanded {
-        > v-pane-content > div {
-            visibility: visible;
-        }
-    }
-}
-v-pane-header {
-    display: block;
-    position: relative;
-    cursor: pointer;
-    user-select: none;
-    outline: none;
-    &:focus {
-        outline: none;
-    }
-    &[disabled] {
-        pointer-events: none;
-    }
-    > div {
-        display: block;
-    }
-}
-v-pane-content {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    max-height: 0;
-    > div {
-        visibility: none;
     }
 }

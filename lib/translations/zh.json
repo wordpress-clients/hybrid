@@ -1,6 +1,7 @@
 {
     "pullToRefresh": "下拉刷新！",
     "retry": "重试",
+    "back": "Back",
     "error": "系统遭遇未知错误，请重试。",
     "attemptToConnect": "正在尝试第 {{attempt}} 次连接（最多 {{attemptMax}} 次）",
     "yes": "是",

@@ -1,12 +1,8 @@
 # Create namespace
 window.WPHC = window.WPHC || {}
 
-require 'angular'
-require 'angular-animate'
-require 'angular-sanitize'
-require 'angular-ui-router'
-require 'ionic-sdk/release/js/ionic'
-require 'ionic-sdk/release/js/ionic-angular'
+require 'ionic-sdk/release/js/ionic.bundle.js'
+require './angular-ios9-uiwebview.patch.js'
 require 'angular-translate'
 require 'angular-cache'
 require 'angular-moment'
@@ -23,6 +19,7 @@ require './scss/bootstrap'
 
 module.exports = app = angular.module 'wordpress-hybrid-client', [
     'ionic'
+    'ngIOS9UIWebViewPatch'
     require('./config').name
     'ui.router'
     'wp-api-angularjs'

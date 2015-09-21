@@ -12,3 +12,4 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
     controller: ($WPHCConfig) ->
         vm = @
         vm.enabled = _.get($WPHCConfig, 'post.comments.enabled')
+        return @

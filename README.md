@@ -10,6 +10,7 @@
 
 * https://play.google.com/store/apps/details?id=com.shprinkinc.wordpresshybridclient
 * http://hiwaldorf.com/app/
+* https://play.google.com/store/apps/details?id=fr.silentkernel.app
 
 ## Installation
 

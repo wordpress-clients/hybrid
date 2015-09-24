@@ -6,8 +6,8 @@ If you have problems with the installation, this tutorial <http://www.sitepoint.
 
 ### Preriquisites
 
-* NodeJS (recommended: 4.1.0)
-* NPM (recommended: 2.14.4)
+* NodeJS (recommended: 4.1.x)
+* NPM (recommended: 3.3.x `sudo npm install -g npm`)
 
 ### Clone repository
 
@@ -19,12 +19,11 @@ $ cd wordpress-hybrid-client
 
 # List all tags
 $ git tag
-v1.0.0
-v1.1.0
-v1.2.0
 v1.3.0
 v1.3.1
 v1.4.0
+v1.5.2
+v1.6.0
 etc.
 
 # checkout the latest version available

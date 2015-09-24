@@ -1,7 +1,7 @@
 {
     "pullToRefresh": "下拉刷新！",
     "retry": "重试",
-    "back": "Back",
+    "back": "返回",
     "error": "系统遭遇未知错误，请重试。",
     "attemptToConnect": "正在尝试第 {{attempt}} 次连接（最多 {{attemptMax}} 次）",
     "yes": "是",
@@ -73,7 +73,8 @@
         "en": "英语",
         "fr": "法语",
         "zh": "中文",
-        "es": "西班牙语"
+        "es": "西班牙语",
+        "pl": "波兰语"
     },
     "fontSize": {
         "small": "小",

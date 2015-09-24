@@ -8,8 +8,12 @@
 
 ## Built with WPHC
 
-* https://play.google.com/store/apps/details?id=com.shprinkinc.wordpresshybridclient
-* http://hiwaldorf.com/app/
+* Android
+  * https://play.google.com/store/apps/details?id=com.shprinkinc.wordpresshybridclient
+  * http://hiwaldorf.com/app/
+  * https://play.google.com/store/apps/details?id=fr.silentkernel.app
+* IOS
+  * https://itunes.apple.com/cn/app/id1030393337
 
 ## Installation
 
@@ -42,6 +46,9 @@ Read the manual: [SPLASHICONS.md](SPLASHICONS.md)
 ## Project public API
 
 ```
+# Install dependencies
+npm run installWPHC
+
 # Dev server
 npm run devserver
 

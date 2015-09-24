@@ -1,9 +1,10 @@
 <a name="1.6.0"></a>
-### 1.6.0 (2015-09-21)
+### 1.6.0 (2015-09-24)
 
 [milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/1.6.0)
 
 * Update dependencies: Angular 1.4, Ionic 1.1 etc <https://github.com/shprink/wordpress-hybrid-client/issues/58>
+* Update Node and npm version to 4.1.x and 3.3.x
 * Translation: Use wildcarts to cover all regions (e.g: en_* will use en.json) <https://github.com/shprink/wordpress-hybrid-client/issues/67>
 * iOS9 support: <https://github.com/shprink/wordpress-hybrid-client/issues/68>
 * [SEARCH] Empty input button not aligned: <https://github.com/shprink/wordpress-hybrid-client/issues/70>

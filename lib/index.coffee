@@ -9,10 +9,8 @@ require 'angular-moment'
 require 'angular-filter'
 require 'moment'
 require './font/font.coffee'
-
-# lodash is a restangular dependency that is bundled in wp-api-angularjs.bundle
 require 'expose?_!lodash'
-require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
+require 'wp-api-angularjs'
 
 # Style entry point
 require './scss/bootstrap'

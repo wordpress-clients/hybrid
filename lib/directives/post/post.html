@@ -1,7 +1,7 @@
 <div class="post padding">
     <div class="item item-image" ng-if="::postCtrl.post.featured_image.is_image" wphc-img-background-cache="{{postCtrl.post.featured_image.attachment_meta.sizes.medium.url}}">
         <div class="img-border"></div>
-        <h1 class="item-title" ng-bind-html="::postCtrl.post.title"></h1>
+        <h1 class="item-title" ng-bind-html="::postCtrl.post.title.rendered"></h1>
     </div>
     <div class="item item-divider item-toolbar">
         <wphc-post-toolbar post="::postCtrl.post" show-share show-bookmark></wphc-post-toolbar>
@@ -11,12 +11,12 @@
         <h2>{{::postCtrl.post.author.name}}</h2>
         {{postCtrl.post.date | amDateFormat:'LL'}}
     </div>
-    <div class="post-content" ng-if="::postCtrl.post.excerpt" bind-and-compile-html="::(postCtrl.post.content | prepLink | highlight)"></div>
+    <div class="post-content" ng-if="::postCtrl.post.excerpt" bind-and-compile-html="::(postCtrl.post.content.rendered | prepLink | highlight)"></div>
 
     <div class="item item-divider item-toolbar">
         <wphc-post-toolbar post="::postCtrl.post" show-share show-bookmark></wphc-post-toolbar>
     </div>
-    <wphc-comments post-id="{{::postCtrl.post.ID}}" ng-if="::postCtrl.enabled"></wphc-comments>
+    <wphc-comments post-id="{{::postCtrl.post.id}}" ng-if="::postCtrl.enabled"></wphc-comments>
     <section class="footer">
         <a class="button button-positive button-open-browser" wphc-href href="{{::postCtrl.post.link}}">
             {{'post.openInBrowser' | translate}}

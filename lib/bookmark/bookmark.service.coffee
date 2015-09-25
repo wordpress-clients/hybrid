@@ -15,7 +15,7 @@ module.exports = angular.module('wordpress-hybrid-client.bookmark')
         isBookmarked: (post) ->
             list = getCache().get 'list'
             test = _.findWhere list,
-                ID: post.ID
+                id: post.id
             test?
 
         toggle: (post) ->
@@ -26,7 +26,7 @@ module.exports = angular.module('wordpress-hybrid-client.bookmark')
         remove: (post) ->
             list = getCache().get 'list'
             _.remove list,
-                ID: post.ID
+                id: post.id
             getCache().put 'list', list
             $cordovaToast.showShortBottom($filter('translate') 'bookmark.removed') if _.get $window, 'plugins.toast'
 

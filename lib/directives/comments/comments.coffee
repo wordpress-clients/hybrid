@@ -18,7 +18,7 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
                     vm.comments = []
                 commentsTemp = []
                 for comment in comments by -1
-                    commentsTemp[comment.ID] = comment
+                    commentsTemp[comment.id] = comment
                     comment.children = []
                     if comment.parent is 0
                         comment.level = 1

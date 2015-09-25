@@ -1,6 +1,6 @@
 md5 = require 'MD5'
 
-module.exports = angular.module('wordpress-hybrid-client.taxonomies').factory '$WPHCTaxonomies', ($log, $rootScope, $filter, $wpApiTaxonomies, $q, $WPHCConfig, CacheFactory, $ionicModal) ->
+module.exports = angular.module('wordpress-hybrid-client.taxonomies').factory '$WPHCTaxonomies', ($log, $rootScope, $filter, $wpApiTerms, $q, $WPHCConfig, CacheFactory, $ionicModal) ->
     $log.info '$WPHCTaxonomies'
 
     modal = null
@@ -48,8 +48,12 @@ module.exports = angular.module('wordpress-hybrid-client.taxonomies').factory '$
         if listCache
             deferred.resolve listCache
         else
-            $wpApiTaxonomies.$getTermList term
-            .then (response) ->
+            promise = null
+            if term is 'category'
+                promise = $wpApiTerms.getCategoryList()
+            else
+                promise = $wpApiTerms.getTagList()
+            promise.then (response) ->
                 getCache().put 'list-' + hash, response
                 deferred.resolve response
             .catch (error) ->

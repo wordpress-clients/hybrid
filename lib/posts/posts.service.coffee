@@ -28,7 +28,7 @@ module.exports = angular.module('wordpress-hybrid-client.posts')
             if listCache
                 deferred.resolve listCache
             else
-                $wpApiPosts.$getList query
+                $wpApiPosts.getList query
                 .then (response) ->
                     response.isPaginationOver = (response.data.length is 0 or response.data.length < $WPHCConfig.posts.posts_per_page)
                     getCache().put 'list-' + hash, response

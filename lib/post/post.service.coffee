@@ -1,6 +1,6 @@
 md5 = require 'MD5'
 
-module.exports = angular.module('wordpress-hybrid-client.post').factory '$WPHCPost', ($log, $wpApiPosts, $q, $WPHCConfig, CacheFactory) ->
+module.exports = angular.module('wordpress-hybrid-client.post').factory '$WPHCPost', ($log, $wpApiPosts, $wpApiComments, $q, $WPHCConfig, CacheFactory) ->
     $log.info '$WPHCPost'
 
     getCommentsCache = () ->
@@ -21,13 +21,13 @@ module.exports = angular.module('wordpress-hybrid-client.post').factory '$WPHCPo
         if itemCache
             deferred.resolve itemCache
         else
-            $wpApiPosts.one(id).getList('comments')
+            $wpApiComments.getList
+                post: id
+                status: "approved"
+                type: "comment"
             .then (response) ->
-                data = _.filter response.data.plain(),
-                    status: 'approved'
-                    type: 'comment'
-                getCommentsCache().put 'item-comments-' + hash, data
-                deferred.resolve data
+                getCommentsCache().put 'item-comments-' + hash, response.data
+                deferred.resolve response.data
             .catch (error) ->
                 deferred.reject error
         deferred.promise
@@ -40,7 +40,7 @@ module.exports = angular.module('wordpress-hybrid-client.post').factory '$WPHCPo
         if itemCache
             deferred.resolve itemCache
         else
-            $wpApiPosts.$get id
+            $wpApiPosts.get id
             .then (response) ->
                 getPostCache().put 'item-' + hash, response
                 deferred.resolve response

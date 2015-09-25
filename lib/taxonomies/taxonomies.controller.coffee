@@ -1,4 +1,4 @@
-module.exports = angular.module('wordpress-hybrid-client.taxonomies').controller 'WPHCTaxonomiesController', ($log, $scope, $wpApiTaxonomies, $WPHCTaxonomies, $state) ->
+module.exports = angular.module('wordpress-hybrid-client.taxonomies').controller 'WPHCTaxonomiesController', ($log, $scope, $WPHCTaxonomies, $state) ->
     $log.info 'WPHCTaxonomiesController'
 
     vm = @

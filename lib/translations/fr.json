@@ -74,7 +74,8 @@
         "fr": "Français",
         "zh": "Chinois",
         "es": "Espagnol",
-        "pl": "Polonais"
+        "pl": "Polonais",
+        "de": "Allemand"
     },
     "fontSize": {
         "small": "Petit",

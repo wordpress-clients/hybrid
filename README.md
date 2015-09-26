@@ -103,7 +103,7 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Overwrite Sass variables
 - [X] About Page
 - [X] Params Page
-- [X] Language switch [English|French|Chinese]
+- [X] Language switch [English|French|Chinese|Polish|German]
 - [X] Accessibility (Post font size)
 - [X] Image cache ngImgCache
 - [X] App rate
@@ -111,6 +111,7 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Push Notifications
 - [X] Offline
 - [X] Comments. Submitting is not supported yet.
+- [X] iOS9 support.
 - [ ] Table of content for posts
 - [ ] Personnalized Logo
 - [ ] Templating

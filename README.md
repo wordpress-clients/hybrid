@@ -103,7 +103,7 @@ Always use four spaces, no tabs. This goes for any HTML, CSS, or Javascript.
 - [X] Overwrite Sass variables
 - [X] About Page
 - [X] Params Page
-- [X] Language switch [English|French|Chinese|Polish|German]
+- [X] Language switch [English|French|Chinese|Spanish|Polish|German]
 - [X] Accessibility (Post font size)
 - [X] Image cache ngImgCache
 - [X] App rate

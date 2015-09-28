@@ -1,4 +1,12 @@
 <a name="1.6.0"></a>
+### 1.7.0 (WIP)
+
+[milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/1.7.0)
+
+* WP-API v2 support <https://github.com/shprink/wordpress-hybrid-client/issues/76>
+* Adding German translation <https://github.com/shprink/wordpress-hybrid-client/pull/77>
+
+<a name="1.6.0"></a>
 ### 1.6.0 (2015-09-24)
 
 [milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/1.6.0)

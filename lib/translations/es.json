@@ -72,8 +72,9 @@
         "en": "English",
         "fr": "French",
         "zh": "Chinese",
-	"es": "Spanish",
-	"pl": "Polaco"
+	    "es": "Spanish",
+	    "pl": "Polaco",
+        "de": "Alemán"
     },
     "fontSize": {
         "small": "Pequeña",

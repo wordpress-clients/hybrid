@@ -14,6 +14,7 @@ module.exports = angular.module('wordpress-hybrid-client.posts')
 
         getQuery: (page) ->
             page: page
+            "_embed": true
             "filter[posts_per_page]": $WPHCConfig.posts.posts_per_page
             "filter[orderby]": $WPHCConfig.posts.orderby
             "filter[order]": $WPHCConfig.posts.order

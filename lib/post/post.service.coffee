@@ -40,7 +40,8 @@ module.exports = angular.module('wordpress-hybrid-client.post').factory '$WPHCPo
         if itemCache
             deferred.resolve itemCache
         else
-            $wpApiPosts.get id
+            $wpApiPosts.get id,
+                "_embed": true
             .then (response) ->
                 getPostCache().put 'item-' + hash, response
                 deferred.resolve response

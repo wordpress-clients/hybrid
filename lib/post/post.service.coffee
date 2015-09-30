@@ -1,6 +1,6 @@
 md5 = require 'MD5'
 
-module.exports = angular.module('wordpress-hybrid-client.post').factory '$WPHCPost', ($log, $wpApiPosts, $wpApiComments, $q, $WPHCConfig, CacheFactory) ->
+module.exports = angular.module('wordpress-hybrid-client.post').factory '$WPHCPost', ($log, $wpApiPosts, $wpApiMedia, $wpApiComments, $q, $WPHCConfig, CacheFactory) ->
     $log.info '$WPHCPost'
 
     getCommentsCache = () ->
@@ -12,6 +12,12 @@ module.exports = angular.module('wordpress-hybrid-client.post').factory '$WPHCPo
         if CacheFactory.get 'post'
             return CacheFactory.get 'post'
         CacheFactory 'post', _.get $WPHCConfig, 'post.cache'
+
+    getFeatureImage: (featureImageId) ->
+        return $q.when(null) if !featureImageId or featureImageId is 0
+        return $wpApiMedia.get featureImageId
+        .then (response) ->
+            response.data
 
     getComments: (id) ->
         deferred = $q.defer()
@@ -25,6 +31,9 @@ module.exports = angular.module('wordpress-hybrid-client.post').factory '$WPHCPo
                 post: id
                 status: "approved"
                 type: "comment"
+                orderby: 'date'
+                order: 'asc'
+                per_page: _.get($WPHCConfig, 'post.comments.per_page') || 50
             .then (response) ->
                 getCommentsCache().put 'item-comments-' + hash, response.data
                 deferred.resolve response.data

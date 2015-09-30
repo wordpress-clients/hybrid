@@ -127,7 +127,8 @@
     "post": {
         "comments": {
             "enabled": true,
-            "depth": 2
+            "depth": 2,
+            "per_page": 50
         },
         "cache": {
             "maxAge": 172800000,
@@ -148,7 +149,7 @@
     "posts": {
         "posts_per_page": 6,
         "orderby": "date",
-        "orderby": "desc",
+        "order": "desc",
         "post_status": "publish",
         "cache": {
             "capacity": 25,

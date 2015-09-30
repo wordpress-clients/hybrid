@@ -9,10 +9,8 @@ require 'angular-moment'
 require 'angular-filter'
 require 'moment'
 require './font/font.coffee'
-
-# lodash is a restangular dependency that is bundled in wp-api-angularjs.bundle
 require 'expose?_!lodash'
-require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
+require 'wp-api-angularjs'
 
 # Style entry point
 require './scss/bootstrap'
@@ -71,18 +69,9 @@ app.config require('./config/ionic.config.coffee');
 REST CONF
 ###
 app.config ($WPHCConfig, WpApiProvider) ->
-    RestangularProvider = WpApiProvider.getRestangularProvider()
-    RestangularProvider.setDefaultHttpFields
+    WpApiProvider.setDefaultHttpProperties
         timeout: _.get($WPHCConfig, 'api.timeout') || 5000
-    RestangularProvider.setBaseUrl _.get($WPHCConfig, 'api.baseUrl') || null
-    RestangularProvider.setFullResponse true
-    RestangularProvider.addResponseInterceptor (data, operation, what, url, response, deferred) ->
-        data.wpApiHeaders =
-            total: response.headers 'X-WP-Total'
-            pages: response.headers 'X-WP-TotalPages'
-        data
-    RestangularProvider.setRestangularFields
-        id: "ID"
+    WpApiProvider.setBaseUrl _.get($WPHCConfig, 'api.baseUrl') || null
 
 ###
 TRANSLATION CONF

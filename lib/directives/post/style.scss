@@ -5,14 +5,22 @@
         margin-bottom: 20px;
         margin-top: -10px;
     }
+
     .item-toolbar {
         margin: 15px 0;
     }
+
+    .item-title-without-image {
+        line-height: 35px;
+        margin-top: 10px;
+    }
+
     section.footer {
         text-align: center;
         border-top: 1px solid $gray-lighter;
         padding-top: 15px;
         margin-top: 5px;
+
         .button-open-browser {
 
         }

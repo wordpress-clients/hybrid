@@ -14,10 +14,11 @@ module.exports = angular.module('wordpress-hybrid-client.posts')
 
         getQuery: (page) ->
             page: page
-            "filter[posts_per_page]": $WPHCConfig.posts.posts_per_page
-            "filter[orderby]": $WPHCConfig.posts.orderby
-            "filter[order]": $WPHCConfig.posts.order
-            "filter[post_status]": $WPHCConfig.posts.post_status
+            "_embed": true
+            "filter[posts_per_page]": _.get($WPHCConfig, 'posts.per_page') || 5
+            "filter[orderby]": _.get($WPHCConfig, 'posts.orderby') || 'date'
+            "filter[order]": _.get($WPHCConfig, 'posts.order') || 'desc'
+            "filter[post_status]": _.get($WPHCConfig, 'posts.post_status') || 'publish'
 
         getList: (query) ->
             queryString = JSON.stringify query
@@ -28,7 +29,7 @@ module.exports = angular.module('wordpress-hybrid-client.posts')
             if listCache
                 deferred.resolve listCache
             else
-                $wpApiPosts.$getList query
+                $wpApiPosts.getList query
                 .then (response) ->
                     response.isPaginationOver = (response.data.length is 0 or response.data.length < $WPHCConfig.posts.posts_per_page)
                     getCache().put 'list-' + hash, response

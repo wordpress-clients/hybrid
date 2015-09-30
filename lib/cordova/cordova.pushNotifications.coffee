@@ -55,7 +55,7 @@ module.exports = angular.module 'wordpress-hybrid-client.cordova'
                     switch notification.event
                         when 'registered'
                             return if !notification.regid.length
-                            $log.debug 'registration ID', notification.regid
+                            $log.debug 'registration id', notification.regid
                             register('Android', notification.regid).success ->
                                 $log.info 'Push notif Token stored'
                             break

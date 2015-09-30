@@ -1,0 +1,5 @@
+<div class="item item-author" ng-class="::{'item-avatar' : authorCtrl.author.avatar_urls[96]}">
+    <img wphc-img-cache ng-src="{{::authorCtrl.author.avatar_urls[96]}}" ng-if="::authorCtrl.author.avatar_urls[96]">
+    <h2>{{::authorCtrl.author.name}}</h2>
+    <span ng-if="::authorCtrl.date">{{authorCtrl.date | amDateFormat:'LL'}}</span>
+</div>

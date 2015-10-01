@@ -1,10 +1,15 @@
-<a name="1.6.0"></a>
-### 1.7.0 (WIP)
+<a name="2.0.0"></a>
+### 2.0.0 (WIP)
 
-[milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/1.7.0)
+[milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/2.0.0)
 
 * WP-API v2 support <https://github.com/shprink/wordpress-hybrid-client/issues/76>
 * Adding German translation <https://github.com/shprink/wordpress-hybrid-client/pull/77>
+
+#### Breaking changes:
+
+* [CONFIG] the new `posts.query` objects replaces `posts.per_page`, `posts.order` etc.
+* [CONFIG] `posts.posts_per_page` becomes `posts.query.per_page`
 
 <a name="1.6.0"></a>
 ### 1.6.0 (2015-09-24)

@@ -53,6 +53,8 @@
   "homepage": "https://github.com/shprink/wordpress-hybrid-client",
   "devDependencies": {
     "autoprefixer-loader": "^3.1.0",
+    "babel": "^5.8.23",
+    "babel-loader": "^5.3.2",
     "coffee-loader": "^0.7.2",
     "coffee-script": "^1.10.0",
     "cordova": "~5.3.1",

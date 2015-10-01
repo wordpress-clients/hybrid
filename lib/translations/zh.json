@@ -10,6 +10,8 @@
         "title": "菜单",
         "home": "首页",
         "tags": "标签",
+        "pages": "Pages",
+        "authors": "Authors",
         "search": "搜索",
         "bookmarks": "收藏",
         "socialNetworks": "社交网络",
@@ -50,6 +52,12 @@
     },
     "sharing": {
         "shared": "已分享！"
+    },
+    "authors": {
+        "title": "Authors"
+    },
+    "pages": {
+        "title": "Pages"
     },
     "posts": {
         "title": "首页",

@@ -10,6 +10,8 @@
         "title": "Menu",
         "home": "Inicio",
         "tags": "Etiquetas",
+        "pages": "Pages",
+        "authors": "Authors",
         "search": "Buscar",
         "bookmarks": "Favoritos",
         "socialNetworks": "Redes Sociales",
@@ -50,6 +52,12 @@
     },
     "sharing": {
         "shared": "Compartido!"
+    },
+    "authors": {
+        "title": "Authors"
+    },
+    "pages": {
+        "title": "Pages"
     },
     "posts": {
         "title": "Inicio",

@@ -46,6 +46,16 @@
             "trans": "menu.home",
             "route": "public.posts",
             "icon": "icon ion-home"
+        },{
+            "type": "internal",
+            "trans": "menu.pages",
+            "route": "public.pages",
+            "icon": "icon ion-ios-paper"
+        }, {
+            "type": "internal",
+            "trans": "menu.authors",
+            "route": "public.authors",
+            "icon": "icon ion-ios-people"
         }, {
             "type": "folder",
             "trans": "menu.categories",
@@ -146,8 +156,11 @@
             "maxAge": 172800000
         }
     },
+    "pages": {
+        "per_page": 6
+    },
     "posts": {
-        "posts_per_page": 6,
+        "per_page": 6,
         "orderby": "date",
         "order": "desc",
         "post_status": "publish",

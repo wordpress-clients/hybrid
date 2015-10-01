@@ -28,6 +28,10 @@ module.exports = {
             test: /[\/]ionic\.js$/,
             loader: 'exports?ionic' // For non commonJs
         }, {
+            test: /\.js$/,
+            exclude: /(node_modules|bower_components)/,
+            loader: "ng-annotate?add=true!babel"
+        }, {
             test: /\.html$/,
             loader: 'html'
         }, {

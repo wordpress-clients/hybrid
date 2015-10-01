@@ -6,10 +6,13 @@
     "attemptToConnect": "Attempt to connect {{attempt}} of {{attemptMax}}.",
     "yes": "Yes",
     "no" : "No",
+    "emptyList" : "There is nothing here!",
     "menu": {
         "title": "Menu",
         "home": "Home",
         "tags": "Tags",
+        "pages": "Pages",
+        "authors": "Authors",
         "search": "Search",
         "bookmarks": "Bookmarks",
         "socialNetworks": "Social Networks",
@@ -51,9 +54,14 @@
     "sharing": {
         "shared": "Shared!"
     },
+    "authors": {
+        "title": "Authors"
+    },
+    "pages": {
+        "title": "Pages"
+    },
     "posts": {
-        "title": "Home",
-        "empty": "There is no posts here!",
+        "title": "Posts",
         "featured": "Featured"
     },
     "post": {

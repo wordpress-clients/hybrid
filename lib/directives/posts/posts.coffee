@@ -11,11 +11,12 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
     restrict: 'E'
     transclude: true
     scope:
-        posts: "="
+        posts: "=",
+        showToolbar: "="
     template: require './posts.html'
     bindToController: true
     controllerAs: 'postCtrl'
-    controller: ($log, $scope, $WPHCPost) ->
+    controller: ($log, $scope, $WPHCPost, $attrs) ->
         vm = @
         vm.featureImages = []
 

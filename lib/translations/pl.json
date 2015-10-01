@@ -10,6 +10,8 @@
         "title": "Menu",
         "home": "Home",
         "tags": "Tagi",
+        "pages": "Pages",
+        "authors": "Authors",
         "search": "Szukaj",
         "bookmarks": "Zakładki",
         "socialNetworks": "Społeczności",
@@ -50,6 +52,12 @@
     },
     "sharing": {
         "shared": "Udostępniono!"
+    },
+    "authors": {
+        "title": "Authors"
+    },
+    "pages": {
+        "title": "Pages"
     },
     "posts": {
         "title": "Home",

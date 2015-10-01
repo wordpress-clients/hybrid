@@ -20,7 +20,6 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
         $log.info 'wphcLoader controller loaded', $scope.promiseLoad
         if !$scope.promiseLoad
             return
-        onLoad = $scope.onLoad()
         $scope.attempt = 0
         $scope.attemptMax = $WPHCConfig.api.maxAttempt
         $scope.isAttemptMaxReached = false
@@ -38,7 +37,7 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
                 $scope.attempt = 0
                 $scope.isAttemptMaxReached = false
             $log.info 'wphcLoader attempt: ' + $scope.attempt
-            onLoad().then success
+            $scope.onLoad().then success
             .catch ->
                 error()
                 if $scope.attempt < $WPHCConfig.api.maxAttempt

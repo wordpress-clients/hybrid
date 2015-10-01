@@ -11,6 +11,10 @@ require 'moment'
 require './font/font.coffee'
 require 'expose?_!lodash'
 require 'wp-api-angularjs'
+pagesModule = require './pages/index.js'
+postsModule = require './posts/index.js'
+searchModule = require './search/index.js'
+authorsModule = require './authors/index.js'
 
 # Style entry point
 require './scss/bootstrap'
@@ -25,11 +29,13 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
     'angular-cache'
     'angularMoment'
     'angular.filter'
+    pagesModule
     require('./taxonomies/taxonomies.module').name
     require('./bookmark/bookmark.module').name
     require('./post/post.module').name
-    require('./posts/posts.module').name
-    require('./search/search.module').name
+    postsModule
+    searchModule
+    authorsModule
     require('./menu/menu.module').name
     require('./cordova/cordova.module').name
     require('./params/params.module').name

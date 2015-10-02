@@ -1,9 +1,6 @@
 <div class="post padding">
-    <div class="item item-image" ng-if="::pageCtrl.page.featured_image != 0" wphc-img-background-cache="{{::pageCtrl.featured_image}}">
-        <div class="img-border"></div>
-        <h1 class="item-title" ng-bind-html="::pageCtrl.page.title.rendered"></h1>
-    </div>
-    <h1 class="item-title item-title-without-image" ng-if="::pageCtrl.page.featured_image == 0" ng-bind-html="::pageCtrl.page.title.rendered"></h1>
+    <div class="item item-image" ng-if="::pageCtrl.page.featured_image != 0" wphc-img-background-cache="{{::pageCtrl.featured_image}}"></div>
+    <h1 class="item-title item-title-without-image" ng-bind-html="::pageCtrl.page.title.rendered"></h1>
     <!-- <div class="item item-divider item-toolbar">
         <wphc-post-toolbar post="::pageCtrl.page" show-share></wphc-post-toolbar>
     </div> -->

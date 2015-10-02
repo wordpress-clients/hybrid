@@ -1,7 +1,7 @@
 module.exports = angular.module('wordpress-hybrid-client.directives').directive 'wphcAuthor', ($log) ->
     restrict: 'E'
     transclude: false
-    replace: true
+    replace: false
     scope:
         author: "="
         date: "="

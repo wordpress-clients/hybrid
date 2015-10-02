@@ -1,13 +1,10 @@
 <div class="post padding">
-    <div class="item item-image" ng-if="::postCtrl.post.featured_image != 0" wphc-img-background-cache="{{::postCtrl.featured_image}}">
-        <div class="img-border"></div>
-        <h1 class="item-title" ng-bind-html="::postCtrl.post.title.rendered"></h1>
-    </div>
-    <h1 class="item-title item-title-without-image" ng-if="::postCtrl.post.featured_image == 0" ng-bind-html="::postCtrl.post.title.rendered"></h1>
+    <div class="item item-image" ng-if="::postCtrl.post.featured_image != 0" wphc-img-background-cache="{{::postCtrl.featured_image}}"></div>
+    <h1 class="item-title item-title-without-image" ng-bind-html="::postCtrl.post.title.rendered"></h1>
+    <wphc-author add-link author="::postCtrl.post._embedded.author[0]" date="::postCtrl.post.date"></wphc-author>
     <div class="item item-divider item-toolbar">
         <wphc-post-toolbar post="::postCtrl.post" show-share show-bookmark></wphc-post-toolbar>
     </div>
-    <wphc-author add-link author="::postCtrl.post._embedded.author[0]" date="::postCtrl.post.date"></wphc-author>
     <div class="post-content" ng-if="::postCtrl.post.excerpt" bind-and-compile-html="::(postCtrl.post.content.rendered | prepLink | highlight)"></div>
 
     <div class="item item-divider item-toolbar">

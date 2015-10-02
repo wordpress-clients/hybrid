@@ -4,5 +4,9 @@
         "timeout": 20000
     },
     "debugEnabled": false,
-    "title": "[PROD] Your Blog title"
+    "title": "[PROD] Your Blog title",
+    "translation": {
+        "displayed" : ["en", "fr", "zh", "es", "pl", "de"],
+        "prefered": "en"
+    }
 }

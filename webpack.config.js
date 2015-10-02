@@ -1,5 +1,6 @@
 var path = require('path'),
     fs = require('fs'),
+    _ = require('lodash'),
     webpack = require("webpack"),
     libPath = path.join(__dirname, 'lib'),
     wwwPath = path.join(__dirname, 'www'),
@@ -81,6 +82,7 @@ module.exports = {
             template: path.join(libPath, 'index.html')
         }),
         new webpack.ContextReplacementPlugin(/moment\/locale$/, getRegexAutorizedLanguages()),
+        // new webpack.IgnorePlugin(getRegexAutorizedProgramationLanguages()),
         new webpack.DefinePlugin({
             IS_PROD: false
         })
@@ -88,8 +90,13 @@ module.exports = {
 };
 
 function getRegexAutorizedLanguages() {
-    return new RegExp(Object.keys(projectConfig.translation.available).join('|'));
+    return new RegExp(projectConfig.translation.displayed.join('|'));
 }
+
+// function getRegexAutorizedProgramationLanguages() {
+//     var completeList = [];
+//     return new RegExp(_.intersection(completeList, projectConfig.syntaxHighlighter.languages).join('|'));
+// }
 
 function getAppVersion() {
     var config = new cordovaLib.configparser(__dirname + '/config.xml');

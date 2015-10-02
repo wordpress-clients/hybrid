@@ -30,7 +30,7 @@ module.exports = extend(webpackConfig, {
 });
 
 function getRegexAutorizedLanguages() {
-    return new RegExp(Object.keys(projectConfig.translation.available).join('|'));
+    return new RegExp(projectConfig.translation.displayed.join('|'));
 }
 
 function getAppVersion() {

@@ -219,6 +219,7 @@
         }
     },
     "translation": {
+        "displayed" : ["en", "fr", "zh", "es", "pl", "de"],
         "available": {
             "en": {
                 "en_*": "en"

@@ -7,7 +7,7 @@
     <div class="item item-divider item-toolbar">
         <wphc-post-toolbar post="::postCtrl.post" show-share show-bookmark></wphc-post-toolbar>
     </div>
-    <wphc-author author="::postCtrl.post._embedded.author[0]" date="::postCtrl.post.date"></wphc-author>
+    <wphc-author add-link author="::postCtrl.post._embedded.author[0]" date="::postCtrl.post.date"></wphc-author>
     <div class="post-content" ng-if="::postCtrl.post.excerpt" bind-and-compile-html="::(postCtrl.post.content.rendered | prepLink | highlight)"></div>
 
     <div class="item item-divider item-toolbar">

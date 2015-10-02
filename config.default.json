@@ -4,7 +4,7 @@
         "timeout": 10000,
         "maxAttempt": 3
     },
-    "debugEnabled" : false,
+    "debugEnabled": false,
     "title": "Your Blog title",
     "ionicConfig": {
         "views": {
@@ -40,17 +40,21 @@
         }
     },
     "menu": {
+        "defaultState": {
+            "state": "public.posts",
+            "params": {}
+        },
         "exposeAsideWhen": "(min-width:900px)",
         "list": [{
             "type": "internal",
-            "trans": "menu.home",
+            "trans": "menu.posts",
             "route": "public.posts",
-            "icon": "icon ion-home"
-        },{
+            "icon": "icon ion-ios-paper"
+        }, {
             "type": "internal",
             "trans": "menu.pages",
             "route": "public.pages",
-            "icon": "icon ion-ios-paper"
+            "icon": "icon ion-android-document"
         }, {
             "type": "internal",
             "trans": "menu.authors",
@@ -62,8 +66,8 @@
             "icon": "icon ion-folder",
             "list": [{
                 "type": "internal",
-                "trans": "Mobile",
-                "route": "public.taxonomies.slug({ term: 'category', slug: 'mobile' })",
+                "trans": "Uncategorized",
+                "route": "public.taxonomies.slug({ term: 'category', slug: 'uncategorized' })",
                 "icon": "icon ion-iphone"
             }, {
                 "type": "internal",
@@ -72,11 +76,21 @@
                 "icon": "icon ion-folder"
             }]
         }, {
-            "type": "internal",
+            "type": "folder",
             "trans": "menu.tags",
-            "route": "public.taxonomies({ term: 'post_tag' })",
-            "icon": "icon ion-pricetags"
-        }, {
+            "icon": "icon ion-folder",
+            "list": [{
+                "type": "internal",
+                "trans": "Dumb tag",
+                "route": "public.taxonomies.slug({ term: 'post_tag', slug: 'dumb' })",
+                "icon": "icon ion-iphone"
+            }, {
+                "type": "internal",
+                "trans": "All",
+                "route": "public.taxonomies({ term: 'post_tag' })",
+                "icon": "icon ion-pricetags"
+            }]
+        },{
             "type": "internal",
             "trans": "menu.bookmarks",
             "route": "public.bookmarks",
@@ -125,8 +139,7 @@
             "deleteOnExpire": "aggressive",
             "recycleFreq": 1000,
             "cacheFlushInterval": null,
-            "storageMode": "localStorage",
-            "verifyIntegrity": true
+            "storageMode": "localStorage"
         }
     },
     "bookmark": {
@@ -152,18 +165,54 @@
         "languages": ["javascript", "html", "coffeescript", "html", "css", "scss", "json", "apache", "bash", "markdown", "less", "php", "apache", "typescript"]
     },
     "taxonomies": {
+        "query": {
+            "per_page": 5,
+            "orderby": "count",
+            "order": "desc"
+        },
         "cache": {
             "maxAge": 172800000
         }
     },
+    "authors": {
+        "query": {
+            "per_page": 5
+        },
+        "cache": {
+            "capacity": 10,
+            "maxAge": 86400000
+        }
+    },
     "pages": {
-        "per_page": 6
+        "query": {
+            "per_page": 5,
+            "filter[orderby]": "date",
+            "filter[order]": "desc"
+        },
+        "cache": {
+            "capacity": 10,
+            "maxAge": 86400000
+        }
+    },
+    "search": {
+        "query": {
+            "per_page": 5,
+            "filter[orderby]": "date",
+            "filter[order]": "desc",
+            "filter[post_status]": "publish"
+        },
+        "cache": {
+            "capacity": 25,
+            "maxAge": 86400000
+        }
     },
     "posts": {
-        "per_page": 6,
-        "orderby": "date",
-        "order": "desc",
-        "post_status": "publish",
+        "query": {
+            "per_page": 5,
+            "filter[orderby]": "date",
+            "filter[order]": "desc",
+            "filter[post_status]": "publish"
+        },
         "cache": {
             "capacity": 25,
             "maxAge": 86400000
@@ -200,11 +249,11 @@
     },
     "cordova": {
         "statubar": {
-            "show": true,
+            "show": false,
             "color": "#455a64"
         },
         "appRate": {
-            "enabled": true,
+            "enabled": false,
             "language": "en",
             "appName": "Your Blog title",
             "openStoreInApp": true,
@@ -216,8 +265,8 @@
             "windowsURL": ""
         },
         "pushNotifications": {
-            "enabled": true,
-            "baseUrl" : "http://yourDomain.com/pnfw",
+            "enabled": false,
+            "baseUrl": "http://yourDomain.com/pnfw",
             "android": {
                 "senderID": ""
             },

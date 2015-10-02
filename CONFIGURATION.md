@@ -47,6 +47,9 @@ Here is a simple view of what you can configure:
     * comments
 * syntaxHighlighter
 * taxonomies
+* search
+* pages
+* authors
 * posts
 * translation
     * available
@@ -70,7 +73,7 @@ Here is a simple view of what you can configure:
 
 ### debugEnabled [Boolean]
 
-Make sure this option is TRUE for ```config.json``` and FALSE for ```config.prod.json```
+Make sure this option is TRUE for ```config.dev.json``` and FALSE for ```config.prod.json```
 
 ### title [String]
 
@@ -82,40 +85,6 @@ allow overwriting ionic configuration <http://ionicframework.com/docs/api/provid
 
 Setting ```null``` will keep ionic default value.
 
-```
-"views": {
-    "transition": null,
-    "maxCache": null,
-    "forwardCache": true
-},
-"scrolling": {
-    "jsScrolling": false
-},
-"backButton": {
-    "icon": null,
-    "previousTitleText": null
-},
-"form": {
-    "checkbox": null,
-    "toggle": null
-},
-"spinner": {
-    "icon": null
-},
-"tabs": {
-    "style": null,
-    "position": null
-},
-"templates": {
-    "maxPrefetch": null
-},
-"navBar": {
-    "alignTitle": null,
-    "positionPrimaryButtons": null,
-    "positionSecondaryButtons": null
-}
-```
-
 ### menu [Object]
 
 The media query used to determine when to always display the left menu.
@@ -126,62 +95,10 @@ The media query used to determine when to always display the left menu.
 
 They are four types of menu item (internal|external|folder|separator).
 
-* **internal**: can be any page of the application (home|category|tag|parameters|about)
-* **external**: Any www website
-* **folder**: Create a menu sublevel (you can add up to six levels)
-* **separator**: Separate menu items
-
-```
-"list": [{
-    "type": "internal",
-    "trans": "menu.home",
-    "route": "public.posts",
-    "icon": "icon ion-home"
-}, {
-    "type": "folder",
-    "trans": "menu.categories",
-    "icon": "icon ion-folder",
-    "list": [{
-        "type": "internal",
-        "trans": "Mobile",
-        "route": "public.taxonomies.slug({ term: 'category', slug: 'mobile' })",
-        "icon": "icon ion-iphone"
-    }, {
-        "type": "internal",
-        "trans": "All",
-        "route": "public.taxonomies({ term: 'category' })",
-        "icon": "icon ion-folder"
-    }]
-}, {
-    "type": "internal",
-    "trans": "menu.tags",
-    "route": "public.taxonomies({ term: 'post_tag' })",
-    "icon": "icon ion-pricetags"
-}, {
-    "type": "internal",
-    "trans": "menu.bookmarks",
-    "route": "public.bookmarks",
-    "icon": "icon ion-bookmark"
-}, {
-    "type": "separator",
-    "trans": "Separator"
-}, {
-    "type": "external",
-    "trans": "My blog",
-    "href": "http://julienrenaux.fr",
-    "icon": "icon ion-link"
-}, {
-    "type": "internal",
-    "trans": "params.title",
-    "route": "public.params",
-    "icon": "icon ion-gear-b"
-}, {
-    "type": "internal",
-    "trans": "about.title",
-    "route": "public.about",
-    "icon": "icon ion-information"
-}]
-```
+* ***internal***    Can be any page of the application (home|category|tag|parameters|about)
+* ***external***    Any www website
+* ***folder***      Create a menu sublevel (you can add up to six levels)
+* ***separator***   Separate menu items
 
 NB: The icons must be from ionicons.com
 NB: For now the homepage is mandatory and cannot be a specific page.
@@ -191,51 +108,45 @@ NB: For now the homepage is mandatory and cannot be a specific page.
 ```
 "settings": {
     "about": {
-        "enabled": true,
-        "credit": true
+        "credit": true // Enable/disable credit
     },
     "parameters": {
-        "enabled": true,
-        "defaultFontSize": "medium"
+        "defaultFontSize": "medium" // "small" | "medium" | "large" | "x-large" | "xx-large"
     }
 }
 ```
 
 ### cache [Object]
 
-```
-"views": 10, // The number of pages cached in the app
-"forward": false, // When navigating back in the history, the "forward" views are removed from the cache. Set this config to true to have forward views cached and not reset on each load.
-"data": { // Angular-cache default config
-    "capacity": 100,
-    "maxAge": 21600000,
-    "deleteOnExpire": "aggressive",
-    "recycleFreq": 1000,
-    "cacheFlushInterval": null,
-    "storageMode": "localStorage",
-    "verifyIntegrity": true
-},
-"img" :{
-    "localCacheFolder": "imgcache",           /* name of the cache folder */
-    "useDataURI": false,                      /* use src="data:.."? otherwise will use src="filesystem:.." */
-    "chromeQuota": 10 * 1024 * 1024,          /* allocated cache space : here 10MB */
-    "usePersistentCache": true,               /* false = use temporary cache storage */
-    "cacheClearSize": 0,                      /* size in MB that triggers cache clear on init, 0 to disable */
-    "headers": {},                            /* HTTP headers for the download requests -- e.g: headers: { 'Accept': 'application/jpg' } */
-    "skipURIencoding": false                  /* enable if URIs are already encoded (skips call to sanitizeURI) */
-}
-```
+### img
+
+* ***localCacheFolder***    ```String```    name of the cache folder
+* ***useDataURI***          ```Boolean```   use src="data:.."? otherwise will use src="filesystem:.."
+* ***chromeQuota***         ```Number```    allocated cache space : here 10MB
+* ***usePersistentCache***  ```Boolean```   false = use temporary cache storage
+* ***cacheClearSize***      ```Number```    asize in MB that triggers cache clear on init, 0 to disable
+* ***headers***             ```Object```    HTTP headers for the download requests -- e.g: headers: { 'Accept': 'application/jpg' }
+* ***skipURIencoding***     ```Boolean```   enable if URIs are already encoded (skips call to sanitizeURI)
+
+### data
+
+* ***capacity***            ```Number```    Maximum number of items a cache can hold.
+* ***maxAge***              ```Number```    The number of milliseconds until a newly inserted item expires.
+* ***deleteOnExpire***      ```String```    Determines the behavior of a cache when an item expires. Possible values: none | passive | aggressive
+* ***recycleFreq***         ```Number```    Determines how often a cache will scan for expired items when in aggressive mode.
+* ***cacheFlushInterval***  ```Number```    If set, remove all items from a cache on an interval after the given number of milliseconds. Default: null.
+* ***storageMode***         ```String```    Determines the storage medium used by a cache.
 
 ### post
 
 ```
 "comments": {
-    "enabled": true,
-    "depth": 2
+    "enabled": true,    // display or not the comments
+    "depth": 2,         // the thread depth you want to display. More than 2 on mobile devices may be too much
+    "per_page": 50      // The max number of comments you want to display
 },
 "cache": { // Overwrite global cache. Can be empty
-    "maxAge": 172800000,
-    "capacity": 10
+
 }
 ```
 
@@ -251,93 +162,35 @@ The bookmark cache has a difference from others. maxAge is infinite and cannot b
 },
 ```
 
-### taxonomies
+### taxonomies, posts, authors, pages, search
 
-```
-"cache": {  // Overwrite global cache. Can be empty
-    "maxAge": 172800000
-}
-```
-
-### posts
-
-```
-"posts_per_page": 6,
-"orderby": "date",
-"orderby": "desc",
-"post_status": "publish",
-"cache": { // Overwrite global cache. Can be empty
-    "capacity": 25,
-    "maxAge": 86400000
-}
-```
+Similar configuration, contains a way to overwrite the list query and the cache.
 
 ### translation
 
 The languages you want to see in the parameters. So far we only support English and French.
 
-```
-"available": {
-    "en": {
-        "en_US": "en",
-        "en_UK": "en"
-    },
-    "fr": {
-        "fr_FR": "fr"
-    }
-},
-"prefered": "en"
-```
-
 ### analytics
 
 Enable Google Analytics
-
-```
-"enabled": false,
-"trackingId": "UA-7727182-6",
-"userId": "",
-"virtualPageTracking": true
-```
 
 ### cordova
 
 #### StatuBar
 
-```
-"statubar": { // Status bar options
-    "show": true,
-    "color": "#455a64"
-}
-```
-
 #### appRate
 
-* ***enabled*** ```Boolean``` Enable/Disable appRate
-* ***language*** ```String``` Language of Dialog - eg 'en', 'fr', 'it'
-* ***appName***	```String``` Custom application title
-* ***openStoreInApp***	```Boolean``` Leave app or not
-* ***usesUntilPrompt***	```Integer``` Number of runs of app before dialog is displayed
-* ***promptForNewVersion***	```Boolean``` Show dialog again if new app version
-* ***useCustomRateDialog***	```String``` Use custom view for rate dialog
-* ***iosURL***	```String``` Application id in AppStore
-* ***androidURL***	```String``` Application URL in GooglePlay
-* ***windowsURL***	```String``` Application URL in WindowsStore
+* ***enabled***                 ```Boolean```   Enable/Disable appRate
+* ***language***                ```String```    Language of Dialog - eg 'en', 'fr', 'it'
+* ***appName***	                ```String```    Custom application title
+* ***openStoreInApp***	        ```Boolean```   Leave app or not
+* ***usesUntilPrompt***	        ```Integer```   Number of runs of app before dialog is displayed
+* ***promptForNewVersion***	    ```Boolean```   Show dialog again if new app version
+* ***useCustomRateDialog***	    ```String```    Use custom view for rate dialog
+* ***iosURL***	                ```String```    Application id in AppStore
+* ***androidURL***	            ```String```    Application URL in GooglePlay
+* ***windowsURL***	            ```String```    Application URL in WindowsStore
 
-```
-"appRate": {
-    "enabled": true,
-    "language": "en",
-    "appName": "Your Blog title",
-    "openStoreInApp": true,
-    "usesUntilPrompt": 3,
-    "promptForNewVersion": true,
-    "useCustomRateDialog": "",
-    "iosURL": "",
-    "androidURL": "",
-    "windowsURL": ""
-}
-```
 ### syntaxHighlighter
 
 Programming language auto detection for tech blogs
@@ -346,12 +199,3 @@ Programming language auto detection for tech blogs
 * ***useBR***: a flag to generate <br> tags instead of new-line characters in the output, useful when code is marked up using a non-<pre> container.
 * ***classPrefix***: a string prefix added before class names in the generated markup, used for backwards compatibility with stylesheets.
 * ***languages***: an array of language names and aliases restricting auto detection to only these languages.
-
-```
-"syntaxHighlighter": {
-    "classPrefix": "hljs-",
-    "tabReplace": "    ",
-    "useBR": false,
-    "languages": ["javascript", "html", "coffeescript", "html", "css", "scss", "json", "apache", "bash", "markdown", "less", "php", "apache", "typescript"]
-}
-```

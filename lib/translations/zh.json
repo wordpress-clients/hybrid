@@ -6,12 +6,14 @@
     "attemptToConnect": "正在尝试第 {{attempt}} 次连接（最多 {{attemptMax}} 次）",
     "yes": "是",
     "no" : "否",
+    "emptyList" : "暂时没有文章！",
     "menu": {
         "title": "菜单",
         "home": "首页",
         "tags": "标签",
         "pages": "Pages",
         "authors": "Authors",
+        "posts": "Posts",
         "search": "搜索",
         "bookmarks": "收藏",
         "socialNetworks": "社交网络",
@@ -56,12 +58,14 @@
     "authors": {
         "title": "Authors"
     },
+    "author": {
+        "title": "Author: {{name}}"
+    },
     "pages": {
         "title": "Pages"
     },
     "posts": {
-        "title": "首页",
-        "empty": "暂时没有文章！",
+        "title": "Posts",
         "featured": "推荐"
     },
     "post": {

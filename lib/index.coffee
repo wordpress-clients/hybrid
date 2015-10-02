@@ -6,15 +6,18 @@ require './angular-ios9-uiwebview.patch.js'
 require 'angular-translate'
 require 'angular-cache'
 require 'angular-moment'
-require 'angular-filter'
 require 'moment'
 require './font/font.coffee'
 require 'expose?_!lodash'
 require 'wp-api-angularjs'
+require './config.js'
 pagesModule = require './pages/index.js'
 postsModule = require './posts/index.js'
 searchModule = require './search/index.js'
 authorsModule = require './authors/index.js'
+taxonomiesModule = require './taxonomies/index.js'
+filtersModule = require './filters/index.js'
+directivesModule = require './directives/index.js'
 
 # Style entry point
 require './scss/bootstrap'
@@ -22,20 +25,20 @@ require './scss/bootstrap'
 module.exports = app = angular.module 'wordpress-hybrid-client', [
     'ionic'
     'ngIOS9UIWebViewPatch'
-    require('./config').name
+    'wordpress-hybrid-client.config'
     'ui.router'
     'wp-api-angularjs'
     'pascalprecht.translate'
     'angular-cache'
     'angularMoment'
-    'angular.filter'
+    filtersModule
     pagesModule
-    require('./taxonomies/taxonomies.module').name
-    require('./bookmark/bookmark.module').name
-    require('./post/post.module').name
+    taxonomiesModule
     postsModule
     searchModule
     authorsModule
+    require('./bookmark/bookmark.module').name
+    require('./post/post.module').name
     require('./menu/menu.module').name
     require('./cordova/cordova.module').name
     require('./params/params.module').name
@@ -45,10 +48,10 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
     require('./cacheImg/cacheImg.module').name
     require('./syntaxHighlighter/syntaxHighlighter.module').name
     require('./init/init.module').name
-    require('./directives/directives.module').name
+    directivesModule
 ]
 
-app.config ($stateProvider) ->
+app.config ($stateProvider, $urlRouterProvider) ->
     $stateProvider
     .state 'public',
     url: "/public"
@@ -57,6 +60,11 @@ app.config ($stateProvider) ->
         '@' :
             template: require "./views/ion-menu.html"
             controller: "WPHCMainController as main"
+
+    $urlRouterProvider.otherwise ($injector, $location) ->
+        $WPHCConfig = $injector.get('$WPHCConfig');
+        $state = $injector.get('$state');
+        $state.go _.get($WPHCConfig, 'menu.defaultState.state'), _.get($WPHCConfig, 'menu.defaultState.params')
 
 ###
 ANGULAR CONF

@@ -6,11 +6,13 @@
     "attemptToConnect": "Attempt to connect {{attempt}} of {{attemptMax}}.",
     "yes": "Sí",
     "no" : "No",
+    "emptyList" : "No se han encontrado publicaciones!",
     "menu": {
         "title": "Menu",
         "home": "Inicio",
         "tags": "Etiquetas",
         "pages": "Pages",
+        "posts": "Posts",
         "authors": "Authors",
         "search": "Buscar",
         "bookmarks": "Favoritos",
@@ -56,12 +58,14 @@
     "authors": {
         "title": "Authors"
     },
+    "author": {
+        "title": "Author: {{name}}"
+    },
     "pages": {
         "title": "Pages"
     },
     "posts": {
-        "title": "Inicio",
-        "empty": "No se han encontrado publicaciones!",
+        "title": "Posts",
         "featured": "Destacado"
     },
     "post": {

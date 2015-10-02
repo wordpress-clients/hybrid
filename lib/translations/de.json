@@ -6,11 +6,13 @@
     "attemptToConnect": "Verbinden: Versuch(e) {{attempt}} von {{attemptMax}}.",
     "yes": "Ja",
     "no" : "Nein",
+    "emptyList" : "Keine Inhalte bisher!",
     "menu": {
         "title": "Menü",
         "home": "Startseite",
         "tags": "Tags",
         "pages": "Pages",
+        "posts": "Posts",
         "authors": "Authors",
         "search": "Suche",
         "bookmarks": "Lesezeichen",
@@ -56,12 +58,14 @@
     "authors": {
         "title": "Authors"
     },
+    "author": {
+        "title": "Author: {{name}}"
+    },
     "pages": {
         "title": "Pages"
     },
     "posts": {
-        "title": "Startseite",
-        "empty": "Keine Inhalte bisher!",
+        "title": "Posts",
         "featured": "Hervorgehoben"
     },
     "post": {

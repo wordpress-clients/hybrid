@@ -5,11 +5,12 @@
 
 * WP-API v2 support <https://github.com/shprink/wordpress-hybrid-client/issues/76>
 * Adding German translation <https://github.com/shprink/wordpress-hybrid-client/pull/77>
+* Authors list <https://github.com/shprink/wordpress-hybrid-client/issues/30>
+* Pages list <https://github.com/shprink/wordpress-hybrid-client/issues/86>
 
 #### Breaking changes:
 
-* [CONFIG] the new `posts.query` objects replaces `posts.per_page`, `posts.order` etc.
-* [CONFIG] `posts.posts_per_page` becomes `posts.query.per_page`
+* [CONFIG] `config.json` does not exist anymore. The installation creates two files `config.dev.json` and `config.prod.json`. Those two files overwrite `config.default.json` (this on is read only).
 
 <a name="1.6.0"></a>
 ### 1.6.0 (2015-09-24)

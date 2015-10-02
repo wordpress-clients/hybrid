@@ -1,0 +1,10 @@
+<ion-view>
+    <ion-nav-title>{{ taxonomiesPostsCtrl.title | translate}}</ion-nav-title>
+    <ion-content class="padding bg-gray-lighter">
+        <wphc-empty-list list="taxonomiesPostsCtrl.list"></wphc-empty-list>
+        <wphc-loader ng-if="!taxonomiesPostsCtrl.list" on-load="taxonomiesPostsCtrl.init()"></wphc-loader>
+        <ion-refresher pulling-text="{{ 'pullToRefresh' | translate}}" on-refresh="taxonomiesPostsCtrl.refresh()"></ion-refresher>
+        <!-- <wphc-posts show-toolbar="::taxonomiesPostsCtrl.showToolbar" posts="taxonomiesPostsCtrl.list"></wphc-posts> -->
+        <ion-infinite-scroll immediate-check="true" ng-if="taxonomiesPostsCtrl.list && !taxonomiesPostsCtrl.isPaginationOver" on-infinite="taxonomiesPostsCtrl.loadMore()" distance="1%">test</ion-infinite-scroll>
+    </ion-content>
+</ion-view>

@@ -11,14 +11,14 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
     restrict: 'E'
     transclude: true
     scope:
-        posts: "=",
-        showToolbar: "="
+        posts: "="
     template: require './posts.html'
     bindToController: true
     controllerAs: 'postCtrl'
     controller: ($log, $scope, $WPHCPost, $attrs) ->
         vm = @
         vm.featureImages = []
+        vm.showAuthor = typeof $attrs.showAuthor isnt 'undefined';
 
         $scope.$watchCollection 'postCtrl.posts', (newValue, oldValue) ->
             return if !newValue

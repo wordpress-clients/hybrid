@@ -6,12 +6,14 @@
     "attemptToConnect": "{{attempt}} próba połączenia z {{attemptMax}}.",
     "yes": "Tak",
     "no" : "Nie",
+    "emptyList" : "Nic tu nie ma!",
     "menu": {
         "title": "Menu",
         "home": "Home",
         "tags": "Tagi",
         "pages": "Pages",
         "authors": "Authors",
+        "posts": "Posts",
         "search": "Szukaj",
         "bookmarks": "Zakładki",
         "socialNetworks": "Społeczności",
@@ -56,12 +58,14 @@
     "authors": {
         "title": "Authors"
     },
+    "author": {
+        "title": "Author: {{name}}"
+    },
     "pages": {
         "title": "Pages"
     },
     "posts": {
-        "title": "Home",
-        "empty": "Nic tu nie ma :(",
+        "title": "Posts",
         "featured": "Wyróżnione"
     },
     "post": {

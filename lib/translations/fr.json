@@ -6,11 +6,13 @@
     "attemptToConnect": "Tentative de connection {{attempt}} sur {{attemptMax}}.",
     "yes": "Oui",
     "no" : "Non",
+    "emptyList" : "La liste est vide!",
     "menu": {
         "title": "Menu",
         "home": "Accueil",
         "tags": "Tags",
         "pages": "Pages",
+        "posts": "Articles",
         "authors": "Auteurs",
         "search": "Chercher",
         "bookmarks": "Signets",
@@ -54,14 +56,16 @@
         "shared": "partagé avec succès!"
     },
     "authors": {
-        "title": "Authors"
+        "title": "Auteurs"
+    },
+    "author": {
+        "title": "Auteurs: {{name}}"
     },
     "pages": {
         "title": "Pages"
     },
     "posts": {
-        "title": "Accueil",
-        "empty": "La liste est vide!",
+        "title": "Articles",
         "featured": "A la Une"
     },
     "post": {

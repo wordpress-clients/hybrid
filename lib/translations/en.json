@@ -12,6 +12,7 @@
         "home": "Home",
         "tags": "Tags",
         "pages": "Pages",
+        "posts": "Posts",
         "authors": "Authors",
         "search": "Search",
         "bookmarks": "Bookmarks",
@@ -56,6 +57,9 @@
     },
     "authors": {
         "title": "Authors"
+    },
+    "author": {
+        "title": "Author: {{name}}"
     },
     "pages": {
         "title": "Pages"

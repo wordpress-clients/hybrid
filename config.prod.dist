@@ -1,0 +1,8 @@
+{
+    "api": {
+        "baseUrl": "http://yourDomain.com/wp-json",
+        "timeout": 20000
+    },
+    "debugEnabled": false,
+    "title": "[PROD] Your Blog title"
+}

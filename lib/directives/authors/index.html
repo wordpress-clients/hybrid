@@ -1,0 +1,8 @@
+<div class="list">
+    <a class="item item-author item-avatar item-text-wrap item-icon-right repeat-animation" ui-sref="public.authors.id({ id: author.id })" ng-repeat="author in authorsCtrl.authors track by author.id">
+        <img wphc-img-cache ng-src="{{::author.avatar_urls[96]}}" ng-if="::author.avatar_urls[96]">
+        <h2 ng-bind-html="author.name"></h2>
+        <small class="balanced" bind-and-compile-html="::author.description"></small>
+        <i class="icon ion-ios-arrow-right"></i>
+    </a>
+</div>

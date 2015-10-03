@@ -1,8 +1,8 @@
 <div class="list">
-    <a class="item repeat-animation" ng-class="::{'active disabled': isCurrentState(taxonomy.slug)}" ng-disabled="isCurrentState(taxonomy.slug)" ui-sref="public.taxonomies.slug({ slug: taxonomy.slug, term: term })" ng-repeat="taxonomy in taxonomies track by taxonomy.id"
+    <a class="item repeat-animation item-text-wrap" ng-class="::{'active disabled': isCurrentState(taxonomy.slug)}" ng-disabled="isCurrentState(taxonomy.slug)" ui-sref="public.taxonomies.slug({ slug: taxonomy.slug, term: term })" ng-repeat="taxonomy in taxonomies track by taxonomy.id"
     ng-click="triggerOnClick(taxonomy)">
         <h2 ng-bind-html="taxonomy.name"></h2>
-        <small class="balanced" bind-and-compile-html="::(taxonomy.description | prepLink)"></small>
+        <small class="balanced" ng-bind-html="::taxonomy.description"></small>
         <span class="badge badge-energized">{{taxonomy.count}}</span>
     </a>
 </div>

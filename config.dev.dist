@@ -8,5 +8,8 @@
     "translation": {
         "displayed" : ["en", "fr", "zh", "es", "pl", "de"],
         "prefered": "en"
+    },
+    "menu": {
+
     }
 }

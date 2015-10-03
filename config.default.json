@@ -52,14 +52,24 @@
             "icon": "icon ion-ios-paper"
         }, {
             "type": "internal",
-            "trans": "menu.pages",
-            "route": "public.pages",
-            "icon": "icon ion-android-document"
-        }, {
-            "type": "internal",
             "trans": "menu.authors",
             "route": "public.authors",
             "icon": "icon ion-ios-people"
+        }, {
+            "type": "folder",
+            "trans": "menu.pages",
+            "icon": "icon ion-folder",
+            "list": [{
+                "type": "internal",
+                "trans": "Page id:1",
+                "route": "public.pages.id({ id: 1 })",
+                "icon": "icon ion-android-document"
+            }, {
+                "type": "internal",
+                "trans": "All",
+                "route": "public.pages",
+                "icon": "icon ion-android-document"
+            }]
         }, {
             "type": "folder",
             "trans": "menu.categories",

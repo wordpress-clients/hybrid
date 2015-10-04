@@ -11,9 +11,9 @@
         "title": "菜单",
         "home": "首页",
         "tags": "标签",
-        "pages": "Pages",
-        "authors": "Authors",
-        "posts": "Posts",
+        "pages": "页面",
+        "authors": "作者",
+        "posts": "博文",
         "search": "搜索",
         "bookmarks": "收藏",
         "socialNetworks": "社交网络",
@@ -56,16 +56,16 @@
         "shared": "已分享！"
     },
     "authors": {
-        "title": "Authors"
+        "title": "作者"
     },
     "author": {
-        "title": "Author: {{name}}"
+        "title": "作者: {{name}}"
     },
     "pages": {
-        "title": "Pages"
+        "title": "页面"
     },
     "posts": {
-        "title": "Posts",
+        "title": "博文",
         "featured": "推荐"
     },
     "post": {

@@ -35,6 +35,7 @@ platforms_backup/
 plugins/
 bower_components/
 config.json
+config.dev.json
 config.prod.json
 *.keystore
 release.sh

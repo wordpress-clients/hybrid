@@ -8,9 +8,17 @@ Male sure you have ios and/or android platforms installed. If you have correctly
 
 <https://support.google.com/googleplay/android-developer/answer/186113?hl=en>
 
-Copy and past the key within your ```~/.ssh``` folder with that name ```android_wphc.keystore```
+```
+keytool -genkey -v -keystore <my-release-key.keystore> -alias <alias_name> -keyalg RSA -keysize 2048 -validity 10000
+```
 
-NB: You can put the key wherever you want and even give it another name but if you do that, you will need to modify ```release.sh``` accordingly.
+Change `<my-release-key.keystore>` and `<alias_name>` accordingly also in the `release.sh` file:
+
+```
+ANDROID_ZIPALIGN="/path/to/Android/sdk/build-tools/21.1.2/zipalign"
+ANDROID_KEY_PATH="/path/to/keystore/my-release-key.keystore"
+ANDROID_KEY_ALIAS="alias_name"
+```
 
 ### Keyboard adjustement
 

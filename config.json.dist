@@ -188,7 +188,7 @@
                 "duration": 400,
                 "slowdownfactor": 4,
                 "iosdelay": 60,
-                "androiddelay": 70,
+                "androiddelay": 280,
                 "winphonedelay": 200,
                 "fixedPixelsTop": 0,
                 "fixedPixelsBottom": 0

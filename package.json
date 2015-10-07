@@ -89,7 +89,7 @@
     "highlight.js": "^8.6.0",
     "imagesloaded": "^3.1.8",
     "imgcache.js": "^1.0.0",
-    "ionic-native-transitions": "^1.0.0-alpha5",
+    "ionic-native-transitions": "^v1.0.0-beta2",
     "ionic-sdk": "^1.1.0",
     "lodash": "^3.9.3",
     "moment": "^2.9.0",

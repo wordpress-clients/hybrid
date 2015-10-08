@@ -9,6 +9,7 @@ require 'angular-moment'
 require 'angular-filter'
 require 'moment'
 require './font/font.coffee'
+require 'ionic-native-transitions'
 
 # lodash is a restangular dependency that is bundled in wp-api-angularjs.bundle
 require 'expose?_!lodash'
@@ -20,6 +21,7 @@ require './scss/bootstrap'
 module.exports = app = angular.module 'wordpress-hybrid-client', [
     'ionic'
     'ngIOS9UIWebViewPatch'
+    'ionic-native-transitions'
     require('./config').name
     'ui.router'
     'wp-api-angularjs'
@@ -61,6 +63,17 @@ app.config ($WPHCConfig, $logProvider, $compileProvider) ->
     debugEnabled = _.get($WPHCConfig, 'debugEnabled') || false
     $logProvider.debugEnabled debugEnabled
     $compileProvider.debugInfoEnabled debugEnabled
+
+###
+NATIVE TRANSITIONS CONF
+###
+app.config ($WPHCConfig, $ionicNativeTransitionsProvider) ->
+    options = _.get($WPHCConfig, 'cordova.nativeTransitions.options') || {}
+    enabled = _.get $WPHCConfig, 'cordova.nativeTransitions.enabled'
+    enabled = if _.isBoolean enabled then enabled else true
+    $ionicNativeTransitionsProvider
+        .setOptions options
+        .enable enabled
 
 ###
 IONIC CONF

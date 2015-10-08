@@ -1,3 +1,10 @@
+<a name="1.7.0"></a>
+### 1.7.0 (2015-10-08)
+
+[milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/1.7.0)
+
+* Adding native transitions <https://github.com/shprink/wordpress-hybrid-client/issues/91>
+
 <a name="1.6.0"></a>
 ### 1.6.0 (2015-09-24)
 

@@ -17,6 +17,8 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashScreen" value="screen" />
+    <preference name = "ShowSplashScreenSpinner" value = "false" />
+    <preference name = "AutoHideSplashScreen" value = "false" />
     <!-- ANDROID -->
     <preference name="android-minSdkVersion" value="14"/>
     <preference name="android-targetSdkVersion" value="14"/>

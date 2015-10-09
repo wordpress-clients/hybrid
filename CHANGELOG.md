@@ -1,3 +1,8 @@
+<a name="1.7.1"></a>
+### 1.7.1 (WIP)
+
+* [BUG] Fix white screen after splashscreen on iOS:  <https://github.com/shprink/wordpress-hybrid-client/issues/91>
+
 <a name="1.7.0"></a>
 ### 1.7.0 (2015-10-08)
 

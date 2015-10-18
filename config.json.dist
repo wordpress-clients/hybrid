@@ -183,16 +183,10 @@
     },
     "cordova": {
         "nativeTransitions": {
-            "enabled": true,
-            "options": {
-                "duration": 400,
-                "slowdownfactor": 4,
-                "iosdelay": 60,
-                "androiddelay": 280,
-                "winphonedelay": 200,
-                "fixedPixelsTop": 0,
-                "fixedPixelsBottom": 0
-            }
+            "enabled": false,
+            "defaultOptions": null,
+            "defaultTransition" : null,
+            "defaultBackTransition" : null
         },
         "statubar": {
             "show": true,

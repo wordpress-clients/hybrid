@@ -2,10 +2,11 @@
 ### 1.7.1 (WIP)
 
 * [BUG] Fix white screen after splashscreen on iOS:  <https://github.com/shprink/wordpress-hybrid-client/issues/91>
+* [CONFIG CORDOVA]: Add the following to your `config.xml`: `<preference name="CrosswalkAnimatable" value="true" />`
 
 #### Breaking Changes
 
-* Add the following to your `config.xml`: `<preference name="CrosswalkAnimatable" value="true" />`
+* [CONFIG]: `cordova.nativeTransitions.options` changed to `cordova.nativeTransitions.defaultOptions` to follow ionic-native-transitions lib changes
 
 <a name="1.7.0"></a>
 ### 1.7.0 (2015-10-08)

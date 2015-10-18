@@ -68,12 +68,15 @@ app.config ($WPHCConfig, $logProvider, $compileProvider) ->
 NATIVE TRANSITIONS CONF
 ###
 app.config ($WPHCConfig, $ionicNativeTransitionsProvider) ->
-    options = _.get($WPHCConfig, 'cordova.nativeTransitions.options') || {}
+    defaultOptions = _.get $WPHCConfig, 'cordova.nativeTransitions.defaultOptions'
+    defaultTransition = _.get $WPHCConfig, 'cordova.nativeTransitions.defaultTransition'
+    defaultBackTransition = _.get $WPHCConfig, 'cordova.nativeTransitions.defaultBackTransition'
     enabled = _.get $WPHCConfig, 'cordova.nativeTransitions.enabled'
     enabled = if _.isBoolean enabled then enabled else true
-    $ionicNativeTransitionsProvider
-        .setOptions options
-        .enable enabled
+    $ionicNativeTransitionsProvider.setDefaultOptions defaultOptions if defaultOptions
+    $ionicNativeTransitionsProvider.setDefaultTransition defaultTransition if defaultTransition
+    $ionicNativeTransitionsProvider.setDefaultBackTransition defaultBackTransition if defaultBackTransition
+    $ionicNativeTransitionsProvider.enable enabled
 
 ###
 IONIC CONF

@@ -1,15 +1,14 @@
 <ion-side-menus enable-menu-with-back-views="true">
     <ion-side-menu-content ng-if="::appLoaded">
         <ion-nav-bar class="bar-positive">
-            <ion-nav-back-button native-transitions native-transitions-options="{type: 'slide', direction:'right'}">
-            </ion-nav-back-button>
+            <ion-nav-back-button></ion-nav-back-button>
             <ion-nav-buttons side="left">
                 <button menu-toggle="left" class="button button-clear" wphc-hide-when="{{main.exposeAsideWhen}}">
                     <i class="icon ion-navicon-round"></i>
                 </button>
             </ion-nav-buttons>
             <ion-nav-buttons side="right">
-                <button ui-sref="public.search" ui-sref-active="ng-hide" class="button button-clear" native-transitions>
+                <button ui-sref="public.search" ui-sref-active="ng-hide" class="button button-clear">
                     <i class="icon ion-ios-search-strong"></i>
                 </button>
             </ion-nav-buttons>

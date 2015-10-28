@@ -259,6 +259,12 @@
         "virtualPageTracking": true
     },
     "cordova": {
+        "nativeTransitions": {
+            "enabled": false,
+            "defaultOptions": null,
+            "defaultTransition" : null,
+            "defaultBackTransition" : null
+        },
         "statubar": {
             "show": false,
             "color": "#455a64"

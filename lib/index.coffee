@@ -8,6 +8,7 @@ require 'angular-cache'
 require 'angular-moment'
 require 'moment'
 require './font/font.coffee'
+require 'ionic-native-transitions'
 require 'expose?_!lodash'
 require 'wp-api-angularjs'
 require './config.js'
@@ -26,6 +27,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
     'ionic'
     'ngIOS9UIWebViewPatch'
     'wordpress-hybrid-client.config'
+    'ionic-native-transitions'
     'ui.router'
     'wp-api-angularjs'
     'pascalprecht.translate'
@@ -73,6 +75,20 @@ app.config ($WPHCConfig, $logProvider, $compileProvider) ->
     debugEnabled = _.get($WPHCConfig, 'debugEnabled') || false
     $logProvider.debugEnabled debugEnabled
     $compileProvider.debugInfoEnabled debugEnabled
+
+###
+NATIVE TRANSITIONS CONF
+###
+app.config ($WPHCConfig, $ionicNativeTransitionsProvider) ->
+    defaultOptions = _.get $WPHCConfig, 'cordova.nativeTransitions.defaultOptions'
+    defaultTransition = _.get $WPHCConfig, 'cordova.nativeTransitions.defaultTransition'
+    defaultBackTransition = _.get $WPHCConfig, 'cordova.nativeTransitions.defaultBackTransition'
+    enabled = _.get $WPHCConfig, 'cordova.nativeTransitions.enabled'
+    enabled = if _.isBoolean enabled then enabled else true
+    $ionicNativeTransitionsProvider.setDefaultOptions defaultOptions if defaultOptions
+    $ionicNativeTransitionsProvider.setDefaultTransition defaultTransition if defaultTransition
+    $ionicNativeTransitionsProvider.setDefaultBackTransition defaultBackTransition if defaultBackTransition
+    $ionicNativeTransitionsProvider.enable enabled
 
 ###
 IONIC CONF

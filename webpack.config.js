@@ -18,9 +18,6 @@ module.exports = {
     },
     module: {
         loaders: [{
-            test: /[\/]angular\.js$/,
-            loader: 'expose?angular!exports?window.angular'
-        }, {
             test: /[\/]highlight\.js$/,
             loader: 'expose?hljs'
         }, {

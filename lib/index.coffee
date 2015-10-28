@@ -12,6 +12,7 @@ require 'ionic-native-transitions'
 require 'expose?_!lodash'
 require 'wp-api-angularjs'
 require './config.js'
+customPostsModule = require './customPosts/index.js'
 pagesModule = require './pages/index.js'
 postsModule = require './posts/index.js'
 searchModule = require './search/index.js'
@@ -33,6 +34,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
     'pascalprecht.translate'
     'angular-cache'
     'angularMoment'
+    customPostsModule
     filtersModule
     pagesModule
     taxonomiesModule

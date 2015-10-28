@@ -7,7 +7,7 @@ var path = require('path'),
     pkg = require('./package.json'),
     cordovaLib = require('cordova').cordova_lib,
     deepExtend = require('deep-extend'),
-    projectConfig = deepExtend(require('./config.default.json'), require('./config.dev.json')),
+    projectConfig = deepExtend(require('./config/config.default.json'), require('./config/config.dev.json')),
     HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -40,6 +40,9 @@ module.exports = {
             test: /\.json$/,
             loader: "json"
         }, {
+            test: /\.cson$/,
+            loader: "cson"
+        }, {
             test: /\.(png|jpg)$/,
             loader: 'file?name=img/[name].[ext]' // inline base64 URLs for <=10kb images, direct URLs for the rest
         }, {
@@ -60,7 +63,7 @@ module.exports = {
         }]
     },
     resolve: {
-        extensions: ['', '.js', '.json', '.scss', '.coffee', '.html'],
+        extensions: ['', '.js', '.json', '.cson', '.scss', '.coffee', '.html'],
         root: [
             path.join(__dirname, 'src'),
             path.join(__dirname, 'node_modules'),
@@ -81,7 +84,8 @@ module.exports = {
         new webpack.ContextReplacementPlugin(/moment\/locale$/, getRegexAutorizedLanguages()),
         // new webpack.IgnorePlugin(getRegexAutorizedProgramationLanguages()),
         new webpack.DefinePlugin({
-            IS_PROD: false
+            IS_PROD: false,
+            IS_TECH: (projectConfig.syntaxHighlighter.enabled)
         })
     ]
 };

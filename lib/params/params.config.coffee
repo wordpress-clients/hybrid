@@ -1,4 +1,4 @@
-module.exports = angular.module('wordpress-hybrid-client.params').config ($WPHCConfig, $stateProvider, $WPHCMenuProvider) ->
+module.exports = angular.module('wordpress-hybrid-client.params').config ($WPHCConfig, $stateProvider) ->
     $stateProvider
     .state 'public.params',
         url: "/params"

@@ -1,0 +1,77 @@
+"pullToRefresh": "Ziehen zum Aktualisieren!"
+"retry": "Wiederholen"
+"back": "Zurück"
+"error": "Etwas ging schief. Bitte erneut versuchen."
+"attemptToConnect": "Verbinden: Versuch(e) {{attempt}} von {{attemptMax}}."
+"yes": "Ja"
+"no" : "Nein"
+"emptyList" : "Keine Inhalte bisher!"
+"menu":
+    "title": "Menü"
+    "home": "Startseite"
+    "tags": "Tags"
+    "pages": "Pages"
+    "posts": "Posts"
+    "authors": "Authors"
+    "search": "Suche"
+    "bookmarks": "Lesezeichen"
+    "socialNetworks": "Soziale Netzwerke"
+    "categories": "Kategorien"
+    "settings": "Einstellungen"
+"pushNotifications":
+    "newContent":
+        "title": "Neue Inhalte!"
+        "text": "Neu! Seite/Beitrag: '{{postTitle}}' wurde in {{appTitle}} veröffentlich, willst du es dir jetzt ansehen?"
+"bookmark":
+    "title": "Lesenzeichen"
+    "emptyList" : "Bisher noch nichts gespeichert!"
+    "bookmarked" : "Lesezeichen gespeichert!"
+    "removed" : "Lesezeichen gelöscht!"
+"tags":
+    "title": "Tags"
+"tag":
+    "title": "Tag: {{name}}"
+"categories":
+    "title": "Kategorien"
+"category":
+    "title": "Kategorie: {{name}}"
+"home":
+    "title": "Startseite"
+"search":
+    "inputPlaceholder": "Suche"
+    "title": "Suche"
+    "titleQuery": "Suche: {{query}}"
+"sharing":
+    "shared": "Geteilt!"
+"authors":
+    "title": "Authors"
+"author":
+    "title": "Author: {{name}}"
+"pages":
+    "title": "Pages"
+"posts":
+    "title": "Posts"
+    "featured": "Hervorgehoben"
+"post":
+    "comments": "Kommentare"
+    "openInBrowser": "Im Browser öffnen"
+"about":
+    "title": "Über"
+"params":
+    "title": "Einstellungen"
+    "offlineMode": "Offline Modus (bald)"
+    "fontSize": "Schriftgröße der Beiträge"
+    "language": "Sprache"
+"languages":
+    "de": "Deutsch"
+    "en": "English"
+    "fr": "Französisch"
+    "zh": "Chinesich"
+    "es": "Spanisch"
+    "pl": "Polnisch"
+"fontSize":
+    "small": "Klein"
+    "medium": "Mittel"
+    "large": "Groß"
+    "x-large": "Größer"
+    "xx-large": "Extra Groß"

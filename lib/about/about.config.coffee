@@ -1,4 +1,4 @@
-module.exports = angular.module('wordpress-hybrid-client.about').config ($WPHCConfig, $stateProvider, $WPHCMenuProvider) ->
+module.exports = angular.module('wordpress-hybrid-client.about').config ($WPHCConfig, $stateProvider) ->
     $stateProvider
     .state 'public.about',
         url: "/about"

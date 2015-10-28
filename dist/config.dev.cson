@@ -1,0 +1,11 @@
+"debugEnabled": true
+"title": "[DEV] Your Blog title"
+
+"api":
+    "baseUrl": "http://yourDomain.com/wp-json"
+    "timeout": 10000
+    "maxAttempt": 3
+
+"translation":
+    "displayed" : ["en", "fr", "zh", "es", "pl", "de"]
+    "prefered": "en"

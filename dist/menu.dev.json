@@ -1,0 +1,79 @@
+[{
+    "type": "internal",
+    "trans": "menu.posts",
+    "route": "public.posts",
+    "icon": "icon ion-ios-paper"
+}, {
+    "type": "internal",
+    "trans": "menu.authors",
+    "route": "public.authors",
+    "icon": "icon ion-ios-people"
+}, {
+    "type": "folder",
+    "trans": "menu.pages",
+    "icon": "icon ion-folder",
+    "list": [{
+        "type": "internal",
+        "trans": "Page id:1",
+        "route": "public.pages.id({ id: 1 })",
+        "icon": "icon ion-android-document"
+    }, {
+        "type": "internal",
+        "trans": "All",
+        "route": "public.pages",
+        "icon": "icon ion-android-document"
+    }]
+}, {
+    "type": "folder",
+    "trans": "menu.categories",
+    "icon": "icon ion-folder",
+    "list": [{
+        "type": "internal",
+        "trans": "Uncategorized",
+        "route": "public.taxonomies.slug({ term: 'category', slug: 'uncategorized' })",
+        "icon": "icon ion-iphone"
+    }, {
+        "type": "internal",
+        "trans": "All",
+        "route": "public.taxonomies({ term: 'category' })",
+        "icon": "icon ion-folder"
+    }]
+}, {
+    "type": "folder",
+    "trans": "menu.tags",
+    "icon": "icon ion-folder",
+    "list": [{
+        "type": "internal",
+        "trans": "Dumb tag",
+        "route": "public.taxonomies.slug({ term: 'post_tag', slug: 'dumb' })",
+        "icon": "icon ion-iphone"
+    }, {
+        "type": "internal",
+        "trans": "All",
+        "route": "public.taxonomies({ term: 'post_tag' })",
+        "icon": "icon ion-pricetags"
+    }]
+}, {
+    "type": "internal",
+    "trans": "menu.bookmarks",
+    "route": "public.bookmarks",
+    "icon": "icon ion-bookmark"
+}, {
+    "type": "separator",
+    "trans": "Separator"
+}, {
+    "type": "external",
+    "trans": "My blog",
+    "href": "http://julienrenaux.fr",
+    "icon": "icon ion-link"
+}, {
+    "type": "internal",
+    "trans": "params.title",
+    "route": "public.params",
+    "icon": "icon ion-gear-b"
+}, {
+    "type": "internal",
+    "trans": "about.title",
+    "route": "public.about",
+    "icon": "icon ion-information"
+}]

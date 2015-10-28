@@ -34,14 +34,14 @@ platforms/
 platforms_backup/
 plugins/
 bower_components/
-config.json
-config.dev.json
-config.prod.json
 *.keystore
 release.sh
-config.xml
-config.scss
 about.md
 iOS
 cordova.plugin.backup
 before_build.md
+config.xml
+
+# v1 compatibility
+config.scss
+config.json

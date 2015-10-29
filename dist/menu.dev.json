@@ -37,6 +37,21 @@
         "icon": "icon ion-android-document"
     }]
 }, {
+    "type": "folder",
+    "trans": "menu.customPosts",
+    "icon": "icon ion-folder",
+    "list": [{
+        "type": "internal",
+        "trans": "Custom id:1",
+        "route": "public.customPosts.id({ id: 1, slug: 'customSlug'})",
+        "icon": "icon ion-wrench"
+    }, {
+        "type": "internal",
+        "trans": "All",
+        "route": "public.customPosts({slug: 'customSlug'})",
+        "icon": "icon ion-wrench"
+    }]
+}, {
     "type": "separator",
     "trans": "Taxonomies type"
 }, {
@@ -67,6 +82,21 @@
         "type": "internal",
         "trans": "All",
         "route": "public.taxonomies({ term: 'post_tag' })",
+        "icon": "icon ion-pricetags"
+    }]
+}, {
+    "type": "folder",
+    "trans": "menu.customTaxonomy",
+    "icon": "icon ion-folder",
+    "list": [{
+        "type": "internal",
+        "trans": "Dumb tag",
+        "route": "public.taxonomies.slug({ term: 'post_format', slug: 'dumb' })",
+        "icon": "icon ion-iphone"
+    }, {
+        "type": "internal",
+        "trans": "All",
+        "route": "public.taxonomies({ term: 'post_format' })",
         "icon": "icon ion-pricetags"
     }]
 }, {

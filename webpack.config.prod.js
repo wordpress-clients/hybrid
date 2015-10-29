@@ -7,7 +7,8 @@ var path = require('path'),
     cordovaLib = require('cordova').cordova_lib,
     extend = require('util')._extend,
     deepExtend = require('deep-extend'),
-    projectConfig = deepExtend(require('./config.default.json'), require('./config.prod.json')),
+    CSON = require('cson'),
+    projectConfig = deepExtend(CSON.requireFile('./config/config.default.cson'), CSON.requireFile('./config/config.dev.cson')),
     webpackConfig = require('./webpack.config.js'),
     HtmlWebpackPlugin = require('html-webpack-plugin');
 

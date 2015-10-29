@@ -58,6 +58,7 @@
     "coffee-loader": "^0.7.2",
     "coffee-script": "^1.10.0",
     "cordova": "~5.3.1",
+    "cson": "^3.0.2",
     "cson-loader": "^0.1.0",
     "css-loader": "^0.18.0",
     "deep-extend": "^0.4.0",

@@ -183,7 +183,7 @@
     },
     "cordova": {
         "nativeTransitions": {
-            "enabled": true,
+            "enabled": false,
             "options": {
                 "duration": 400,
                 "slowdownfactor": 4,

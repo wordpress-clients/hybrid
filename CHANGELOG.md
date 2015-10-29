@@ -1,3 +1,17 @@
+<a name="2.0.0"></a>
+### 2.0.0 (WIP)
+
+[milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/2.0.0)
+
+* WP-API v2 support <https://github.com/shprink/wordpress-hybrid-client/issues/76>
+* Adding German translation <https://github.com/shprink/wordpress-hybrid-client/pull/77>
+* Authors list <https://github.com/shprink/wordpress-hybrid-client/issues/30>
+* Pages list <https://github.com/shprink/wordpress-hybrid-client/issues/86>
+
+#### Breaking changes:
+
+* [CONFIG] `config.json` does not exist anymore. The installation creates two files `config.dev.json` and `config.prod.json`. Those two files overwrite `config.default.json` (this on is read only).
+
 <a name="1.7.1"></a>
 ### 1.7.1 (WIP)
 

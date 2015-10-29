@@ -1,11 +1,13 @@
 var path = require('path'),
     fs = require('fs'),
+    _ = require('lodash'),
     webpack = require("webpack"),
     libPath = path.join(__dirname, 'lib'),
     wwwPath = path.join(__dirname, 'www'),
     pkg = require('./package.json'),
     cordovaLib = require('cordova').cordova_lib,
-    projectConfig = require('./config.json'),
+    deepExtend = require('deep-extend'),
+    projectConfig = deepExtend(require('./config/config.default.json'), require('./config/config.dev.json')),
     HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -25,6 +27,10 @@ module.exports = {
             test: /[\/]ionic\.js$/,
             loader: 'exports?ionic' // For non commonJs
         }, {
+            test: /\.js$/,
+            exclude: /(node_modules|bower_components)/,
+            loader: "ng-annotate?add=true!babel"
+        }, {
             test: /\.html$/,
             loader: 'html'
         }, {
@@ -33,6 +39,9 @@ module.exports = {
         }, {
             test: /\.json$/,
             loader: "json"
+        }, {
+            test: /\.cson$/,
+            loader: "cson"
         }, {
             test: /\.(png|jpg)$/,
             loader: 'file?name=img/[name].[ext]' // inline base64 URLs for <=10kb images, direct URLs for the rest
@@ -54,7 +63,7 @@ module.exports = {
         }]
     },
     resolve: {
-        extensions: ['', '.js', '.json', '.scss', '.coffee', '.html'],
+        extensions: ['', '.js', '.json', '.cson', '.scss', '.coffee', '.html'],
         root: [
             path.join(__dirname, 'src'),
             path.join(__dirname, 'node_modules'),
@@ -73,15 +82,22 @@ module.exports = {
             template: path.join(libPath, 'index.html')
         }),
         new webpack.ContextReplacementPlugin(/moment\/locale$/, getRegexAutorizedLanguages()),
+        // new webpack.IgnorePlugin(getRegexAutorizedProgramationLanguages()),
         new webpack.DefinePlugin({
-            IS_PROD: false
+            IS_PROD: false,
+            IS_TECH: (projectConfig.syntaxHighlighter.enabled)
         })
     ]
 };
 
 function getRegexAutorizedLanguages() {
-    return new RegExp(Object.keys(projectConfig.translation.available).join('|'));
+    return new RegExp(projectConfig.translation.displayed.join('|'));
 }
+
+// function getRegexAutorizedProgramationLanguages() {
+//     var completeList = [];
+//     return new RegExp(_.intersection(completeList, projectConfig.syntaxHighlighter.languages).join('|'));
+// }
 
 function getAppVersion() {
     var config = new cordovaLib.configparser(__dirname + '/config.xml');

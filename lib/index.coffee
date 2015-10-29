@@ -6,14 +6,20 @@ require './angular-ios9-uiwebview.patch.js'
 require 'angular-translate'
 require 'angular-cache'
 require 'angular-moment'
-require 'angular-filter'
 require 'moment'
 require './font/font.coffee'
 require 'ionic-native-transitions'
-
-# lodash is a restangular dependency that is bundled in wp-api-angularjs.bundle
 require 'expose?_!lodash'
-require 'wp-api-angularjs/dist/wp-api-angularjs.bundle'
+require 'wp-api-angularjs'
+require './config.js'
+customPostsModule = require './customPosts/index.js'
+pagesModule = require './pages/index.js'
+postsModule = require './posts/index.js'
+searchModule = require './search/index.js'
+authorsModule = require './authors/index.js'
+taxonomiesModule = require './taxonomies/index.js'
+filtersModule = require './filters/index.js'
+directivesModule = require './directives/index.js'
 
 # Style entry point
 require './scss/bootstrap'
@@ -21,19 +27,22 @@ require './scss/bootstrap'
 module.exports = app = angular.module 'wordpress-hybrid-client', [
     'ionic'
     'ngIOS9UIWebViewPatch'
+    'wordpress-hybrid-client.config'
     'ionic-native-transitions'
-    require('./config').name
     'ui.router'
     'wp-api-angularjs'
     'pascalprecht.translate'
     'angular-cache'
     'angularMoment'
-    'angular.filter'
-    require('./taxonomies/taxonomies.module').name
+    customPostsModule
+    filtersModule
+    pagesModule
+    taxonomiesModule
+    postsModule
+    searchModule
+    authorsModule
     require('./bookmark/bookmark.module').name
     require('./post/post.module').name
-    require('./posts/posts.module').name
-    require('./search/search.module').name
     require('./menu/menu.module').name
     require('./cordova/cordova.module').name
     require('./params/params.module').name
@@ -43,10 +52,10 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
     require('./cacheImg/cacheImg.module').name
     require('./syntaxHighlighter/syntaxHighlighter.module').name
     require('./init/init.module').name
-    require('./directives/directives.module').name
+    directivesModule
 ]
 
-app.config ($stateProvider) ->
+app.config ($stateProvider, $urlRouterProvider) ->
     $stateProvider
     .state 'public',
     url: "/public"
@@ -55,6 +64,11 @@ app.config ($stateProvider) ->
         '@' :
             template: require "./views/ion-menu.html"
             controller: "WPHCMainController as main"
+
+    $urlRouterProvider.otherwise ($injector, $location) ->
+        $WPHCConfig = $injector.get('$WPHCConfig');
+        $state = $injector.get('$state');
+        $state.go _.get($WPHCConfig, 'menu.defaultState.state'), _.get($WPHCConfig, 'menu.defaultState.params')
 
 ###
 ANGULAR CONF
@@ -87,18 +101,9 @@ app.config require('./config/ionic.config.coffee');
 REST CONF
 ###
 app.config ($WPHCConfig, WpApiProvider) ->
-    RestangularProvider = WpApiProvider.getRestangularProvider()
-    RestangularProvider.setDefaultHttpFields
+    WpApiProvider.setDefaultHttpProperties
         timeout: _.get($WPHCConfig, 'api.timeout') || 5000
-    RestangularProvider.setBaseUrl _.get($WPHCConfig, 'api.baseUrl') || null
-    RestangularProvider.setFullResponse true
-    RestangularProvider.addResponseInterceptor (data, operation, what, url, response, deferred) ->
-        data.wpApiHeaders =
-            total: response.headers 'X-WP-Total'
-            pages: response.headers 'X-WP-TotalPages'
-        data
-    RestangularProvider.setRestangularFields
-        id: "ID"
+    WpApiProvider.setBaseUrl _.get($WPHCConfig, 'api.baseUrl') || null
 
 ###
 TRANSLATION CONF

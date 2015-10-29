@@ -6,11 +6,10 @@ module.exports = angular.module 'wordpress-hybrid-client.language'
         languagesMapping = {}
 
         # init provider
-        for language, mapping of $WPHCConfig.translation.available
-            languages.push language
+        for language in _.get $WPHCConfig, 'translation.displayed'
             languagesTranslated[language] = 'languages.' + language
-            angular.extend languagesMapping, mapping
-
+            languages.push language
+            angular.extend languagesMapping, _.get($WPHCConfig, 'translation.available.' + language)
         getPreferedLanguage = ->
             $WPHCConfig.translation.prefered
 

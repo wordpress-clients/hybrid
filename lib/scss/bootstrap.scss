@@ -1,4 +1,4 @@
-@import "../../config.scss";
+@import "../../config/config.scss";
 @import "./variables";
 // Include all of Ionic
 @import "../../node_modules/ionic-sdk/scss/ionic";
@@ -13,8 +13,8 @@
 @import "./_responsivity";
 @import "./_ionic-override";
 // UI
-@import '../directives/directives';
-@import '../bookmark/bookmark';
-@import '../menu/menu';
-@import '../search/search';
-@import '../accessibility/accessibility';
+@import '../directives/directives.scss';
+@import '../bookmark/bookmark.scss';
+@import '../menu/menu.scss';
+@import '../search/search.scss';
+@import '../accessibility/accessibility.scss';

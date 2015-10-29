@@ -6,7 +6,8 @@ var path = require('path'),
     pkg = require('./package.json'),
     cordovaLib = require('cordova').cordova_lib,
     extend = require('util')._extend,
-    projectConfig = require('./config.prod.json'),
+    deepExtend = require('deep-extend'),
+    projectConfig = deepExtend(require('./config.default.json'), require('./config.prod.json')),
     webpackConfig = require('./webpack.config.js'),
     HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -29,7 +30,7 @@ module.exports = extend(webpackConfig, {
 });
 
 function getRegexAutorizedLanguages() {
-    return new RegExp(Object.keys(projectConfig.translation.available).join('|'));
+    return new RegExp(projectConfig.translation.displayed.join('|'));
 }
 
 function getAppVersion() {

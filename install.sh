@@ -5,13 +5,20 @@ set -e
 npm install
 
 # Dev App config
-cp config.json.dist config.json
+cp ./dist/config.dev.cson ./config/config.dev.cson
 # Prod App config
-cp config.json.dist config.prod.json
+cp ./dist/config.prod.cson ./config/config.prod.cson
+
+# Dev App menu
+cp ./dist/menu.dev.json ./config/menu.dev.json
+# Prod App menu
+cp ./dist/menu.prod.json ./config/menu.prod.json
+
 # Hybrid config
-cp config.xml.dist config.xml
+cp ./dist/config.xml config.xml
 # Sass config
-cp config.scss.dist config.scss
+cp ./dist/config.scss config.scss
+
 # Release script
 cp release.sh.dist release.sh
 # About page

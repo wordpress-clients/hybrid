@@ -12,6 +12,7 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
         @isBookmarked = $WPHCBookmark.isBookmarked @post
         @hasBookmark = angular.isDefined $attrs.showBookmark
         @hasShare = angular.isDefined $attrs.showShare
+        @terms = @post._embedded['http://v2.wp-api.org/term'];
         @showTaxonomies = (translation, list, term) ->
             $WPHCTaxonomies.showTaxonomiesInModal translation, list, term
         @bookmark = () ->

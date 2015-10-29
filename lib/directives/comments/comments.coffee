@@ -14,11 +14,12 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
         depth = _.get($WPHCConfig, 'post.comments.depth') || 2
         $WPHCPost.getComments vm.postId
             .then (comments) ->
+                console.log('comments', comments)
                 if !comments.lenght
                     vm.comments = []
                 commentsTemp = []
-                for comment in comments by -1
-                    commentsTemp[comment.ID] = comment
+                for comment in comments
+                    commentsTemp[comment.id] = comment
                     comment.children = []
                     if comment.parent is 0
                         comment.level = 1

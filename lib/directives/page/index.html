@@ -1,0 +1,18 @@
+<div class="post padding">
+    <div class="item item-image" ng-if="::pageCtrl.page.featured_image != 0" wphc-img-background-cache="{{::pageCtrl.featured_image}}"></div>
+    <h1 class="item-title item-title-without-image" ng-bind-html="::pageCtrl.page.title.rendered"></h1>
+    <!-- <div class="item item-divider item-toolbar">
+        <wphc-post-toolbar post="::pageCtrl.page" show-share></wphc-post-toolbar>
+    </div> -->
+    <!-- <wphc-author add-link author="::pageCtrl.page._embedded.author[0]" date="::pageCtrl.page.date"></wphc-author> -->
+    <div class="post-content" ng-if="::pageCtrl.page.excerpt" bind-and-compile-html="::(pageCtrl.page.content.rendered | prepLink | highlight)"></div>
+
+    <!-- <div class="item item-divider item-toolbar">
+        <wphc-post-toolbar post="::pageCtrl.page" show-share show-bookmark></wphc-post-toolbar>
+    </div> -->
+    <section class="footer">
+        <a class="button button-positive button-open-browser" wphc-href href="{{::pageCtrl.page.link}}">
+            {{'post.openInBrowser' | translate}}
+        </a>
+    </section>
+</div>

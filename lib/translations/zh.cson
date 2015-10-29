@@ -18,8 +18,8 @@
     "socialNetworks": "社交网络"
     "categories": "分类"
     "settings": "设置"
-    "customPosts": "Custom posts"
-    "customTaxonomy": "Custom Taxonomy"
+    "customPosts": "自定义博文"
+    "customTaxonomy": "自定义分类"
 "pushNotifications":
     "newContent":
         "title": "新内容发布！"

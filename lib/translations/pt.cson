@@ -1,0 +1,82 @@
+"pullToRefresh": "Puxe para atualizar"
+"retry": "Tentar novamente"
+"back": "Voltar"
+"error": "Ocorreu um erro, tente novamente."
+"attemptToConnect": "Tentativa de conexão {{attempt}} de {{attemptMax}}."
+"yes": "Sim"
+"no" : "Não"
+"menu": 
+    "title": "Menu"
+    "home": "Inicio"
+    "tags": "Etiquetas"
+    "pages": "Pages"
+    "posts": "Posts"
+    "authors": "Authors"
+    "search": "Buscar"
+    "bookmarks": "Favoritos"
+    "socialNetworks": "Redes Sociais"
+    "categories": "Categorias"
+    "settings": "Configurações"
+    "customPosts": "Custom posts"
+    "customTaxonomy": "Custom Taxonomy"
+"pushNotifications": 
+    "newContent": 
+        "title": "Nova publicação!"
+        "text": "Novo artigo: '{{postTitle}}' em {{appTitle}}, quer visualizar?"
+"bookmark": 
+    "title": "Favoritos"
+    "emptyList" : "Não há nada salvo!"
+    "bookmarked" : "Adicionado aos favoritos!"
+    "removed" : "Eliminado dos favoritos!"
+"tags": 
+    "title": "Etiquetas"
+"tag":
+    "title": "Etiqueta: {{name}}"
+"customTaxonomy":
+    "title": "{{term}}: {{name}}"
+"categories": 
+    "title": "Categorias"
+"category":
+    "title": "Categoria {{name}}"
+"home": 
+    "title": "Inicio"
+"search":
+    "inputPlaceholder": "Buscar"
+    "title": "Search",
+    "titleQuery": "Buscar: {{query}}"
+"sharing": 
+    "shared": "Compartilhado!"
+"authors":
+    "title": "Authors"
+"author":
+    "title": "Author: {{name}}"
+"pages":
+    "title": "Pages"
+"posts": 
+    "title": "Inicio"
+    "empty": "Não encontrou novas publicações!"
+    "featured": "Em destaque"
+"post": 
+    "comments": "Comments"
+    "openInBrowser": "Abrir no navegador"
+"about": 
+    "title": "Sobre"
+"params":
+    "title": "Parâmetros"
+    "offlineMode": "Modo Offline"
+    "fontSize": "Tamanho da fonte"
+    "language": "Idioma"
+"languages":
+    "en": "English"
+    "fr": "French"
+    "zh": "Chinese"
+    "es": "Spanish"
+    "pl": "Polaco"
+    "de": "German"
+    "pt": "Português"
+"fontSize": 
+    "small": "Pequena"
+    "medium": "Média"
+    "large": "Grande"
+    "x-large": "Muito grande"
+    "xx-large": "Extra grande"

@@ -18,6 +18,8 @@
     "socialNetworks": "Soziale Netzwerke"
     "categories": "Kategorien"
     "settings": "Einstellungen"
+    "customPosts": "Custom posts"
+    "customTaxonomy": "Custom Taxonomy"
 "pushNotifications":
     "newContent":
         "title": "Neue Inhalte!"
@@ -29,6 +31,8 @@
     "removed" : "Lesezeichen gelöscht!"
 "tags":
     "title": "Tags"
+"customTaxonomy":
+    "title": "{{term}}: {{name}}"
 "tag":
     "title": "Tag: {{name}}"
 "categories":

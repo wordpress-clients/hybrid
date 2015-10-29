@@ -19,6 +19,7 @@
     "categories": "Categories"
     "settings": "Settings"
     "customPosts": "Custom posts"
+    "customTaxonomy": "Custom Taxonomy"
 "pushNotifications":
     "newContent":
         "title": "New content!"
@@ -32,6 +33,8 @@
     "title": "Tags"
 "tag":
     "title": "Tag: {{name}}"
+"customTaxonomy":
+    "title": "{{term}}: {{name}}"
 "categories":
     "title": "Categories"
 "category":

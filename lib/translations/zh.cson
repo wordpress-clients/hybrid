@@ -18,6 +18,8 @@
     "socialNetworks": "社交网络"
     "categories": "分类"
     "settings": "设置"
+    "customPosts": "Custom posts"
+    "customTaxonomy": "Custom Taxonomy"
 "pushNotifications":
     "newContent":
         "title": "新内容发布！"
@@ -31,6 +33,8 @@
     "title": "标签"
 "tag":
     "title": "标签：{{name}}"
+"customTaxonomy":
+    "title": "{{term}}: {{name}}"
 "categories":
     "title": "分类"
 "category":

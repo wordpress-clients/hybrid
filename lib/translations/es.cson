@@ -18,6 +18,8 @@
     "socialNetworks": "Redes Sociales"
     "categories": "Categorías"
     "settings": "Configuración"
+    "customPosts": "Custom posts"
+    "customTaxonomy": "Custom Taxonomy"
 "pushNotifications":
     "newContent":
         "title": "Nueva publicación!"
@@ -31,6 +33,8 @@
     "title": "Etiquetas"
 "tag":
     "title": "Etiqueta: {{name}}"
+"customTaxonomy":
+    "title": "{{term}}: {{name}}"
 "categories":
     "title": "Categorías"
 "category":

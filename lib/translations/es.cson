@@ -57,6 +57,7 @@
     "title": "Posts"
     "featured": "Destacado"
 "post":
+    "comments": "Comments"
     "openInBrowser": "Abrir en el navegador"
 "about":
     "title": "Acerca de"
@@ -72,6 +73,7 @@
     "es": "Spanish"
     "pl": "Polaco"
     "de": "Alemán"
+    "pt": "Portugués"
 "fontSize":
     "small": "Pequeña"
     "medium": "Mediana"

@@ -2,8 +2,6 @@
 
 This installation works on both OSX and Linux. Windows is not supported yet, if you want to help with that let us know: <https://github.com/shprink/wordpress-hybrid-client/issues/39>
 
-If you have problems with the installation, this tutorial <http://www.sitepoint.com/wordpress-hybrid-client-wordpress-powered-ios-android-apps/> might help.
-
 ### Preriquisites
 
 * NodeJS (recommended: 4.1.x)
@@ -24,36 +22,42 @@ v1.3.1
 v1.4.0
 v1.5.2
 v1.6.0
+v2.0.0
 etc.
 
 # checkout the latest version available
 $ git checkout <the-latest-version>
 ```
 
-### Run install.sh
+### Install dependencies
 
 The installation will not install anything globally to avoid potential version conflicts.
 
 ```
-npm run installWPHC
+# install dependencies
+npm install
 ```
 
 During the installation you might have the following error on OSX:
 
-* `ld: library not found for -lgcc_s.10.5`: Installing XCode 7 might solve the problem
+* `ld: library not found for -lgcc_s.10.5`: Installing XCode 7 will solve the problem
 
 ### Config files
 
-There are two config files, ```config.json``` for the application configuration and ```config.scss``` for the style configuration.
+```
+# Copy local config
+npm run installWPHC
+```
+
+Your personal config files live now in the `config` folder. You can modify all of them except `config.default.cson` which contains the default config that can be overwritten using `config.dev.cson` and `config.prod.cson`
 
 ### Installing the Web service
 
-Install this plugin <https://wordpress.org/plugins/rest-api/> (v2.x) to your WordPress website then add the address to the ```config.json``` file:
+Install this plugin <https://wordpress.org/plugins/rest-api/> (v2.x) to your WordPress website then add the address to the `config.dev.cson` and `config.prod.cson` files:
 
 ```
-"api": {
+"api":
     "baseUrl": "http://YourDomain/wp-json"
-},
 ```
 
 Now your Webservice is ready to be queried.

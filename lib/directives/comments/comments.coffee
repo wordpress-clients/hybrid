@@ -14,7 +14,6 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
         depth = _.get($WPHCConfig, 'post.comments.depth') || 2
         $WPHCPost.getComments vm.postId
             .then (comments) ->
-                console.log('comments', comments)
                 if !comments.lenght
                     vm.comments = []
                 commentsTemp = []

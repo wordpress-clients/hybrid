@@ -17,11 +17,6 @@ $ cd wordpress-hybrid-client
 
 # List all tags
 $ git tag
-v1.3.0
-v1.3.1
-v1.4.0
-v1.5.2
-v1.6.0
 v2.0.0
 etc.
 
@@ -37,6 +32,8 @@ The installation will not install anything globally to avoid potential version c
 # install dependencies
 npm install
 ```
+
+This could takes several minutes.
 
 During the installation you might have the following error on OSX:
 

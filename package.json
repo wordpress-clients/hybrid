@@ -80,8 +80,8 @@
     "semver": "^5.0.3",
     "style-loader": "^0.12.4",
     "util": "^0.10.3",
-    "webpack": "~1.12.0",
-    "webpack-dev-server": "~1.11.0"
+    "webpack": "^1.12.0",
+    "webpack-dev-server": "^1.12.0"
   },
   "dependencies": {
     "MD5": "^1.2.1",
@@ -91,7 +91,7 @@
     "angular-moment": "^0.10.0",
     "angular-recursion": "^1.0.5",
     "angular-translate": "^2.5.2",
-    "highlight.js": "^8.6.0",
+    "highlight.js": "^8.9.0",
     "imagesloaded": "^3.1.8",
     "imgcache.js": "^1.0.0",
     "ionic-native-transitions": "^v1.0.0-beta6",

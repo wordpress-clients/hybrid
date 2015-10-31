@@ -18,6 +18,9 @@ module.exports = {
         filename: 'bundle-[hash:6].js'
     },
     module: {
+
+    noParse: [/autoit.js/],
+	    
         loaders: [{
             test: /[\/]highlight\.js$/,
             loader: 'expose?hljs'
@@ -58,7 +61,7 @@ module.exports = {
         }, {
             test: [/Roboto\.ttf/, /Roboto\.woff/, /Roboto\.woff2/],
             loader: 'file?name=fonts/[name].[ext]'
-        }, {
+       }, {
             test: [/ionicons\.svg/, /ionicons\.eot/, /ionicons\.ttf/, /ionicons\.woff/],
             loader: 'file?name=fonts/[name].[ext]'
         }]

@@ -18,8 +18,8 @@ module.exports = {
         filename: 'bundle-[hash:6].js'
     },
     module: {
-	    //andrea per https://github.com/isagalaev/highlight.js/issues/895
-	    noParse: [/autoit.js/],
+
+    noParse: [/autoit.js/],
 	    
         loaders: [{
             test: /[\/]highlight\.js$/,

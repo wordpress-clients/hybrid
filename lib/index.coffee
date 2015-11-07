@@ -72,7 +72,7 @@ app.config ($WPHCConfig, $ionicNativeTransitionsProvider) ->
     enabled = _.get $WPHCConfig, 'cordova.nativeTransitions.enabled'
     enabled = if _.isBoolean enabled then enabled else true
     $ionicNativeTransitionsProvider
-        .setOptions options
+        .setDefaultOptions options
         .enable enabled
 
 ###

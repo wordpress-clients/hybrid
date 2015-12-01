@@ -141,7 +141,7 @@
 
 # TRANSLATIONS
 "translation":
-    "displayed" : ["en", "fr", "zh", "es", "pl", "de", "pt"]
+    "displayed" : ["en", "fr", "zh", "es", "pl", "de", "pt", "it"]
     "prefered": "en"
     "available":
         "en":
@@ -158,6 +158,8 @@
             "de_*": "de"
         "pt":
             "pt_*": "pt"
+        "it":
+            "it_*": "it"
 
 # ANALYTICS (GOOGLE ANALYTICS)
 "analytics":

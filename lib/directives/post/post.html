@@ -5,7 +5,7 @@
     <div class="item item-divider item-toolbar">
         <wphc-post-toolbar post="::postCtrl.post" show-share show-bookmark></wphc-post-toolbar>
     </div>
-    <div class="post-content" ng-if="::postCtrl.post.excerpt" bind-and-compile-html="::(postCtrl.post.content.rendered | prepLink | highlight)"></div>
+    <div class="post-content" bind-and-compile-html="::(postCtrl.post.content.rendered | prepLink | highlight)"></div>
 
     <div class="item item-divider item-toolbar">
         <wphc-post-toolbar post="::postCtrl.post" show-share show-bookmark></wphc-post-toolbar>

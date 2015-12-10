@@ -64,3 +64,24 @@ Go to ```Push Notifications > Settings``` and check the following checkboxes:
 [Get .pem files](http://stackoverflow.com/questions/21250510/generate-pem-file-used-to-setup-apple-push-notification)
 
 Once you have got your .pem files upload them in the ```iOS Push Notifications``` section
+
+## Update the local config
+
+Change `baseUrl` in `config/config.dev.cson` and/or `config/config.prod.cson`
+
+```
+"cordova":
+    "pushNotifications":
+        "enabled": false
+        "baseUrl": "http://yourDomain.com/pnfw"
+```
+
+To make sure your web service works open `http://yourDomain.com/pnfw/register/` in your browser. You should see that:
+
+```
+{
+"error": "401",
+"reason": "Unauthorized",
+"detail": "Invalid HTTP method"
+}
+```

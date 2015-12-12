@@ -18,6 +18,7 @@
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashScreen" value="screen" />
     <!-- ANDROID -->
+    <preference name="CrosswalkAnimatable" value="true" />
     <preference name="android-minSdkVersion" value="14"/>
     <preference name="android-targetSdkVersion" value="14"/>
     <preference name="CROSSWALK_ANDROID_VERSION" value="14+" />

@@ -9,3 +9,8 @@
 "translation":
     "displayed" : ["en", "fr", "zh", "es", "pl", "de", "pt", "it"]
     "prefered": "en"
+
+"cordova":
+    "pushNotifications":
+        "enabled": false
+        "baseUrl": "http://yourDomain.com/pnfw"

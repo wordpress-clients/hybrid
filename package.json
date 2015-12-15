@@ -6,6 +6,7 @@
     "main": "index.js",
     "scripts": {
         "build": "bash ./release.sh",
+        "installWPHC": "cd scripts && node ./install.js",
         "devserver": "webpack-dev-server --port 8080 --json --progress",
         "dumpdev": "rm -rf www/* && webpack --progress --colors -d",
         "dumpprod": "rm -rf www/* && webpack --progress --colors --config webpack.config.prod.js -p",

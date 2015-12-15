@@ -12,6 +12,7 @@
   * https://play.google.com/store/apps/details?id=com.shprinkinc.wordpresshybridclient
   * http://hiwaldorf.com/app/
   * https://play.google.com/store/apps/details?id=fr.silentkernel.app
+  * https://play.google.com/store/apps/details?id=com.notmyfault
 * IOS
   * https://itunes.apple.com/cn/app/id1030393337
 

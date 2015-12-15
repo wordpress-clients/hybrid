@@ -1,8 +1,11 @@
 # Build
 
+Install platforms, plugins and crosswalk
+
 ```
-npm run installCordova
+ionic state restore
 ```
+
 
 All the necessary plugins will be installed as well.
 
@@ -43,7 +46,7 @@ Plug your device in if you have one (make sure your device is listed by running:
 # Dump dev files within the www folder
 npm run dumpdev
 
-npm run runAndroid
+npm run android
 ```
 
 NB: If you want to test the minification you could also run the prod version on debug mode by using ```npm run dumpprod``` instead of ```npm run dumpdev```
@@ -87,7 +90,7 @@ Plug your device in if you have one or let iOS simulator handle it.
 # Dump dev files within the www folder
 npm run dumpdev
 
-npm run emulateIOS
+npm run iosEmulator
 ```
 
 NB: If you want to test the minification you could also run the prod version on debug mode by using ```npm run dumpprod``` instead of ```npm run dumpdev```
@@ -105,7 +108,7 @@ For details about various requirements to deploy to a device, refer to the Cordo
 # Dump dev files within the www folder
 npm run dumpdev
 
-npm run runIOS
+npm run ios
 ```
 
 ### URL whitelist
@@ -123,5 +126,5 @@ More details: https://github.com/apache/cordova-plugin-whitelist
 To have logs dunp in the terminal you can use ```--consolelogs``` options
 
 ```
-npm run runIOS -- --consolelogs
+npm run ios -- --consolelogs
 ```

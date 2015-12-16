@@ -133,8 +133,9 @@ app.controller 'WPHCMainController' , ($log, $WPHCConfig) ->
 RUN
 ###
 app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $ionicPlatform, $WPHCAccessibility, $cordovaSplashscreen, $WPHCInit) ->
+    'ngInject';
     $rootScope.appLoaded = undefined
-
+    console.log('$cordovaSplashscreen', $cordovaSplashscreen)
     # handling debug events
     if $WPHCConfig.debugEnabled
         $rootScope.$on '$stateNotFound', (event, unfoundState, fromState, fromParams) ->

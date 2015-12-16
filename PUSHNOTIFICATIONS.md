@@ -30,7 +30,7 @@ Do not forget to save.
 ```
 npm run dumpdev
 
-npm run runAndroid
+npm run android
 ```
 
 Open the console via Chrome dev tools ```chrome://inspect/#devices``` and inspect your device.

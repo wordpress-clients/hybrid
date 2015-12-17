@@ -1,5 +1,5 @@
 <div list="posts">
-    <div class="list card card-posts repeat-animation" ng-repeat="page in pagesCtrl.pages track by $index">
+    <div class="list card card-posts repeat-animation" ng-repeat="page in pagesCtrl.pages">
         <div ui-sref="public.pages.id(::{ id: page.id })">
             <div class="item item-image" ng-if="::page.featured_image != 0" wphc-img-background-cache="{{::pagesCtrl.featureImages[page.id]}}">
                 <div class="img-border"></div>

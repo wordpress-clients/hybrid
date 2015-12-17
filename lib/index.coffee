@@ -99,10 +99,11 @@ app.config require('./config/ionic.config.coffee');
 ###
 REST CONF
 ###
-app.config ($WPHCConfig, WpApiProvider) ->
+app.config ($WPHCConfig, WpApiProvider, $httpProvider) ->
     WpApiProvider.setDefaultHttpProperties
         timeout: _.get($WPHCConfig, 'api.timeout') || 5000
     WpApiProvider.setBaseUrl _.get($WPHCConfig, 'api.baseUrl') || null
+    $httpProvider.defaults.cache = false
 
 ###
 CACHE CONF
@@ -135,7 +136,6 @@ RUN
 app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $ionicPlatform, $WPHCAccessibility, $cordovaSplashscreen, $WPHCInit) ->
     'ngInject';
     $rootScope.appLoaded = undefined
-    console.log('$cordovaSplashscreen', $cordovaSplashscreen)
     # handling debug events
     if $WPHCConfig.debugEnabled
         $rootScope.$on '$stateNotFound', (event, unfoundState, fromState, fromParams) ->

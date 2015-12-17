@@ -1,0 +1,84 @@
+"pullToRefresh": "Tira per aggiornare!"
+"retry": "Riprova"
+"back": "Indietro"
+"error": "Qualcosa è andato storto, riprova nuovamente."
+"attemptToConnect": "Tentativo di connessione {{attempt}} di {{attemptMax}}."
+"yes": "Si"
+"no" : "No"
+"emptyList" : "Non c'è nulla qui!"
+"menu":
+    "title": "Menu"
+    "home": "Home"
+    "tags": "Tag"
+    "pages": "Pagine"
+    "posts": "Post"
+    "authors": "Autori"
+    "search": "Cerca"
+    "bookmarks": "Segnalibri"
+    "socialNetworks": "Social Networks"
+    "categories": "Categorie"
+    "settings": "Impostazioni"
+    "customPosts": "Post personalizzati"
+    "customTaxonomy": "Tassonomia personalizzata"
+"pushNotifications":
+    "newContent":
+        "title": "Nuovo contenuto!"
+        "text": "Un nuovo post/pagina: '{{postTitle}}' è stato rilasciato su {{appTitle}}, vuoi aprirlo?"
+"bookmark":
+    "title": "Segnalibri"
+    "emptyList" : "Nessun segnalibro!"
+    "bookmarked" : "Segnato!"
+    "removed" : "Segnalibro eliminato!"
+"tags":
+    "title": "Tag"
+"tag":
+    "title": "Tag: {{name}}"
+"customTaxonomy":
+    "title": "{{term}}: {{name}}"
+"categories":
+    "title": "Categorie"
+"category":
+    "title": "Categoria: {{name}}"
+"home":
+    "title": "Home"
+"search":
+    "inputPlaceholder": "Cerca"
+    "title": "Cerca"
+    "titleQuery": "Cerca: {{query}}"
+"sharing":
+    "shared": "Condiviso!"
+"authors":
+    "title": "Autori"
+"author":
+    "title": "Autore: {{name}}"
+"pages":
+    "title": "Pagine"
+"posts":
+    "title": "Posts"
+    "featured": "In primo piano"
+"post":
+    "comments": "Commenti"
+    "openInBrowser": "Apri nel browser"
+"about":
+    "title": "About"
+"params":
+    "title": "Parametri"
+    "offlineMode": "Modalità Offline (disponibile presto)"
+    "fontSize": "Dimensione font dei post"
+    "language": "Lingua"
+"languages":
+    "en": "Inglese"
+    "fr": "Francese"
+    "zh": "Cinese"
+    "es": "Spagnolo"
+    "pl": "Polacco"
+    "de": "Tedesco"
+    "pt": "Portoghese"
+    "it": "Italiano"
+    "nl": "Olandese"
+"fontSize":
+    "small": "Piccolo"
+    "medium": "Medio"
+    "large": "Grande"
+    "x-large": "XGrande"
+    "xx-large": "XXGrande"

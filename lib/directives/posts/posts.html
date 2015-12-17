@@ -1,5 +1,5 @@
 <div list="posts">
-    <div class="list card card-posts repeat-animation" ng-repeat="post in postCtrl.posts track by $index">
+    <div class="list card card-posts repeat-animation" ng-repeat="post in postCtrl.posts">
         <div ui-sref="public.post(::{ id: post.id })">
             <div class="item item-image" ng-if="::post.featured_image != 0" wphc-img-background-cache="{{::postCtrl.featureImages[post.id]}}">
                 <div class="img-border"></div>

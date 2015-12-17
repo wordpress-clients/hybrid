@@ -3,7 +3,6 @@ window.WPHC = window.WPHC || {}
 
 require 'ionic-sdk/release/js/ionic.bundle.js'
 require './angular-ios9-uiwebview.patch.js'
-require 'angular-translate'
 require 'angular-cache'
 require 'angular-moment'
 require 'moment'
@@ -20,6 +19,7 @@ authorsModule = require './authors/index.js'
 taxonomiesModule = require './taxonomies/index.js'
 filtersModule = require './filters/index.js'
 directivesModule = require './directives/index.js'
+languageModule = require './language/index.js'
 
 # Style entry point
 require './scss/bootstrap'
@@ -31,7 +31,6 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
     'ionic-native-transitions'
     'ui.router'
     'wp-api-angularjs'
-    'pascalprecht.translate'
     'angular-cache'
     'angularMoment'
     customPostsModule
@@ -41,13 +40,13 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
     postsModule
     searchModule
     authorsModule
+    languageModule
     require('./bookmark/bookmark.module').name
     require('./post/post.module').name
     require('./menu/menu.module').name
     require('./cordova/cordova.module').name
     require('./params/params.module').name
     require('./about/about.module').name
-    require('./language/language.module').name
     require('./accessibility/accessibility.module').name
     require('./cacheImg/cacheImg.module').name
     require('./syntaxHighlighter/syntaxHighlighter.module').name
@@ -100,24 +99,11 @@ app.config require('./config/ionic.config.coffee');
 ###
 REST CONF
 ###
-app.config ($WPHCConfig, WpApiProvider) ->
+app.config ($WPHCConfig, WpApiProvider, $httpProvider) ->
     WpApiProvider.setDefaultHttpProperties
         timeout: _.get($WPHCConfig, 'api.timeout') || 5000
     WpApiProvider.setBaseUrl _.get($WPHCConfig, 'api.baseUrl') || null
-
-###
-TRANSLATION CONF
-###
-app.config ($translateProvider, $WPHCLanguageProvider) ->
-    languages = $WPHCLanguageProvider.getLanguages()
-    for i, language of languages
-        $translateProvider.translations language, require './translations/' + language
-
-    $translateProvider
-        .preferredLanguage $WPHCLanguageProvider.getPreferedLanguage()
-        .registerAvailableLanguageKeys languages, $WPHCLanguageProvider.getLanguagesMapping()
-        .fallbackLanguage 'en'
-        .useSanitizeValueStrategy 'escape'
+    $httpProvider.defaults.cache = false
 
 ###
 CACHE CONF
@@ -148,8 +134,8 @@ app.controller 'WPHCMainController' , ($log, $WPHCConfig) ->
 RUN
 ###
 app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $ionicPlatform, $WPHCAccessibility, $cordovaSplashscreen, $WPHCInit) ->
+    'ngInject';
     $rootScope.appLoaded = undefined
-
     # handling debug events
     if $WPHCConfig.debugEnabled
         $rootScope.$on '$stateNotFound', (event, unfoundState, fromState, fromParams) ->

@@ -8,7 +8,7 @@ var path = require('path'),
     extend = require('util')._extend,
     deepExtend = require('deep-extend'),
     CSON = require('cson'),
-    projectConfig = deepExtend(CSON.requireFile('./config/config.default.cson'), CSON.requireFile('./config/config.dev.cson')),
+    projectConfig = deepExtend(CSON.requireFile('./config/config.default.cson'), CSON.requireFile('./config/config.prod.cson')),
     webpackConfig = require('./webpack.config.js'),
     HtmlWebpackPlugin = require('html-webpack-plugin');
 

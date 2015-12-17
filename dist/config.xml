@@ -29,6 +29,6 @@
         <param name="ios-package" value="CDVStatusBar" onload="true" />
     </feature>
     <resources>
-        <integer name="google_play_services_version">4323000</integer>
+        <integer name="google_play_services_version">5089000</integer>
     </resources>
 </widget>

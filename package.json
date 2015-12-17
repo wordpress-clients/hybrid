@@ -1,35 +1,25 @@
 {
   "name": "wordpress-hybrid-client",
-  "version": "2.0.0-alpha2",
+  "version": "2.0.0-alpha3",
   "title": "wordpress-hybrid-client",
   "description": "AngularJS client using Ionic Framework and based on the json-rest-api plugin: https://wordpress.org/plugins/json-rest-api/ with CORS enabled.",
   "main": "index.js",
   "scripts": {
     "build": "bash ./release.sh",
     "installWPHC": "cd scripts && node ./install.js",
-    "installCordova": "bash ./install_cordova.sh",
     "devserver": "webpack-dev-server --port 8080 --json --progress",
     "dumpdev": "rm -rf www/* && webpack --progress --colors -d",
     "dumpprod": "rm -rf www/* && webpack --progress --colors --config webpack.config.prod.js -p",
-    "runAndroid": "npm run dumpdev && cordova run android",
-    "runIOS": "cordova run ios",
-    "runIosEmulator": "npm run dumpdev && cordova run ios",
-    "runIosDevice": "npm run dumpdev && cordova run ios --device",
+    "android": "npm run dumpdev && cordova run android",
+    "iosEmulator": "npm run dumpdev && cordova run ios",
+    "ios": "npm run dumpdev && cordova run ios --device",
     "cordova": "cordova",
     "buildAndroid": "cordova build android --device",
     "buildProdAndroid": "cordova build android --device --release",
     "buildIOS": "cordova build ios --device",
     "buildProdIOS": "cordova build ios --device --release",
     "buildAll": "cordova build android ios --device",
-    "buildProdAll": "cordova build android ios --device --release",
-    "pluginAddAll": "cordova plugin add cordova-plugin-crosswalk-webview@1.2.0 cordova-plugin-whitelist@1.0.0 cordova-plugin-inappbrowser@1.0.1 cordova-plugin-splashscreen@2.1.0 cordova-plugin-file@2.1.0 cordova-plugin-file-transfer@1.2.1 cordova-plugin-device@1.0.1 cordova-plugin-globalization@1.0.1 cordova-plugin-console@1.0.1 cordova-plugin-network-information@1.0.1 cordova-plugin-dialogs@1.1.1 org.pushandplay.cordova.apprate@1.1.7 cordova-plugin-x-toast@2.1.1 nl.x-services.plugins.socialsharing@4.3.19 com.ionic.keyboard@1.0.4 cordova-plugin-googleplayservices@19.0.1 cordova-plugin-statusbar@1.0.1 https://github.com/phonegap-build/PushPlugin.git#2.5.0 cordova-plugin-google-analytics@0.7.1 https://github.com/Telerik-Verified-Plugins/NativePageTransitions#0.4.3",
-    "platformAddAndroid": "cordova platform add android",
-    "platformAddIOS": "cordova platform add ios",
-    "platformAddAll": "cordova platform add android ios",
-    "ionicBuild": "cordova build --device --release",
-    "emulateIOS": "cordova emulate ios",
-    "rmPlugin": "cordova plugin rm",
-    "listPlugin": "cordova plugin list"
+    "buildProdAll": "cordova build android ios --device --release"
   },
   "keywords": [
     "wp-api",
@@ -94,12 +84,40 @@
     "highlight.js": "^8.9.0",
     "imagesloaded": "^3.1.8",
     "imgcache.js": "^1.0.0",
-    "ionic-native-transitions": "^v1.0.0-beta6",
-    "ionic-sdk": "^1.1.0",
+    "ionic-native-transitions": "v1.0.0-rc5",
+    "ionic-sdk": "~1.2.0",
     "lodash": "^3.9.3",
     "moment": "^2.9.0",
-    "ng-cordova": "^0.1.20-alpha",
+    "ng-cordova": "^0.1.23-alpha",
     "v-accordion": "~1.3.1",
     "wp-api-angularjs": "^2.0.0-rc2"
-  }
+  },
+  "cordovaPlugins": [
+    "cordova-plugin-whitelist@1.0.0",
+    "cordova-plugin-inappbrowser@1.0.1",
+    "cordova-plugin-splashscreen@2.1.0",
+    "cordova-plugin-file@2.1.0",
+    "cordova-plugin-file-transfer@1.2.1",
+    "cordova-plugin-device@1.0.1",
+    "cordova-plugin-globalization@1.0.1",
+    "cordova-plugin-console@1.0.1",
+    "cordova-plugin-network-information@1.0.1",
+    "cordova-plugin-dialogs@1.1.1",
+    "org.pushandplay.cordova.apprate@1.1.7",
+    "cordova-plugin-x-toast@2.1.1",
+    "nl.x-services.plugins.socialsharing@4.3.19",
+    "com.ionic.keyboard@1.0.4",
+    "cordova-plugin-googleplayservices@19.0.3",
+    "cordova-plugin-statusbar@1.0.1",
+    "cordova-plugin-google-analytics@0.7.1",
+    {
+      "locator": "https://github.com/Telerik-Verified-Plugins/NativePageTransitions#0.5.5",
+      "id": "com.telerik.plugins.nativepagetransitions"
+    },
+    "phonegap-plugin-push@1.2.3"
+  ],
+  "cordovaPlatforms": [
+    "android",
+    "ios"
+  ]
 }

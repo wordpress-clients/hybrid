@@ -9,12 +9,17 @@
 * [FEATURE] Pages list <https://github.com/shprink/wordpress-hybrid-client/issues/86>
 * [FEATURE] Custom posts and taxonomies <https://github.com/shprink/wordpress-hybrid-client/issues/80>
 
+<a name="2.0.0-beta5"></a>
+### 2.0.0-beta5 (2015-12-22)
+
+* [BUG] Fix WP-API api changes to work with beta9
+
 #### Breaking changes:
 
 * [CONFIG] `config.json` does not exist anymore. The installation (`npm run installWPHC`) creates several config files in the `config` folder. Among those there are `config/config.dev.cson` and `config/config.prod.cson`. Those two files overwrite `config/config.default.cson` (this on is read only, do not modify).
 
 <a name="1.7.1"></a>
-### 1.7.1 (WIP)
+### 1.7.1
 
 * [BUG] Fix white screen after splashscreen on iOS:  <https://github.com/shprink/wordpress-hybrid-client/issues/91>
 * [CONFIG CORDOVA]: Add the following to your `config.xml`: `<preference name="CrosswalkAnimatable" value="true" />`

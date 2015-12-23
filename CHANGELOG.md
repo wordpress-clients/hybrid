@@ -13,10 +13,10 @@
 
 * [CONFIG] `config.json` does not exist anymore. The installation (`npm run installWPHC`) creates several config files in the `config` folder. Among those there are `config/config.dev.cson` and `config/config.prod.cson`. Those two files overwrite `config/config.default.cson` (this on is read only, do not modify).
 
-<a name="2.0.0-beta5"></a>
-### 2.0.0-beta5 (2015-12-22)
+<a name="2.0.0-alpha5"></a>
+### 2.0.0-alpha5 (2015-12-22)
 
-* [BUG] Fix WP-API api changes to work with beta9
+* [BUG] Fix WP-API api changes to work with WP-API-beta9
 
 <a name="1.7.1"></a>
 ### 1.7.1

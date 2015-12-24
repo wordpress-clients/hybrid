@@ -73,8 +73,8 @@ app.config ($stateProvider, $urlRouterProvider) ->
 ANGULAR CONF
 ###
 app.config ($logProvider, $compileProvider) ->
-    $logProvider.debugEnabled IS_PROD then false else true
-    $compileProvider.debugInfoEnabled IS_PROD then false else true
+    $logProvider.debugEnabled if IS_PROD then false else true
+    $compileProvider.debugInfoEnabled if IS_PROD then false else true
 
 ###
 NATIVE TRANSITIONS CONF
@@ -114,7 +114,7 @@ app.config ($WPHCConfig, CacheFactoryProvider) ->
 MEMORY STATS CONF
 ###
 app.config ($WPHCConfig, $compileProvider) ->
-    $compileProvider.debugInfoEnabled IS_PROD then false else true
+    $compileProvider.debugInfoEnabled if IS_PROD then false else true
 
 ###
 MAIN CONTROLLER

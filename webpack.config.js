@@ -8,7 +8,7 @@ var path = require('path'),
     cordovaLib = require('cordova').cordova_lib,
     deepExtend = require('deep-extend'),
     CSON = require('cson'),
-    projectConfig = deepExtend(CSON.requireFile('./config/config.default.cson'), CSON.requireFile('./config/config.dev.cson')),
+    projectConfig = deepExtend(CSON.requireFile('./config/config.default.cson'), CSON.requireFile('./config/config.cson')),
     HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
     module: {
 
     noParse: [/autoit.js/],
-	    
+
         loaders: [{
             test: /[\/]highlight\.js$/,
             loader: 'expose?hljs'

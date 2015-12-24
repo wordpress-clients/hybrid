@@ -72,10 +72,9 @@ app.config ($stateProvider, $urlRouterProvider) ->
 ###
 ANGULAR CONF
 ###
-app.config ($WPHCConfig, $logProvider, $compileProvider) ->
-    debugEnabled = _.get($WPHCConfig, 'debugEnabled') || false
-    $logProvider.debugEnabled debugEnabled
-    $compileProvider.debugInfoEnabled debugEnabled
+app.config ($logProvider, $compileProvider) ->
+    $logProvider.debugEnabled IS_PROD then false else true
+    $compileProvider.debugInfoEnabled IS_PROD then false else true
 
 ###
 NATIVE TRANSITIONS CONF
@@ -115,7 +114,7 @@ app.config ($WPHCConfig, CacheFactoryProvider) ->
 MEMORY STATS CONF
 ###
 app.config ($WPHCConfig, $compileProvider) ->
-    $compileProvider.debugInfoEnabled _.get($WPHCConfig, 'debugEnabled') || false
+    $compileProvider.debugInfoEnabled IS_PROD then false else true
 
 ###
 MAIN CONTROLLER
@@ -137,7 +136,7 @@ app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $ionicPlatfor
     'ngInject';
     $rootScope.appLoaded = undefined
     # handling debug events
-    if $WPHCConfig.debugEnabled
+    if !IS_PROD
         $rootScope.$on '$stateNotFound', (event, unfoundState, fromState, fromParams) ->
             $log.info '$stateNotFound', unfoundState
         $rootScope.$on '$stateChangeError', (event, toState, toParams, fromState, fromParams, error) ->

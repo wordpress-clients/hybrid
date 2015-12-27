@@ -1,6 +1,6 @@
 # Configuration
 
-## Config.scss
+## `config/config.scss`
 
 This file allow you to overwrite Sass variables.
 
@@ -22,7 +22,19 @@ You can also overwrite Ionic variables: <http://ionicframework.jp/tutorials/cust
 
 To know all WPHC internal varaibles checkout ```lib/scss/_variables.scss```
 
-## Config.js
+## `config/templates`
+
+You can now create your own custom posts/taxonomies templates or overwrite any template of the app by registering them in the `config/templates/index.js` file.
+
+### Create custom posts templates
+
+Placeholder
+
+### Overwriting existing templates
+
+Placeholder
+
+## `config/config.js`
 
 Here is a simple view of what you can configure:
 

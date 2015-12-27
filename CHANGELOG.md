@@ -8,11 +8,18 @@
 * [FEATURE] Authors list <https://github.com/shprink/wordpress-hybrid-client/issues/30>
 * [FEATURE] Pages list <https://github.com/shprink/wordpress-hybrid-client/issues/86>
 * [FEATURE] Custom posts and taxonomies <https://github.com/shprink/wordpress-hybrid-client/issues/80>
+* [FEATURE] Templating <https://github.com/shprink/wordpress-hybrid-client/issues/7>
 
 #### Breaking changes:
 
 * [CONFIG] `config.json` does not exist anymore. The installation (`npm run installWPHC`) creates several config files in the `config` folder. `config/config.cson` file overwrites `config/config.default.cson` (this on is read only, do not modify).
 * [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
+
+<a name="2.0.0-alpha6"></a>
+### 2.0.0-alpha6 (2015-12-26)
+
+* [BUG] Custom posts templating <https://github.com/shprink/wordpress-hybrid-client/issues/135>
+* [FEATURE] Templating <https://github.com/shprink/wordpress-hybrid-client/issues/7>
 
 <a name="2.0.0-alpha5"></a>
 ### 2.0.0-alpha5 (2015-12-22)

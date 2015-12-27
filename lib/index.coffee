@@ -20,6 +20,8 @@ taxonomiesModule = require './taxonomies/index.js'
 filtersModule = require './filters/index.js'
 directivesModule = require './directives/index.js'
 languageModule = require './language/index.js'
+templatesModule = require './templates/index.js'
+overwriteModule = require '../config/index.js'
 
 # Style entry point
 require './scss/bootstrap'
@@ -42,7 +44,6 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
     authorsModule
     languageModule
     require('./bookmark/bookmark.module').name
-    require('./post/post.module').name
     require('./menu/menu.module').name
     require('./cordova/cordova.module').name
     require('./params/params.module').name
@@ -52,6 +53,8 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
     require('./syntaxHighlighter/syntaxHighlighter.module').name
     require('./init/init.module').name
     directivesModule
+    templatesModule
+    overwriteModule
 ]
 
 app.config ($stateProvider, $urlRouterProvider) ->

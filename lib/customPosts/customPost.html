@@ -3,6 +3,6 @@
     <ion-content>
         <wphc-loader ng-if="!customPostCtrl.item" on-load="customPostCtrl.init()"></wphc-loader>
         <ion-refresher pulling-text="{{ 'pullToRefresh' | translate}}" on-refresh="customPostCtrl.refresh()"></ion-refresher>
-        <wphc-customPost customPost="customPostCtrl.item" ng-if="customPostCtrl.item"></wphc-customPost>
+        <wphc-custom-post custom-post="customPostCtrl.item" type="{{customPostCtrl.type}}" ng-if="customPostCtrl.item"></wphc-custom-post>
     </ion-content>
 </ion-view>

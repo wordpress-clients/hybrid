@@ -1,0 +1,7 @@
+<div list="posts">
+    <div class="list card card-posts repeat-animation" ng-repeat="item in customPostsCtrl.list">
+        <a ui-sref="public.customPosts.id({ id: item.id, slug: customPostsCtrl.type})">
+            {{item.id}}
+        </a>
+    </div>
+</div>

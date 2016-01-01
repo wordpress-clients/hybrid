@@ -15,6 +15,7 @@
 - [X] Authors
 - [X] Search
 - [X] Push Notifications
+- [X] Custom template ready (overwrite any template of the app)
 - [X] Social sharing
 - [X] Sass variables
 - [X] About Page

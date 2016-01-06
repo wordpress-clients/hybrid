@@ -1,8 +1,9 @@
 let mod = angular.module('wordpress-hybrid-client.overwriteTemplates', []);
 
 mod.run(($templateCache) => {
-    $templateCache.put('customPost/example.html', require('!html!./customPost-example.html'));
-    $templateCache.put('customPosts/example.html', require('!html!./customPosts-example.html'))
+    // customPosts
+    $templateCache.put('customPosts/movie/item.html', require('!html!./customPosts/movie/item.html'));
+    $templateCache.put('customPosts/movie/list.html', require('!html!./customPosts/movie/list.html'));
 });
 
 export default mod = mod.name;

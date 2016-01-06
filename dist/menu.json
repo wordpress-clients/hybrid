@@ -9,11 +9,11 @@
 }, {
     "type": "folder",
     "trans": "menu.posts",
-    "icon": "icon ion-folder",
+    "icon": "icon ion-ios-paper",
     "list": [{
         "type": "internal",
-        "trans": "Post id:1",
-        "route": "public.post({ id: 1 })",
+        "trans": "Hello world",
+        "route": "public.posts.id({ id: 1 })",
         "icon": "icon ion-android-document"
     }, {
         "type": "internal",
@@ -24,11 +24,11 @@
 }, {
     "type": "folder",
     "trans": "menu.pages",
-    "icon": "icon ion-folder",
+    "icon": "icon ion-android-document",
     "list": [{
         "type": "internal",
-        "trans": "Page id:1",
-        "route": "public.pages.id({ id: 1 })",
+        "trans": "Sample page",
+        "route": "public.pages.id({ id: 2592 })",
         "icon": "icon ion-android-document"
     }, {
         "type": "internal",
@@ -39,17 +39,17 @@
 }, {
     "type": "folder",
     "trans": "menu.customPosts",
-    "icon": "icon ion-folder",
+    "icon": "icon ion-videocamera",
     "list": [{
         "type": "internal",
-        "trans": "Custom id:1",
-        "route": "public.customPosts.id({ id: 1, slug: 'customSlug'})",
-        "icon": "icon ion-wrench"
+        "trans": "La vie en rose",
+        "route": "public.customPosts.id({ id: 2498, slug: 'movie'})",
+        "icon": "icon ion-videocamera"
     }, {
         "type": "internal",
-        "trans": "All",
-        "route": "public.customPosts({slug: 'customSlug'})",
-        "icon": "icon ion-wrench"
+        "trans": "All Movies",
+        "route": "public.customPosts({slug: 'movie'})",
+        "icon": "icon ion-videocamera"
     }]
 }, {
     "type": "separator",
@@ -61,43 +61,48 @@
     "list": [{
         "type": "internal",
         "trans": "Uncategorized",
-        "route": "public.taxonomies.slug({ term: 'category', slug: 'uncategorized' })",
+        "route": "public.taxonomies.slug({ term: 'category', slug: 'uncategorized', postType: 'post' })",
         "icon": "icon ion-iphone"
     }, {
         "type": "internal",
         "trans": "All",
-        "route": "public.taxonomies({ term: 'category' })",
+        "route": "public.taxonomies({ term: 'category', postType: 'post'})",
         "icon": "icon ion-folder"
     }]
 }, {
     "type": "folder",
     "trans": "menu.tags",
-    "icon": "icon ion-folder",
+    "icon": "icon ion-pricetags",
     "list": [{
         "type": "internal",
-        "trans": "Dumb tag",
-        "route": "public.taxonomies.slug({ term: 'post_tag', slug: 'dumb' })",
+        "trans": "AngularJS",
+        "route": "public.taxonomies.slug({ term: 'post_tag', slug: 'angularjs', postType: 'post' })",
         "icon": "icon ion-iphone"
     }, {
         "type": "internal",
         "trans": "All",
-        "route": "public.taxonomies({ term: 'post_tag' })",
+        "route": "public.taxonomies({ term: 'post_tag', postType: 'post' })",
         "icon": "icon ion-pricetags"
     }]
 }, {
     "type": "folder",
     "trans": "menu.customTaxonomy",
-    "icon": "icon ion-folder",
+    "icon": "icon ion-ios-film",
     "list": [{
         "type": "internal",
-        "trans": "Dumb tag",
-        "route": "public.taxonomies.slug({ term: 'post_format', slug: 'dumb' })",
-        "icon": "icon ion-iphone"
+        "trans": "Audrey Tautou",
+        "route": "public.taxonomies.slug({ term: 'actor', slug: 'audrey-tautou', postType: 'movie' })",
+        "icon": "icon ion-ios-film"
+    },{
+        "type": "internal",
+        "trans": "Marion Cotillard",
+        "route": "public.taxonomies.slug({ term: 'actor', slug: 'marion-cotillard', postType: 'movie' })",
+        "icon": "icon ion-ios-film"
     }, {
         "type": "internal",
-        "trans": "All",
-        "route": "public.taxonomies({ term: 'post_format' })",
-        "icon": "icon ion-pricetags"
+        "trans": "All Actors",
+        "route": "public.taxonomies({ term: 'actor', postType: 'movie'})",
+        "icon": "icon ion-ios-film"
     }]
 }, {
     "type": "separator",

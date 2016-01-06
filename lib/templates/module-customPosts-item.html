@@ -1,8 +1,8 @@
 <ion-view>
-    <ion-nav-title>{{ customPostCtrl.title | translate}}</ion-nav-title>
+    <ion-nav-title>{{ customPostCtrl.item.title.rendered | translate}}</ion-nav-title>
     <ion-content>
         <wphc-loader ng-if="!customPostCtrl.item" on-load="customPostCtrl.init()"></wphc-loader>
         <ion-refresher pulling-text="{{ 'pullToRefresh' | translate}}" on-refresh="customPostCtrl.refresh()"></ion-refresher>
-        <wphc-custom-post custom-post="customPostCtrl.item" type="{{customPostCtrl.type}}" ng-if="customPostCtrl.item"></wphc-custom-post>
+        <wphc-custom-posts-item item="customPostCtrl.item" type="{{customPostCtrl.type}}" ng-if="customPostCtrl.item"></wphc-custom-posts-item>
     </ion-content>
 </ion-view>

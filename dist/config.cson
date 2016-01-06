@@ -1,8 +1,7 @@
-"debugEnabled": true
-"title": "[DEV] Your Blog title"
+"title": "Your Blog title"
 
 "api":
-    "baseUrl": "http://yourDomain.com/wp-json"
+    "baseUrl": "http://dev.julienrenaux.fr/wp-json"
     "timeout": 10000
     "maxAttempt": 3
 

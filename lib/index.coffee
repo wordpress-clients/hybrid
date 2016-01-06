@@ -11,6 +11,7 @@ require 'ionic-native-transitions'
 require 'expose?_!lodash'
 require 'wp-api-angularjs'
 require './config.js'
+overwriteModule = require '../config/index.js'
 customPostsModule = require './customPosts/index.js'
 pagesModule = require './pages/index.js'
 postsModule = require './posts/index.js'
@@ -21,7 +22,7 @@ filtersModule = require './filters/index.js'
 directivesModule = require './directives/index.js'
 languageModule = require './language/index.js'
 templatesModule = require './templates/index.js'
-overwriteModule = require '../config/index.js'
+paramsModule = require './params/index.js'
 
 # Style entry point
 require './scss/bootstrap'
@@ -43,10 +44,10 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
     searchModule
     authorsModule
     languageModule
+    paramsModule
     require('./bookmark/bookmark.module').name
     require('./menu/menu.module').name
     require('./cordova/cordova.module').name
-    require('./params/params.module').name
     require('./about/about.module').name
     require('./accessibility/accessibility.module').name
     require('./cacheImg/cacheImg.module').name

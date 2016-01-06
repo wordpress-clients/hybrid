@@ -6,6 +6,6 @@
     </ion-header-bar>
     <ion-content>
         <wphc-loader ng-if="!taxonomies.list.length"></wphc-loader>
-        <wphc-taxonomies taxonomies="taxonomies.list" on-click="modal.hide()" term="taxonomies.term"></wphc-taxonomies>
+        <wphc-taxonomies taxonomies="taxonomies.list" on-click="modal.hide()" term="taxonomies.term" post-type="taxonomies.type"></wphc-taxonomies>
     </ion-content>
 </ion-modal-view>

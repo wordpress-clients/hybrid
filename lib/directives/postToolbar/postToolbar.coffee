@@ -14,7 +14,7 @@ module.exports = angular.module('wordpress-hybrid-client.directives').directive 
         @hasShare = angular.isDefined $attrs.showShare
         @terms = @post._embedded['https://api.w.org/term'];
         @showTaxonomies = (translation, list, term) ->
-            $WPHCTaxonomies.showTaxonomiesInModal translation, list, term
+            $WPHCTaxonomies.showTaxonomiesInModal translation, list, term, 'post'
         @bookmark = () ->
             @isBookmarked = $WPHCBookmark.toggle @post
         @share = (platform, title, link) ->

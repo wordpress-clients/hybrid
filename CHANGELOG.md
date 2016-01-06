@@ -14,6 +14,7 @@
 
 * [CONFIG] `config.json` does not exist anymore. The installation (`npm run installWPHC`) creates several config files in the `config` folder. `config/config.cson` file overwrites `config/config.default.cson` (this on is read only, do not modify).
 * [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
+* [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
 <a name="2.0.0-alpha6"></a>
 ### 2.0.0-alpha6 (2015-12-26)

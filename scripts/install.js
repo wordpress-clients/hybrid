@@ -6,7 +6,6 @@ copy('../dist/config.xml', '../config.xml');
 copy('../dist/config.scss', '../config/config.scss');
 copy('../dist/index.js', '../config/index.js', true);
 copy('../dist/templates', '../config/templates');
-copy('../dist/about.md', '../config/about.md');
 copy('../release.sh.dist', '../release.sh');
 
 function copy(source, target, overwrite) {

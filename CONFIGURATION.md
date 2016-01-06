@@ -107,7 +107,7 @@ The media query used to determine when to always display the left menu.
 
 They are four types of menu item (internal|external|folder|separator).
 
-* ***internal***    Can be any page of the application (home|category|tag|parameters|about)
+* ***internal***    Can be any page of the application (home|category|tag|parameters)
 * ***external***    Any www website
 * ***folder***      Create a menu sublevel (you can add up to six levels)
 * ***separator***   Separate menu items
@@ -119,9 +119,6 @@ NB: For now the homepage is mandatory and cannot be a specific page.
 
 ```
 "settings": {
-    "about": {
-        "credit": true // Enable/disable credit
-    },
     "parameters": {
         "defaultFontSize": "medium" // "small" | "medium" | "large" | "x-large" | "xx-large"
     }

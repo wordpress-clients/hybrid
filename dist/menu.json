@@ -118,18 +118,18 @@
     "route": "public.bookmarks",
     "icon": "icon ion-bookmark"
 }, {
-    "type": "external",
-    "trans": "My blog",
-    "href": "http://julienrenaux.fr",
-    "icon": "icon ion-link"
-}, {
     "type": "internal",
     "trans": "params.title",
     "route": "public.params",
     "icon": "icon ion-gear-b"
 }, {
+    "type": "external",
+    "trans": "My blog (external link)",
+    "href": "http://julienrenaux.fr",
+    "icon": "icon ion-link"
+}, {
     "type": "internal",
-    "trans": "about.title",
-    "route": "public.about",
+    "trans": "About (page)",
+    "route": "public.pages.id({ id: 2596 })",
     "icon": "icon ion-information"
 }]

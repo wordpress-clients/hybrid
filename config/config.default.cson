@@ -41,8 +41,6 @@
 
 # SETTINGS PAGE
 "settings":
-    "about":
-        "credit": true
     "parameters":
         "defaultFontSize": "medium"
 

@@ -17,10 +17,11 @@
 * [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
 <a name="2.0.0-alpha6"></a>
-### 2.0.0-alpha6 (2015-12-26)
+### 2.0.0-alpha6 LATEST ALPHA! (2016-01-07)
 
 * [BUG] Custom posts templating <https://github.com/shprink/wordpress-hybrid-client/issues/135>
 * [FEATURE] Templating <https://github.com/shprink/wordpress-hybrid-client/issues/7>
+* [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
 <a name="2.0.0-alpha5"></a>
 ### 2.0.0-alpha5 (2015-12-22)

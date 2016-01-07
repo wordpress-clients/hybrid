@@ -1,3 +1,19 @@
+<a name="2.0.0"></a>
+### 2.0.0 (2015-10-08)
+
+[milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/2.0.0)
+
+<a name="1.7.4"></a>
+### 1.7.4 (2016-01-07)
+
+* Allow img Content-Security-Policy to be from the filesystem
+
+<a name="1.7.3"></a>
+### 1.7.3 (2015-12-12)
+
+* Update Ionic to 1.2
+* Update Crosswalk to 1.4
+
 <a name="1.7.0"></a>
 ### 1.7.0 (2015-10-08)
 

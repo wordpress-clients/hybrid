@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs = require('fs-extra');
 
 copy('../dist/config.cson', '../config/config.cson');

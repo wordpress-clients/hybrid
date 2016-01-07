@@ -1,5 +1,9 @@
 ## Install the WordPress plugin
 
+WPHC supports both free and pro version of Delite Studio's plugin for WP.
+
+More details about the product: <http://www.delitestudio.com/wordpress/push-notifications-for-wordpress/>
+
 Open your Wordpress admin page and install "Push Notifications for WordPress (Lite)" then activate it.
 
 ## Android
@@ -25,30 +29,6 @@ Then go to "Android Push Notifications (via GMC)" section and enter you Goolge A
 
 Do not forget to save.
 
-### Test Push Notifications on Android
-
-```
-npm run dumpdev
-
-npm run android
-```
-
-Open the console via Chrome dev tools ```chrome://inspect/#devices``` and inspect your device.
-
-If push notifications are enabled and you have properly generated a key from Google cloud you should have a log that look like this:
-
-```
- registration ID APFJFW91bFWEFWN3gIkOqYP-APFJFW91bFWEFWN3gIkOqYPAPFJFW91bFWEFWN3gIkOqYPAPFJFW91bFWEFWN3gIkOqYP
-```
-
-Copie this id and run the following command:
-
-```
-gulp push:android --apiKey W91bFWEFWN3gIkOqYPAPFJFW91bFWEFW --deviceId APFJFW91bFWEFWN3gIkOqYP-APFJFW91bFWEFWN3gIkOqYPAPFJFW91bFWEFWN3gIkOqYPAPFJFW91bFWEFWN3gIkOqYP
-```
-
-** Tip: ** You can add any number of devices using ```--deviceId``` several times
-
 ## iOS
 
 ### Configure the WordPress plugin
@@ -67,7 +47,7 @@ Once you have got your .pem files upload them in the ```iOS Push Notifications``
 
 ## Update the local config
 
-Change `baseUrl` in `config/config.dev.cson` and/or `config/config.prod.cson`
+Change `baseUrl` in `config/config.cson`
 
 ```
 "cordova":
@@ -85,3 +65,23 @@ To make sure your web service works open `http://yourDomain.com/pnfw/register/` 
 "detail": "Invalid HTTP method"
 }
 ```
+
+### Debug registration
+
+```
+npm run android
+# or
+npm run ios
+```
+
+Open the console via Chrome dev tools ```chrome://inspect/#devices``` and inspect your device.
+
+If push notifications are enabled and you have properly generated a key from Google cloud you should have a log that look like this:
+
+`[pushNotifications] registrationId APFJFW91bFWEFWN3gIkOqYP-APFJFW91bFWEFWN3gIkOqYPAPFJFW91bFWEFWN3gIkOqYPAPFJFW91bFWEFWN3gIkOqYP`
+
+It means the device has been registered.
+
+If an error happened you will have the following log:
+
+`[pushNotifications] error registering`

@@ -28,17 +28,50 @@ You can now create your own custom posts/taxonomies templates or overwrite any t
 
 ### Create custom posts templates
 
-Placeholder
+Custom posts need custom templates because WPHC cannot know in advance the properties of the returned object.
+
+After installation you will find a `config/templates` folder. This is your own folder, you can modify it in any way you want.
+
+In that folder you will find an example of custom templates for the custom post type `movie`.
+
+the `movie` folder contains `list.html` (list all movies) and `item.html` (particular movie).
+
+#### Register your own templates
+
+In `index.js` you will find the following line of code:
+
+```
+$templateCache.put('customPosts/movie/item.html', require('!html!./customPosts/movie/item.html'));
+$templateCache.put('customPosts/movie/list.html', require('!html!./customPosts/movie/list.html'));
+```
+
+What it does is to register custom templates following the naming convention `customPosts/<customPostType>/item.html` for items and `customPosts/<customPostType>/list.html` for lists.
+
+The `require('!html!./customPosts/movie/item.html')` part is just the path to your custom templates in your filesystem.
+
+If you want to add a new custom post type, for instance `countries`, you will end up adding those two lines:
+
+```
+$templateCache.put('customPosts/countries/item.html', require('!html!<pathToTheItemTemplate>'));
+$templateCache.put('customPosts/countries/list.html', require('!html!<pathToTheListTemplate>'));
+```
+
+Now navigating to `#/public/customPosts/countries` will list all the countries the WP-API returns and `#/public/customPosts/countries/<id>` will display one particular country.
 
 ### Overwriting existing templates
 
-Placeholder
+If you want to modify an existing template since v2 it is possible.
+
+WPHC templates are all located in `lib/templates`. These should not be touched. If you want to overwrite one just copy it and past it into your personal `config/templates` folder.
+
+For instance if you want to modify the way the menu is displayed, you will need to copy `lib/templates/directive/menu.html` and past it wherever you want in `config/templates` folder.
+
+After that you will need to register your new template in `lib/templates/index.js` (read the comments for help)
 
 ## `config/config.js`
 
 Here is a simple view of what you can configure:
 
-* debugEnabled
 * title
 * ionicConfig
 * api
@@ -82,10 +115,6 @@ Here is a simple view of what you can configure:
     "maxAttempt": 3 // The number of attempt the app will try before giving up. A button "Retry" will therefor be display
 }
 ```
-
-### debugEnabled [Boolean]
-
-Make sure this option is TRUE for ```config.dev.json``` and FALSE for ```config.prod.json```
 
 ### title [String]
 

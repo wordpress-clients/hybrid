@@ -1,8 +1,0 @@
-<div ng-style="::{height:getContentHeight() + 'px'}" class="wphc-loader" layout="column" layout-align="center center" layout-fill>
-    <ion-spinner ng-if="!promiseLoad" ng-hide="isAttemptMaxReached"></ion-spinner>
-    <span ng-if="promiseLoad" layout="column" layout-align="center center">
-        <ion-spinner ng-hide="isAttemptMaxReached"></ion-spinner>
-        <p ng-show="!isAttemptMaxReached && attempt > 0" translate="attemptToConnect" translate-values="{ attempt: '{{attempt}}', attemptMax: '{{attemptMax}}'}"></p>
-        <button class="button button-clear button-large button-positive" ng-show="isAttemptMaxReached" ng-click="load(true)">{{'retry' | translate}}</button>
-    </span>
-</div>

@@ -15,12 +15,12 @@
 - [X] Authors
 - [X] Search
 - [X] Push Notifications
+- [X] Custom templates (overwrite any template of the app)
 - [X] Social sharing
 - [X] Sass variables
-- [X] About Page
-- [X] Params Page
-- [X] Language switch [English|French|Chinese|Spanish|Polish|German]
-- [X] Accessibility (Post font size)
+- [X] Parameters Page
+      - Language switch [English|French|Chinese|Spanish|Polish|German]
+      - Accessibility (Post font size)
 - [X] Image cache on device
 - [X] App rate plugin
 - [X] Syntax highlighter

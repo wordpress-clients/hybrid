@@ -6,7 +6,7 @@ module.exports = angular.module 'wordpress-hybrid-client.cacheImg'
                 return
             deferred = $q.defer()
             $log.debug 'ImgCache initialising'
-            ImgCache.options.debug = $WPHCConfig.debugEnabled
+            ImgCache.options.debug = if IS_PROD then false else true
             ImgCache.options.chromeQuota = $WPHCConfig.cache.img.chromeQuota;
             ImgCache.options.localCacheFolder = $WPHCConfig.cache.img.localCacheFolder;
             ImgCache.options.useDataURI = $WPHCConfig.cache.img.useDataURI;

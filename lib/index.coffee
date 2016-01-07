@@ -11,6 +11,7 @@ require 'ionic-native-transitions'
 require 'expose?_!lodash'
 require 'wp-api-angularjs'
 require './config.js'
+overwriteModule = require '../config/index.js'
 customPostsModule = require './customPosts/index.js'
 pagesModule = require './pages/index.js'
 postsModule = require './posts/index.js'
@@ -20,6 +21,11 @@ taxonomiesModule = require './taxonomies/index.js'
 filtersModule = require './filters/index.js'
 directivesModule = require './directives/index.js'
 languageModule = require './language/index.js'
+templatesModule = require './templates/index.js'
+paramsModule = require './params/index.js'
+menuModule = require './menu/index.js'
+bookmarkModule = require './bookmark/index.js'
+accessibilityModule = require './accessibility/index.js'
 
 # Style entry point
 require './scss/bootstrap'
@@ -41,17 +47,17 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
     searchModule
     authorsModule
     languageModule
-    require('./bookmark/bookmark.module').name
-    require('./post/post.module').name
-    require('./menu/menu.module').name
+    paramsModule
+    menuModule
+    bookmarkModule
+    accessibilityModule
     require('./cordova/cordova.module').name
-    require('./params/params.module').name
-    require('./about/about.module').name
-    require('./accessibility/accessibility.module').name
     require('./cacheImg/cacheImg.module').name
     require('./syntaxHighlighter/syntaxHighlighter.module').name
     require('./init/init.module').name
     directivesModule
+    templatesModule
+    overwriteModule
 ]
 
 app.config ($stateProvider, $urlRouterProvider) ->
@@ -72,10 +78,9 @@ app.config ($stateProvider, $urlRouterProvider) ->
 ###
 ANGULAR CONF
 ###
-app.config ($WPHCConfig, $logProvider, $compileProvider) ->
-    debugEnabled = _.get($WPHCConfig, 'debugEnabled') || false
-    $logProvider.debugEnabled debugEnabled
-    $compileProvider.debugInfoEnabled debugEnabled
+app.config ($logProvider, $compileProvider) ->
+    $logProvider.debugEnabled if IS_PROD then false else true
+    $compileProvider.debugInfoEnabled if IS_PROD then false else true
 
 ###
 NATIVE TRANSITIONS CONF
@@ -115,7 +120,7 @@ app.config ($WPHCConfig, CacheFactoryProvider) ->
 MEMORY STATS CONF
 ###
 app.config ($WPHCConfig, $compileProvider) ->
-    $compileProvider.debugInfoEnabled _.get($WPHCConfig, 'debugEnabled') || false
+    $compileProvider.debugInfoEnabled if IS_PROD then false else true
 
 ###
 MAIN CONTROLLER
@@ -137,7 +142,7 @@ app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $ionicPlatfor
     'ngInject';
     $rootScope.appLoaded = undefined
     # handling debug events
-    if $WPHCConfig.debugEnabled
+    if !IS_PROD
         $rootScope.$on '$stateNotFound', (event, unfoundState, fromState, fromParams) ->
             $log.info '$stateNotFound', unfoundState
         $rootScope.$on '$stateChangeError', (event, toState, toParams, fromState, fromParams, error) ->

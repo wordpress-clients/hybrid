@@ -1,10 +1,9 @@
-"debugEnabled": false
 "title": "Your Blog title"
 
 # API
 "api":
-    "baseUrl": "http://yourDomain.com/wp-json"
-    "timeout": 10000
+    "baseUrl": "http://dev.julienrenaux.fr/wp-json"
+    "timeout": 30000
     "maxAttempt": 3
 
 # IONIC
@@ -42,8 +41,6 @@
 
 # SETTINGS PAGE
 "settings":
-    "about":
-        "credit": true
     "parameters":
         "defaultFontSize": "medium"
 

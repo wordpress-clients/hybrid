@@ -1,6 +1,6 @@
 # Configuration
 
-## Config.scss
+## `config/config.scss`
 
 This file allow you to overwrite Sass variables.
 
@@ -22,11 +22,56 @@ You can also overwrite Ionic variables: <http://ionicframework.jp/tutorials/cust
 
 To know all WPHC internal varaibles checkout ```lib/scss/_variables.scss```
 
-## Config.js
+## `config/templates`
+
+You can now create your own custom posts/taxonomies templates or overwrite any template of the app by registering them in the `config/templates/index.js` file.
+
+### Create custom posts templates
+
+Custom posts need custom templates because WPHC cannot know in advance the properties of the returned object.
+
+After installation you will find a `config/templates` folder. This is your own folder, you can modify it in any way you want.
+
+In that folder you will find an example of custom templates for the custom post type `movie`.
+
+the `movie` folder contains `list.html` (list all movies) and `item.html` (particular movie).
+
+#### Register your own templates
+
+In `index.js` you will find the following line of code:
+
+```
+$templateCache.put('customPosts/movie/item.html', require('!html!./customPosts/movie/item.html'));
+$templateCache.put('customPosts/movie/list.html', require('!html!./customPosts/movie/list.html'));
+```
+
+What it does is to register custom templates following the naming convention `customPosts/<customPostType>/item.html` for items and `customPosts/<customPostType>/list.html` for lists.
+
+The `require('!html!./customPosts/movie/item.html')` part is just the path to your custom templates in your filesystem.
+
+If you want to add a new custom post type, for instance `countries`, you will end up adding those two lines:
+
+```
+$templateCache.put('customPosts/countries/item.html', require('!html!<pathToTheItemTemplate>'));
+$templateCache.put('customPosts/countries/list.html', require('!html!<pathToTheListTemplate>'));
+```
+
+Now navigating to `#/public/customPosts/countries` will list all the countries the WP-API returns and `#/public/customPosts/countries/<id>` will display one particular country.
+
+### Overwriting existing templates
+
+If you want to modify an existing template since v2 it is possible.
+
+WPHC templates are all located in `lib/templates`. These should not be touched. If you want to overwrite one just copy it and past it into your personal `config/templates` folder.
+
+For instance if you want to modify the way the menu is displayed, you will need to copy `lib/templates/directive/menu.html` and past it wherever you want in `config/templates` folder.
+
+After that you will need to register your new template in `lib/templates/index.js` (read the comments for help)
+
+## `config/config.js`
 
 Here is a simple view of what you can configure:
 
-* debugEnabled
 * title
 * ionicConfig
 * api
@@ -71,10 +116,6 @@ Here is a simple view of what you can configure:
 }
 ```
 
-### debugEnabled [Boolean]
-
-Make sure this option is TRUE for ```config.dev.json``` and FALSE for ```config.prod.json```
-
 ### title [String]
 
 Your website title. The title will appear on the top of the left navigation menu
@@ -95,7 +136,7 @@ The media query used to determine when to always display the left menu.
 
 They are four types of menu item (internal|external|folder|separator).
 
-* ***internal***    Can be any page of the application (home|category|tag|parameters|about)
+* ***internal***    Can be any page of the application (home|category|tag|parameters)
 * ***external***    Any www website
 * ***folder***      Create a menu sublevel (you can add up to six levels)
 * ***separator***   Separate menu items
@@ -107,9 +148,6 @@ NB: For now the homepage is mandatory and cannot be a specific page.
 
 ```
 "settings": {
-    "about": {
-        "credit": true // Enable/disable credit
-    },
     "parameters": {
         "defaultFontSize": "medium" // "small" | "medium" | "large" | "x-large" | "xx-large"
     }

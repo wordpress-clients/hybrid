@@ -1,0 +1,23 @@
+<ion-view view-title="{{'params.title' | translate}}">
+    <ion-content>
+        <div class="list">
+            <!-- <ion-toggle ng-disabled="true" ng-model="item.checked" ng-checked="item.checked">
+                {{'params.offlineMode' | translate}}
+            </ion-toggle> -->
+            <div class="item item-input item-select">
+                <div class="input-label">
+                    {{'params.language' | translate}}
+                </div>
+                <select ng-model="paramsCtrl.selected.language" ng-change="paramsCtrl.changeLanguage()" ng-options="key as value | translate for (key , value) in paramsCtrl.languages">
+                </select>
+            </div>
+            <div class="item item-input item-select">
+                <div class="input-label">
+                    {{'params.fontSize' | translate}}
+                </div>
+                <select ng-model="paramsCtrl.selected.fontSize" ng-change="paramsCtrl.changeFontSize()" ng-options="object.value as object.trans | translate for object in paramsCtrl.fontSize | toArray | orderBy:'order'">
+                </select>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

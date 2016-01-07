@@ -1,0 +1,10 @@
+<ion-view view-title="{{'about.title' | translate}}">
+    <ion-content class="post padding" ng-class="::{'has-footer': main.appConfig.settings.about.credit}">
+        <div bind-and-compile-html="::(aboutCtrl.content  | prepLink)"></div>
+    </ion-content>
+    <ion-footer-bar align-title="center" class="bar-balanced" ng-if="::main.appConfig.settings.about.credit">
+        <div class="title">
+            Created with ♥ by <a href="http://wphc.julienrenaux.fr" target="_blank">WPHC</a>
+        </div>
+    </ion-footer-bar>
+</ion-view>

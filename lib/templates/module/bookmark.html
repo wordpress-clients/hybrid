@@ -1,0 +1,16 @@
+<ion-view>
+    <ion-nav-title>{{'bookmark.title' | translate}}</ion-nav-title>
+    <ion-content class="wphc-bookmark">
+        <wphc-empty-list list="bookmarkCtrl.posts" text="bookmark.emptyList" icon="ion-bookmark"></wphc-empty-list>
+        <wphc-loader ng-if="!bookmarkCtrl.posts"></wphc-loader>
+        <div class="list">
+            <div class="item item-button-right" collection-repeat="post in bookmarkCtrl.posts" ui-sref="public.posts.id({ id: post.id, post: post })">
+                <span ng-bind-html="post.title.rendered"></span>
+                <p class="text-muted">{{post.bookmarked | amTimeAgo}}</p>
+                <button class="button button-clear button-light button-large action-remove" ng-click="$event.stopPropagation(); bookmarkCtrl.remove(post)">
+                    <i class="icon ion-close-round"></i>
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

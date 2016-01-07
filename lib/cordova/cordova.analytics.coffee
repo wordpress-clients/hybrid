@@ -7,7 +7,7 @@ module.exports = angular.module 'wordpress-hybrid-client.cordova'
 
         $ionicPlatform.ready () ->
             $log.info 'cordova analytics ready'
-            $cordovaGoogleAnalytics.debugMode() if $WPHCConfig.debugEnabled
+            $cordovaGoogleAnalytics.debugMode() if !IS_PROD
             $cordovaGoogleAnalytics.startTrackerWithId $WPHCConfig.analytics.trackingId
 
             $rootScope.$on '$stateChangeSuccess', (event, toState, toParams, fromState, fromParams) ->

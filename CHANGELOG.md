@@ -8,15 +8,25 @@
 * [FEATURE] Authors list <https://github.com/shprink/wordpress-hybrid-client/issues/30>
 * [FEATURE] Pages list <https://github.com/shprink/wordpress-hybrid-client/issues/86>
 * [FEATURE] Custom posts and taxonomies <https://github.com/shprink/wordpress-hybrid-client/issues/80>
-
-<a name="2.0.0-beta5"></a>
-### 2.0.0-beta5 (2015-12-22)
-
-* [BUG] Fix WP-API api changes to work with beta9
+* [FEATURE] Templating <https://github.com/shprink/wordpress-hybrid-client/issues/7>
 
 #### Breaking changes:
 
-* [CONFIG] `config.json` does not exist anymore. The installation (`npm run installWPHC`) creates several config files in the `config` folder. Among those there are `config/config.dev.cson` and `config/config.prod.cson`. Those two files overwrite `config/config.default.cson` (this on is read only, do not modify).
+* [CONFIG] `config.json` does not exist anymore. The installation (`npm run installWPHC`) creates several config files in the `config` folder. `config/config.cson` file overwrites `config/config.default.cson` (this on is read only, do not modify).
+* [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
+* [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
+
+<a name="2.0.0-alpha6"></a>
+### 2.0.0-alpha6 LATEST ALPHA! (2016-01-07)
+
+* [BUG] Custom posts templating <https://github.com/shprink/wordpress-hybrid-client/issues/135>
+* [FEATURE] Templating <https://github.com/shprink/wordpress-hybrid-client/issues/7>
+* [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
+
+<a name="2.0.0-alpha5"></a>
+### 2.0.0-alpha5 (2015-12-22)
+
+* [BUG] Fix WP-API api changes to work with WP-API-beta9
 
 <a name="1.7.1"></a>
 ### 1.7.1

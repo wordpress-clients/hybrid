@@ -15,12 +15,10 @@
     "iosEmulator": "npm run dumpdev && cordova run ios",
     "ios": "npm run dumpdev && cordova run ios --device",
     "cordova": "cordova",
-    "buildAndroid": "cordova build android --device",
-    "buildProdAndroid": "cordova build android --device --release",
+    "buildAndroid": "BUILD_MULTIPLE_APKS=true cordova build android --device",
+    "buildProdAndroid": "BUILD_MULTIPLE_APKS=true cordova build android --device --release",
     "buildIOS": "cordova build ios --device",
-    "buildProdIOS": "cordova build ios --device --release",
-    "buildAll": "cordova build android ios --device",
-    "buildProdAll": "cordova build android ios --device --release"
+    "buildProdIOS": "cordova build ios --device --release"
   },
   "keywords": [
     "wp-api",
@@ -114,7 +112,8 @@
       "locator": "https://github.com/Telerik-Verified-Plugins/NativePageTransitions#0.5.5",
       "id": "com.telerik.plugins.nativepagetransitions"
     },
-    "phonegap-plugin-push@1.2.3"
+    "phonegap-plugin-push@1.2.3",
+    "cordova-plugin-crosswalk-webview@1.4.0"
   ],
   "cordovaPlatforms": [
     "android",

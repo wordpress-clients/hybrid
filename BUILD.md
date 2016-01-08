@@ -1,6 +1,8 @@
 # Build
 
-Install platforms, plugins and crosswalk
+Do not try to run the app on device if you have not [run the app on the browser](DEVELOPMENT.md) first.
+
+Install platforms, plugins and crosswalk:
 
 ```
 ionic state restore
@@ -10,6 +12,10 @@ ionic state restore
 All the necessary plugins will be installed as well:
 
 ![image](https://cloud.githubusercontent.com/assets/1388706/12190311/be4cb570-b58c-11e5-859e-23d0420f06d3.png)
+
+## Config.xml
+
+`config.xml` is setup to work by default but you will need to add the app id, app name, app description, author email and name. Make sure you do so before releasing in the stores.
 
 ## Android
 
@@ -45,13 +51,9 @@ sudo apt-get install ant
 Plug your device in if you have one (make sure your device is listed by running: ```$ adb devices```) or let Android emulator handle it.
 
 ```
-# Dump dev files within the www folder
-npm run dumpdev
-
+# Dump dev files within the www folder and run android in debug mode
 npm run android
 ```
-
-NB: If you want to test the minification you could also run the prod version on debug mode by using ```npm run dumpprod``` instead of ```npm run dumpdev```
 
 ### Debug
 
@@ -89,13 +91,9 @@ If you have ran ```npm run installCordova``` correctly you should have a Xcode p
 Plug your device in if you have one or let iOS simulator handle it.
 
 ```
-# Dump dev files within the www folder
-npm run dumpdev
-
+# Dump dev files within the www folder and run iOS in debug mode
 npm run iosEmulator
 ```
-
-NB: If you want to test the minification you could also run the prod version on debug mode by using ```npm run dumpprod``` instead of ```npm run dumpdev```
 
 ### Build and run on device dev version (Non minified and debug ON)
 
@@ -107,15 +105,13 @@ For details about various requirements to deploy to a device, refer to the Cordo
 1. Verify that the Code Signing section's Code Signing Identity within the project settings is set to your provisioning profile name.
 
 ```
-# Dump dev files within the www folder
-npm run dumpdev
-
+# Dump dev files within the www folder and run iOS in debug mode
 npm run ios
 ```
 
 ### URL whitelist
 
-Add you webservice URL to the config.xml file
+Add you webservice URL to the `config.xml` file
 
 ```
 <allow-navigation href="http://example.com/*" />
@@ -125,7 +121,7 @@ More details: https://github.com/apache/cordova-plugin-whitelist
 
 ### Debug
 
-To have logs dunp in the terminal you can use ```--consolelogs``` options
+To have logs dump in the terminal you can use ```--consolelogs``` options
 
 ```
 npm run ios -- --consolelogs

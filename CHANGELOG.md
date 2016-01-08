@@ -16,6 +16,12 @@
 * [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
 * [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
+<a name="2.0.0-beta01"></a>
+### 2.0.0-beta01 (2016-01-08)
+
+* Doc Update
+* Force crosswalk to generate two apks
+
 <a name="2.0.0-alpha6"></a>
 ### 2.0.0-alpha6 LATEST ALPHA! (2016-01-07)
 

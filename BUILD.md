@@ -7,7 +7,9 @@ ionic state restore
 ```
 
 
-All the necessary plugins will be installed as well.
+All the necessary plugins will be installed as well:
+
+![image](https://cloud.githubusercontent.com/assets/1388706/12190311/be4cb570-b58c-11e5-859e-23d0420f06d3.png)
 
 ## Android
 

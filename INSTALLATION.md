@@ -1,16 +1,16 @@
-## Installation
+# Installation
 
-This installation works on both OSX and Linux. Windows is not supported yet, if you want to help with that let us know: <https://github.com/shprink/wordpress-hybrid-client/issues/39>
+This installation works on both OSX and Linux. Windows is not supported yet, if you want to help with that let us know: [https://github.com/shprink/wordpress-hybrid-client/issues/39](https://github.com/shprink/wordpress-hybrid-client/issues/39)
 
-### Preriquisites
+## Preriquisites
 
-* NodeJS (recommended: 4.x), please do not use npm 5.x for now
-* NPM (recommended: 3.3.x `sudo npm install -g npm`)
-* Ionic CLI `sudo npm install -g ionic`
+- NodeJS (recommended: 4.x), please do not use npm 5.x for now
+- NPM (recommended: 3.3.x `sudo npm install -g npm`)
+- Ionic CLI `sudo npm install -g ionic`
 
-If you are running linux you might need to install all of the following dependencies: <https://github.com/shprink/wphc-dockerbox/blob/master/Dockerfile#L13-L14>
+If you are running linux you might need to install all of the following dependencies: [https://github.com/shprink/wphc-dockerbox/blob/master/Dockerfile#L13-L14](https://github.com/shprink/wphc-dockerbox/blob/master/Dockerfile#L13-L14)
 
-### Clone repository
+## Clone repository
 
 ```
 $ git clone https://github.com/shprink/wordpress-hybrid-client.git
@@ -27,7 +27,7 @@ etc.
 $ git checkout <the-latest-version>
 ```
 
-### Install dependencies
+## Install dependencies
 
 The installation will not install anything globally to avoid potential version conflicts.
 
@@ -39,21 +39,20 @@ npm install
 This could takes several minutes.
 
 During the installation you might have the following error on OSX:
+- `ld: library not found for -lgcc_s.10.5`: Installing XCode 7 will solve the problem
 
-* `ld: library not found for -lgcc_s.10.5`: Installing XCode 7 will solve the problem
-
-### Config files
+## Config files
 
 ```
 # Copy local config
 npm run installWPHC
 ```
 
-Your personal config files live now in the `config` folder. You can modify all of them except `config.default.cson` which contains the default config that can be overwritten using `config.dev.cson` and `config.prod.cson`
+Your personal config files live now in the `config` folder. You can modify all of them except `config.default.cson` which contains the default config that can be overwritten using `config/config.cson`
 
-### Installing the Web service
+## Installing the Web service
 
-Install this plugin <https://wordpress.org/plugins/rest-api/> (v2.x) to your WordPress website then add the address to the `config.dev.cson` and `config.prod.cson` files:
+Install this plugin [https://wordpress.org/plugins/rest-api/](https://wordpress.org/plugins/rest-api/) (v2.x) to your WordPress website then add the address to the `config/config.cson`:
 
 ```
 "api":
@@ -61,3 +60,9 @@ Install this plugin <https://wordpress.org/plugins/rest-api/> (v2.x) to your Wor
 ```
 
 Now your Webservice is ready to be queried.
+
+> If you do not have your WP setup yet, no problem `http://dev.julienrenaux.fr/wp-json` is set by default for you to try features. Change it when you are ready.
+
+---
+
+Now you can either [configure](CONFIGURATION.md) your app or [start running the app](DEVELOPMENT.md) on the browser with default parameters.

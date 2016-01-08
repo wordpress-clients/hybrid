@@ -86,8 +86,6 @@ npm run buildAndroid
 npm run buildProdAndroid
 npm run buildIOS
 npm run buildProdIOS
-npm run buildAll
-npm run buildProdAll
 ```
 
 ## Support

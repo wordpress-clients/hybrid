@@ -1,6 +1,6 @@
 # Release
 
-Male sure you have ios and/or android platforms installed. If you have correctly ran ```npm run installCordova``` it should be fine otherwise go back to [BUILD.md](BUILD.md).
+Male sure you have ios and/or android platforms installed. If you are not sure go back to [BUILD.md](BUILD.md).
 
 ## Android
 
@@ -20,9 +20,11 @@ ANDROID_KEY_PATH="/path/to/keystore/my-release-key.keystore"
 ANDROID_KEY_ALIAS="alias_name"
 ```
 
-### Keyboard adjustement
+### Keyboard adjustment
 
-Open ```platforms/android/AndroidManifest.xml``` and change ```android:windowSoftInputMode="adjustResize"``` into ```android:windowSoftInputMode="adjustNothing"``` it will prevent screen hiccup when searching.
+Some Android versions can have a problem when the keyboard pops up (little hiccup of the app). If it the case on your app it can be prevented:
+
+Open ```platforms/android/AndroidManifest.xml``` and change ```android:windowSoftInputMode="adjustResize"``` into ```android:windowSoftInputMode="adjustNothing"```.
 
 ### Build PROD APKs
 

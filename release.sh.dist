@@ -13,7 +13,7 @@ read -p "Which platforms do you want to build? (android ios): " platforms
 platforms=${platforms:-"android ios"}
 
 # updgrade version before release
-gulp cordova:release --${version}
+npm run increaseVersion -- -s ${version}
 
 # package the app
 npm run dumpprod

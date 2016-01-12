@@ -38,31 +38,59 @@
 * IOS
   * https://itunes.apple.com/cn/app/id1030393337
 
-## Installation
+## Quick Start
+
+### Preriquisites
+
+- Git
+- NodeJS (recommended: 4.x), please do not use npm 5.x for now
+- NPM (recommended: 3.3.x)
+
+```
+# Clone and use the latest version
+$ git clone https://github.com/shprink/wordpress-hybrid-client.git && cd wordpress-hybrid-client
+# List all versions
+$ git tag
+$ git checkout <the-latest-version>
+
+# Install
+$ npm install && npm run installWPHC
+
+# Run on the browser
+$ npm run devserver
+```
+
+Open http://localhost:8080/webpack-dev-server/ in Chrome (the only browser supported). You should see the application running with `http://dev.julienrenaux.fr/wp-json` backend.
+
+To go further please read the documentations.
+
+## Documentations
+
+### Installation
 
 Read the manual: [INSTALLATION.md](INSTALLATION.md)
 
-## Configuration
+### Configuration
 
 Read the manual: [CONFIGURATION.md](CONFIGURATION.md)
 
-## Development
+### Development
 
 Read the manual: [DEVELOPMENT.md](DEVELOPMENT.md)
 
-## Push Notifications
+### Push Notifications
 
 Read the manual: [PUSHNOTIFICATIONS.md](PUSHNOTIFICATIONS.md)
 
-## Build Android & iOS
+### Build Android & iOS
 
 Read the manual: [BUILD.md](BUILD.md)
 
-## Release Android & iOS
+### Release Android & iOS
 
 Read the manual: [RELEASE.md](RELEASE.md)
 
-## Splashscreens and Icons
+### Splashscreens and Icons
 
 Read the manual: [SPLASHICONS.md](SPLASHICONS.md)
 

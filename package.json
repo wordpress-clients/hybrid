@@ -1,11 +1,12 @@
 {
   "name": "wordpress-hybrid-client",
-  "version": "2.0.0-beta01",
+  "version": "2.0.0-beta02",
   "title": "wordpress-hybrid-client",
   "description": "AngularJS client using Ionic Framework and based on the json-rest-api plugin: https://wordpress.org/plugins/json-rest-api/ with CORS enabled.",
   "main": "index.js",
   "scripts": {
     "build": "bash ./release.sh",
+    "restore": "ionic state restore",
     "installWPHC": "cd scripts && node ./install.js",
     "increaseVersion": "cd scripts && node ./increaseVersion.js",
     "devserver": "webpack-dev-server --port 8080 --json --progress",
@@ -48,7 +49,8 @@
     "coffee-loader": "^0.7.2",
     "coffee-script": "^1.10.0",
     "commander": "^2.9.0",
-    "cordova": "~5.3.1",
+    "ionic": "~1.7.12",
+    "cordova": "~5.4.1",
     "cson": "^3.0.2",
     "cson-loader": "^0.1.0",
     "css-loader": "^0.18.0",
@@ -105,14 +107,13 @@
     "cordova-plugin-x-toast@2.1.1",
     "nl.x-services.plugins.socialsharing@4.3.19",
     "com.ionic.keyboard@1.0.4",
-    "cordova-plugin-googleplayservices@19.0.3",
     "cordova-plugin-statusbar@1.0.1",
-    "cordova-plugin-google-analytics@0.7.1",
+    "cordova-plugin-google-analytics@0.8.1",
     {
       "locator": "https://github.com/Telerik-Verified-Plugins/NativePageTransitions#0.5.5",
       "id": "com.telerik.plugins.nativepagetransitions"
     },
-    "phonegap-plugin-push@1.2.3",
+    "phonegap-plugin-push@1.5.2",
     "cordova-plugin-crosswalk-webview@1.4.0"
   ],
   "cordovaPlatforms": [

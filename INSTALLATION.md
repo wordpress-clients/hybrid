@@ -6,7 +6,6 @@ This installation works on both OSX and Linux. Windows is not supported yet, if 
 
 - NodeJS (recommended: 4.x), please do not use npm 5.x for now
 - NPM (recommended: 3.3.x `sudo npm install -g npm`)
-- Ionic CLI `sudo npm install -g ionic`
 
 If you are running linux you might need to install all of the following dependencies: [https://github.com/shprink/wphc-dockerbox/blob/master/Dockerfile#L13-L14](https://github.com/shprink/wphc-dockerbox/blob/master/Dockerfile#L13-L14)
 
@@ -18,7 +17,7 @@ $ git clone https://github.com/shprink/wordpress-hybrid-client.git
 # Open the project folder
 $ cd wordpress-hybrid-client
 
-# List all tags
+# List all versions
 $ git tag
 v2.0.0
 etc.

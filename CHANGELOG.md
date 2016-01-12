@@ -16,6 +16,13 @@
 * [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
 * [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
+<a name="2.0.0-beta02"></a>
+### 2.0.0-beta02 (2016-01-12)
+
+* Remove Ionic and Cordova as global packages
+* Upgrade Cordova analytics and push notif plugins so there is no conflicts <https://github.com/shprink/wordpress-hybrid-client/issues/144>
+* Remove GooglePlayServices cordova plugin
+
 <a name="2.0.0-beta01"></a>
 ### 2.0.0-beta01 (2016-01-08)
 

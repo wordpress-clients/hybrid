@@ -5,7 +5,7 @@ Do not try to run the app on device if you have not [run the app on the browser]
 Install platforms, plugins and crosswalk:
 
 ```
-ionic state restore
+npm run restore
 ```
 
 
@@ -23,6 +23,16 @@ All the necessary plugins will be installed as well:
 
 * Android SDK
 * Ant
+
+Make sure you have the latest version of:
+
+* Android Support Repository
+* Android Support Library
+* Goole Play Services
+* Google Repository
+
+![image](https://cloud.githubusercontent.com/assets/1388706/12277502/3b0d91d0-b941-11e5-8286-4e07975e48cb.png)
+
 
 #### SDK
 

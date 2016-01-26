@@ -120,6 +120,8 @@ npm run buildProdIOS
 
 [![Flattr WPHC](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=shprink&url=https%3A%2F%2Fgithub.com%2Fshprink%2Fwordpress-hybrid-client)
 
+<script async="async" src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=contact@julienrenaux.fr" data-button="donate"></script>
+
 ## Contribute
 
 WordPress hybrid Client is Open Source, If you are interested in helping, please read the following:

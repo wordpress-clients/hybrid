@@ -26,7 +26,6 @@
 - [X] Syntax highlighter
 - [X] Offline (Bookmarks)
 - [X] Comments (Submitting is not supported yet)
-- [X] iOS9 support
 
 ## Built with WPHC
 

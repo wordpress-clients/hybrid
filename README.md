@@ -1,10 +1,13 @@
 # WordPress Hybrid Client
 
+<span class="badge-flattr"><a href="https://flattr.com/submit/auto?user_id=shprink&url=https%3A%2F%2Fgithub.com%2Fshprink%2Fwordpress-hybrid-client" title="Donate to this project using Flattr"><img src="https://img.shields.io/badge/flattr-donate-yellow.svg" alt="Flattr donate button" /></a></span>
+<span class="badge-paypal"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=PFP99GE9V56RS" title="Donate to this project using Paypal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" alt="PayPal donate button" /></a></span>
+
 ![screenshots](http://julienrenaux.fr/wp-content/uploads/2015/07/devices.jpg)
 
 ## Chat
 
-[![Join the chat at https://gitter.im/livingobjects/angular-memory-stats](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/shprink/wordpress-hybrid-client?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/shprink/wordpress-hybrid-client](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/shprink/wordpress-hybrid-client)
 
 ## Features
 
@@ -114,10 +117,6 @@ npm run buildProdAndroid
 npm run buildIOS
 npm run buildProdIOS
 ```
-
-## Support
-
-[![Flattr WPHC](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=shprink&url=https%3A%2F%2Fgithub.com%2Fshprink%2Fwordpress-hybrid-client)
 
 ## Contribute
 

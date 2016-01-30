@@ -94,7 +94,7 @@ sudo npm install -g ios-sim ios-deploy
 
 ### Open project in Xcode
 
-If you have ran ```npm run installCordova``` correctly you should have a Xcode project file located in ```/platforms/ios/*.xcodeproj```. Open it by double clicking it.
+You should have a Xcode project file located in ```/platforms/ios/*.xcodeproj```. Open it by double clicking it.
 
 ### Build and run emulated dev version (Non minified and debug ON)
 

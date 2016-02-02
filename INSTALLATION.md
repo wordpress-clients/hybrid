@@ -58,9 +58,13 @@ Install this plugin [https://wordpress.org/plugins/rest-api/](https://wordpress.
     "baseUrl": "http://YourDomain/wp-json"
 ```
 
-Now your Webservice is ready to be queried.
+Now your WebService is ready to be queried.
 
 > If you do not have your WP setup yet, no problem `http://dev.julienrenaux.fr/wp-json` is set by default for you to try features. Change it when you are ready.
+
+## Installing better image plugin (optional)
+
+If you want to reduce the number of HTTP requests made by WPHC to fetch feature images (one per image) you can install this plugin: <https://wordpress.org/plugins/better-rest-api-featured-images/>
 
 ---
 

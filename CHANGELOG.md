@@ -17,7 +17,7 @@
 * [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
 <a name="2.0.0-beta03"></a>
-### 2.0.0-beta03 (2016-01-29)
+### 2.0.0-beta03 (2016-02-02)
 
 * adding Russian translation <https://github.com/shprink/wordpress-hybrid-client/pull/159>
 * Integrate better-rest-api-featured-images <https://github.com/shprink/wordpress-hybrid-client/issues/150>

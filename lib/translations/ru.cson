@@ -1,0 +1,85 @@
+"pullToRefresh": "Потяните чтобы обновить!"
+"retry": "Повторить"
+"back": "Назад"
+"error": "Произошла ошибка. Пожалуйста, повторите."
+"attemptToConnect": "Попытка соединения {{attempt}} из {{attemptMax}}."
+"yes": "Да"
+"no" : "Нет"
+"emptyList" : "Ничего не найдено!"
+"menu":
+    "title": "Меню"
+    "home": "Домой"
+    "tags": "Метки"
+    "pages": "Страницы"
+    "posts": "Записи"
+    "authors": "Авторы"
+    "search": "Поиск"
+    "bookmarks": "Закладки"
+    "socialNetworks": "Социальные сети"
+    "categories": "Рубрики"
+    "settings": "Настройки"
+    "customPosts": "Пользовательские записи"
+    "customTaxonomy": "Пользовательские ярлыки"
+"pushNotifications":
+    "newContent":
+        "title": "Новый контент!"
+        "text": "Новая запись/страница: '{{postTitle}}' была только что добавлена в {{appTitle}}. Хочешь открыть?"
+"bookmark":
+    "title": "Закладки"
+    "emptyList" : "Пока нет закладок!"
+    "bookmarked" : "Закладка добавлена!"
+    "removed" : "Закладка удалена!"
+"tags":
+    "title": "Метки"
+"tag":
+    "title": "Метка: {{name}}"
+"customTaxonomy":
+    "title": "{{term}}: {{name}}"
+"categories":
+    "title": "Рубрики"
+"category":
+    "title": "Рубрика: {{name}}"
+"home":
+    "title": "Домой"
+"search":
+    "inputPlaceholder": "Поиск"
+    "title": "Поиск"
+    "titleQuery": "Поиск: {{query}}"
+"sharing":
+    "shared": "Отправлено!"
+"authors":
+    "title": "Авторы"
+"author":
+    "title": "Автор: {{name}}"
+"pages":
+    "title": "Страницы"
+"posts":
+    "title": "Записи"
+    "featured": "Рекомендуемые"
+"post":
+    "comments": "Комментарии"
+    "openInBrowser": "Открыть в браузере"
+"about":
+    "title": "Информация"
+"params":
+    "title": "Настройки"
+    "offlineMode": "Оффлайн режим (скоро)"
+    "fontSize": "Размер шрифта записей"
+    "language": "Язык"
+"languages":
+    "en": "Ангийский"
+    "fr": "Французский"
+    "zh": "Китайский"
+    "es": "Испанский"
+    "pl": "Польский"
+    "de": "Немецкий"
+    "pt": "Португальский"
+    "it": "Итальянский"
+    "nl": "Голландский"
+    "ru": "Русский"
+"fontSize":
+    "small": "Мелкий"
+    "medium": "Средний"
+    "large": "Крупный"
+    "x-large": "Крупный +"
+    "xx-large": "Самый крупный"

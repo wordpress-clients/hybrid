@@ -1,3 +1,12 @@
+###
+# BEWARE!!!
+# THIS FILE CANNOT BE MODIFIED
+# YOU CAN OVERWRITE ANY OF THE FOLLOWING IN config/config.cson
+# JUST COPY AND PAST WHAT YOU NEED
+###
+
+
+
 "title": "Your Blog title"
 
 # API
@@ -138,7 +147,7 @@
 
 # TRANSLATIONS
 "translation":
-    "displayed" : ["en", "fr", "zh", "es", "pl", "de", "pt", "it", "nl"]
+    "displayed" : ["en", "fr", "zh", "es", "pl", "de", "pt", "it", "nl","ru"]
     "prefered": "en"
     "available":
         "en":
@@ -159,6 +168,8 @@
             "it_*": "it"
         "nl":
             "nl_*": "nl"
+        "ru":
+            "ru_*": "ru"
 
 # ANALYTICS (GOOGLE ANALYTICS)
 "analytics":

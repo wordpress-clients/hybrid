@@ -68,7 +68,9 @@ For instance if you want to modify the way the menu is displayed, you will need 
 
 After that you will need to register your new template in `lib/templates/index.js` (read the comments for help)
 
-## `config/config.js`
+## `config/config.cson`
+
+The default values live under `config/config.default.cson` (file that you should not modify), if you wish to overwrite something from it, just copy it into your personal `config/config.cson` file with the same indentation.
 
 Here is a simple view of what you can configure:
 

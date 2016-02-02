@@ -19,6 +19,7 @@
 <a name="2.0.0-beta03"></a>
 ### 2.0.0-beta03 (2016-01-29)
 
+* adding Russian translation <https://github.com/shprink/wordpress-hybrid-client/pull/159>
 * Integrate better-rest-api-featured-images <https://github.com/shprink/wordpress-hybrid-client/issues/150>
 
 <a name="2.0.0-beta02"></a>

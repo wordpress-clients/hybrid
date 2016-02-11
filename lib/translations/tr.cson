@@ -1,0 +1,86 @@
+"pullToRefresh": "Yenilemek için çekin!"
+"retry": "Tekrar Dene"
+"back": "Geri"
+"error": "Bir şeyler ters gitti, lütfen tekrar deneyin."
+"attemptToConnect": "Tekrar Bağlanılıyor"
+"yes": "Evet"
+"no" : "Hayır"
+"emptyList" : "Burada bir şey yok!"
+"menu":
+    "title": "Menü"
+    "home": "Ana Sayfa"
+    "tags": "Etiketler"
+    "pages": "Sayfalar"
+    "posts": "Yazılar"
+    "authors": "Yazarlar"
+    "search": "Ara"
+    "bookmarks": "Favoriler"
+    "socialNetworks": "Sosyal Medya"
+    "categories": "Kategoriler"
+    "settings": "Ayarlar"
+    "customPosts": "Özel Gönderiler"
+    "customTaxonomy": "Özel Taksonomi"
+"pushNotifications":
+    "newContent":
+        "title": "Yeni Yazı Yayımlandı!"
+        "text": "Yeni Yazı/Sayfa: '{{postTitle}}' yayımlandı, açmak ister misiniz?"
+"bookmark":
+    "title": "Favoriler"
+    "emptyList" : "Henüz favori yazı yok!"
+    "bookmarked" : "Favorilere eklendi!"
+    "removed" : "Favorilerden kaldırıldı!"
+"tags":
+    "title": "Etiketler"
+"tag":
+    "title": "Etiket: {{name}}"
+"customTaxonomy":
+    "title": "{{term}}: {{name}}"
+"categories":
+    "title": "Kategoriler"
+"category":
+    "title": "Kategori: {{name}}"
+"home":
+    "title": "Ana sayfa"
+"search":
+    "inputPlaceholder": "Ara"
+    "title": "Ara"
+    "titleQuery": "Ara: {{query}}"
+"sharing":
+    "shared": "Paylaşıldı!"
+"authors":
+    "title": "Yazarlar"
+"author":
+    "title": "Yazar: {{name}}"
+"pages":
+    "title": "Sayfalar"
+"posts":
+    "title": "Yazılar"
+    "featured": "Öne çıkan"
+"post":
+    "comments": "Yorumlar"
+    "openInBrowser": "Tarayıcıda aç"
+"about":
+    "title": "Hakkımızda"
+"params":
+    "title": "Ayarlar"
+    "offlineMode": "Çevrimdışı mod (yakında)"
+    "fontSize": "Yazı Boyutu"
+    "language": "Dil"
+"languages":
+    "en": "İngilizce"
+    "tr": "Türkçe"
+    "fr": "Fransızca"
+    "zh": "Çince"
+    "es": "İspanyolca"
+    "pl": "Lehçe (Polonezce)"
+    "de": "Almanca"
+    "pt": "Portekizce"
+    "it": "İtalyanca"
+    "nl": "Felemenkçe"
+    "ru": "Rusça"
+"fontSize":
+    "small": "Küçük"
+    "medium": "Orta"
+    "large": "Büyük"
+    "x-large": "XBüyük"
+    "xx-large": "XXBüyük"

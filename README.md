@@ -22,7 +22,7 @@
 - [X] Social sharing
 - [X] Sass variables
 - [X] Parameters Page
-      - Language switch [English|French|Chinese|Spanish|Polish|German|Russian]
+      - Language switch [English|French|Chinese|Spanish|Polish|German|Russian|Turkish]
       - Accessibility (Post font size)
 - [X] Image cache on device
 - [X] App rate plugin

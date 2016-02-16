@@ -1,5 +1,18 @@
 # Configuration
 
+## `config/menu.json`
+
+That's where the menu can get modified.
+
+They are four types of menu item (internal|external|folder|separator).
+
+* ***internal***    Can be any page of the application (home|category|tag|parameters)
+* ***external***    Any www website
+* ***folder***      Create a menu sublevel (you can add up to six levels)
+* ***separator***   Separate menu items
+
+NB: The icons must be from ionicons.com
+
 ## `config/config.scss`
 
 This file allow you to overwrite Sass variables.

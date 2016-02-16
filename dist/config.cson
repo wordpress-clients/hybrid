@@ -6,10 +6,12 @@
     "maxAttempt": 3
 
 "translation":
-    "displayed" : ["en", "fr", "zh", "es", "pl", "de", "pt", "it"]
-    "prefered": "en"
+    # "displayed" : ["en", "fr"]
+    # "prefered": "en"
 
 "cordova":
     "pushNotifications":
         "enabled": false
         "baseUrl": "http://yourDomain.com/pnfw"
+        "android":
+            "senderID": ""

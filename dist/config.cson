@@ -13,3 +13,5 @@
     "pushNotifications":
         "enabled": false
         "baseUrl": "http://yourDomain.com/pnfw"
+        "android":
+            "senderID": ""

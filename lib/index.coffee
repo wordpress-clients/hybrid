@@ -109,6 +109,11 @@ app.config ($WPHCConfig, WpApiProvider, $httpProvider) ->
         timeout: _.get($WPHCConfig, 'api.timeout') || 5000
     WpApiProvider.setBaseUrl _.get($WPHCConfig, 'api.baseUrl') || null
     $httpProvider.defaults.cache = false
+    $httpProvider.interceptors.push ($log, $q, $injector, $WPHCConfig) ->
+        request: (config) ->
+            if _.startsWith config.url, $WPHCConfig.api.baseUrl
+                config.headers['Accept-Language'] = $injector.get('$WPHCLanguage').getLocale()
+            config || $q.resolve config
 
 ###
 CACHE CONF

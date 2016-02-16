@@ -16,6 +16,12 @@
 * [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
 * [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
+<a name="2.0.0-beta05"></a>
+### 2.0.0-beta05 (2016-02-16)
+
+* Adding Turkish language <https://github.com/shprink/wordpress-hybrid-client/pull/166>
+* [FEATURE] Adding Accept-Language header <https://github.com/shprink/wordpress-hybrid-client/issues/172>
+
 <a name="2.0.0-beta04"></a>
 ### 2.0.0-beta04 (2016-02-09)
 

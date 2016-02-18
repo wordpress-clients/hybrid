@@ -85,3 +85,11 @@ It means the device has been registered.
 If an error happened you will have the following log:
 
 `[pushNotifications] error registering`
+
+## Known issues
+
+### Parameter oauth_consumer_key is missing
+
+The register http request fails with this message: `{error: "401", reason: "Unauthorized", detail: "Parameter oauth_consumer_key is missing"}`
+
+[Solution](https://wordpress.org/support/topic/not-connect-the-android-app-to-wordpress-site-using-register-api)

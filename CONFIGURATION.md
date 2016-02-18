@@ -81,6 +81,44 @@ For instance if you want to modify the way the menu is displayed, you will need 
 
 After that you will need to register your new template in `lib/templates/index.js` (read the comments for help)
 
+## Frequently asked questions
+
+### How to change the home page
+
+The home page is by default the posts page. This can be changed in the `config/config.cson` file.
+
+Add the following and change state and params to the page you want:
+
+```
+# MENU (Default)
+"menu":
+    "defaultState":
+        "state": "public.posts"
+        "params": {}
+```
+
+#### Set the home page to the pages page:
+
+```
+# MENU
+"menu":
+    "defaultState":
+        "state": "public.pages"
+        "params": {}
+```
+
+#### Set the home page to a specific custom page:
+
+```
+# MENU
+"menu":
+    "defaultState":
+        "state": "public.customPosts"
+        "params": {"slug": "movie"}
+```
+
+Consult the `config/menu.json` to know about the different pages state and params.
+
 ## `config/config.cson`
 
 The default values live under `config/config.default.cson` (file that you should not modify), if you wish to overwrite something from it, just copy it into your personal `config/config.cson` file with the same indentation.

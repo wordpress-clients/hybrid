@@ -78,10 +78,10 @@ Open the console via Chrome dev tools ```chrome://inspect/#devices``` and inspec
 
 If push notifications are enabled and you have properly generated a key from Google cloud you should have a log that look like this:
 
-`[pushNotifications] registrationId APFJFW91bFWEFWN3gIkOqYP-APFJFW91bFWEFWN3gIkOqYPAPFJFW91bFWEFWN3gIkOqYPAPFJFW91bFWEFWN3gIkOqYP`
+`[pushNotifications] registered!`
 
 It means the device has been registered.
 
 If an error happened you will have the following log:
 
-`[pushNotifications] error registering`
+`[pushNotifications] register failed!`

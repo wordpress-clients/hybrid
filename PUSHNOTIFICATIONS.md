@@ -78,10 +78,18 @@ Open the console via Chrome dev tools ```chrome://inspect/#devices``` and inspec
 
 If push notifications are enabled and you have properly generated a key from Google cloud you should have a log that look like this:
 
-`[pushNotifications] registrationId APFJFW91bFWEFWN3gIkOqYP-APFJFW91bFWEFWN3gIkOqYPAPFJFW91bFWEFWN3gIkOqYPAPFJFW91bFWEFWN3gIkOqYP`
+`[pushNotifications] registered!`
 
 It means the device has been registered.
 
 If an error happened you will have the following log:
 
-`[pushNotifications] error registering`
+`[pushNotifications] register failed!`
+
+## Known issues
+
+### Parameter oauth_consumer_key is missing
+
+The register http request fails with this message: `{error: "401", reason: "Unauthorized", detail: "Parameter oauth_consumer_key is missing"}`
+
+[Solution](https://wordpress.org/support/topic/not-connect-the-android-app-to-wordpress-site-using-register-api)

@@ -6,6 +6,7 @@
 "yes": "Yes"
 "no" : "No"
 "emptyList" : "There is nothing here!"
+"enabled": "Enabled"
 "menu":
     "title": "Menu"
     "home": "Home"
@@ -66,6 +67,7 @@
     "offlineMode": "Offline mode (soon)"
     "fontSize": "Posts font size"
     "language": "Language"
+    "pushNotifications": "Push notifications"
 "languages":
     "en": "English"
     "fr": "French"

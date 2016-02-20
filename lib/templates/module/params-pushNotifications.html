@@ -1,0 +1,9 @@
+<ion-view view-title="{{'params.pushNotifications' | translate}}">
+    <ion-content>
+        <div class="list">
+            <ion-toggle ng-model="paramsPushNotifCtrl.hasBeenRegistered" ng-change="paramsPushNotifCtrl.onChange()">
+                {{'enabled' | translate}}
+            </ion-toggle>
+        </div>
+    </ion-content>
+</ion-view>

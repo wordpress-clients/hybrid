@@ -16,6 +16,13 @@
 * [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
 * [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
+<a name="2.0.0-beta06"></a>
+### 2.0.0-beta06 (2016-02-20)
+
+* [FEATURE] Adding hybrid loading service <https://github.com/shprink/wordpress-hybrid-client/issues/174>
+* [FEATURE] Adding push notification switch (register/unregister) in the params page when enabled <https://github.com/shprink/wordpress-hybrid-client/issues/83>
+* [CONFIG] Change cordova statusbar to show by default (most apps have the statubar displayed).
+
 <a name="2.0.0-beta05"></a>
 ### 2.0.0-beta05 (2016-02-16)
 

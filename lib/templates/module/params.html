@@ -8,16 +8,24 @@
                 <div class="input-label">
                     {{'params.language' | translate}}
                 </div>
-                <select ng-model="paramsCtrl.selected.language" ng-change="paramsCtrl.changeLanguage()" ng-options="key as value | translate for (key , value) in paramsCtrl.languages">
+                <select ng-model="paramsCtrl.selected.language"
+                    ng-change="paramsCtrl.changeLanguage()"
+                    ng-options="key as value | translate for (key , value) in paramsCtrl.languages">
                 </select>
             </div>
             <div class="item item-input item-select">
                 <div class="input-label">
                     {{'params.fontSize' | translate}}
                 </div>
-                <select ng-model="paramsCtrl.selected.fontSize" ng-change="paramsCtrl.changeFontSize()" ng-options="object.value as object.trans | translate for object in paramsCtrl.fontSize | toArray | orderBy:'order'">
+                <select ng-model="paramsCtrl.selected.fontSize"
+                    ng-change="paramsCtrl.changeFontSize()"
+                    ng-options="object.value as object.trans | translate for object in paramsCtrl.fontSize | toArray | orderBy:'order'">
                 </select>
             </div>
+            <a ng-if="paramsCtrl.isPushNotifPermitted && paramsCtrl.isPushNotifEnabled" class="item item-icon-left item-icon-right" ui-sref="public.params.pushNotifications">
+                <i class="icon ion-android-notifications-none"></i> {{'params.pushNotifications' | translate}}
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
         </div>
     </ion-content>
 </ion-view>

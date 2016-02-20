@@ -1,8 +1,8 @@
 <ion-view view-title="{{'params.pushNotifications' | translate}}">
     <ion-content>
         <div class="list">
-            <ion-toggle ng-model="item.checked" ng-checked="item.checked">
-                {{'params.offlineMode' | translate}}
+            <ion-toggle ng-model="paramsPushNotifCtrl.hasBeenRegistered" ng-change="paramsPushNotifCtrl.onChange()">
+                {{'enabled' | translate}}
             </ion-toggle>
         </div>
     </ion-content>

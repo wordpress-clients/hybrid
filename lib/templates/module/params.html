@@ -22,7 +22,7 @@
                     ng-options="object.value as object.trans | translate for object in paramsCtrl.fontSize | toArray | orderBy:'order'">
                 </select>
             </div>
-            <a class="item item-icon-left item-icon-right" ui-sref="public.params.pushNotifications">
+            <a ng-if="paramsCtrl.isPushNotifPermitted && paramsCtrl.isPushNotifEnabled" class="item item-icon-left item-icon-right" ui-sref="public.params.pushNotifications">
                 <i class="icon ion-android-notifications-none"></i> {{'params.pushNotifications' | translate}}
                 <i class="icon ion-ios-arrow-right"></i>
             </a>

@@ -6,6 +6,7 @@
 "yes": "Yes"
 "no" : "No"
 "emptyList" : "There is nothing here!"
+"enabled": "Enabled"
 "menu":
     "title": "Menu"
     "home": "Home"

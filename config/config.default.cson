@@ -188,7 +188,7 @@
         "defaultTransition" : null
         "defaultBackTransition" : null
     "statubar":
-        "show": false
+        "show": true
         "color": "#455a64"
     "appRate":
         "enabled": false

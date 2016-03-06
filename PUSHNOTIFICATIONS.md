@@ -93,3 +93,9 @@ If an error happened you will have the following log:
 The register http request fails with this message: `{error: "401", reason: "Unauthorized", detail: "Parameter oauth_consumer_key is missing"}`
 
 [Solution](https://wordpress.org/support/topic/not-connect-the-android-app-to-wordpress-site-using-register-api)
+
+### Push notifications not working on iOS
+
+Why am I getting the errors `{Unable to connect to tls://gateway.sandbox.push.apple.com:2195}` or `{Unable to connect to tsl://gateway.push.apple.com:2195}`?
+
+[Solution](http://stackoverflow.com/questions/1444355/iphone-push-notification-unable-to-connect-to-the-ssl-server)

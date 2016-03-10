@@ -6,8 +6,8 @@
     "maxAttempt": 3
 
 "translation":
-    # "displayed" : ["en", "fr"]
-    # "prefered": "en"
+    "displayed" : ["en", "fr"]
+    "prefered": "en"
 
 "cordova":
     "pushNotifications":

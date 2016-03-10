@@ -48,6 +48,8 @@
 - NodeJS (recommended: 4.x), please do not use npm 5.x for now
 - NPM (recommended: 3.3.x)
 
+This installation works on both OSX and Linux. Windows is not supported yet,
+
 ```
 # Clone and use the latest version
 $ git clone https://github.com/shprink/wordpress-hybrid-client.git && cd wordpress-hybrid-client

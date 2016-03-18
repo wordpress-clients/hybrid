@@ -42,11 +42,13 @@
 
 ## Quick Start
 
-### Preriquisites
+### Prerequisites
 
 - Git
 - NodeJS (recommended: 4.x), please do not use npm 5.x for now
 - NPM (recommended: 3.3.x)
+
+This installation works on both OSX and Linux. Windows is not supported yet,
 
 ```
 # Clone and use the latest version
@@ -66,7 +68,9 @@ Open http://localhost:8080/webpack-dev-server/ in Chrome (the only browser suppo
 
 To go further please read the documentations.
 
-## Documentations
+## Documentation
+
+If you have just cloned the repository,  [INSTALLATION](INSTALLATION.md) is the recommended starting point. Here is the documentation index:
 
 ### Installation
 
@@ -124,7 +128,7 @@ WordPress hybrid Client is Open Source, If you are interested in helping, please
 
 ### Pull Request Guidelines
 
-When in doubt, keep your pull requests small. To give a PR the best chance of getting accepted, do not bundle more than one "feature" or bug fix per PR. Doing so makes it very hard to accept it if one of the fixes has issues.
+When in doubt, keep your pull requests small. To give a PR the best chance of getting accepted, do not bundle more than one "feature" or bug fix in one PR. Doing so makes it very hard to accept it if one of the fixes has issues.
 
 It's always best to create two smaller PRs than one big one.
 

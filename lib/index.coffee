@@ -27,6 +27,7 @@ menuModule = require './menu/index.js'
 bookmarkModule = require './bookmark/index.js'
 accessibilityModule = require './accessibility/index.js'
 loadingModule = require './loading/index.js'
+pushNotificationsModule = require './pushNotifications/index.js';
 
 # Style entry point
 require './scss/bootstrap'
@@ -60,6 +61,7 @@ module.exports = app = angular.module 'wordpress-hybrid-client', [
     directivesModule
     templatesModule
     overwriteModule
+    pushNotificationsModule
 ]
 
 app.config ($stateProvider, $urlRouterProvider) ->

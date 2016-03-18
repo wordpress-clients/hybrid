@@ -16,6 +16,15 @@
 * [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
 * [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
+<a name="2.0.0-beta07"></a>
+### 2.0.0-beta07 (2016-03-18)
+
+* [BUG] Post title contains decimal <https://github.com/shprink/wordpress-hybrid-client/issues/74>
+* [BUG] how to display category/tag title instead of slug？ <https://github.com/shprink/wordpress-hybrid-client/issues/59>
+* [BUG] SHaring on whatsapp sends extra text as rendered <https://github.com/shprink/wordpress-hybrid-client/issues/181>
+* [FEATURE] External links open in app <https://github.com/shprink/wordpress-hybrid-client/issues/175>
+* Upgrade InAppBrowser cordova plugin
+
 <a name="2.0.0-beta06"></a>
 ### 2.0.0-beta06 (2016-02-20)
 

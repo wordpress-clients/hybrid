@@ -1,5 +1,5 @@
 <ion-view id="search-page">
-    <ion-nav-title>{{ searchCtrl.title | translate}}</ion-nav-title>
+    <ion-nav-title ng-bind-html="searchCtrl.title | translate"></ion-nav-title>
     <ion-header-bar class="bar bar-subheader">
         <form ng-submit="searchCtrl.search()" class="item-input-inset">
             <label class="item-input-wrapper">

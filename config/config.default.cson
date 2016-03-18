@@ -43,6 +43,8 @@
 
 # MENU
 "menu":
+    "externalLinkTarget" : null # _self|_blank|_system default: _system https://github.com/apache/cordova-plugin-inappbrowser#cordovainappbrowseropen
+    "externalLinkOptions": null # default: 'location=yes'
     "defaultState":
         "state": "public.posts"
         "params": {}

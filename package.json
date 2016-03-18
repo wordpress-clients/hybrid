@@ -94,7 +94,7 @@
   },
   "cordovaPlugins": [
     "cordova-plugin-whitelist@1.0.0",
-    "cordova-plugin-inappbrowser@1.0.1",
+    "cordova-plugin-inappbrowser@1.3.0",
     "cordova-plugin-splashscreen@2.1.0",
     "cordova-plugin-file@2.1.0",
     "cordova-plugin-file-transfer@1.2.1",

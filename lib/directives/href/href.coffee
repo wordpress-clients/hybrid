@@ -8,15 +8,21 @@ modify href behavior
 module.exports = angular.module('wordpress-hybrid-client.directives')
     .directive 'wphcHrefInApp', () ->
         restrict: 'A'
-        controller: ($scope, $element, $attrs, $log, $cordovaInAppBrowser, $ionicScrollDelegate) ->
+        controller: ($scope, $element, $attrs, $log, $ionicScrollDelegate, $WPHCConfig) ->
+            target = _.get($WPHCConfig, 'menu.externalLinkTarget') || '_system'
+            options = _.get($WPHCConfig, 'menu.externalLinkOptions') || 'location=yes'
             $element.on 'click', (event) ->
                 event.preventDefault()
-                $cordovaInAppBrowser.open $attrs.href, '_system'
+                if _.get(window, 'cordova.InAppBrowser')
+                    cordova.InAppBrowser.open $attrs.href, target, options
+                else
+                    window.open $attrs.href, '_blank'
     .directive 'wphcHref', () ->
         restrict: 'A'
-        controller: ($scope, $element, $attrs, $log, $cordovaInAppBrowser, $ionicScrollDelegate) ->
+        controller: ($scope, $element, $attrs, $log, $ionicScrollDelegate, $WPHCConfig) ->
             isAnchor = $attrs.href.lastIndexOf('#', 0) is 0
-
+            target = _.get($WPHCConfig, 'menu.externalLinkTarget') || '_system'
+            options = _.get($WPHCConfig, 'menu.externalLinkOptions') || 'location=yes'
             if isAnchor
                 $element.on 'click', (event) ->
                     event.preventDefault()
@@ -30,4 +36,7 @@ module.exports = angular.module('wordpress-hybrid-client.directives')
             else
                 $element.on 'click', (event) ->
                     event.preventDefault()
-                    $cordovaInAppBrowser.open $attrs.href, '_system'
+                    if _.get(window, 'cordova.InAppBrowser')
+                        cordova.InAppBrowser.open $attrs.href, target, options
+                    else
+                        window.open $attrs.href, '_blank'

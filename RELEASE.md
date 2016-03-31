@@ -44,7 +44,11 @@ Then answer to the prompt. When you are done, you should have your `.apk` files 
 
 <http://codewithchris.com/submit-your-app-to-the-app-store/>
 
-### Install sigh
+### Install via Xcode
+
+<http://codewithchris.com/submit-your-app-to-the-app-store/>
+
+### Install Via terminal (experimental)
 
 Sigh allow to sign .app with a provisioning file via the terminal
 
@@ -53,7 +57,7 @@ Sigh allow to sign .app with a provisioning file via the terminal
 sudo gem install sigh
 ```
 
-### Build PROD IPA
+#### Build PROD IPA
 
 ```
 npm run build
@@ -61,7 +65,7 @@ npm run build
 
 Then answer to the prompt.
 
-### Use XCode or Application Loader
+#### Use XCode or Application Loader
 
 Once the IPA is signed, all you need to do is sending the package to Apple for review.
 

@@ -33,7 +33,7 @@ $palette-divider-color: #eaeaea !default;
 
 You can also overwrite Ionic variables: <http://ionicframework.jp/tutorials/customizing-ionic-with-sass/>
 
-To know all WPHC internal varaibles checkout ```lib/scss/_variables.scss```
+To know all WPHC internal variables checkout ```lib/scss/_variables.scss```
 
 ## `config/templates`
 
@@ -186,16 +186,6 @@ The media query used to determine when to always display the left menu.
 ```
 "exposeAsideWhen": "(min-width:900px)"
 ```
-
-They are four types of menu item (internal|external|folder|separator).
-
-* ***internal***    Can be any page of the application (home|category|tag|parameters)
-* ***external***    Any www website
-* ***folder***      Create a menu sublevel (you can add up to six levels)
-* ***separator***   Separate menu items
-
-NB: The icons must be from ionicons.com
-NB: For now the homepage is mandatory and cannot be a specific page.
 
 ### Settings configuration.
 

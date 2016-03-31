@@ -212,3 +212,4 @@
             "badge": true
             "sound": true
             "alert": true
+            "clearBadge": true

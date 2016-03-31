@@ -83,6 +83,26 @@ After that you will need to register your new template in `lib/templates/index.j
 
 ## Frequently asked questions
 
+### How to have different style per page
+
+For instance you want a specific color on a category header. This is possible through `config/config.scss` file.
+
+Every page you visit has a unique class name injected in the `<html>` tag. Everything nested on `html.module-posts` rule is therefore applied only on this page:
+
+```scss
+html.module-posts{
+    ion-header-bar{
+        background-color: red !important;
+    }
+}
+
+html.module-pages{
+    ion-header-bar{
+        background-color: green !important;
+    }   
+}
+```
+
 ### How to change the home page
 
 The home page is by default the posts page. This can be changed in the `config/config.cson` file.

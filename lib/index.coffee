@@ -147,9 +147,10 @@ app.controller 'WPHCMainController' , ($log, $WPHCConfig) ->
 ###
 RUN
 ###
-app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $ionicPlatform, $WPHCAccessibility, $cordovaSplashscreen, $WPHCInit) ->
+app.run ($rootScope, $log, $WPHCConfig, $translate, $document, $WPHCLanguage, $ionicPlatform, $WPHCAccessibility, $cordovaSplashscreen, $WPHCInit) ->
     'ngInject';
     $rootScope.appLoaded = undefined
+    stateChangeTimeout = null
     # handling debug events
     if !IS_PROD
         $rootScope.$on '$stateNotFound', (event, unfoundState, fromState, fromParams) ->
@@ -158,6 +159,16 @@ app.run ($rootScope, $log, $WPHCConfig, $translate, $WPHCLanguage, $ionicPlatfor
             $log.info '$stateChangeError', error
 
     $WPHCAccessibility.updateBodyClass()
+    
+    $rootScope.$on '$stateChangeSuccess', (event, toState, toParams, fromState, fromParams) ->
+        $log.debug 'stateChangeSuccess', toState, toParams, fromState, fromParams
+        clearTimeout stateChangeTimeout
+        fromStateClass = if fromState.class then _.template(fromState.class)(fromParams) else fromState.name
+        toStateClass = if toState.class then _.template(toState.class)(toParams) else toState.name
+        stateChangeTimeout = setTimeout () ->
+            $document.find('html').removeClass _.kebabCase(fromStateClass)
+        , 500
+        $document.find('html').addClass _.kebabCase(toStateClass)
 
     $ionicPlatform.ready () ->
         $WPHCInit.init().finally ()->

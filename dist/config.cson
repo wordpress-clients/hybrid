@@ -10,6 +10,14 @@
     "prefered": "en"
 
 "cordova":
+    "admob":
+        "enabled":false
+        "android":
+            "bannerID": null
+            "interstitialID": null
+        "ios":
+            "bannerID": null
+            "interstitialID": null
     "pushNotifications":
         "enabled": false
         "baseUrl": "http://yourDomain.com/pnfw"

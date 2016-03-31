@@ -192,6 +192,20 @@
     "statubar":
         "show": true
         "color": "#455a64"
+    "admob":
+        "enabled": false
+        "android":
+            "bannerID": null
+            "bannerPosition": "BOTTOM_CENTER"
+            "interstitialID": null
+        "ios":
+            "bannerID": null
+            "bannerPosition": "BOTTOM_CENTER"
+            "interstitialID": null
+        "windows":
+            "bannerID": null
+            "bannerPosition": "BOTTOM_CENTER"
+            "interstitialID": null
     "appRate":
         "enabled": false
         "language": "en"
@@ -212,3 +226,4 @@
             "badge": true
             "sound": true
             "alert": true
+            "clearBadge": true

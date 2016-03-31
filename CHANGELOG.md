@@ -16,6 +16,15 @@
 * [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
 * [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
+<a name="2.0.0-beta08"></a>
+### 2.0.0-beta08 (2016-03-31)
+
+* [FEATURE] Add Google Admob support! <https://github.com/shprink/wordpress-hybrid-client/issues/186>
+* [BUG] Fix iOS badge count <https://github.com/shprink/wordpress-hybrid-client/issues/192>
+* [BUG] Fix comment broken in WP-API beta12 <https://github.com/shprink/wordpress-hybrid-client/issues/201>
+* [FEATURE] Custom style per page <https://github.com/shprink/wordpress-hybrid-client/issues/136>
+* Upgrade PushNotif cordova plugin
+
 <a name="2.0.0-beta07"></a>
 ### 2.0.0-beta07 (2016-03-18)
 

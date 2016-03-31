@@ -20,6 +20,7 @@
 - [X] Push Notifications
 - [X] Custom templates (overwrite any template of the app)
 - [X] Social sharing
+- [X] Admob support
 - [X] Sass variables
 - [X] Parameters Page
       - Language switch [English|French|Chinese|Spanish|Polish|German|Portuguese|Italian|Dutch|Russian|Turkish]

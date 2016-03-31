@@ -156,6 +156,7 @@ Here is a simple view of what you can configure:
 * cordova
     * statubar
     * appRate
+    * admob
     * pushNotifications
 
 
@@ -256,6 +257,44 @@ The languages you want to see in the parameters. So far we only support English 
 Enable Google Analytics
 
 ### cordova
+
+#### admob
+
+```
+"cordova":
+    "admob":
+        "enabled": false
+        "android":
+            "bannerID": null
+            "bannerPosition": "BOTTOM_CENTER"
+            "interstitialID": null
+        "ios":
+            "bannerID": null
+            "bannerPosition": "BOTTOM_CENTER"
+            "interstitialID": null
+        "windows":
+            "bannerID": null
+            "bannerPosition": "BOTTOM_CENTER"
+            "interstitialID": null
+```
+
+You can install a banner and/or a interstitial per device. To do that just add the bannerID and/or the interstitialID.
+
+You can also change the `bannerPosition` by selecting one of the following values:
+
+```
+NO_CHANGE
+TOP_LEFT
+TOP_CENTER
+TOP_RIGHT
+LEFT
+CENTER
+RIGHT
+BOTTOM_LEFT
+BOTTOM_CENTER
+BOTTOM_RIGHT
+POS_XY
+```
 
 #### StatuBar
 

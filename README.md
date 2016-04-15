@@ -40,6 +40,7 @@
   * https://play.google.com/store/apps/details?id=com.notmyfault
 * IOS
   * https://itunes.apple.com/cn/app/id1030393337
+  * https://itunes.apple.com/us/app/not-my-fault./id886617889
 
 ## Quick Start
 

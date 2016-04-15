@@ -52,8 +52,10 @@ Change `baseUrl` in `config/config.cson`
 ```
 "cordova":
     "pushNotifications":
-        "enabled": false
+        "enabled": true
         "baseUrl": "http://yourDomain.com/pnfw"
+        "android":
+            "senderID": ""
 ```
 
 To make sure your web service works open `http://yourDomain.com/pnfw/register/` in your browser. You should see that:

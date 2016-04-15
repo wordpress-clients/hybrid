@@ -111,7 +111,7 @@
         "per_page": 5
     "cache":
         "capacity": 10
-        "maxAge": 86400000
+        "maxAge": 10800000
 
 # PAGES PAGE
 "pages":
@@ -121,7 +121,7 @@
         "filter[order]": "desc"
     "cache":
         "capacity": 10
-        "maxAge": 86400000
+        "maxAge": 10800000
 
 # SEARCH PAGE
 "search":
@@ -133,7 +133,7 @@
 
     "cache":
         "capacity": 25
-        "maxAge": 86400000
+        "maxAge": 10800000
 
 # POSTS PAGE
 "posts":
@@ -145,7 +145,7 @@
 
     "cache":
         "capacity": 25
-        "maxAge": 86400000
+        "maxAge": 10800000
 
 # TRANSLATIONS
 "translation":

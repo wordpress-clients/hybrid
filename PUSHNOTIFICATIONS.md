@@ -1,3 +1,7 @@
+## BEWARE
+
+You CANNOT test push notification on emulators. Please use real devices.
+
 ## Install the WordPress plugin
 
 WPHC supports both free and pro version of Delite Studio's plugin for WP.

@@ -38,9 +38,11 @@
   * http://hiwaldorf.com/app/
   * https://play.google.com/store/apps/details?id=fr.silentkernel.app
   * https://play.google.com/store/apps/details?id=com.notmyfault
+  * https://play.google.com/store/apps/details?id=com.ek.klootschieten
 * IOS
   * https://itunes.apple.com/cn/app/id1030393337
   * https://itunes.apple.com/us/app/not-my-fault./id886617889
+  * https://itunes.apple.com/us/app/ek-klootschieten-2016/id1095442611
 
 ## Quick Start
 

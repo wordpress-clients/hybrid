@@ -23,7 +23,7 @@
 - [X] Admob support
 - [X] Sass variables
 - [X] Parameters Page
-      - Language switch [English|French|Chinese|Spanish|Polish|German|Portuguese|Italian|Dutch|Russian|Turkish]
+      - Language switch [English|French|Chinese|Spanish|Polish|German|Portuguese|Italian|Dutch|Russian|Turkish|Urdu]
       - Accessibility (Post font size)
 - [X] Image cache on device
 - [X] App rate plugin
@@ -38,8 +38,13 @@
   * http://hiwaldorf.com/app/
   * https://play.google.com/store/apps/details?id=fr.silentkernel.app
   * https://play.google.com/store/apps/details?id=com.notmyfault
+  * https://play.google.com/store/apps/details?id=com.ek.klootschieten
+  * https://play.google.com/store/apps/details?id=ca.siksik.SikSikYFB
 * IOS
   * https://itunes.apple.com/cn/app/id1030393337
+  * https://itunes.apple.com/us/app/not-my-fault./id886617889
+  * https://itunes.apple.com/us/app/ek-klootschieten-2016/id1095442611
+  * https://itunes.apple.com/ca/app/siksik-iqaluit-city-guide/id935965604
 
 ## Quick Start
 

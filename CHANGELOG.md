@@ -16,6 +16,13 @@
 * [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
 * [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
+<a name="2.0.0-beta09"></a>
+### 2.0.0-beta09 (2016-05-18)
+
+* [BUG] Fix Cordova dependency issue <https://github.com/shprink/wordpress-hybrid-client/issues/221>
+* [CONFIG] Change default cache from 24h to 3h <https://github.com/shprink/wordpress-hybrid-client/commit/5bacddaff8e0b2647c9e9a40ad6572e7da6ec697>
+* [LANGUAGE] Add Urdu language <https://github.com/shprink/wordpress-hybrid-client/pull/211>
+
 <a name="2.0.0-beta08"></a>
 ### 2.0.0-beta08 (2016-03-31)
 

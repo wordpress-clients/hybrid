@@ -67,7 +67,7 @@
         "skipURIencoding": false
     "data":
         "capacity": 100
-        "maxAge": 21600000
+        "maxAge": 10800000
         "deleteOnExpire": "aggressive"
         "recycleFreq": 1000
         "cacheFlushInterval": null
@@ -85,7 +85,7 @@
         "depth": 2
         "per_page": 50
     "cache":
-        "maxAge": 172800000
+        "maxAge": 10800000
         "capacity": 10
 
 # SYNTAX HIGHLIGHTER FOR TECH BLOG
@@ -103,7 +103,7 @@
         "orderby": "count"
         "order": "desc"
     "cache":
-        "maxAge": 172800000
+        "maxAge": 10800000
 
 # AUTHOR
 "authors":
@@ -111,7 +111,7 @@
         "per_page": 5
     "cache":
         "capacity": 10
-        "maxAge": 86400000
+        "maxAge": 10800000
 
 # PAGES PAGE
 "pages":
@@ -121,7 +121,7 @@
         "filter[order]": "desc"
     "cache":
         "capacity": 10
-        "maxAge": 86400000
+        "maxAge": 10800000
 
 # SEARCH PAGE
 "search":
@@ -133,7 +133,7 @@
 
     "cache":
         "capacity": 25
-        "maxAge": 86400000
+        "maxAge": 10800000
 
 # POSTS PAGE
 "posts":
@@ -145,7 +145,7 @@
 
     "cache":
         "capacity": 25
-        "maxAge": 86400000
+        "maxAge": 10800000
 
 # TRANSLATIONS
 "translation":
@@ -174,6 +174,8 @@
             "ru_*": "ru"
         "tr":
             "tr_*": "tr"
+        "ur":
+            "ur_*": "ur"
 
 # ANALYTICS (GOOGLE ANALYTICS)
 "analytics":

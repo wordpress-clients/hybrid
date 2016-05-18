@@ -23,7 +23,7 @@
 - [X] Admob support
 - [X] Sass variables
 - [X] Parameters Page
-      - Language switch [English|French|Chinese|Spanish|Polish|German|Portuguese|Italian|Dutch|Russian|Turkish]
+      - Language switch [English|French|Chinese|Spanish|Polish|German|Portuguese|Italian|Dutch|Russian|Turkish|Urdu]
       - Accessibility (Post font size)
 - [X] Image cache on device
 - [X] App rate plugin

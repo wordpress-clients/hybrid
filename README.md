@@ -40,11 +40,13 @@
   * https://play.google.com/store/apps/details?id=com.notmyfault
   * https://play.google.com/store/apps/details?id=com.ek.klootschieten
   * https://play.google.com/store/apps/details?id=ca.siksik.SikSikYFB
+  * https://play.google.com/store/apps/details?id=com.trouidees.nuustoep&hl=en
 * IOS
   * https://itunes.apple.com/cn/app/id1030393337
   * https://itunes.apple.com/us/app/not-my-fault./id886617889
   * https://itunes.apple.com/us/app/ek-klootschieten-2016/id1095442611
   * https://itunes.apple.com/ca/app/siksik-iqaluit-city-guide/id935965604
+  * https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1083903483&mt=8
 
 ## Quick Start
 

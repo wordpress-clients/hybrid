@@ -47,6 +47,9 @@
   * https://itunes.apple.com/us/app/ek-klootschieten-2016/id1095442611
   * https://itunes.apple.com/ca/app/siksik-iqaluit-city-guide/id935965604
   * https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1083903483&mt=8
+  * https://itunes.apple.com/us/app/blog-da-suzye/id1117503697
+  * https://itunes.apple.com/us/app/roma-tattoo/id1117043450
+  * https://itunes.apple.com/us/app/blog-da-amanda-coutinho/id1114539494
 
 ## Quick Start
 

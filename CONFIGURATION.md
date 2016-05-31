@@ -83,6 +83,10 @@ After that you will need to register your new template in `lib/templates/index.j
 
 ## Frequently asked questions
 
+### How to change the font
+
+<https://github.com/shprink/wordpress-hybrid-client/issues/238>
+
 ### How to have different style per page
 
 For instance you want a specific color on a category header. This is possible through `config/config.scss` file.

@@ -4,7 +4,7 @@
 [milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/2.0.0)
 
 * [FEATURE] WP-API v2 support <https://github.com/shprink/wordpress-hybrid-client/issues/76>
-* [FEATURE] Adding German translation <https://github.com/shprink/wordpress-hybrid-client/pull/77>
+* [FEATURE] Adding Many translations
 * [FEATURE] Authors list <https://github.com/shprink/wordpress-hybrid-client/issues/30>
 * [FEATURE] Pages list <https://github.com/shprink/wordpress-hybrid-client/issues/86>
 * [FEATURE] Custom posts and taxonomies <https://github.com/shprink/wordpress-hybrid-client/issues/80>
@@ -15,6 +15,16 @@
 * [CONFIG] `config.json` does not exist anymore. The installation (`npm run installWPHC`) creates several config files in the `config` folder. `config/config.cson` file overwrites `config/config.default.cson` (this on is read only, do not modify).
 * [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
 * [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
+
+<a name="2.0.0-beta10"></a>
+### 2.0.0-beta10 (2016-06-08)
+
+* [UPGRADE] Crosswalk 1.6
+* [UPGRADE] Cordova-android 5.x (API-23)
+
+#### Breaking changes:
+
+You now need to have API-23 installed on your Android SDK.
 
 <a name="2.0.0-beta09"></a>
 ### 2.0.0-beta09 (2016-05-18)

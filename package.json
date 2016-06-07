@@ -119,7 +119,7 @@
       "id": "com.telerik.plugins.nativepagetransitions"
     },
     "phonegap-plugin-push@1.5.3",
-    "cordova-plugin-crosswalk-webview@1.4.0",
+    "cordova-plugin-crosswalk-webview@1.6.0",
     "cordova-plugin-spinner-dialog@1.3.1",
     "cordova-plugin-admobpro@2.14.0",
     "cordova-plugin-x-socialsharing@5.1.1"

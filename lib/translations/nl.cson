@@ -6,6 +6,7 @@
 "yes": "Ja"
 "no" : "Nee"
 "emptyList" : "Er is niks hier!"
+"enabled": "Ingeschakeld"
 "menu":
     "title": "Menu"
     "home": "Home"
@@ -46,7 +47,7 @@
     "title": "Zoek"
     "titleQuery": "Resultaten voor: {{query}}"
 "sharing":
-    "shared": "Gedeelt!"
+    "shared": "Gedeeld!"
 "authors":
     "title": "Auteurs"
 "author":
@@ -66,6 +67,7 @@
     "offlineMode": "Offline mode (binnenkort)"
     "fontSize": "Post lettertype grootte"
     "language": "Taal"
+    "pushNotifications": "Push meldingen"
 "languages":
     "en": "Engels"
     "fr": "Frans"
@@ -74,9 +76,13 @@
     "pl": "Pools"
     "de": "Duits"
     "pt": "Portugees"
+    "it": "Italiaans"
+    "nl": "Nederlands"
+    "ru": "Russisch"
+    "tr": "Turks"
 "fontSize":
     "small": "Klein"
     "medium": "Normaal"
     "large": "Groot"
-    "x-large": "XGroot"
-    "xx-large": "XXGroot"
+    "x-large": "X-Groot"
+    "xx-large": "XX-Groot"

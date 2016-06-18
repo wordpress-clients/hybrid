@@ -43,6 +43,8 @@
   * https://play.google.com/store/apps/details?id=com.trouidees.nuustoep&hl=en
   * https://play.google.com/store/apps/details?id=com.myeternalsymphony
   * https://play.google.com/store/apps/details?id=com.common_tales.CommonTales
+  * https://play.google.com/store/apps/details?id=com.xvilo.jonginnop2
+  * https://play.google.com/store/apps/details?id=com.xvilo.regio25
 * IOS
   * https://itunes.apple.com/cn/app/id1030393337
   * https://itunes.apple.com/us/app/not-my-fault./id886617889
@@ -53,6 +55,8 @@
   * https://itunes.apple.com/us/app/roma-tattoo/id1117043450
   * https://itunes.apple.com/us/app/blog-da-amanda-coutinho/id1114539494
   * https://itunes.apple.com/de/app/common-tales/id1106806336
+  * https://itunes.apple.com/nl/app/regio25/id1067826417?mt=8
+  * https://itunes.apple.com/nl/app/jonginnop/id1073451236?mt=8
 
 ## Quick Start
 

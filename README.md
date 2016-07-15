@@ -128,6 +128,9 @@ npm run devserver
 npm run dumpdev
 npm run dumpprod
 
+# Install Cordova
+npm run restore
+
 # Run Cordova
 npm run android
 npm run ios

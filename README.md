@@ -64,8 +64,8 @@
 ### Prerequisites
 
 - Git
-- NodeJS (recommended: 4.x), please do not use npm 5.x for now
-- NPM (recommended: 3.3.x)
+- NodeJS (>= 4)
+- NPM (>= 3)
 
 This installation works on both OSX and Linux. Windows is not supported yet,
 

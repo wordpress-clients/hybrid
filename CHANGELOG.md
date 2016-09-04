@@ -16,6 +16,13 @@
 * [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
 * [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
+<a name="2.0.0-beta11"></a>
+### 2.0.0-beta11 (2016-09-04)
+
+* [UPGRADE] Ionic 1.3.1
+* [UPGRADE] ionic-plugin-keyboard 2.2.0
+* [COMMAND] Adds `npm start` to replace `npm run devserver` (kept for backward compat)
+
 <a name="2.0.0-beta10"></a>
 ### 2.0.0-beta10 (2016-06-08)
 

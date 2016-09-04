@@ -42,6 +42,10 @@
   * https://play.google.com/store/apps/details?id=ca.siksik.SikSikYFB
   * https://play.google.com/store/apps/details?id=com.trouidees.nuustoep&hl=en
   * https://play.google.com/store/apps/details?id=com.myeternalsymphony
+  * https://play.google.com/store/apps/details?id=com.common_tales.CommonTales
+  * https://play.google.com/store/apps/details?id=com.xvilo.jonginnop2
+  * https://play.google.com/store/apps/details?id=com.xvilo.regio25
+  * https://play.google.com/store/apps/details?id=de.esv1927.app
 * IOS
   * https://itunes.apple.com/cn/app/id1030393337
   * https://itunes.apple.com/us/app/not-my-fault./id886617889
@@ -51,14 +55,18 @@
   * https://itunes.apple.com/us/app/blog-da-suzye/id1117503697
   * https://itunes.apple.com/us/app/roma-tattoo/id1117043450
   * https://itunes.apple.com/us/app/blog-da-amanda-coutinho/id1114539494
+  * https://itunes.apple.com/de/app/common-tales/id1106806336
+  * https://itunes.apple.com/nl/app/regio25/id1067826417?mt=8
+  * https://itunes.apple.com/nl/app/jonginnop/id1073451236?mt=8
+  * https://itunes.apple.com/us/app/id1132170549
 
 ## Quick Start
 
 ### Prerequisites
 
 - Git
-- NodeJS (recommended: 4.x), please do not use npm 5.x for now
-- NPM (recommended: 3.3.x)
+- NodeJS (>= 4)
+- NPM (>= 3)
 
 This installation works on both OSX and Linux. Windows is not supported yet,
 
@@ -73,7 +81,7 @@ $ git checkout <the-latest-version>
 $ npm install && npm run installWPHC
 
 # Run on the browser
-$ npm run devserver
+$ npm start
 ```
 
 Open http://localhost:8080/webpack-dev-server/ in Chrome (the only browser supported). You should see the application running with `http://dev.julienrenaux.fr/wp-json` backend.
@@ -116,11 +124,14 @@ Read the manual: [SPLASHICONS.md](SPLASHICONS.md)
 
 ```
 # Dev server
-npm run devserver
+npm start
 
 # Dump files in www
 npm run dumpdev
 npm run dumpprod
+
+# Install Cordova
+npm run restore
 
 # Run Cordova
 npm run android

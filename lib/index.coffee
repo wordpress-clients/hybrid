@@ -1,7 +1,7 @@
 # Create namespace
 window.WPHC = window.WPHC || {}
 
-require 'ionic-sdk/release/js/ionic.bundle.js'
+require 'ionic-angular/release/js/ionic.bundle.js'
 require './angular-ios9-uiwebview.patch.js'
 require 'angular-cache'
 require 'angular-moment'

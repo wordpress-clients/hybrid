@@ -1,6 +1,6 @@
 {
   "name": "wordpress-hybrid-client",
-  "version": "2.0.0-beta10",
+  "version": "2.0.0-beta11",
   "title": "wordpress-hybrid-client",
   "description": "AngularJS client using Ionic Framework and based on the json-rest-api plugin: https://wordpress.org/plugins/json-rest-api/ with CORS enabled.",
   "main": "index.js",
@@ -9,7 +9,8 @@
     "restore": "ionic state restore",
     "installWPHC": "cd scripts && node ./install.js",
     "increaseVersion": "cd scripts && node ./increaseVersion.js",
-    "devserver": "webpack-dev-server --port 8080 --json --progress",
+    "start": "webpack-dev-server --port 8080 --json --progress",
+    "devserver": "npm start",
     "dumpdev": "rm -rf www/* && webpack --progress --colors -d",
     "dumpprod": "rm -rf www/* && webpack --progress --colors --config webpack.config.prod.js -p",
     "android": "npm run dumpdev && cordova run android",
@@ -85,7 +86,7 @@
     "imagesloaded": "^3.1.8",
     "imgcache.js": "^1.0.0",
     "ionic-native-transitions": "v1.0.0-rc5",
-    "ionic-sdk": "~1.2.0",
+    "ionic-angular": "~1.3.1",
     "lodash": "^3.9.3",
     "moment": "^2.9.0",
     "ng-cordova": "^0.1.23-alpha",
@@ -108,10 +109,6 @@
       "id": "org.pushandplay.cordova.apprate"
     },
     "cordova-plugin-x-toast@2.1.1",
-    {
-      "locator": "https://github.com/driftyco/ionic-plugin-keyboard#v1.0.4",
-      "id": "com.ionic.keyboard@1.0.4"
-    },
     "cordova-plugin-statusbar@1.0.1",
     "cordova-plugin-google-analytics@0.8.1",
     {
@@ -122,7 +119,8 @@
     "cordova-plugin-crosswalk-webview@1.6.0",
     "cordova-plugin-spinner-dialog@1.3.1",
     "cordova-plugin-admobpro@2.14.0",
-    "cordova-plugin-x-socialsharing@5.1.1"
+    "cordova-plugin-x-socialsharing@5.1.1",
+    "ionic-plugin-keyboard@2.2.0"
   ],
   "cordovaPlatforms": [
     {

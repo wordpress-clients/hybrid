@@ -81,7 +81,7 @@ $ git checkout <the-latest-version>
 $ npm install && npm run installWPHC
 
 # Run on the browser
-$ npm run devserver
+$ npm start
 ```
 
 Open http://localhost:8080/webpack-dev-server/ in Chrome (the only browser supported). You should see the application running with `http://dev.julienrenaux.fr/wp-json` backend.
@@ -124,7 +124,7 @@ Read the manual: [SPLASHICONS.md](SPLASHICONS.md)
 
 ```
 # Dev server
-npm run devserver
+npm start
 
 # Dump files in www
 npm run dumpdev

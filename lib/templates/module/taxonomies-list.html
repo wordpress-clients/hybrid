@@ -1,5 +1,5 @@
 <ion-view>
-    <ion-nav-title>{{ taxonomiesCtrl.title | translate}}</ion-nav-title>
+    <ion-nav-title ng-bind-html="taxonomiesCtrl.title | translate"></ion-nav-title>
     <ion-content>
         <wphc-empty-list list="taxonomiesCtrl.list"></wphc-empty-list>
         <wphc-loader ng-if="!taxonomiesCtrl.list" on-load="taxonomiesCtrl.init()"></wphc-loader>

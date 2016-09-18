@@ -16,6 +16,14 @@
 * [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
 * [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
+<a name="2.0.0-beta12"></a>
+### 2.0.0-beta12 (2016-09-18)
+
+* [BUG] Display category/tag title instead of slug <https://github.com/shprink/wordpress-hybrid-client/issues/59>
+* [BUG] Fix Russian/Chinese author title encoding
+* [BUG] Removing Native transitions
+* iOS 10 ready. See notes on BUILD.md
+
 <a name="2.0.0-beta11"></a>
 ### 2.0.0-beta11 (2016-09-04)
 

@@ -1,5 +1,5 @@
 <ion-view>
-    <ion-nav-title>{{ authorsCtrl.title | translate}}</ion-nav-title>
+    <ion-nav-title ng-bind-html="authorsCtrl.title | translate"></ion-nav-title>
     <ion-content>
         <wphc-empty-list list="authorsCtrl.list"></wphc-empty-list>
         <wphc-loader ng-if="!authorsCtrl.list" on-load="authorsCtrl.init()"></wphc-loader>

@@ -82,6 +82,12 @@ If your device is connected and in USB mode you will see your application that y
 * iOS Simulator
 * Provisioning profile
 
+### iOS10
+
+Also you will need to Assign Your App to a Team: `Project > General > Signing > Select your team ID in the dropdown`
+
+You will also need to disabled bitcode (see iOS9)
+
 ### iOS9
 
 Also you will need to disabled bitcode: `Project > Build Settings > Build Options > Enable Bitcode = No`

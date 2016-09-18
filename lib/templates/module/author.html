@@ -1,5 +1,5 @@
 <ion-view>
-    <ion-nav-title>{{ postsCtrl.title | translate}}</ion-nav-title>
+    <ion-nav-title ng-bind-html="postsCtrl.title | translate"></ion-nav-title>
     <ion-content class="padding bg-gray-lighter">
         <wphc-empty-list list="postsCtrl.list"></wphc-empty-list>
         <wphc-loader ng-if="!postsCtrl.list" on-load="postsCtrl.init()"></wphc-loader>

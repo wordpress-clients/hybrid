@@ -1,4 +1,7 @@
 <ion-header-bar class="bar-positive">
+	<div ng-if="::main.appLogo" ng-show="main.appLogo != ''">
+    	<img class="logo" src="{{main.appLogo}}">
+	</div>
     <h1 class="title">{{main.appTitle}}</h1>
 </ion-header-bar>
 <ion-content>

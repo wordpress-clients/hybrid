@@ -8,7 +8,6 @@
 
 
 "title": "Your Blog title"
-"logo": "/img/logo.png"
 
 # API
 "api":
@@ -50,6 +49,7 @@
         "state": "public.posts"
         "params": {}
     "exposeAsideWhen": "(min-width:900px)"
+	"logo": "/img/logo.png" # null will disable
 
 # SETTINGS PAGE
 "settings":

@@ -212,7 +212,7 @@ The media query used to determine when to always display the left menu.
 ```
 "exposeAsideWhen": "(min-width:900px)"
 ```
-"logo": [String] (default: "/img/logo.png", null to disable, optimized 42 x 42px transparent)
+"logo": [String] (default: "/config/logo.png", null to disable, optimized 42 x 42px transparent)
 
 Your website logo. The logo will appear on the left of the title
 

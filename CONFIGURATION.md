@@ -158,6 +158,7 @@ Here is a simple view of what you can configure:
 * menu
     * exposeAsideWhen
     * list
+	* logo
 * settings
 * cache
     * views
@@ -211,6 +212,9 @@ The media query used to determine when to always display the left menu.
 ```
 "exposeAsideWhen": "(min-width:900px)"
 ```
+"logo": [String] (default: "/config/logo.png", null to disable, optimized 42 x 42px transparent)
+
+Your website logo. The logo will appear on the left of the title
 
 ### Settings configuration.
 

@@ -126,6 +126,7 @@ app.controller 'WPHCMainController' , ($log, $WPHCConfig) ->
     vm.appVersion = wordpressHybridClient.version || null
     vm.appConfig = $WPHCConfig
     vm.appTitle = vm.appConfig.title || null
+    vm.appLogo = vm.appConfig.menu.logo || null
     vm
 
 ###

@@ -151,6 +151,7 @@ Here is a simple view of what you can configure:
 
 * title
 * ionicConfig
+* serviceWorker
 * api
     * baseUrl
     * timeout
@@ -204,6 +205,10 @@ Your website title. The title will appear on the top of the left navigation menu
 allow overwriting ionic configuration <http://ionicframework.com/docs/api/provider/$ionicConfigProvider/>
 
 Setting ```null``` will keep ionic default value.
+
+### serviceWorker [Object]
+
+* ***enabled***    ```Boolean```    Experiemental, default `false`
 
 ### menu [Object]
 

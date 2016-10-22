@@ -10,6 +10,7 @@ require './font/font.coffee'
 require 'expose?_!lodash'
 require 'wp-api-angularjs'
 require './config.js'
+require '!file?name=[name].[ext]!./service-worker.js';
 overwriteModule = require '../config/index.js'
 customPostsModule = require './customPosts/index.js'
 pagesModule = require './pages/index.js'

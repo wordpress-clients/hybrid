@@ -12,7 +12,7 @@
     "tags": "Tags"
     "pages": "Pages"
     "posts": "Posts"
-    "authors": "Authors"
+    "authors": "Autoren"
     "search": "Suche"
     "bookmarks": "Lesezeichen"
     "socialNetworks": "Soziale Netzwerke"
@@ -48,9 +48,9 @@
 "sharing":
     "shared": "Geteilt!"
 "authors":
-    "title": "Authors"
+    "title": "Autoren"
 "author":
-    "title": "Author: {{name}}"
+    "title": "Autor: {{name}}"
 "pages":
     "title": "Pages"
 "posts":

@@ -105,3 +105,9 @@ The register http request fails with this message: `{error: "401", reason: "Unau
 Why am I getting the errors `{Unable to connect to tls://gateway.sandbox.push.apple.com:2195}` or `{Unable to connect to tsl://gateway.push.apple.com:2195}`?
 
 [Solution](http://stackoverflow.com/questions/1444355/iphone-push-notification-unable-to-connect-to-the-ssl-server)
+
+### Param tells me that I am not registered
+
+If the "enabled" checkbox on the push notif parameters (in app) is never on. It could mean that the following checkboxes are not checked. Please check at least `category` to resolve the problem.
+
+![image](https://cloud.githubusercontent.com/assets/1388706/19411490/f5f52170-9302-11e6-9f31-28f9a97da691.png)

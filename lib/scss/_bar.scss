@@ -1,3 +1,13 @@
+$logoSize : $bar-height - (2 * $bar-padding-portrait);
 .bar {
     
+}
+.menu-bar.has-icon{
+	.icon{
+		width: $logoSize;
+		height:  $logoSize;
+	}
+	.title{
+		margin-left: $logoSize + 10;
+	}
 }

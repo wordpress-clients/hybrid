@@ -30,6 +30,7 @@
 - [X] Syntax highlighter
 - [X] Offline (Bookmarks)
 - [X] Comments (Submitting is not supported yet)
+- [X] Progressive Web App (manifest & Service Workers)
 
 ## Built with WPHC
 

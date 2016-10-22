@@ -158,7 +158,7 @@ Here is a simple view of what you can configure:
 * menu
     * exposeAsideWhen
     * list
-	* logo
+    * logo
 * settings
 * cache
     * views

@@ -49,7 +49,7 @@
         "state": "public.posts"
         "params": {}
     "exposeAsideWhen": "(min-width:900px)"
-    "logo": "/config/logo.png" # null will disable
+    "displayIcon": true # uses config/icons/icon_48.png
 
 # SETTINGS PAGE
 "settings":

@@ -78,7 +78,7 @@ $ git tag
 $ git checkout <the-latest-version>
 
 # Install
-$ npm install && npm run installWPHC
+$ npm install
 
 # Run on the browser
 $ npm start
@@ -123,6 +123,9 @@ Read the manual: [SPLASHICONS.md](SPLASHICONS.md)
 ## Project public API
 
 ```
+# Installation
+npm run installWPHC (auto ran post npm install)
+
 # Dev server
 npm start
 

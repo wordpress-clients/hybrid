@@ -11,7 +11,7 @@
 
 # API
 "api":
-    "baseUrl": "http://dev.julienrenaux.fr/wp-json"
+    "baseUrl": "https://dev.julienrenaux.fr/wp-json"
     "timeout": 30000
     "maxAttempt": 3
 
@@ -150,6 +150,11 @@
     "cache":
         "capacity": 25
         "maxAge": 10800000
+
+# ANY CUSTOM POSTS (this is just an example with movie type)
+"movie":
+    "query":
+        "per_page": 2
 
 # TRANSLATIONS
 "translation":

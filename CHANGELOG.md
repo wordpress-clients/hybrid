@@ -16,6 +16,13 @@
 * [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
 * [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
+<a name="2.0.0-beta15"></a>
+### 2.0.0-beta15 (2016-11-01)
+
+To upgrade checkout `git fetch --all && git checkout v2.0.0-beta15` and run `npm i`
+
+* [BUG] Remove Object.assign ... <https://github.com/shprink/wordpress-hybrid-client/issues/294>
+
 <a name="2.0.0-beta14"></a>
 ### 2.0.0-beta14 (2016-10-30)
 

@@ -75,7 +75,7 @@ If your device is connected and in USB mode you will see your application that y
 
 ## iOS
 
-### Preriquisites
+### Prerequisites
 
 * OSX
 * XCode

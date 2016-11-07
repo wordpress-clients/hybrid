@@ -60,6 +60,7 @@
   * https://itunes.apple.com/nl/app/regio25/id1067826417?mt=8
   * https://itunes.apple.com/nl/app/jonginnop/id1073451236?mt=8
   * https://itunes.apple.com/us/app/id1132170549
+  * https://itunes.apple.com/us/app/suz-blog/id1145036348
 
 ## Quick Start
 

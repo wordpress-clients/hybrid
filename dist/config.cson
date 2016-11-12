@@ -1,7 +1,7 @@
 "title": "Your Blog title"
 
 "api":
-    "baseUrl": "http://dev.julienrenaux.fr/wp-json"
+    "baseUrl": "https://dev.julienrenaux.fr/wp-json"
     "timeout": 10000
     "maxAttempt": 3
 

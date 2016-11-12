@@ -16,6 +16,23 @@
 * [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
 * [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
+<a name="2.0.0-beta16"></a>
+### 2.0.0-beta16 (2016-11-12)
+
+To upgrade:
+
+```
+$ git fetch --all
+$ git checkout v2.0.0-beta16
+$ npm i
+$ npm run restore
+```
+
+* upgrade cordova-ios
+* upgrade cordova-android (API 25)
+* upgrade crosswalk
+* add more logs to admobs
+
 <a name="2.0.0-beta15"></a>
 ### 2.0.0-beta15 (2016-11-01)
 

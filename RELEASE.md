@@ -71,6 +71,16 @@ Once the IPA is signed, all you need to do is sending the package to Apple for r
 
 ### Frequent errors
 
-#### Submitting iOS app to app store application identifier invalid
+#### iOS: Submitting iOS app to app store application identifier invalid
 
 <http://stackoverflow.com/questions/20120128/submitting-ios-app-to-app-store-application-identifier-invalid>
+
+#### iOS: Signing for "XXXX" requires a development team. Select a development team in the project editor.
+
+<http://stackoverflow.com/questions/39524148/requires-a-development-team-select-a-development-team-in-the-project-editor-cod>
+
+#### iOS: duplicate symbols for architecture armv7
+
+<http://stackoverflow.com/questions/39512823/duplicate-symbols-for-architecture-arm64-after-xcode-8-0-update>
+
+![image](https://cloud.githubusercontent.com/assets/1388706/20237394/2d95e7de-a8d1-11e6-9e84-139808b559d2.png)

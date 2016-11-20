@@ -28,6 +28,8 @@ $ npm i
 $ npm run restore
 ```
 
+If you upgrade you will need to remove this crosswalk rule from your `config.xml` => https://github.com/shprink/wordpress-hybrid-client/commit/8143a93839972d16f430349cd091e7eb91c219db#diff-b6bb989dd6bb152b38e30e84f2d7e195L25
+
 * upgrade cordova-ios
 * upgrade cordova-android (API 25)
 * upgrade crosswalk

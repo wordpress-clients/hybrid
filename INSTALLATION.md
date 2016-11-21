@@ -2,10 +2,12 @@
 
 This installation works on both OSX and Linux. Windows is not supported yet, if you want to help with that let us know: [https://github.com/shprink/wordpress-hybrid-client/issues/39](https://github.com/shprink/wordpress-hybrid-client/issues/39)
 
-## Preriquisites
+### Prerequisites
 
-- NodeJS (recommended: 4.x), please do not use npm 5.x for now
-- NPM (recommended: 3.3.x `sudo npm install -g npm`)
+- Git
+- NodeJS (>= 4)
+- NPM (>= 3)
+- [Yarn](https://yarnpkg.com/en/docs/install)
 
 If you are running linux you might need to install all of the following dependencies: [https://github.com/shprink/wphc-dockerbox/blob/master/Dockerfile#L13-L14](https://github.com/shprink/wphc-dockerbox/blob/master/Dockerfile#L13-L14)
 

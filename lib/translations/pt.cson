@@ -7,18 +7,18 @@
 "no" : "Não"
 "menu": 
     "title": "Menu"
-    "home": "Inicio"
+    "home": "Início"
     "tags": "Etiquetas"
-    "pages": "Pages"
+    "pages": "Páginas"
     "posts": "Posts"
-    "authors": "Authors"
+    "authors": "Autores"
     "search": "Buscar"
     "bookmarks": "Favoritos"
     "socialNetworks": "Redes Sociais"
     "categories": "Categorias"
     "settings": "Configurações"
-    "customPosts": "Custom posts"
-    "customTaxonomy": "Custom Taxonomy"
+    "customPosts": "Posts customizados"
+    "customTaxonomy": "Taxonomia customizada"
 "pushNotifications": 
     "newContent": 
         "title": "Nova publicação!"
@@ -39,25 +39,25 @@
 "category":
     "title": "Categoria {{name}}"
 "home": 
-    "title": "Inicio"
+    "title": "Início"
 "search":
     "inputPlaceholder": "Buscar"
-    "title": "Search",
+    "title": "Buscar",
     "titleQuery": "Buscar: {{query}}"
 "sharing": 
     "shared": "Compartilhado!"
 "authors":
-    "title": "Authors"
+    "title": "Autores"
 "author":
-    "title": "Author: {{name}}"
+    "title": "Autor: {{name}}"
 "pages":
-    "title": "Pages"
+    "title": "Páginas"
 "posts": 
-    "title": "Inicio"
+    "title": "Início"
     "empty": "Não encontrou novas publicações!"
     "featured": "Em destaque"
 "post": 
-    "comments": "Comments"
+    "comments": "Comentários"
     "openInBrowser": "Abrir no navegador"
 "about": 
     "title": "Sobre"
@@ -67,12 +67,12 @@
     "fontSize": "Tamanho da fonte"
     "language": "Idioma"
 "languages":
-    "en": "English"
-    "fr": "French"
-    "zh": "Chinese"
-    "es": "Spanish"
+    "en": "Inglês"
+    "fr": "Francês"
+    "zh": "Chinês"
+    "es": "Espanhol"
     "pl": "Polaco"
-    "de": "German"
+    "de": "Alemão"
     "pt": "Português"
     "it": "Italiano"
     "nl": "Holandês"
@@ -82,3 +82,4 @@
     "large": "Grande"
     "x-large": "Muito grande"
     "xx-large": "Extra grande"
+

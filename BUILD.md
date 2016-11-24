@@ -150,5 +150,5 @@ More details: https://github.com/apache/cordova-plugin-whitelist
 To have logs dump in the terminal you can use ```--consolelogs``` options
 
 ```
-npm run ios --consolelogs
+npm run ios -- --consolelogs
 ```

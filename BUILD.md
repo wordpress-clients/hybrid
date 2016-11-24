@@ -38,7 +38,7 @@ Make sure you have the latest version of:
 
 Download the SDK from <https://developer.android.com/sdk/installing/index.html?pkg=tools>. Android Studio is not required.
 
-Move the SDK to a place on yur file system and refer to it on the .bashrc or .bash_profile file.
+Move the SDK to a place on your file system and refer to it on the `.bashrc` or `.bash_profile` file.
 
 ```
 export ANDROID_HOME=~/Library/Android/sdk  
@@ -75,7 +75,7 @@ If your device is connected and in USB mode you will see your application that y
 
 By default WPHC uses Crosswalk. It generates 2 apks that are around 28MB. If this is too big for your customers you can enable Crosswalk lite that way:
 
-In config.xmk change `<preference name="xwalkMode" value="embedded" />` to `<preference name="xwalkMode" value="lite" />`
+In `config.xml` change `<preference name="xwalkMode" value="embedded" />` to `<preference name="xwalkMode" value="lite" />`
 
 The size of the apks generated will be half the size as you can see below:
 
@@ -96,11 +96,11 @@ The size of the apks generated will be half the size as you can see below:
 
 Also you will need to Assign Your App to a Team: `Project > General > Signing > Select your team ID in the dropdown`
 
-You will also need to disabled bitcode (see iOS9)
+You will also need to disable bitcode (see iOS9)
 
 ### iOS9
 
-Also you will need to disabled bitcode: `Project > Build Settings > Build Options > Enable Bitcode = No`
+You will need to disabled bitcode: `Project > Build Settings > Build Options > Enable Bitcode = No`
 
 #### iOS simulator
 
@@ -126,9 +126,9 @@ npm run iosEmulator
 For details about various requirements to deploy to a device, refer to the Cordova article: [Getting Started with iOS](http://cordova.apache.org/docs/en/2.5.0/guide_getting-started_ios_index.md.html). Briefly, you need to do the following before deploying:
 
 1. Join the Apple iOS Developer Program.
-1. Generate a certificate http://wiki.genexus.com/commwiki/servlet/hwiki?Create+a+Certificate+Signing+Request+in+a+MAC,
-1. Create a Provisioning Profile within the [iOS Provisioning Portal](https://developer.apple.com/ios/manage/overview/index.action). You can use its Development Provisioning Assistant to create and install the profile and certificate Xcode requires.
-1. Verify that the Code Signing section's Code Signing Identity within the project settings is set to your provisioning profile name.
+2. Generate a certificate http://wiki.genexus.com/commwiki/servlet/hwiki?Create+a+Certificate+Signing+Request+in+a+MAC,
+3. Create a Provisioning Profile within the [iOS Provisioning Portal](https://developer.apple.com/ios/manage/overview/index.action). You can use its Development Provisioning Assistant to create and install the profile and certificate Xcode requires.
+4. Verify that the Code Signing section's Code Signing Identity within the project settings is set to your provisioning profile name.
 
 ```
 # Dump dev files within the www folder and run iOS in debug mode
@@ -150,5 +150,5 @@ More details: https://github.com/apache/cordova-plugin-whitelist
 To have logs dump in the terminal you can use ```--consolelogs``` options
 
 ```
-npm run ios -- --consolelogs
+npm run ios --consolelogs
 ```

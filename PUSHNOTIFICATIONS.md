@@ -29,7 +29,7 @@ Go to ```Push Notifications > Settings``` and check the following checkboxes:
 * Send Push Notifications for > Posts
 * Misc > In the Android notification payload add the message field
 
-Then go to "Android Push Notifications (via GMC)" section and enter you Goolge Api key.
+Then go to "Android Push Notifications (via GMC)" section and enter you Google API key.
 
 Do not forget to save.
 

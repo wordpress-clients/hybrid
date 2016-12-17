@@ -1,20 +1,39 @@
 <a name="2.0.0"></a>
-### 2.0.0 (WIP)
+### 2.0.0 (2016-12-17)
 
-[milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/2.0.0)
+2.0.0 REQUIRES WORDPRESS 4.7 of higher!
 
-* [FEATURE] WP-API v2 support <https://github.com/shprink/wordpress-hybrid-client/issues/76>
-* [FEATURE] Adding Many translations
-* [FEATURE] Authors list <https://github.com/shprink/wordpress-hybrid-client/issues/30>
-* [FEATURE] Pages list <https://github.com/shprink/wordpress-hybrid-client/issues/86>
-* [FEATURE] Custom posts and taxonomies <https://github.com/shprink/wordpress-hybrid-client/issues/80>
-* [FEATURE] Templating <https://github.com/shprink/wordpress-hybrid-client/issues/7>
+To upgrade checkout `git fetch --all && git checkout v2.0.0` and run `npm i`
+
+* [ENHANCEMENT] WordPress 4.7 ready! <https://github.com/shprink/wordpress-hybrid-client/issues/308>
+* [ENHANCEMENT] Upgrade Cordova plugins <https://github.com/shprink/wordpress-hybrid-client/pull/310>
+* [BUG] Links in Comments open in app instead of safari <https://github.com/shprink/wordpress-hybrid-client/issues/306>
 
 #### Breaking changes:
 
-* [CONFIG] `config.json` does not exist anymore. The installation (`npm run installWPHC`) creates several config files in the `config` folder. `config/config.cson` file overwrites `config/config.default.cson` (this on is read only, do not modify).
-* [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
-* [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
+If you upgrade to WordPress 4.7, you can remove WP-API plugin.
+
+`filter` params is deprecated, if you use custom query filters here is the changes you need to make:
+
+```
+-        "filter[orderby]": "date"
+-        "filter[order]": "desc"
+-        "filter[post_status]": "publish"
++        "orderby": "date"
++        "order": "desc"
++        "status": "publish"
+ ```
+
+ in `menu.json` you need to change `public.taxonomies.slug` by `public.taxonomies.id` and replace the `slug` of the taxonomie per its `id`.
+
+ For example:
+
+ ```
+-        "route": "public.taxonomies.slug({ term: 'category', slug: 'uncategorized', postType: 'post' })",
++        "route": "public.taxonomies.id({ term: 'categories', id: 1, postType: 'post' })",
+ ```
+
+ Also terms changed. `category` is now `categories` and `post_tag` is now `tags`.
 
 <a name="2.0.0-beta16"></a>
 ### 2.0.0-beta16 (2016-11-12)
@@ -160,6 +179,24 @@ You now need to have API-23 installed on your Android SDK.
 ### 2.0.0-alpha5 (2015-12-22)
 
 * [BUG] Fix WP-API api changes to work with WP-API-beta9
+
+<a name="2.0.0-wip"></a>
+### 2.0.0 (WIP)
+
+[milestone](https://github.com/shprink/wordpress-hybrid-client/milestones/2.0.0)
+
+* [FEATURE] WP-API v2 support <https://github.com/shprink/wordpress-hybrid-client/issues/76>
+* [FEATURE] Adding Many translations
+* [FEATURE] Authors list <https://github.com/shprink/wordpress-hybrid-client/issues/30>
+* [FEATURE] Pages list <https://github.com/shprink/wordpress-hybrid-client/issues/86>
+* [FEATURE] Custom posts and taxonomies <https://github.com/shprink/wordpress-hybrid-client/issues/80>
+* [FEATURE] Templating <https://github.com/shprink/wordpress-hybrid-client/issues/7>
+
+#### Breaking changes:
+
+* [CONFIG] `config.json` does not exist anymore. The installation (`npm run installWPHC`) creates several config files in the `config` folder. `config/config.cson` file overwrites `config/config.default.cson` (this on is read only, do not modify).
+* [CONFIG] There is no more dev/prod distinction, WPHC turn debug OFF when building the prod app automatically.
+* [ABOUT] The About feature has been removed. You can use Pages to achieve the same purpose.
 
 <a name="1.7.1"></a>
 ### 1.7.1

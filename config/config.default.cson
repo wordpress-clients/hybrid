@@ -103,7 +103,7 @@
 # TAXONOMIES
 "taxonomies":
     "query":
-        "per_page": 5
+        "per_page": 20
         "orderby": "count"
         "order": "desc"
     "cache":
@@ -121,8 +121,8 @@
 "pages":
     "query":
         "per_page": 5
-        "filter[orderby]": "date"
-        "filter[order]": "desc"
+        "orderby": "date"
+        "order": "desc"
     "cache":
         "capacity": 10
         "maxAge": 10800000
@@ -131,9 +131,9 @@
 "search":
     "query":
         "per_page": 5
-        "filter[orderby]": "date"
-        "filter[order]": "desc"
-        "filter[post_status]": "publish"
+        "orderby": "date"
+        "order": "desc"
+        "status": "publish"
 
     "cache":
         "capacity": 25
@@ -143,9 +143,9 @@
 "posts":
     "query":
         "per_page": 5
-        "filter[orderby]": "date"
-        "filter[order]": "desc"
-        "filter[post_status]": "publish"
+        "orderby": "date"
+        "order": "desc"
+        "status": "publish"
 
     "cache":
         "capacity": 25

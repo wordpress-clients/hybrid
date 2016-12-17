@@ -61,12 +61,12 @@
     "list": [{
         "type": "internal",
         "trans": "Uncategorized",
-        "route": "public.taxonomies.slug({ term: 'category', slug: 'uncategorized', postType: 'post' })",
+        "route": "public.taxonomies.id({ term: 'categories', id: 1, postType: 'post' })",
         "icon": "icon ion-iphone"
     }, {
         "type": "internal",
         "trans": "All",
-        "route": "public.taxonomies({ term: 'category', postType: 'post'})",
+        "route": "public.taxonomies({ term: 'categories', postType: 'post'})",
         "icon": "icon ion-folder"
     }]
 }, {
@@ -76,12 +76,12 @@
     "list": [{
         "type": "internal",
         "trans": "AngularJS",
-        "route": "public.taxonomies.slug({ term: 'post_tag', slug: 'angularjs', postType: 'post' })",
+        "route": "public.taxonomies.id({ term: 'tags', id: 16, postType: 'post' })",
         "icon": "icon ion-iphone"
     }, {
         "type": "internal",
         "trans": "All",
-        "route": "public.taxonomies({ term: 'post_tag', postType: 'post' })",
+        "route": "public.taxonomies({ term: 'tags', postType: 'post' })",
         "icon": "icon ion-pricetags"
     }]
 }, {
@@ -91,12 +91,12 @@
     "list": [{
         "type": "internal",
         "trans": "Audrey Tautou",
-        "route": "public.taxonomies.slug({ term: 'actor', slug: 'audrey-tautou', postType: 'movie' })",
+        "route": "public.taxonomies.id({ term: 'actor', id: 99, postType: 'movie' })",
         "icon": "icon ion-ios-film"
     },{
         "type": "internal",
         "trans": "Marion Cotillard",
-        "route": "public.taxonomies.slug({ term: 'actor', slug: 'marion-cotillard', postType: 'movie' })",
+        "route": "public.taxonomies.id({ term: 'actor', id: 96, postType: 'movie' })",
         "icon": "icon ion-ios-film"
     }, {
         "type": "internal",

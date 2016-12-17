@@ -93,11 +93,14 @@ Chrome dev tools allow you to test the "add to homescreen" feature on the browse
 
 ## Frequently asked questions
 
-### How to change the font
+<details>
+<summary>How to change the font?</summary>
 
 <https://github.com/shprink/wordpress-hybrid-client/issues/238>
+</details>
 
-### How to have different style per page
+<details>
+<summary>How to have different style per page?</summary>
 
 For instance you want a specific color on a category header. This is possible through `config/config.scss` file.
 
@@ -116,8 +119,10 @@ html.module-pages{
     }   
 }
 ```
+</details>
 
-### How to change the home page
+<details>
+<summary>How to change the home page?</summary>
 
 The home page is by default the posts page. This can be changed in the `config/config.cson` file.
 
@@ -130,8 +135,10 @@ Add the following and change state and params to the page you want:
         "state": "public.posts"
         "params": {}
 ```
+</details>
 
-#### Set the home page to the pages page:
+<details>
+<summary>Set the home page to the pages page?</summary>
 
 ```
 # MENU
@@ -140,8 +147,10 @@ Add the following and change state and params to the page you want:
         "state": "public.pages"
         "params": {}
 ```
+</details>
 
-#### Set the home page to a specific custom page:
+<details>
+<summary>Set the home page to a specific custom page?</summary>
 
 ```
 # MENU
@@ -152,6 +161,7 @@ Add the following and change state and params to the page you want:
 ```
 
 Consult the `config/menu.json` to know about the different pages state and params.
+</details>
 
 ## `config/config.cson`
 
@@ -354,6 +364,6 @@ POS_XY
 Programming language auto detection for tech blogs
 
 * ***tabReplace***: a string used to replace TAB characters in indentation.
-* ***useBR***: a flag to generate <br> tags instead of new-line characters in the output, useful when code is marked up using a non-<pre> container.
+* ***useBR***: a flag to generate `<br>` tags instead of new-line characters in the output, useful when code is marked up using a non-`<pre>` container.
 * ***classPrefix***: a string prefix added before class names in the generated markup, used for backwards compatibility with stylesheets.
 * ***languages***: an array of language names and aliases restricting auto detection to only these languages.

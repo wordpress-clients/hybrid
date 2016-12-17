@@ -1,8 +1,8 @@
 <div class="wphc-post-toolbar">
-    <button class="button button-clear" ng-if="::postToolbarCtrl.terms[0].length" ng-click="postToolbarCtrl.showTaxonomies( 'categories.title', postToolbarCtrl.terms[0], 'category') ">
+    <button class="button button-clear" ng-if="::postToolbarCtrl.terms[0].length" ng-click="postToolbarCtrl.showTaxonomies( 'categories.title', postToolbarCtrl.terms[0], 'categories') ">
         <i class="icon ion-folder"></i>
     </button>
-    <button class="button button-clear" ng-if="::postToolbarCtrl.terms[1].length" ng-click="postToolbarCtrl.showTaxonomies( 'tags.title', postToolbarCtrl.terms[1], 'post_tag') ">
+    <button class="button button-clear" ng-if="::postToolbarCtrl.terms[1].length" ng-click="postToolbarCtrl.showTaxonomies( 'tags.title', postToolbarCtrl.terms[1], 'tags') ">
         <i class="icon ion-pricetags"></i>
     </button>
     <button ng-if="::postToolbarCtrl.hasShare" class="button button-clear pull-right" ng-click="postToolbarCtrl.share('native', postToolbarCtrl.post.title.rendered, postToolbarCtrl.post.link) ">

@@ -2,10 +2,12 @@
 
 This installation works on both OSX and Linux. Windows is not supported yet, if you want to help with that let us know: [https://github.com/shprink/wordpress-hybrid-client/issues/39](https://github.com/shprink/wordpress-hybrid-client/issues/39)
 
-## Preriquisites
+### Prerequisites
 
-- NodeJS (recommended: 4.x), please do not use npm 5.x for now
-- NPM (recommended: 3.3.x `sudo npm install -g npm`)
+- Git
+- NodeJS (>= 4)
+- NPM (>= 3)
+- [Yarn](https://yarnpkg.com/en/docs/install)
 
 If you are running linux you might need to install all of the following dependencies: [https://github.com/shprink/wphc-dockerbox/blob/master/Dockerfile#L13-L14](https://github.com/shprink/wphc-dockerbox/blob/master/Dockerfile#L13-L14)
 
@@ -46,14 +48,7 @@ Your personal config files live now in the `config` folder. You can modify all o
 
 ## Installing the Web service
 
-Install this plugin [https://wordpress.org/plugins/rest-api/](https://wordpress.org/plugins/rest-api/) (v2.x) to your WordPress website then add the address to the `config/config.cson`:
-
-```
-"api":
-    "baseUrl": "http://YourDomain/wp-json"
-```
-
-Now your WebService is ready to be queried.
+Since WordPress 4.7, there is no need to install anything. The WP-API is not part of the WP core!
 
 > If you do not have your WP setup yet, no problem `http://dev.julienrenaux.fr/wp-json` is set by default for you to try features. Change it when you are ready.
 

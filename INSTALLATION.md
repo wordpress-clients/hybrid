@@ -48,14 +48,7 @@ Your personal config files live now in the `config` folder. You can modify all o
 
 ## Installing the Web service
 
-Install this plugin [https://wordpress.org/plugins/rest-api/](https://wordpress.org/plugins/rest-api/) (v2.x) to your WordPress website then add the address to the `config/config.cson`:
-
-```
-"api":
-    "baseUrl": "http://YourDomain/wp-json"
-```
-
-Now your WebService is ready to be queried.
+Since WordPress 4.7, there is no need to install anything. The WP-API is not part of the WP core!
 
 > If you do not have your WP setup yet, no problem `http://dev.julienrenaux.fr/wp-json` is set by default for you to try features. Change it when you are ready.
 

@@ -1,7 +1,7 @@
 <a name="2.0.0"></a>
 ### 2.0.0 (2016-12-17)
 
-2.0.0 REQUIRES WORDPRESS 4.7 of higher!
+2.0.0 REQUIRES WORDPRESS 4.7 or higher!
 
 To upgrade:
 

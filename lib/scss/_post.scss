@@ -1,15 +1,25 @@
 .post {
-    .wp-caption.aligncenter {
+    .wp-caption {
         position: relative;
         margin-bottom: 1.0em;
         max-width: 100%;
         overflow: hidden;
     }
+    
+   .aligncenter {
+        clear: both;
+        display: block;
+        margin: 1.5em auto;
+   }
 
-    .wp-caption .wp-caption-text {
+   .wp-caption-text {
         margin: 10px 0;
         text-align: center;
         font-style: italic;
+    }
+	
+    a {
+      text-decoration: none;
     }
 
     // Lists

@@ -3,7 +3,14 @@
 
 2.0.0 REQUIRES WORDPRESS 4.7 of higher!
 
-To upgrade checkout `git fetch --all && git checkout v2.0.0` and run `npm i`
+To upgrade:
+
+```
+$ git fetch --all
+$ git checkout v2.0.0
+$ yarn
+$ npm run restore
+```
 
 * [ENHANCEMENT] WordPress 4.7 ready! <https://github.com/shprink/wordpress-hybrid-client/issues/308>
 * [ENHANCEMENT] Upgrade Cordova plugins <https://github.com/shprink/wordpress-hybrid-client/pull/310>

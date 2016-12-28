@@ -19,7 +19,7 @@ module.exports = {
     },
     module: {
 
-    noParse: [/autoit.js/],
+        noParse: [/autoit.js/],
 
         loaders: [{
             test: /[\/]highlight\.js$/,
@@ -30,6 +30,13 @@ module.exports = {
         }, {
             test: /[\/]ionic\.js$/,
             loader: 'exports?ionic' // For non commonJs
+        }, {
+            test: /service-worker\.js$/,
+            loaders: [
+                'file-loader?name=[name].[ext]',
+                `string-replace-loader?search=SERVICE_WORKER_VERSION&replace="${getAppVersion()}"`
+            ],
+            include: libPath
         }, {
             test: /\.js$/,
             exclude: /(node_modules|bower_components)/,
@@ -58,7 +65,7 @@ module.exports = {
         }, {
             test: [/Roboto\.ttf/, /Roboto\.woff/, /Roboto\.woff2/],
             loader: 'file?name=fonts/[name].[ext]'
-       }, {
+        }, {
             test: [/ionicons\.svg/, /ionicons\.eot/, /ionicons\.ttf/, /ionicons\.woff/],
             loader: 'file?name=fonts/[name].[ext]'
         }]

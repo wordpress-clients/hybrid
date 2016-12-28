@@ -1,9 +1,31 @@
+<a name="2.0.1"></a>
+### 2.0.1 (2016-12-28)
+
+* [BUG] Rollback appRate version to avoid regressions until v3 <https://github.com/shprink/wordpress-hybrid-client/issues/317>
+* [ENHANCEMENT] invalidate service worker cache at every build based on the config.xml app version
+
+To upgrade:
+
+```
+$ git fetch --all
+$ git checkout v2.0.1
+$ yarn
+$ npm run restore
+```
+
 <a name="2.0.0"></a>
 ### 2.0.0 (2016-12-17)
 
-2.0.0 REQUIRES WORDPRESS 4.7 of higher!
+2.0.0 REQUIRES WORDPRESS 4.7 or higher!
 
-To upgrade checkout `git fetch --all && git checkout v2.0.0` and run `npm i`
+To upgrade:
+
+```
+$ git fetch --all
+$ git checkout v2.0.0
+$ yarn
+$ npm run restore
+```
 
 * [ENHANCEMENT] WordPress 4.7 ready! <https://github.com/shprink/wordpress-hybrid-client/issues/308>
 * [ENHANCEMENT] Upgrade Cordova plugins <https://github.com/shprink/wordpress-hybrid-client/pull/310>

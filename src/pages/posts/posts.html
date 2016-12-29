@@ -14,7 +14,15 @@
 
 
 <ion-content padding>
-  <div *ngFor="let post of posts$ | async" class="search-result" >
-      {{post.title?.rendered}}
-    </div>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <post-card *ngFor="let post of (posts$ | async).list" post="post"></post-card>
+  <!--<ion-list>
+    <ion-item *ngFor="let i of items">{{i}}</ion-item>
+  </ion-list>-->
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" enabled="true">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

@@ -3,9 +3,13 @@ import { Http } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { WpApiModule } from 'wp-api-angular'
+import 'rxjs/add/operator/toPromise';
 
 import { MyApp } from './app.component';
 
+import StoreModules from '../store';
+
+import Components from '../components';
 import Pages from '../pages';
 import Providers, { Config } from '../providers';
 
@@ -33,11 +37,12 @@ export function createTranslateLoader(http: Http) {
 //     option4: 'Hello'
 //   });
 // }
-
+console.log('StoreModules', StoreModules);
 @NgModule({
-  declarations: [MyApp, ...Pages],
+  declarations: [MyApp, ...Components, ...Pages],
   imports: [
     IonicModule.forRoot(MyApp),
+    ...StoreModules,
     WpApiModule.initializeApp({
       baseUrl: Config.api.baseUrl,
       namespace: Config.api.namespace
@@ -49,7 +54,7 @@ export function createTranslateLoader(http: Http) {
     })
   ],
   bootstrap: [IonicApp],
-  entryComponents: [MyApp, ...Pages],
+  entryComponents: [MyApp, ...Components, ...Pages],
   providers: [
     Storage,
     ...Providers,

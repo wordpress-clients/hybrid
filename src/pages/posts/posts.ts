@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { WpApiPosts } from 'wp-api-angular'
 import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+
+import { addPosts } from '../../actions';
+import { AppState } from '../../reducers';
 
 /*
   Generated class for the Posts page.
@@ -15,14 +19,49 @@ import { Observable } from 'rxjs';
 })
 export class PostsPage {
 
-  posts$: Observable<Array<any>>;
+  page: number = 1;
+  posts$: Observable<Object>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private wpApiPosts: WpApiPosts) {}
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private wpApiPosts: WpApiPosts,
+    private store: Store<AppState>
+  ) {
+    this.posts$ = store.select('posts');
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PostsPage');
-    this.posts$ = this.wpApiPosts.getList()
-      .map((r) => r.json());
+  }
+
+  getPosts() {
+    return this.wpApiPosts.getList()
+      .toPromise()
+      .then((r) => {
+        this.store.dispatch(addPosts({
+          totalPages: parseInt(r.headers.get('x-wp-totalpages')),
+          totalItems: parseInt(r.headers.get('x-wp-total')),
+          list: r.json()
+        }));
+      });
+  }
+
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
+
+  doInfinite(infiniteScroll) {
+    console.log('Begin async operation', infiniteScroll);
+    this.getPosts();
+    setTimeout(() => {
+      infiniteScroll.complete();
+    }, 500);
   }
 
 }

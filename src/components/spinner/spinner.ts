@@ -12,7 +12,8 @@ import { Component, Input, trigger, transition, style, animate, state } from '@a
   animations: [
     trigger('visibilityChanged', [
       state('true', style({ opacity: 1, transform: 'scale(1.0)' })),
-      state('false', style({ opacity: 0, transform: 'scale(0.8)' })),
+      state('false', style({ opacity: 0, transform: 'scale(0.8)', display: 'none'
+     })),
       transition('1 => 0', animate('300ms')),
       transition('0 => 1', animate('300ms'))
     ])

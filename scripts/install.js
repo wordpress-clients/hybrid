@@ -2,6 +2,10 @@
 
 var fs = require('fs-extra');
 
+console.log("=============================================");
+console.log("Starting WordPress Hybrid Client Installation");
+console.log("=============================================");
+
 copy('../dist/config.cson', '../config/config.cson');
 copy('../dist/menu.json', '../config/menu.json');
 copy('../dist/config.xml', '../config.xml');

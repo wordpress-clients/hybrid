@@ -1,0 +1,11 @@
+toolbar {
+    border-top: 1px solid $gray-lighter;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    button {
+        &.active{
+            opacity: 0.6;
+        }
+    } 
+}

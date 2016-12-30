@@ -12,8 +12,12 @@ $font-path: "../assets/fonts";
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
-
-
+// http://www.materialpalette.com/blue-grey/teal
+$palette-primary-color: #607d8b !default;
+$palette-dark-color: #455a64 !default;
+$palette-light-color: #eaeaea !default;
+$palette-secondary-color: #009688 !default;
+$palette-danger-color: #bd1818 !default;
 
 // Named Color Variables
 // --------------------------------------------------
@@ -24,11 +28,11 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #387ef5,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary:    $palette-primary-color,
+  secondary:  $palette-secondary-color,
+  danger:     $palette-danger-color,
+  light:      $palette-light-color,
+  dark:       $palette-dark-color
 );
 
 

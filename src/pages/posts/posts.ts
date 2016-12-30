@@ -4,8 +4,8 @@ import { WpApiPosts } from 'wp-api-angular'
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
-import { addPosts } from '../../actions';
-import { AppState } from '../../reducers';
+import { addPosts, cleanPosts } from '../../actions';
+import { AppState, IPostsState } from '../../reducers';
 
 /*
   Generated class for the Posts page.
@@ -14,54 +14,84 @@ import { AppState } from '../../reducers';
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-posts',
-  templateUrl: 'posts.html'
+    selector: 'page-posts',
+    templateUrl: 'posts.html'
 })
 export class PostsPage {
 
-  page: number = 1;
-  posts$: Observable<Object>;
+    isPaginationEnabled: boolean = true;
+    shouldRetry: boolean = false;
+    page: number = 1;
+    posts$: Observable<Array<any>>;
 
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    private wpApiPosts: WpApiPosts,
-    private store: Store<AppState>
-  ) {
-    this.posts$ = store.select('posts');
-  }
+    constructor(
+        public navCtrl: NavController,
+        public navParams: NavParams,
+        private wpApiPosts: WpApiPosts,
+        private store: Store<AppState>
+    ) {
+        this.posts$ = store.select('posts')
+            .combineLatest(this.store.select('post'), (posts: IPostsState, post) => posts.list.map(id => post[id]));
+    }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PostsPage');
-  }
+    ionViewDidLoad() {
+        let currentList;
+        this.store.select('posts').take(1).subscribe(({ list }) => currentList = list);
+        console.log('ionViewDidLoad PostsPage', currentList);
+        if (!currentList.length) {
+            this.getPosts().toPromise();
+        }
+    }
 
-  getPosts() {
-    return this.wpApiPosts.getList()
-      .toPromise()
-      .then((r) => {
-        this.store.dispatch(addPosts({
-          totalPages: parseInt(r.headers.get('x-wp-totalpages')),
-          totalItems: parseInt(r.headers.get('x-wp-total')),
-          list: r.json()
-        }));
-      });
-  }
+    trackByPostId = (index: number, item) => item.id;
 
-  doRefresh(refresher) {
-    console.log('Begin async operation', refresher);
+    private getPosts() {
+        console.log('getPosts');
+        let currentPage;
+        this.store.select('posts').take(1).subscribe(({ page }) => currentPage = page);
+        const nextPage = currentPage += 1;
 
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      refresher.complete();
-    }, 2000);
-  }
+        return this.wpApiPosts.getList({
+            "search": `_embed=true&per_page=10&page=${nextPage}`
+        })
+            .debounceTime(400)
+            .retry(3)
+            .map((r) => {
+                const totalPages = parseInt(r.headers.get('x-wp-totalpages'));
+                this.store.dispatch(addPosts({
+                    page: nextPage,
+                    totalPages,
+                    totalItems: parseInt(r.headers.get('x-wp-total')),
+                    list: r.json()
+                }));
+                this.isPaginationEnabled = true;
+                return totalPages <= nextPage;
+            })
+            .catch(res => {
+                this.shouldRetry = true;
+                this.isPaginationEnabled = false;
+                console.log("ERROR! " + res);
+                return res;
+            });
+    }
 
-  doInfinite(infiniteScroll) {
-    console.log('Begin async operation', infiniteScroll);
-    this.getPosts();
-    setTimeout(() => {
-      infiniteScroll.complete();
-    }, 500);
-  }
+    doLoad() {
+        console.log('doLoad');
+        return this.getPosts().toPromise();
+    }
+
+    doRefresh(refresher) {
+        console.log('doRefresh');
+        this.store.dispatch(cleanPosts());
+        this.getPosts().toPromise().then(() => refresher.complete(), (error) => refresher.complete());
+    }
+
+    doInfinite(infiniteScroll) {
+        console.log('doInfinite');
+        this.getPosts().toPromise().then((isComplete) => {
+            infiniteScroll.complete();
+            this.isPaginationEnabled = !isComplete;
+        }, (error) => infiniteScroll.complete());
+    }
 
 }

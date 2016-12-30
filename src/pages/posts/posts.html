@@ -13,16 +13,15 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-  <post-card *ngFor="let post of (posts$ | async).list" post="post"></post-card>
-  <!--<ion-list>
-    <ion-item *ngFor="let i of items">{{i}}</ion-item>
-  </ion-list>-->
+  <spinner [isVisible]="!(posts$ | async).length"></spinner>
+  <post-card *ngFor="let post of (posts$ | async); trackBy: trackByPostId" [post]="post"></post-card>
 
-  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" enabled="true">
+  <button *ngIf="shouldRetry" ion-button color="light" full (click)="doLoad($event)">Retry</button>
+  <ion-infinite-scroll *ngIf="(posts$ | async).length && !shouldRetry" (ionInfinite)="doInfinite($event)" [enabled]="isPaginationEnabled">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>

@@ -1,6 +1,5 @@
-import { ListMasterPage } from './../../myapp/src/pages/list-master/list-master';
 import { ActionReducer, Action } from '@ngrx/store';
-import { ADD_POSTS } from '../actions';
+import { ADD_POSTS, CLEAN_POSTS } from '../actions';
 
 export interface IPostsState {
     page: number;
@@ -21,13 +20,18 @@ export const postsReducer: ActionReducer<Object> = (state: IPostsState = default
 
     switch (action.type) {
         case ADD_POSTS: {
-            const { totalPages, totalItems, list } = payload;
+            const { totalPages, totalItems, list, page } = payload;
             const ids = list.map((post) => post.id);
             return Object.assign({}, state, {
+                page,
                 totalPages,
                 totalItems,
                 list: state.list.concat(ids)
             });
+        }
+
+        case CLEAN_POSTS: {
+            return defaultState;
         }
 
         default:

@@ -76,3 +76,36 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+// Grays
+// ------------------------------
+$gray-base: #000 !default;
+$gray-darker: lighten($gray-base, 13.5%) !default;
+$gray-dark: lighten($gray-base, 20%) !default;
+$gray: lighten($gray-base, 33.5%) !default;
+$gray-light: lighten($gray-base, 46.7%) !default;
+$gray-lighter: lighten($gray-base, 93.5%) !default;
+$gray-lighter2: lighten($gray-base, 95%) !default;
+
+// Overwrite
+$background-color: $gray-lighter2;
+
+// Post
+// ------------------------------
+$post-img-height: 200px !default;
+$post-img-bg: $gray-lighter !default;
+
+
+// Loader
+// ------------------------------
+$loader-width: 50px !default;
+$loader-height: 50px !default;
+$loader-zIndex: 1002 !default;
+$loader-bg: $gray-lighter !default;
+$loader-stroke: color($colors, primary) !default;
+$loader-fill: color($colors, primary) !default;
+
+// Empty list directive
+// ----------------------
+$emptyList-bg: $gray-lighter !default;
+$emptyList-zIndex: 1001 !default;

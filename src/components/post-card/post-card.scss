@@ -1,3 +1,9 @@
 post-card {
-
+    .thumbnail {
+        height: $post-img-height;
+        width: 100%;
+        background-color: $post-img-bg;
+        background-size: cover;
+        position: relative;
+    }
 }

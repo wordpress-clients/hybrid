@@ -4,6 +4,10 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { WpApiModule } from 'wp-api-angular'
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/take';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 import { MyApp } from './app.component';
 

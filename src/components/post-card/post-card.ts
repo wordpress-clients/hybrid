@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 /*
   Generated class for the PostCard component.
@@ -11,12 +11,10 @@ import { Component } from '@angular/core';
   templateUrl: 'post-card.html'
 })
 export class PostCardComponent {
-
-  text: string;
+  @Input() post: Object;
 
   constructor() {
-    console.log('Hello PostCard Component');
-    this.text = 'Hello World';
+
   }
 
 }

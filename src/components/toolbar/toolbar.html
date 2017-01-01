@@ -4,10 +4,10 @@
   See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
   for more info on Angular 2 Components.
 -->
-<button ion-button icon-only clear round>
+<button *ngIf="categories" ion-button icon-only clear round (click)="openCategories($event)">
   <ion-icon name="folder"></ion-icon>
 </button>
-<button ion-button icon-only clear round>
+<button *ngIf="tags" ion-button icon-only clear round (click)="openTags($event)">
   <ion-icon name="pricetags"></ion-icon>
 </button>
 <span flex></span>

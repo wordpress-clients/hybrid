@@ -30,24 +30,36 @@ menu:
     list: [
         type: "internal"
         trans: "menu.home"
-        route: "public.posts"
-        icon: "icon ion-home"
-        ,
+        page: "posts"
+        params: {}
+        icon: "home"
+    ,
+        type: "internal"
+        trans: "menu.pages"
+        page: "pages"
+        icon: "home"
+    ,
+        type: "internal"
+        trans: "menu.post"
+        page: "post"
+        params: { id: 2332 }
+        icon: "home"
+    ,
         type: "separator"
         trans: "Posts type"
-        ,
+    ,
         type: "folder"
         trans: "menu.posts"
-        icon: "icon ion-ios-paper"
+        icon: "folder"
         list: [
             type: "internal",
             trans: "Hello world",
             route: "public.posts.id({ id: 1 })",
             icon: "icon ion-android-document"
-            ,
+        ,
             type: "internal",
             trans: "All",
             route: "public.posts",
-            icon: "icon ion-ios-paper"
+            icon: "folder"
         ]
     ]

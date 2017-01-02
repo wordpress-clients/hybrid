@@ -7,13 +7,14 @@
 
 
 <ion-card>
-  <ion-img 
-    *ngIf="post.featured_media !== 0" 
+  <ion-img
+    *ngIf="post.featured_media !== 0"
+    (click)="doOpen($event)"
     class="thumbnail"
     cache="true"
     [src]="post.better_featured_image.media_details.sizes.medium.source_url"></ion-img>
   
-  <ion-card-content>
+  <ion-card-content (click)="doOpen($event)">
     <ion-card-title [innerHtml]="post.title.rendered"></ion-card-title>
     <p [innerHtml]="post.excerpt.rendered"></p>
   </ion-card-content>

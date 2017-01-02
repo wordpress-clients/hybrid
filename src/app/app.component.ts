@@ -8,9 +8,7 @@ import { TranslateService } from 'ng2-translate/ng2-translate';
 
 @Component({
   template: `
-    <ion-menu [content]="content">
-      <menu></menu>
-    </ion-menu>
+    <menu [content]="content"></menu>
     <ion-nav #content [root]="rootPage"></ion-nav>
   `
 })
@@ -30,11 +28,5 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
-  }
-
-  openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
   }
 }

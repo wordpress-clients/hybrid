@@ -5,8 +5,8 @@ import { ModalController } from 'ionic-angular';
 import { Observable } from 'rxjs';
 
 import { addBookmark, removeBookmark } from '../../actions';
+import { TaxonomiesModal } from './../../pages/taxonomies-modal/taxonomies-modal';
 import { AppState } from '../../reducers';
-import { TaxonomiesModal } from '../../pages';
 import { Toast } from '../../providers';
 
 /*
@@ -47,15 +47,18 @@ export class ToolbarComponent {
     profileModal.present();
   }
 
-  openCategories() {
+  openCategories(e) {
+    e.stopPropagation();
     this.openTaxonomy('categories.title', 'categories', this.categories, 'post');
   }
 
-  openTags() {
+  openTags(e) {
+    e.stopPropagation();
     this.openTaxonomy('tags.title', 'tags', this.tags, 'post');
   }
 
   doBookmark(e) {
+    e.stopPropagation();
     let isBookmarked;
     this.isBookmarked$.take(1).subscribe(response => isBookmarked = response);
 

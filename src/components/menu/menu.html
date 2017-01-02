@@ -4,14 +4,34 @@
   See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
   for more info on Angular 2 Components.
 -->
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Pages 3</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Pages 3</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <ion-list>
-  </ion-list>
-</ion-content>
+  <ion-content>
+    <ion-list>
+      <div *ngFor="let item of list; trackBy: trackByIndex">
+        <div [ngSwitch]="item.type">
+          <ion-item-divider *ngSwitchCase="'separator'" color="light">
+            {{ item.trans | translate }}
+          </ion-item-divider>
+          <ion-item *ngSwitchCase="'internal'" menuClose (click)="doInternalClick($event, item.page, item.params)">
+            <ion-icon [name]="item.icon" item-left></ion-icon>
+            {{ item.trans | translate }}
+          </ion-item>
+          <ion-item *ngSwitchCase="'external'" menuClose>
+            <ion-icon [name]="item.icon" item-left></ion-icon>
+            {{ item.trans | translate }}
+          </ion-item>
+          <ion-item *ngSwitchCase="'folder'">
+            <ion-icon name="folder" item-left></ion-icon>
+            {{ item.trans | translate }}
+          </ion-item>
+        </div>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-menu>

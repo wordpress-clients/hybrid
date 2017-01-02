@@ -9,13 +9,12 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
+import '../i18n';
 import { MyApp } from './app.component';
-
 import StoreModules from '../store';
-
 import Components from '../components';
 import Pages from '../pages';
-import Providers, { Config } from '../providers';
+import Providers, { RawConfig } from '../providers';
 
 // import { Settings } from '../providers/settings';
 
@@ -24,7 +23,7 @@ import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-tra
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
 export function createTranslateLoader(http: Http) {
-  return new TranslateStaticLoader(http, './assets/i18n', '.json');
+  return new TranslateStaticLoader(http, './build/i18n', '.json');
 }
 
 // export function provideSettings(storage: Storage) {
@@ -48,8 +47,8 @@ console.log('StoreModules', StoreModules);
     IonicModule.forRoot(MyApp),
     ...StoreModules,
     WpApiModule.initializeApp({
-      baseUrl: Config.api.baseUrl,
-      namespace: Config.api.namespace
+      baseUrl: RawConfig.api.baseUrl,
+      namespace: RawConfig.api.namespace
     }),
     TranslateModule.forRoot({
       provide: TranslateLoader,

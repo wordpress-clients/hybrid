@@ -1,3 +1,4 @@
+import { TranslateService } from 'ng2-translate/ng2-translate';
 import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ModalController } from 'ionic-angular';
@@ -5,7 +6,8 @@ import { Observable } from 'rxjs';
 
 import { addBookmark, removeBookmark } from '../../actions';
 import { AppState } from '../../reducers';
-import { TaxonomiesPage } from '../../pages';
+import { TaxonomiesModal } from '../../pages';
+import { Toast } from '../../providers';
 
 /*
   Generated class for the Toolbar component.
@@ -26,16 +28,17 @@ export class ToolbarComponent {
 
   constructor(
     private modalCtrl: ModalController,
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    private toast: Toast,
+    private translate: TranslateService
   ) {
     this.isBookmarked$ = this.store.select((state: AppState) => {
-      console.log('state.bookmarks', state.bookmarks);
       return state.bookmarks.indexOf(this.bookmarkId) > -1;
     });
   }
 
   private openTaxonomy(title: string, term: string, list: Array<Object>, postType: string) {
-    let profileModal = this.modalCtrl.create(TaxonomiesPage, {
+    let profileModal = this.modalCtrl.create(TaxonomiesModal, {
       title,
       postType,
       term,
@@ -57,9 +60,17 @@ export class ToolbarComponent {
     this.isBookmarked$.take(1).subscribe(response => isBookmarked = response);
 
     if (isBookmarked) {
+      let text = ''
+      this.translate.get('bookmark.removed').take(1).subscribe((translation) => text = translation);
       this.store.dispatch(removeBookmark(this.bookmarkId));
+      console.log('text', text);
+      this.toast.show(text);
     } else {
+      let text = ''
+      this.translate.get('bookmark.bookmarked').take(1).subscribe((translation) => text = translation);
       this.store.dispatch(addBookmark(this.bookmarkId));
+      console.log('text2', text);
+      this.toast.show(text);
     }
   }
 

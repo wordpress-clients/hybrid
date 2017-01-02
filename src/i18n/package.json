@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "strip-module-export-loader": "^0.1.0"
+  }
+}

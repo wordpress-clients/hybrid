@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
 import { WpApiTaxonomies } from 'wp-api-angular'
-import { Observable } from 'rxjs';
 
 /*
   Generated class for the Taxonomies page.
@@ -10,10 +9,10 @@ import { Observable } from 'rxjs';
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-taxonomies',
-  templateUrl: 'taxonomies.html'
+  selector: 'page-taxonomies-modal',
+  templateUrl: 'taxonomies-modal.html'
 })
-export class TaxonomiesPage {
+export class TaxonomiesModal {
   title: String;
   postType: String;
   term: String;

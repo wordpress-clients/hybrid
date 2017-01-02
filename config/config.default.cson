@@ -6,23 +6,48 @@
 ###
 
 
-"title": "Your Blog title"
+title: "Your Blog title"
 
-"api":
-    "baseUrl": "https://dev.julienrenaux.fr/wp-json"
-    "namespace": "/wp/v2"
-    "timeout": 30000
-    "maxAttempt": 3
+toast:
+    duration: 3000
+    position: "bottom" # Accepted values: "top", "middle", "bottom".
 
-"serviceWorker":
-    "enabled" : false
+api:
+    baseUrl: "https://dev.julienrenaux.fr/wp-json"
+    namespace: "/wp/v2"
+    timeout: 30000
+    maxAttempt: 3
 
-"menu":
-    "externalLinkTarget" : null # _self|_blank|_system default: _system https://github.com/apache/cordova-plugin-inappbrowser#cordovainappbrowseropen
-    "externalLinkOptions": null # default: 'location=yes'
-    "exposeAsideWhen": "(min-width:900px)"
-    "displayIcon": true # uses config/icons/icon_48.png
-    "side": [
-        
+serviceWorker:
+    enabled : false
+
+menu:
+    options:
+        externalLinkTarget : null # _self|_blank|_system default: _system https://github.com/apache/cordova-plugin-inappbrowser#cordovainappbrowseropen
+        externalLinkOptions: null # default: 'location=yes'
+        exposeAsideWhen: "(min-width:900px)"
+        displayIcon: true # uses config/icons/icon_48.png
+    list: [
+        type: "internal"
+        trans: "menu.home"
+        route: "public.posts"
+        icon: "icon ion-home"
+        ,
+        type: "separator"
+        trans: "Posts type"
+        ,
+        type: "folder"
+        trans: "menu.posts"
+        icon: "icon ion-ios-paper"
+        list: [
+            type: "internal",
+            trans: "Hello world",
+            route: "public.posts.id({ id: 1 })",
+            icon: "icon ion-android-document"
+            ,
+            type: "internal",
+            trans: "All",
+            route: "public.posts",
+            icon: "icon ion-ios-paper"
+        ]
     ]
-

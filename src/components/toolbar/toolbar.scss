@@ -3,9 +3,12 @@ toolbar {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    background-color: $gray-lighter2;
     button {
+        color: $toolbar-button-color !important;
         &.active{
-            opacity: 0.6;
+            color: $toolbar-button-active-color !important;
+            opacity: 1;
         }
     } 
 }

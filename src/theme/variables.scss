@@ -88,6 +88,8 @@ $gray-darker: lighten($gray-base, 13.5%) !default;
 $gray-dark: lighten($gray-base, 20%) !default;
 $gray: lighten($gray-base, 33.5%) !default;
 $gray-light: lighten($gray-base, 46.7%) !default;
+$gray-light2: lighten($gray-base, 55%) !default;
+$gray-light3: lighten($gray-base, 65%) !default;
 $gray-lighter: lighten($gray-base, 93.5%) !default;
 $gray-lighter2: lighten($gray-base, 95%) !default;
 
@@ -113,3 +115,7 @@ $loader-fill: color($colors, primary) !default;
 // ----------------------
 $emptyList-bg: $gray-lighter !default;
 $emptyList-zIndex: 1001 !default;
+
+// Toolbar
+$toolbar-button-color: $gray-light2;
+$toolbar-button-active-color: color($colors, primary);

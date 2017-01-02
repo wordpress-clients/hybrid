@@ -7,20 +7,12 @@ import { PostsPage } from '../pages/posts/posts';
 import { TranslateService } from 'ng2-translate/ng2-translate';
 
 @Component({
-  template: `<ion-menu [content]="content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Pages</ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-    <ion-content>
-      <ion-list>
-      </ion-list>
-    </ion-content>
-
-  </ion-menu>
-  <ion-nav #content [root]="rootPage"></ion-nav>`
+  template: `
+    <ion-menu [content]="content">
+      <menu></menu>
+    </ion-menu>
+    <ion-nav #content [root]="rootPage"></ion-nav>
+  `
 })
 export class MyApp {
   rootPage = PostsPage;

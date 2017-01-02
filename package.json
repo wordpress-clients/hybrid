@@ -57,6 +57,8 @@
   "devDependencies": {
     "@ionic/app-scripts": "0.0.47",
     "cson-loader": "^0.1.0",
+    "file-loader": "^0.9.0",
+    "strip-module-export-loader": "^0.1.0",
     "typescript": "2.0.9"
   },
   "cordovaPlugins": [
@@ -66,7 +68,8 @@
     "cordova-plugin-console@1.0.5",
     "cordova-plugin-splashscreen@4.0.1",
     "ionic-plugin-keyboard@2.2.1",
-    "cordova-plugin-crosswalk-webview@2.2.0"
+    "cordova-plugin-crosswalk-webview@2.2.0",
+    "cordova-plugin-x-toast@2.5.2"
   ],
   "cordovaPlatforms": [
     {

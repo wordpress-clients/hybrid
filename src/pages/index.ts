@@ -1,11 +1,11 @@
 import { HomePage } from './home/home';
 import { PostsPage } from './posts/posts';
-import { TaxonomiesPage } from './taxonomies/taxonomies';
+import { TaxonomiesModal } from './taxonomies-modal/taxonomies-modal';
 
-export * from './taxonomies/taxonomies';
+export * from './taxonomies-modal/taxonomies-modal';
 
 export default [
     HomePage,
     PostsPage,
-    TaxonomiesPage
+    TaxonomiesModal
 ];

@@ -1,0 +1,86 @@
+"pullToRefresh": "Puxe para atualizar"
+"retry": "Tentar novamente"
+"cancel": "Cancel"
+"back": "Voltar"
+"error": "Ocorreu um erro, tente novamente."
+"attemptToConnect": "Tentativa de conexão {{attempt}} de {{attemptMax}}."
+"yes": "Sim"
+"no" : "Não"
+"menu": 
+    "title": "Menu"
+    "home": "Início"
+    "tags": "Etiquetas"
+    "pages": "Páginas"
+    "posts": "Posts"
+    "authors": "Autores"
+    "search": "Buscar"
+    "bookmarks": "Favoritos"
+    "socialNetworks": "Redes Sociais"
+    "categories": "Categorias"
+    "settings": "Configurações"
+    "customPosts": "Posts customizados"
+    "customTaxonomy": "Taxonomia customizada"
+"pushNotifications": 
+    "newContent": 
+        "title": "Nova publicação!"
+        "text": "Novo artigo: '{{postTitle}}' em {{appTitle}}, quer visualizar?"
+"bookmark": 
+    "title": "Favoritos"
+    "emptyList" : "Não há nada salvo!"
+    "bookmarked" : "Adicionado aos favoritos!"
+    "removed" : "Eliminado dos favoritos!"
+"tags": 
+    "title": "Etiquetas"
+"tag":
+    "title": "Etiqueta: {{name}}"
+"customTaxonomy":
+    "title": "{{term}}: {{name}}"
+"categories": 
+    "title": "Categorias"
+"category":
+    "title": "Categoria {{name}}"
+"home": 
+    "title": "Início"
+"search":
+    "inputPlaceholder": "Buscar"
+    "title": "Buscar",
+    "titleQuery": "Buscar: {{query}}"
+"sharing": 
+    "shared": "Compartilhado!"
+"authors":
+    "title": "Autores"
+"author":
+    "title": "Autor: {{name}}"
+"pages":
+    "title": "Páginas"
+"posts": 
+    "title": "Início"
+    "empty": "Não encontrou novas publicações!"
+    "featured": "Em destaque"
+"post": 
+    "comments": "Comentários"
+    "openInBrowser": "Abrir no navegador"
+"about": 
+    "title": "Sobre"
+"params":
+    "title": "Parâmetros"
+    "offlineMode": "Modo Offline"
+    "fontSize": "Tamanho da fonte"
+    "language": "Idioma"
+"languages":
+    "en": "Inglês"
+    "fr": "Francês"
+    "zh": "Chinês"
+    "es": "Espanhol"
+    "pl": "Polaco"
+    "de": "Alemão"
+    "pt": "Português"
+    "it": "Italiano"
+    "nl": "Holandês"
+"fontSize": 
+    "small": "Pequena"
+    "medium": "Média"
+    "large": "Grande"
+    "x-large": "Muito grande"
+    "xx-large": "Extra grande"
+

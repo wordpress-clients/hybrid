@@ -17,19 +17,25 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.json$/,
-        loader: 'json-loader'
+        use: 'json-loader'
       },
       {
         test: /\.cson$/,
-        loader: 'cson-loader'
+        use: ['file-loader?name=/i18n/[name].json', 'strip-module-export-loader', 'cson-loader'],
+        include: path.join(__dirname, '..', 'src', 'i18n')
+      },
+      {
+        test: /\.cson$/,
+        use: 'cson-loader',
+        exclude: path.join(__dirname, '..', 'src', 'i18n')
       },
       {
         //test: /\.(ts|ngfactory.js)$/,
         test: /\.ts$/,
-        loader: process.env.IONIC_WEBPACK_LOADER
+        use: process.env.IONIC_WEBPACK_LOADER
       }
     ]
   },

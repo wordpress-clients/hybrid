@@ -1,0 +1,89 @@
+"pullToRefresh": "Omlaag om te herladen!"
+"retry": "Opnieuw"
+"cancel": "Cancel"
+"back": "Terug"
+"error": "Er ging iets mis, probeer het opnieuw."
+"attemptToConnect": "Poging {{attempt}} van {{attemptMax}}. Om te laden"
+"yes": "Ja"
+"no" : "Nee"
+"emptyList" : "Er is niks hier!"
+"enabled": "Ingeschakeld"
+"menu":
+    "title": "Menu"
+    "home": "Home"
+    "tags": "Tags"
+    "pages": "Pagina's"
+    "posts": "Berichten"
+    "authors": "Auteurs"
+    "search": "Zoeken"
+    "bookmarks": "bladwijzers"
+    "socialNetworks": "Sociale netwerken"
+    "categories": "Categorieën"
+    "settings": "Instellingen"
+    "customPosts": "Aangepaste berichten"
+    "customTaxonomy": "Aangepaste taxanomie"
+"pushNotifications":
+    "newContent":
+        "title": "Nieuwe inhoud!"
+        "text": "Een nieuwe post/pagina: '{{postTitle}}' is nu op {{appTitle}}, wil je het bekijken?"
+"bookmark":
+    "title": "Bladwijzers"
+    "emptyList" : "Nog geen bladwijzers!"
+    "bookmarked" : "Toegevoegd!"
+    "removed" : "Bladwijzer verwijderd!"
+"tags":
+    "title": "Tags"
+"tag":
+    "title": "Tag: {{name}}"
+"customTaxonomy":
+    "title": "{{term}}: {{name}}"
+"categories":
+    "title": "Categorieën"
+"category":
+    "title": "Categorie: {{name}}"
+"home":
+    "title": "Home"
+"search":
+    "inputPlaceholder": "Zoeken"
+    "title": "Zoek"
+    "titleQuery": "Resultaten voor: {{query}}"
+"sharing":
+    "shared": "Gedeeld!"
+"authors":
+    "title": "Auteurs"
+"author":
+    "title": "Auteur: {{name}}"
+"pages":
+    "title": "Pagina's"
+"posts":
+    "title": "Berichten"
+    "featured": "Uitgelicht"
+"post":
+    "comments": "Reactie's"
+    "openInBrowser": "Open in browser"
+"about":
+    "title": "Over"
+"params":
+    "title": "Instellingen"
+    "offlineMode": "Offline mode (binnenkort)"
+    "fontSize": "Lettertype grootte"
+    "language": "Taal"
+    "pushNotifications": "Push berichten"
+"languages":
+    "en": "Engels"
+    "fr": "Frans"
+    "zh": "Chinees"
+    "es": "Spaans"
+    "pl": "Pools"
+    "de": "Duits"
+    "pt": "Portugees"
+    "it": "Italiaans"
+    "nl": "Nederlands"
+    "ru": "Russisch"
+    "tr": "Turks"
+"fontSize":
+    "small": "Klein"
+    "medium": "Normaal"
+    "large": "Groot"
+    "x-large": "X-Groot"
+    "xx-large": "XX-Groot"

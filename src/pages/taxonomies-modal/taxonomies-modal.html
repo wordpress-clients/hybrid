@@ -9,10 +9,10 @@
   <ion-navbar>
     <ion-buttons start>
       <button ion-button (click)="dismiss()" showWhen="ios">
-        <span color="primary" >Cancel</span>
+        <span color="primary" >{{ 'cancel' | translate }}</span>
       </button>
     </ion-buttons>
-    <ion-title>taxonomies</ion-title>
+    <ion-title>{{ title | translate }}</ion-title>
     <ion-buttons end>
       <button ion-button (click)="dismiss()" showWhen="android,core,windows">
         <ion-icon name="md-close"></ion-icon>

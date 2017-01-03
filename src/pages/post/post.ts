@@ -1,11 +1,11 @@
 import { WpApiPosts } from 'wp-api-angular';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 
 import { addPost } from '../../actions';
-import { AppState, IPostsState } from '../../reducers';
+import { AppState } from '../../reducers';
 
 /*
   Generated class for the Post page.
@@ -19,6 +19,7 @@ import { AppState, IPostsState } from '../../reducers';
 })
 export class PostPage {
   post$: Observable<Object>;
+  postSubscription: Subscription;
 
   constructor(
     public navCtrl: NavController,
@@ -34,9 +35,14 @@ export class PostPage {
     this.post$.take(1).subscribe(post => isPostLoaded = post !== undefined);
     if (!isPostLoaded) {
       console.log('post not loaded!');
-      this.wpApiPosts.get(this.navParams.get('id'))
+      this.wpApiPosts.get(this.navParams.get('id'), {
+        "search": `_embed=true`
+      })
         .retry(3)
-        .map(r => this.store.dispatch(addPost(r.json())))
+        .map(r => {
+          this.store.dispatch(addPost(r.json()));
+          
+        })
         .catch(res => {
           console.log("ERROR! " + res);
           return res;

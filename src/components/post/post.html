@@ -1,0 +1,32 @@
+<!--
+  Generated template for the Post component.
+
+  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
+  for more info on Angular 2 Components.
+-->
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>post</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content parallax-header>
+  <spinner [isVisible]="!post"></spinner>
+  <div class="header-image">
+    <img *ngIf="post && post.featured_media !== 0" class="thumbnail" [src]="post.better_featured_image.media_details.sizes.medium.source_url"
+    />
+  </div>
+
+  <div class="main-content">
+    <div *ngIf="post" padding>
+      <h1 [innerHtml]="post.title.rendered"></h1>
+      <author [link]="true" [author]="post._embedded.author[0]" [date]="post.date"></author>
+      <toolbar [bookmarkId]="'post:' + post.id" [tags]="post._embedded['wp:term'][1]" [categories]="post._embedded['wp:term'][0]"></toolbar>
+      <div [innerHtml]="post.content.rendered"></div>
+      <toolbar [bookmarkId]="'post:' + post.id" [tags]="post._embedded['wp:term'][1]" [categories]="post._embedded['wp:term'][0]"></toolbar>
+    </div>
+  </div>
+</ion-content>

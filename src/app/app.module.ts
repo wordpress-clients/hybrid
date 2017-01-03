@@ -12,7 +12,7 @@ import 'rxjs/add/operator/catch';
 import '../i18n';
 import { MyApp } from './app.component';
 import StoreModules from '../store';
-import Components from '../components';
+import Components, { DIRECTIVES } from '../components';
 import Pages from '../pages';
 import Providers, { RawConfig } from '../providers';
 
@@ -42,7 +42,7 @@ export function createTranslateLoader(http: Http) {
 // }
 console.log('StoreModules', StoreModules);
 @NgModule({
-  declarations: [MyApp, ...Components, ...Pages],
+  declarations: [MyApp, ...Components, ...DIRECTIVES, ...Pages],
   imports: [
     IonicModule.forRoot(MyApp),
     ...StoreModules,

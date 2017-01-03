@@ -101,6 +101,11 @@ $background-color: $gray-lighter2;
 $post-img-height: 200px !default;
 $post-img-bg: $gray-lighter !default;
 
+// Page Post
+// ------------------------------
+$page-post-bg-color: white !default; 
+$page-post-img-height: $post-img-height !default;
+$page-post-img-bg: $post-img-bg !default;
 
 // Loader
 // ------------------------------

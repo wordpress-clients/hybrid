@@ -1,5 +1,5 @@
 <!--
-  Generated template for the Post component.
+  Generated template for the Page component.
 
   See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
   for more info on Angular 2 Components.
@@ -9,8 +9,8 @@
   <div class="main-content" padding>
     <h1 [innerHtml]="item.title.rendered"></h1>
     <author [link]="true" [author]="item._embedded.author[0]" [date]="item.date"></author>
-    <toolbar [bookmarkId]="'post:' + item.id" [tags]="item._embedded['wp:term'][1]" [categories]="item._embedded['wp:term'][0]"></toolbar>
+    <toolbar [bookmarkId]="'page:' + item.id"></toolbar>
     <div [innerHtml]="item.content.rendered"></div>
-    <toolbar [bookmarkId]="'post:' + item.id" [tags]="item._embedded['wp:term'][1]" [categories]="item._embedded['wp:term'][0]"></toolbar>
+    <toolbar [bookmarkId]="'page:' + item.id"></toolbar>
   </div>
 </div>

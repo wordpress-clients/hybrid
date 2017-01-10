@@ -1,15 +1,15 @@
-post {
+page {
     .thumbnail {
-        height: $page-post-img-height;
+        height: $page-page-img-height;
         width: 100%;
-        background-color: $page-post-img-bg;
+        background-color: $page-page-img-bg;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         position: relative;
     }
     .main-content{
-        background-color: $page-post-bg-color;
+        background-color: $page-page-bg-color;
         max-width: 100%;
     }
 }

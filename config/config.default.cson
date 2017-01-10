@@ -44,8 +44,8 @@ menu:
         navRoot: true
     ,
         type: "internal"
-        trans: "menu.post"
         page: "post"
+        trans: "Post"
         params: { id: 2332 }
         icon: "home"
         navRoot: false
@@ -67,4 +67,12 @@ menu:
             route: "public.posts",
             icon: "folder"
         ]
+    ,
+        type: "internal"
+        page: "page"
+        trans: "Page"
+        params: { id: 2596 }
+        icon: "flask"
+        navRoot: false
+    ,
     ]

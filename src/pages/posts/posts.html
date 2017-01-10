@@ -15,7 +15,7 @@
   </ion-refresher>
 
   <spinner [isVisible]="!(stream$ | async).length && isPaginationEnabled"></spinner>
-  <post-card *ngFor="let post of (stream$ | async); trackBy: trackById" type="post" [@appear]="'in'" [post]="post"></post-card>
+  <post-card *ngFor="let post of (stream$ | async); trackBy: trackById" type="post" [@appear]="'in'" [post]="post" [onClick]="openPage"></post-card>
   <button *ngIf="shouldRetry" ion-button color="light" full (click)="doLoad()">Retry</button>
 
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)" [enabled]="isPaginationEnabled">

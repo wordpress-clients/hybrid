@@ -1,9 +1,10 @@
+import { PagePage } from './../page/page';
 import { TranslateService } from 'ng2-translate/ng2-translate';
 import {
     Component, trigger, state,
     style, transition, animate
 } from '@angular/core';
-import { NavParams } from 'ionic-angular';
+import { NavParams, NavController } from 'ionic-angular';
 import { WpApiPages } from 'wp-api-angular';
 import { Store } from '@ngrx/store';
 
@@ -46,6 +47,7 @@ export class PagesPage extends PaginatedPage implements IPaginatedPage {
         public navParams: NavParams,
         public toast: Toast,
         public translate: TranslateService,
+        private navCtrl: NavController,
         private wpApiPages: WpApiPages,
         private store: Store<AppState>,
     ) {
@@ -70,6 +72,10 @@ export class PagesPage extends PaginatedPage implements IPaginatedPage {
         this.store.dispatch(cleanPages());
     }
 
-    
+    openPage = (e, page) => {
+        this.navCtrl.push(PagePage, {
+            id: page.id
+        })
+    }   
 
 }

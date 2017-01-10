@@ -2,7 +2,6 @@ import { TranslateService } from 'ng2-translate/ng2-translate';
 import { Observable } from 'rxjs';
 import { InfiniteScroll, Refresher, NavParams } from 'ionic-angular';
 import { URLSearchParams } from '@angular/http';
-import _get from 'lodash/get';
 
 import { Toast, Config } from './../../providers';
 

@@ -1,7 +1,4 @@
-import { NavController } from 'ionic-angular';
 import { Component, Input } from '@angular/core';
-
-import { PostPage } from '../../pages/post/post';
 /*
   Generated class for the PostCard component.
 
@@ -15,23 +12,15 @@ import { PostPage } from '../../pages/post/post';
 export class PostCardComponent {
   @Input() post: any;
   @Input() type: String;
+  @Input() onClick: (e, item) => void;
   categories: Array<any>;
   tags: Array<any>;
 
-  constructor(
-    public navCtrl: NavController
-  ) { }
+  constructor( ) { }
 
   ngOnInit() {
     const terms = this.post._embedded['https://api.w.org/term'] || this.post._embedded['wp:term'];
     this.categories = terms && terms[0];
     this.tags = terms && terms[1];
   }
-
-  doOpen(e) {
-    this.navCtrl.push(PostPage, {
-      id: this.post.id
-    })
-  }
-
 }

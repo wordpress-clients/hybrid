@@ -3,10 +3,11 @@ import {
     Component, trigger, state,
     style, transition, animate
 } from '@angular/core';
-import { NavParams } from 'ionic-angular';
+import { NavParams, NavController } from 'ionic-angular';
 import { WpApiPosts } from 'wp-api-angular';
 import { Store } from '@ngrx/store';
 
+import { PostPage } from '../../pages/post/post';
 import { Toast, Config } from './../../providers';
 import { PaginatedPage, IPaginatedPage, IPaginatedResult } from '../abstract/PaginatedPage';
 import { addPosts, cleanPosts } from '../../actions';
@@ -46,6 +47,7 @@ export class PostsPage extends PaginatedPage implements IPaginatedPage {
         public navParams: NavParams,
         public toast: Toast,
         public translate: TranslateService,
+        private navCtrl: NavController,
         private wpApiPosts: WpApiPosts,
         private store: Store<AppState>,
     ) {
@@ -68,6 +70,12 @@ export class PostsPage extends PaginatedPage implements IPaginatedPage {
 
     onClean() {
         this.store.dispatch(cleanPosts());
+    }
+
+    openPage = (e, post) => {
+        this.navCtrl.push(PostPage, {
+            id: post.id
+        })
     }
 
 }

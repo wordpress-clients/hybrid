@@ -55,10 +55,11 @@
     "zone.js": "0.6.26"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "0.0.47",
+    "@ionic/app-scripts": "^1.0.0",
     "cson-loader": "^0.1.0",
     "file-loader": "^0.9.0",
     "strip-module-export-loader": "^0.1.0",
+    "sw-toolbox": "^3.4.0",
     "typescript": "2.0.9"
   },
   "cordovaPlugins": [

@@ -10,8 +10,9 @@ export const RawConfig = deepExtend(defaultConfig, configOverwrite)
 @Injectable()
 export class Config {
     constructor() {
-        console.log('app config', RawConfig);
+        console.info('app config', RawConfig);
     }
+    getRaw = () => RawConfig;
     get = (path = '', otherwise = undefined) => _get(RawConfig, path, otherwise);
     getApi = (path = '', otherwise = undefined) => this.get(`api.${path}`, otherwise);
     getMenu = (path = '', otherwise = undefined) => this.get(`menu.${path}`, otherwise);

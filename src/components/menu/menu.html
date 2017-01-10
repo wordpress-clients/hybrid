@@ -18,7 +18,7 @@
           <ion-item-divider *ngSwitchCase="'separator'" color="light">
             {{ item.trans | translate }}
           </ion-item-divider>
-          <ion-item *ngSwitchCase="'internal'" menuClose (click)="doInternalClick($event, item.page, item.params)">
+          <ion-item *ngSwitchCase="'internal'" menuClose (click)="doInternalClick($event, item)">
             <ion-icon [name]="item.icon" item-left></ion-icon>
             {{ item.trans | translate }}
           </ion-item>

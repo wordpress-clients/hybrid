@@ -18,5 +18,5 @@
     <ion-card-title [innerHtml]="post.title.rendered"></ion-card-title>
     <p [innerHtml]="post.excerpt.rendered"></p>
   </ion-card-content>
-  <toolbar [bookmarkId]="'post:' + post.id" [tags]="tags" [categories]="categories"></toolbar>
+  <toolbar [bookmarkId]="type + ':' + post.id" [tags]="tags" [categories]="categories"></toolbar>
 </ion-card>

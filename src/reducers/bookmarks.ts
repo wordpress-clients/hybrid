@@ -19,7 +19,7 @@ export const bookmarksReducer: ActionReducer<Array<String>> = (state: Array<Stri
             console.log('REMOVE_BOOKMARK', index);
             return [
                 ...state.slice(0, index),
-                ...state.slice(index + 1, index + 2)
+                ...state.slice(index + 1, state.length)
             ]
         }
 

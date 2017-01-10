@@ -1,4 +1,3 @@
-import { NavController } from 'ionic-angular';
 import { Component, Input } from '@angular/core';
 
 import { Config } from '../../providers';
@@ -30,10 +29,14 @@ export class MenuComponent {
 
   trackByIndex = (index: number, item) => index;
 
-  doInternalClick = (e, page, params) => {
+  doInternalClick = (e, { page, params, navRoot }) => {
     if (!MenuMapping[page]) {
       throw new Error(`the page "${page}" does not exist`);
     }
-    this.content.push(MenuMapping[page], params);
+    if (navRoot) {
+      this.content.setRoot(MenuMapping[page], params);
+    } else {
+      this.content.push(MenuMapping[page], params);
+    }    
   }
 }

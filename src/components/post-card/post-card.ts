@@ -14,6 +14,7 @@ import { PostPage } from '../../pages/post/post';
 })
 export class PostCardComponent {
   @Input() post: any;
+  @Input() type: String;
   categories: Array<any>;
   tags: Array<any>;
 
@@ -23,8 +24,8 @@ export class PostCardComponent {
 
   ngOnInit() {
     const terms = this.post._embedded['https://api.w.org/term'] || this.post._embedded['wp:term'];
-    this.categories = terms[0];
-    this.tags = terms[1];
+    this.categories = terms && terms[0];
+    this.tags = terms && terms[1];
   }
 
   doOpen(e) {

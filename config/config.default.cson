@@ -16,7 +16,9 @@ api:
     baseUrl: "https://dev.julienrenaux.fr/wp-json"
     namespace: "/wp/v2"
     timeout: 30000
+    debounceTime: 400
     maxAttempt: 3
+    perPage: 10
 
 serviceWorker:
     enabled : false
@@ -33,17 +35,20 @@ menu:
         page: "posts"
         params: {}
         icon: "home"
+        navRoot: true
     ,
         type: "internal"
         trans: "menu.pages"
         page: "pages"
         icon: "home"
+        navRoot: true
     ,
         type: "internal"
         trans: "menu.post"
         page: "post"
         params: { id: 2332 }
         icon: "home"
+        navRoot: false
     ,
         type: "separator"
         trans: "Posts type"

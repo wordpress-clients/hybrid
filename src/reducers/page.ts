@@ -1,19 +1,19 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import { ADD_POST, ADD_POSTS } from '../actions';
+import { ADD_PAGE, ADD_PAGES } from '../actions';
 
 const defaultState = {};
 
-export const postReducer: ActionReducer<Object> = (state: Object = defaultState, action: Action) => {
+export const pageReducer: ActionReducer<Object> = (state: Object = defaultState, action: Action) => {
     const payload = action.payload;
 
     switch (action.type) {
-        case ADD_POST: {
+        case ADD_PAGE: {
             return Object.assign({}, state, {
                 [payload.id]: payload
             });
         }
     
-        case ADD_POSTS: {
+        case ADD_PAGES: {
             const { list } = payload;
             const newItems = {};
 

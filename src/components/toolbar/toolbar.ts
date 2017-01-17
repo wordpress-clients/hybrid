@@ -22,7 +22,7 @@ import { Toast } from '../../providers';
 export class ToolbarComponent {
   @Input() categories: Array<Object>;
   @Input() tags: Array<Object>;
-  @Input() bookmarkId: String;
+  @Input() bookmarkId: string;
 
   isBookmarked$: Observable<Boolean>;
 
@@ -33,7 +33,7 @@ export class ToolbarComponent {
     private translate: TranslateService
   ) {
     this.isBookmarked$ = this.store.select((state: AppState) => {
-      return state.bookmarks.indexOf(this.bookmarkId) > -1;
+      return Object.keys(state.bookmarks).indexOf(this.bookmarkId) > -1;
     });
   }
 

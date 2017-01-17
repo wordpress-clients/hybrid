@@ -68,7 +68,7 @@ export class PaginatedPage {
         this.store$.take(1).subscribe(({ page }) => currentPage = page);
         const nextPage = currentPage += 1;
         const searchParams = Object.assign({
-            per_page: this.config.getApi('perPage', 10),
+            per_page: this.config.getApi('perPage', 5),
         }, this.getQuery(), {
                 page: nextPage,
                 "_embed": true

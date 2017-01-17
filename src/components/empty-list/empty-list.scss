@@ -11,12 +11,14 @@ empty-list {
     display: flex;
     align-items: center;
     justify-content: center;
-    p.empty-icon {
+    flex-direction: column;
+    .empty-icon {
         font-size: 90px;
         line-height: 90px;
     }
     p.empty-text {
         text-align: center;
         font-size: 25px;
+        padding: 0 10px;
     }
 }

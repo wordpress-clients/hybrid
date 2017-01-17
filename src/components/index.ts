@@ -6,6 +6,7 @@ import { SpinnerComponent } from './spinner/spinner';
 import { ToolbarComponent } from './toolbar/toolbar';
 import { TaxonomiesComponent } from './taxonomies/taxonomies';
 import { MenuComponent } from './menu/menu';
+import { BookmarksComponent } from './bookmarks/bookmarks';
 import { EmptyListComponent } from './empty-list/empty-list';
 import { PageNavbarComponent } from './page-navbar/page-navbar';
 
@@ -23,5 +24,6 @@ export default [
     TaxonomiesComponent,
     MenuComponent,
     EmptyListComponent,
+    BookmarksComponent,
     PageNavbarComponent
 ];

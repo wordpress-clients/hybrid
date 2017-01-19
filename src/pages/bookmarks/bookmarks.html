@@ -5,11 +5,14 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <page-navbar [title]="'bookmark.title' | translate"></page-navbar>
+  <page-navbar [title]="'BOOKMARKS' | translate">
+    <button *ngIf="hasBookmarks" ion-button icon-only clear (click)="doRemoveAll($event)">
+      <ion-icon name="trash"></ion-icon>
+    </button>
+  </page-navbar>
 </ion-header>
 
-
 <ion-content>
-  <empty-list *ngIf="!(stream$ | async).length" icon="bookmarks" text="bookmark.emptyList"></empty-list>
+  <empty-list *ngIf="!hasBookmarks" icon="bookmarks" text="BOOKMARKS_EMPTY"></empty-list>
   <bookmarks [list]="(stream$ | async)" [onClick]="doOpen" [onRemove]="doRemove"></bookmarks>
 </ion-content>

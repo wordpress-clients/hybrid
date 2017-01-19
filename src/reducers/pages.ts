@@ -1,5 +1,5 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import { ADD_PAGES, CLEAN_PAGES } from '../actions';
+import { ADD_PAGES, CLEAN_PAGES, CLEAN_CACHE } from '../actions';
 
 export interface IPagesState {
     page: number;
@@ -30,7 +30,8 @@ export const pagesReducer: ActionReducer<Object> = (state: IPagesState = default
             });
         }
 
-        case CLEAN_PAGES: {
+        case CLEAN_PAGES:
+        case CLEAN_CACHE: {
             return defaultState;
         }
 

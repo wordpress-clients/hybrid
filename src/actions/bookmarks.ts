@@ -2,6 +2,7 @@ import { Action } from '@ngrx/store';
 
 export const ADD_BOOKMARK = 'ADD_BOOKMARK';
 export const REMOVE_BOOKMARK = 'REMOVE_BOOKMARK';
+export const REMOVE_BOOKMARKS = 'REMOVE_BOOKMARKS';
 
 export const addBookmark = (uid): Action => ({
     type: ADD_BOOKMARK,
@@ -16,4 +17,9 @@ export const removeBookmark = (uid): Action => ({
     payload: {
         uid
     }
+})
+
+
+export const removeBookmarks = (): Action => ({
+    type: REMOVE_BOOKMARKS
 })

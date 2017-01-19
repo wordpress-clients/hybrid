@@ -5,8 +5,11 @@
 # JUST COPY AND PAST WHAT YOU NEED TO CHANGE
 ###
 
-
 title: "Your Blog title"
+defaultZoom: 2 # Available: 0 to 8
+
+# The user language is determined during runtime and if exists automatically used.
+defaultLanguage: "en" # Available: "en", "fr", "zh", "es", "pl", "de", "pt", "it", "nl", "ru", "tr"
 
 toast:
     duration: 3000
@@ -31,16 +34,22 @@ menu:
         displayIcon: true # uses config/icons/icon_48.png
     list: [
         type: "internal"
-        trans: "menu.home"
+        trans: "HOME"
         page: "posts"
         params: {}
         icon: "home"
         navRoot: true
     ,
         type: "internal"
-        trans: "menu.pages"
+        trans: "PAGES"
         page: "pages"
-        icon: "home"
+        icon: "document"
+        navRoot: true
+    ,
+        type: "internal"
+        trans: "POSTS"
+        page: "posts"
+        icon: "paper"
         navRoot: true
     ,
         type: "internal"
@@ -51,10 +60,10 @@ menu:
         navRoot: false
     ,
         type: "separator"
-        trans: "Posts type"
+        trans: "---"
     ,
         type: "folder"
-        trans: "menu.posts"
+        trans: "POSTS"
         icon: "folder"
         list: [
             type: "internal",
@@ -69,16 +78,14 @@ menu:
         ]
     ,
         type: "internal"
-        page: "page"
-        trans: "Page"
-        params: { id: 2596 }
-        icon: "flask"
-        navRoot: false
+        page: "bookmarks"
+        trans: "BOOKMARKS"
+        icon: "bookmarks"
+        navRoot: true
     ,
         type: "internal"
-        page: "bookmarks"
-        trans: "menu.bookmarks"
-        params: { id: 2332 }
-        icon: "bookmark"
+        page: "params"
+        trans: "SETTINGS"
+        icon: "cog"
         navRoot: true
     ]

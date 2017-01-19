@@ -44,6 +44,7 @@
     "@ngrx/core": "^1.2.0",
     "@ngrx/store": "^2.2.1",
     "@ngrx/store-devtools": "^3.2.2",
+    "angular2-moment": "^1.1.0",
     "deep-extend": "^0.4.1",
     "ionic-angular": "2.0.0-rc.4",
     "ionic-native": "2.2.11",

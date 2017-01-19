@@ -1,5 +1,7 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import { ADD_BOOKMARK, REMOVE_BOOKMARK } from '../actions';
+import {
+    ADD_BOOKMARK, REMOVE_BOOKMARK, REMOVE_BOOKMARKS, CLEAN_CACHE
+} from '../actions';
 
 export interface IBookmarkState {
     id: number;
@@ -29,6 +31,14 @@ export const bookmarksReducer: ActionReducer<Object> = (state: Object = defaultS
             delete newState[payload.uid];
             return newState;
         }
+
+        case REMOVE_BOOKMARKS: {
+            return {};
+        }
+
+        case CLEAN_CACHE: {
+            return defaultState;
+        }    
 
         default:
             return state;

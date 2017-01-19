@@ -7,11 +7,11 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Pages 3</ion-title>
+      <ion-title>{{title}}</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
+  <ion-content class="font-zoom">
     <ion-list>
       <div *ngFor="let item of list; trackBy: trackByIndex">
         <div [ngSwitch]="item.type">

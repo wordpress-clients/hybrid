@@ -5,13 +5,15 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <page-navbar [title]="'pages.title' | translate"></page-navbar>
+  <page-navbar [title]="'PAGES' | translate"></page-navbar>
 </ion-header>
 
 
 <ion-content>
   <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
+    <ion-refresher-content
+      [pullingText]="'PULL_TO_REFRESH' | translate">
+    </ion-refresher-content>
   </ion-refresher>
 
   <spinner [isVisible]="!(stream$ | async).length && isPaginationEnabled"></spinner>

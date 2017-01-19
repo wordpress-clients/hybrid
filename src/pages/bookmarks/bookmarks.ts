@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, InfiniteScroll } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import orderBy from 'lodash/orderBy';
 
-import { removeBookmark } from '../../actions';
+import { removeBookmark, removeBookmarks } from '../../actions';
 import { AppState, IPostsState, IPagesState } from '../../reducers';
 import { Config, Toast } from './../../providers';
 import { MenuMapping } from '../../pages';
@@ -19,7 +20,8 @@ import { MenuMapping } from '../../pages';
   templateUrl: 'bookmarks.html'
 })
 export class BookmarksPage {
-  page = 0;
+  page:number = 0;
+  hasBookmarks:boolean = false;
   stream$: Observable<any>;
 
   constructor(
@@ -46,7 +48,8 @@ export class BookmarksPage {
           };
           list.push(bookmark);
         });
-        return list;
+        this.hasBookmarks = list.length > 0;
+        return orderBy(list, 'timestamp', 'desc');
       });
   }
 
@@ -61,4 +64,6 @@ export class BookmarksPage {
   };
 
   doRemove = (e, item) => this.store.dispatch(removeBookmark(`${item.type}:${item.id}`));
+
+  doRemoveAll = (e) => this.store.dispatch(removeBookmarks());
 }

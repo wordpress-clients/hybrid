@@ -5,9 +5,12 @@
   for more info on Angular 2 Components.
 -->
 
- <ion-navbar>
-    <button ion-button menuToggle icon-only>
-      <ion-icon name='menu'></ion-icon>
-    </button>
-    <ion-title>{{title}}</ion-title>
-  </ion-navbar>
+<ion-navbar>
+  <button ion-button menuToggle icon-only>
+    <ion-icon name='menu'></ion-icon>
+  </button>
+  <ion-title>{{title}}</ion-title>
+  <ion-buttons end>
+    <ng-content></ng-content>
+  </ion-buttons>
+</ion-navbar>

@@ -3,6 +3,7 @@ import { PostPage } from './post/post';
 import { PostsPage } from './posts/posts';
 import { PagePage } from './page/page';
 import { PagesPage } from './pages/pages';
+import { ParamsPage } from './params/params';
 import { BookmarksPage } from './bookmarks/bookmarks';
 import { TaxonomiesModal } from './taxonomies-modal/taxonomies-modal';
 
@@ -11,7 +12,8 @@ export const MenuMapping = {
     posts: PostsPage,
     page: PagePage,
     pages: PagesPage,
-    bookmarks: BookmarksPage
+    bookmarks: BookmarksPage,
+    params: ParamsPage
 }
 
 export default [
@@ -21,5 +23,6 @@ export default [
     PagePage,
     PagesPage,
     BookmarksPage,
+    ParamsPage,
     TaxonomiesModal
 ];

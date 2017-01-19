@@ -3,6 +3,8 @@ import { Http } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { WpApiModule } from 'wp-api-angular'
+import { MomentModule } from 'angular2-moment';
+
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/debounceTime';
@@ -54,7 +56,8 @@ console.log('StoreModules', StoreModules);
       provide: TranslateLoader,
       useFactory: (createTranslateLoader),
       deps: [Http]
-    })
+    }),
+    MomentModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, ...Components, ...Pages],
@@ -66,4 +69,4 @@ console.log('StoreModules', StoreModules);
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

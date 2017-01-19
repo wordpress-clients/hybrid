@@ -1,5 +1,5 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import { ADD_PAGE, ADD_PAGES } from '../actions';
+import { ADD_PAGE, ADD_PAGES, CLEAN_CACHE } from '../actions';
 
 const defaultState = {};
 
@@ -20,6 +20,10 @@ export const pageReducer: ActionReducer<Object> = (state: Object = defaultState,
             list.forEach((post) => newItems[post.id] = post);
             return Object.assign({}, state, newItems);
         }
+    
+        case CLEAN_CACHE: {
+            return defaultState;
+        } 
 
         default:
             return state;

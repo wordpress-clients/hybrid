@@ -8,10 +8,11 @@
   <page-navbar [title]="'posts.title' | translate"></page-navbar>
 </ion-header>
 
-
 <ion-content>
   <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
+    <ion-refresher-content
+      [pullingText]="'PULL_TO_REFRESH' | translate">
+    </ion-refresher-content>
   </ion-refresher>
 
   <spinner [isVisible]="!(stream$ | async).length && isPaginationEnabled"></spinner>

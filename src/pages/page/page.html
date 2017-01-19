@@ -11,7 +11,9 @@
 
 <ion-content>
   <ion-refresher (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
+    <ion-refresher-content
+      [pullingText]="'PULL_TO_REFRESH' | translate">
+    </ion-refresher-content>
   </ion-refresher>
   <spinner [isVisible]="!(stream$ | async)"></spinner>
   <page [item]="stream$ | async"></page>

@@ -19,12 +19,13 @@ interface IMenu {
 export class MenuComponent {
   @Input() content: any;
   list: Array<IMenu>
+  title: string
 
   constructor(
     private config: Config
   ) {
     this.list = config.getMenu('list', []);
-    console.log('this.list', this.list);
+    this.title = config.get('title', '');
   }
 
   trackByIndex = (index: number, item) => index;

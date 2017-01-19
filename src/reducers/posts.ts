@@ -1,5 +1,5 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import { ADD_POSTS, CLEAN_POSTS } from '../actions';
+import { ADD_POSTS, CLEAN_POSTS, CLEAN_CACHE } from '../actions';
 
 export interface IPostsState {
     page: number;
@@ -30,9 +30,12 @@ export const postsReducer: ActionReducer<Object> = (state: IPostsState = default
             });
         }
 
-        case CLEAN_POSTS: {
+        case CLEAN_POSTS:
+        case CLEAN_CACHE: {
             return defaultState;
         }
+
+
 
         default:
             return state;

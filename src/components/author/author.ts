@@ -1,4 +1,7 @@
+import { NavController } from 'ionic-angular';
 import { Component, Input } from '@angular/core';
+
+import { MenuMapping } from './../../pages/index';
 
 /*
   Generated class for the Author component.
@@ -16,6 +19,14 @@ export class AuthorComponent {
   @Input() link : Boolean;
   @Input() date : String;
 
-  constructor() {}
+  constructor(
+    private navCtrl: NavController
+  ) { }
+  
+  goToAuthorPage(e) {
+    this.navCtrl.push(MenuMapping.author, {
+      id: this.author.id
+    });
+  }
 
 }

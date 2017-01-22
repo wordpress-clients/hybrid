@@ -21,6 +21,7 @@
   
   <ion-card-content (click)="onClick && onClick($event, post)" class="font-zoom">
     <ion-card-title [innerHtml]="post.title.rendered"></ion-card-title>
+    <author [author]="post._embedded.author[0]" [date]="post.date"></author>
     <p [innerHtml]="post.excerpt.rendered"></p>
   </ion-card-content>
   <toolbar [bookmarkId]="type + ':' + post.id" [tags]="tags" [categories]="categories"></toolbar>

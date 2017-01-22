@@ -9,4 +9,10 @@ post-card {
         background-size: cover;
         position: relative;
     }
+    
+    author {
+        ion-list{
+            margin: -1px 0px 16px 0px !important;
+        }
+    }
 }

@@ -16,6 +16,15 @@ export const MenuMapping = {
     params: ParamsPage
 }
 
+export const DeepLinkerLnks = [
+  { component: PostPage, name: 'Post', segment: 'posts/:id' },
+  { component: PostsPage, name: 'Posts', segment: 'posts' },
+  { component: PagePage, name: 'Page', segment: 'pages/:id' },
+  { component: PagesPage, name: 'Pages', segment: 'pages' },
+  { component: BookmarksPage, name: 'Bookmarks', segment: 'bookmarks' },
+  { component: ParamsPage, name: 'Settings', segment: 'settings' }
+]
+
 export default [
     HomePage,
     PostsPage,

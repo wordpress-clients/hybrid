@@ -6,7 +6,6 @@ import orderBy from 'lodash/orderBy';
 
 import { removeBookmark, removeBookmarks } from '../../actions';
 import { AppState, IPostsState, IPagesState } from '../../reducers';
-import { Config, Toast } from './../../providers';
 import { MenuMapping } from '../../pages';
 
 /*

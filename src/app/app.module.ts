@@ -15,7 +15,7 @@ import '../i18n';
 import { MyApp } from './app.component';
 import StoreModules from '../store';
 import Components, { DIRECTIVES } from '../components';
-import Pages from '../pages';
+import Pages, { DeepLinkerLnks } from '../pages';
 import Providers, { RawConfig } from '../providers';
 
 // import { Settings } from '../providers/settings';
@@ -46,7 +46,9 @@ console.log('StoreModules', StoreModules);
 @NgModule({
   declarations: [MyApp, ...Components, ...DIRECTIVES, ...Pages],
   imports: [
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {}, {
+      links: DeepLinkerLnks
+    }),
     ...StoreModules,
     WpApiModule.initializeApp({
       baseUrl: RawConfig.api.baseUrl,

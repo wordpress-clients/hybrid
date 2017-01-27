@@ -76,7 +76,7 @@ This installation works on both OSX and Linux. Windows is not supported yet,
 
 ```
 # Clone and use the latest version
-$ git clone https://github.com/shprink/wordpress-hybrid-client.git && cd wordpress-hybrid-client
+$ git clone --depth 1 https://github.com/shprink/wordpress-hybrid-client.git && cd wordpress-hybrid-client
 # List all versions
 $ git tag
 $ git checkout <the-latest-version>

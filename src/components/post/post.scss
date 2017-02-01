@@ -11,5 +11,8 @@ post {
     .main-content{
         background-color: $page-post-bg-color;
         max-width: 100%;
+        .post-content{
+            margin: 20px 0;
+        }
     }
 }

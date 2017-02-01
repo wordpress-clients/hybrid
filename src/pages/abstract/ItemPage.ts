@@ -62,7 +62,7 @@ export class ItemPage {
             .retry(this.config.getApi('maxAttempt', 3) - 1)
             .map(r => this.onLoad(r.json()))
             .catch(res => {
-                this.translate.get('error').take(1).subscribe(trans => this.toast.show(trans));
+                this.toast.show(this.translate.instant('error'));
                 return res;
             });
     }

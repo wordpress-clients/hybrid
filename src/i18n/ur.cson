@@ -50,10 +50,9 @@ CACHE_CLEARED: "Cache cleared"
     "titleQuery": "تلاش: {{query}}"
 "sharing":
     "shared": "تکصیم کر دیا گیا"
-"authors":
-    "title": "مصنف"
-"author":
-    "title": "مصنف: {{name}}"
+AUTHORS: "مصنف"
+AUTHOR: "مصنف"
+AUTHOR_TITLE: "مصنف: {{name}}"
 "pages":
     "title": "صفحات"
 "posts":

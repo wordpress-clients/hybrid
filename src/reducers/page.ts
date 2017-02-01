@@ -1,3 +1,4 @@
+import { state } from '@angular/core';
 import { ActionReducer, Action } from '@ngrx/store';
 import { ADD_PAGE, ADD_PAGES, CLEAN_CACHE } from '../actions';
 
@@ -17,7 +18,12 @@ export const pageReducer: ActionReducer<Object> = (state: Object = defaultState,
             const { list } = payload;
             const newItems = {};
 
-            list.forEach((post) => newItems[post.id] = post);
+            list.forEach((item) => {
+                newItems[item.id] = item;
+                if (item._embedded && item._embedded.author) { // already stored in the state. avoid duplicates
+                    delete item._embedded.author;
+                }                
+            });
             return Object.assign({}, state, newItems);
         }
     

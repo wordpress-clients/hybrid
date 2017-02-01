@@ -50,10 +50,9 @@ CACHE_CLEARED: "Cache cleared"
     "titleQuery": "搜索：{{query}}"
 "sharing":
     "shared": "已分享！"
-"authors":
-    "title": "作者"
-"author":
-    "title": "作者: {{name}}"
+AUTHORS: "作者"
+AUTHOR: "作者"
+AUTHOR_TITLE: "作者: {{name}}"
 "pages":
     "title": "页面"
 "posts":

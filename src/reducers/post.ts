@@ -17,7 +17,12 @@ export const postReducer: ActionReducer<Object> = (state: Object = defaultState,
             const { list } = payload;
             const newItems = {};
 
-            list.forEach((post) => newItems[post.id] = post);
+            list.forEach((item) => {
+                newItems[item.id] = item;
+                if (item._embedded && item._embedded.author) { // already stored in the state. avoid duplicates
+                    delete item._embedded.author;
+                }                
+            });
             return Object.assign({}, state, newItems);
         }
     

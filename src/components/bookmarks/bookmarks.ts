@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 /*
   Generated class for the Bookmarks component.
@@ -8,7 +8,8 @@ import { Component, Input } from '@angular/core';
 */
 @Component({
   selector: 'bookmarks',
-  templateUrl: 'bookmarks.html'
+  templateUrl: 'bookmarks.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookmarksComponent {
   @Input() list: Array<Object>;

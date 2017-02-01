@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 /*
   Generated class for the EmptyList component.
@@ -8,7 +8,8 @@ import { Component, Input } from '@angular/core';
 */
 @Component({
   selector: 'empty-list',
-  templateUrl: 'empty-list.html'
+  templateUrl: 'empty-list.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmptyListComponent {
   @Input() text: String;

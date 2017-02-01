@@ -11,5 +11,8 @@ page {
     .main-content{
         background-color: $page-page-bg-color;
         max-width: 100%;
+        .page-content{
+            margin: 20px 0;
+        }
     }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 /*
   Generated class for the Page component.
@@ -8,7 +8,8 @@ import { Component, Input } from '@angular/core';
 */
 @Component({
   selector: 'page',
-  templateUrl: 'page.html'
+  templateUrl: 'page.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PageComponent {
   @Input() item : any;

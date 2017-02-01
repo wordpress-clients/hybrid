@@ -34,7 +34,7 @@
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-2.2.1.tgz#0e7154acc5127c583b4b52c59eac45d672c29da4"
 
-"@angular/http@2.2.1", "@angular/http@^2.1.2":
+"@angular/http@2.2.1", "@angular/http@^2.0.0":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@angular/http/-/http-2.2.1.tgz#1626884a6c5f0cc602ce9d81e7420fcc02db3353"
 
@@ -2420,7 +2420,7 @@ rxjs@5.0.0-beta.12, rxjs@^5.0.0-beta.6:
   dependencies:
     symbol-observable "^1.0.1"
 
-rxjs@^5.0.1:
+rxjs@^5.0.0:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.0.3.tgz#fc8bdf464ebf938812748e4196788f392fef9754"
   dependencies:
@@ -2989,18 +2989,18 @@ wordwrap@~0.0.2:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
 
-wp-api-angular@^3.0.0-beta3:
-  version "3.0.0-beta3"
-  resolved "https://registry.yarnpkg.com/wp-api-angular/-/wp-api-angular-3.0.0-beta3.tgz#23ef48ce073faab10d354688210ee8645c0c237f"
+wp-api-angular@^3.0.0-beta6:
+  version "3.0.0-beta6"
+  resolved "https://registry.yarnpkg.com/wp-api-angular/-/wp-api-angular-3.0.0-beta6.tgz#38ba18b1c3e9a75fc4389085fe107e3a29d94d61"
   dependencies:
     "@angular/common" "^2.0.0"
     "@angular/compiler" "^2.0.0"
     "@angular/compiler-cli" "^2.4.4"
     "@angular/core" "^2.0.0"
-    "@angular/http" "^2.1.2"
+    "@angular/http" "^2.0.0"
     "@angular/platform-browser" "^2.0.0"
     "@angular/platform-browser-dynamic" "^2.0.0"
-    rxjs "^5.0.1"
+    rxjs "^5.0.0"
 
 wrap-ansi@^2.0.0:
   version "2.1.0"

@@ -16,7 +16,7 @@ import { AppState, IParamsState } from './../reducers';
 })
 export class MyApp {
   rootPage = PostsPage;
-  fontSize: string;
+
   @ViewChild(Nav) nav: Nav;
 
   constructor(

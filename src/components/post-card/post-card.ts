@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 /*
   Generated class for the PostCard component.
 
@@ -7,7 +7,8 @@ import { Component, Input } from '@angular/core';
 */
 @Component({
   selector: 'post-card',
-  templateUrl: 'post-card.html'
+  templateUrl: 'post-card.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PostCardComponent {
   @Input() post: any;

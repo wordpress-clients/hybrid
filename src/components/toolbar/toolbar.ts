@@ -1,5 +1,5 @@
 import { TranslateService } from 'ng2-translate/ng2-translate';
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ModalController } from 'ionic-angular';
 import { Observable } from 'rxjs';
@@ -17,7 +17,8 @@ import { Toast } from '../../providers';
 */
 @Component({
   selector: 'toolbar',
-  templateUrl: 'toolbar.html'
+  templateUrl: 'toolbar.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ToolbarComponent {
   @Input() categories: Array<Object>;

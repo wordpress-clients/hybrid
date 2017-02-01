@@ -1,4 +1,4 @@
-import { Component, Input, trigger, transition, style, animate, state } from '@angular/core';
+import { Component, Input, trigger, transition, style, animate, state, ChangeDetectionStrategy } from '@angular/core';
 
 /*
   Generated class for the Spinner component.
@@ -9,6 +9,7 @@ import { Component, Input, trigger, transition, style, animate, state } from '@a
 @Component({
   selector: 'spinner',
   templateUrl: 'spinner.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('visibilityChanged', [
       state('true', style({ opacity: 1, transform: 'scale(1.0)' })),

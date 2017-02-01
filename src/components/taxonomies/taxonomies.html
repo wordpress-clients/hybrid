@@ -6,7 +6,7 @@
 -->
 
 <ion-list>
-  <button class="font-zoom" ion-item *ngFor="let item of list" (click)="onClick($event, item)">
+  <button ion-item *ngFor="let item of list" (click)="onClick($event, item)">
     <h2>{{ item.name }}</h2>
     <p>{{item.description}}</p>
     <ion-badge item-right>{{item.count}}</ion-badge>

@@ -50,10 +50,9 @@ CACHE_CLEARED: "Cache cleared"
     "titleQuery": "Ara: {{query}}"
 "sharing":
     "shared": "Paylaşıldı!"
-"authors":
-    "title": "Yazarlar"
-"author":
-    "title": "Yazar: {{name}}"
+AUTHORS: "Yazarlar"
+AUTHOR: "Yazar"
+AUTHOR_TITLE: "Yazar: {{name}}"
 "pages":
     "title": "Sayfalar"
 "posts":

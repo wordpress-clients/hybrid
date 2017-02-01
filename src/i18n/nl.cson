@@ -50,10 +50,9 @@ CACHE_CLEARED: "Cache cleared"
     "titleQuery": "Resultaten voor: {{query}}"
 "sharing":
     "shared": "Gedeeld!"
-"authors":
-    "title": "Auteurs"
-"author":
-    "title": "Auteur: {{name}}"
+AUTHORS: "Auteurs"
+AUTHOR: "Auteur"
+AUTHOR_TITLE: "Auteur: {{name}}"
 "pages":
     "title": "Pagina's"
 "posts":

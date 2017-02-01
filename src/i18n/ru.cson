@@ -49,10 +49,9 @@ CACHE_CLEARED: "Cache cleared"
     "titleQuery": "Поиск: {{query}}"
 "sharing":
     "shared": "Отправлено!"
-"authors":
-    "title": "Авторы"
-"author":
-    "title": "Автор: {{name}}"
+AUTHORS: "Авторы"
+AUTHOR: "Автор"
+AUTHOR_TITLE: "Автор: {{name}}"
 "pages":
     "title": "Страницы"
 "posts":

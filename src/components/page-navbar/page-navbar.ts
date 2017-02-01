@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 /*
   Generated class for the PageNavbar component.
@@ -8,7 +8,8 @@ import { Component, Input } from '@angular/core';
 */
 @Component({
   selector: 'page-navbar',
-  templateUrl: 'page-navbar.html'
+  templateUrl: 'page-navbar.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PageNavbarComponent {
 

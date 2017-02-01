@@ -11,27 +11,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content class="font-zoom">
-    <ion-list>
-      <div *ngFor="let item of list; trackBy: trackByIndex">
-        <div [ngSwitch]="item.type">
-          <ion-item-divider *ngSwitchCase="'separator'" color="light">
-            {{ item.trans | translate }}
-          </ion-item-divider>
-          <ion-item *ngSwitchCase="'internal'" menuClose (click)="doInternalClick($event, item)">
-            <ion-icon [name]="item.icon" item-left></ion-icon>
-            {{ item.trans | translate }}
-          </ion-item>
-          <ion-item *ngSwitchCase="'external'" menuClose>
-            <ion-icon [name]="item.icon" item-left></ion-icon>
-            {{ item.trans | translate }}
-          </ion-item>
-          <ion-item *ngSwitchCase="'folder'">
-            <ion-icon name="folder" item-left></ion-icon>
-            {{ item.trans | translate }}
-          </ion-item>
-        </div>
-      </div>
-    </ion-list>
+  <ion-content>
+    <menu-items [content]="content" [list]="list"></menu-items>
   </ion-content>
 </ion-menu>

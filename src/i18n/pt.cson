@@ -48,10 +48,9 @@ CACHE_CLEARED: "Cache cleared"
     "titleQuery": "Buscar: {{query}}"
 "sharing": 
     "shared": "Compartilhado!"
-"authors":
-    "title": "Autores"
-"author":
-    "title": "Autor: {{name}}"
+AUTHORS: "Autores"
+AUTHOR: "Autor"
+AUTHOR_TITLE: "Autor: {{name}}"
 "pages":
     "title": "Páginas"
 "posts": 

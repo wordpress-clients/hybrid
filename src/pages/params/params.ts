@@ -41,30 +41,18 @@ export class ParamsPage {
   }
 
   doCleanCache() {
-    let okText;
-    let notOkText;
-    let prompTitle;
-    let prompText;
-    let cacheCleared;
-
-    this.translate.get('OK').take(1).subscribe((translation) => okText = translation);
-    this.translate.get('CANCEL').take(1).subscribe((translation) => notOkText = translation);
-    this.translate.get('CACHE_CLEAR').take(1).subscribe((translation) => prompTitle = translation);
-    this.translate.get('CACHE_CLEAR_PROMPT').take(1).subscribe((translation) => prompText = translation);
-    this.translate.get('CACHE_CLEARED').take(1).subscribe((translation) => cacheCleared = translation);
-
     let confirm = this.alertCtrl.create({
-      title: prompTitle,
-      message: prompText,
+      title: this.translate.instant('CACHE_CLEAR'),
+      message: this.translate.instant('CACHE_CLEAR_PROMPT'),
       buttons: [
         {
-          text: notOkText
+          text: this.translate.instant('CANCEL')
         },
         {
-          text: okText,
+          text: this.translate.instant('OK'),
           handler: () => {
             this.store.dispatch(cleanCache());
-            this.toast.show(cacheCleared);
+            this.toast.show(this.translate.instant('CACHE_CLEARED'));
           }
         }
       ]

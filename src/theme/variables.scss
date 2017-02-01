@@ -95,6 +95,8 @@ $gray-lighter: lighten($gray-base, 93.5%) !default;
 $gray-lighter2: lighten($gray-base, 95%) !default;
 $gray-lighter3: lighten($gray-base, 97%) !default;
 
+$list-bg-color: $gray-lighter !default;
+
 // Overwrite
 $background-color: $gray-lighter2 !default;
 
@@ -103,11 +105,19 @@ $background-color: $gray-lighter2 !default;
 $post-img-height: 200px !default;
 $post-img-bg: $gray-lighter !default;
 
+// Page Posts
+// ------------------------------
+$page-posts-bg-color: $list-bg-color !default;
+
 // Page Post
 // ------------------------------
 $page-post-bg-color: white !default; 
 $page-post-img-height: $post-img-height !default;
 $page-post-img-bg: $post-img-bg !default;
+
+// Page Pages
+// ------------------------------
+$page-pages-bg-color: $list-bg-color !default;
 
 // Page Page
 // ------------------------------

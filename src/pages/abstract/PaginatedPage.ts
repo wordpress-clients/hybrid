@@ -81,7 +81,7 @@ export class PaginatedPage {
         console.log(`[PaginatedPage] doLoad ${this.type}:${this.postType || ''} ${searchParams.page}`, searchParams);
         return this.service.getList({ search: uRLSearchParams })
             .debounceTime(this.config.getApi('debounceTime', 400))
-            .timeout(this.config.getApi('timeout', 10000), new Error('timeout exceeded'))
+            .timeout(this.config.getApi('timeout', 10000))
             .retry(this.config.getApi('maxAttempt', 3) - 1)
             .map((r) => {
                 this.shouldRetry = false;
@@ -98,7 +98,7 @@ export class PaginatedPage {
             .catch(res => {
                 this.shouldRetry = true;
                 this.isPaginationEnabled = false;
-                this.translate.get('error').take(1).subscribe(trans => this.toast.show(trans));
+                this.toast.show(this.translate.instant('error'));
 
                 console.log("[PaginatedPage] error", res);
                 return res;

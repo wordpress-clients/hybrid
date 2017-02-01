@@ -19,21 +19,3 @@
     display: flex;
     flex: 1;
 }
-
-#app-root {
-    &.font-small .font-zoom {        
-        zoom: 0.8;
-    }
-    &.font-medium .font-zoom {
-        zoom: 1;
-    }
-    &.font-large .font-zoom {
-        zoom: 1.1;    
-    }
-    &.font-x-large .font-zoom {
-        zoom: 1.2;    
-    }
-    &.font-xx-large .font-zoom {
-        zoom: 1.4;        
-    }
-}

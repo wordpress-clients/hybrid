@@ -66,15 +66,19 @@ menu:
         trans: "POSTS"
         icon: "folder"
         list: [
-            type: "internal",
-            trans: "Hello world",
-            route: "public.posts.id({ id: 1 })",
-            icon: "icon ion-android-document"
+            type: "internal"
+            page: "post"
+            trans: "Post"
+            params: { id: 2332 }
+            icon: "home"
+            navRoot: false
         ,
-            type: "internal",
-            trans: "All",
-            route: "public.posts",
-            icon: "folder"
+            type: "internal"
+            trans: "ALL"
+            page: "posts"
+            params: {}
+            icon: "paper"
+            navRoot: true
         ]
     ,
         type: "internal"

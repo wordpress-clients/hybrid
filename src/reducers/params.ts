@@ -1,7 +1,7 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import get from 'lodash/get';
+import _get from 'lodash/get';
 
-import { RawConfig } from './../providers/config';
+import { Config } from './../providers';
 import { SET_LOCALE, SET_ZOOM } from '../actions';
 
 export interface IParamsState {
@@ -10,8 +10,8 @@ export interface IParamsState {
 }
 
 const defaultState = {
-    locale: get(RawConfig, 'defaultLanguage', 'en'),
-    zoom: get(RawConfig, 'defaultZoom', 2)
+    locale: _get(Config.getConfig(), 'defaultLanguage', 'en'),
+    zoom: _get(Config.getConfig(), 'defaultZoom', 2)
 };
 
 export const paramsReducer: ActionReducer<Object> = (state: Object = defaultState, action: Action) => {

@@ -22,6 +22,7 @@ CATEGORIES: "分类"
 SETTINGS: "设置"
 CUSTOM_POSTS: "自定义博文"
 CUSTOM_TAXO: "自定义分类"
+CUSTOM_TAXO_TITLE: "{{term}}: {{name}}"
 PUSH_NOTIFS: "推送通知"
 PUSH_NOTIF_TITLE: "新内容发布！"
 PUSH_NOTIF_TEXT: "【{{appTitle}}】刚刚发表了文章《{{postTitle}}》，现在就打开阅读吧？"
@@ -36,8 +37,6 @@ CACHE_CLEARED: "Cache cleared"
     "title": "标签"
 "tag":
     "title": "标签：{{name}}"
-"customTaxonomy":
-    "title": "{{term}}: {{name}}"
 "categories":
     "title": "分类"
 "category":

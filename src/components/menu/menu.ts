@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
-import { Config } from '../../providers';
+import { Config, Menu } from '../../providers';
 import { IMenuItem } from '../menu-items/menu-items';
 
 @Component({
@@ -14,9 +14,10 @@ export class MenuComponent {
   title: string
 
   constructor(
-    private config: Config
+    private config: Config,
+    private menu: Menu
   ) {
-    this.list = config.getMenu('list', []);
+    this.list = menu.getRaw();
     this.title = config.get('title', '');
   }
 }

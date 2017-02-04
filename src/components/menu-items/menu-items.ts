@@ -9,6 +9,7 @@ export interface IMenuItem {
   params?: Object;
   icon?: String;
   list?: Array<IMenuItem>;
+  isOpen?: boolean;
 }
 
 @Component({
@@ -44,8 +45,14 @@ export class MenuItemsComponent {
 
   trackByIndex = (index: number, item) => index;
 
-  toggleFolder(e, item) {
-    item.isOpen = !item.isOpen;
+  closeAllFolders() {
+    this.list.filter(item => item.type === 'folder').forEach(item => item.isOpen = false);
+  }
+
+  toggleFolder(item: IMenuItem) {
+    const isOpened = item.isOpen;
+    this.closeAllFolders();
+    item.isOpen = !isOpened;
   }
 
   doInternalClick = (e, { page, params, navRoot }) => {

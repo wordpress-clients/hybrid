@@ -40,6 +40,28 @@ menu:
         icon: "home"
         navRoot: true
     ,
+        type: "separator"
+        trans: "---"
+    ,
+        type: "folder"
+        trans: "POSTS"
+        icon: "folder"
+        list: [
+            type: "internal"
+            page: "post"
+            trans: "Post"
+            params: { id: 2332 }
+            icon: "home"
+            navRoot: false
+        ,
+            type: "internal"
+            trans: "ALL"
+            page: "posts"
+            params: {}
+            icon: "paper"
+            navRoot: true
+        ]
+    ,
         type: "internal"
         trans: "PAGES"
         page: "pages"

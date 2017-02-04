@@ -18,7 +18,7 @@
         <ion-icon [name]="item.icon" item-left></ion-icon>
         {{ item.trans | translate }}
       </ion-item>
-      <ion-item *ngSwitchCase="'folder'" (click)="toggleFolder($event, item)">
+      <ion-item *ngSwitchCase="'folder'" (click)="toggleFolder(item)">
         <ion-icon name="folder" item-left></ion-icon>
         {{ item.trans | translate }}
         <ion-icon name="ios-arrow-forward" item-right [@rotateIcon]="item.isOpen ? 'opened' : 'closed'"></ion-icon>

@@ -22,6 +22,7 @@ CATEGORIES: "بکھرے"
 SETTINGS: "سیٹینگز"
 CUSTOM_POSTS: "اپنی پوسٹیں"
 CUSTOM_TAXO: "اپنی تکسنومی"
+CUSTOM_TAXO_TITLE: "{{term}}: {{name}}"
 PUSH_NOTIFS: "اطلاحی پیغام"
 PUSH_NOTIF_TITLE: "تازا ترین"
 PUSH_NOTIF_TEXT: " , کیا آپ اُسے دیکھنا پسند کرینگے؟  {{appTitle}}   شایا ھو چکی ھے'{{postTitle}}'ایک نئی تازا ترین اشات   "
@@ -36,8 +37,6 @@ CACHE_CLEARED: "Cache cleared"
     "title": "ٹیگز"
 "tag":
     "title": "ٹیگ: {{name}}"
-"customTaxonomy":
-    "title": "{{term}}: {{name}}"
 "categories":
     "title": "کیٹاگوریز"
 "category":

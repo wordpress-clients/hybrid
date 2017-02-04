@@ -1,8 +1,12 @@
-import { StoreModule } from '@ngrx/store';
+import { StoreModule, combineReducers } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import reducers from './reducers';
-console.log('reducers', reducers);
-export default [
-    StoreModule.provideStore(reducers),
+import { Reducers } from './reducers';
+
+export function reducer(state: any, action: any) {
+  return combineReducers(Reducers)(state, action);
+}
+
+export const STORE = [
+    StoreModule.provideStore(reducer),
     StoreDevtoolsModule.instrumentOnlyWithExtension()
 ];

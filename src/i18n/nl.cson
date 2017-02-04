@@ -22,6 +22,7 @@ CATEGORIES: "Categorieën"
 SETTINGS: "Instellingen"
 CUSTOM_POSTS: "Aangepaste berichten"
 CUSTOM_TAXO: "Aangepaste taxanomie"
+CUSTOM_TAXO_TITLE: "{{term}}: {{name}}"
 PUSH_NOTIFS: "Push berichten"
 PUSH_NOTIF_TITLE: "Nieuwe inhoud!"
 PUSH_NOTIF_TEXT: "Een nieuwe post/pagina: '{{postTitle}}' is nu op {{appTitle}}, wil je het bekijken?"
@@ -36,8 +37,6 @@ CACHE_CLEARED: "Cache cleared"
     "title": "Tags"
 "tag":
     "title": "Tag: {{name}}"
-"customTaxonomy":
-    "title": "{{term}}: {{name}}"
 "categories":
     "title": "Categorieën"
 "category":

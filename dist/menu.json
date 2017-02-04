@@ -1,135 +1,166 @@
 [{
     "type": "internal",
-    "trans": "menu.home",
-    "route": "public.posts",
-    "icon": "icon ion-home"
+    "trans": "HOME",
+    "page": "posts",
+    "params": {},
+    "icon": "home",
+    "navRoot": true
 }, {
     "type": "separator",
     "trans": "Posts type"
 }, {
     "type": "folder",
-    "trans": "menu.posts",
-    "icon": "icon ion-ios-paper",
+    "trans": "POSTS",
+    "icon": "paper",
     "list": [{
         "type": "internal",
         "trans": "Hello world",
-        "route": "public.posts.id({ id: 1 })",
-        "icon": "icon ion-android-document"
+        "page": "post",
+        "params": { "id": 1 },
+        "icon": "document"
     }, {
         "type": "internal",
         "trans": "All",
-        "route": "public.posts",
-        "icon": "icon ion-ios-paper"
+        "page": "posts",
+        "params": {},
+        "icon": "paper",
+        "navRoot": true
     }]
 }, {
     "type": "folder",
-    "trans": "menu.pages",
-    "icon": "icon ion-android-document",
+    "trans": "PAGES",
+    "page": "pages",
+    "params": {},
+    "icon": "document",
     "list": [{
         "type": "internal",
         "trans": "Sample page",
-        "route": "public.pages.id({ id: 2592 })",
-        "icon": "icon ion-android-document"
+        "page": "page",
+        "params": { "id": 2592 },
+        "icon": "document"
     }, {
         "type": "internal",
         "trans": "All",
-        "route": "public.pages",
-        "icon": "icon ion-android-document"
+        "page": "pages",
+        "params": { },
+        "icon": "copy",
+        "navRoot": true
     }]
 }, {
     "type": "folder",
-    "trans": "menu.customPosts",
-    "icon": "icon ion-videocamera",
+    "trans": "CUSTOM_POSTS",
+    "icon": "videocam",
     "list": [{
         "type": "internal",
         "trans": "La vie en rose",
-        "route": "public.customPosts.id({ id: 2498, slug: 'movie'})",
-        "icon": "icon ion-videocamera"
+        "page": "customPost",
+        "params": { "id": 2498, "slug": "movie"},
+        "icon": "videocam"
     }, {
         "type": "internal",
         "trans": "All Movies",
-        "route": "public.customPosts({slug: 'movie'})",
-        "icon": "icon ion-videocamera"
+        "page": "customPosts",
+        "params": { "slug": "movie"},
+        "icon": "videocam",
+        "navRoot": true
     }]
 }, {
     "type": "separator",
     "trans": "Taxonomies type"
 }, {
     "type": "folder",
-    "trans": "menu.categories",
-    "icon": "icon ion-folder",
+    "trans": "CATEGORIES",
+    "icon": "folder",
     "list": [{
         "type": "internal",
         "trans": "Uncategorized",
-        "route": "public.taxonomies.id({ term: 'categories', id: 1, postType: 'post' })",
-        "icon": "icon ion-iphone"
+        "page": "taxonomy",
+        "params": { "term": "categories", "postType": "post", "id": 1},
+        "icon": "help"
     }, {
         "type": "internal",
         "trans": "All",
-        "route": "public.taxonomies({ term: 'categories', postType: 'post'})",
-        "icon": "icon ion-folder"
+        "page": "taxonomies",
+        "params": { "term": "categories", "postType": "post"},
+        "icon": "folder",
+        "navRoot": true
     }]
 }, {
     "type": "folder",
-    "trans": "menu.tags",
-    "icon": "icon ion-pricetags",
+    "trans": "TAGS",
+    "icon": "pricetags",
     "list": [{
         "type": "internal",
         "trans": "AngularJS",
-        "route": "public.taxonomies.id({ term: 'tags', id: 16, postType: 'post' })",
-        "icon": "icon ion-iphone"
+        "page": "taxonomy",
+        "params": { "term": "tags", "postType": "post", "id": 16},
+        "icon": "logo-apple"
     }, {
         "type": "internal",
         "trans": "All",
-        "route": "public.taxonomies({ term: 'tags', postType: 'post' })",
-        "icon": "icon ion-pricetags"
+        "page": "taxonomies",
+        "params": { "term": "tags", "postType": "post"},
+        "icon": "pricetags",
+        "navRoot": true
     }]
 }, {
     "type": "folder",
-    "trans": "menu.customTaxonomy",
-    "icon": "icon ion-ios-film",
+    "trans": "CUSTOM_TAXO",
+    "icon": "film",
     "list": [{
         "type": "internal",
         "trans": "Audrey Tautou",
-        "route": "public.taxonomies.id({ term: 'actor', id: 99, postType: 'movie' })",
-        "icon": "icon ion-ios-film"
+        "page": "taxonomy",
+        "params": { "term": "actor", "postType": "movie", "id": 99},
+        "icon": "film"
     },{
         "type": "internal",
         "trans": "Marion Cotillard",
-        "route": "public.taxonomies.id({ term: 'actor', id: 96, postType: 'movie' })",
-        "icon": "icon ion-ios-film"
+        "page": "taxonomy",
+        "params": { "term": "actor", "postType": "movie", "id": 96},
+        "icon": "film"
     }, {
         "type": "internal",
         "trans": "All Actors",
-        "route": "public.taxonomies({ term: 'actor', postType: 'movie'})",
-        "icon": "icon ion-ios-film"
+        "page": "taxonomies",
+        "params": { "term": "actor", "postType": "movie"},
+        "icon": "film",
+        "navRoot": true
     }]
 }, {
     "type": "separator",
     "trans": "Others"
 }, {
     "type": "internal",
-    "trans": "menu.authors",
-    "route": "public.authors",
-    "icon": "icon ion-ios-people"
+    "trans": "AUTHORS",
+    "page": "authors",
+    "params": {},
+    "icon": "people",
+    "navRoot": true
 }, {
     "type": "internal",
-    "trans": "menu.bookmarks",
-    "route": "public.bookmarks",
-    "icon": "icon ion-bookmark"
+    "trans": "BOOKMARKS",
+    "page": "bookmarks",
+    "params": {},
+    "icon": "bookmarks",
+    "navRoot": true
 }, {
     "type": "internal",
-    "trans": "params.title",
-    "route": "public.params",
-    "icon": "icon ion-gear-b"
+    "trans": "SETTINGS",
+    "page": "params",
+    "params": {},
+    "icon": "cog",
+    "navRoot": true
 }, {
     "type": "external",
     "trans": "My blog (external link)",
     "href": "http://julienrenaux.fr",
-    "icon": "icon ion-link"
+    "icon": "link"
 }, {
     "type": "internal",
     "trans": "About (page)",
-    "route": "public.pages.id({ id: 2596 })",
-    "icon": "icon ion-information"
+    "page": "page",
+    "params": { "id": 2596 },
+    "icon": "information-circle",
+    "navRoot": true
 }]

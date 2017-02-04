@@ -14,7 +14,7 @@ import { AppState, IParamsState } from './../reducers';
     <ion-nav #content [root]="rootPage"></ion-nav>
   `
 })
-export class MyApp {
+export class WPHC {
   rootPage = PostsPage;
 
   @ViewChild(Nav) nav: Nav;

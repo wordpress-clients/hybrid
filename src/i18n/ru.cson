@@ -21,6 +21,7 @@ CATEGORIES: "Рубрики"
 SETTINGS: "Настройки"
 CUSTOM_POSTS: "Пользовательские записи"
 CUSTOM_TAXO: "Пользовательские ярлыки"
+CUSTOM_TAXO_TITLE: "{{term}}: {{name}}"
 PUSH_NOTIFS: "Push notifications"
 PUSH_NOTIF_TITLE: "Новый контент!"
 PUSH_NOTIF_TEXT: "Новая запись/страница: '{{postTitle}}' была только что добавлена в {{appTitle}}. Хочешь открыть?"
@@ -35,8 +36,6 @@ CACHE_CLEARED: "Cache cleared"
     "title": "Метки"
 "tag":
     "title": "Метка: {{name}}"
-"customTaxonomy":
-    "title": "{{term}}: {{name}}"
 "categories":
     "title": "Рубрики"
 "category":

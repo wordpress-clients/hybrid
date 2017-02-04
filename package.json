@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/shprink/wordpress-hybrid-client#readme",
   "scripts": {
+    "start": "ionic serve",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "build:pwa": "npm run ionic:build --prod",
@@ -53,11 +54,13 @@
     "lodash": "^4.17.3",
     "ng2-translate": "^5.0.0",
     "rxjs": "5.0.0-beta.12",
-    "wp-api-angular": "^3.0.0-beta6",
+    "wp-api-angular": "^3.0.0-beta7",
     "zone.js": "0.6.26"
   },
   "devDependencies": {
     "@ionic/app-scripts": "^1.0.0",
+    "cordova": "^6.5.0",
+    "cson": "^4.0.0",
     "cson-loader": "^0.1.0",
     "file-loader": "^0.9.0",
     "strip-module-export-loader": "^0.1.0",

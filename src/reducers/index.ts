@@ -27,7 +27,7 @@ export interface AppState {
     bookmarks: Array<String>
 }
 
-export default {
+export const Reducers = {
     post: postReducer,
     posts: postsReducer,
     page: pageReducer,

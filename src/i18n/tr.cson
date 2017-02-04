@@ -22,6 +22,7 @@ CATEGORIES: "Kategoriler"
 SETTINGS: "Ayarlar"
 CUSTOM_POSTS: "Özel Gönderiler"
 CUSTOM_TAXO: "Özel Taksonomi"
+CUSTOM_TAXO_TITLE: "{{term}}: {{name}}"
 PUSH_NOTIFS: "Push Bildirimleri"
 PUSH_NOTIF_TITLE: "Yeni Yazı Yayımlandı!"
 PUSH_NOTIF_TEXT: "Yeni Yazı/Sayfa: '{{postTitle}}' yayımlandı, açmak ister misiniz?"
@@ -36,8 +37,6 @@ CACHE_CLEARED: "Cache cleared"
     "title": "Etiketler"
 "tag":
     "title": "Etiket: {{name}}"
-"customTaxonomy":
-    "title": "{{term}}: {{name}}"
 "categories":
     "title": "Kategoriler"
 "category":

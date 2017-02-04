@@ -21,6 +21,7 @@ CATEGORIES: "Kategorie"
 SETTINGS: "Ustawienia"
 CUSTOM_POSTS: "Custom posts"
 CUSTOM_TAXO: "Custom Taxonomy"
+CUSTOM_TAXO_TITLE: "{{term}}: {{name}}"
 PUSH_NOTIFS: "Push notifications"
 PUSH_NOTIF_TITLE: "Coś nowego!"
 PUSH_NOTIF_TEXT: "Hej! W {{appTitle}} właśnie pojawiło się coś nowego: '{{postTitle}}' stuknij aby otworzyć."
@@ -35,8 +36,6 @@ CACHE_CLEARED: "Cache cleared"
     "title": "Tagi"
 "tag":
     "title": "Tag: {{name}}"
-"customTaxonomy":
-    "title": "{{term}}: {{name}}"
 "categories":
     "title": "Kategorie"
 "category":

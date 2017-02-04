@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <page-navbar [title]="'BOOKMARKS' | translate">
-    <button *ngIf="hasBookmarks" ion-button icon-only clear (click)="doRemoveAll($event)">
+    <button *ngIf="hasBookmarks" ion-button icon-only (click)="doRemoveAll($event)">
       <ion-icon name="trash"></ion-icon>
     </button>
   </page-navbar>

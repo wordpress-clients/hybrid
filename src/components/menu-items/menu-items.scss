@@ -7,5 +7,8 @@ menu-items {
     }
     ion-list{
         margin-bottom: 0px !important;
+        > div {
+            overflow: hidden; 
+        }
     }
 }

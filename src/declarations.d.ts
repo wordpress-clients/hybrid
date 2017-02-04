@@ -12,3 +12,6 @@
   https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html
 */
 declare module '*';
+declare let __VERSION__: string;
+declare let __DEV__: string;
+declare let __PROD__: string;

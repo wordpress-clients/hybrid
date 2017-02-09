@@ -37,6 +37,8 @@
 * Android
   * https://play.google.com/store/apps/details?id=com.shprinkinc.wordpresshybridclient
   * https://play.google.com/store/apps/details?id=com.anotherplanet.korkubilimi
+  * https://play.google.com/store/apps/details?id=com.anotherplanet.metallicaonline
+  * https://play.google.com/store/apps/details?id=com.anotherplanet.pinkfloyd
   * http://hiwaldorf.com/app/
   * https://play.google.com/store/apps/details?id=com.notmyfault
   * https://play.google.com/store/apps/details?id=com.ek.klootschieten

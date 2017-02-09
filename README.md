@@ -37,7 +37,6 @@
 * Android
   * https://play.google.com/store/apps/details?id=com.shprinkinc.wordpresshybridclient
   * http://hiwaldorf.com/app/
-  * https://play.google.com/store/apps/details?id=fr.silentkernel.app
   * https://play.google.com/store/apps/details?id=com.notmyfault
   * https://play.google.com/store/apps/details?id=com.ek.klootschieten
   * https://play.google.com/store/apps/details?id=ca.siksik.SikSikYFB

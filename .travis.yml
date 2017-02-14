@@ -3,7 +3,5 @@ node_js:
   - "6"
 cache:
   yarn: true
-install:
-    - yarn
 script:
     - npm run build:pwa

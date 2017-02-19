@@ -11,6 +11,7 @@ export interface IItemPage {
 }
 
 export class ItemPage {
+    fetched: false;
     shouldRetry: boolean = false;
     stream$: Observable<any>;
     service: any;
@@ -60,14 +61,18 @@ export class ItemPage {
             .debounceTime(this.config.getApi('debounceTime', 400))
             .timeout(this.config.getApi('timeout', 10000), new Error('timeout exceeded'))
             .retry(this.config.getApi('maxAttempt', 3) - 1)
-            .map(r => this.onLoad(r.json()))
+            .map((r) => {
+                this.shouldRetry = false;
+                this.onLoad(r.json())
+            })
             .catch(res => {
+                this.shouldRetry = true;
                 this.toast.show(this.translate.instant('error'));
                 return res;
             });
     }
 
-    doLoad(): void {
+    doLoad = (): void => {
         console.log('[ItemPage] doLoad');
         this.fetch().take(1).subscribe(() => { }, () => { });
     }

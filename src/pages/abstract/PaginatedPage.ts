@@ -2,6 +2,7 @@ import { TranslateService } from 'ng2-translate/ng2-translate';
 import { Observable } from 'rxjs';
 import { InfiniteScroll, Refresher, NavParams } from 'ionic-angular';
 import { URLSearchParams } from '@angular/http';
+import _get from 'lodash/get';
 
 import { Toast, Config } from './../../providers';
 
@@ -24,8 +25,8 @@ export class PaginatedPage {
     store$: Observable<any>;
     stream$: Observable<any>;
     service: any;
-    type: String;
-    postType: String;
+    type: string;
+    postType: string;
 
     constructor(
         public config: Config,
@@ -39,7 +40,7 @@ export class PaginatedPage {
     ionViewDidLoad() {
         console.log('[PaginatedPage] init');
         let currentList;
-        this.store$.take(1).subscribe(({ list }) => currentList = list);
+        this.store$.take(1).subscribe(listParams => currentList = _get(listParams, 'list', []));
         if (!currentList.length) {
             this.doLoad();
         }
@@ -48,8 +49,8 @@ export class PaginatedPage {
     setStream = (stream: Observable<any>) => this.stream$ = stream;
     setStore = (store: Observable<any>) => this.store$ = store;
     setService = (service: any) => this.service = service;
-    setType = (type: String) => this.type = type;
-    setPostType = (postType: String) => this.postType = postType;
+    setType = (type: string) => this.type = type;
+    setPostType = (postType: string) => this.postType = postType;
 
     onLoad(data: Object) { }
     onClean() { }
@@ -65,7 +66,8 @@ export class PaginatedPage {
 
     private fetch(): Observable<any> {
         let currentPage;
-        this.store$.take(1).subscribe(({ page }) => currentPage = page);
+        this.store$.take(1).subscribe((listParams) => currentPage = _get(listParams, 'page', 0));
+        console.log('currentPage', currentPage)
         const nextPage = currentPage += 1;
         const searchParams = Object.assign({
             per_page: this.config.getApi('perPage', 5),

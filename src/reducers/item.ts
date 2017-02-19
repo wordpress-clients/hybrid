@@ -1,9 +1,12 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import { ADD_PAGE, ADD_PAGES, CLEAN_CACHE } from '../actions';
+import { ADD_PAGE, ADD_LIST, CLEAN_CACHE } from '../actions';
 
-const defaultState = {};
+const defaultState = {
+    page: {},
+    post: {}
+};
 
-export const pageReducer: ActionReducer<Object> = (state: Object = defaultState, action: Action) => {
+export const itemReducer: ActionReducer<Object> = (state: Object = defaultState, action: Action) => {
     const payload = action.payload;
 
     switch (action.type) {
@@ -13,8 +16,8 @@ export const pageReducer: ActionReducer<Object> = (state: Object = defaultState,
             });
         }
     
-        case ADD_PAGES: {
-            const { list } = payload;
+        case ADD_LIST: {
+            const { list, itemType } = payload;
             const newItems = {};
 
             list.forEach((item) => {
@@ -23,7 +26,10 @@ export const pageReducer: ActionReducer<Object> = (state: Object = defaultState,
                     delete item._embedded.author;
                 }                
             });
-            return Object.assign({}, state, newItems);
+            console.log('eee', newItems)
+            return Object.assign({}, state, {
+                [itemType]: Object.assign({}, state[itemType], newItems)   
+            });
         }
     
         case CLEAN_CACHE: {

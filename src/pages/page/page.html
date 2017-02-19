@@ -15,6 +15,6 @@
       [pullingText]="'PULL_TO_REFRESH' | translate">
     </ion-refresher-content>
   </ion-refresher>
-  <spinner [isVisible]="!(stream$ | async)"></spinner>
+  <spinner [isVisible]="!(stream$ | async)" [shouldRetry]="shouldRetry" [onRetry]="doLoad"></spinner>
   <page [item]="stream$ | async"></page>
 </ion-content>

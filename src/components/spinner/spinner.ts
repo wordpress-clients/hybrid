@@ -1,4 +1,7 @@
-import { Component, Input, trigger, transition, style, animate, state, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component, Input, trigger, transition, style,
+  animate, state, ChangeDetectionStrategy
+} from '@angular/core';
 
 /*
   Generated class for the Spinner component.
@@ -23,7 +26,9 @@ import { Component, Input, trigger, transition, style, animate, state, ChangeDet
 export class SpinnerComponent {
 
   @Input() isVisible : boolean = true;
+  @Input() shouldRetry: boolean = false;
+  @Input() onRetry: (e) => void;
 
-  constructor() {  }
+  constructor() { }
 
 }

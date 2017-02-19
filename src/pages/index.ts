@@ -1,6 +1,7 @@
 import { HomePage } from './home/home';
 import { PostPage } from './post/post';
 import { PagePage } from './page/page';
+import { ListPage } from './list/list';
 import { PostsPage } from './posts/posts';
 import { PagesPage } from './pages/pages';
 import { AuthorPage } from './author/author';
@@ -16,6 +17,7 @@ import { TaxonomiesModal } from './taxonomies-modal/taxonomies-modal';
 export const MenuMapping = {
     post: PostPage,
     page: PagePage,
+    list: ListPage,
     posts: PostsPage,
     pages: PagesPage,
     params: ParamsPage,
@@ -29,6 +31,8 @@ export const MenuMapping = {
 }
 
 export const DeepLinkerLnks = [
+    { component: ListPage, name: 'List', segment: 'list/:type' },
+    { component: ListPage, name: 'List', segment: 'list/:type/:postType' },
     { component: PostsPage, name: 'Posts', segment: 'posts' },
     { component: PagesPage, name: 'Pages', segment: 'pages' },
     { component: PostPage, name: 'Post', segment: 'posts/:id' },
@@ -44,6 +48,7 @@ export const DeepLinkerLnks = [
 ]
 
 export const PAGES = [
+    ListPage,
     HomePage,
     PostsPage,
     PostPage,

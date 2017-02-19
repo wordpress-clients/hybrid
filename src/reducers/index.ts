@@ -6,6 +6,8 @@ import { postsReducer, IPostsState } from './posts';
 import { pagesReducer, IPagesState } from './pages';
 import { authorReducer } from './author';
 import { authorsReducer, IAuthorsState } from './authors';
+import { itemReducer } from './item';
+import { listReducer, IListState } from './list';
 
 export * from './post';
 export * from './posts';
@@ -15,6 +17,8 @@ export * from './author';
 export * from './authors';
 export * from './bookmarks';
 export * from './params';
+export * from './item';
+export * from './list';
 
 export interface AppState {
     post: Object;
@@ -24,7 +28,9 @@ export interface AppState {
     author: Object;
     authors: IAuthorsState;
     params: IParamsState;
-    bookmarks: Array<String>
+    bookmarks: Array<String>;
+    item: Object;
+    list: IListState;
 }
 
 export const Reducers = {
@@ -35,5 +41,7 @@ export const Reducers = {
     author: authorReducer,
     authors: authorsReducer,
     params: paramsReducer,
-    bookmarks: bookmarksReducer
+    bookmarks: bookmarksReducer,
+    item: itemReducer,
+    list: listReducer,
 }

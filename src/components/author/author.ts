@@ -33,9 +33,9 @@ export class AuthorComponent {
   }
 
   goToAuthorPage(e) {
-    this.navCtrl.push(MenuMapping.author, {
-      id: this.authorId
-    });
+    // this.navCtrl.push(MenuMapping.author, {
+    //   id: this.authorId
+    // });
   }
 
 }

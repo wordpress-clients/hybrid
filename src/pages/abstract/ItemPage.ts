@@ -2,6 +2,7 @@ import { TranslateService } from 'ng2-translate/ng2-translate';
 import { Observable } from 'rxjs';
 import { Refresher, NavParams } from 'ionic-angular';
 import { URLSearchParams } from '@angular/http';
+import { Injector } from '@angular/core';
 
 import { Toast, Config } from './../../providers';
 
@@ -10,21 +11,27 @@ export interface IItemPage {
     onClean(): void;
 }
 
-export class ItemPage {
+export class AbstractItemPage {
+    // Injections
+    config: Config;
+    navParams: NavParams;
+    toast: Toast;
+    translate: TranslateService;
+
     fetched: false;
     shouldRetry: boolean = false;
     stream$: Observable<any>;
     service: any;
-    type: String;
-    title: String;
+    type: string;
+    title: string;
 
     constructor(
-        public config: Config,
-        public navParams: NavParams,
-        public toast: Toast,
-        public translate: TranslateService,
+        public injector: Injector
     ) {
-
+        this.config = injector.get(Config, Config);
+        this.navParams = injector.get(NavParams, NavParams);
+        this.toast = injector.get(Toast, Toast);
+        this.translate = injector.get(TranslateService, TranslateService);
     }
 
     ionViewDidLoad() {
@@ -38,8 +45,8 @@ export class ItemPage {
 
     setStream = (stream: Observable<any>) => this.stream$ = stream;
     setService = (service: any) => this.service = service;
-    setType = (type: String) => this.type = type;
-    setTitle = (title: String) => this.title = title;
+    setType = (type: string) => this.type = type;
+    setTitle = (title: string) => this.title = title;
 
     onLoad(data: Object) { }
 

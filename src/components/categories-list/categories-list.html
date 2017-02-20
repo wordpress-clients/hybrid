@@ -1,0 +1,9 @@
+<!--
+  Generated template for the CategoriesList component.
+
+  See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
+  for more info on Angular 2 Components.
+-->
+<ion-list>
+  <taxonomy [item]="item" *ngFor="let item of list" (click)="onClick($event, item)"></taxonomy>
+</ion-list>

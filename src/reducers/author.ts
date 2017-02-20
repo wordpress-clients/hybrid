@@ -1,5 +1,5 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import { ADD_PAGES, ADD_POSTS, ADD_AUTHOR, ADD_AUTHORS, CLEAN_CACHE } from '../actions';
+import { ADD_ITEM, ADD_AUTHOR, ADD_AUTHORS, CLEAN_CACHE } from '../actions';
 
 export interface IAuthorState {
     id: number;
@@ -31,15 +31,14 @@ export const authorReducer: ActionReducer<Object> = (state: Object = defaultStat
             return Object.assign({}, state, newItems);
         }
 
-        case ADD_PAGES:
-        case ADD_POSTS: {
+        case ADD_ITEM: {
             const { list } = payload;
             const newItems = {};
 
             list.forEach((item) => {
                 const { _embedded: { author: authors = []} } = item;
-                authors.forEach((author:IAuthorState) => newItems[author.id] = author);
-            });           
+                authors.forEach((author: IAuthorState) => newItems[author.id] = author);
+            });
             return Object.assign({}, state, newItems);
         }
 

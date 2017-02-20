@@ -1,19 +1,16 @@
 import { Observable } from 'rxjs';
-import { PagePage } from './../page/page';
-import { TranslateService } from 'ng2-translate/ng2-translate';
 import {
-  Component, trigger, state,
-  style, transition, animate
+  Component, Injector,
+  ComponentFactoryResolver
 } from '@angular/core';
-import { NavParams, NavController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { WpApiPages, WpApiPosts, WpApiCustom } from 'wp-api-angular';
 import { Store } from '@ngrx/store';
 import _get from 'lodash/get';
 
-import { Toast, Config } from './../../providers';
-import { PaginatedPage, IPaginatedPage, IPaginatedResult } from '../abstract/PaginatedPage';
+import { AbstractListPage, IListPage, IListResult } from '../abstract/PaginatedPage';
 import { addList, cleanList } from '../../actions';
-import { AppState, IListState } from '../../reducers';
+import { AppState } from '../../reducers';
 
 /*
   Generated class for the Pages page.
@@ -23,63 +20,45 @@ import { AppState, IListState } from '../../reducers';
 */
 @Component({
   selector: 'page-list',
-  templateUrl: 'list.html',
-  animations: [
-    trigger('appear', [
-      state('in', style({ opacity: 1, transform: 'scale(1)' })),
-      transition('void => in', [
-        style({
-          opacity: 0,
-          transform: 'scale(0.8)'
-        }),
-        animate('0.2s ease-in')
-      ]),
-      transition('in => void', [
-        animate('0.2s 10 ease-out', style({
-          opacity: 0,
-          transform: 'scale(0.8)'
-        }))
-      ])
-    ])
-  ]
+  templateUrl: 'list.html'
 })
-export class ListPage extends PaginatedPage implements IPaginatedPage {
+export class ListPage extends AbstractListPage implements IListPage {
 
   constructor(
-    public config: Config,
-    public navParams: NavParams,
-    public toast: Toast,
-    public translate: TranslateService,
+    public inject: Injector,
+    public componentFactoryResolver: ComponentFactoryResolver,
     private navCtrl: NavController,
     private store: Store<AppState>,
     private wpApiPages: WpApiPages,
     private wpApiPosts: WpApiPosts,
     private wpApiCustom: WpApiCustom,
   ) {
-    super(config, navParams, toast, translate);
-    // const [type = '', postType = ''] = this.navParams.get('type').split(':');
-
+    super(inject);
     this.setType(this.navParams.get('type'));
-    // this.setPostType(postType);
+    this.setParams(JSON.parse(this.navParams.get('params') || "{}"));
 
     this.setStream(
       Observable.combineLatest(
         this.store.select(state => state.list && state.list[this.type]),
-        this.store.select(state => state.item && state.item[this.type]),
-        (listState: any, item) => {
+        this.store.select(state => state.items && state.items[this.type]),
+        (listState: any, item = {}) => {
           console.log('list', listState, item)
-          return listState && listState.list.map(id => item[id])
-        })).distinctUntilChanged()
+          return _get(listState, 'list', []).map(id => item[id])
+        }))
 
     this.setStore(store.select(state => state.list && state.list[this.type]));
 
-    if (this.type === 'page') this.setService(wpApiPages)
-    else if (this.type === 'post') this.setService(wpApiPosts)
+    if (this.type === 'pages') this.setService(wpApiPages)
+    else if (this.type === 'posts') this.setService(wpApiPosts)
     else this.setService(wpApiCustom.getInstance(this.type))
 
   }
 
-  onLoad({ page, totalPages, totalItems, list }: IPaginatedResult) {
+  ionViewDidLoad() {
+    super.ionViewDidLoad();
+  }
+
+  onLoad({ page, totalPages, totalItems, list }: IListResult) {
     this.store.dispatch(addList(this.type, {
       page,
       totalPages,
@@ -93,9 +72,9 @@ export class ListPage extends PaginatedPage implements IPaginatedPage {
   }
 
   openPage = (e, page) => {
-    this.navCtrl.push(PagePage, {
-      id: page.id
-    })
+    // this.navCtrl.push(PagePage, {
+    //   id: page.id
+    // })
   }
 
 }

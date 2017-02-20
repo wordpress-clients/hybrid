@@ -2,23 +2,30 @@ import { TranslateService } from 'ng2-translate/ng2-translate';
 import { Observable } from 'rxjs';
 import { InfiniteScroll, Refresher, NavParams } from 'ionic-angular';
 import { URLSearchParams } from '@angular/http';
+import { Injector } from '@angular/core';
 import _get from 'lodash/get';
 
 import { Toast, Config } from './../../providers';
 
-export interface IPaginatedPage {
+export interface IListPage {
     onLoad(data: Object): void;
     onClean(): void;
 }
 
-export interface IPaginatedResult {
+export interface IListResult {
     page: number;
     totalPages: number;
     totalItems: number;
     list: Array<any>;
 }
 
-export class PaginatedPage {
+export class AbstractListPage {
+    // Injections
+    config: Config;
+    navParams: NavParams;
+    toast: Toast;
+    translate: TranslateService;
+
     isPaginationEnabled: boolean = true;
     shouldRetry: boolean = false;
     page: number = 1;
@@ -26,19 +33,19 @@ export class PaginatedPage {
     stream$: Observable<any>;
     service: any;
     type: string;
-    postType: string;
+    params: any;
 
     constructor(
-        public config: Config,
-        public navParams: NavParams,
-        public toast: Toast,
-        public translate: TranslateService,
+        public injector: Injector
     ) {
-
+        this.config = injector.get(Config, Config);
+        this.navParams = injector.get(NavParams, NavParams);
+        this.toast = injector.get(Toast, Toast);
+        this.translate = injector.get(TranslateService, TranslateService);
     }
 
     ionViewDidLoad() {
-        console.log('[PaginatedPage] init');
+        console.log('[ListPage] init');
         let currentList;
         this.store$.take(1).subscribe(listParams => currentList = _get(listParams, 'list', []));
         if (!currentList.length) {
@@ -50,17 +57,17 @@ export class PaginatedPage {
     setStore = (store: Observable<any>) => this.store$ = store;
     setService = (service: any) => this.service = service;
     setType = (type: string) => this.type = type;
-    setPostType = (postType: string) => this.postType = postType;
+    setParams = (params: any) => this.params = params;
 
     onLoad(data: Object) { }
     onClean() { }
 
     private getQuery(): Object {
-        if (this.type === 'customPosts' && this.navParams.get('slug')) {
-            return this.config.get(`[${this.navParams.get('slug')}].query`, {})
-        } else if (this.type === 'taxonomiesPosts' && this.postType) {
-            return this.config.get(`[${this.postType}].query`, {})
-        }
+        // if (this.type === 'customPosts' && this.navParams.get('slug')) {
+        //     return this.config.get(`[${this.navParams.get('slug')}].query`, {})
+        // } else if (this.type === 'taxonomiesPosts' && this.postType) {
+        //     return this.config.get(`[${this.postType}].query`, {})
+        // }
         return this.config.get(`[${this.type}].query`, {});
     }
 
@@ -80,7 +87,7 @@ export class PaginatedPage {
             uRLSearchParams.set(key, searchParams[key]);
         });
 
-        console.log(`[PaginatedPage] doLoad ${this.type}:${this.postType || ''} ${searchParams.page}`, searchParams);
+        console.log(`[ListPage] doLoad ${this.type}:${this.params} ${searchParams.page}`, searchParams);
         return this.service.getList({ search: uRLSearchParams })
             .debounceTime(this.config.getApi('debounceTime', 400))
             .timeout(this.config.getApi('timeout', 10000))
@@ -102,24 +109,24 @@ export class PaginatedPage {
                 this.isPaginationEnabled = false;
                 this.toast.show(this.translate.instant('error'));
 
-                console.log("[PaginatedPage] error", res);
+                console.log("[ListPage] error", res);
                 return res;
             });
     }
 
     doLoad(): void {
-        console.log('[PaginatedPage] doLoad');
+        console.log('[ListPage] doLoad');
         this.fetch().take(1).subscribe(() => { }, () => { });
     }
 
     doRefresh(refresher: Refresher): void {
-        console.log('[PaginatedPage] doRefresh');
+        console.log('[ListPage] doRefresh');
         this.onClean();
         this.fetch().take(1).subscribe(() => refresher.complete(), (error) => refresher.complete());
     }
 
     doInfinite(infiniteScroll: InfiniteScroll): void {
-        console.log('[PaginatedPage] doInfinite');
+        console.log('[ListPage] doInfinite');
         this.fetch().take(1).subscribe((isComplete) => {
             infiniteScroll.complete();
             this.isPaginationEnabled = !isComplete;

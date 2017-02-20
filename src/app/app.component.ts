@@ -4,7 +4,6 @@ import { Platform, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { TranslateService } from 'ng2-translate/ng2-translate';
 
-import { PostsPage } from '../pages/posts/posts';
 import { AppState, IParamsState } from './../reducers';
 
 
@@ -15,8 +14,6 @@ import { AppState, IParamsState } from './../reducers';
   `
 })
 export class WPHC {
-  rootPage = PostsPage;
-
   @ViewChild(Nav) nav: Nav;
 
   constructor(

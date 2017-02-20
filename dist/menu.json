@@ -1,8 +1,8 @@
 [{
     "type": "internal",
     "trans": "HOME",
-    "page": "posts",
-    "params": {},
+    "page": "list",
+    "params": { "type": "posts", "params" : "{ \"component\": \"posts-list\" }" },
     "icon": "home",
     "navRoot": true
 }, {
@@ -15,14 +15,14 @@
     "list": [{
         "type": "internal",
         "trans": "Hello world",
-        "page": "post",
-        "params": { "id": 1 },
+        "page": "item",
+        "params": { "type": "posts", "id": 1 },
         "icon": "document"
     }, {
         "type": "internal",
         "trans": "All",
-        "page": "posts",
-        "params": {},
+        "page": "list",
+        "params": { "type": "posts", "params" : "{ }" },
         "icon": "paper",
         "navRoot": true
     }]
@@ -35,14 +35,14 @@
     "list": [{
         "type": "internal",
         "trans": "Sample page",
-        "page": "page",
-        "params": { "id": 2592 },
+        "page": "item",
+        "params": { "type": "pages", "id": 2592 },
         "icon": "document"
     }, {
         "type": "internal",
         "trans": "All",
-        "page": "pages",
-        "params": { },
+        "page": "list",
+        "params": { "type": "pages" },
         "icon": "copy",
         "navRoot": true
     }]
@@ -53,14 +53,14 @@
     "list": [{
         "type": "internal",
         "trans": "La vie en rose",
-        "page": "customPost",
-        "params": { "id": 2498, "slug": "movie"},
+        "page": "item",
+        "params": { "type": "movie", "id": 2498 },
         "icon": "videocam"
     }, {
         "type": "internal",
         "trans": "All Movies",
-        "page": "customPosts",
-        "params": { "slug": "movie"},
+        "page": "list",
+        "params": { "type": "movie" },
         "icon": "videocam",
         "navRoot": true
     }]
@@ -74,14 +74,14 @@
     "list": [{
         "type": "internal",
         "trans": "Uncategorized",
-        "page": "taxonomy",
-        "params": { "term": "categories", "postType": "post", "id": 1},
+        "page": "list",
+        "params": { "type": "posts", "params" : "{ \"categories\": 1 }" },
         "icon": "help"
     }, {
         "type": "internal",
         "trans": "All",
-        "page": "taxonomies",
-        "params": { "term": "categories", "postType": "post"},
+        "page": "list",
+        "params": { "type": "categories" },
         "icon": "folder",
         "navRoot": true
     }]
@@ -92,14 +92,14 @@
     "list": [{
         "type": "internal",
         "trans": "AngularJS",
-        "page": "taxonomy",
-        "params": { "term": "tags", "postType": "post", "id": 16},
+        "page": "list",
+        "params": { "type": "posts", "params" : "{ \"tags\": 16 }" },
         "icon": "logo-apple"
     }, {
         "type": "internal",
         "trans": "All",
-        "page": "taxonomies",
-        "params": { "term": "tags", "postType": "post"},
+        "page": "list",
+        "params": { "type": "tags" },
         "icon": "pricetags",
         "navRoot": true
     }]
@@ -110,20 +110,20 @@
     "list": [{
         "type": "internal",
         "trans": "Audrey Tautou",
-        "page": "taxonomy",
-        "params": { "term": "actor", "postType": "movie", "id": 99},
+        "page": "list",
+        "params": { "type": "movie", "params" : "{ \"actor\": 99 }" },
         "icon": "film"
     },{
         "type": "internal",
         "trans": "Marion Cotillard",
-        "page": "taxonomy",
-        "params": { "term": "actor", "postType": "movie", "id": 96},
+        "page": "list",
+        "params": { "type": "movie", "params" : "{ \"actor\": 96 }" },
         "icon": "film"
     }, {
         "type": "internal",
         "trans": "All Actors",
-        "page": "taxonomies",
-        "params": { "term": "actor", "postType": "movie"},
+        "page": "list",
+        "params": { "type": "actor" },
         "icon": "film",
         "navRoot": true
     }]
@@ -133,8 +133,8 @@
 }, {
     "type": "internal",
     "trans": "AUTHORS",
-    "page": "authors",
-    "params": {},
+    "page": "list",
+    "params": { "type": "users" },
     "icon": "people",
     "navRoot": true
 }, {
@@ -159,8 +159,8 @@
 }, {
     "type": "internal",
     "trans": "About (page)",
-    "page": "page",
-    "params": { "id": 2596 },
+    "page": "item",
+    "params": { "type": "pages", "id": 2596 },
     "icon": "information-circle",
     "navRoot": true
 }]

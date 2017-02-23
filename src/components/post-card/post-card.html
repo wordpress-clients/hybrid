@@ -21,7 +21,7 @@
   
   <ion-card-content (click)="onClick && onClick($event, post)">
     <ion-card-title [innerHtml]="post.title.rendered"></ion-card-title>
-    <author [authorId]="post.author" [date]="post.date"></author>
+    <author [author]="author$ | async" [date]="post.date"></author>
     <p [innerHtml]="post.excerpt.rendered"></p>
   </ion-card-content>
   <toolbar [bookmarkId]="type + ':' + post.id" [tags]="tags" [categories]="categories"></toolbar>

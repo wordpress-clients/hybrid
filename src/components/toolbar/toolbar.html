@@ -4,10 +4,10 @@
   See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
   for more info on Angular 2 Components.
 -->
-<button *ngIf="categories" ion-button icon-only clear color="light" round (click)="openCategories($event)">
+<button *ngIf="categories && categories.length" ion-button icon-only clear color="light" round (click)="openCategories($event)">
   <ion-icon name="folder"></ion-icon>
 </button>
-<button *ngIf="tags" ion-button icon-only clear color="light" round (click)="openTags($event)">
+<button *ngIf="tags && tags.length" ion-button icon-only clear color="light" round (click)="openTags($event)">
   <ion-icon name="pricetags"></ion-icon>
 </button>
 <span flex></span>

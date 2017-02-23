@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController } from 'ionic-angular';
-import { WpApiTaxonomies } from 'wp-api-angular'
+
+import { ListPage } from './../list/list';
 
 /*
   Generated class for the Taxonomies page.
@@ -13,39 +14,39 @@ import { WpApiTaxonomies } from 'wp-api-angular'
   templateUrl: 'taxonomies-modal.html'
 })
 export class TaxonomiesModal {
-  title: String;
-  postType: String;
-  term: String;
+  title: string;
+  postType: string;
+  term: string;
   list: Array<any>;
   // list$: Observable<Array<any>>;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private wpApiTaxonomies: WpApiTaxonomies,
-    public viewCtrl: ViewController
+    public viewCtrl: ViewController,
   ) {
     this.title = navParams.get('title');
     this.postType = navParams.get('postType');
     this.term = navParams.get('term');
     this.list = navParams.get('list');
-    console.log('TaxonomiesPage', this.title, this.postType, this.term, this.list)
+    console.debug('TaxonomiesPage', this.title, this.postType, this.term, this.list)
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TaxonomiesPage');
-    // this.list$ = this.wpApiTaxonomies.getList()
-    //   .debounceTime(400)
-    //   .retry(3)
-    //   .map((r) => r.json());
-  }
-
-  itemSelected(e, taxonomy) {
-    console.log('go to', e, taxonomy);
+  openPage = (e, item) => {
+    this.navCtrl.push(ListPage, {
+      type: 'posts',
+      options: JSON.stringify({
+        query: {
+          [this.term]: item.id
+        }
+      }),
+    }).then(() => this.dismiss(), () => this.dismiss())
   }
 
   dismiss() {
     this.viewCtrl.dismiss();
   }
+
+  trackBy = (index: number, item) => item.id;
 
 }

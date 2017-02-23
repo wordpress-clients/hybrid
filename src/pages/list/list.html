@@ -13,9 +13,11 @@
     <ion-refresher-content [pullingText]="'PULL_TO_REFRESH' | translate">
     </ion-refresher-content>
   </ion-refresher>
-  <spinner [isVisible]="!(stream$ | async).length && isPaginationEnabled"></spinner>
-  <list [list]="stream$ | async" [type]="type" [params]="params"></list>
-  <button *ngIf="shouldRetry" ion-button color="light" full (click)="doLoad()">Retry</button>
+  <spinner [isVisible]="!init"></spinner>
+  <list [list]="stream$ | async" [type]="type" [options]="options"></list>
+  <button *ngIf="shouldRetry" ion-button color="light" full (click)="doLoad()">
+    {{ 'RETRY' | translate }}
+  </button>
 
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)" [enabled]="isPaginationEnabled">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>

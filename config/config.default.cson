@@ -10,6 +10,10 @@ defaultZoom: 2 # Available: 0 to 8
 
 # The user language is determined during runtime and if exists automatically used.
 defaultLanguage: "en" # Available: "en", "fr", "zh", "es", "pl", "de", "pt", "it", "nl", "ru", "tr"
+defaultPage:
+    page: "list"
+    params: 
+        type: "posts"
 
 toast:
     duration: 3000
@@ -27,91 +31,7 @@ serviceWorker:
     enabled : false
 
 menu:
-    options:
-        externalLinkTarget : null # _self|_blank|_system default: _system https://github.com/apache/cordova-plugin-inappbrowser#cordovainappbrowseropen
-        externalLinkOptions: null # default: 'location=yes'
-        exposeAsideWhen: "(min-width:900px)"
-        displayIcon: true # uses config/icons/icon_48.png
-    list: [
-        type: "internal"
-        trans: "HOME"
-        page: "posts"
-        params: {}
-        icon: "home"
-        navRoot: true
-    ,
-        type: "separator"
-        trans: "---"
-    ,
-        type: "folder"
-        trans: "POSTS"
-        icon: "folder"
-        list: [
-            type: "internal"
-            page: "post"
-            trans: "Post"
-            params: { id: 2332 }
-            icon: "home"
-            navRoot: false
-        ,
-            type: "internal"
-            trans: "ALL"
-            page: "posts"
-            params: {}
-            icon: "paper"
-            navRoot: true
-        ]
-    ,
-        type: "internal"
-        trans: "PAGES"
-        page: "pages"
-        icon: "document"
-        navRoot: true
-    ,
-        type: "internal"
-        trans: "POSTS"
-        page: "posts"
-        icon: "paper"
-        navRoot: true
-    ,
-        type: "internal"
-        page: "post"
-        trans: "Post"
-        params: { id: 2332 }
-        icon: "home"
-        navRoot: false
-    ,
-        type: "separator"
-        trans: "---"
-    ,
-        type: "folder"
-        trans: "POSTS"
-        icon: "folder"
-        list: [
-            type: "internal"
-            page: "post"
-            trans: "Post"
-            params: { id: 2332 }
-            icon: "home"
-            navRoot: false
-        ,
-            type: "internal"
-            trans: "ALL"
-            page: "posts"
-            params: {}
-            icon: "paper"
-            navRoot: true
-        ]
-    ,
-        type: "internal"
-        page: "bookmarks"
-        trans: "BOOKMARKS"
-        icon: "bookmarks"
-        navRoot: true
-    ,
-        type: "internal"
-        page: "params"
-        trans: "SETTINGS"
-        icon: "cog"
-        navRoot: true
-    ]
+    externalLinkTarget : null # _self|_blank|_system default: _system https://github.com/apache/cordova-plugin-inappbrowser#cordovainappbrowseropen
+    externalLinkOptions: null # default: 'location=yes'
+    exposeAsideWhen: "(min-width:900px)"
+    displayIcon: true # uses config/icons/icon_48.png

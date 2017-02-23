@@ -29,7 +29,7 @@ export interface IMenuItem {
     ]),
     trigger('rotateIcon', [
       state('opened', style({ transform: 'rotate(90deg)' })),
-      state('closed', style({ transform: 'rotate(0deg)'})),
+      state('closed', style({ transform: 'rotate(0deg)' })),
       transition('closed => opened', [
         animate(250, style({ transform: 'rotate(90deg)' }))
       ]),
@@ -59,6 +59,13 @@ export class MenuItemsComponent {
     if (!MenuMapping[page]) {
       throw new Error(`the page "${page}" does not exist`);
     }
+    const { options } = params
+    if (options) {
+      params = Object.assign({}, params, {
+        options: JSON.stringify(options)
+      });
+    }
+    console.debug('[MENU]', page, params);
     if (navRoot) {
       this.content.setRoot(MenuMapping[page], params);
     } else {

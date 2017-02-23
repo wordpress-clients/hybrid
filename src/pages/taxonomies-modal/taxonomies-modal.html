@@ -23,5 +23,9 @@
 </ion-header>
 
 <ion-content>
-  <taxonomies [list]="list" [onClick]="itemSelected"></taxonomies> 
+  <taxonomy 
+    *ngFor="let item of list; trackBy: trackBy"
+    [item]="item"
+    (click)="openPage($event, item)"
+  ></taxonomy>
 </ion-content>

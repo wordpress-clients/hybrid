@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <page-navbar [title]="(stream$ | async)?.title.rendered">
+  <page-navbar [title]="(stream$ | async)?.title?.rendered">
   </page-navbar>
 </ion-header>
 
@@ -15,6 +15,6 @@
       [pullingText]="'PULL_TO_REFRESH' | translate">
     </ion-refresher-content>
   </ion-refresher>
-  <spinner [isVisible]="!(stream$ | async)" [shouldRetry]="shouldRetry" [onRetry]="doLoad"></spinner>
-  <page [item]="stream$ | async"></page>
+  <spinner [isVisible]="!init" [shouldRetry]="shouldRetry" [onRetry]="doLoad"></spinner>
+  <item [item]="stream$ | async" [type]="type" [options]="options"></item>
 </ion-content>

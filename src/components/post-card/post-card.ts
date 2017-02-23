@@ -1,4 +1,8 @@
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+
+import { IAuthorState, AppState } from './../../reducers';
 /*
   Generated class for the PostCard component.
 
@@ -16,12 +20,17 @@ export class PostCardComponent {
   @Input() onClick: (e, item) => void;
   categories: Array<any>;
   tags: Array<any>;
+  author$: Observable<IAuthorState>;
 
-  constructor( ) { }
+  constructor(
+    private store: Store<AppState>,
+  ) { }
 
   ngOnInit() {
     const terms = this.post._embedded['https://api.w.org/term'] || this.post._embedded['wp:term'];
     this.categories = terms && terms[0];
     this.tags = terms && terms[1];
+
+    this.author$ = this.store.select(state => state.items.users && state.items.users[this.post.author])
   }
 }

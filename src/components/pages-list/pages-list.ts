@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { AppearIn } from './../../utils/animations';
+import { IListComponent } from './../interfaces';
+import { ListParentComponent } from './../ListParent';
 
 /*
   Generated class for the PagesList component.
@@ -12,21 +14,15 @@ import { AppearIn } from './../../utils/animations';
 @Component({
   selector: 'pages-list',
   templateUrl: 'pages-list.html',
-  animations: [AppearIn]
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [AppearIn],
 })
-export class PagesListComponent {
-  type: string;
-  params: any;
-  list: Array<any>;
+export class PagesListComponent extends ListParentComponent implements IListComponent {
 
-  constructor() {
+  constructor(
+    public navCtrl: NavController,
+    public cdRef: ChangeDetectorRef,
+  ) {
+    super(navCtrl, cdRef);
   }
-
-  openPage = (e, page) => {
-    // this.navCtrl.push(PostPage, {
-    //   id: page.id
-    // })
-  }
-
-  trackById = (index: number, item) => item.id;
 }

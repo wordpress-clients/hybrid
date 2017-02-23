@@ -18,6 +18,7 @@ export class AbstractItemPage {
     toast: Toast;
     translate: TranslateService;
 
+    init: boolean = false;
     fetched: false;
     shouldRetry: boolean = false;
     stream$: Observable<any>;
@@ -40,6 +41,8 @@ export class AbstractItemPage {
         this.stream$.take(1).subscribe(item => isItemLoaded = item !== undefined);
         if (!isItemLoaded) {
             this.doLoad();
+        } else {
+            this.init = true;
         }
     }
 
@@ -69,10 +72,12 @@ export class AbstractItemPage {
             .timeout(this.config.getApi('timeout', 10000), new Error('timeout exceeded'))
             .retry(this.config.getApi('maxAttempt', 3) - 1)
             .map((r) => {
+                this.init = true;
                 this.shouldRetry = false;
                 this.onLoad(r.json())
             })
             .catch(res => {
+                this.init = true;
                 this.shouldRetry = true;
                 this.toast.show(this.translate.instant('error'));
                 return res;

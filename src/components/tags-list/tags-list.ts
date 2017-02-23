@@ -1,4 +1,10 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { NavController } from 'ionic-angular';
+
+import { AppearIn } from './../../utils/animations';
+import { IListComponent } from './../interfaces';
+import { ListParentComponent } from './../ListParent';
+import { ListPage } from './../../pages/list/list';
 
 /*
   Generated class for the TagsList component.
@@ -9,12 +15,26 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 @Component({
   selector: 'tags-list',
   templateUrl: 'tags-list.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [AppearIn],
 })
-export class TagsListComponent {
+export class TagsListComponent extends ListParentComponent implements IListComponent {
 
-  constructor() {
-
+  constructor(
+    public navCtrl: NavController,
+    public cdRef: ChangeDetectorRef,
+  ) {
+    super(navCtrl, cdRef);
   }
 
+  openPage = (e, item) => {
+    this.navCtrl.push(ListPage, {
+      type: 'posts',
+      options: JSON.stringify({
+        query: {
+          [this.type]: item.id
+        }
+      }),
+    })
+  }
 }

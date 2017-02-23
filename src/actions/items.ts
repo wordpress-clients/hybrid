@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 
 export const ADD_ITEM = 'ADD_ITEM';
 
-export const addItem = (itemType, payload): Action => ({
+export const addItem = (itemType, item): Action => ({
     type: ADD_ITEM,
-    payload: Object.assign(payload, { itemType })
+    payload: { item, itemType }
 })

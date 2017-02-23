@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 /*
   Generated class for the Taxonomy component.
@@ -8,7 +8,8 @@ import { Component, Input } from '@angular/core';
 */
 @Component({
   selector: 'taxonomy',
-  templateUrl: 'taxonomy.html'
+  templateUrl: 'taxonomy.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TaxonomyComponent {
   @Input() item: any;

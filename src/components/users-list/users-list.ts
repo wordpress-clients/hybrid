@@ -1,22 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { NavController } from 'ionic-angular';
+
+import { AppearIn } from './../../utils/animations';
+import { IListComponent } from './../interfaces';
+import { ListParentComponent } from './../ListParent';
+import { ListPage } from './../../pages/list/list';
 
 /*
-  Generated class for the UsersList component.
+  Generated class for the PagesList component.
 
   See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
   for more info on Angular 2 Components.
 */
 @Component({
   selector: 'users-list',
-  templateUrl: 'users-list.html'
+  templateUrl: 'users-list.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  animations: [AppearIn],
 })
-export class UsersListComponent {
+export class UsersListComponent extends ListParentComponent implements IListComponent {
 
-  text: string;
-
-  constructor() {
-    console.log('Hello UsersList Component');
-    this.text = 'Hello World';
+  constructor(
+    public navCtrl: NavController,
+    public cdRef: ChangeDetectorRef,
+  ) {
+    super(navCtrl, cdRef);
   }
 
+  openPage = (e, item) => {
+    this.navCtrl.push(ListPage, {
+      type: 'posts',
+      options: JSON.stringify({
+        query: {
+          'author': item.id
+        }
+      }),
+    })
+  }
 }

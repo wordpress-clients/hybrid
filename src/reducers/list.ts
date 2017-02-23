@@ -24,19 +24,26 @@ export const listReducer: ActionReducer<Object> = (state: IListState = defaultSt
 
     switch (action.type) {
         case ADD_LIST: {
-            const { itemType, totalPages, totalItems, list = [], page = 0 } = payload;
+            const { itemType, query, totalPages, totalItems, list = [], page = 0 } = payload;
             const ids = list.map((item) => item.id);
+            const key = query ? itemType + JSON.stringify(query) : itemType;
             return Object.assign({}, state, {
-                [itemType]: {
+                [key]: {
                     page,
                     totalPages,
                     totalItems,
-                    list: (state[itemType] || defaultItem).list.concat(ids)
+                    list: (state[key] || defaultItem).list.concat(ids)
                 }
             });
         }
 
-        case CLEAN_LIST:
+        case CLEAN_LIST: {
+            const { itemType } = payload;
+            let newState = Object.assign({}, state);
+            delete newState[itemType];
+            return newState;
+        }
+
         case CLEAN_CACHE: {
             return defaultState;
         }

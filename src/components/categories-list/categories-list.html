@@ -5,5 +5,9 @@
   for more info on Angular 2 Components.
 -->
 <ion-list>
-  <taxonomy [item]="item" *ngFor="let item of list" (click)="onClick($event, item)"></taxonomy>
+  <taxonomy 
+    *ngFor="let item of list; trackBy: trackBy"
+    [item]="item"
+    (click)="openPage($event, item)"
+  ></taxonomy>
 </ion-list>

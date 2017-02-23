@@ -12,14 +12,14 @@ import { ComponentsMapping } from './../index';
   for more info on Angular 2 Components.
 */
 @Component({
-  selector: 'list',
-  templateUrl: 'list.html',
+  selector: 'item',
+  templateUrl: 'item.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListComponent {
+export class ItemComponent {
   @Input() type: string;
   @Input() options: any;
-  @Input() list: Array<any>;
+  @Input() item: any;
   @ViewChild('dynamicComponentTarget', { read: ViewContainerRef })
   dynamicComponentTarget: any;
   componentRef: ComponentRef<any>;
@@ -30,7 +30,7 @@ export class ListComponent {
   }
 
   ngOnInit() {
-    console.debug('[LIST] ngOnInit')
+    console.debug('[ITEM] ngOnInit')
     let componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.getComponent());
     this.dynamicComponentTarget.clear();
     this.componentRef = this.dynamicComponentTarget.createComponent(componentFactory);
@@ -41,7 +41,7 @@ export class ListComponent {
     if (!this.componentRef) {
       return;
     }
-    console.debug('[LIST] ngOnChanges')
+    console.debug('[ITEM] ngOnChanges')
     this.updateRefs();
   }
 
@@ -54,12 +54,12 @@ export class ListComponent {
   updateRefs() {
     (<any>this.componentRef.instance).type = this.type;
     (<any>this.componentRef.instance).options = this.options;
-    (<any>this.componentRef.instance).list = this.list;
+    (<any>this.componentRef.instance).item = this.item;
   }
 
   getComponent(): any {
     const { component = '' } = this.options || {};
-    const componentName = component || `${this.type}-list`;
+    const componentName = component || `${this.type}-item`;
     const Component = ComponentsMapping[componentName];
     if (Component) return Component;
 

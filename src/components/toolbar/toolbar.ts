@@ -64,17 +64,11 @@ export class ToolbarComponent {
     this.isBookmarked$.take(1).subscribe(response => isBookmarked = response);
 
     if (isBookmarked) {
-      let text = ''
-      this.translate.get('BOOKMARK_REMOVED').take(1).subscribe((translation) => text = translation);
       this.store.dispatch(removeBookmark(this.bookmarkId));
-      console.log('text', text);
-      this.toast.show(text);
+      this.toast.show(this.translate.instant('BOOKMARK_REMOVED'));
     } else {
-      let text = ''
-      this.translate.get('BOOKMARK_ADDED').take(1).subscribe((translation) => text = translation);
       this.store.dispatch(addBookmark(this.bookmarkId));
-      console.log('text2', text);
-      this.toast.show(text);
+      this.toast.show(this.translate.instant('BOOKMARK_ADDED'));
     }
   }
 

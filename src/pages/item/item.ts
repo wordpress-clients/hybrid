@@ -1,7 +1,8 @@
-import { WpApiPages } from 'wp-api-angular';
 import { Component, Injector } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { WpApiPages, WpApiPosts, WpApiCustom } from 'wp-api-angular';
 import { Store } from '@ngrx/store';
+import _get from 'lodash/get';
 
 import { addItem } from '../../actions';
 import { AppState } from '../../reducers';
@@ -21,13 +22,18 @@ export class ItemPage extends AbstractItemPage {
   constructor(
     public injector: Injector,
     public navCtrl: NavController,
+    private store: Store<AppState>,
     private wpApiPages: WpApiPages,
-    private store: Store<AppState>
+    private wpApiPosts: WpApiPosts,
+    private wpApiCustom: WpApiCustom,
   ) {
     super(injector);
     this.setType(this.navParams.get('type'));
-    this.setStream(this.store.select(state => state.items && state.items[this.type]));
-    this.setService(wpApiPages);
+    this.setStream(this.store.select(state => _get(state, `items[${this.type}][${this.navParams.get('id')}]`)));
+
+    if (this.type === 'pages') this.setService(wpApiPages)
+    else if (this.type === 'posts') this.setService(wpApiPosts)
+    else this.setService(wpApiCustom.getInstance(this.type))
   }
 
   onLoad(item) {

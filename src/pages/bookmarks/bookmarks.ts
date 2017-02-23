@@ -7,7 +7,7 @@ import _get from 'lodash/get';
 
 import { removeBookmark, removeBookmarks } from '../../actions';
 import { AppState } from '../../reducers';
-import { MenuMapping } from '../../pages';
+import { ItemPage } from './../item/item';
 
 /*
   Generated class for the Bookmarks page.
@@ -50,8 +50,9 @@ export class BookmarksPage {
   }
 
   doOpen = (e, item) => {
-    this.navCtrl.push(MenuMapping[item.type], {
-      id: item.id
+    this.navCtrl.push(ItemPage, {
+      id: item.id,
+      type: item.type
     })
   };
 

@@ -7,6 +7,7 @@ import { NavController } from 'ionic-angular';
 import { WpApiPages, WpApiPosts, WpApiCustom } from 'wp-api-angular';
 import { Store } from '@ngrx/store';
 import _get from 'lodash/get';
+import _take from 'lodash/take';
 
 import { AbstractListPage, IListPage, IListResult } from '../abstract/PaginatedPage';
 import { addList, cleanList } from '../../actions';
@@ -34,24 +35,32 @@ export class ListPage extends AbstractListPage implements IListPage {
     private wpApiCustom: WpApiCustom,
   ) {
     super(inject);
+    const options = this.navParams.get('options');
+
     this.setType(this.navParams.get('type'));
-    this.setParams(JSON.parse(this.navParams.get('params') || "{}"));
+
+    console.debug("[ListPage] options", options);
+
+    this.setOptions(JSON.parse(options || "{}"));
+
+    const listKey = this.options.query ? this.type + JSON.stringify(this.options.query) : this.type;
+    console.log('listKey', listKey)
+
+    this.setStore(store.select(state => state.list[listKey]));
 
     this.setStream(
       Observable.combineLatest(
-        this.store.select(state => state.list && state.list[this.type]),
-        this.store.select(state => state.items && state.items[this.type]),
-        (listState: any, item = {}) => {
-          console.log('list', listState, item)
-          return _get(listState, 'list', []).map(id => item[id])
+        this.store$,
+        this.store.select(state => state.items[this.type]),
+        this.itemsToDisplay$,
+        (listState: any, item = {}, itemsToDisplay) => {
+          console.log('list', listState, item, itemsToDisplay)
+          return _take(_get(listState, 'list', []), itemsToDisplay).map(id => item[id])
         }))
-
-    this.setStore(store.select(state => state.list && state.list[this.type]));
 
     if (this.type === 'pages') this.setService(wpApiPages)
     else if (this.type === 'posts') this.setService(wpApiPosts)
     else this.setService(wpApiCustom.getInstance(this.type))
-
   }
 
   ionViewDidLoad() {
@@ -59,7 +68,7 @@ export class ListPage extends AbstractListPage implements IListPage {
   }
 
   onLoad({ page, totalPages, totalItems, list }: IListResult) {
-    this.store.dispatch(addList(this.type, {
+    this.store.dispatch(addList(this.type, this.options.query, {
       page,
       totalPages,
       totalItems,
@@ -70,11 +79,4 @@ export class ListPage extends AbstractListPage implements IListPage {
   onClean() {
     this.store.dispatch(cleanList(this.type));
   }
-
-  openPage = (e, page) => {
-    // this.navCtrl.push(PagePage, {
-    //   id: page.id
-    // })
-  }
-
 }

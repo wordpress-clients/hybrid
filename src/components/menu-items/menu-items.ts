@@ -58,7 +58,7 @@ export class MenuItemsComponent {
   doInternalClick = (e, { page, params, navRoot }) => {
     if (!MenuMapping[page]) {
       throw new Error(`the page "${page}" does not exist`);
-    }
+    } 
     const { options } = params
     if (options) {
       params = Object.assign({}, params, {

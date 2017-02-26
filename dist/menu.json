@@ -21,13 +21,10 @@
                 "list": [
                     {
                         "type": "internal",
-                        "trans": "HOME",
+                        "trans": "POSTS",
                         "page": "list",
                         "params": {
-                            "type": "posts",
-                            "options": {
-                                "component": "posts-list"
-                            }
+                            "type": "posts"
                         },
                         "icon": "home",
                         "navRoot": true
@@ -40,6 +37,16 @@
                             "type": "pages"
                         },
                         "icon": "copy",
+                        "navRoot": true
+                    },
+                    {
+                        "type": "internal",
+                        "trans": "MOVIES",
+                        "page": "list",
+                        "params": {
+                            "type": "movie"
+                        },
+                        "icon": "videocam",
                         "navRoot": true
                     }
                 ]

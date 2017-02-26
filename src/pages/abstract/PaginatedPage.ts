@@ -36,7 +36,7 @@ export class AbstractListPage {
     itemsToDisplay$ = new Subject<number>();
     service: any;
     type: string;
-    options: any;
+    options: any = {};
 
     constructor(
         public injector: Injector
@@ -65,7 +65,7 @@ export class AbstractListPage {
     setStore = (store: Observable<any>) => this.store$ = store;
     setService = (service: any) => this.service = service;
     setType = (type: string) => this.type = type;
-    setOptions = (options: any) => this.options = options;
+    setOptions = (options: any = {}) => this.options = options;
     updateItemsToDisplay = () => this.itemsToDisplay$.next(this.page * this.perPage);
 
     onLoad(data: Object) { }

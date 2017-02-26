@@ -20,4 +20,5 @@ export class Config {
     getMenu = (path = '', otherwise = undefined) => this.get(`menu.${path}`, otherwise);
     getNative = (path = '', otherwise = undefined) => this.get(`native.${path}`, otherwise);
     getToast = (path = '', otherwise = undefined) => this.get(`toast.${path}`, otherwise);
+    getTabs = (path = '', otherwise = undefined) => this.get(`tabs.${path}`, otherwise);
 }

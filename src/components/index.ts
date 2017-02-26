@@ -23,7 +23,12 @@ import { MenuItemsComponent } from './menu-items/menu-items';
 import { EmptyListComponent } from './empty-list/empty-list';
 import { PageNavbarComponent } from './page-navbar/page-navbar';
 
-export const ComponentsMapping = {
+import {
+    ComponentsMapping as CustomComponentsMapping,
+    COMPONENTS as CustomCOMPONENTS
+} from '../../config/components';
+
+export const ComponentsMapping = Object.assign({
     // items
     'posts-item': PostsItemComponent,
     'pages-item': PagesItemComponent,
@@ -33,7 +38,7 @@ export const ComponentsMapping = {
     'users-list': UsersListComponent,
     'tags-list': TagsListComponent,
     'categories-list': CategoriesListComponent,
-}
+}, CustomComponentsMapping);
 
 export const COMPONENTS = [
     // Items
@@ -58,4 +63,5 @@ export const COMPONENTS = [
     EmptyListComponent,
     BookmarksComponent,
     PageNavbarComponent,
+    ...CustomCOMPONENTS
 ];

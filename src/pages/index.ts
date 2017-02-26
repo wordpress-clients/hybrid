@@ -1,4 +1,3 @@
-
 import { ItemPage } from './item/item';
 import { ListPage } from './list/list';
 import { TabsPage } from './tabs/tabs';

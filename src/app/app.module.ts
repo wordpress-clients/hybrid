@@ -1,7 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { Http } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
+// import { Storage } from '@ionic/storage';
 import {
   WpApiModule,
   WpApiLoader,
@@ -35,7 +35,7 @@ export function WpApiLoaderFactory(http: Http, config: Config) {
   return new WpApiStaticLoader(http, config.getApi('baseUrl', ''), config.getApi('namespace', ''));
 }
 
-@NgModule({
+@NgModule({ 
   declarations: [...COMPONENTS, ...PAGES, WPHC],
   imports: [
     IonicModule.forRoot(WPHC, {}, {
@@ -57,7 +57,7 @@ export function WpApiLoaderFactory(http: Http, config: Config) {
   bootstrap: [IonicApp],
   entryComponents: [...COMPONENTS, ...PAGES, WPHC],
   providers: [
-    Storage,
+    // Storage,
     ...PROVIDERS,
     // { provide: Settings, useFactory: provideSettings, deps: [ Storage ] },
     // Keep this to enable Ionic's runtime error handling during development

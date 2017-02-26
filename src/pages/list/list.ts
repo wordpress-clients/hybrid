@@ -8,6 +8,7 @@ import { WpApiPages, WpApiPosts, WpApiCustom } from 'wp-api-angular';
 import { Store } from '@ngrx/store';
 import _get from 'lodash/get';
 import _take from 'lodash/take';
+import _isObject from 'lodash/isObject';
 
 import { AbstractListPage, IListPage, IListResult } from '../abstract/PaginatedPage';
 import { addList, cleanList } from '../../actions';
@@ -39,9 +40,11 @@ export class ListPage extends AbstractListPage implements IListPage {
 
     this.setType(this.navParams.get('type'));
 
-    console.debug("[ListPage] options", options);
-
-    this.setOptions(JSON.parse(options || "{}"));
+    if (_isObject(options)) {
+      this.setOptions(options);
+    } else if (typeof options === 'string') {
+      this.setOptions(JSON.parse(options || "{}"))
+    }
 
     const listKey = this.options.query ? this.type + JSON.stringify(this.options.query) : this.type;
     console.log('listKey', listKey)

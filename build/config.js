@@ -17,7 +17,7 @@ module.exports = {
     filename: process.env.IONIC_OUTPUT_JS_FILE_NAME,
     devtoolModuleFilenameTemplate: ionicWebpackFactory.getSourceMapperFunction(),
   },
-  devtool: process.env.IONIC_GENERATE_SOURCE_MAP ? process.env.IONIC_SOURCE_MAP_TYPE : '',
+  devtool: process.env.IONIC_SOURCE_MAP_TYPE,
 
   resolve: {
     extensions: ['.ts', '.js', '.json'],
@@ -29,6 +29,13 @@ module.exports = {
       {
         test: /\.json$/,
         use: 'json-loader'
+      }, {
+        test: /service-worker\.js$/,
+        use: [
+          'file-loader?name=[name].[ext]',
+          `string-replace-loader?search=SERVICE_WORKER_VERSION&replace="${getAppVersion()}"`
+        ],
+        include: path.join(__dirname, '..', 'src')
       },
       {
         test: /\.cson$/,

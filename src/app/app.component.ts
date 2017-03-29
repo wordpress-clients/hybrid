@@ -1,50 +1,73 @@
 import { Store } from '@ngrx/store';
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+
 import { TranslateService } from 'ng2-translate/ng2-translate';
 
 import { AppState, IParamsState } from './../reducers';
-import { Config } from './../providers';
+import { Config, PushNotifications, Storage } from './../providers';
 import { MenuMapping } from './../pages';
+import { INIT } from './../actions';
+
 
 @Component({
   template: `
-    <menu [content]="content"></menu>
-    <ion-nav #content [root]="rootPage"></ion-nav>
+     <ion-split-pane>
+      <ion-menu [content]="content" persistent="true">
+        <ion-header>
+          <ion-toolbar color="primary">
+            <ion-title>{{title}}</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <menu [content]="content"></menu>
+        </ion-content>
+      </ion-menu>
+    <ion-nav #content main [root]="rootPage"></ion-nav>
+
+    </ion-split-pane>
   `
 })
 export class WPHC {
   @ViewChild(Nav) nav: Nav;
+  title: string
 
   constructor(
     public translate: TranslateService,
     public platform: Platform,
     public store: Store<AppState>,
-    public config: Config
-  ) {
+    public config: Config,
+    public pushNotif: PushNotifications,
+    public splashScreen: SplashScreen,
+    public statusBar: StatusBar,
 
-    store.select('params')
-      .map((params: IParamsState) => {
-        const appNode: any = document.querySelector('ion-app');
-        appNode.style = `zoom: ${0.8 + (0.1 * params.zoom)}`
-      })
-      .subscribe();
+    public storage: Storage,
+  ) {
+    const appNode: any = document.querySelector('ion-app');
+
+    this.title = config.get('title', '');
     // Set the default language for translation strings, and the current language.
     translate.setDefaultLang('en');
-    translate.use('en')
+    translate.use('en');
 
-    platform.ready().then(() => {
+    let defaultStorage = this.storage.init();
+    Promise.all([defaultStorage, this.platform.ready()]).then(() => {
       const { page, params } = this.config.get('defaultPage', {});
+      this.storage.run();
 
-      if (page && MenuMapping[page]) { // redirect to default page
+      if (!location.hash && page && MenuMapping[page]) { // redirect to default page
         this.nav.setRoot(MenuMapping[page], params);
       }
 
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      StatusBar.styleDefault();
-      Splashscreen.hide();
+      this.store.select(state => state.params).map((params: IParamsState) => {
+        appNode.style = `zoom: ${0.8 + (0.1 * params.zoom)}`
+      }).subscribe();
+
+      pushNotif.init();
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
     });
   }
 }

@@ -47,7 +47,6 @@ export class ListPage extends AbstractListPage implements IListPage {
     }
 
     const listKey = this.options.query ? this.type + JSON.stringify(this.options.query) : this.type;
-    console.log('listKey', listKey)
 
     this.setStore(store.select(state => state.list[listKey]));
 

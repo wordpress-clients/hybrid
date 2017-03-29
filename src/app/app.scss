@@ -19,3 +19,16 @@
     display: flex;
     flex: 1;
 }
+
+[display-flex]{
+    display: flex;
+}
+
+
+ion-split-pane {
+    &.split-pane-visible {
+        ion-menu{
+            max-width: $menu-width !important;
+        }
+    }
+}

@@ -2,7 +2,7 @@ import { ActionReducer, Action } from '@ngrx/store';
 import _get from 'lodash/get';
 
 import { Config } from './../providers';
-import { SET_LOCALE, SET_ZOOM } from '../actions';
+import { INIT, CLEAN_CACHE, SET_LOCALE, SET_ZOOM } from '../actions';
 
 export interface IParamsState {
     locale: string;
@@ -29,6 +29,14 @@ export const paramsReducer: ActionReducer<Object> = (state: Object = defaultStat
                 zoom: payload
             });
         }
+
+        case INIT: {
+            return payload.params || defaultState;
+        }
+
+        case CLEAN_CACHE: {
+            return defaultState;
+        } 
 
         default:
             return state;

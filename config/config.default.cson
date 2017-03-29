@@ -31,7 +31,7 @@ api:
     timeout: 30000
     debounceTime: 400
     maxAttempt: 3
-    perPage: 5
+    perPage: 4
 
 serviceWorker:
     enabled : false    
@@ -41,3 +41,14 @@ menu:
     externalLinkOptions: null # default: 'location=yes'
     exposeAsideWhen: "(min-width:900px)"
     displayIcon: true # uses config/icons/icon_48.png
+
+pushNotifications:
+    enabled: false
+    plugin: "push-notifications-for-wordpress"
+    baseUrl: "http://yourDomain.com/pnfw"
+    android:
+        senderID: null
+    ios:
+        badge: true
+        sound: true
+        alert: true

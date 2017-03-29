@@ -1,5 +1,6 @@
 post-card {
-    display: block;
+    display: flex;
+    flex: 1;
     .thumbnail {
         height: $post-img-height;
         width: 100%;
@@ -8,6 +9,13 @@ post-card {
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
+    }
+    ion-card{
+        flex-direction: column;
+        display: flex;
+        ion-card-content{
+            flex: 1;
+        }
     }
     
     author {

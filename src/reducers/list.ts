@@ -1,5 +1,5 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import { ADD_LIST, CLEAN_LIST, CLEAN_CACHE } from '../actions';
+import { INIT, ADD_LIST, CLEAN_LIST, CLEAN_CACHE } from '../actions';
 
 export interface IListState {
     [key: string]: {
@@ -42,6 +42,10 @@ export const listReducer: ActionReducer<Object> = (state: IListState = defaultSt
             let newState = Object.assign({}, state);
             delete newState[itemType];
             return newState;
+        }
+
+        case INIT: {
+            return payload.list || defaultState;
         }
 
         case CLEAN_CACHE: {

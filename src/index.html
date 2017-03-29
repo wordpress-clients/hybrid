@@ -14,14 +14,13 @@
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
 
-  <!-- un-comment this code to enable service worker
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js')
+      navigator.serviceWorker.register('build/service-worker.js')
         .then(() => console.log('service worker installed'))
         .catch(err => console.log('Error', err));
     }
-  </script>-->
+  </script>
 
   <link href="build/main.css" rel="stylesheet">
 

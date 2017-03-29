@@ -1,5 +1,5 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import { ADD_ITEM, ADD_LIST, CLEAN_CACHE } from '../actions';
+import { INIT, ADD_ITEM, ADD_LIST, CLEAN_CACHE } from '../actions';
 
 export interface IAuthorState {
     id: number;
@@ -50,6 +50,10 @@ export const itemsReducer: ActionReducer<Object> = (state: Object = defaultState
                 users: Object.assign({}, state['users'], newAuthors),
                 [itemType]: Object.assign({}, state[itemType], newItems)
             });
+        }
+
+        case INIT: {
+            return payload.items || defaultState;
         }
 
         case CLEAN_CACHE: {

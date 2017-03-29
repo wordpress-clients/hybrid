@@ -2,11 +2,11 @@
 # yarn lockfile v1
 
 
-"@angular/common@^2.0.0", "@angular/common@^2.2.1":
+"@angular/common@2.4.8", "@angular/common@^2.0.0":
   version "2.4.8"
   resolved "https://registry.yarnpkg.com/@angular/common/-/common-2.4.8.tgz#e45a77a9d852c8e7135053ff38cf805435458c48"
 
-"@angular/compiler-cli@^2.2.1", "@angular/compiler-cli@^2.4.4":
+"@angular/compiler-cli@2.4.8", "@angular/compiler-cli@^2.4.4":
   version "2.4.8"
   resolved "https://registry.yarnpkg.com/@angular/compiler-cli/-/compiler-cli-2.4.8.tgz#6dad3b467243166bf2515d21993d2d1a4700a161"
   dependencies:
@@ -14,31 +14,31 @@
     minimist "^1.2.0"
     reflect-metadata "^0.1.2"
 
-"@angular/compiler@^2.0.0", "@angular/compiler@^2.2.1":
+"@angular/compiler@2.4.8", "@angular/compiler@^2.0.0":
   version "2.4.8"
   resolved "https://registry.yarnpkg.com/@angular/compiler/-/compiler-2.4.8.tgz#fa788fc8bed9f322b040af2b9a06a70991390e23"
 
-"@angular/core@^2.0.0", "@angular/core@^2.2.1":
+"@angular/core@2.4.8", "@angular/core@^2.0.0":
   version "2.4.8"
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-2.4.8.tgz#bf1a4fc324827516e6c3222047a9b2cbdaee6976"
 
-"@angular/forms@^2.2.1":
+"@angular/forms@2.4.8":
   version "2.4.8"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-2.4.8.tgz#51512a801aaf3a1eba7bce2b22694537b93f047f"
 
-"@angular/http@^2.0.0", "@angular/http@^2.2.1":
+"@angular/http@2.4.8", "@angular/http@^2.0.0":
   version "2.4.8"
   resolved "https://registry.yarnpkg.com/@angular/http/-/http-2.4.8.tgz#e81ac8e4db836ed813edc4ffa137596cd5836baf"
 
-"@angular/platform-browser-dynamic@^2.0.0", "@angular/platform-browser-dynamic@^2.2.1":
+"@angular/platform-browser-dynamic@2.4.8", "@angular/platform-browser-dynamic@^2.0.0":
   version "2.4.8"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-2.4.8.tgz#86059fe930489d1ca0056a5aba0b4420414759f5"
 
-"@angular/platform-browser@^2.0.0", "@angular/platform-browser@^2.2.1":
+"@angular/platform-browser@2.4.8", "@angular/platform-browser@^2.0.0":
   version "2.4.8"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser/-/platform-browser-2.4.8.tgz#686bc82d9188e354181699640777237ed79122ed"
 
-"@angular/platform-server@^2.2.1":
+"@angular/platform-server@2.4.8":
   version "2.4.8"
   resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-2.4.8.tgz#6ccf9550f11137286007c7ff01d4b449c421acbe"
   dependencies:
@@ -50,7 +50,27 @@
   dependencies:
     tsickle "^0.2"
 
-"@ionic/app-scripts@^1.0.0":
+"@ionic-native/core@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@ionic-native/core/-/core-3.1.1.tgz#46c76a39acb50211e3a0bc423eb7883679648672"
+
+"@ionic-native/push@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@ionic-native/push/-/push-3.1.1.tgz#040809b7c27ad5fcb436680095bfd488ced22d76"
+
+"@ionic-native/splash-screen@^3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@ionic-native/splash-screen/-/splash-screen-3.4.2.tgz#3ce378a3413bab8a0cd4cfd5029c3fadd9a6774c"
+
+"@ionic-native/status-bar@^3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@ionic-native/status-bar/-/status-bar-3.4.2.tgz#119c478d3ba897490a82fa0f37a9af2ff3948f56"
+
+"@ionic-native/toast@^3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@ionic-native/toast/-/toast-3.4.2.tgz#a1dba415704b6636c485575ab77dc3d8ac888764"
+
+"@ionic/app-scripts@1.1.4":
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/@ionic/app-scripts/-/app-scripts-1.1.4.tgz#470ba1ff66d40c32681c04747c8147f3b0628e74"
   dependencies:
@@ -83,9 +103,9 @@
     ws "1.1.1"
     xml2js "^0.4.17"
 
-"@ionic/storage@^1.1.9":
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/@ionic/storage/-/storage-1.1.9.tgz#edf9d695fa995b24be3db48212323c6a8bddefa6"
+"@ionic/storage@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@ionic/storage/-/storage-2.0.0.tgz#28b7fb4deda642bcbdd037f9c95946828552103d"
   dependencies:
     "@types/localforage" "0.0.30"
     localforage "~1.4.2"
@@ -1155,13 +1175,13 @@ combined-stream@~0.0.4, combined-stream@~0.0.5:
   dependencies:
     delayed-stream "0.0.5"
 
-commander@2.8.x, commander@^2.8.1:
+commander@2.8.x:
   version "2.8.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.8.1.tgz#06be367febfda0c330aa1e2a072d3dc9762425d4"
   dependencies:
     graceful-readlink ">= 1.0.0"
 
-commander@^2.9.0:
+commander@^2.8.1, commander@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.9.0.tgz#9c99094176e12240cb22d6c5146098400fe0f7d4"
   dependencies:
@@ -1242,11 +1262,7 @@ continuable-cache@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/continuable-cache/-/continuable-cache-0.3.1.tgz#bd727a7faed77e71ff3985ac93351a912733ad0f"
 
-convert-source-map@^1.1.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.4.0.tgz#e3dad195bf61bfe13a7a3c73e9876ec14a0268f3"
-
-convert-source-map@~1.1.0:
+convert-source-map@^1.1.0, convert-source-map@~1.1.0:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.1.3.tgz#4829c877e9fe49b3161f3bf3673888e204699860"
 
@@ -2141,9 +2157,9 @@ glob@^6.0.0:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.0, glob@^7.1.1, glob@~7.1.1:
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.1.tgz#805211df04faaf1c63a3600306cdf5ade50b2ec8"
+glob@^7.0.0, glob@~7.0.6:
+  version "7.0.6"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.0.6.tgz#211bafaf49e525b8cd93260d14ab136152b3f57a"
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
@@ -2152,9 +2168,9 @@ glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.0, glob@^7.1.1, glob@~7.1.1:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@~7.0.6:
-  version "7.0.6"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-7.0.6.tgz#211bafaf49e525b8cd93260d14ab136152b3f57a"
+glob@^7.0.3, glob@^7.0.5, glob@^7.1.0, glob@^7.1.1, glob@~7.1.1:
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.1.tgz#805211df04faaf1c63a3600306cdf5ade50b2ec8"
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
@@ -2448,15 +2464,9 @@ invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
 
-ionic-angular@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/ionic-angular/-/ionic-angular-2.1.0.tgz#189d9a66120a6bc1927eb399ba14d7cbec392500"
-
-ionic-native@^2.5.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/ionic-native/-/ionic-native-2.5.1.tgz#df0ff8808e68f0743a926299d5d3fd6c91db0261"
-  dependencies:
-    rxjs "5.0.0-beta.12"
+ionic-angular@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/ionic-angular/-/ionic-angular-2.3.0.tgz#28adadbe8c54dd5eda8e113cdd18819474e42c71"
 
 ionicons@3.0.0:
   version "3.0.0"
@@ -2752,7 +2762,7 @@ loader-runner@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.3.0.tgz#f482aea82d543e07921700d5a46ef26fdac6b8a2"
 
-loader-utils@^0.2.16, loader-utils@~0.2.5:
+loader-utils@^0.2.11, loader-utils@^0.2.16, loader-utils@~0.2.5:
   version "0.2.17"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-0.2.17.tgz#f86e6374d43205a6e6c60e9196f17c0299bfb348"
   dependencies:
@@ -2824,7 +2834,7 @@ lodash.some@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.some/-/lodash.some-4.6.0.tgz#1bb9f314ef6b8baded13b549169b2a945eb68e4d"
 
-lodash@^3.3.1, lodash@^3.5.0:
+lodash@^3.10.1, lodash@^3.3.1, lodash@^3.5.0:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
@@ -3047,25 +3057,7 @@ ng2-translate@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/ng2-translate/-/ng2-translate-5.0.0.tgz#0adbb510eb5007a2d6ded5f5d26888c14760aca5"
 
-node-gyp@^3.3.1:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-3.5.0.tgz#a8fe5e611d079ec16348a3eb960e78e11c85274a"
-  dependencies:
-    fstream "^1.0.0"
-    glob "^7.0.3"
-    graceful-fs "^4.1.2"
-    minimatch "^3.0.2"
-    mkdirp "^0.5.0"
-    nopt "2 || 3"
-    npmlog "0 || 1 || 2 || 3 || 4"
-    osenv "0"
-    request "2"
-    rimraf "2"
-    semver "2.x || 3.x || 4 || 5"
-    tar "^2.0.0"
-    which "1"
-
-node-gyp@~3.4.0:
+node-gyp@^3.3.1, node-gyp@~3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/node-gyp/-/node-gyp-3.4.0.tgz#dda558393b3ecbbe24c9e6b8703c71194c63fa36"
   dependencies:
@@ -3313,7 +3305,7 @@ npm@^2.10.x:
     are-we-there-yet "~1.1.2"
     gauge "~1.2.5"
 
-"npmlog@0 || 1 || 2 || 3 || 4", npmlog@^4.0.0, npmlog@^4.0.1:
+npmlog@^4.0.0, npmlog@^4.0.1:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/npmlog/-/npmlog-4.0.2.tgz#d03950e0e78ce1527ba26d2a7592e9348ac3e75f"
   dependencies:
@@ -3684,17 +3676,17 @@ q@1.4.1, q@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.4.1.tgz#55705bcd93c5f3673530c2c2cbc0c2b3addc286e"
 
-qs@6.2.0, qs@^6.2.0, qs@~6.2.0:
+qs@6.2.0, qs@~6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.2.0.tgz#3b7848c03c2dece69a9522b0fae8c4126d745f3b"
+
+qs@^6.2.0, qs@~6.3.0:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.1.tgz#918c0b3bcd36679772baf135b1acb4c1651ed79d"
 
 qs@~2.3.1:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/qs/-/qs-2.3.3.tgz#e9e85adbe75da0bbe4c8e0476a086290f863b404"
-
-qs@~6.3.0:
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.1.tgz#918c0b3bcd36679772baf135b1acb4c1651ed79d"
 
 querystring-es3@^0.2.0, querystring-es3@~0.2.0:
   version "0.2.1"
@@ -3792,9 +3784,9 @@ read@1, read@~1.0.1, read@~1.0.7:
   dependencies:
     mute-stream "~0.0.4"
 
-"readable-stream@1 || 2", readable-stream@^2.0.0, "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.1.0, readable-stream@^2.1.5:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.2.3.tgz#9cf49463985df016c8ae8813097a9293a9b33729"
+"readable-stream@1 || 2", readable-stream@^2.0.0, "readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.1.0, readable-stream@^2.1.5, readable-stream@~2.1.4, readable-stream@~2.1.5:
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.1.5.tgz#66fa8b720e1438b364681f2ad1a63c618448c9d0"
   dependencies:
     buffer-shims "^1.0.0"
     core-util-is "~1.0.0"
@@ -3817,18 +3809,6 @@ readable-stream@~2.0.0, readable-stream@~2.0.5:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
   dependencies:
-    core-util-is "~1.0.0"
-    inherits "~2.0.1"
-    isarray "~1.0.0"
-    process-nextick-args "~1.0.6"
-    string_decoder "~0.10.x"
-    util-deprecate "~1.0.1"
-
-readable-stream@~2.1.4, readable-stream@~2.1.5:
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.1.5.tgz#66fa8b720e1438b364681f2ad1a63c618448c9d0"
-  dependencies:
-    buffer-shims "^1.0.0"
     core-util-is "~1.0.0"
     inherits "~2.0.1"
     isarray "~1.0.0"
@@ -4045,13 +4025,7 @@ right-align@^0.1.1:
   dependencies:
     align-text "^0.1.1"
 
-rimraf@2, rimraf@^2.5.2:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.1.tgz#c2338ec643df7a1b7fe5c54fa86f57428a55f33d"
-  dependencies:
-    glob "^7.0.5"
-
-rimraf@~2.5.1, rimraf@~2.5.4:
+rimraf@2, rimraf@^2.5.2, rimraf@~2.5.1, rimraf@~2.5.4:
   version "2.5.4"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.5.4.tgz#96800093cbf1a0c86bd95b4625467535c29dfa04"
   dependencies:
@@ -4134,9 +4108,9 @@ rx-lite@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-3.1.2.tgz#19ce502ca572665f3b647b10939f97fd1615f102"
 
-rxjs@5.0.0-beta.12:
-  version "5.0.0-beta.12"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.0.0-beta.12.tgz#cdfde2d8c4639d20ae7794bff8fddf32da7ad337"
+rxjs@5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.0.1.tgz#3a69bdf9f0ca0a986303370d4708f72bdfac8356"
   dependencies:
     symbol-observable "^1.0.1"
 
@@ -4442,6 +4416,13 @@ string-length@^1.0.0:
   resolved "https://registry.yarnpkg.com/string-length/-/string-length-1.0.1.tgz#56970fb1c38558e9e70b728bf3de269ac45adfac"
   dependencies:
     strip-ansi "^3.0.0"
+
+string-replace-loader@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/string-replace-loader/-/string-replace-loader-1.0.5.tgz#e2b0d4fcd611f0d41ca433bbf50e029450e37a3d"
+  dependencies:
+    loader-utils "^0.2.11"
+    lodash "^3.10.1"
 
 string-template@~0.2.1:
   version "0.2.1"
@@ -5088,6 +5069,6 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-zone.js@0.6.26:
-  version "0.6.26"
-  resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.6.26.tgz#067c13b8b80223a89b62e9dc82680f09762c4636"
+zone.js@0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.7.2.tgz#1a62b6be4b24d1b935e4566b0b4386b66966d1a7"

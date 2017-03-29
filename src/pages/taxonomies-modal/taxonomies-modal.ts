@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, App } from 'ionic-angular';
 
 import { ListPage } from './../list/list';
 
@@ -24,6 +24,7 @@ export class TaxonomiesModal {
     public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
+    public appCtrl: App,
   ) {
     this.title = navParams.get('title');
     this.postType = navParams.get('postType');
@@ -33,7 +34,7 @@ export class TaxonomiesModal {
   }
 
   openPage = (e, item) => {
-    this.navCtrl.push(ListPage, {
+    this.appCtrl.getRootNav().push(ListPage, {
       type: 'posts',
       options: JSON.stringify({
         query: {

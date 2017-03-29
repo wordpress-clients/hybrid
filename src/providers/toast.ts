@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ToastController, Platform } from 'ionic-angular';
-import { Toast as NativeToast } from 'ionic-native';
+import { Toast as NativeToast } from '@ionic-native/toast';
 
 import { Config } from './config';
 
@@ -19,12 +19,13 @@ export class Toast {
   constructor(
     public toastCtrl: ToastController,
     public config: Config,
-    public platform: Platform
+    public platform: Platform,
+    public toastNative: NativeToast,
   ) { }
 
   show(message = '') {
     if (this.platform.is('cordova')) {
-      NativeToast.show(message, `${TOAST_DURATION}`, this.config.getToast('position', TOAST_POSITION)).subscribe();
+      this.toastNative.show(message, `${TOAST_DURATION}`, this.config.getToast('position', TOAST_POSITION)).subscribe();
     } else {
       this.toastCtrl.create({
         message,

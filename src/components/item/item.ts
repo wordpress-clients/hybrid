@@ -4,6 +4,7 @@ import {
 } from '@angular/core';
 
 import { ComponentsMapping } from './../index';
+import { Config } from './../../providers';
 
 /*
   Generated class for the List component.
@@ -25,7 +26,8 @@ export class ItemComponent {
   componentRef: ComponentRef<any>;
 
   constructor(
-    public componentFactoryResolver: ComponentFactoryResolver
+    public componentFactoryResolver: ComponentFactoryResolver,
+    public config: Config,
   ) {
   }
 
@@ -58,8 +60,10 @@ export class ItemComponent {
   }
 
   getComponent(): any {
+    const configComponent = this.config.getItemComponent(this.type);
     const { component = '' } = this.options || {};
-    const componentName = component || `${this.type}-item`;
+    // first we check for component from URL, then from Config then naming convention
+    const componentName = component || configComponent || `${this.type}-item`;
     const Component = ComponentsMapping[componentName];
     if (Component) return Component;
 

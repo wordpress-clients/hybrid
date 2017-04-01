@@ -12,5 +12,8 @@
   <ion-title><span [innerHtml]="title"></span></ion-title>
   <ion-buttons end>
     <ng-content></ng-content>
+    <button ion-button icon-only (click)="goToSearch()" *ngIf="search">
+      <ion-icon name='search'></ion-icon>
+    </button>
   </ion-buttons>
 </ion-navbar>

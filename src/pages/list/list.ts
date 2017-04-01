@@ -4,7 +4,7 @@ import {
   ComponentFactoryResolver
 } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { WpApiPages, WpApiPosts, WpApiCustom } from 'wp-api-angular';
+import { WpApiCustom } from 'wp-api-angular';
 import { Store } from '@ngrx/store';
 import _get from 'lodash/get';
 import _take from 'lodash/take';
@@ -31,8 +31,6 @@ export class ListPage extends AbstractListPage implements IListPage {
     public componentFactoryResolver: ComponentFactoryResolver,
     private navCtrl: NavController,
     private store: Store<AppState>,
-    private wpApiPages: WpApiPages,
-    private wpApiPosts: WpApiPosts,
     private wpApiCustom: WpApiCustom,
   ) {
     super(inject);
@@ -56,17 +54,26 @@ export class ListPage extends AbstractListPage implements IListPage {
         this.store.select(state => state.items[this.type]),
         this.itemsToDisplay$,
         (listState: any, item = {}, itemsToDisplay) => {
-          console.log('list', listState, item, itemsToDisplay)
           return _take(_get(listState, 'list', []), itemsToDisplay).map(id => item[id])
         }))
 
-    if (this.type === 'pages') this.setService(wpApiPages)
-    else if (this.type === 'posts') this.setService(wpApiPosts)
-    else this.setService(wpApiCustom.getInstance(this.type))
+    this.setService(wpApiCustom.getInstance(this.type))
   }
 
   ionViewDidLoad() {
     super.ionViewDidLoad();
+  }
+
+  doInit(): void {
+    super.doInit();
+
+    let currentList = this.getCurrentList();
+    if (!currentList.length) {
+      this.fetch().first().subscribe();
+    } else {
+      this.init = true;
+      this.updateItemsToDisplay();
+    }
   }
 
   onLoad({ page, totalPages, totalItems, list }: IListResult) {

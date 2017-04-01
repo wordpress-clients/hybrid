@@ -69,7 +69,7 @@ export class AbstractItemPage {
         console.log(`[ItemPage] fetch ${this.type}`, searchParams);
         return this.service.get(this.navParams.get('id'), { search: uRLSearchParams })
             .debounceTime(this.config.getApi('debounceTime', 400))
-            .timeout(this.config.getApi('timeout', 10000), new Error('timeout exceeded'))
+            .timeout(this.config.getApi('timeout', 10000))
             .retry(this.config.getApi('maxAttempt', 3) - 1)
             .map((r) => {
                 this.init = true;

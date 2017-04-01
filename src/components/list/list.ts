@@ -4,6 +4,7 @@ import {
 } from '@angular/core';
 
 import { ComponentsMapping } from './../index';
+import { Config } from './../../providers';
 
 /*
   Generated class for the List component.
@@ -18,6 +19,8 @@ import { ComponentsMapping } from './../index';
 })
 export class ListComponent {
   @Input() type: string;
+  @Input() emptyIcon: string;
+  @Input() emptyText: string;
   @Input() options: any;
   @Input() list: Array<any>;
   @ViewChild('dynamicComponentTarget', { read: ViewContainerRef })
@@ -25,11 +28,17 @@ export class ListComponent {
   componentRef: ComponentRef<any>;
 
   constructor(
-    public componentFactoryResolver: ComponentFactoryResolver
+    public componentFactoryResolver: ComponentFactoryResolver,
+    public config: Config,
   ) {
   }
 
   ngOnInit() {
+    console.debug('[LIST] ngOnInit')
+    this.injectComponent();
+  }
+
+  injectComponent() {
     console.debug('[LIST] ngOnInit')
     let componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.getComponent());
     this.dynamicComponentTarget.clear();
@@ -41,8 +50,13 @@ export class ListComponent {
     if (!this.componentRef) {
       return;
     }
-    console.debug('[LIST] ngOnChanges')
-    this.updateRefs();
+    console.debug('[LIST] ngOnChanges', changes)
+
+    if ((changes.type && changes.type.currentValue !== changes.type.previousValue)) {
+      this.injectComponent();
+    } else {
+      this.updateRefs();
+    }
   }
 
   ngOnDestroy() {
@@ -58,8 +72,10 @@ export class ListComponent {
   }
 
   getComponent(): any {
+    const configComponent = this.config.getListComponent(this.type);
     const { component = '' } = this.options || {};
-    const componentName = component || `${this.type}-list`;
+    // first we check for component from URL, then from Config then naming convention
+    const componentName = component || configComponent || `${this.type}-list`;
     const Component = ComponentsMapping[componentName];
     if (Component) return Component;
 

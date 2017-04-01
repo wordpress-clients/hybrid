@@ -4,5 +4,5 @@
   See https://angular.io/docs/ts/latest/api/core/index/ComponentMetadata-class.html
   for more info on Angular 2 Components.
 -->
-
+<empty-list *ngIf="list && !list.length" [icon]="emptyIcon" [text]="emptyText"></empty-list>
 <template #dynamicComponentTarget></template>

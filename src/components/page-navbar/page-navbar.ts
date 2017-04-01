@@ -1,4 +1,7 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { NavController } from 'ionic-angular';
+
+import { SearchPage } from '../../pages/search/search';
 
 /*
   Generated class for the PageNavbar component.
@@ -13,8 +16,15 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 })
 export class PageNavbarComponent {
 
-  @Input() title : string;
+  @Input() title: string;
+  @Input() search: boolean = true;
 
-  constructor() {}
+  constructor(
+    public navCtrl: NavController,
+  ) { }
+
+  goToSearch() {
+    this.navCtrl.push(SearchPage)
+  }
 
 }

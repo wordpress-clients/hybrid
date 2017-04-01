@@ -50,15 +50,14 @@ export class AbstractListPage {
     }
 
     ionViewDidLoad() {
-        console.log('[ListPage] init');
-        let currentList;
-        this.store$.take(1).subscribe(listParams => currentList = _get(listParams, 'list', []));
-        if (!currentList.length) {
-            this.doLoad();
-        } else {
-            this.init = true;
-            this.updateItemsToDisplay();
-        }
+        console.log('[ListPage] ionViewDidLoad');
+        this.doInit();
+    }
+
+    doInit() {
+        this.init = false;
+        this.isPaginationEnabled = true;
+        this.page = 1;
     }
 
     setStream = (stream: Observable<any>) => this.stream$ = stream;
@@ -71,13 +70,19 @@ export class AbstractListPage {
     onLoad(data: Object) { }
     onClean() { }
 
-    private getCurrentPage(): number {
+    public getCurrentList(): any[] {
+        let currentList;
+        this.store$.first().subscribe(listParams => currentList = _get(listParams, 'list', []));
+        return currentList;
+    }
+
+    public getCurrentPage(): number {
         let currentPage;
-        this.store$.take(1).subscribe((listParams) => currentPage = _get(listParams, 'page', 0));
+        this.store$.first().subscribe((listParams) => currentPage = _get(listParams, 'page', 0));
         return currentPage;
     }
 
-    private getQuery(): Object {
+    public getQuery(): Object {
         // if (this.type === 'customPosts' && this.navParams.get('slug')) {
         //     return this.config.get(`[${this.navParams.get('slug')}].query`, {})
         // } else if (this.type === 'taxonomiesPosts' && this.postType) {
@@ -90,7 +95,7 @@ export class AbstractListPage {
         );
     }
 
-    private fetch(): Observable<any> {
+    public fetch(): Observable<any> {
         const currentPage = this.getCurrentPage();
         const nextPage = currentPage + 1;
         const searchParams = Object.assign({
@@ -112,17 +117,18 @@ export class AbstractListPage {
             .map((r) => {
                 this.shouldRetry = false;
                 const totalPages = parseInt(r.headers.get('x-wp-totalpages'));
-                this.onLoad({
+                const response = {
                     page: nextPage,
                     totalPages,
                     totalItems: parseInt(r.headers.get('x-wp-total')),
                     list: r.json()
-                });
+                };
                 this.page = nextPage;
                 this.init = true;
                 this.isPaginationEnabled = true;
+                this.onLoad(response);
                 this.updateItemsToDisplay();
-                return totalPages <= nextPage;
+                return response;
             })
             .catch(res => {
                 this.init = true;
@@ -135,13 +141,9 @@ export class AbstractListPage {
             });
     }
 
-    doLoad(): void {
-        this.fetch().take(1).subscribe();
-    }
-
     doRefresh(refresher: Refresher): void {
         this.onClean();
-        this.fetch().take(1).subscribe(() => refresher.complete(), (error) => refresher.complete());
+        this.fetch().first().subscribe(() => refresher.complete(), (error) => refresher.complete());
     }
 
     doInfinite(infiniteScroll: InfiniteScroll): void {
@@ -153,7 +155,8 @@ export class AbstractListPage {
             this.updateItemsToDisplay();
             infiniteScroll.complete();
         } else {
-            this.fetch().take(1).subscribe((isComplete) => {
+            this.fetch().first().subscribe(({ totalPages, page }) => {
+                const isComplete = totalPages <= page;
                 infiniteScroll.complete();
                 this.isPaginationEnabled = !isComplete;
             }, (error) => infiniteScroll.complete());

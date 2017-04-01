@@ -19,6 +19,7 @@ export class TabsPage {
   // tabs config
   tabsHighlight: boolean;
   tabsColor: string;
+  tabsPlacement: string;
   tabsMode: string;
   tabsLayout: string;
 
@@ -38,6 +39,7 @@ export class TabsPage {
     this.tabsHighlight = this.config.getTabs('highlight', true);
     this.tabsColor = this.config.getTabs('color', 'primary');
     this.tabsLayout = this.config.getTabs('layout', 'icon-top');
+    this.tabsPlacement = this.config.getTabs('placement');
     this.tabsMode = this.config.getTabs('mode');
   }
 

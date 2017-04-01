@@ -19,7 +19,23 @@ tabs:
     highlight: true
     color: "primary" # "primary", "secondary", "danger", "light", and "dark"
     mode: null # "ios", "md", or "wp"
+    placement: null # top, bottom
     layout: "icon-top" # icon-top, icon-left, icon-right, icon-bottom, icon-hide, title-hide
+
+search:
+    types: ['posts', 'pages']
+
+# This is used to replace how list or items are displayed
+# You can create your custom components and use it here instead of the default
+components:
+    item:
+        posts: 'posts-item'
+        pages: 'pages-item'
+    list:
+        posts: 'posts-list'
+        pages: 'pages-list'
+        categories: 'categories-list'
+        tags: 'tags-list'
 
 toast:
     duration: 3000

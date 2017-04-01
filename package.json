@@ -57,7 +57,7 @@
     "ionicons": "3.0.0",
     "lodash": "^4.17.3",
     "ng2-translate": "^5.0.0",
-    "rxjs": "5.0.1",
+    "rxjs": "^5.2.0",
     "wp-api-angular": "^3.0.0-beta7",
     "zone.js": "0.7.2"
   },

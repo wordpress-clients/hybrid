@@ -1,25 +1,4 @@
-"title": "Your Blog title"
+title: "My Blog title"
 
-"api":
-    "baseUrl": "https://dev.julienrenaux.fr/wp-json"
-    "timeout": 10000
-    "maxAttempt": 3
-
-"translation":
-    "displayed" : ["en", "fr"]
-    "prefered": "en"
-
-"cordova":
-    "admob":
-        "enabled":false
-        "android":
-            "bannerID": null
-            "interstitialID": null
-        "ios":
-            "bannerID": null
-            "interstitialID": null
-    "pushNotifications":
-        "enabled": false
-        "baseUrl": "http://yourDomain.com/pnfw"
-        "android":
-            "senderID": ""
+api:
+    baseUrl: "https://dev.julienrenaux.fr/wp-json"

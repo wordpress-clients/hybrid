@@ -50,6 +50,6 @@
     <plugin name="cordova-plugin-crosswalk-webview" spec="~2.3.0" />
     <plugin name="cordova-plugin-wkwebview-engine" spec="~1.1.2" />
     <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
-    <engine name="android" spec="6.x" />
+    <engine name="android" spec="6.1" />
     <engine name="ios" spec="4.x" />
 </widget>

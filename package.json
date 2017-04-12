@@ -129,8 +129,8 @@
   "cordovaPlatforms": [
     {
       "platform": "android",
-      "version": "6.x",
-      "locator": "android@6.x"
+      "version": "6.1",
+      "locator": "android@6.1"
     },
     {
       "platform": "ios",

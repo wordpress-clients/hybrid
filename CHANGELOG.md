@@ -1,3 +1,18 @@
+<a name="2.0.2"></a>
+### 2.0.2 (2017-04-12)
+
+* Downgrade Android-cordova due to <http://stackoverflow.com/questions/43195668/cordova-error-using-cordova-android-6-2-0-getfileresources-is-not-a-function>
+
+To upgrade:
+
+```
+$ git fetch --all
+$ git checkout v2.0.2
+$ yarn
+$ rm -rf platforms/ plugins/
+$ npm run restore
+```
+
 <a name="2.0.1"></a>
 ### 2.0.1 (2016-12-28)
 

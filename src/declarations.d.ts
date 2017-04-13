@@ -15,6 +15,3 @@ declare module '*';
 declare let __VERSION__: string;
 declare let __DEV__: string;
 declare let __PROD__: string;
-// Web Push Notifications
-declare let Notification: any;
-declare let require: any;

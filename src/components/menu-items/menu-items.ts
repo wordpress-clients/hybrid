@@ -1,4 +1,9 @@
-import { Component, Input, trigger, transition, style, animate, state, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component, Input, ChangeDetectionStrategy
+} from '@angular/core';
+import {
+  trigger, transition, style, animate, state
+} from '@angular/animations';
 
 import { MenuMapping } from '../../pages';
 

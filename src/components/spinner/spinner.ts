@@ -1,7 +1,10 @@
 import {
-  Component, Input, trigger, transition, style,
-  animate, state, ChangeDetectionStrategy
+  Component, Input, ChangeDetectionStrategy
 } from '@angular/core';
+import {
+  trigger, transition, style,
+  animate, state
+} from '@angular/animations';
 
 /*
   Generated class for the Spinner component.

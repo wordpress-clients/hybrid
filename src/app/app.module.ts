@@ -1,5 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, HttpModule } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -14,9 +16,9 @@ import {
   WpApiStaticLoader
 } from 'wp-api-angular'
 import { MomentModule } from 'angular2-moment';
-import {
-  TranslateModule, TranslateLoader, TranslateStaticLoader
-} from 'ng2-translate/ng2-translate';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/take';
@@ -32,13 +34,12 @@ import { PAGES, DeepLinkerLnks } from '../pages';
 import { PROVIDERS, Config } from '../providers';
 import '../service-worker.js';
 
-// The translate loader needs to know where to load i18n files
-// in Ionic's static asset pipeline.
+// AoT requires an exported function for factories
 export function createTranslateLoader(http: Http) {
-  return new TranslateStaticLoader(http, './build/i18n', '.json');
+  return new TranslateHttpLoader(http, './build/i18n/', '.json');
 }
 
-export function WpApiLoaderFactory(http: Http, config: Config) {
+export function WpApiLoaderFactory(http: any, config: Config) {
   return new WpApiStaticLoader(http, config.getApi('baseUrl', ''), config.getApi('namespace', ''));
 }
 
@@ -49,6 +50,9 @@ export function provideStorage() {
 @NgModule({
   declarations: [...COMPONENTS, ...PAGES, WPHC],
   imports: [
+    BrowserModule,
+    HttpModule,
+    BrowserAnimationsModule,
     IonicModule.forRoot(WPHC, {}, {
       links: DeepLinkerLnks
     }),
@@ -59,9 +63,11 @@ export function provideStorage() {
       deps: [Http, Config]
     }),
     TranslateModule.forRoot({
-      provide: TranslateLoader,
-      useFactory: (createTranslateLoader),
-      deps: [Http]
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [Http]
+      }
     }),
     MomentModule
   ],

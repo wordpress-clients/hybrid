@@ -84,7 +84,7 @@ export class PushNotificationsForWordPress implements IPushNotifications {
     if (!this.isPlatformSupported()) return Promise.reject({});
 
     if (this.plt.is('android') || this.plt.is('ios') || this.plt.is('windows')) {
-      return this.pushObject.hasPermission().then(response => {
+      return this.push.hasPermission().then(response => {
         console.debug('[PushNotifications] hasPermission', response.isEnabled);
         return Promise.resolve(response.isEnabled)
       });

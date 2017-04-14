@@ -32,11 +32,11 @@ import { STORE } from '../store';
 import { COMPONENTS } from '../components';
 import { PAGES, DeepLinkerLnks } from '../pages';
 import { PROVIDERS, Config } from '../providers';
-import '../service-worker.js';
+import  '../service-worker.js';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: Http) {
-  return new TranslateHttpLoader(http, './build/i18n/', '.json');
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 export function WpApiLoaderFactory(http: any, config: Config) {

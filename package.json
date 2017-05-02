@@ -1,6 +1,6 @@
 {
   "name": "wordpress-hybrid-client",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "title": "wordpress-hybrid-client",
   "description": "Build amazing iOS and Android applications for your WordPress website for free!",
   "main": "index.js",

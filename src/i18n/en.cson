@@ -34,35 +34,23 @@ ZOOM: "Zoom"
 CACHE_CLEAR: "Clear cache"
 CACHE_CLEAR_PROMPT: "This cannot be undone!"
 CACHE_CLEARED: "Cache cleared"
-"tags":
-    "title": "Tags"
-"tag":
-    "title": "Tag: {{name}}"
-"categories":
-    "title": "Categories"
-"category":
-    "title": "Category: {{name}}"
-"home":
-    "title": "Home"
-"search":
-    "inputPlaceholder": "Search"
-    "title": "Search"
-    "titleQuery": "Search: {{query}}"
-"sharing":
-    "shared": "Shared!"
-AUTHORS: "Authors"
-AUTHOR: "Author"
+TITLE_TAGS: "Tags"
+TITLE_TAG: "Tag: {{name}}"
+TITLE_CATEGORIES: "Categories"
+TITLE_CATEGORY: "Category: {{name}}"
+TITLE_HOME: "Home"
+TITLE_SEARCH: "Search"
+TITLE_PAGES: "Pages"
+TITLE_POSTS: "Posts"
+TITLE_USERS: "Authors"
+TITLE_USER: "Author"
+SHARED: "Shared!"
 AUTHOR_TITLE: "Author: {{name}}"
-"pages":
-    "title": "Pages"
 "posts":
-    "title": "Posts"
     "featured": "Featured"
 "post":
     "comments": "Comments"
     "openInBrowser": "Open in browser"
-"about":
-    "title": "About"
 "languages":
     "en": "English"
     "fr": "French"

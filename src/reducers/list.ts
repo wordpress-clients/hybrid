@@ -25,8 +25,10 @@ export const listReducer: ActionReducer<Object> = (state: IListState = defaultSt
     switch (action.type) {
         case ADD_LIST: {
             const { itemType, query, totalPages, totalItems, list = [], page = 0 } = payload;
+
             const ids = list.map((item) => item.id);
             const key = query ? itemType + JSON.stringify(query) : itemType;
+            if (state[key] && state[key].page === page) return state;
             return Object.assign({}, state, {
                 [key]: {
                     page,

@@ -25,6 +25,7 @@ import { AppState } from '../../reducers';
   templateUrl: 'list.html'
 })
 export class ListPage extends AbstractListPage implements IListPage {
+  title: string;
 
   constructor(
     public inject: Injector,
@@ -37,6 +38,7 @@ export class ListPage extends AbstractListPage implements IListPage {
     const options = this.navParams.get('options');
 
     this.setType(this.navParams.get('type'));
+    this.title = this.getTitle();
 
     if (_isObject(options)) {
       this.setOptions(options);
@@ -87,5 +89,9 @@ export class ListPage extends AbstractListPage implements IListPage {
 
   onClean() {
     this.store.dispatch(cleanList(this.type));
+  }
+
+  getTitle() {
+    return this.translate.instant(`TITLE_${this.type}`.toUpperCase());
   }
 }

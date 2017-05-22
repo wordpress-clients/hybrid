@@ -4,13 +4,9 @@ import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { TranslateService } from '@ngx-translate/core';
-
 import { AppState, IParamsState } from './../reducers';
 import { Config, PushNotifications, Storage } from './../providers';
 import { MenuMapping } from './../pages';
-import { INIT } from './../actions';
-
 
 @Component({
   template: `
@@ -35,26 +31,21 @@ export class WPHC {
   title: string
 
   constructor(
-    public translate: TranslateService,
     public platform: Platform,
     public store: Store<AppState>,
     public config: Config,
     public pushNotif: PushNotifications,
     public splashScreen: SplashScreen,
     public statusBar: StatusBar,
-
     public storage: Storage,
   ) {
     const appNode: any = document.querySelector('ion-app');
 
     this.title = config.get('title', '');
-    // Set the default language for translation strings, and the current language.
-    translate.setDefaultLang('en');
-    translate.use('en');
 
-    let defaultStorage = this.storage.init();
-    Promise.all([defaultStorage, this.platform.ready()]).then(() => {
+    this.platform.ready().then(() => {
       const { page, params } = this.config.get('defaultPage', {});
+
       this.storage.run();
 
       if (!location.hash && page && MenuMapping[page]) { // redirect to default page

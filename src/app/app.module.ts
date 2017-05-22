@@ -1,7 +1,8 @@
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler, APP_INITIALIZER, Injector } from '@angular/core';
 import { Http, HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LOCATION_INITIALIZED } from '@angular/common';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -16,7 +17,7 @@ import {
   WpApiStaticLoader
 } from 'wp-api-angular'
 import { MomentModule } from 'angular2-moment';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
@@ -31,8 +32,8 @@ import { WPHC } from './app.component';
 import { STORE } from '../store';
 import { COMPONENTS } from '../components';
 import { PAGES, DeepLinkerLnks } from '../pages';
-import { PROVIDERS, Config } from '../providers';
-import  '../service-worker.js';
+import { PROVIDERS, Config, Storage as OwnStorage, } from '../providers';
+import '../service-worker.js';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: Http) {
@@ -46,6 +47,30 @@ export function WpApiLoaderFactory(http: any, config: Config) {
 export function provideStorage() {
   return new Storage({ name: '__wphc' });
 }
+
+export function appInitializerStorageFactory(storage: OwnStorage) {
+  return function () {
+    return storage.init();
+  };
+};
+
+export function appInitializerTranslateFactory(translate: TranslateService, injector: Injector, config: Config) {
+  return () => new Promise<any>((resolve: any) => {
+    const locationInitialized = injector.get(LOCATION_INITIALIZED, Promise.resolve(null));
+    locationInitialized.then(() => {
+      const defaultLanguage = config.get('defaultLanguage');
+      const browserLanguage = translate.getBrowserLang()
+      translate.setDefaultLang(defaultLanguage);
+      translate.use(browserLanguage || defaultLanguage).subscribe(() => {
+        console.info(`Successfully initialized '${browserLanguage || defaultLanguage}' language.'`);
+      }, err => {
+        console.error(`Problem with '${browserLanguage || defaultLanguage}' language initialization.'`);
+      }, () => {
+        resolve(null);
+      });
+    });
+  });
+};
 
 @NgModule({
   declarations: [...COMPONENTS, ...PAGES, WPHC],
@@ -83,7 +108,18 @@ export function provideStorage() {
     { provide: Storage, useFactory: provideStorage },
     // { provide: Settings, useFactory: provideSettings, deps: [ Storage ] },
     // Keep this to enable Ionic's runtime error handling during development
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appInitializerStorageFactory,
+      deps: [OwnStorage],
+      multi: true
+    }, {
+      provide: APP_INITIALIZER,
+      useFactory: appInitializerTranslateFactory,
+      deps: [TranslateService, Injector, Config],
+      multi: true
+    }
   ]
 })
 export class WPHCModule { }

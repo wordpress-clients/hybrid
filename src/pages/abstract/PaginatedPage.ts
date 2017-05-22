@@ -4,8 +4,11 @@ import { InfiniteScroll, Refresher, NavParams } from 'ionic-angular';
 import { URLSearchParams } from '@angular/http';
 import { Injector, ViewChild } from '@angular/core';
 import _get from 'lodash/get';
+import debug from 'debug';
 
 import { Toast, Config } from './../../providers';
+
+const log = debug('List');
 
 export interface IListPage {
     onLoad(data: Object): void;
@@ -47,12 +50,12 @@ export class AbstractListPage {
         this.navParams = injector.get(NavParams, NavParams);
         this.toast = injector.get(Toast, Toast);
         this.translate = injector.get(TranslateService, TranslateService);
-        this.perPage = this.config.getApi('perPage', 5);
         this.updateItemsToDisplay();
     }
 
     ionViewDidLoad() {
-        console.log('[ListPage] ionViewDidLoad');
+        log('[ListPage] ionViewDidLoad');
+        this.perPage = this.getQuery().per_page || this.config.getApi('per_page', 5);
         this.doInit();
     }
 
@@ -94,7 +97,7 @@ export class AbstractListPage {
     setOptions = (options: any = {}) => this.options = options;
     updateItemsToDisplay = (resetInfiniteScroll = true) => {
         this.itemsToDisplay$.next(this.page * this.perPage);
-        resetInfiniteScroll && setTimeout(() => this.resetInfiniteScroll(), 100);
+        resetInfiniteScroll && setTimeout(() => this.resetInfiniteScroll(), 200);
     }
 
     onLoad(data: Object) { }
@@ -112,7 +115,7 @@ export class AbstractListPage {
         return currentPage;
     }
 
-    public getQuery(): Object {
+    public getQuery(): any {
         // if (this.type === 'customPosts' && this.navParams.get('slug')) {
         //     return this.config.get(`[${this.navParams.get('slug')}].query`, {})
         // } else if (this.type === 'taxonomiesPosts' && this.postType) {
@@ -139,7 +142,7 @@ export class AbstractListPage {
             uRLSearchParams.set(key, searchParams[key]);
         });
 
-        console.debug(`[ListPage] doLoad ${this.type}:${this.options} ${searchParams.page}`, searchParams);
+        debug(`[ListPage] doLoad ${this.type}:${this.options} ${searchParams.page}`, searchParams);
         return this.service.getList({ search: uRLSearchParams })
             .debounceTime(this.config.getApi('debounceTime', 400))
             .timeout(this.config.getApi('timeout', 10000))
@@ -166,7 +169,7 @@ export class AbstractListPage {
                 this.isPaginationEnabled = false;
                 this.toast.show(this.translate.instant('error'));
 
-                console.error("[ListPage] error", res);
+                log("[ListPage] error", res);
                 return res;
             });
     }
@@ -177,7 +180,7 @@ export class AbstractListPage {
     }
 
     doInfinite(infiniteScroll: InfiniteScroll): void {
-        console.log('[ListPage] doInfinite');
+        log('[ListPage] doInfinite');
         const currentPage = this.getCurrentPage();
 
         if (this.page < currentPage) {

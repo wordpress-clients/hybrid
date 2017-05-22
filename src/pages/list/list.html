@@ -18,7 +18,6 @@
   <button *ngIf="shouldRetry" ion-button color="light" full (click)="doLoad()">
     {{ 'RETRY' | translate }}
   </button>
-
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)" [enabled]="isPaginationEnabled">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>

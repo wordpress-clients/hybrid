@@ -70,7 +70,6 @@ export class SearchPage extends AbstractListPage {
         this.itemsToDisplay$,
         (searchTerm: string, type: string, searchState, items = {}, itemsToDisplay) => {
           const item = items[type]
-          // console.log('response', searchTerm, type, searchState, item, itemsToDisplay)
           return _take(_get(searchState, `[${getKey(type, searchTerm)}].list`, []), itemsToDisplay).map(id => item[id])
         })
     )
@@ -102,8 +101,9 @@ export class SearchPage extends AbstractListPage {
 
   onTypeChange(e) {
     this.page = 1;
-    this.content.scrollToTop();
     this.typeSubject.next(this.type);
+    this.updateItemsToDisplay(false);
+    this.content.scrollToTop();
   }
 
   ionViewDidLoad() {

@@ -2,7 +2,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Observable, Subject } from 'rxjs';
 import { InfiniteScroll, Refresher, NavParams } from 'ionic-angular';
 import { URLSearchParams } from '@angular/http';
-import { Injector } from '@angular/core';
+import { Injector, ViewChild } from '@angular/core';
 import _get from 'lodash/get';
 
 import { Toast, Config } from './../../providers';
@@ -38,6 +38,8 @@ export class AbstractListPage {
     type: string;
     options: any = {};
 
+    @ViewChild(InfiniteScroll) infinite: InfiniteScroll;
+
     constructor(
         public injector: Injector
     ) {
@@ -60,12 +62,40 @@ export class AbstractListPage {
         this.page = 1;
     }
 
+    // @TODO: remove when fixed: https://github.com/driftyco/ionic/issues/9209
+    resetInfiniteScroll(){
+        this.infinite._onScroll({
+         timeStamp: Date.now(),
+          scrollTop: 1,
+          scrollLeft: 1,
+          scrollHeight: 1,
+          scrollWidth: 1,
+          contentHeight: 1,
+          contentWidth: 1,
+          contentTop: 1,
+          contentBottom: 1,
+          startY: 1,
+          startX: 1,
+          deltaY: 1,
+          deltaX: 1,
+          velocityY: 1,
+          velocityX: 1,
+          directionY: '',
+          directionX: '',
+          domWrite: null
+      });
+      this.infinite._lastCheck = 0;
+    }
+
     setStream = (stream: Observable<any>) => this.stream$ = stream;
     setStore = (store: Observable<any>) => this.store$ = store;
     setService = (service: any) => this.service = service;
     setType = (type: string) => this.type = type;
     setOptions = (options: any = {}) => this.options = options;
-    updateItemsToDisplay = () => this.itemsToDisplay$.next(this.page * this.perPage);
+    updateItemsToDisplay = (resetInfiniteScroll = true) => {
+        this.itemsToDisplay$.next(this.page * this.perPage);
+        resetInfiniteScroll && setTimeout(() => this.resetInfiniteScroll(), 100);
+    }
 
     onLoad(data: Object) { }
     onClean() { }

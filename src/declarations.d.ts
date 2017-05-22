@@ -15,3 +15,5 @@ declare module '*';
 declare let __VERSION__: string;
 declare let __DEV__: string;
 declare let __PROD__: string;
+declare let __WWW_DIR__: string;
+declare let __SRC_DIR__: string;

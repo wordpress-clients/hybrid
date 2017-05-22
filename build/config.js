@@ -9,11 +9,11 @@ var defaultConfig = CSON.requireFile('./config/config.default.cson');
 var configOverwrite = CSON.requireFile('./config/config.cson');
 
 const RawConfig = deepExtend(defaultConfig, configOverwrite);
-
+console.log('process.env.IONIC_WWW_DIR', process.env.IONIC_WWW_DIR)
 module.exports = {
   entry: process.env.IONIC_APP_ENTRY_POINT,
   output: {
-    path: '{{BUILD}}',
+    path: process.env.IONIC_BUILD_DIR,
     publicPath: 'build/',
     filename: process.env.IONIC_OUTPUT_JS_FILE_NAME,
     devtoolModuleFilenameTemplate: ionicWebpackFactory.getSourceMapperFunction(),
@@ -40,10 +40,11 @@ module.exports = {
         include: path.join(__dirname, '..', 'src')
       },
       {
-        test: /\.json$/,
+        test: /\.cson$/,
         use: [
-          'file-loader?name=[name].[ext]',
-          'json-loader'
+          `file-loader?name=i18n/[name].json&publicPath=i18n&outputPath=${process.env.IONIC_WWW_DIR}&useRelativePath=true`,
+          'strip-module-export-loader',
+          'cson-loader'
         ],
         include: path.join(__dirname, '..', 'src', 'i18n')
       },
@@ -61,11 +62,13 @@ module.exports = {
   },
 
   plugins: [
-    ionicWebpackFactory.getIonicEnvironmentPlugin(),
+    // ionicWebpackFactory.getIonicEnvironmentPlugin(),
     new webpack.DefinePlugin({
       __VERSION__: JSON.stringify(getAppVersion()),
       __DEV__: process.env.IONIC_ENV === 'dev',
-      __PROD__: process.env.IONIC_ENV === 'prod'
+      __PROD__: process.env.IONIC_ENV === 'prod',
+      __WWW_DIR__ : JSON.stringify(process.env.IONIC_WWW_DIR),
+      __SRC_DIR__ : JSON.stringify(process.env.IONIC_SRC_DIR)
     })
   ],
 

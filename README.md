@@ -1,5 +1,7 @@
 # WordPress Hybrid Client
 
+[![Build Status](https://travis-ci.org/wordpress-clients/hybrid.svg?branch=develop)](https://travis-ci.org/wordpress-clients/hybrid)
+
 <span class="badge-flattr"><a href="https://flattr.com/submit/auto?user_id=shprink&url=https%3A%2F%2Fgithub.com%2Fshprink%2Fwordpress-hybrid-client" title="Donate to this project using Flattr"><img src="https://img.shields.io/badge/flattr-donate-yellow.svg" alt="Flattr donate button" /></a></span>
 <span class="badge-paypal"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=PFP99GE9V56RS" title="Donate to this project using Paypal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" alt="PayPal donate button" /></a></span>
 

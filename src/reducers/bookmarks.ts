@@ -10,10 +10,10 @@ export interface IBookmarkState {
     timestamp: number;
 }
 
-const defaultState = {};
+export const DEFAULT_STATE = {};
 
-export const bookmarksReducer: ActionReducer<Object> = (state: Object = defaultState, action: Action) => {
-    const payload = action.payload;
+export const bookmarksReducer: ActionReducer<Object> = (state: Object = DEFAULT_STATE, action: Action) => {
+    const payload = action.payload || {};
 
     switch (action.type) {
         case ADD_BOOKMARK: {
@@ -38,11 +38,11 @@ export const bookmarksReducer: ActionReducer<Object> = (state: Object = defaultS
         }
 
         case INIT: {
-            return payload.bookmarks || defaultState;
+            return payload.bookmarks || DEFAULT_STATE;
         }
 
         case CLEAN_CACHE: {
-            return defaultState;
+            return DEFAULT_STATE;
         }    
 
         default:

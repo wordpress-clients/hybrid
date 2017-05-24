@@ -24,7 +24,7 @@
   "homepage": "https://github.com/shprink/wordpress-hybrid-client#readme",
   "scripts": {
     "test": "karma start ./test-config/karma.conf.js",
-    "test-ci": "karma start ./test-config/karma.conf.js --single-run",
+    "test-ci": "karma start ./test-config/karma-ci.conf.js --single-run",
     "start": "ionic serve",
     "restore": "cordova prepare",
     "clean": "ionic-app-scripts clean",
@@ -85,6 +85,7 @@
     "karma-chrome-launcher": "^2.1.1",
     "karma-jasmine": "^1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.4",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.3",
     "node-sass": "^4.5.3",

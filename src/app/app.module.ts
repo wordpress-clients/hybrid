@@ -20,7 +20,6 @@ import { MomentModule } from 'angular2-moment';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/debounceTime';
@@ -33,8 +32,9 @@ import { STORE } from '../store';
 import { COMPONENTS } from '../components';
 import { PAGES, DeepLinkerLnks } from '../pages';
 import { PROVIDERS, Config, Storage as OwnStorage, } from '../providers';
-import '../service-worker.js';
+import { PIPES } from '../pipes';
 
+import '../service-worker.js';
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './build/i18n/', '.json');
@@ -73,7 +73,7 @@ export function appInitializerTranslateFactory(translate: TranslateService, inje
 };
 
 @NgModule({
-  declarations: [...COMPONENTS, ...PAGES, WPHC],
+  declarations: [...COMPONENTS, ...PAGES, WPHC, ...PIPES],
   imports: [
     BrowserModule,
     HttpModule,

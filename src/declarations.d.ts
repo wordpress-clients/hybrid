@@ -15,3 +15,4 @@ declare module '*';
 declare let __VERSION__: string;
 declare let __DEV__: string;
 declare let __PROD__: string;
+declare let __CONFIG_FOLDER__: string;

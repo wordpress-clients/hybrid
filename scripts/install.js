@@ -12,7 +12,7 @@ copy('../dist/config.xml', '../config.xml');
 copy('../dist/ionic.config.json', '../ionic.config.json');
 copy('../dist/config.scss', '../config/config.scss');
 copy('../dist/components', '../config/components');
-copy('../dist/icons', '../config/icons');
+copy('../dist/assets', '../config/assets');
 copy('../dist/manifest.json', '../config/manifest.json');
 copy('../dist/index.html', '../config/index.html');
 copy('../dist/ngsw-manifest.json', '../config/ngsw-manifest.json');

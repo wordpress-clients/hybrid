@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import menu from '../../config/menu.json';
+const menu = require(`${__CONFIG_FOLDER__}/menu.json`);
 
 @Injectable()
 export class Menu {

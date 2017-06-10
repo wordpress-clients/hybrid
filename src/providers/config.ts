@@ -3,8 +3,9 @@ import deepExtend from 'deep-extend';
 import _get from 'lodash/get';
 import debug from 'debug';
 
-import defaultConfig from '../../config/config.default.cson';
-import configOverwrite from '../../config/config.cson';
+import defaultConfig from '../config.default.cson';
+
+const configOverwrite = require(`${__CONFIG_FOLDER__}/config.cson`);
 
 const log = debug('Config');
 

@@ -165,7 +165,7 @@ Consult the `config/menu.json` to know about the different pages state and param
 
 ## `config/config.cson`
 
-The default values live under `config/config.default.cson` (file that you should not modify), if you wish to overwrite something from it, just copy it into your personal `config/config.cson` file with the same indentation.
+The default values live under `src/config.default.cson` (file that you should not modify), if you wish to overwrite something from it, just copy it into your personal `config/config.cson` file with the same indentation.
 
 Here is a simple view of what you can configure:
 

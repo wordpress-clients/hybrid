@@ -5,7 +5,7 @@ var deepExtend = require('deep-extend');
 var cordovaLib = require('cordova').cordova_lib;
 var CSON = require('cson');
 
-var defaultConfig = CSON.requireFile('./config/config.default.cson');
+var defaultConfig = CSON.requireFile('./src/config.default.cson');
 var configOverwrite = CSON.requireFile('./config/config.cson');
 
 const RawConfig = deepExtend(defaultConfig, configOverwrite);
@@ -13,7 +13,7 @@ const RawConfig = deepExtend(defaultConfig, configOverwrite);
 module.exports = {
   entry: process.env.IONIC_APP_ENTRY_POINT,
   output: {
-    path: '{{BUILD}}',
+    path: process.env.IONIC_BUILD_DIR,
     publicPath: 'build/',
     filename: process.env.IONIC_OUTPUT_JS_FILE_NAME,
     devtoolModuleFilenameTemplate: ionicWebpackFactory.getSourceMapperFunction(),
@@ -57,11 +57,12 @@ module.exports = {
   },
 
   plugins: [
-    ionicWebpackFactory.getIonicEnvironmentPlugin(),
+    // ionicWebpackFactory.getIonicEnvironmentPlugin(),
     new webpack.DefinePlugin({
       __VERSION__: JSON.stringify(getAppVersion()),
       __DEV__: process.env.IONIC_ENV === 'dev',
-      __PROD__: process.env.IONIC_ENV === 'prod'
+      __PROD__: process.env.IONIC_ENV === 'prod',
+      __CONFIG_FOLDER__: JSON.stringify(process.env.IONIC_ROOT_DIR + '/config'),
     }),
   ],
 

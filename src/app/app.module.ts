@@ -3,6 +3,7 @@ import { Http, HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LOCATION_INITIALIZED } from '@angular/common';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -34,7 +35,6 @@ import { PAGES, DeepLinkerLnks } from '../pages';
 import { PROVIDERS, Config, Storage as OwnStorage, } from '../providers';
 import { PIPES } from '../pipes';
 
-import '../service-worker.js';
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './build/i18n/', '.json');
@@ -94,7 +94,8 @@ export function appInitializerTranslateFactory(translate: TranslateService, inje
         deps: [Http]
       }
     }),
-    MomentModule
+    MomentModule,
+    ServiceWorkerModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [...COMPONENTS, ...PAGES, WPHC],

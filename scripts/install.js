@@ -14,6 +14,8 @@ copy('../dist/config.scss', '../config/config.scss');
 copy('../dist/components', '../config/components');
 copy('../dist/icons', '../config/icons');
 copy('../dist/manifest.json', '../config/manifest.json');
+copy('../dist/index.html', '../config/index.html');
+copy('../dist/ngsw-manifest.json', '../config/ngsw-manifest.json');
 copy('../release.sh.dist', '../release.sh');
 
 function copy(source, target, overwrite) {

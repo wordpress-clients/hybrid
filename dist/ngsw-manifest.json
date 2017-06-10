@@ -1,0 +1,25 @@
+{
+    "routing": {
+        "index": "/index.html",
+        "routes": {
+            "/": {
+                "prefix": false
+            },
+            "/bookmarks": {
+                "prefix": false
+            },
+            "/settings": {
+                "prefix": false
+            },
+            "/tabs": {
+                "prefix": false
+            },
+            "/list": {
+                "prefix": true
+            },
+            "/item": {
+                "prefix": true
+            }
+        }
+    }
+}

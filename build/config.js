@@ -9,11 +9,11 @@ var defaultConfig = CSON.requireFile('./config/config.default.cson');
 var configOverwrite = CSON.requireFile('./config/config.cson');
 
 const RawConfig = deepExtend(defaultConfig, configOverwrite);
-console.log('process.env.IONIC_WWW_DIR', process.env.IONIC_WWW_DIR)
+
 module.exports = {
   entry: process.env.IONIC_APP_ENTRY_POINT,
   output: {
-    path: process.env.IONIC_BUILD_DIR,
+    path: '{{BUILD}}',
     publicPath: 'build/',
     filename: process.env.IONIC_OUTPUT_JS_FILE_NAME,
     devtoolModuleFilenameTemplate: ionicWebpackFactory.getSourceMapperFunction(),
@@ -26,18 +26,10 @@ module.exports = {
   },
 
   module: {
-    rules: [
+    loaders: [
       {
         test: /\.json$/,
-        use: 'json-loader',
-        exclude: path.join(__dirname, '..', 'src', 'i18n')
-      }, {
-        test: /service-worker\.js$/,
-        use: [
-          'file-loader?name=[name].[ext]',
-          `string-replace-loader?search=SERVICE_WORKER_VERSION&replace="${getAppVersion()}"`
-        ],
-        include: path.join(__dirname, '..', 'src')
+        loader: 'json-loader'
       },
       {
         test: /\.cson$/,
@@ -54,22 +46,23 @@ module.exports = {
         exclude: path.join(__dirname, '..', 'src', 'i18n')
       },
       {
-        //test: /\.(ts|ngfactory.js)$/,
         test: /\.ts$/,
-        use: process.env.IONIC_WEBPACK_LOADER
+        loader: process.env.IONIC_WEBPACK_LOADER
+      },
+      {
+        test: /\.js$/,
+        loader: process.env.IONIC_WEBPACK_TRANSPILE_LOADER
       }
     ]
   },
 
   plugins: [
-    // ionicWebpackFactory.getIonicEnvironmentPlugin(),
+    ionicWebpackFactory.getIonicEnvironmentPlugin(),
     new webpack.DefinePlugin({
       __VERSION__: JSON.stringify(getAppVersion()),
       __DEV__: process.env.IONIC_ENV === 'dev',
-      __PROD__: process.env.IONIC_ENV === 'prod',
-      __WWW_DIR__ : JSON.stringify(process.env.IONIC_WWW_DIR),
-      __SRC_DIR__ : JSON.stringify(process.env.IONIC_SRC_DIR)
-    })
+      __PROD__: process.env.IONIC_ENV === 'prod'
+    }),
   ],
 
   // Some libraries import Node modules but don't use them in the browser.

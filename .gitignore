@@ -38,6 +38,7 @@ bower_components/
 release.sh
 about.md
 iOS
+legacy/
 cordova.plugin.backup
 before_build.md
 /config.xml

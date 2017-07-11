@@ -1,6 +1,6 @@
 {
   "name": "wordpress-hybrid-client",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "title": "wordpress-hybrid-client",
   "description": "Build amazing iOS and Android applications for your WordPress website for free!",
   "main": "index.js",
@@ -134,8 +134,8 @@
     },
     {
       "platform": "ios",
-      "version": "4.x",
-      "locator": "ios@4.x"
+      "version": "4.1.1",
+      "locator": "ios@4.1.1"
     }
   ]
 }

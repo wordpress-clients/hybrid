@@ -1,3 +1,18 @@
+<a name="2.0.3"></a>
+### 2.0.3 (2017-07-11)
+
+* [BUG] Build iOS App: Error: cordovaProject.projectConfig.getFileResources is not a function <https://github.com/wordpress-clients/hybrid/issues/353>
+
+To upgrade:
+
+```
+$ git fetch --all
+$ git checkout v2.0.3
+$ yarn
+$ rm -rf platforms/ plugins/
+$ npm run restore
+```
+
 <a name="2.0.2"></a>
 ### 2.0.2 (2017-04-12)
 

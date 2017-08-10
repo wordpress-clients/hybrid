@@ -10,8 +10,8 @@ platformBrowserDynamic()
     .bootstrapModule(WPHCModule)
     .then(() => {
         logApp('Bootstrapped')
-        if ('serviceWorker' in navigator && __PROD__) {
-            navigator.serviceWorker.register('worker-basic.js')
+        if ('serviceWorker' in navigator && __SW_ENABLED__ && __PROD__) {
+            navigator.serviceWorker.register('worker-basic.min.js')
                 .then((reg) => {
                     if (reg.installing) {
                         logSW('installing');

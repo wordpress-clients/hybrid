@@ -16,3 +16,8 @@ declare let __VERSION__: string;
 declare let __DEV__: string;
 declare let __PROD__: string;
 declare let __CONFIG_FOLDER__: string;
+declare let __SW_ENABLED__: string;
+declare let __PERMALINKS_POST__: string;
+declare let __PERMALINKS_TAG__: string;
+declare let __PERMALINKS_CATEGORY__: string;
+declare let __PERMALINKS_AUTHOR__: string;

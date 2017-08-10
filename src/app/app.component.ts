@@ -3,15 +3,19 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { NgServiceWorker } from '@angular/service-worker';
 import debug from 'debug';
 
 import { AppState, IParamsState } from './../reducers';
-import { Config, PushNotifications, Storage } from './../providers';
+import { Config, PushNotifications, Storage, ServiceWorkerProvider } from './../providers';
 import { MenuMapping } from './../pages';
 
-const logApp = debug('App');
-const logSW = debug('SW');
+const log = debug('App');
+
+if (__DEV__) {
+  debug.enable('*');
+} else {
+  debug.disable();
+}
 
 @Component({
   template: `
@@ -43,7 +47,7 @@ export class WPHC {
     public splashScreen: SplashScreen,
     public statusBar: StatusBar,
     public storage: Storage,
-    public sw: NgServiceWorker,
+    public swProvider: ServiceWorkerProvider,
   ) {
     const appNode: any = document.querySelector('ion-app');
 
@@ -51,7 +55,7 @@ export class WPHC {
 
     this.platform.ready().then(() => {
       const { page, params } = this.config.get('defaultPage', {});
-      logApp('Ready');
+      log('Ready');
 
       this.storage.run();
 
@@ -64,10 +68,7 @@ export class WPHC {
       }).subscribe();
 
       pushNotif.init();
-
-      this.sw.log().subscribe(logs => logSW('service-worker logs', logs));
-      this.sw.updates.subscribe(res => logSW('service-worker updates', res));
-
+      swProvider.init();
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });

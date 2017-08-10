@@ -4,18 +4,24 @@ var ionicWebpackFactory = require(process.env.IONIC_WEBPACK_FACTORY);
 var deepExtend = require('deep-extend');
 var cordovaLib = require('cordova').cordova_lib;
 var CSON = require('cson');
+var ModuleConcatPlugin = require('webpack/lib/optimize/ModuleConcatenationPlugin');
 
 var defaultConfig = CSON.requireFile('./src/config.default.cson');
 var configOverwrite = CSON.requireFile('./config/config.cson');
 
 const RawConfig = deepExtend(defaultConfig, configOverwrite);
 
+var prodPlugins = [];
+if (process.env.IONIC_ENV === 'prod') {
+  prodPlugins.push(new ModuleConcatPlugin());
+}
+
 module.exports = {
   entry: process.env.IONIC_APP_ENTRY_POINT,
   output: {
-    path: process.env.IONIC_BUILD_DIR,
+    path: '{{BUILD}}',
     publicPath: 'build/',
-    filename: process.env.IONIC_OUTPUT_JS_FILE_NAME,
+    filename: '[name].js',
     devtoolModuleFilenameTemplate: ionicWebpackFactory.getSourceMapperFunction(),
   },
   devtool: process.env.IONIC_SOURCE_MAP_TYPE,
@@ -57,14 +63,20 @@ module.exports = {
   },
 
   plugins: [
-    // ionicWebpackFactory.getIonicEnvironmentPlugin(),
+    ionicWebpackFactory.getIonicEnvironmentPlugin(),
+    ionicWebpackFactory.getCommonChunksPlugin(),
     new webpack.DefinePlugin({
       __VERSION__: JSON.stringify(getAppVersion()),
       __DEV__: process.env.IONIC_ENV === 'dev',
       __PROD__: process.env.IONIC_ENV === 'prod',
+      __SW_ENABLED__: RawConfig.serviceWorker.enabled,
+      __PERMALINKS_POST__: RawConfig.permalinks.post,
+      __PERMALINKS_TAG__: RawConfig.permalinks.tag,
+      __PERMALINKS_CATEGORY__: RawConfig.permalinks.category,
+      __PERMALINKS_AUTHOR__: RawConfig.permalinks.author,
       __CONFIG_FOLDER__: JSON.stringify(process.env.IONIC_ROOT_DIR + '/config'),
     }),
-  ],
+  ].concat(prodPlugins),
 
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.

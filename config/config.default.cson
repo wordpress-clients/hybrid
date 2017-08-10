@@ -12,7 +12,7 @@ defaultZoom: 2 # Available: 0 to 8
 defaultLanguage: 'en' # Available: "en", "fr", "zh", "es", "pl", "de", "pt", "it", "nl", "ru", "tr"
 defaultPage:
     page: 'list'
-    params: 
+    params:
         type: 'posts'
 
 tabs:
@@ -37,6 +37,12 @@ components:
         categories: 'categories-list'
         tags: 'tags-list'
 
+permalinks:
+    post: ':year/:month/:day/:slug' # ':year/:month/:slug', ':archives/:id', ':slug'
+    tag: 'tag/:slug'
+    category: 'category/:slug'
+    author: 'author/:username'
+
 toast:
     duration: 3000
     position: 'bottom' # Accepted values: "top", "middle", "bottom".
@@ -50,7 +56,7 @@ api:
     per_page: 4
 
 serviceWorker:
-    enabled : false    
+    enabled : false
 
 menu:
     externalLinkTarget : null # _self|_blank|_system default: _system https://github.com/apache/cordova-plugin-inappbrowser#cordovainappbrowseropen

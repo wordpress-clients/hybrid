@@ -5,7 +5,7 @@ import debug from 'debug';
 
 import defaultConfig from '../config.default.cson';
 
-const configOverwrite = require(`${__CONFIG_FOLDER__}/config.cson`);
+const configOverwrite = require('../../config/config.cson');
 
 const log = debug('Config');
 
@@ -16,8 +16,10 @@ export class Config {
     static getConfig() { return rawConfig };
     private config: Object = rawConfig;
     constructor() {
-        if (!localStorage.getItem('debug')){
-            localStorage.setItem('debug', this.getDev('log'));
+        if (__DEV__) {
+            debug.enable(this.getDev('log'));
+        } else {
+            debug.disable();
         }
         log('app config', this.config);
     }

@@ -35,20 +35,12 @@ export class ListPage extends AbstractListPage implements IListPage {
     private wpApiCustom: WpApiCustom,
   ) {
     super(inject);
-    const options = this.navParams.get('options');
+  }
 
-    this.setType(this.navParams.get('type'));
+  ionViewDidLoad() {
     this.title = this.getTitle();
 
-    if (_isObject(options)) {
-      this.setOptions(options);
-    } else if (typeof options === 'string') {
-      this.setOptions(JSON.parse(options || "{}"))
-    }
-
-    const listKey = this.options.query ? this.type + JSON.stringify(this.options.query) : this.type;
-
-    this.setStore(store.select(state => state.list[listKey]));
+    this.setStore(this.store.select(state => state.list[this.type + JSON.stringify(this.getQuery())]));
 
     this.setStream(
       Observable.combineLatest(
@@ -59,10 +51,7 @@ export class ListPage extends AbstractListPage implements IListPage {
           return _take(_get(listState, 'list', []), itemsToDisplay).map(id => item[id])
         }))
 
-    this.setService(wpApiCustom.getInstance(this.type))
-  }
-
-  ionViewDidLoad() {
+    this.setService(this.wpApiCustom.getInstance(this.type))
     super.ionViewDidLoad();
   }
 
@@ -79,7 +68,7 @@ export class ListPage extends AbstractListPage implements IListPage {
   }
 
   onLoad({ page, totalPages, totalItems, list }: IListResult) {
-    this.store.dispatch(addList(this.type, this.options.query, {
+    this.store.dispatch(addList(this.type, this.getQuery(), {
       page,
       totalPages,
       totalItems,

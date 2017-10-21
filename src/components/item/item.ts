@@ -3,7 +3,7 @@ import {
   ComponentFactoryResolver, ComponentRef, ChangeDetectionStrategy
 } from '@angular/core';
 
-import { ComponentsMapping } from './../index';
+import { ComponentsMapping } from '../../../config/components/';
 import { Config } from './../../providers';
 
 /*
@@ -67,7 +67,7 @@ export class ItemComponent {
     const Component = ComponentsMapping[componentName];
     if (Component) return Component;
 
-    throw new Error(`The component "${componentName}" does not exists`);
+    throw new Error(`The component "${componentName}" does not exist`);
   }
 
 }

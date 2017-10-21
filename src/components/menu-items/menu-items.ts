@@ -4,8 +4,11 @@ import {
 import {
   trigger, transition, style, animate, state
 } from '@angular/animations';
+import debug from 'debug';
 
-import { MenuMapping } from '../../pages';
+import { MenuMapping } from '../../../config/pages/';
+
+const log = debug('MenuItem');
 
 export interface IMenuItem {
   type: String;
@@ -63,14 +66,14 @@ export class MenuItemsComponent {
   doInternalClick = (e, { page, params, navRoot }) => {
     if (!MenuMapping[page]) {
       throw new Error(`the page "${page}" does not exist`);
-    } 
-    const { options } = params
-    if (options) {
+    }
+
+    if (params && params.options) {
       params = Object.assign({}, params, {
-        options: JSON.stringify(options)
+        options: JSON.stringify(params.options)
       });
     }
-    console.debug('[MENU]', page, params);
+    log('[MENU]', page, params);
     if (navRoot) {
       this.content.setRoot(MenuMapping[page], params);
     } else {

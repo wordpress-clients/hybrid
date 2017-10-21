@@ -1,16 +1,6 @@
 import { ActionReducer, Action } from '@ngrx/store';
 import { INIT, ADD_ITEM, ADD_LIST, ADD_SEARCH_LIST, CLEAN_CACHE } from '../actions';
 
-export interface IAuthorState {
-    id: number;
-    name: string;
-    url: string;
-    description: string;
-    link: string;
-    slug: string;
-    avatar_urls: Object;
-}
-
 const defaultState = {
     pages: {},
     posts: {},
@@ -19,7 +9,7 @@ const defaultState = {
     users: {},
 };
 
-export const itemsReducer: ActionReducer<Object> = (state: Object = defaultState, action: Action) => {
+export const itemsSlugMappingReducer: ActionReducer<Object> = (state: Object = defaultState, action: Action) => {
     const payload = action.payload;
 
     switch (action.type) {
@@ -27,7 +17,7 @@ export const itemsReducer: ActionReducer<Object> = (state: Object = defaultState
             const { item, itemType } = payload;
             return Object.assign({}, state, {
                 [itemType]: Object.assign({}, state[itemType], {
-                    [item.id]: item
+                    [item.slug]: item.id
                 })
             });
         }
@@ -35,26 +25,19 @@ export const itemsReducer: ActionReducer<Object> = (state: Object = defaultState
         case ADD_SEARCH_LIST:
         case ADD_LIST: {
             const { list, itemType } = payload;
-            const newAuthors = {};
             const newItems = {};
 
             list.forEach((item) => {
-                newItems[item.id] = item;
-                if (item._embedded && item._embedded.author) { // already stored in the state. avoid duplicates
-                    item._embedded.author.forEach((author: IAuthorState) => newAuthors[author.id] = author);
-                    delete item._embedded.author;
-                }
-
+                newItems[item.slug] = item.id;
             });
 
             return Object.assign({}, state, {
-                users: Object.assign({}, state['users'], newAuthors),
                 [itemType]: Object.assign({}, state[itemType], newItems)
             });
         }
 
         case INIT: {
-            return payload.items || defaultState;
+            return payload.itemsSlugMapping || defaultState;
         }
 
         case CLEAN_CACHE: {

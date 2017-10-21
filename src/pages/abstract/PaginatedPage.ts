@@ -51,6 +51,7 @@ export class AbstractListPage {
         this.toast = injector.get(Toast, Toast);
         this.translate = injector.get(TranslateService, TranslateService);
         this.updateItemsToDisplay();
+        console.log('this.type 2', this.type)
     }
 
     ionViewDidLoad() {
@@ -66,28 +67,28 @@ export class AbstractListPage {
     }
 
     // @TODO: remove when fixed: https://github.com/driftyco/ionic/issues/9209
-    resetInfiniteScroll(){
+    resetInfiniteScroll() {
         this.infinite._onScroll({
-         timeStamp: Date.now(),
-          scrollTop: 1,
-          scrollLeft: 1,
-          scrollHeight: 1,
-          scrollWidth: 1,
-          contentHeight: 1,
-          contentWidth: 1,
-          contentTop: 1,
-          contentBottom: 1,
-          startY: 1,
-          startX: 1,
-          deltaY: 1,
-          deltaX: 1,
-          velocityY: 1,
-          velocityX: 1,
-          directionY: '',
-          directionX: '',
-          domWrite: null
-      });
-      this.infinite._lastCheck = 0;
+            timeStamp: Date.now(),
+            scrollTop: 1,
+            scrollLeft: 1,
+            scrollHeight: 1,
+            scrollWidth: 1,
+            contentHeight: 1,
+            contentWidth: 1,
+            contentTop: 1,
+            contentBottom: 1,
+            startY: 1,
+            startX: 1,
+            deltaY: 1,
+            deltaX: 1,
+            velocityY: 1,
+            velocityX: 1,
+            directionY: '',
+            directionX: '',
+            domWrite: null
+        });
+        this.infinite._lastCheck = 0;
     }
 
     setStream = (stream: Observable<any>) => this.stream$ = stream;
@@ -116,16 +117,7 @@ export class AbstractListPage {
     }
 
     public getQuery(): any {
-        // if (this.type === 'customPosts' && this.navParams.get('slug')) {
-        //     return this.config.get(`[${this.navParams.get('slug')}].query`, {})
-        // } else if (this.type === 'taxonomiesPosts' && this.postType) {
-        //     return this.config.get(`[${this.postType}].query`, {})
-        // }
-        return Object.assign(
-            {},
-            this.config.get(`[${this.type}].query`, {}),
-            _get(this.options, 'query', {})
-        );
+        return this.config.get(`[${this.type}].query`, {});
     }
 
     public fetch(): Observable<any> {
@@ -198,4 +190,4 @@ export class AbstractListPage {
     }
 
     trackById = (index: number, item) => item.id;
-}  
+}

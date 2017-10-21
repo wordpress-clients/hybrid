@@ -11,7 +11,7 @@ const log = debug('Storage');
 @Injectable()
 export class Storage {
 
-    toSave = ['bookmarks', 'list', 'items', 'params']
+    toSave = ['bookmarks', 'list', 'items', 'itemsSlugMapping', 'params']
 
     constructor(
         private store: Store<AppState>,

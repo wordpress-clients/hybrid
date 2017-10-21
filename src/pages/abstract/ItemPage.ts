@@ -3,8 +3,13 @@ import { Observable } from 'rxjs';
 import { Refresher, NavParams } from 'ionic-angular';
 import { URLSearchParams } from '@angular/http';
 import { Injector } from '@angular/core';
+import debug from 'debug';
 
 import { Toast, Config } from './../../providers';
+import { DeepLinkerLnks } from '../../../config/pages/';
+import { getNavParamsFromItem } from '../../utils/item';
+
+const log = debug('ItemPage');
 
 export interface IItemPage {
     onLoad(data: Object): void;
@@ -36,7 +41,7 @@ export class AbstractItemPage {
     }
 
     ionViewDidLoad() {
-        console.log('[ItemPage] init');
+        log('init');
         let isItemLoaded;
         this.stream$.take(1).subscribe(item => isItemLoaded = item !== undefined);
         if (!isItemLoaded) {
@@ -48,7 +53,7 @@ export class AbstractItemPage {
 
     setStream = (stream: Observable<any>) => this.stream$ = stream;
     setService = (service: any) => this.service = service;
-    setType = (type: string) => this.type = type;
+    // setType = (type: string) => this.type = type;
     setTitle = (title: string) => this.title = title;
 
     onLoad(data: Object) { }
@@ -58,25 +63,36 @@ export class AbstractItemPage {
     }
 
     private fetch(): Observable<any> {
-        const searchParams = Object.assign({}, this.getQuery(), {
-            "_embed": true
-        });
+        let searchParams;
+        if (this.navParams.get('id')) {
+            searchParams = Object.assign({}, this.getQuery(), { "_embed": true });
+        } else if (this.navParams.get('slug')) {
+            searchParams = Object.assign({
+                slug: this.navParams.get('slug'),
+            }, this.getQuery(), { "_embed": true });
+        } else {
+            throw new Error('No way to determine ID or Slug of the item')
+        }
+
         const uRLSearchParams = new URLSearchParams();
         Object.keys(searchParams).map((key) => {
             uRLSearchParams.set(key, searchParams[key]);
         });
 
-        console.log(`[ItemPage] fetch ${this.type}`, searchParams);
-        return this.service.get(this.navParams.get('id'), { search: uRLSearchParams })
+        log(`fetch ${this.type}`, searchParams);
+        return (this.navParams.get('slug')
+            ? this.service.getList({ search: uRLSearchParams })
+            : this.service.get(this.navParams.get('id'), { search: uRLSearchParams }))
             .debounceTime(this.config.getApi('debounceTime', 400))
             .timeout(this.config.getApi('timeout', 10000))
             .retry(this.config.getApi('maxAttempt', 3) - 1)
             .map((r) => {
                 this.init = true;
                 this.shouldRetry = false;
-                this.onLoad(r.json())
+                this.onLoad(r.json());
             })
             .catch(res => {
+                log('eee', res)
                 this.init = true;
                 this.shouldRetry = true;
                 this.toast.show(this.translate.instant('error'));
@@ -85,12 +101,12 @@ export class AbstractItemPage {
     }
 
     doLoad = (): void => {
-        console.log('[ItemPage] doLoad');
+        log('doLoad');
         this.fetch().take(1).subscribe(() => { }, () => { });
     }
 
     doRefresh(refresher: Refresher): void {
-        console.log('[ItemPage] doRefresh');
+        log('doRefresh');
         this.fetch().take(1).subscribe(() => refresher.complete(), (error) => refresher.complete());
     }
 

@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, Tabs } from 'ionic-angular';
 
 import { IMenuItem } from './../../components/menu-items/menu-items';
-import { MenuMapping } from './../index';
+// import { MenuMapping } from './../index';
 import { Config } from './../../providers';
 
 /*
@@ -34,7 +34,7 @@ export class TabsPage {
     public navParams: NavParams,
     public config: Config,
   ) {
-    this.menuMapping = MenuMapping;
+    // this.menuMapping = MenuMapping;
 
     this.tabsHighlight = this.config.getTabs('highlight', true);
     this.tabsColor = this.config.getTabs('color', 'primary');

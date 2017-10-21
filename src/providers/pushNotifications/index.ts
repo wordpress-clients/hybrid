@@ -24,7 +24,7 @@ export class PushNotifications {
         // if (plugin === 'push-notifications-for-wordpress') {
         //     this.instance = this.injector.get(PushNotificationsForWordPress, PushNotificationsForWordPress);
         // } else {
-        //     throw new Error(`[PushNotifications] plugin "${plugin}" does not exists`);
+        //     throw new Error(`[PushNotifications] plugin "${plugin}" does not exist`);
         // }
 
     }

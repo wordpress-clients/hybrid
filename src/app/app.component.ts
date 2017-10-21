@@ -7,15 +7,9 @@ import debug from 'debug';
 
 import { AppState, IParamsState } from './../reducers';
 import { Config, PushNotifications, Storage, ServiceWorkerProvider } from './../providers';
-import { MenuMapping } from './../pages';
+import { MenuMapping } from '../../config/pages/';
 
 const log = debug('App');
-
-if (__DEV__) {
-  debug.enable('*');
-} else {
-  debug.disable();
-}
 
 @Component({
   template: `

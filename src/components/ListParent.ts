@@ -1,9 +1,14 @@
 import { NavController } from 'ionic-angular';
 import { ChangeDetectorRef } from '@angular/core';
 import _isEmpty from 'lodash/isEmpty';
+import debug from 'debug';
 
 import { IListComponent } from './interfaces';
 import { ItemPage } from './../pages/item/item';
+import { MenuMapping } from './../../config/pages/index';
+import { getNavParamsFromItem } from '../utils/item';
+
+const log = debug('ListParentComponent');
 
 export class ListParentComponent implements IListComponent {
     type: string;
@@ -17,14 +22,12 @@ export class ListParentComponent implements IListComponent {
     }
 
     openPage = (e, item) => {
-        const params: any = {
-            type: this.type,
-            id: item.id,
-        }
-        if (!_isEmpty(this.options)) {
-            params.options = JSON.stringify(this.options);
-        }
-        this.navCtrl.push(ItemPage, params)
+        let params = getNavParamsFromItem(this.type, item);
+        // if (!_isEmpty(this.options)) {
+        //     params.options = JSON.stringify(this.options);
+        // }
+        log('about to open', `${this.type}Item`, params)
+        this.navCtrl.push(MenuMapping[`${this.type}Item`], params)
     }
 
     trackBy = (index: number, item) => item.id;

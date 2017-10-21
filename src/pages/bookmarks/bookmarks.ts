@@ -4,10 +4,16 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import _orderBy from 'lodash/orderBy';
 import _get from 'lodash/get';
+import debug from 'debug';
 
 import { removeBookmark, removeBookmarks } from '../../actions';
 import { AppState } from '../../reducers';
 import { ItemPage } from './../item/item';
+import { ItemPostsPage } from './../item/item-post';
+import { ItemPagesPage } from './../item/item-page';
+import { getNavParamsFromItem } from '../../utils/item';
+
+const log = debug('BookmarksPage');
 
 /*
   Generated class for the Bookmarks page.
@@ -34,7 +40,7 @@ export class BookmarksPage {
       this.store.select('items'),
       (bookmarks, items: any) => {
         const list = [];
-        console.log('[BookmarksPage] observable rerun')
+        log('observable rerun')
         Object.keys(bookmarks).forEach((bookmarkUid) => {
           const bookmark = bookmarks[bookmarkUid];
           bookmark.item = _get(items, `[${bookmark.type}][${bookmark.id}]`);
@@ -46,14 +52,17 @@ export class BookmarksPage {
   }
 
   ionViewDidLoad() {
-    console.log('[BookmarksPage] ionViewDidLoad');
+    log('ionViewDidLoad');
   }
 
-  doOpen = (e, item) => {
-    this.navCtrl.push(ItemPage, {
-      id: item.id,
-      type: item.type
-    })
+  doOpen = (e, bookmark) => {
+    let PageRef = ItemPage;
+    if (bookmark.type === 'posts') {
+      PageRef = ItemPostsPage;
+    } else if (bookmark.type === 'pages') {
+      PageRef = ItemPagesPage;
+    }
+    this.navCtrl.push(PageRef, getNavParamsFromItem(bookmark.type, bookmark.item))
   };
 
   doRemove = (e, item) => this.store.dispatch(removeBookmark(`${item.type}:${item.id}`));

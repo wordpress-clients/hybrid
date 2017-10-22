@@ -79,9 +79,8 @@ export class SearchPage extends AbstractListPage {
     super.doInit();
     const currentList = this.getCurrentList();
     if (!currentList.length && this.searchTerm) {
-      return this.fetch();
+      return this.fetch$();
     } else {
-      this.init = true;
       this.updateItemsToDisplay();
       return Observable.of<any>([]);
     }

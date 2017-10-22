@@ -1,16 +1,45 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import { INIT, ADD_LIST, CLEAN_LIST, CLEAN_CACHE } from '../actions';
+import _get from 'lodash/get';
+
+import { INIT, CLEAN_CACHE } from '../actions';
+import { IAPIError } from '../APIInterfaces';
+import { getUniqueStoreKey } from '../utils/list';
 
 export interface IListState {
     [key: string]: {
+        error: boolean,
+        submitting: boolean,
         page: number;
         totalPages: number;
         totalItems: number;
-        list: Array<any>
+        list: Array<number>
     }
 }
 
+export const types = {
+    REQUEST: 'LIST/REQUEST',
+    SUCCESS: 'LIST/SUCCESS',
+    ERROR: 'LIST/ERROR',
+}
+
+export const actions = {
+    request: (itemType, query, reset = false): Action => ({
+        type: types.REQUEST,
+        payload: { itemType, query, reset }
+    }),
+    success: (itemType, query, response, reset = false): Action => ({
+        type: types.SUCCESS,
+        payload: { itemType, reset, query, ...response }
+    }),
+    error: (itemType, query, error: IAPIError): Action => ({
+        type: types.ERROR,
+        payload: { itemType, error, query }
+    }),
+};
+
 const defaultItem = {
+    error: false,
+    submitting: false,
     page: 0,
     totalPages: undefined,
     totalItems: undefined,
@@ -23,27 +52,53 @@ export const listReducer: ActionReducer<Object> = (state: IListState = defaultSt
     const payload = action.payload;
 
     switch (action.type) {
-        case ADD_LIST: {
-            const { itemType, query, totalPages, totalItems, list = [], page = 0 } = payload;
+        case types.REQUEST: {
+            const { itemType, query, reset = false } = payload;
+            const key = getUniqueStoreKey(itemType, query);
+
+            return {
+                ...state,
+                [key]: {
+                    ...(state[key] || defaultItem),
+                    submitting: true,
+                    page: reset ? 0 : _get(state, `[${key}].page`, 0)
+                }
+            }
+        }
+
+        case types.SUCCESS: {
+            const { itemType, query, totalPages, totalItems, list = [], page = 0, reset = false } = payload;
 
             const ids = list.map((item) => item.id);
-            const key = query ? itemType + JSON.stringify(query) : itemType;
+            const key = getUniqueStoreKey(itemType, query);
             if (state[key] && state[key].page === page) return state;
-            return Object.assign({}, state, {
+
+            return {
+                ...state,
                 [key]: {
+                    ...(state[key] || defaultItem),
+                    submitting: false,
+                    error: false,
                     page,
                     totalPages,
                     totalItems,
-                    list: (state[key] || defaultItem).list.concat(ids)
+                    list: (reset || !state[key] ? defaultItem : state[key]).list.concat(ids)
                 }
-            });
+            };
         }
 
-        case CLEAN_LIST: {
-            const { itemType } = payload;
-            let newState = Object.assign({}, state);
-            delete newState[itemType];
-            return newState;
+        case types.ERROR: {
+            const { itemType, query, error } = payload;
+            const key = getUniqueStoreKey(itemType, query);
+
+            return {
+                ...state,
+                [key]: {
+                    ...state[key],
+                    submitting: false,
+                    error: true,
+                }
+            }
         }
 
         case INIT: {

@@ -11,8 +11,9 @@ import _take from 'lodash/take';
 import _isObject from 'lodash/isObject';
 
 import { AbstractListPage, IListPage, IListResult } from '../abstract/PaginatedPage';
-import { addList, cleanList } from '../../actions';
+import { actions } from '../../reducers/list';
 import { AppState } from '../../reducers';
+import { IAPIError } from '../../APIInterfaces';
 
 /*
   Generated class for the Pages page.
@@ -40,18 +41,23 @@ export class ListPage extends AbstractListPage implements IListPage {
   ionViewDidLoad() {
     this.title = this.getTitle();
 
-    this.setStore(this.store.select(state => state.list[this.type + JSON.stringify(this.getQuery())]));
+    this.setStore(this.store.select(state => state.list[this.getUniqueStoreKey()]));
+    this.setLoading(this.store.select(state => {
+      const loading = _get(state, `list[${this.getUniqueStoreKey()}].submitting`);
+      const hasData = _get(state, `list[${this.getUniqueStoreKey()}].list`, []).length;
+      return loading && !hasData;
+    }));
 
-    this.setStream(
-      Observable.combineLatest(
-        this.store$,
-        this.store.select(state => state.items[this.type]),
-        this.itemsToDisplay$,
-        (listState: any, item = {}, itemsToDisplay) => {
-          return _take(_get(listState, 'list', []), itemsToDisplay).map(id => item[id])
-        }))
+    this.setStream(Observable.combineLatest(
+      this.store$,
+      this.store.select(state => state.items[this.type]),
+      this.itemsToDisplay$,
+      (listState: any, item = {}, itemsToDisplay) => {
+        console.log('aaa', listState, item, itemsToDisplay)
+        return _take(_get(listState, 'list', []), itemsToDisplay).map(id => item[id])
+      }));
 
-    this.setService(this.wpApiCustom.getInstance(this.type))
+    this.setService(this.wpApiCustom.getInstance(this.type));
     super.ionViewDidLoad();
   }
 
@@ -60,24 +66,27 @@ export class ListPage extends AbstractListPage implements IListPage {
 
     let currentList = this.getCurrentList();
     if (!currentList.length) {
-      this.fetch().first().subscribe();
+      this.fetch$().first().subscribe();
     } else {
-      this.init = true;
       this.updateItemsToDisplay();
     }
   }
 
-  onLoad({ page, totalPages, totalItems, list }: IListResult) {
-    this.store.dispatch(addList(this.type, this.getQuery(), {
+  onRequest(reset: boolean) {
+    this.store.dispatch(actions.request(this.type, this.getQuery(), reset));
+  }
+
+  onSuccess({ page, totalPages, totalItems, list }: IListResult, reset: boolean) {
+    this.store.dispatch(actions.success(this.type, this.getQuery(), {
       page,
       totalPages,
       totalItems,
       list
-    }));
+    }, reset));
   }
 
-  onClean() {
-    this.store.dispatch(cleanList(this.type));
+  onError(error: IAPIError) {
+    this.store.dispatch(actions.error(this.type, this.getQuery(), error));
   }
 
   getTitle() {

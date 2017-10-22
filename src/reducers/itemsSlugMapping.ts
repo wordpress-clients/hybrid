@@ -1,5 +1,6 @@
 import { ActionReducer, Action } from '@ngrx/store';
-import { INIT, ADD_ITEM, ADD_LIST, ADD_SEARCH_LIST, CLEAN_CACHE } from '../actions';
+import { INIT, ADD_ITEM, ADD_SEARCH_LIST, CLEAN_CACHE } from '../actions';
+import { types as typesList } from './list';
 
 const defaultState = {
     pages: {},
@@ -23,7 +24,7 @@ export const itemsSlugMappingReducer: ActionReducer<Object> = (state: Object = d
         }
 
         case ADD_SEARCH_LIST:
-        case ADD_LIST: {
+        case typesList.SUCCESS: {
             const { list, itemType } = payload;
             const newItems = {};
 

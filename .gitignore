@@ -45,3 +45,4 @@ www/
 myapp/
 
 .io-config.json
+.sourcemaps

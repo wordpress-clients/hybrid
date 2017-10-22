@@ -123,13 +123,13 @@
     ws "1.1.1"
     xml2js "0.4.17"
 
-"@ionic/cli-utils@1.10.2":
-  version "1.10.2"
-  resolved "https://registry.yarnpkg.com/@ionic/cli-utils/-/cli-utils-1.10.2.tgz#679ba38bd116507ada45d664ee5a9e13de25002c"
+"@ionic/cli-utils@1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@ionic/cli-utils/-/cli-utils-1.12.0.tgz#1af2e3e41936b7012acf248f481305907dc7b688"
   dependencies:
     archiver "^2.0.3"
     basic-auth "^1.1.0"
-    body-parser "^1.17.2"
+    body-parser "^1.18.1"
     chalk "^2.0.0"
     chokidar "^1.7.0"
     ci-info "^1.1.1"
@@ -138,7 +138,7 @@
     diff "^3.3.1"
     elementtree "^0.1.7"
     express "^4.15.4"
-    inquirer "^3.2.3"
+    inquirer "^3.3.0"
     leek "0.0.24"
     lodash "^4.17.4"
     minimist "^1.2.0"
@@ -147,20 +147,20 @@
     proxy-middleware "^0.15.0"
     semver "^5.4.1"
     slice-ansi "^1.0.0"
-    ssh-config "^1.1.0"
+    ssh-config "^1.1.1"
     string-width "^2.1.1"
     strip-ansi "^4.0.0"
     superagent "^3.6.0"
-    tar "^2.0.1"
+    tar "^2.2.1"
     tiny-lr "^1.0.5"
     tslib "^1.7.1"
     uuid "^3.0.1"
     wrap-ansi "^3.0.1"
-    ws "^3.1.0"
+    ws "^3.2.0"
 
-"@ionic/discover@^0.3.0":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@ionic/discover/-/discover-0.3.1.tgz#f3e3665ad49de45e2563f97bda328ef4b6f6010a"
+"@ionic/discover@^0.3.1":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@ionic/discover/-/discover-0.3.3.tgz#fcdb1e933a39c6e16b2eb5edf3dff06c284bd24d"
   dependencies:
     netmask "^1.0.6"
 
@@ -337,17 +337,17 @@ ansi-escapes@^1.1.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"
 
-ansi-escapes@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-2.0.0.tgz#5bae52be424878dd9783e8910e3fc2922e83c81b"
-
-ansi-regex@*, ansi-regex@^3.0.0:
+ansi-escapes@^3.0.0:
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-3.0.0.tgz#ed0317c322064f79466c02966bddb605ab37d998"
+  resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-3.0.0.tgz#ec3e8b4e9f8064fc02c3ac9b65f1c275bda8ef92"
 
 ansi-regex@^2.0.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.1.1.tgz#c3b33ab5ee360d86e0e628f0468ae7ef27d654df"
+
+ansi-regex@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-3.0.0.tgz#ed0317c322064f79466c02966bddb605ab37d998"
 
 ansi-styles@^2.2.1:
   version "2.2.1"
@@ -1008,13 +1008,28 @@ bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   version "4.11.8"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
 
-body-parser@^1.16.1, body-parser@^1.17.2:
+body-parser@^1.16.1:
   version "1.18.1"
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.18.1.tgz#9c1629370bcfd42917f30641a2dcbe2ec50d4c26"
   dependencies:
     bytes "3.0.0"
     content-type "~1.0.4"
     debug "2.6.8"
+    depd "~1.1.1"
+    http-errors "~1.6.2"
+    iconv-lite "0.4.19"
+    on-finished "~2.3.0"
+    qs "6.5.1"
+    raw-body "2.3.2"
+    type-is "~1.6.15"
+
+body-parser@^1.18.1:
+  version "1.18.2"
+  resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.18.2.tgz#87678a19d84b47d859b83199bd59bce222b10454"
+  dependencies:
+    bytes "3.0.0"
+    content-type "~1.0.4"
+    debug "2.6.9"
     depd "~1.1.1"
     http-errors "~1.6.2"
     iconv-lite "0.4.19"
@@ -2122,6 +2137,12 @@ debug@2.6.7:
 debug@2.6.8, debug@^2.1.0, debug@^2.2.0, debug@^2.6.0, debug@^2.6.8, debug@~2.6.7:
   version "2.6.8"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
+  dependencies:
+    ms "2.0.0"
+
+debug@2.6.9:
+  version "2.6.9"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
     ms "2.0.0"
 
@@ -3432,7 +3453,7 @@ immediate@~3.0.5:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.0.6.tgz#9db1dbd0faf8de6fbe0f5dd5e56bb606280de69b"
 
-imurmurhash@*, imurmurhash@^0.1.4:
+imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
 
@@ -3533,11 +3554,11 @@ inquirer@^0.10.0:
     strip-ansi "^3.0.0"
     through "^2.3.6"
 
-inquirer@^3.2.3:
-  version "3.2.3"
-  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-3.2.3.tgz#1c7b1731cf77b934ec47d22c9ac5aa8fe7fbe095"
+inquirer@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/inquirer/-/inquirer-3.3.0.tgz#9dd2f2ad765dcab1ff0443b491442a20ba227dc9"
   dependencies:
-    ansi-escapes "^2.0.0"
+    ansi-escapes "^3.0.0"
     chalk "^2.0.0"
     cli-cursor "^2.1.0"
     cli-width "^2.0.0"
@@ -3598,16 +3619,16 @@ ionic-angular@^3.6.0:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/ionic-angular/-/ionic-angular-3.6.1.tgz#a2b568f79d52050c19f9cee157de60bc058d09c2"
 
-ionic@3.10.3:
-  version "3.10.3"
-  resolved "https://registry.yarnpkg.com/ionic/-/ionic-3.10.3.tgz#44b8d864d58fe23a6e9376db0525af7e4334e801"
+ionic@3.12.0:
+  version "3.12.0"
+  resolved "https://registry.yarnpkg.com/ionic/-/ionic-3.12.0.tgz#f279f6fbd24237ce3113c416c685e70876090537"
   dependencies:
-    "@ionic/cli-utils" "1.10.2"
-    "@ionic/discover" "^0.3.0"
+    "@ionic/cli-utils" "1.12.0"
+    "@ionic/discover" "^0.3.1"
     chalk "^2.0.0"
     opn "^5.1.0"
     os-name "^2.0.1"
-    rimraf "^2.6.1"
+    rimraf "^2.6.2"
     semver "^5.3.0"
     tslib "^1.7.1"
 
@@ -6220,7 +6241,7 @@ right-align@^0.1.1:
   dependencies:
     align-text "^0.1.1"
 
-rimraf@2, rimraf@^2.5.1, rimraf@^2.5.2, rimraf@^2.6.0, rimraf@^2.6.1:
+rimraf@2, rimraf@^2.5.1, rimraf@^2.5.2, rimraf@^2.6.0, rimraf@^2.6.1, rimraf@^2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.2.tgz#2ed8150d24a16ea8651e6d6ef0f47c4158ce7a36"
   dependencies:
@@ -6715,9 +6736,9 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
 
-ssh-config@^1.1.0:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/ssh-config/-/ssh-config-1.1.1.tgz#fee0d7b50cbd04d7726085e32f26c81dab8e6acb"
+ssh-config@^1.1.1:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/ssh-config/-/ssh-config-1.1.3.tgz#2b19630af85b1666688b9d68f6e4218900f81f8c"
 
 sshpk@^1.7.0:
   version "1.13.1"
@@ -7009,7 +7030,7 @@ tar@1.0.2:
     fstream "^1.0.2"
     inherits "2"
 
-tar@^2.0.0, tar@^2.0.1, tar@^2.2.1, tar@~2.2.1:
+tar@^2.0.0, tar@^2.2.1, tar@~2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/tar/-/tar-2.2.1.tgz#8e4d2a256c0e2185c6b18ad694aec968b83cb1d1"
   dependencies:
@@ -7664,7 +7685,7 @@ ws@1.1.2:
     options ">=0.0.5"
     ultron "1.0.x"
 
-ws@^3.1.0:
+ws@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ws/-/ws-3.2.0.tgz#d5d3d6b11aff71e73f808f40cc69d52bb6d4a185"
   dependencies:

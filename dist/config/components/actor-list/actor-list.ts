@@ -26,16 +26,5 @@ export class ActorListComponent extends ListParentComponent implements IListComp
   ) {
     super(navCtrl, cdRef);
   }
-
-  openPage = (e, item) => {
-    this.navCtrl.push(ListPage, {
-      type: 'movie',
-      options: JSON.stringify({
-        query: {
-          [this.type]: item.id
-        }
-      }),
-    })
-  }
 }
 

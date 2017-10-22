@@ -1,4 +1,5 @@
 title: "My Blog title"
-
+search:
+    types: ['posts', 'pages', 'movie']
 api:
     baseUrl: "https://dev.julienrenaux.fr/wp-json"

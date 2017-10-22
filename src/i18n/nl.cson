@@ -62,16 +62,3 @@ AUTHOR_TITLE: "Auteur: {{name}}"
     "openInBrowser": "Open in browser"
 "about":
     "title": "Over"
-
-"languages":
-    "en": "Engels"
-    "fr": "Frans"
-    "zh": "Chinees"
-    "es": "Spaans"
-    "pl": "Pools"
-    "de": "Duits"
-    "pt": "Portugees"
-    "it": "Italiaans"
-    "nl": "Nederlands"
-    "ru": "Russisch"
-    "tr": "Turks"

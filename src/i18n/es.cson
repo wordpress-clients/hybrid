@@ -61,13 +61,3 @@ AUTHOR_TITLE: "Autor: {{name}}"
     "openInBrowser": "Abrir en el navegador"
 "about":
     "title": "Acerca de"
-"languages":
-    "en": "English"
-    "fr": "French"
-    "zh": "Chinese"
-    "es": "Spanish"
-    "pl": "Polaco"
-    "de": "Alemán"
-    "pt": "Portugués"
-    "it": "Italiano"
-    "nl": "Holandés"

@@ -50,12 +50,12 @@ export class ToolbarComponent {
 
   openCategories(e) {
     e.stopPropagation();
-    this.openTaxonomy('categories.title', 'categories', this.categories, 'post');
+    this.openTaxonomy('TITLE_CATEGORIES', 'category', this.categories, 'posts');
   }
 
   openTags(e) {
     e.stopPropagation();
-    this.openTaxonomy('tags.title', 'tags', this.tags, 'post');
+    this.openTaxonomy('TITLE_TAGS', 'tag', this.tags, 'posts');
   }
 
   doBookmark(e) {

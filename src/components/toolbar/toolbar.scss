@@ -4,7 +4,6 @@ toolbar {
     flex-direction: row;
     justify-content: space-around;
     background-color: $toolbar-bg-color;
-    margin: $toolbar-margin;
     button {
         color: $toolbar-button-color !important;
         &.active{

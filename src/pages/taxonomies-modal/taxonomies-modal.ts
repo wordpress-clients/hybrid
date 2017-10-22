@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, ViewController, App } from 'ionic-angular';
+import debug from 'debug';
 
-import { ListPage } from './../list/list';
+import { MenuMapping } from '../../../config/pages';
+import { getNavParamsFromItem } from '../../utils/item';
 
+const log = debug('TaxonomiesModal');
 /*
   Generated class for the Taxonomies page.
 
@@ -30,18 +33,13 @@ export class TaxonomiesModal {
     this.postType = navParams.get('postType');
     this.term = navParams.get('term');
     this.list = navParams.get('list');
-    console.debug('TaxonomiesPage', this.title, this.postType, this.term, this.list)
   }
 
   openPage = (e, item) => {
-    this.appCtrl.getRootNav().push(ListPage, {
-      type: 'posts',
-      options: JSON.stringify({
-        query: {
-          [this.term]: item.id
-        }
-      }),
-    }).then(() => this.dismiss(), () => this.dismiss())
+    let params = getNavParamsFromItem(this.postType, item);
+    log('about to open', this.postType, params)
+    this.appCtrl.getRootNav().push(MenuMapping[this.term], params)
+      .then(() => this.dismiss(), () => this.dismiss())
   }
 
   dismiss() {

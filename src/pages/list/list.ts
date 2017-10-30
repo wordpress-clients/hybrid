@@ -1,8 +1,5 @@
 import { Observable } from 'rxjs';
-import {
-  Component, Injector,
-  ComponentFactoryResolver
-} from '@angular/core';
+import { Component, Injector } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { WpApiCustom } from 'wp-api-angular';
 import { Store } from '@ngrx/store';
@@ -10,7 +7,7 @@ import _get from 'lodash/get';
 import _take from 'lodash/take';
 import _isObject from 'lodash/isObject';
 
-import { AbstractListPage, IListPage, IListResult } from '../abstract/PaginatedPage';
+import { ListParent, IListPage, IListResult } from '../abstract/ListParent';
 import { actions } from '../../reducers/list';
 import { AppState } from '../../reducers';
 import { IAPIError } from '../../APIInterfaces';
@@ -25,12 +22,11 @@ import { IAPIError } from '../../APIInterfaces';
   selector: 'page-list',
   templateUrl: 'list.html'
 })
-export class ListPage extends AbstractListPage implements IListPage {
+export class ListPage extends ListParent implements IListPage {
   title: string;
 
   constructor(
     public inject: Injector,
-    public componentFactoryResolver: ComponentFactoryResolver,
     private navCtrl: NavController,
     private store: Store<AppState>,
     private wpApiCustom: WpApiCustom,
@@ -41,34 +37,30 @@ export class ListPage extends AbstractListPage implements IListPage {
   ionViewDidLoad() {
     this.title = this.getTitle();
 
-    this.setStore(this.store.select(state => state.list[this.getUniqueStoreKey()]));
-    this.setLoading(this.store.select(state => {
-      const loading = _get(state, `list[${this.getUniqueStoreKey()}].submitting`);
-      const hasData = _get(state, `list[${this.getUniqueStoreKey()}].list`, []).length;
-      return loading && !hasData;
-    }));
-
+    this.setStoreStream(this.store.select(state => state.list[this.getUniqueStoreKey()]));
+    this.setIsLoadingStream(this.store.select(state => _get(state, `list[${this.getUniqueStoreKey()}].submitting`)));
+    this.setShowSpinnerStream(Observable.combineLatest(
+      this.store$,
+      this.isLoading$,
+      (listState: any, isLoading: boolean) =>
+        isLoading && !_get(listState, 'list', []).length
+    ));
     this.setStream(Observable.combineLatest(
       this.store$,
       this.store.select(state => state.items[this.type]),
       this.itemsToDisplay$,
-      (listState: any, item = {}, itemsToDisplay) => {
-        console.log('aaa', listState, item, itemsToDisplay)
-        return _take(_get(listState, 'list', []), itemsToDisplay).map(id => item[id])
-      }));
-
+      (listState: any, item = {}, itemsToDisplay) =>
+        _take(_get(listState, 'list', []), itemsToDisplay).map(id => item[id])));
     this.setService(this.wpApiCustom.getInstance(this.type));
-    super.ionViewDidLoad();
+    this.doInit();
   }
 
   doInit(): void {
-    super.doInit();
-
     let currentList = this.getCurrentList();
     if (!currentList.length) {
-      this.fetch$().first().subscribe();
+      this.doLoad();
     } else {
-      this.updateItemsToDisplay();
+      this.updateItemsToDisplay(true);
     }
   }
 

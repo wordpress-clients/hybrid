@@ -9,12 +9,14 @@ import { Store } from '@ngrx/store';
 import _get from 'lodash/get';
 import _take from 'lodash/take';
 import _isObject from 'lodash/isObject';
+import _throttle from 'lodash/throttle';
 
-import { AbstractListPage, IListPage, IListResult } from '../abstract/PaginatedPage';
-import { addSearchList, cleanSearchList } from '../../actions';
+import { ListParent, IListResult, IListPage } from '../abstract/ListParent';
+import { actions } from '../../reducers/search';
 import { Config } from './../../providers';
 import { AppState } from '../../reducers';
 import { getKey } from '../../reducers/search';
+import { IAPIError } from '../../APIInterfaces';
 
 /*
   Generated class for the Search page.
@@ -26,7 +28,7 @@ import { getKey } from '../../reducers/search';
   selector: 'page-search',
   templateUrl: 'search.html'
 })
-export class SearchPage extends AbstractListPage {
+export class SearchPage extends ListParent implements IListPage {
   @ViewChild(Content) content: Content;
   types: string[];
   searchTerm: string;
@@ -46,8 +48,16 @@ export class SearchPage extends AbstractListPage {
     this.types = this.config.getSearch('types', ['posts']);
 
     this.setType(this.types[0]);
-    this.setStore(this.store.select(state => state.search['']));
-    this.setService(wpApiCustom.getInstance(this.type));
+    this.setStoreStream(this.store.select(state => state.search[`${getKey(this.type, this.searchTerm)}`]));
+    this.setIsLoadingStream(this.store.select(state => _get(state, `search[${getKey(this.type, this.searchTerm)}].submitting`)));
+    this.setShowSpinnerStream(Observable.combineLatest(
+      this.searchTermSubject,
+      this.store$,
+      this.isLoading$,
+      (searchTerm: string, listState: any, isLoading: boolean = false) =>
+        searchTerm !== '' && isLoading && !_get(listState, 'list', []).length
+    ));
+    this.setService(this.wpApiCustom.getInstance(this.type));
 
     this.fetchSubscription = Observable.combineLatest(
       this.searchTermSubject,
@@ -55,7 +65,7 @@ export class SearchPage extends AbstractListPage {
       (searchTerm: string, type: string) => {
         this.setType(type);
         this.setService(this.wpApiCustom.getInstance(type));
-        this.setStore(this.store.select(state => state.search[getKey(type, searchTerm)]));
+        this.setStoreStream(this.store.select(state => state.search[getKey(type, searchTerm)]));
       })
       .debounceTime(300) // wait 300ms after each keystroke before considering the term
       .switchMap(() => this.doInit())
@@ -76,7 +86,7 @@ export class SearchPage extends AbstractListPage {
   }
 
   doInit(): Observable<any> {
-    super.doInit();
+    this.enablePagination();
     const currentList = this.getCurrentList();
     if (!currentList.length && this.searchTerm) {
       return this.fetch$();
@@ -94,37 +104,42 @@ export class SearchPage extends AbstractListPage {
   }
 
   search(e) {
-    this.searchTerm = e.target.value;
+    this.searchTerm = e.target.value || '';
     this.searchTermSubject.next(this.searchTerm);
   }
 
+  scrollToTop = () => _throttle(this.content.scrollToTop, 500, { leading: true, trailing: false })
+
   onTypeChange(e) {
-    this.page = 1;
     this.typeSubject.next(this.type);
-    this.updateItemsToDisplay(false);
-    this.content.scrollToTop();
+    this.updateItemsToDisplay(true);
+    this.scrollToTop();
   }
 
   ionViewDidLoad() {
-    super.ionViewDidLoad();
     this.searchTermSubject.next("");
     this.typeSubject.next(this.type);
+    this.doInit();
   }
 
   ionViewWillUnload() {
     this.fetchSubscription.unsubscribe();
   }
 
-  onLoad({ page, totalPages, totalItems, list }: IListResult) {
-    this.store.dispatch(addSearchList(this.searchTerm, this.type, this.options.query, {
+  onRequest(reset: boolean) {
+    this.store.dispatch(actions.request(this.searchTerm, this.type, this.getQuery(), reset));
+  }
+
+  onSuccess({ page, totalPages, totalItems, list }: IListResult, reset: boolean) {
+    this.store.dispatch(actions.success(this.searchTerm, this.type, this.getQuery(), {
       page,
       totalPages,
       totalItems,
       list
-    }));
+    }, reset));
   }
 
-  onClean() {
-    this.store.dispatch(cleanSearchList(this.searchTerm, this.type));
+  onError(error: IAPIError) {
+    this.store.dispatch(actions.error(this.searchTerm, this.type, this.getQuery(), error));
   }
 }

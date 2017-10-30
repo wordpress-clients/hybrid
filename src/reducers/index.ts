@@ -10,8 +10,6 @@ export * from './bookmarks';
 export * from './params';
 export * from './items';
 export * from './itemsSlugMapping';
-export * from './list';
-export * from './search';
 export * from './pushNotifications';
 
 export interface AppState {

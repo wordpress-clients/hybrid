@@ -9,44 +9,8 @@
     {
         "type": "internal",
         "trans": "TABS",
-        "page": "tabs",
-        "params": {
-            "options": {
-                "list": [
-                    {
-                        "type": "internal",
-                        "trans": "POSTS",
-                        "page": "list",
-                        "params": {
-                            "type": "posts"
-                        },
-                        "icon": "home",
-                        "navRoot": true
-                    },
-                    {
-                        "type": "internal",
-                        "trans": "PAGES",
-                        "page": "list",
-                        "params": {
-                            "type": "pages"
-                        },
-                        "icon": "copy",
-                        "navRoot": true
-                    },
-                    {
-                        "type": "internal",
-                        "trans": "MOVIES",
-                        "page": "list",
-                        "params": {
-                            "type": "movie"
-                        },
-                        "icon": "videocam",
-                        "navRoot": true
-                    }
-                ]
-            }
-        },
-        "icon": "home",
+        "page": "customTabs",
+        "icon": "albums",
         "navRoot": true
     },
     {

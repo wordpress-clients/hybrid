@@ -11,7 +11,6 @@ import { ListTagPage } from '../../src/pages/list/list-tag';
 import { ListAuthorsPage } from '../../src/pages/list/list-authors';
 import { ListAuthorPage } from '../../src/pages/list/list-author';
 // Rest
-// import { TabsPage } from '../../src/pages/tabs/tabs';
 import { SearchPage } from '../../src/pages/search/search';
 import { ParamsPage } from '../../src/pages/params/params';
 import { BookmarksPage } from '../../src/pages/bookmarks/bookmarks';
@@ -21,6 +20,8 @@ import { ItemMoviePage } from './item-movie';
 import { ListMoviePage } from './list-movie';
 import { ListActorPage } from './list-actor';
 import { ListActorsPage } from './list-actors';
+// Tabs (this is just an example on how to add tabs and can be removed)
+import { CustomTabsPage } from './custom-tabs';
 
 export const MenuMapping = {
     posts: ListPostsPage,
@@ -33,7 +34,6 @@ export const MenuMapping = {
     tag: ListTagPage,
     authors: ListAuthorsPage,
     author: ListAuthorPage,
-    // tabs: TabsPage,
     search: SearchPage,
     params: ParamsPage,
     bookmarks: BookmarksPage,
@@ -42,6 +42,8 @@ export const MenuMapping = {
     movie: ListMoviePage,
     actorItem: ListActorPage,
     actor: ListActorsPage,
+    // Tabs (this is just an example on how to add tabs and can be removed)
+    customTabs: CustomTabsPage,
 }
 
 export const DeepLinkerLnks = [
@@ -64,6 +66,8 @@ export const DeepLinkerLnks = [
     { component: ListMoviePage, name: 'Movies', segment: 'movies' },
     { component: ListActorsPage, name: 'Actors', segment: 'actors' },
     { component: ListActorPage, name: 'Actor movies', segment: 'actors/:id' },
+    // Tabs (this is just an example on how to add tabs and can be removed)
+    { component: CustomTabsPage, name: 'Custom tabs', segment: 'custom-tabs' },
 ];
 
 export const PAGES = [
@@ -80,7 +84,6 @@ export const PAGES = [
     ListAuthorsPage,
     ListAuthorPage,
     // Rest
-    // TabsPage,
     ParamsPage,
     SearchPage,
     BookmarksPage,
@@ -90,4 +93,6 @@ export const PAGES = [
     ListMoviePage,
     ListActorPage,
     ListActorsPage,
+    // Tabs (this is just an example on how to add tabs and can be removed)
+    CustomTabsPage,
 ];

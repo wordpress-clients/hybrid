@@ -22,7 +22,7 @@ tabs:
     highlight: true
     color: 'primary' # "primary", "secondary", "danger", "light", and "dark"
     mode: null # "ios", "md", or "wp"
-    placement: null # top, bottom
+    placement: null # top, bottom or null (will apply the device preference)
     layout: 'icon-top' # icon-top, icon-left, icon-right, icon-bottom, icon-hide, title-hide
 
 search:

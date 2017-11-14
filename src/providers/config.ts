@@ -26,6 +26,7 @@ export class Config {
     getRaw = () => this.config;
     get = (path = '', otherwise = undefined) => _get(this.config, path, otherwise);
     getDev = (path = '', otherwise = undefined) => this.get(`dev.${path}`, otherwise);
+    getLanguage = (path = '', otherwise = undefined) => this.get(`language.${path}`, otherwise);
     getApi = (path = '', otherwise = undefined) => this.get(`api.${path}`, otherwise);
     getMenu = (path = '', otherwise = undefined) => this.get(`menu.${path}`, otherwise);
     getNative = (path = '', otherwise = undefined) => this.get(`native.${path}`, otherwise);

@@ -44,6 +44,9 @@ before_build.md
 /config.xml
 www/
 myapp/
+src/**/*.js
+src/**/*.js.map
 
 .io-config.json
 .sourcemaps
+.temp

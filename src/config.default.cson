@@ -9,7 +9,10 @@ title: 'Your Blog title'
 defaultZoom: 2 # Available: 0 to 8
 
 # The user language is determined during runtime and if exists automatically used.
-defaultLanguage: 'en' # Available: "en", "fr", "zh", "es", "pl", "de", "pt", "it", "nl", "ru", "tr"
+language:
+    default: 'en'
+    imported: ["ar", "br", "de", "en",  "es", "fr", "it", "nl", "pl", "pt", "ru", "tr", "ur", "zh"]
+
 defaultPage:
     page: 'postsItem'
     params:

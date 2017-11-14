@@ -16,10 +16,6 @@ import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-transla
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { WpApiModule, WpApiLoader, WpApiStaticLoader } from 'wp-api-angular'
 
-
-// import { SharedWPHCModule } from '../src/app/app.module';
-// import { WPHC } from '../src/app/app.component';
-
 import { PAGES } from './pages/';
 import { COMPONENTS } from './components/';
 import { PIPES } from './pipes/';
@@ -31,7 +27,6 @@ export function createTranslateLoader(http: Http) {
 }
 
 export function WpApiLoaderFactory(http: any, config: Config) {
-    console.log("config.getApi('baseUrl', '')", config.getRaw())
     return new WpApiStaticLoader(http, config.getApi('baseUrl', ''), config.getApi('namespace', ''));
 }
 
@@ -49,7 +44,7 @@ export function appInitializerTranslateFactory(translate: TranslateService, inje
     return () => new Promise<any>((resolve: any) => {
         const locationInitialized = injector.get(LOCATION_INITIALIZED, Promise.resolve(null));
         locationInitialized.then(() => {
-            const defaultLanguage = config.get('defaultLanguage');
+            const defaultLanguage = config.getLanguage('default');
             const browserLanguage = translate.getBrowserLang()
             translate.setDefaultLang(defaultLanguage);
             translate.use(browserLanguage || defaultLanguage).subscribe(() => {
@@ -65,8 +60,6 @@ export function appInitializerTranslateFactory(translate: TranslateService, inje
 
 @NgModule({
     imports: [
-        // CommonModule
-        // SharedWPHCModule,
         HttpModule,
         IonicModule,
         MomentModule,

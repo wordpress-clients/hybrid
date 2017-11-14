@@ -16,7 +16,7 @@ if (process.env.IONIC_ENV === 'prod') {
   prodPlugins.push(new ModuleConcatPlugin());
 }
 
-module.exports = {
+const webpackConfig = {
   entry: process.env.IONIC_APP_ENTRY_POINT,
   output: {
     path: '{{BUILD}}',
@@ -63,8 +63,6 @@ module.exports = {
   },
 
   plugins: [
-    // ionicWebpackFactory.getIonicEnvironmentPlugin(),
-    ionicWebpackFactory.getCommonChunksPlugin(),
     new webpack.DefinePlugin({
       __VERSION__: JSON.stringify(getAppVersion()),
       __DEV__: process.env.IONIC_ENV === 'dev',
@@ -72,6 +70,9 @@ module.exports = {
       __SW_ENABLED__: JSON.stringify(RawConfig.serviceWorker.enabled),
       __CONFIG_FOLDER__: JSON.stringify(process.env.IONIC_ROOT_DIR + '/config'),
     }),
+    ionicWebpackFactory.getIonicEnvironmentPlugin(),
+    ionicWebpackFactory.getCommonChunksPlugin(),
+    new webpack.ContextReplacementPlugin(/moment\/locale$/, getRegexAutorizedLanguages()),
   ].concat(prodPlugins),
 
   // Some libraries import Node modules but don't use them in the browser.
@@ -82,6 +83,15 @@ module.exports = {
     tls: 'empty'
   }
 };
+
+module.exports = {
+  dev: webpackConfig,
+  prod: webpackConfig
+}
+
+function getRegexAutorizedLanguages() {
+  return new RegExp(RawConfig.language.imported.join('|'));
+}
 
 function getAppVersion() {
   var config = new cordovaLib.configparser(path.join(__dirname, '..', 'config.xml'));

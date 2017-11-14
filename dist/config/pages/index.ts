@@ -1,7 +1,9 @@
 // Item
+import { ItemPage } from '../../src/pages/item/item';
 import { ItemPostsPage } from '../../src/pages/item/item-post';
 import { ItemPagesPage } from '../../src/pages/item/item-page';
 // List
+import { ListPage } from '../../src/pages/list/list';
 import { ListPostsPage } from '../../src/pages/list/list-posts';
 import { ListPagesPage } from '../../src/pages/list/list-pages';
 import { ListCategoriesPage } from '../../src/pages/list/list-categories';
@@ -12,6 +14,7 @@ import { ListAuthorsPage } from '../../src/pages/list/list-authors';
 import { ListAuthorPage } from '../../src/pages/list/list-author';
 // Rest
 import { SearchPage } from '../../src/pages/search/search';
+import { TabsPage } from '../../src/pages/tabs/tabs';
 import { ParamsPage } from '../../src/pages/params/params';
 import { BookmarksPage } from '../../src/pages/bookmarks/bookmarks';
 import { TaxonomiesModal } from '../../src/pages/taxonomies-modal/taxonomies-modal';
@@ -72,9 +75,11 @@ export const DeepLinkerLnks = [
 
 export const PAGES = [
     // Items,
+    ItemPage,
     ItemPostsPage,
     ItemPagesPage,
     // Lists,
+    ListPage,
     ListPostsPage,
     ListPagesPage,
     ListCategoriesPage,
@@ -84,6 +89,7 @@ export const PAGES = [
     ListAuthorsPage,
     ListAuthorPage,
     // Rest
+    TabsPage,
     ParamsPage,
     SearchPage,
     BookmarksPage,

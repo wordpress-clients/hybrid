@@ -7,3 +7,9 @@ script:
     - npm rebuild node-sass
     - npm run build:pwa
     - npm run test-ci
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: gh-pages

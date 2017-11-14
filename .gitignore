@@ -42,7 +42,8 @@ legacy/
 cordova.plugin.backup
 before_build.md
 /config.xml
+www/
+myapp/
 
-# v1 compatibility
-/config.scss
-/config.json
+.io-config.json
+.sourcemaps

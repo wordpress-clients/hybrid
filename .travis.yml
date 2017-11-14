@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "7"
+cache:
+  yarn: true
+script:
+    - npm rebuild node-sass
+    - npm run build:pwa
+    - npm run test-ci

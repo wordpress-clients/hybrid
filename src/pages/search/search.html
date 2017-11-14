@@ -1,0 +1,37 @@
+<!--
+  Generated template for the Search page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <page-navbar [title]="'SEARCH' | translate" [search]="false"></page-navbar>
+  <ion-toolbar>
+    <ion-searchbar (ionInput)="search($event)"></ion-searchbar>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="types.length >= 2">
+    <ion-segment [(ngModel)]="type" (ionChange)="onTypeChange($event)" color="primary">
+      <ion-segment-button [value]="type" *ngFor="let type of types">
+        {{ type | uppercase | translate }}
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content [pullingText]="'PULL_TO_REFRESH' | translate">
+    </ion-refresher-content>
+  </ion-refresher>
+  <spinner [isVisible]="showSpinner$ | async"></spinner>
+  <list [list]="stream$ | async" [type]="type" [options]="options" emptyIcon="search"></list>
+  <button *ngIf="shouldRetry" ion-button color="light" full (click)="doLoad()">
+    {{ 'RETRY' | translate }}
+  </button>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" [enabled]="isPaginationEnabled">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

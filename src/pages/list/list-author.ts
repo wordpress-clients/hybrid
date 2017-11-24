@@ -6,6 +6,7 @@ import { ListPage } from './list';
     templateUrl: 'list.html'
 })
 export class ListAuthorPage extends ListPage {
+    public static _menuMapping: string = 'author';
     type: string = 'posts';
 
     getQuery() {

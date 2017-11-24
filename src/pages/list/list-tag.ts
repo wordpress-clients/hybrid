@@ -6,6 +6,7 @@ import { ListPage } from './list';
     templateUrl: 'list.html'
 })
 export class ListTagPage extends ListPage {
+    public static _menuMapping: string = 'tag';
     type: string = 'posts';
 
     getQuery() {

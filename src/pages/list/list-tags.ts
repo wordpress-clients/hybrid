@@ -6,5 +6,6 @@ import { ListPage } from './list';
     templateUrl: 'list.html'
 })
 export class ListTagsPage extends ListPage {
+    public static _menuMapping: string = 'tags';
     type: string = 'tags';
 }

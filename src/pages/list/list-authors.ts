@@ -6,5 +6,6 @@ import { ListPage } from './list';
     templateUrl: 'list.html'
 })
 export class ListAuthorsPage extends ListPage {
+    public static _menuMapping: string = 'authors';
     type: string = 'users';
 }

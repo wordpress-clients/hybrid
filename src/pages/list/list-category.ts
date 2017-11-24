@@ -6,6 +6,7 @@ import { ListPage } from './list';
     templateUrl: 'list.html'
 })
 export class ListCategoryPage extends ListPage {
+    public static _menuMapping: string = 'category';
     type: string = 'posts';
 
     getQuery() {

@@ -29,6 +29,7 @@ import { IAPIError } from '../../APIInterfaces';
   templateUrl: 'search.html'
 })
 export class SearchPage extends ListParent implements IListPage {
+  public static _menuMapping: string = 'search';
   @ViewChild(Content) content: Content;
   types: string[];
   searchTerm: string;

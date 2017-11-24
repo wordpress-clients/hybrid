@@ -27,6 +27,7 @@ const log = debug('BookmarksPage');
   templateUrl: 'bookmarks.html'
 })
 export class BookmarksPage {
+  public static _menuMapping: string = 'bookmarks';
   page: number = 0;
   hasBookmarks: boolean = false;
   stream$: Observable<any>;

@@ -19,6 +19,7 @@ import { Toast } from './../../providers';
   templateUrl: 'params.html'
 })
 export class ParamsPage {
+  public static _menuMapping: string = 'params';
   zoom: number;
 
   constructor(

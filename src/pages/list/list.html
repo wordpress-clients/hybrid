@@ -14,7 +14,13 @@
     </ion-refresher-content>
   </ion-refresher>
   <spinner [isVisible]="showSpinner$ | async"></spinner>
-  <list *ngIf="type" [list]="stream$ | async" [type]="type" [options]="options"></list>
+  <list 
+    *ngIf="type"
+    [list]="stream$ | async"
+    [type]="type"
+    [options]="options"
+    [menuMapping]="itemMenuMapping"
+  ></list>
   <button
     *ngIf="shouldRetry"
     class="retry-button"

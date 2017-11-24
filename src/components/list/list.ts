@@ -21,6 +21,7 @@ export class ListComponent {
   @Input() type: string;
   @Input() emptyIcon: string;
   @Input() emptyText: string;
+  @Input() menuMapping: string;
   @Input() options: any;
   @Input() list: Array<any>;
   @ViewChild('dynamicComponentTarget', { read: ViewContainerRef })
@@ -67,6 +68,7 @@ export class ListComponent {
 
   updateRefs() {
     (<any>this.componentRef.instance).type = this.type;
+    (<any>this.componentRef.instance).menuMapping = this.menuMapping;
     (<any>this.componentRef.instance).options = this.options;
     (<any>this.componentRef.instance).list = this.list;
   }

@@ -27,10 +27,10 @@ import { ListActorsPage } from './list-actors';
 import { CustomTabsPage } from './custom-tabs';
 
 export const MenuMapping = {
-    posts: ListPostsPage,
-    postsItem: ItemPostsPage,
-    pages: ListPagesPage,
-    pagesItem: ItemPagesPage,
+    [ListPostsPage._menuMapping]: ListPostsPage,
+    [ItemPostsPage._menuMapping]: ItemPostsPage,
+    [ListPagesPage._menuMapping]: ListPagesPage,
+    [ItemPagesPage._menuMapping]: ItemPagesPage,
     categories: ListCategoriesPage,
     category: ListCategoryPage,
     tags: ListTagsPage,
@@ -48,6 +48,8 @@ export const MenuMapping = {
     // Tabs (this is just an example on how to add tabs and can be removed)
     customTabs: CustomTabsPage,
 }
+
+console.log('MenuMapping', MenuMapping)
 
 export const DeepLinkerLnks = [
     // { component: TabsPage, name: 'Tabs', segment: 'tabs/:options' },

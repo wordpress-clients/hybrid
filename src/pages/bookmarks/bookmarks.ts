@@ -12,6 +12,7 @@ import { ItemPage } from './../item/item';
 import { ItemPostsPage } from './../item/item-post';
 import { ItemPagesPage } from './../item/item-page';
 import { getNavParamsFromItem } from '../../utils/item';
+import { MenuMapping } from '../../../config/pages/';
 
 const log = debug('BookmarksPage');
 
@@ -42,7 +43,7 @@ export class BookmarksPage {
         const list = [];
         log('observable rerun')
         Object.keys(bookmarks).forEach((bookmarkUid) => {
-          const bookmark = bookmarks[bookmarkUid];
+          const bookmark = { ...bookmarks[bookmarkUid] };
           bookmark.item = _get(items, `[${bookmark.type}][${bookmark.id}]`);
           list.push(bookmark);
         });
@@ -56,13 +57,13 @@ export class BookmarksPage {
   }
 
   doOpen = (e, bookmark) => {
-    let PageRef = ItemPage;
-    if (bookmark.type === 'posts') {
-      PageRef = ItemPostsPage;
-    } else if (bookmark.type === 'pages') {
-      PageRef = ItemPagesPage;
+    log('[Opening]', bookmark);
+
+    if (!MenuMapping[bookmark.menuMapping]) {
+      throw new Error('Bookmark items must have a menuMapping');
     }
-    this.navCtrl.push(PageRef, getNavParamsFromItem(bookmark.type, bookmark.item))
+
+    this.navCtrl.push(MenuMapping[bookmark.menuMapping], getNavParamsFromItem(bookmark.type, bookmark.item))
   };
 
   doRemove = (e, item) => this.store.dispatch(removeBookmark(`${item.type}:${item.id}`));

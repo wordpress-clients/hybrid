@@ -5,7 +5,7 @@ import debug from 'debug';
 
 import { IListComponent } from './interfaces';
 import { ItemPage } from './../pages/item/item';
-import { MenuMapping } from './../../config/pages/index';
+import { MenuMapping } from './../../config/pages/';
 import { getNavParamsFromItem } from '../utils/item';
 
 const log = debug('ListParentComponent');
@@ -13,6 +13,7 @@ const log = debug('ListParentComponent');
 export class ListParentComponent implements IListComponent {
     type: string;
     options: any;
+    menuMapping: string;
     _list: Array<any>;
 
     constructor(

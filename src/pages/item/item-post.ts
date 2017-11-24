@@ -7,4 +7,9 @@ import { ItemPage } from './item';
 })
 export class ItemPostsPage extends ItemPage {
     type: string = 'posts';
+    public static _menuMapping = 'postsItem';
+
+    get menuMapping() {
+        return ItemPostsPage._menuMapping;
+    }
 }

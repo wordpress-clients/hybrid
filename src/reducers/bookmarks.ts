@@ -17,9 +17,10 @@ export const bookmarksReducer: ActionReducer<Object> = (state: Object = DEFAULT_
 
     switch (action.type) {
         case ADD_BOOKMARK: {
-            const [type, id] = payload.uid.split(':');
+            const [menuMapping, type, id] = payload.uid.split(':');
             return Object.assign({}, state, {
                 [payload.uid]: {
+                    menuMapping,
                     type,
                     id,
                     timestamp: payload.timestamp

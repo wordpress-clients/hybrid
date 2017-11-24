@@ -5,6 +5,7 @@
   for more info on Angular 2 Components.
 -->
 <ion-list>
+  <empty-list *ngIf="!list.length" icon="bookmarks" text="BOOKMARKS_EMPTY"></empty-list>
   <ion-item-sliding *ngFor="let bookmark of list; trackBy:trackByUid">
     <button ion-item (click)="onClick && onClick($event, bookmark)">
     <h2 [innerHtml]="bookmark.item?.title.rendered"></h2>

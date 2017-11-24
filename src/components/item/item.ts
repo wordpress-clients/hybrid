@@ -21,6 +21,7 @@ export class ItemComponent {
   @Input() type: string;
   @Input() options: any;
   @Input() item: any;
+  @Input() menuMapping: string;
   @ViewChild('dynamicComponentTarget', { read: ViewContainerRef })
   dynamicComponentTarget: any;
   componentRef: ComponentRef<any>;
@@ -56,6 +57,7 @@ export class ItemComponent {
   updateRefs() {
     (<any>this.componentRef.instance).type = this.type;
     (<any>this.componentRef.instance).options = this.options;
+    (<any>this.componentRef.instance).menuMapping = this.menuMapping;
     (<any>this.componentRef.instance).item = this.item;
   }
 

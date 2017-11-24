@@ -1,7 +1,7 @@
 import { NavController } from 'ionic-angular';
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
-import { MenuMapping } from './../../config/pages/index';
+import { MenuMapping } from './../../config/pages/';
 import { IAuthorState } from '../../reducers';
 
 /*

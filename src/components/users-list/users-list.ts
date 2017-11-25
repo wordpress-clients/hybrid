@@ -4,7 +4,7 @@ import { NavController } from 'ionic-angular';
 import { AppearIn } from './../../utils/animations';
 import { IListComponent } from './../interfaces';
 import { ListParentComponent } from './../ListParent';
-import { ListPage } from './../../pages/list/list';
+import { ListAuthorPage } from './../../pages/list/list-author';
 
 /*
   Generated class for the PagesList component.
@@ -28,13 +28,9 @@ export class UsersListComponent extends ListParentComponent implements IListComp
   }
 
   openPage = (e, item) => {
-    this.navCtrl.push(ListPage, {
+    this.navCtrl.push(ListAuthorPage, {
       type: 'posts',
-      options: JSON.stringify({
-        query: {
-          'author': item.id
-        }
-      }),
+      id: item.id,
     })
   }
 }

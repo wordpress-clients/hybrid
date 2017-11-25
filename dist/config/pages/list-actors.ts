@@ -7,4 +7,6 @@ import { ListPage } from '../../src/pages/list/list';
 })
 export class ListActorsPage extends ListPage {
     type: string = 'actor';
+    // reference used by the menu and bookmarks
+    public static _menuMapping: string = 'actor';
 }

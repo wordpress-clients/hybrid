@@ -41,12 +41,12 @@ export const MenuMapping = {
     [ParamsPage._menuMapping]: ParamsPage,
     [BookmarksPage._menuMapping]: BookmarksPage,
     // Custom (this is just an example on how to add custom post types and can be removed)
-    movieItem: ItemMoviePage,
-    movie: ListMoviePage,
-    actorItem: ListActorPage,
-    actor: ListActorsPage,
+    [ItemMoviePage._menuMapping]: ItemMoviePage,
+    [ListMoviePage._menuMapping]: ListMoviePage,
+    [ListActorPage._menuMapping]: ListActorPage,
+    [ListActorsPage._menuMapping]: ListActorsPage,
     // Tabs (this is just an example on how to add tabs and can be removed)
-    customTabs: CustomTabsPage,
+    [CustomTabsPage._menuMapping]: CustomTabsPage,
 }
 
 console.log('MenuMapping', MenuMapping)

@@ -140,7 +140,7 @@ export class SearchPage extends ListParent implements IListPage {
     }, reset));
   }
 
-  onError(error: IAPIError) {
-    this.store.dispatch(actions.error(this.searchTerm, this.type, this.getQuery(), error));
+  onError() {
+    this.store.dispatch(actions.error(this.searchTerm, this.type, this.getQuery()));
   }
 }

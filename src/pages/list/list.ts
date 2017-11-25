@@ -56,8 +56,7 @@ export class ListPage extends ListParent implements IListPage {
   }
 
   doInit(): void {
-    let currentList = this.getCurrentList();
-    if (!currentList.length) {
+    if (!this.getCurrentList().length && !this.isSubmitting()) {
       this.doLoad();
     } else {
       this.updateItemsToDisplay(true);
@@ -77,8 +76,8 @@ export class ListPage extends ListParent implements IListPage {
     }, reset));
   }
 
-  onError(error: IAPIError) {
-    this.store.dispatch(actions.error(this.type, this.getQuery(), error));
+  onError() {
+    this.store.dispatch(actions.error(this.type, this.getQuery()));
   }
 
   getTitle() {

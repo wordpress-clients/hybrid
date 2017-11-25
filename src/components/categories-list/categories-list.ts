@@ -5,6 +5,7 @@ import { AppearIn } from './../../utils/animations';
 import { IListComponent } from './../interfaces';
 import { ListParentComponent } from './../ListParent';
 import { ListPage } from './../../pages/list/list';
+import { ListCategoryPage } from './../../pages/list/list-category';
 
 /*
   Generated class for the CategoriesList component.
@@ -28,13 +29,9 @@ export class CategoriesListComponent extends ListParentComponent implements ILis
   }
 
   openPage = (e, item) => {
-    this.navCtrl.push(ListPage, {
+    this.navCtrl.push(ListCategoryPage, {
       type: 'posts',
-      options: JSON.stringify({
-        query: {
-          [this.type]: item.id
-        }
-      }),
+      id: item.id,
     })
   }
 }

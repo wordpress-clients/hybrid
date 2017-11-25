@@ -5,5 +5,7 @@
   for more info on Angular 2 Components.
 -->
 
-<span class="empty-icon"><ion-icon [name]="icon"></ion-icon></span>
+<span *ngIf="icon" class="empty-icon">
+  <ion-icon [name]="icon"></ion-icon>
+</span>
 <p class="empty-text">{{text || 'EMPTY_LIST' | translate}}</p>

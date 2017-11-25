@@ -6,6 +6,6 @@
 -->
 <button ion-item>
   <h2>{{ item.name }}</h2>
-  <p>{{item.description}}</p>
+  <p [innerHtml]="item.description"></p>
   <ion-badge item-right>{{item.count}}</ion-badge>
 </button>

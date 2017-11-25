@@ -31,9 +31,9 @@ export const actions = {
         type: types.SUCCESS,
         payload: { itemType, reset, query, ...response }
     }),
-    error: (itemType, query, error: IAPIError): Action => ({
+    error: (itemType, query): Action => ({
         type: types.ERROR,
-        payload: { itemType, error, query }
+        payload: { itemType, query }
     }),
 };
 
@@ -88,7 +88,7 @@ export const listReducer: ActionReducer<Object> = (state: IListState = defaultSt
         }
 
         case types.ERROR: {
-            const { itemType, query, error } = payload;
+            const { itemType, query } = payload;
             const key = getUniqueStoreKey(itemType, query);
 
             return {

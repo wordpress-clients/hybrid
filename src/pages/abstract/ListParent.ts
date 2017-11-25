@@ -73,7 +73,13 @@ export class ListParent implements IListPage {
 
     onRequest(reset: boolean) { }
     onSuccess(data: any, reset: boolean) { }
-    onError(error: IAPIError) { }
+    onError() { }
+
+    public isSubmitting(): any[] {
+        let isSubmitting;
+        this.store$.first().subscribe(listParams => isSubmitting = _get(listParams, 'submitting', false));
+        return isSubmitting;
+    }
 
     public getCurrentList(): any[] {
         let currentList;
@@ -138,12 +144,12 @@ export class ListParent implements IListPage {
                 return response;
             })
             .catch(res => {
+                log("error");
                 this.shouldRetry = true;
                 this.disablePagination();
                 this.toast.show(this.translate.instant('error'));
-                this.onError(res.json());
+                this.onError();
 
-                log("error", res.json());
                 return Observable.throw(res);
             });
     }

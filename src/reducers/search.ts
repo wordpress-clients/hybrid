@@ -42,9 +42,9 @@ export const actions = {
         type: types.SUCCESS,
         payload: { searchTerm, itemType, reset, query, ...response }
     }),
-    error: (searchTerm, itemType, query, error: IAPIError): Action => ({
+    error: (searchTerm, itemType, query): Action => ({
         type: types.ERROR,
-        payload: { searchTerm, itemType, error, query }
+        payload: { searchTerm, itemType, query }
     }),
 };
 
@@ -87,7 +87,7 @@ export const searchReducer: ActionReducer<Object> = (state: ISearchState = defau
         }
 
         case types.ERROR: {
-            const { itemType, searchTerm, error } = payload;
+            const { itemType, searchTerm } = payload;
             const key = getKey(itemType, searchTerm);
 
             return {

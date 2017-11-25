@@ -4,7 +4,7 @@ import { NavController } from 'ionic-angular';
 import { AppearIn } from './../../utils/animations';
 import { IListComponent } from './../interfaces';
 import { ListParentComponent } from './../ListParent';
-import { ListPage } from './../../pages/list/list';
+import { ListTagPage } from './../../pages/list/list-tag';
 
 /*
   Generated class for the TagsList component.
@@ -28,13 +28,9 @@ export class TagsListComponent extends ListParentComponent implements IListCompo
   }
 
   openPage = (e, item) => {
-    this.navCtrl.push(ListPage, {
+    this.navCtrl.push(ListTagPage, {
       type: 'posts',
-      options: JSON.stringify({
-        query: {
-          [this.type]: item.id
-        }
-      }),
+      id: item.id,
     })
   }
 }

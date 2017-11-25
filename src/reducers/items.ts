@@ -36,7 +36,7 @@ export const itemsReducer: ActionReducer<Object> = (state: Object = defaultState
 
         case searchList.SUCCESS:
         case typesList.SUCCESS: {
-            const { list, itemType } = payload;
+            const { list = [], itemType } = payload;
             const newAuthors = {};
             const newItems = {};
 

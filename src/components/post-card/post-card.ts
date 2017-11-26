@@ -17,7 +17,6 @@ import { IAuthorState, AppState } from './../../reducers';
 export class PostCardComponent {
   @Input() post: any;
   @Input() type: string;
-  @Input() menuMapping: string;
   @Input() onClick: (e, item) => void;
   categories: Array<any>;
   tags: Array<any>;

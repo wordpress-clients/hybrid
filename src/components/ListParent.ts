@@ -13,7 +13,6 @@ const log = debug('ListParentComponent');
 export class ListParentComponent implements IListComponent {
     type: string;
     options: any;
-    menuMapping: string;
     _list: Array<any>;
 
     constructor(

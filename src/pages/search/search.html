@@ -26,7 +26,12 @@
     </ion-refresher-content>
   </ion-refresher>
   <spinner [isVisible]="showSpinner$ | async"></spinner>
-  <list [list]="stream$ | async" [type]="type" [options]="options" emptyIcon="search"></list>
+  <list
+    [list]="stream$ | async"
+    [type]="type"
+    [options]="options"
+    emptyIcon="search"
+  ></list>
   <button *ngIf="shouldRetry" ion-button color="light" full (click)="doLoad()">
     {{ 'RETRY' | translate }}
   </button>

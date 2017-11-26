@@ -7,10 +7,4 @@ import { ItemPage } from '../../src/pages/item/item';
 })
 export class ItemMoviePage extends ItemPage {
     type: string = 'movie';
-    // reference used by the menu and bookmarks
-    public static _menuMapping: string = 'movieItem';
-
-    get menuMapping() {
-        return ItemMoviePage._menuMapping;
-    }
 }

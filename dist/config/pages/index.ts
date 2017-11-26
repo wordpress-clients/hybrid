@@ -27,29 +27,27 @@ import { ListActorsPage } from './list-actors';
 import { CustomTabsPage } from './custom-tabs';
 
 export const MenuMapping = {
-    [ListPostsPage._menuMapping]: ListPostsPage,
-    [ItemPostsPage._menuMapping]: ItemPostsPage,
-    [ListPagesPage._menuMapping]: ListPagesPage,
-    [ItemPagesPage._menuMapping]: ItemPagesPage,
-    [ListCategoriesPage._menuMapping]: ListCategoriesPage,
-    [ListCategoryPage._menuMapping]: ListCategoryPage,
-    [ListTagsPage._menuMapping]: ListTagsPage,
-    [ListTagPage._menuMapping]: ListTagPage,
-    [ListAuthorsPage._menuMapping]: ListAuthorsPage,
-    [ListAuthorPage._menuMapping]: ListAuthorPage,
-    [SearchPage._menuMapping]: SearchPage,
-    [ParamsPage._menuMapping]: ParamsPage,
-    [BookmarksPage._menuMapping]: BookmarksPage,
+    posts: ListPostsPage,
+    postsItem: ItemPostsPage,
+    pages: ListPagesPage,
+    pagesItem: ItemPagesPage,
+    categories: ListCategoriesPage,
+    category: ListCategoryPage,
+    tags: ListTagsPage,
+    tag: ListTagPage,
+    authors: ListAuthorsPage,
+    author: ListAuthorPage,
+    search: SearchPage,
+    params: ParamsPage,
+    bookmarks: BookmarksPage,
     // Custom (this is just an example on how to add custom post types and can be removed)
-    [ItemMoviePage._menuMapping]: ItemMoviePage,
-    [ListMoviePage._menuMapping]: ListMoviePage,
-    [ListActorPage._menuMapping]: ListActorPage,
-    [ListActorsPage._menuMapping]: ListActorsPage,
+    movieItem: ItemMoviePage,
+    movie: ListMoviePage,
+    actorItem: ListActorPage,
+    actor: ListActorsPage,
     // Tabs (this is just an example on how to add tabs and can be removed)
-    [CustomTabsPage._menuMapping]: CustomTabsPage,
+    customTabs: CustomTabsPage,
 }
-
-console.log('MenuMapping', MenuMapping)
 
 export const DeepLinkerLnks = [
     // { component: TabsPage, name: 'Tabs', segment: 'tabs/:options' },

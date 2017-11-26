@@ -17,6 +17,7 @@ import { Config } from './../../providers';
 import { AppState } from '../../reducers';
 import { getKey } from '../../reducers/search';
 import { IAPIError } from '../../APIInterfaces';
+import { MenuMapping } from '../../../config/pages/';
 
 /*
   Generated class for the Search page.
@@ -29,7 +30,6 @@ import { IAPIError } from '../../APIInterfaces';
   templateUrl: 'search.html'
 })
 export class SearchPage extends ListParent implements IListPage {
-  public static _menuMapping: string = 'search';
   @ViewChild(Content) content: Content;
   types: string[];
   searchTerm: string;

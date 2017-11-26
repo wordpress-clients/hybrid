@@ -25,7 +25,7 @@
     <p [innerHtml]="post.excerpt.rendered"></p>
   </ion-card-content>
   <toolbar
-    [bookmarkId]="menuMapping + ':' + type + ':' + post.id"
+    [bookmarkId]="type + ':' + post.id"
     [tags]="tags"
     [categories]="categories"
   ></toolbar>

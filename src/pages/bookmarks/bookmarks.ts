@@ -27,7 +27,6 @@ const log = debug('BookmarksPage');
   templateUrl: 'bookmarks.html'
 })
 export class BookmarksPage {
-  public static _menuMapping: string = 'bookmarks';
   page: number = 0;
   hasBookmarks: boolean = false;
   stream$: Observable<any>;
@@ -60,11 +59,7 @@ export class BookmarksPage {
   doOpen = (e, bookmark) => {
     log('[Opening]', bookmark);
 
-    if (!MenuMapping[bookmark.menuMapping]) {
-      throw new Error('Bookmark items must have a menuMapping');
-    }
-
-    this.navCtrl.push(MenuMapping[bookmark.menuMapping], getNavParamsFromItem(bookmark.type, bookmark.item))
+    this.navCtrl.push(MenuMapping[`${bookmark.type}Item`], getNavParamsFromItem(bookmark.type, bookmark.item))
   };
 
   doRemove = (e, item) => this.store.dispatch(removeBookmark(`${item.type}:${item.id}`));

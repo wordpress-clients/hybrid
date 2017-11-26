@@ -7,11 +7,6 @@ import { ItemPostsPage } from '../item/item-post';
     templateUrl: 'list.html'
 })
 export class ListCategoryPage extends ListPage {
-    public static _menuMapping: string = 'category';
-    // This is used to know which page component to open
-    // when bookmarking form a list
-    itemMenuMapping: string = ItemPostsPage._menuMapping;
-
     type: string = 'posts';
 
     getQuery() {

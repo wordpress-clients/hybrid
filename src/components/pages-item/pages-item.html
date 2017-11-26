@@ -9,8 +9,8 @@
   <div class="main-content" padding>
     <h1 [innerHtml]="item.title.rendered"></h1>
     <!--<author [link]="true" [authorId]="item.author" [date]="item.date"></author>-->
-    <toolbar [bookmarkId]="menuMapping + ':' + type + ':' + item.id"></toolbar>
+    <toolbar [bookmarkId]="type + ':' + item.id"></toolbar>
     <div [innerHtml]="item.content.rendered" class="page-content"></div>
-    <toolbar [bookmarkId]="menuMapping + ':' + type + ':' + item.id"></toolbar>
+    <toolbar [bookmarkId]="type + ':' + item.id"></toolbar>
   </div>
 </div>

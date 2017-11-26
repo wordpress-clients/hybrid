@@ -8,8 +8,6 @@ import { IMenuItem } from '../../src/components/menu-items/menu-items';
     templateUrl: '../../src/pages/tabs/tabs.html'
 })
 export class CustomTabsPage extends TabsPage {
-    // reference used by the menu
-    public static _menuMapping: string = 'customTabs';
     list: Array<IMenuItem> = [{
         type: 'internal',
         trans: 'POSTS',

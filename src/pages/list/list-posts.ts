@@ -8,9 +8,4 @@ import { ItemPostsPage } from '../item/item-post';
 })
 export class ListPostsPage extends ListPage {
     type: string = 'posts';
-    // This is used to know which page component to open
-    // when bookmarking form a list
-    itemMenuMapping: string = ItemPostsPage._menuMapping;
-
-    public static _menuMapping: string = 'posts';
 }

@@ -4,7 +4,6 @@ import { IItemComponent } from './interfaces';
 
 export class ItemParentComponent implements IItemComponent {
     type: string;
-    menuMapping: string;
     options: any;
     _item: any;
 

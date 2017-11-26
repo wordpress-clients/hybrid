@@ -2,6 +2,7 @@ import {
   Component, Input, ViewChild, ViewContainerRef,
   ComponentFactoryResolver, ComponentRef, ChangeDetectionStrategy
 } from '@angular/core';
+import { Content } from 'ionic-angular';
 
 import { ComponentsMapping } from '../../../config/components/';
 import { Config } from './../../providers';
@@ -22,6 +23,7 @@ export class ListComponent {
   @Input() emptyIcon: string;
   @Input() emptyText: string;
   @Input() options: any;
+  @Input() content: Content;
   @Input() list: Array<any>;
   @ViewChild('dynamicComponentTarget', { read: ViewContainerRef })
   dynamicComponentTarget: any;
@@ -69,6 +71,7 @@ export class ListComponent {
     (<any>this.componentRef.instance).type = this.type;
     (<any>this.componentRef.instance).options = this.options;
     (<any>this.componentRef.instance).list = this.list;
+    (<any>this.componentRef.instance).content = this.content;
   }
 
   getComponent(): any {

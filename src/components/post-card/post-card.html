@@ -17,7 +17,9 @@
     *ngIf="post.featured_media !== 0"
     (click)="onClick && onClick($event, post)"
     class="thumbnail"
-    [style.background-image]="'url(' + post.better_featured_image.media_details.sizes.medium.source_url + ')'"></div>
+    [lazyLoad]="post.better_featured_image.media_details.sizes.medium.source_url"
+    [scrollObservable]="content.ionScroll"
+  ></div>
   
   <ion-card-content (click)="onClick && onClick($event, post)">
     <ion-card-title [innerHtml]="post.title.rendered"></ion-card-title>

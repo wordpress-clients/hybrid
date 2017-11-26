@@ -1,4 +1,4 @@
-import { NavController } from 'ionic-angular';
+import { NavController, Content } from 'ionic-angular';
 import { ChangeDetectorRef } from '@angular/core';
 import _isEmpty from 'lodash/isEmpty';
 import debug from 'debug';
@@ -13,6 +13,7 @@ const log = debug('ListParentComponent');
 export class ListParentComponent implements IListComponent {
     type: string;
     options: any;
+    content: Content;
     _list: Array<any>;
 
     constructor(

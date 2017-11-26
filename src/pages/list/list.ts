@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
-import { Component, Injector } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, Injector, ViewChild } from '@angular/core';
+import { NavController, Content } from 'ionic-angular';
 import { WpApiCustom } from 'wp-api-angular';
 import { Store } from '@ngrx/store';
 import _get from 'lodash/get';
@@ -24,6 +24,7 @@ import { IAPIError } from '../../APIInterfaces';
 })
 export class ListPage extends ListParent implements IListPage {
   title: string;
+  @ViewChild(Content) content: Content;
 
   constructor(
     public inject: Injector,

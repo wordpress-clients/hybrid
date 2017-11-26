@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Content } from 'ionic-angular';
 
 import { IAuthorState, AppState } from './../../reducers';
 /*
@@ -17,6 +18,7 @@ import { IAuthorState, AppState } from './../../reducers';
 export class PostCardComponent {
   @Input() post: any;
   @Input() type: string;
+  @Input() content: Content;
   @Input() onClick: (e, item) => void;
   categories: Array<any>;
   tags: Array<any>;
@@ -30,6 +32,7 @@ export class PostCardComponent {
     const terms = this.post._embedded['https://api.w.org/term'] || this.post._embedded['wp:term'];
     this.categories = terms && terms[0];
     this.tags = terms && terms[1];
+    console.log('eee', this.content)
 
     this.author$ = this.store.select(state => state.items.users && state.items.users[this.post.author])
   }

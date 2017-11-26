@@ -10,6 +10,7 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
+  local_dir: www
   github_token: $GITHUB_TOKEN
   on:
     branch: develop

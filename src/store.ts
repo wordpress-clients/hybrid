@@ -6,7 +6,12 @@ export function reducer(state: any, action: any) {
   return combineReducers(Reducers)(state, action);
 }
 
-export const STORE = [
-    StoreModule.provideStore(reducer),
-    __DEV__ && StoreDevtoolsModule.instrumentOnlyWithExtension()
-];
+const store = [
+  StoreModule.provideStore(reducer),
+]
+
+if (__DEV__) {
+  store.push(StoreDevtoolsModule.instrumentOnlyWithExtension())
+}
+
+export const STORE = store;

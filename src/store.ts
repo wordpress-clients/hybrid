@@ -8,5 +8,5 @@ export function reducer(state: any, action: any) {
 
 export const STORE = [
     StoreModule.provideStore(reducer),
-    StoreDevtoolsModule.instrumentOnlyWithExtension()
+    __DEV__ && StoreDevtoolsModule.instrumentOnlyWithExtension()
 ];

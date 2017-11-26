@@ -11,12 +11,12 @@
 
 - [X] Posts
 - [X] Pages
-- [X] Authors
-- [X] Search
-- [X] Taxonomies (Category, Tag and custom)
 - [X] Custom posts
-- [X] Custom Taxonomies
-- [X] Sass variables
+- [X] Authors
+- [X] Categories
+- [X] Tags
+- [X] Custom taxonomies
+- [X] Search (Posts, Pages & Custom)
 - [X] 10+ languages
 - [X] Offline
 - [X] Syntax highlighter
@@ -24,18 +24,20 @@
 - [ ] Comments
 - [ ] Push Notifications
 - [ ] Admob support
-- [ ]] App rate plugin
+- [ ] App rate plugin
+- [ ] Login via JWT
+- [ ] Docker build
 
 ## Sponsors
 
 <span class="badge-flattr"><a href="https://flattr.com/submit/auto?user_id=shprink&url=https%3A%2F%2Fgithub.com%2Fshprink%2Fwordpress-hybrid-client" title="Donate to this project using Flattr"><img src="https://img.shields.io/badge/flattr-donate-yellow.svg" alt="Flattr donate button" /></a></span>
 <span class="badge-paypal"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=PFP99GE9V56RS" title="Donate to this project using Paypal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" alt="PayPal donate button" /></a></span>
 
-Special thanks to [Toptal](http://www.toptal.com/#select-just-supreme-hackers) helped the release of v3!
+Special thanks to [Toptal](http://www.toptal.com/#select-just-supreme-hackers) that helped the release of v3!
 
 [![image](https://user-images.githubusercontent.com/1388706/33237872-42b15dea-d2b2-11e7-9289-9565f0d6c371.png)](http://www.toptal.com/#select-just-supreme-hackers)
 
-## Built with WPHC
+## Built with WordPressClients
 
 * Android
   * https://play.google.com/store/apps/details?id=com.shprinkinc.wordpresshybridclient

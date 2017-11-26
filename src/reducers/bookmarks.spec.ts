@@ -24,7 +24,7 @@ describe('bookmarksReducer reducer', () => {
         const state1 = bookmarksReducer(DEFAULT_STATE, {
             type: ADD_BOOKMARK,
             payload: {
-                uid: 'posts:2585',
+                uid: 'postsItem:posts:2585',
                 timestamp: 1495568222337
             }
         });
@@ -32,7 +32,8 @@ describe('bookmarksReducer reducer', () => {
         deepFreeze(state1);
 
         expect(state1).toEqual({
-            'posts:2585': {
+            'postsItem:posts:2585': {
+                menuMapping: 'postsItem',
                 type: 'posts',
                 id: '2585',
                 timestamp: 1495568222337
@@ -42,7 +43,7 @@ describe('bookmarksReducer reducer', () => {
         const state2 = bookmarksReducer(state1, {
             type: REMOVE_BOOKMARK,
             payload: {
-                uid: 'posts:2585'
+                uid: 'postsItem:posts:2585'
             }
         });
 
@@ -53,7 +54,7 @@ describe('bookmarksReducer reducer', () => {
         const state1 = bookmarksReducer(DEFAULT_STATE, {
             type: ADD_BOOKMARK,
             payload: {
-                uid: 'posts:1',
+                uid: 'postsItem:posts:1',
                 timestamp: 1495568222337
             }
         });
@@ -63,7 +64,7 @@ describe('bookmarksReducer reducer', () => {
         const state2 = bookmarksReducer(state1, {
             type: ADD_BOOKMARK,
             payload: {
-                uid: 'pages:2',
+                uid: 'pagesItem:pages:2',
                 timestamp: 1495568222337
             }
         });
@@ -71,12 +72,14 @@ describe('bookmarksReducer reducer', () => {
         deepFreeze(state2);
 
         expect(state2).toEqual({
-            'posts:1': {
+            'postsItem:posts:1': {
+                menuMapping: 'postsItem',
                 type: 'posts',
                 id: '1',
                 timestamp: 1495568222337
             },
-            'pages:2': {
+            'pagesItem:pages:2': {
+                menuMapping: 'pagesItem',
                 type: 'pages',
                 id: '2',
                 timestamp: 1495568222337
@@ -95,12 +98,14 @@ describe('bookmarksReducer reducer', () => {
             type: INIT,
             payload: {
                 bookmarks: {
-                    'posts:1': {
+                    'postsItem:posts:1': {
+                        menuMapping: 'postsItem',
                         type: 'posts',
                         id: '1',
                         timestamp: 1495568222337
                     },
-                    'pages:2': {
+                    'pagesItem:pages:2': {
+                        menuMapping: 'pagesItem',
                         type: 'pages',
                         id: '2',
                         timestamp: 1495568222337
@@ -110,12 +115,14 @@ describe('bookmarksReducer reducer', () => {
         });
 
         expect(state1).toEqual({
-            'posts:1': {
+            'postsItem:posts:1': {
+                menuMapping: 'postsItem',
                 type: 'posts',
                 id: '1',
                 timestamp: 1495568222337
             },
-            'pages:2': {
+            'pagesItem:pages:2': {
+                menuMapping: 'pagesItem',
                 type: 'pages',
                 id: '2',
                 timestamp: 1495568222337

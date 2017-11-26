@@ -32,9 +32,7 @@ export class ParamsPage {
     store.select('params').take(1).subscribe((params: IParamsState) => this.zoom = params.zoom);
   }
 
-  ionViewDidLoad() {
-    console.log('[ParamsPage] ionViewDidLoad');
-  }
+  ionViewDidLoad() { }
 
   doUpdateZoom() {
     this.store.dispatch(setZoom(this.zoom));

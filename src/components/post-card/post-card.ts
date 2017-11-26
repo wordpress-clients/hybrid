@@ -32,8 +32,6 @@ export class PostCardComponent {
     const terms = this.post._embedded['https://api.w.org/term'] || this.post._embedded['wp:term'];
     this.categories = terms && terms[0];
     this.tags = terms && terms[1];
-    console.log('eee', this.content)
-
     this.author$ = this.store.select(state => state.items.users && state.items.users[this.post.author])
   }
 }

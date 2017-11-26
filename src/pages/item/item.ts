@@ -38,9 +38,6 @@ export class ItemPage extends AbstractItemPage {
         throw new Error('No way to determine ID or Slug of the item')
       }
     }));
-    // const type = this.navParams.get('type')
-    // type && this.setType(type);
-    console.log('item.type here', this.type)
 
     this.setService(this.injector.get(WpApiCustom).getInstance(this.type));
     super.ionViewDidLoad()

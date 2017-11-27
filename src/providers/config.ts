@@ -33,7 +33,5 @@ export class Config {
     getToast = (path = '', otherwise = undefined) => this.get(`toast.${path}`, otherwise);
     getTabs = (path = '', otherwise = undefined) => this.get(`tabs.${path}`, otherwise);
     getSearch = (path = '', otherwise = undefined) => this.get(`search.${path}`, otherwise);
-    getItemComponent = (path = '', otherwise = undefined) => this.get(`components.item.${path}`, otherwise);
-    getListComponent = (path = '', otherwise = undefined) => this.get(`components.list.${path}`, otherwise);
     getPushNotifications = (path = '', otherwise = undefined) => this.get(`pushNotifications.${path}`, otherwise);
 }

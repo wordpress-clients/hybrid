@@ -55,15 +55,12 @@ export class ItemComponent {
 
   updateRefs() {
     (<any>this.componentRef.instance).type = this.type;
-    (<any>this.componentRef.instance).options = this.options;
+    // (<any>this.componentRef.instance).options = this.options;
     (<any>this.componentRef.instance).item = this.item;
   }
 
   getComponent(): any {
-    const configComponent = this.config.getItemComponent(this.type);
-    const { component = '' } = this.options || {};
-    // first we check for component from URL, then from Config then naming convention
-    const componentName = component || configComponent || `${this.type}-item`;
+    const componentName = `${this.type}-item`;
     const Component = ComponentsMapping[componentName];
     if (Component) return Component;
 

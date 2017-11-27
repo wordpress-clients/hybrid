@@ -69,16 +69,13 @@ export class ListComponent {
 
   updateRefs() {
     (<any>this.componentRef.instance).type = this.type;
-    (<any>this.componentRef.instance).options = this.options;
+    // (<any>this.componentRef.instance).options = this.options;
     (<any>this.componentRef.instance).list = this.list;
     (<any>this.componentRef.instance).content = this.content;
   }
 
   getComponent(): any {
-    const configComponent = this.config.getListComponent(this.type);
-    const { component = '' } = this.options || {};
-    // first we check for component from URL, then from Config then naming convention
-    const componentName = component || configComponent || `${this.type}-list`;
+    const componentName = `${this.type}-list`;
     const Component = ComponentsMapping[componentName];
     if (Component) return Component;
 

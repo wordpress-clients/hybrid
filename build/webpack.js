@@ -76,8 +76,7 @@ const webpackConfig = {
     new webpack.ContextReplacementPlugin(/moment\/locale$/, getRegexAutorizedLanguages()),
     new HtmlWebpackPlugin({
       filename: process.env.IONIC_WWW_DIR + '/index.html',
-      title: RawConfig.metas.title,
-      metas: RawConfig.metas,
+      config: RawConfig,
       template: path.join(__dirname, '..', 'config', 'index.ejs'),
     })
   ].concat(prodPlugins),

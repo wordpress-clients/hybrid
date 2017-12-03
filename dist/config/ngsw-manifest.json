@@ -5,20 +5,44 @@
             "/": {
                 "prefix": false
             },
+            "/posts": {
+                "prefix": false
+            },
+            "/pages": {
+                "prefix": true
+            },
+            "/author": {
+                "prefix": true
+            },
+            "/authors": {
+                "prefix": false
+            },
+            "/category": {
+                "prefix": true
+            },
+            "/categories": {
+                "prefix": false
+            },
+            "/tag": {
+                "prefix": true
+            },
+            "/tags": {
+                "prefix": false
+            },
             "/bookmarks": {
                 "prefix": false
             },
             "/settings": {
                 "prefix": false
             },
-            "/tabs": {
+            "/movies": {
+                "prefix": true
+            },
+            "/actors": {
+                "prefix": true
+            },
+            "/custom-tabs": {
                 "prefix": false
-            },
-            "/list": {
-                "prefix": true
-            },
-            "/item": {
-                "prefix": true
             }
         }
     }

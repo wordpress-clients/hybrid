@@ -230,17 +230,7 @@
     {
         "type": "external",
         "trans": "My blog (external link)",
-        "href": "http://julienrenaux.fr",
+        "href": "https://julienrenaux.fr",
         "icon": "link"
-    },
-    {
-        "type": "internal",
-        "trans": "About (page)",
-        "page": "pagesItem",
-        "params": {
-            "slug": "about"
-        },
-        "icon": "information-circle",
-        "navRoot": true
     }
 ]

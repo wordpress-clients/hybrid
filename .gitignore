@@ -42,6 +42,7 @@ legacy/
 cordova.plugin.backup
 before_build.md
 /config.xml
+/ionic.config.json
 www/
 myapp/
 config/

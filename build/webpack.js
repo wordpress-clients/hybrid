@@ -4,6 +4,7 @@ var ionicWebpackFactory = require(process.env.IONIC_WEBPACK_FACTORY);
 var deepExtend = require('deep-extend');
 var cordovaLib = require('cordova').cordova_lib;
 var CSON = require('cson');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ModuleConcatPlugin = require('webpack/lib/optimize/ModuleConcatenationPlugin');
 
 var defaultConfig = CSON.requireFile('./src/config.default.cson');
@@ -73,6 +74,12 @@ const webpackConfig = {
     ionicWebpackFactory.getIonicEnvironmentPlugin(),
     ionicWebpackFactory.getCommonChunksPlugin(),
     new webpack.ContextReplacementPlugin(/moment\/locale$/, getRegexAutorizedLanguages()),
+    new HtmlWebpackPlugin({
+      filename: process.env.IONIC_WWW_DIR + '/index.html',
+      title: RawConfig.metas.title,
+      metas: RawConfig.metas,
+      template: path.join(__dirname, '..', 'config', 'index.ejs'),
+    })
   ].concat(prodPlugins),
 
   // Some libraries import Node modules but don't use them in the browser.

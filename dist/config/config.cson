@@ -1,5 +1,22 @@
+# Here you can overwrite any of the src/config.default.cson variables
 title: "My Blog title"
 search:
     types: ['posts', 'pages', 'movie']
 api:
     baseUrl: "https://dev.julienrenaux.fr/wp-json"
+
+# Static metas (for SEO purpose)
+# Each page will dynamically overwrite those
+metas:
+    title: 'You app title'
+    description: 'Your app description'
+    # Open graph
+    ogTitle: 'You app title'
+    ogType: 'website'
+    ogUrl: 'https://yourDomain.com'
+    ogImage: 'https://yourDomain.com/thumbnail.jpg'
+    ogImageWidth: 400
+    ogImageHeight: 400
+    # Twitter card
+    twitterSite: ''
+    twitterCreator: '' # e.g @julienrenaux

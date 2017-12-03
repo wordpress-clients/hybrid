@@ -142,3 +142,5 @@ $toolbar-button-active-color: color($colors, primary) !default;
 $author-border-top: 1px solid $gray-lighter !default;
 $author-border-bottom: 1px solid $gray-lighter !default;
 $author-bg-color: white !default;
+
+@import "../../config/config.scss";

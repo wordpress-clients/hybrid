@@ -14,7 +14,8 @@ import { Storage } from '@ionic/storage';
 import { MomentModule } from 'angular2-moment';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { WpApiModule, WpApiLoader, WpApiStaticLoader } from 'wp-api-angular'
+import { WpApiModule, WpApiLoader, WpApiStaticLoader } from 'wp-api-angular';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 import { PAGES } from './pages/';
 import { COMPONENTS } from './components/';
@@ -76,6 +77,7 @@ export function appInitializerTranslateFactory(translate: TranslateService, inje
             deps: [Http, Config]
         }),
         ServiceWorkerModule,
+        LazyLoadImageModule,
     ],
     declarations: [...COMPONENTS, ...PAGES, ...PIPES],
     entryComponents: [...COMPONENTS, ...PAGES],

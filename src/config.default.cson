@@ -85,3 +85,17 @@ actor:
         orderby: 'count'
         order: 'desc'
         per_page: 10
+
+metas:
+    title: 'You app title'
+    description: 'Your app description'
+    # Open graph
+    ogTitle: 'You app title'
+    ogType: 'website'
+    ogUrl: 'https://yourDomain.com'
+    ogImage: 'https://yourDomain.com/thumbnail.jpg'
+    ogImageWidth: 400
+    ogImageHeight: 400
+    # Twitter card
+    twitterSite: ''
+    twitterCreator: '' # e.g @julienrenaux

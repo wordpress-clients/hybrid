@@ -26,7 +26,7 @@
     "test": "karma start ./test-config/karma.conf.js",
     "test-ci": "karma start ./test-config/karma-ci.conf.js --single-run",
     "start": "ionic serve",
-    "restore": "cordova prepare",
+    "ionic:run": "ionic cordova run",
     "clean": "ionic-app-scripts clean",
     "build:pwa": "./scripts/buildPWA.sh",
     "buildAndRun:pwa": "./scripts/buildPWAAndRun.sh",

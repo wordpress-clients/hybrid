@@ -1,4 +1,4 @@
-# Here you can overwrite any of the src/config.default.cson variables
+# Here you can overwrite any of the src/config.default.cson
 title: "My Blog title"
 search:
     types: ['posts', 'pages', 'movie']
@@ -10,6 +10,7 @@ api:
 metas:
     title: 'You app title'
     description: 'Your app description'
+    themeColor: '#4e8ef7'
     # Open graph
     ogTitle: 'You app title'
     ogType: 'website'

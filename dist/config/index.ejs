@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title><%= htmlWebpackPlugin.options.config.metas.title %></title>
+  <meta http-equiv="Content-Security-Policy" content="<%= htmlWebpackPlugin.options.config.metas.contentSecurityPolicy %>">
   <meta name="description" content="<%= htmlWebpackPlugin.options.config.metas.description %>">
 
   <!-- open graph http://ogp.me/ -->
@@ -24,13 +25,13 @@
     <% } %>
   <% } %>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="<%= htmlWebpackPlugin.options.config.metas.viewport %>">
+  <meta name="format-detection" content="<%= htmlWebpackPlugin.options.config.metas.formatDetection %>">
+  <meta name="msapplication-tap-highlight" content="<%= htmlWebpackPlugin.options.config.metas.tapHighlight %>">
+  <meta name="theme-color" content="<%= htmlWebpackPlugin.options.config.metas.themeColor %>">
 
   <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#4e8ef7">
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
 

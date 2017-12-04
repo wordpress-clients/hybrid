@@ -1,12 +1,11 @@
 import { Store } from '@ngrx/store';
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import debug from 'debug';
 
 import { AppState, IParamsState } from './../reducers';
-import { Config, PushNotifications, Storage, ServiceWorkerProvider } from './../providers';
+import { Config, PushNotifications, Storage, ServiceWorkerProvider, NativeProvider } from './../providers';
 import { MenuMapping } from '../../config/pages/';
 
 const log = debug('App');
@@ -39,9 +38,9 @@ export class WPHC {
     public config: Config,
     public pushNotif: PushNotifications,
     public splashScreen: SplashScreen,
-    public statusBar: StatusBar,
     public storage: Storage,
     public swProvider: ServiceWorkerProvider,
+    public native: NativeProvider,
   ) {
     const appNode: any = document.querySelector('ion-app');
 
@@ -63,7 +62,7 @@ export class WPHC {
 
       pushNotif.init();
       swProvider.init();
-      this.statusBar.styleDefault();
+      native.init();
       this.splashScreen.hide();
     });
   }

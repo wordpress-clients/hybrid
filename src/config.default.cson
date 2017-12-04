@@ -11,7 +11,7 @@ defaultZoom: 2 # Available: 0 to 8
 # The user language is determined during runtime and if exists automatically used.
 language:
     default: 'en'
-    imported: ["ar", "br", "de", "en",  "es", "fr", "it", "nl", "pl", "pt", "ru", "tr", "ur", "zh"]
+    imported: ['ar', 'br', 'de', 'en',  'es', 'fr', 'it', 'nl', 'pl', 'pt', 'ru', 'tr', 'ur', 'zh']
 
 defaultPage:
     page: 'postsItem'
@@ -52,17 +52,6 @@ menu:
     exposeAsideWhen: '(min-width:900px)'
     displayIcon: true # uses config/icons/icon_48.png
 
-pushNotifications:
-    enabled: false
-    plugin: 'push-notifications-for-wordpress'
-    baseUrl: 'http://yourDomain.com/pnfw'
-    android:
-        senderID: null
-    ios:
-        badge: true
-        sound: true
-        alert: true
-
 dev:
     log: '*' # https://github.com/visionmedia/debug
 
@@ -89,6 +78,11 @@ actor:
 metas:
     title: 'You app title'
     description: 'Your app description'
+    viewport: 'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover'
+    formatDetection: 'telephone=no'
+    tapHighlight: 'no'
+    themeColor: '#4e8ef7'
+    contentSecurityPolicy: "default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'"
     # Open graph
     ogTitle: 'You app title'
     ogType: 'website'
@@ -99,3 +93,39 @@ metas:
     # Twitter card
     twitterSite: ''
     twitterCreator: '' # e.g @julienrenaux
+
+
+###
+ NATIVE SECTION
+###
+pushNotifications:
+    enabled: false
+    plugin: 'push-notifications-for-wordpress'
+    baseUrl: 'http://yourDomain.com/pnfw'
+    android:
+        senderID: null
+    ios:
+        badge: true
+        sound: true
+        alert: true
+
+statusBar:
+    show: true
+    color: '#607d8b'
+    overlaysWebView: true
+    style: 'default' # 'default' | 'light' | 'blackTranslucent' | 'blackOpaque' # http://ionicframework.com/docs/native/status-bar/
+
+admob:
+    enabled: false
+    android:
+        bannerID: null
+        bannerPosition: 'BOTTOM_CENTER'
+        interstitialID: null
+    ios:
+        bannerID: null
+        bannerPosition: 'BOTTOM_CENTER'
+        interstitialID: null
+    windows:
+        bannerID: null
+        bannerPosition: 'BOTTOM_CENTER'
+        interstitialID: null

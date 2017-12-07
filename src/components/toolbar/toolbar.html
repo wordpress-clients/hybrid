@@ -14,6 +14,6 @@
 <button *ngIf="bookmarkId" ion-button icon-only clear color="light" round (click)="doBookmark($event)" [class.active]="isBookmarked$ | async">
   <ion-icon name="bookmark"></ion-icon>
 </button>
-<button ion-button icon-only clear color="light" round>
+<button *ngIf="isMobile" ion-button icon-only clear color="light" round (click)="share($event)">
   <ion-icon name="share"></ion-icon>
 </button>

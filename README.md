@@ -20,13 +20,13 @@
 - [X] 10+ languages
 - [X] Offline
 - [X] Syntax highlighter
-- [ ] Social sharing
+- [X] Social sharing
+- [X] Docker build
 - [ ] Comments
 - [ ] Push Notifications
 - [ ] Admob support
 - [ ] App rate plugin
 - [ ] Login via JWT
-- [ ] Docker build
 
 ## Sponsors
 

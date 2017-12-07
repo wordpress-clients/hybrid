@@ -15,12 +15,16 @@
       [bookmarkId]="type + ':' + item.id"
       [tags]="item._embedded['wp:term'][1]"
       [categories]="item._embedded['wp:term'][0]"
+      [shareUrl]="item.link"
+      [shareSubject]="item.title.rendered"
     ></toolbar>
     <div [innerHtml]="item.content.rendered | highlight" class="post-content"></div>
     <toolbar
       [bookmarkId]="type + ':' + item.id"
       [tags]="item._embedded['wp:term'][1]"
       [categories]="item._embedded['wp:term'][0]"
+      [shareUrl]="item.link"
+      [shareSubject]="item.title.rendered"
     ></toolbar> 
   </div>
 </div>

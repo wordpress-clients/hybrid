@@ -10,5 +10,9 @@
     <!--<author [author]="author$ | async" [date]="post.date"></author>-->
     <p [innerHtml]="item.content.rendered"></p>
   </ion-card-content>
-  <toolbar [bookmarkId]="type + ':' + item.id"></toolbar>
+  <toolbar
+    [bookmarkId]="type + ':' + item.id"
+    [shareUrl]="item.link"
+    [shareSubject]="item.title.rendered"
+  ></toolbar>
 </ion-card>

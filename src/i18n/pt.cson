@@ -45,8 +45,8 @@ CACHE_CLEARED: "Cache cleared"
     "inputPlaceholder": "Buscar"
     "title": "Buscar",
     "titleQuery": "Buscar: {{query}}"
-"sharing": 
-    "shared": "Compartilhado!"
+SHARE_SUCCESS: "Compartilhado!"
+SHARE_ERROR: "Sharing failed"
 AUTHORS: "Autores"
 AUTHOR: "Autor"
 AUTHOR_TITLE: "Autor: {{name}}"

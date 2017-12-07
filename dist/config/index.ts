@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Push } from '@ionic-native/push';
 import { Toast } from '@ionic-native/toast';
+import { SocialSharing } from '@ionic-native/social-sharing';
 import { Storage } from '@ionic/storage';
 
 import { MomentModule } from 'angular2-moment';
@@ -89,6 +90,7 @@ export function appInitializerTranslateFactory(translate: TranslateService, inje
         SplashScreen,
         Push,
         Toast,
+        SocialSharing,
         { provide: Storage, useFactory: provideStorage },
         // { provide: Settings, useFactory: provideSettings, deps: [ Storage ] },
         // Keep this to enable Ionic's runtime error handling during development

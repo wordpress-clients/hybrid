@@ -7,10 +7,6 @@
 
 ![screenshots](http://julienrenaux.fr/wp-content/uploads/2015/07/devices.jpg)
 
-## Deploy
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
 ## Features
 
 - [X] Posts

@@ -1,15 +1,18 @@
 #!/usr/bin/env node
 
-var fs = require('fs-extra');
+const fs = require('fs-extra');
+const path = require('path');
+
+const ROOT = path.join(__dirname, '..');
+const DIST = path.join(__dirname, '..', '/dist/');
 
 console.log("=============================================");
 console.log("Starting WordPress Hybrid Client Installation");
 console.log("=============================================");
 
-copy('../dist/config', '../config');
-copy('../dist/root/config.xml', '../config.xml');
-copy('../dist/root/ionic.config.json', '../ionic.config.json');
-copy('../release.sh.dist', '../release.sh');
+copy(path.join(DIST, 'config'), path.join(ROOT, 'config'));
+copy(path.join(DIST, 'root', 'config.xml'), path.join(ROOT, 'config.xml'));
+copy(path.join(DIST, 'root', 'ionic.config.json'), path.join(ROOT, 'ionic.config.json'));
 
 function copy(source, target, overwrite) {
     overwrite = process.env.CI ? true : overwrite;

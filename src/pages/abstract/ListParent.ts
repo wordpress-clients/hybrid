@@ -2,22 +2,18 @@ import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { InfiniteScroll, Refresher, NavParams } from 'ionic-angular';
-import { URLSearchParams } from '@angular/http';
 import { Injector, ViewChild } from '@angular/core';
+import { Store } from '@ngrx/store';
 import _get from 'lodash/get';
 import debug from 'debug';
 
+import { AppState } from '../../reducers';
+import { actions } from '../../reducers/list';
 import { Toast, Config } from './../../providers';
 import { IAPIError } from '../../APIInterfaces';
 import { getUniqueStoreKey } from '../../utils/list';
 
 const log = debug('List');
-
-export interface IListPage {
-    onRequest(reset: boolean): void;
-    onSuccess(data: any, reset: boolean): void;
-    onError(data: any): void;
-}
 
 export interface IListResult {
     page: number;
@@ -26,7 +22,7 @@ export interface IListResult {
     list: Array<any>;
 }
 
-export class ListParent implements IListPage {
+export class ListParent {
     // Injections
     config: Config;
     navParams: NavParams;
@@ -41,157 +37,94 @@ export class ListParent implements IListPage {
     showSpinner$: Observable<boolean>;
     store$: Observable<any>;
     stream$: Observable<any>;
-    itemsToDisplay$ = new BehaviorSubject<number>(0);
+    currentPage$: Observable<any>;
+    itemsToDisplay$: Observable<number>;
+    isPaginationEnabled$: Observable<boolean>;
+    hasError$: Observable<boolean>;
     service: any;
     type: string;
-    options: any = {};
+    store: Store<AppState>;
 
     @ViewChild(InfiniteScroll) infinite: InfiniteScroll;
 
     constructor(
-        public injector: Injector
+        public injector: Injector,
     ) {
         this.config = injector.get(Config, Config);
         this.navParams = injector.get(NavParams, NavParams);
         this.toast = injector.get(Toast, Toast);
+        this.store = injector.get(Store, Store);
         this.translate = injector.get(TranslateService, TranslateService);
         this.perPage = this.getQuery().per_page || this.config.getApi('per_page', 5);
+    }
+
+    ionViewDidLoad() {
+        this.store.dispatch(actions.resetPage(this.type, this.getQuery()));
     }
 
     setStream = (stream: Observable<any>) => this.stream$ = stream;
     setIsLoadingStream = (loading: Observable<any>) => this.isLoading$ = loading;
     setShowSpinnerStream = (showSpinner: Observable<any>) => this.showSpinner$ = showSpinner;
     setStoreStream = (store: Observable<any>) => this.store$ = store;
+    setHasErrorStream = (hasError: Observable<boolean>) => this.hasError$ = hasError;
+    setCurrentPageStream = (page: Observable<number>) => this.currentPage$ = page;
+    setItemsToDisplayStream = (itemsToDisplay: Observable<number>) => this.itemsToDisplay$ = itemsToDisplay;
+    setIsPaginationEnableStream = (isPaginationEnabled: Observable<boolean>) => this.isPaginationEnabled$ = isPaginationEnabled;
     setService = (service: any) => this.service = service;
-    setType = (type: string) => this.type = type;
-    setOptions = (options: any = {}) => this.options = options;
-    updateItemsToDisplay = (init = false) => {
-        if (init) this.page = 1;
-        this.itemsToDisplay$.next(this.page * this.perPage);
-        log('next page', this.page)
+
+    public getSyncPropFromStore(property: string, otherwise: any): any {
+        let prop;
+        this.store$.first().subscribe(listParams => prop = _get(listParams, property, otherwise));
+        return prop;
     }
 
-    onRequest(reset: boolean) { }
-    onSuccess(data: any, reset: boolean) { }
-    onError() { }
+    public isSubmitting = (): any[] => this.getSyncPropFromStore('submitting', false);
+    public getCurrentList = (): any[] => this.getSyncPropFromStore('list', []);
+    public getCurrentPage = (): number => this.getSyncPropFromStore('currentPage', 0);
+    public getLoadedPage = (): number => this.getSyncPropFromStore('loadedPage', 0);
+    public getTotalPages = (): number => this.getSyncPropFromStore('totalPages', 0);
+    public getPerPage = (): number => this.getSyncPropFromStore('perPage', 0);
 
-    public isSubmitting(): any[] {
-        let isSubmitting;
-        this.store$.first().subscribe(listParams => isSubmitting = _get(listParams, 'submitting', false));
-        return isSubmitting;
-    }
-
-    public getCurrentList(): any[] {
-        let currentList;
-        this.store$.first().subscribe(listParams => currentList = _get(listParams, 'list', []));
-        return currentList;
-    }
-
-    public getCurrentPage(): number {
-        let currentPage;
-        this.store$.first().subscribe(listParams => currentPage = _get(listParams, 'page', 0));
-        return currentPage;
-    }
-
-    public getTotalPages(): number {
-        let totalPages;
-        this.store$.first().subscribe(listParams => totalPages = _get(listParams, 'totalPages'));
-        return totalPages;
-    }
 
     public getQuery(): any {
-        return this.config.get(`[${this.type}].query`, {});
+        return Object.assign({
+            per_page: this.perPage,
+        }, this.config.get(`[${this.type}].query`, {}));
     }
 
     public getUniqueStoreKey(): string {
         return getUniqueStoreKey(this.type, this.getQuery())
     }
 
-    public fetch$(reset: boolean = false): Observable<any> {
-        this.onRequest(reset);
+    public doLoad(reset: boolean = false, cb = () => { }): void {
+        const loadedPage = this.getLoadedPage();
         const currentPage = this.getCurrentPage();
+        const totalPages = this.getTotalPages();
+        log('doLoad reset', reset);
+        log('doLoad currentPage', currentPage);
+        log('doLoad loadedPage', loadedPage);
+        log('doLoad totalPages', totalPages);
 
-        const nextPage = currentPage + 1;
-        const searchParams = Object.assign({
-            per_page: this.perPage,
-        }, this.getQuery(), {
-                page: nextPage,
+        if (currentPage < loadedPage) {
+            this.store.dispatch(actions.nextPage(this.type, this.getQuery()));
+            cb();
+        } else {
+            this.store.dispatch(actions.request(this.type, this.getQuery(), {
+                page: reset ? 1 : loadedPage + 1,
                 "_embed": true
-            });
-        const uRLSearchParams = new URLSearchParams();
-        Object.keys(searchParams).map((key) => {
-            uRLSearchParams.set(key, searchParams[key]);
-        });
-
-        debug(`doLoad ${this.type}:${this.options} ${searchParams.page}`, searchParams);
-        return this.service.getList({ search: uRLSearchParams })
-            .debounceTime(this.config.getApi('debounceTime', 400))
-            .timeout(this.config.getApi('timeout', 10000))
-            .retry(this.config.getApi('maxAttempt', 3) - 1)
-            .map((r) => {
-                this.shouldRetry = false;
-                const totalPages = parseInt(r.headers.get('x-wp-totalpages'));
-                const response = {
-                    page: nextPage,
-                    totalPages,
-                    totalItems: parseInt(r.headers.get('x-wp-total')),
-                    list: r.json()
-                };
-                this.page = nextPage;
-                this.enablePagination();
-                this.onSuccess(response, reset);
-                this.updateItemsToDisplay();
-                return response;
-            })
-            .catch(res => {
-                log("error");
-                this.shouldRetry = true;
-                this.disablePagination();
-                this.toast.show(this.translate.instant('error'));
-                this.onError();
-
-                return Observable.throw(res);
-            });
+            }, reset, cb));
+        }
     }
 
     enablePagination = () => this.isPaginationEnabled = true;
     disablePagination = () => this.isPaginationEnabled = false;
 
-    doLoad() {
-        this.fetch$()
-            .first()
-            .subscribe(() => log('doLoad success'));
-    }
-
     doRefresh(refresher: Refresher): void {
-        this.fetch$(true)
-            .first()
-            .subscribe(() => refresher.complete(), (error) => refresher.complete());
+        this.doLoad(true, () => refresher.complete());
     }
 
     doInfinite(infiniteScroll: InfiniteScroll): void {
-        const currentPage = this.getCurrentPage();
-        const totalPages = this.getTotalPages();
-        log('doInfinite');
-        log('doInfinite page', this.page);
-        log('doInfinite currentPage', currentPage);
-        log('doInfinite totalPages', totalPages);
-
-        if (this.page < currentPage) {
-            this.page += 1;
-            this.updateItemsToDisplay();
-            infiniteScroll.complete();
-        } else if (currentPage === totalPages) {
-            this.disablePagination();
-            infiniteScroll.complete();
-        } else {
-            this.fetch$().first().subscribe(({ totalPages, page }) => {
-                const isComplete = totalPages <= page;
-                infiniteScroll.complete();
-                isComplete ? this.disablePagination() : this.enablePagination();
-            }, (error) => infiniteScroll.complete());
-        }
-
+        this.doLoad(false, () => infiniteScroll.complete());
     }
 
     trackById = (index: number, item) => item.id;

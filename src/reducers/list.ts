@@ -9,9 +9,11 @@ export interface IListState {
     [key: string]: {
         error: boolean,
         submitting: boolean,
-        page: number;
+        currentPage: number;
+        loadedPage: number;
         totalPages: number;
         totalItems: number;
+        perPage: number;
         list: Array<number>
     }
 }
@@ -20,12 +22,14 @@ export const types = {
     REQUEST: 'LIST/REQUEST',
     SUCCESS: 'LIST/SUCCESS',
     ERROR: 'LIST/ERROR',
+    RESET_PAGE: 'LIST/RESET_PAGE',
+    NEXT_PAGE: 'LIST/NEXT_PAGE',
 }
 
 export const actions = {
-    request: (itemType, query, reset = false): Action => ({
+    request: (itemType, query, meta, reset = false, callback): Action => ({
         type: types.REQUEST,
-        payload: { itemType, query, reset }
+        payload: { itemType, query, meta, reset, callback }
     }),
     success: (itemType, query, response, reset = false): Action => ({
         type: types.SUCCESS,
@@ -35,12 +39,22 @@ export const actions = {
         type: types.ERROR,
         payload: { itemType, query }
     }),
+    nextPage: (itemType, query): Action => ({
+        type: types.NEXT_PAGE,
+        payload: { itemType, query }
+    }),
+    resetPage: (itemType, query): Action => ({
+        type: types.RESET_PAGE,
+        payload: { itemType, query }
+    }),
 };
 
 const defaultItem = {
     error: false,
     submitting: false,
-    page: 0,
+    loadedPage: 0,
+    currentPage: 1,
+    perPage: 0,
     totalPages: undefined,
     totalItems: undefined,
     list: []
@@ -61,17 +75,18 @@ export const listReducer: ActionReducer<Object> = (state: IListState = defaultSt
                 [key]: {
                     ...(state[key] || defaultItem),
                     submitting: true,
-                    page: reset ? 0 : _get(state, `[${key}].page`, 0)
+                    currentPage: reset ? 1 : _get(state, `[${key}].currentPage`, 1),
+                    loadedPage: reset ? 0 : _get(state, `[${key}].loadedPage`, 0),
                 }
             }
         }
 
         case types.SUCCESS: {
-            const { itemType, query, totalPages, totalItems, list = [], page = 0, reset = false } = payload;
+            const { itemType, query, totalPages, totalItems, list = [], loadedPage = 0, reset = false } = payload;
 
             const ids = list.map((item) => item.id);
             const key = getUniqueStoreKey(itemType, query);
-            if (state[key] && state[key].page === page) return state;
+            if (state[key] && state[key].loadedPage === loadedPage) return state;
 
             return {
                 ...state,
@@ -79,9 +94,10 @@ export const listReducer: ActionReducer<Object> = (state: IListState = defaultSt
                     ...(state[key] || defaultItem),
                     submitting: false,
                     error: false,
-                    page,
+                    currentPage: state[key].currentPage + 1,
+                    loadedPage,
                     totalPages,
-                    totalItems,
+                    perPage: query.per_page,
                     list: (reset || !state[key] ? defaultItem : state[key]).list.concat(ids)
                 }
             };
@@ -99,6 +115,32 @@ export const listReducer: ActionReducer<Object> = (state: IListState = defaultSt
                     error: true,
                 }
             }
+        }
+
+        case types.NEXT_PAGE: {
+            const { itemType, query } = payload;
+            const key = getUniqueStoreKey(itemType, query);
+            const currentPage = state[key].currentPage;
+            const totalPages = state[key].totalPages;
+
+            if (currentPage >= totalPages) return state;
+
+            return {
+                ...state,
+                [key]: { ...state[key], currentPage: currentPage + 1, }
+            }
+
+        }
+
+        case types.RESET_PAGE: {
+            const { itemType, query } = payload;
+            const key = getUniqueStoreKey(itemType, query);
+
+            return {
+                ...state,
+                [key]: !state[key] ? { ...defaultItem } : { ...state[key], currentPage: 1, }
+            }
+
         }
 
         case INIT: {

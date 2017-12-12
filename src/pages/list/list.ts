@@ -7,7 +7,7 @@ import _get from 'lodash/get';
 import _take from 'lodash/take';
 import _isObject from 'lodash/isObject';
 
-import { ListParent, IListPage, IListResult } from '../abstract/ListParent';
+import { ListParent, IListResult } from '../abstract/ListParent';
 import { actions } from '../../reducers/list';
 import { AppState } from '../../reducers';
 import { IAPIError } from '../../APIInterfaces';
@@ -22,7 +22,7 @@ import { IAPIError } from '../../APIInterfaces';
   selector: 'page-list',
   templateUrl: 'list.html'
 })
-export class ListPage extends ListParent implements IListPage {
+export class ListPage extends ListParent {
   title: string;
   @ViewChild(Content) content: Content;
 
@@ -36,49 +36,35 @@ export class ListPage extends ListParent implements IListPage {
   }
 
   ionViewDidLoad() {
+    super.ionViewDidLoad();
     this.title = this.getTitle();
-
     this.setStoreStream(this.store.select(state => state.list[this.getUniqueStoreKey()]));
     this.setIsLoadingStream(this.store.select(state => _get(state, `list[${this.getUniqueStoreKey()}].submitting`)));
+    this.setHasErrorStream(this.store.select(state => _get(state, `list[${this.getUniqueStoreKey()}].error`)));
+    this.setItemsToDisplayStream(Observable.combineLatest(
+      this.store.select(state => _get(state, `list[${this.getUniqueStoreKey()}].currentPage`)),
+      this.store.select(state => _get(state, `list[${this.getUniqueStoreKey()}].perPage`)),
+      (currentPage: number, perPage: number) => currentPage * perPage
+    ));
     this.setShowSpinnerStream(Observable.combineLatest(
       this.store$,
       this.isLoading$,
       (listState: any, isLoading: boolean) =>
         isLoading && !_get(listState, 'list', []).length
     ));
+    this.setIsPaginationEnableStream(Observable.combineLatest(
+      this.hasError$,
+      this.store.select(state => _get(state, `list[${this.getUniqueStoreKey()}].currentPage`)),
+      this.store.select(state => _get(state, `list[${this.getUniqueStoreKey()}].totalPages`)),
+      (hasError: boolean, currentPage: number, totalPages: number) => !hasError && currentPage <= totalPages
+    ))
     this.setStream(Observable.combineLatest(
       this.store$,
       this.store.select(state => state.items[this.type]),
       this.itemsToDisplay$,
       (listState: any, item = {}, itemsToDisplay) =>
         _take(_get(listState, 'list', []), itemsToDisplay).map(id => item[id])));
-    this.setService(this.wpApiCustom.getInstance(this.type));
-    this.doInit();
-  }
-
-  doInit(): void {
-    if (!this.getCurrentList().length && !this.isSubmitting()) {
-      this.doLoad();
-    } else {
-      this.updateItemsToDisplay(true);
-    }
-  }
-
-  onRequest(reset: boolean) {
-    this.store.dispatch(actions.request(this.type, this.getQuery(), reset));
-  }
-
-  onSuccess({ page, totalPages, totalItems, list }: IListResult, reset: boolean) {
-    this.store.dispatch(actions.success(this.type, this.getQuery(), {
-      page,
-      totalPages,
-      totalItems,
-      list
-    }, reset));
-  }
-
-  onError() {
-    this.store.dispatch(actions.error(this.type, this.getQuery()));
+    this.doLoad();
   }
 
   getTitle() {

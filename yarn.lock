@@ -214,6 +214,10 @@
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@ngrx/core/-/core-1.2.0.tgz#882b46abafa2e0e6d887cb71a1b2c2fa3e6d0dc6"
 
+"@ngrx/effects@2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-2.0.5.tgz#10986923b7193af9b08944e80c5a661ba93a7936"
+
 "@ngrx/store-devtools@^3.2.2":
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-3.2.4.tgz#2ce4d13bf34848a9e51ec87e3b125ed67b51e550"

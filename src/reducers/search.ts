@@ -2,28 +2,28 @@ import { ActionReducer, Action } from '@ngrx/store';
 import _kebabCase from 'lodash/kebabCase';
 import _get from 'lodash/get';
 
-import { IAPIError } from '../APIInterfaces';
 import { CLEAN_CACHE } from '../actions';
 
 export interface ISearchState {
     [key: string]: {
-        page: number;
         error: boolean,
         submitting: boolean,
+        loadedPage: number;
         totalPages: number;
-        totalItems: number;
-        list: Array<any>
+        perPage: number;
+        list: Array<number>
     }
 }
 
 const defaultItem = {
-    page: 0,
     error: false,
     submitting: false,
+    loadedPage: 0,
+    perPage: 0,
     totalPages: undefined,
-    totalItems: undefined,
     list: []
 };
+
 
 const defaultState = {};
 
@@ -34,9 +34,9 @@ export const types = {
 }
 
 export const actions = {
-    request: (searchTerm, itemType, query, reset = false): Action => ({
+    request: (searchTerm, itemType, query, meta, reset = false, callback): Action => ({
         type: types.REQUEST,
-        payload: { searchTerm, itemType, query, reset }
+        payload: { searchTerm, itemType, query, reset, meta, callback }
     }),
     success: (searchTerm, itemType, query, response, reset = false): Action => ({
         type: types.SUCCESS,
@@ -57,7 +57,7 @@ export const searchReducer: ActionReducer<Object> = (state: ISearchState = defau
 
     switch (action.type) {
         case types.REQUEST: {
-            const { searchTerm, itemType, query, reset = false } = payload;
+            const { searchTerm, itemType, reset = false } = payload;
             const key = getKey(itemType, searchTerm);
 
             return {
@@ -65,25 +65,28 @@ export const searchReducer: ActionReducer<Object> = (state: ISearchState = defau
                 [key]: {
                     ...(state[key] || defaultItem),
                     submitting: true,
-                    page: reset ? 0 : _get(state, `[${key}].page`, 0)
+                    loadedPage: reset ? 0 : _get(state, `[${key}].loadedPage`, 0)
                 }
             }
         }
 
         case types.SUCCESS: {
-            const { itemType, searchTerm, totalPages, totalItems, list = [], page = 0, reset = false } = payload;
+            const { itemType, query, searchTerm, totalPages, list = [], loadedPage = 0, reset = false } = payload;
             const ids = list.map((item) => item.id);
             const key = getKey(itemType, searchTerm);
-            return Object.assign({}, state, {
+
+            return {
+                ...state,
                 [key]: {
-                    page,
+                    ...(state[key] || defaultItem),
                     submitting: false,
                     error: false,
+                    loadedPage,
                     totalPages,
-                    totalItems,
+                    perPage: query.per_page,
                     list: (reset || !state[key] ? defaultItem : state[key]).list.concat(ids)
                 }
-            });
+            };
         }
 
         case types.ERROR: {

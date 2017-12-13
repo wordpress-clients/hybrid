@@ -4,7 +4,6 @@ import { NavController } from 'ionic-angular';
 import { AppearIn } from './../../../src/utils/animations';
 import { IListComponent } from './../../../src/components/interfaces';
 import { ListParentComponent } from './../../../src/components/ListParent';
-import { ListPage } from './../../../src/pages/list/list';
 
 /*
   Generated class for the ActorList component.

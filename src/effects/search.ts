@@ -5,13 +5,13 @@ import { Observable } from 'rxjs/Observable';
 import { WpApiCustom } from 'wp-api-angular';
 import debug from 'debug';
 
-import { types, actions } from '../reducers/list';
+import { types, actions } from '../reducers/search';
 import { Config } from '../providers/config';
 
-const log = debug('Effect:List');
+const log = debug('Effect:Search');
 
 @Injectable()
-export class ListEffects {
+export class SearchEffects {
     constructor(
         private actions$: Actions,
         private wpApiCustom: WpApiCustom,
@@ -21,7 +21,7 @@ export class ListEffects {
     @Effect() login$ = this.actions$
         .ofType(types.REQUEST)
         .map(action => { log('action', action); return action; })
-        .switchMap(({ payload: { itemType, query, meta, reset, callback } }) => {
+        .switchMap(({ payload: { searchTerm, itemType, query, meta, reset, callback } }) => {
             const uRLSearchParams = new URLSearchParams();
             const finalQuery = { ...query, ...meta };
             Object.keys(finalQuery).map((key) => {
@@ -45,12 +45,12 @@ export class ListEffects {
                         list: r.json()
                     };
                     callback();
-                    return actions.success(itemType, query, response, reset)
+                    return actions.success(searchTerm, itemType, query, response, reset)
                 })
                 .catch((res: any) => {
                     log("error", res);
                     callback();
-                    return Observable.of(actions.error(itemType, query));
+                    return Observable.of(actions.error(searchTerm, itemType, query));
                 });
         });
 }

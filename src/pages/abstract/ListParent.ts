@@ -5,25 +5,18 @@ import { InfiniteScroll, Refresher, NavParams } from 'ionic-angular';
 import { Injector, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import _get from 'lodash/get';
-import debug from 'debug';
 
 import { AppState } from '../../reducers';
-import { actions } from '../../reducers/list';
 import { Toast, Config } from './../../providers';
-import { IAPIError } from '../../APIInterfaces';
 import { getUniqueStoreKey } from '../../utils/list';
-
-const log = debug('List');
 
 export interface IListResult {
     page: number;
     totalPages: number;
-    totalItems: number;
     list: Array<any>;
 }
 
 export class ListParent {
-    // Injections
     config: Config;
     navParams: NavParams;
     toast: Toast;
@@ -52,6 +45,7 @@ export class ListParent {
         this.translate = injector.get(TranslateService, TranslateService);
     }
 
+    setType = (type: string) => this.type = type;
     setStream = (stream: Observable<any>) => this.stream$ = stream;
     setIsLoadingStream = (loading: Observable<any>) => this.isLoading$ = loading;
     setShowSpinnerStream = (showSpinner: Observable<any>) => this.showSpinner$ = showSpinner;
@@ -85,26 +79,10 @@ export class ListParent {
         return getUniqueStoreKey(this.type, this.getQuery())
     }
 
+    public resetPage = () => this.currentPage$.next(0);
     public nextPage = () => this.currentPage$.next(this.getCurrentPage() + 1);
 
-    public doLoad(reset: boolean = false, cb = () => this.nextPage()): void {
-        const loadedPage = this.getLoadedPage();
-        const currentPage = this.getCurrentPage();
-        const totalPages = this.getTotalPages();
-        log('doLoad reset', reset);
-        log('doLoad currentPage', currentPage);
-        log('doLoad loadedPage', loadedPage);
-        log('doLoad totalPages', totalPages);
-
-        if (currentPage < loadedPage) {
-            cb();
-        } else {
-            this.store.dispatch(actions.request(this.type, this.getQuery(), {
-                page: reset ? 1 : loadedPage + 1,
-                "_embed": true
-            }, reset, cb));
-        }
-    }
+    public doLoad(reset: boolean = false, cb = () => this.nextPage()): void { }
 
     doRefresh(refresher: Refresher): void {
         this.doLoad(true, () => {

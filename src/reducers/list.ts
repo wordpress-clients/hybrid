@@ -2,7 +2,6 @@ import { ActionReducer, Action } from '@ngrx/store';
 import _get from 'lodash/get';
 
 import { INIT, CLEAN_CACHE } from '../actions';
-import { IAPIError } from '../APIInterfaces';
 import { getUniqueStoreKey } from '../utils/list';
 
 export interface IListState {
@@ -11,7 +10,6 @@ export interface IListState {
         submitting: boolean,
         loadedPage: number;
         totalPages: number;
-        totalItems: number;
         perPage: number;
         list: Array<number>
     }
@@ -46,7 +44,6 @@ const defaultItem = {
     loadedPage: 0,
     perPage: 0,
     totalPages: undefined,
-    totalItems: undefined,
     list: []
 };
 
@@ -71,7 +68,7 @@ export const listReducer: ActionReducer<Object> = (state: IListState = defaultSt
         }
 
         case types.SUCCESS: {
-            const { itemType, query, totalPages, totalItems, list = [], loadedPage = 0, reset = false } = payload;
+            const { itemType, query, totalPages, list = [], loadedPage = 0, reset = false } = payload;
 
             const ids = list.map((item) => item.id);
             const key = getUniqueStoreKey(itemType, query);

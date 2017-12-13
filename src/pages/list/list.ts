@@ -5,13 +5,13 @@ import { WpApiCustom } from 'wp-api-angular';
 import { Store } from '@ngrx/store';
 import _get from 'lodash/get';
 import _take from 'lodash/take';
-import _isObject from 'lodash/isObject';
+import debug from 'debug';
 
-import { ListParent, IListResult } from '../abstract/ListParent';
+import { ListParent } from '../abstract/ListParent';
 import { actions } from '../../reducers/list';
 import { AppState } from '../../reducers';
-import { IAPIError } from '../../APIInterfaces';
 
+const log = debug('List');
 /*
   Generated class for the Pages page.
 
@@ -64,6 +64,25 @@ export class ListPage extends ListParent {
       (listState: any, item = {}, itemsToDisplay) =>
         _take(_get(listState, 'list', []), itemsToDisplay).map(id => item[id])));
     this.doLoad();
+  }
+
+  public doLoad(reset: boolean = false, cb = () => this.nextPage()): void {
+    const loadedPage = this.getLoadedPage();
+    const currentPage = this.getCurrentPage();
+    const totalPages = this.getTotalPages();
+    log('doLoad reset', reset);
+    log('doLoad currentPage', currentPage);
+    log('doLoad loadedPage', loadedPage);
+    log('doLoad totalPages', totalPages);
+
+    if (currentPage < loadedPage) {
+      cb();
+    } else {
+      this.store.dispatch(actions.request(this.type, this.getQuery(), {
+        page: reset ? 1 : loadedPage + 1,
+        "_embed": true
+      }, reset, cb));
+    }
   }
 
   getTitle() {

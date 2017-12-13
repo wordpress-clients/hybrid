@@ -1,10 +1,10 @@
 import { NgModule, ErrorHandler, APP_INITIALIZER, Injector } from '@angular/core';
 import { Http, HttpModule } from '@angular/http';
-import { CommonModule } from '@angular/common';
 import { LOCATION_INITIALIZED } from '@angular/common';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { EffectsModule } from '@ngrx/effects';
 
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Push } from '@ionic-native/push';
@@ -22,6 +22,7 @@ import { PAGES } from './pages/';
 import { COMPONENTS } from './components/';
 import { PIPES } from './pipes/';
 import { PROVIDERS, Config, Storage as OwnStorage, } from './providers/';
+import { ListEffects, SearchEffects } from './effects/';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: Http) {
@@ -51,7 +52,7 @@ export function appInitializerTranslateFactory(translate: TranslateService, inje
             translate.setDefaultLang(defaultLanguage);
             translate.use(browserLanguage || defaultLanguage).subscribe(() => {
                 console.info(`Successfully initialized '${browserLanguage || defaultLanguage}' language.'`);
-            }, err => {
+            }, () => {
                 console.error(`Problem with '${browserLanguage || defaultLanguage}' language initialization.'`);
             }, () => {
                 resolve(null);
@@ -79,6 +80,8 @@ export function appInitializerTranslateFactory(translate: TranslateService, inje
         }),
         ServiceWorkerModule,
         LazyLoadImageModule,
+        EffectsModule.run(ListEffects),
+        EffectsModule.run(SearchEffects),
     ],
     declarations: [...COMPONENTS, ...PAGES, ...PIPES],
     entryComponents: [...COMPONENTS, ...PAGES],

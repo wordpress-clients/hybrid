@@ -3,21 +3,20 @@ import {
   Component, Injector,
   ComponentFactoryResolver, ViewChild
 } from '@angular/core';
-import { NavController, Content } from 'ionic-angular';
-import { WpApiCustom } from 'wp-api-angular';
+import { Content } from 'ionic-angular';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Store } from '@ngrx/store';
 import _get from 'lodash/get';
 import _take from 'lodash/take';
-import _isObject from 'lodash/isObject';
 import _throttle from 'lodash/throttle';
+import debug from 'debug';
 
-import { ListParent, IListResult, IListPage } from '../abstract/ListParent';
-import { actions } from '../../reducers/search';
+import { ListParent } from '../abstract/ListParent';
 import { Config } from './../../providers';
 import { AppState } from '../../reducers';
-import { getKey } from '../../reducers/search';
-import { IAPIError } from '../../APIInterfaces';
-import { MenuMapping } from '../../../config/pages/';
+import { getKey, actions, ISearchState } from '../../reducers/search';
+
+const log = debug('Search');
 
 /*
   Generated class for the Search page.
@@ -29,28 +28,64 @@ import { MenuMapping } from '../../../config/pages/';
   selector: 'page-search',
   templateUrl: 'search.html'
 })
-export class SearchPage extends ListParent implements IListPage {
+export class SearchPage extends ListParent {
   @ViewChild(Content) content: Content;
   types: string[];
   searchTerm: string;
-  searchTermSubject = new Subject<string>();
+  searchTermSubject = new BehaviorSubject<string>('');
   typeSubject = new Subject<string>();
   fetchSubscription: Subscription;
 
   constructor(
     public inject: Injector,
     public componentFactoryResolver: ComponentFactoryResolver,
-    private navCtrl: NavController,
-    private store: Store<AppState>,
-    private wpApiCustom: WpApiCustom,
+    public store: Store<AppState>,
     public config: Config,
   ) {
     super(inject);
     this.types = this.config.getSearch('types', ['posts']);
 
     this.setType(this.types[0]);
-    this.setStoreStream(this.store.select(state => state.search[`${getKey(this.type, this.searchTerm)}`]));
-    this.setIsLoadingStream(this.store.select(state => _get(state, `search[${getKey(this.type, this.searchTerm)}].submitting`)));
+    this.setStoreStream(this.store.select(state => state.search[`${getKey(this.type, '')}`]));
+
+    this.fetchSubscription = Observable.combineLatest(
+      this.searchTermSubject,
+      this.typeSubject,
+      (searchTerm: string, type: string) => {
+        this.setType(type);
+        this.setStoreStream(this.store.select(state => state.search[`${getKey(this.type, searchTerm)}`]));
+      })
+      .debounceTime(300) // wait 300ms after each keystroke before considering the term
+      .map(() => this.doLoad())
+      .subscribe(() => { });
+
+    this.setHasErrorStream(Observable.combineLatest(
+      this.searchTermSubject,
+      this.typeSubject,
+      this.store.select(state => state.search),
+      (searchTerm: string, type: string, searchState: ISearchState) => {
+        return _get(searchState, `[${getKey(type, searchTerm)}].error`, false);
+      }
+    ));
+    this.setIsLoadingStream(Observable.combineLatest(
+      this.searchTermSubject,
+      this.typeSubject,
+      this.store.select(state => state.search),
+      (searchTerm: string, type: string, searchState: ISearchState) => {
+        return _get(searchState, `[${getKey(type, searchTerm)}].submitting`, false);
+      }
+    ));
+    this.setIsPaginationEnableStream(Observable.combineLatest(
+      this.searchTermSubject,
+      this.typeSubject,
+      this.hasError$,
+      this.currentPage$,
+      this.store.select(state => state.search),
+      (searchTerm: string, type: string, hasError: boolean, currentPage: number, searchState: ISearchState) => {
+        const totalPages = _get(searchState, `[${getKey(type, searchTerm)}].totalPages`, 0)
+        return !hasError && currentPage <= totalPages;
+      }
+    ));
     this.setShowSpinnerStream(Observable.combineLatest(
       this.searchTermSubject,
       this.store$,
@@ -58,20 +93,16 @@ export class SearchPage extends ListParent implements IListPage {
       (searchTerm: string, listState: any, isLoading: boolean = false) =>
         searchTerm !== '' && isLoading && !_get(listState, 'list', []).length
     ));
-    this.setService(this.wpApiCustom.getInstance(this.type));
-
-    this.fetchSubscription = Observable.combineLatest(
+    this.setItemsToDisplayStream(Observable.combineLatest(
       this.searchTermSubject,
       this.typeSubject,
-      (searchTerm: string, type: string) => {
-        this.setType(type);
-        this.setService(this.wpApiCustom.getInstance(type));
-        this.setStoreStream(this.store.select(state => state.search[getKey(type, searchTerm)]));
-      })
-      .debounceTime(300) // wait 300ms after each keystroke before considering the term
-      .switchMap(() => this.doInit())
-      .subscribe(() => { })
-
+      this.currentPage$,
+      this.store.select(state => state.search),
+      (searchTerm: string, type: string, currentPage: number, searchState: ISearchState) => {
+        const perPage = _get(searchState, `[${getKey(type, searchTerm)}].perPage`, 0)
+        return currentPage * perPage;
+      }
+    ));
     this.setStream(
       Observable.combineLatest(
         this.searchTermSubject,
@@ -79,21 +110,31 @@ export class SearchPage extends ListParent implements IListPage {
         this.store.select(state => state.search),
         this.store.select(state => state.items),
         this.itemsToDisplay$,
-        (searchTerm: string, type: string, searchState, items = {}, itemsToDisplay) => {
+        (searchTerm: string, type: string, searchState: ISearchState, items = {}, itemsToDisplay) => {
           const item = items[type]
           return _take(_get(searchState, `[${getKey(type, searchTerm)}].list`, []), itemsToDisplay).map(id => item[id])
         })
     )
   }
 
-  doInit(): Observable<any> {
-    this.enablePagination();
-    const currentList = this.getCurrentList();
-    if (!currentList.length && this.searchTerm) {
-      return this.fetch$();
+  public doLoad(reset: boolean = false, cb = () => this.nextPage()): void {
+    if (!this.searchTerm) return;
+
+    const loadedPage = this.getLoadedPage();
+    const currentPage = this.getCurrentPage();
+    const totalPages = this.getTotalPages();
+    log('doLoad reset', reset);
+    log('doLoad currentPage', currentPage);
+    log('doLoad loadedPage', loadedPage);
+    log('doLoad totalPages', totalPages);
+
+    if (currentPage < loadedPage) {
+      cb();
     } else {
-      this.updateItemsToDisplay();
-      return Observable.of<any>([]);
+      this.store.dispatch(actions.request(this.searchTerm, this.type, this.getQuery(), {
+        page: reset ? 1 : loadedPage + 1,
+        "_embed": true
+      }, reset, cb));
     }
   }
 
@@ -111,36 +152,18 @@ export class SearchPage extends ListParent implements IListPage {
 
   scrollToTop = () => _throttle(this.content.scrollToTop, 500, { leading: true, trailing: false })
 
-  onTypeChange(e) {
+  onTypeChange() {
     this.typeSubject.next(this.type);
-    this.updateItemsToDisplay(true);
+    this.resetPage();
     this.scrollToTop();
   }
 
   ionViewDidLoad() {
-    this.searchTermSubject.next("");
     this.typeSubject.next(this.type);
-    this.doInit();
+    this.doLoad();
   }
 
   ionViewWillUnload() {
     this.fetchSubscription.unsubscribe();
-  }
-
-  onRequest(reset: boolean) {
-    this.store.dispatch(actions.request(this.searchTerm, this.type, this.getQuery(), reset));
-  }
-
-  onSuccess({ page, totalPages, totalItems, list }: IListResult, reset: boolean) {
-    this.store.dispatch(actions.success(this.searchTerm, this.type, this.getQuery(), {
-      page,
-      totalPages,
-      totalItems,
-      list
-    }, reset));
-  }
-
-  onError() {
-    this.store.dispatch(actions.error(this.searchTerm, this.type, this.getQuery()));
   }
 }

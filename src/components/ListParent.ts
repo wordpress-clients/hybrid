@@ -1,10 +1,8 @@
 import { NavController, Content } from 'ionic-angular';
 import { ChangeDetectorRef } from '@angular/core';
-import _isEmpty from 'lodash/isEmpty';
 import debug from 'debug';
 
 import { IListComponent } from './interfaces';
-import { ItemPage } from './../pages/item/item';
 import { MenuMapping } from './../../config/pages/';
 import { getNavParamsFromItem } from '../utils/item';
 
@@ -24,9 +22,6 @@ export class ListParentComponent implements IListComponent {
 
     openPage = (e, item) => {
         let params = getNavParamsFromItem(this.type, item);
-        // if (!_isEmpty(this.options)) {
-        //     params.options = JSON.stringify(this.options);
-        // }
         log('about to open', `${this.type}Item`, params)
         this.navCtrl.push(MenuMapping[`${this.type}Item`], params)
     }

@@ -29,14 +29,26 @@
   <list
     [list]="stream$ | async"
     [type]="type"
-    [options]="options"
     emptyIcon="search"
+    [content]="content"
   ></list>
-  <button *ngIf="shouldRetry" ion-button color="light" full (click)="doLoad()">
-    {{ 'RETRY' | translate }}
-  </button>
+  <empty-list
+    *ngIf="!(searchTermSubject | async)"
+    icon="search"
+    [text]="'SEARCH_START' | translate"
+   ></empty-list>
+  <button
+    *ngIf="hasError$ | async"
+    class="retry-button"
+    ion-button
+    full
+    (click)="doLoad()"
+    [disabled]="isLoading$ | async"
+  >
+  {{ 'RETRY' | translate }}
+</button>
 
-  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" [enabled]="isPaginationEnabled">
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" [enabled]="isPaginationEnabled$ | async">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>

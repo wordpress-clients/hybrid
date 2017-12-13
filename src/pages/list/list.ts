@@ -28,21 +28,20 @@ export class ListPage extends ListParent {
 
   constructor(
     public inject: Injector,
-    private navCtrl: NavController,
-    private store: Store<AppState>,
-    private wpApiCustom: WpApiCustom,
+    public navCtrl: NavController,
+    public store: Store<AppState>,
+    public wpApiCustom: WpApiCustom,
   ) {
     super(inject);
   }
 
   ionViewDidLoad() {
-    super.ionViewDidLoad();
     this.title = this.getTitle();
     this.setStoreStream(this.store.select(state => state.list[this.getUniqueStoreKey()]));
     this.setIsLoadingStream(this.store.select(state => _get(state, `list[${this.getUniqueStoreKey()}].submitting`)));
     this.setHasErrorStream(this.store.select(state => _get(state, `list[${this.getUniqueStoreKey()}].error`)));
     this.setItemsToDisplayStream(Observable.combineLatest(
-      this.store.select(state => _get(state, `list[${this.getUniqueStoreKey()}].currentPage`)),
+      this.currentPage$,
       this.store.select(state => _get(state, `list[${this.getUniqueStoreKey()}].perPage`)),
       (currentPage: number, perPage: number) => currentPage * perPage
     ));
@@ -54,7 +53,7 @@ export class ListPage extends ListParent {
     ));
     this.setIsPaginationEnableStream(Observable.combineLatest(
       this.hasError$,
-      this.store.select(state => _get(state, `list[${this.getUniqueStoreKey()}].currentPage`)),
+      this.currentPage$,
       this.store.select(state => _get(state, `list[${this.getUniqueStoreKey()}].totalPages`)),
       (hasError: boolean, currentPage: number, totalPages: number) => !hasError && currentPage <= totalPages
     ))

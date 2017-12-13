@@ -9,7 +9,6 @@ export interface IListState {
     [key: string]: {
         error: boolean,
         submitting: boolean,
-        currentPage: number;
         loadedPage: number;
         totalPages: number;
         totalItems: number;
@@ -39,21 +38,12 @@ export const actions = {
         type: types.ERROR,
         payload: { itemType, query }
     }),
-    nextPage: (itemType, query): Action => ({
-        type: types.NEXT_PAGE,
-        payload: { itemType, query }
-    }),
-    resetPage: (itemType, query): Action => ({
-        type: types.RESET_PAGE,
-        payload: { itemType, query }
-    }),
 };
 
 const defaultItem = {
     error: false,
     submitting: false,
     loadedPage: 0,
-    currentPage: 1,
     perPage: 0,
     totalPages: undefined,
     totalItems: undefined,
@@ -75,7 +65,6 @@ export const listReducer: ActionReducer<Object> = (state: IListState = defaultSt
                 [key]: {
                     ...(state[key] || defaultItem),
                     submitting: true,
-                    currentPage: reset ? 1 : _get(state, `[${key}].currentPage`, 1),
                     loadedPage: reset ? 0 : _get(state, `[${key}].loadedPage`, 0),
                 }
             }
@@ -94,7 +83,6 @@ export const listReducer: ActionReducer<Object> = (state: IListState = defaultSt
                     ...(state[key] || defaultItem),
                     submitting: false,
                     error: false,
-                    currentPage: state[key].currentPage + 1,
                     loadedPage,
                     totalPages,
                     perPage: query.per_page,
@@ -115,32 +103,6 @@ export const listReducer: ActionReducer<Object> = (state: IListState = defaultSt
                     error: true,
                 }
             }
-        }
-
-        case types.NEXT_PAGE: {
-            const { itemType, query } = payload;
-            const key = getUniqueStoreKey(itemType, query);
-            const currentPage = state[key].currentPage;
-            const totalPages = state[key].totalPages;
-
-            if (currentPage >= totalPages) return state;
-
-            return {
-                ...state,
-                [key]: { ...state[key], currentPage: currentPage + 1, }
-            }
-
-        }
-
-        case types.RESET_PAGE: {
-            const { itemType, query } = payload;
-            const key = getUniqueStoreKey(itemType, query);
-
-            return {
-                ...state,
-                [key]: !state[key] ? { ...defaultItem } : { ...state[key], currentPage: 1, }
-            }
-
         }
 
         case INIT: {

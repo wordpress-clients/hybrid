@@ -19,7 +19,6 @@ export class ListEffects {
     ) { }
 
     @Effect() login$ = this.actions$
-        // Listen for the 'LOGIN' action
         .ofType(types.REQUEST)
         .map(action => { log('action', action); return action; })
         .switchMap(({ payload: { itemType, query, meta, reset, callback } }) => {
@@ -39,7 +38,6 @@ export class ListEffects {
                 .retry(this.config.getApi('maxAttempt', 3) - 1)
                 .map((r) => {
                     log("success");
-                    // this.shouldRetry = false;
                     const totalPages = parseInt(r.headers.get('x-wp-totalpages'));
                     const response = {
                         loadedPage: finalQuery.page,
@@ -47,22 +45,13 @@ export class ListEffects {
                         totalItems: parseInt(r.headers.get('x-wp-total')),
                         list: r.json()
                     };
-                    // this.page = nextPage;
-                    // this.enablePagination();
-                    // this.onSuccess(response, reset);
-                    // this.updateItemsToDisplay();
                     callback();
                     return actions.success(itemType, query, response, reset)
                 })
                 .catch((res: any) => {
                     log("error", res);
-                    // this.shouldRetry = true;
-                    // this.disablePagination();
-                    // this.toast.show(this.translate.instant('error'));
-                    // this.onError();
                     callback();
                     return Observable.of(actions.error(itemType, query));
-                    // return Observable.throw(res);
                 });
         });
 }

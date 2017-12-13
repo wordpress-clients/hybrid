@@ -50,8 +50,6 @@ export class WPHC {
       const { page, params } = this.config.get('defaultPage', {});
       log('Ready');
 
-      this.storage.run();
-
       if (!location.hash && page && MenuMapping[page]) { // redirect to default page
         this.nav.setRoot(MenuMapping[page], params);
       }
@@ -60,9 +58,10 @@ export class WPHC {
         appNode.style = `zoom: ${0.8 + (0.1 * params.zoom)}`
       }).subscribe();
 
-      pushNotif.init();
-      swProvider.init();
-      native.init();
+      this.pushNotif.init();
+      this.swProvider.init();
+      this.native.init();
+      this.storage.start();
       this.splashScreen.hide();
     });
   }

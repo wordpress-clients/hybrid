@@ -94,6 +94,9 @@ metas:
     twitterSite: ''
     twitterCreator: '' # e.g @julienrenaux
 
+storage:
+    enabled: true
+    pagesToStore: 1
 
 ###
  NATIVE SECTION

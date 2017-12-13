@@ -5,14 +5,16 @@ import {
 } from '../actions';
 
 export interface IBookmarkState {
-    id: number;
-    type: String;
-    timestamp: number;
+    [key: string]: {
+        id: number;
+        type: String;
+        timestamp: number;
+    }
 }
 
 export const DEFAULT_STATE = {};
 
-export const bookmarksReducer: ActionReducer<Object> = (state: Object = DEFAULT_STATE, action: Action) => {
+export const bookmarksReducer: ActionReducer<Object> = (state: IBookmarkState = DEFAULT_STATE, action: Action) => {
     const payload = action.payload || {};
 
     switch (action.type) {
@@ -43,7 +45,7 @@ export const bookmarksReducer: ActionReducer<Object> = (state: Object = DEFAULT_
 
         case CLEAN_CACHE: {
             return DEFAULT_STATE;
-        }    
+        }
 
         default:
             return state;

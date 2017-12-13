@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ListPage } from './list';
-import { ItemPostsPage } from '../item/item-post';
 
 @Component({
     selector: 'page-tag-list',

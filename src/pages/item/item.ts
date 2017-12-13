@@ -1,6 +1,5 @@
 import { Component, Injector } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { WpApiPages, WpApiPosts, WpApiCustom } from 'wp-api-angular';
+import { WpApiCustom } from 'wp-api-angular';
 import { Store } from '@ngrx/store';
 import _get from 'lodash/get';
 

@@ -43,7 +43,7 @@ export class ToolbarComponent {
     this.isBookmarked$ = this.store.select((state: AppState) => {
       return Object.keys(state.bookmarks).indexOf(this.bookmarkId) > -1;
     });
-    this.isMobile = platform.is('mobile') || (!this.shareMessage && !this.shareSubject);
+    this.isMobile = this.platform.is('mobile') || (!this.shareMessage && !this.shareSubject);
   }
 
   private openTaxonomy(title: string, term: string, list: Array<Object>, postType: string) {

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Storage as IonicStorage } from '@ionic/storage';
 import { Store } from '@ngrx/store';
-import debug from 'debug';
+// import debug from 'debug';
 
 import { AppState } from './../reducers';
 import { INIT } from './../actions';
 
-const log = debug('Storage');
+// const log = debug('Storage');
 
 @Injectable()
 export class Storage {

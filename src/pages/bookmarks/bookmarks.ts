@@ -8,9 +8,6 @@ import debug from 'debug';
 
 import { removeBookmark, removeBookmarks } from '../../actions';
 import { AppState } from '../../reducers';
-import { ItemPage } from './../item/item';
-import { ItemPostsPage } from './../item/item-post';
-import { ItemPagesPage } from './../item/item-page';
 import { getNavParamsFromItem } from '../../utils/item';
 import { MenuMapping } from '../../../config/pages/';
 

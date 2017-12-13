@@ -1,4 +1,3 @@
-import { NavController } from 'ionic-angular';
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 // import { MenuMapping } from './../../../config/pages/';
@@ -20,9 +19,7 @@ export class AuthorComponent {
   @Input() link: Boolean;
   @Input() date: String;
 
-  constructor(
-    private navCtrl: NavController
-  ) {
+  constructor() {
   }
 
   goToAuthorPage(e) {

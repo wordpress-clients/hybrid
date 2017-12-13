@@ -15,6 +15,6 @@ export class MenuComponent {
   constructor(
     private menu: Menu
   ) {
-    this.list = menu.getRaw();
+    this.list = this.menu.getRaw();
   }
 }

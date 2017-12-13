@@ -6,8 +6,6 @@ import { Injector } from '@angular/core';
 import debug from 'debug';
 
 import { Toast, Config } from './../../providers';
-import { DeepLinkerLnks } from '../../../config/pages/';
-import { getNavParamsFromItem } from '../../utils/item';
 
 const log = debug('ItemPage');
 

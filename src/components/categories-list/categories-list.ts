@@ -4,7 +4,6 @@ import { NavController } from 'ionic-angular';
 import { AppearIn } from './../../utils/animations';
 import { IListComponent } from './../interfaces';
 import { ListParentComponent } from './../ListParent';
-import { ListPage } from './../../pages/list/list';
 import { ListCategoryPage } from './../../pages/list/list-category';
 
 /*

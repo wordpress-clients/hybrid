@@ -4,6 +4,7 @@ $font-path: "../assets/fonts";
 
 @import "ionic.globals";
 
+@import "../../config/config.scss";
 
 // Shared Variables
 // --------------------------------------------------
@@ -33,7 +34,7 @@ $colors: (
   danger:     $palette-danger-color,
   light:      $palette-light-color,
   dark:       $palette-dark-color
-);
+) !default;
 
 
 // App iOS Variables
@@ -142,5 +143,3 @@ $toolbar-button-active-color: color($colors, primary) !default;
 $author-border-top: 1px solid $gray-lighter !default;
 $author-border-bottom: 1px solid $gray-lighter !default;
 $author-bg-color: white !default;
-
-@import "../../config/config.scss";

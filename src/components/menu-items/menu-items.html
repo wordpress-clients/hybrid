@@ -14,7 +14,7 @@
         <ion-icon [name]="item.icon" item-left></ion-icon>
         {{ item.trans | translate }}
       </ion-item>
-      <ion-item *ngSwitchCase="'external'" menuClose>
+      <ion-item *ngSwitchCase="'external'" menuClose (click)="doExternalClick($event, item)">
         <ion-icon [name]="item.icon" item-left></ion-icon>
         {{ item.trans | translate }}
       </ion-item>

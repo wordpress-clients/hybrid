@@ -1,4 +1,7 @@
+<a name="3.0.0.alpha01"></a>
+### 3.0.0-alpha02 (2017-12-19)
 
+Fix unvalid version name
 
 <a name="3.0.0.alpha01"></a>
 ### 3.0.0.alpha01 (2017-12-19)

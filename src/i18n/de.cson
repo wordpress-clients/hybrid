@@ -16,48 +16,44 @@ PAGES: "Pages"
 POSTS: "Posts"
 AUTHORS: "Autoren"
 SEARCH: "Suche"
+SEARCH_START: "Type a keyword"
 SOCIAL_NETWORKS: "Soziale Netzwerke"
 CATEGORIES: "Kategorien"
 SETTINGS: "Einstellungen"
+ZOOM: "Zoom"
+FEATURED: "Hervorgehoben"
+OPEN_IN_BROWSER: "Im Browser öffnen"
+ABOUT: "Über"
+COMMENTS: "Kommentare"
+
 CUSTOM_POSTS: "Custom posts"
 CUSTOM_TAXO: "Custom Taxonomy"
 CUSTOM_TAXO_TITLE: "{{term}}: {{name}}"
+
 PUSH_NOTIFS: "Push notifications"
 PUSH_NOTIF_TITLE: "Neue Inhalte!"
 PUSH_NOTIF_TEXT: "Neu! Seite/Beitrag: '{{postTitle}}' wurde in {{appTitle}} veröffentlich, willst du es dir jetzt ansehen?"
+
 BOOKMARKS: "Lesenzeichen"
 BOOKMARKS_EMPTY: "Bisher noch nichts gespeichert!"
 BOOKMARK_ADDED : "Lesezeichen gespeichert!"
 BOOKMARK_REMOVED: "Lesezeichen gelöscht!"
-ZOOM: "Zoom"
+
 CACHE_CLEAR: "Clear cache"
+CACHE_CLEAR_PROMPT: "This cannot be undone!"
 CACHE_CLEARED: "Cache cleared"
-"tags":
-    "title": "Tags"
-"tag":
-    "title": "Tag: {{name}}"
-"categories":
-    "title": "Kategorien"
-"category":
-    "title": "Kategorie: {{name}}"
-"home":
-    "title": "Startseite"
-"search":
-    "inputPlaceholder": "Suche"
-    "title": "Suche"
-    "titleQuery": "Suche: {{query}}"
+
+TITLE_TAGS: "Tags"
+TITLE_TAG: "Tag: {{name}}"
+TITLE_CATEGORIES: "Kategorien"
+TITLE_CATEGORY: "Kategorie: {{name}}"
+TITLE_HOME: "Startseite"
+TITLE_SEARCH: "Suche"
+TITLE_PAGES: "Pages"
+TITLE_POSTS: "Posts"
+TITLE_USERS: "Autoren"
+TITLE_USER: "Autor"
+TITLE_USER_POSTS: "Autor: {{name}}"
+
 SHARE_SUCCESS: "Geteilt!"
 SHARE_ERROR: "Sharing failed"
-AUTHORS: "Autoren"
-AUTHOR: "Autor"
-AUTHOR_TITLE: "Autor: {{name}}"
-"pages":
-    "title": "Pages"
-"posts":
-    "title": "Posts"
-    "featured": "Hervorgehoben"
-"post":
-    "comments": "Kommentare"
-    "openInBrowser": "Im Browser öffnen"
-"about":
-    "title": "Über"

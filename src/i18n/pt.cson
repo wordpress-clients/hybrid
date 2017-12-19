@@ -8,56 +8,51 @@ ATTEMPT_TO_CONNECT: "Tentativa de conexão {{attempt}} de {{attemptMax}}."
 OK: "Ok"
 YES: "Sim"
 NO: "Não"
+EMPTY_LIST: "There is nothing here!"
 MENU: "Menu"
-HOME: "Início"
 TAGS: "Etiquetas"
 PAGES: "Páginas"
 POSTS: "Posts"
 AUTHORS: "Autores"
 SEARCH: "Buscar"
+SEARCH_START: "Type a keyword"
 SOCIAL_NETWORKS: "Redes Sociais"
 CATEGORIES: "Categorias"
 SETTINGS: "Configurações"
+ZOOM: "Zoom"
+FEATURED: "Em destaque"
+OPEN_IN_BROWSER: "Abrir no navegador"
+ABOUT: "Sobre"
+COMMENTS: "Comentários"
+
 CUSTOM_POSTS: "Posts customizados"
 CUSTOM_TAXO: "Taxonomia customizada"
 CUSTOM_TAXO_TITLE: "{{term}}: {{name}}"
+
 PUSH_NOTIFS: "Push notifications"
 PUSH_NOTIF_TITLE: "Nova publicação!"
 PUSH_NOTIF_TEXT: "Novo artigo: '{{postTitle}}' em {{appTitle}}, quer visualizar?"
+
 BOOKMARKS: "Favoritos"
 BOOKMARKS_EMPTY: "Não há nada salvo!"
 BOOKMARK_ADDED: "Adicionado aos favoritos!"
 BOOKMARK_REMOVED: "Eliminado dos favoritos!"
-ZOOM: "Zoom"
+
 CACHE_CLEAR: "Clear cache"
+CACHE_CLEAR_PROMPT: "This cannot be undone!"
 CACHE_CLEARED: "Cache cleared"
-"tags": 
-    "title": "Etiquetas"
-"tag":
-    "title": "Etiqueta: {{name}}"
-"categories": 
-    "title": "Categorias"
-"category":
-    "title": "Categoria {{name}}"
-"home": 
-    "title": "Início"
-"search":
-    "inputPlaceholder": "Buscar"
-    "title": "Buscar",
-    "titleQuery": "Buscar: {{query}}"
+
+TITLE_TAGS: "Etiquetas"
+TITLE_TAG: "Etiqueta: {{name}}"
+TITLE_CATEGORIES: "Categorias"
+TITLE_CATEGORY: "Categoria: {{name}}"
+TITLE_HOME: "Início"
+TITLE_SEARCH: "Buscar"
+TITLE_PAGES: "Páginas"
+TITLE_POSTS: "Posts"
+TITLE_USERS: "Autores"
+TITLE_USER: "Autor"
+TITLE_USER_POSTS: "Autor: {{name}}"
+
 SHARE_SUCCESS: "Compartilhado!"
 SHARE_ERROR: "Sharing failed"
-AUTHORS: "Autores"
-AUTHOR: "Autor"
-AUTHOR_TITLE: "Autor: {{name}}"
-"pages":
-    "title": "Páginas"
-"posts": 
-    "title": "Início"
-    "empty": "Não encontrou novas publicações!"
-    "featured": "Em destaque"
-"post": 
-    "comments": "Comentários"
-    "openInBrowser": "Abrir no navegador"
-"about": 
-    "title": "Sobre"

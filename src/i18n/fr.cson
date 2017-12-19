@@ -10,54 +10,49 @@ YES: "Oui"
 NO: "Non"
 EMPTY_LIST: "La liste est vide!"
 MENU: "Menu"
-HOME: "Accueil"
 TAGS: "Tags"
 PAGES: "Pages"
 POSTS: "Articles"
 AUTHORS: "Auteurs"
 SEARCH: "Chercher"
+SEARCH_START: "Type a keyword"
 SOCIAL_NETWORKS: "Réseaux sociaux"
 CATEGORIES: "Categories"
 SETTINGS: "Paramètres"
+ZOOM: "Zoom"
+FEATURED: "A la Une"
+OPEN_IN_BROWSER: "Ouvrir dans un navigateur"
+ABOUT: "A propos"
+COMMENTS: "Commentaires"
+
 CUSTOM_POSTS: "Custom posts"
 CUSTOM_TAXO: "Custom Taxonomy"
 CUSTOM_TAXO_TITLE: "{{term}}: {{name}}"
+
 PUSH_NOTIFS: "Push notifications"
 PUSH_NOTIF_TITLE: "Nouveau contenu!"
 PUSH_NOTIF_TEXT: "Un nouvel Article/Page '{{postTitle}}' vient d'être publié sur {{appTitle}}, voulez-vous le consulter?"
+
 BOOKMARKS: "Signets"
 BOOKMARKS_EMPTY: "Aucun signet pour le moment!"
 BOOKMARK_ADDED: "Signet ajouté!"
 BOOKMARK_REMOVED: "Signet supprimé!"
-ZOOM: "Zoom"
+
 CACHE_CLEAR: "Clear cache"
+CACHE_CLEAR_PROMPT: "This cannot be undone!"
 CACHE_CLEARED: "Cache cleared"
-"tags":
-    "title": "Tags"
-"tag":
-    "title": "Tag: {{name}}"
-"categories":
-    "title": "Categories"
-"category":
-    "title": "Categorie: {{name}}"
-"home":
-    "title": "Accueil"
-"search":
-    "inputPlaceholder": "Recherche"
-    "title": "Recherche"
-    "titleQuery": "Recherche: {{query}}"
+
+TITLE_TAGS: "Tags"
+TITLE_TAG: "Tag: {{name}}"
+TITLE_CATEGORIES: "Categories"
+TITLE_CATEGORY: "Categorie: {{name}}"
+TITLE_HOME: "Accueil"
+TITLE_SEARCH: "Recherche"
+TITLE_PAGES: "Pages"
+TITLE_POSTS: "Posts"
+TITLE_USERS: "Auteurs"
+TITLE_USER: "Auteur"
+TITLE_USER_POSTS: "Auteur: {{name}}"
+
 SHARE_SUCCESS: "partagé avec succès!"
 SHARE_ERROR: "Erreur durant le partage"
-AUTHORS: "Auteurs"
-AUTHOR: "Auteur"
-AUTHOR_TITLE: "Auteur: {{name}}"
-"pages":
-    "title": "Pages"
-"posts":
-    "title": "Articles"
-    "featured": "A la Une"
-"post":
-    "comments": "Commentaires"
-    "openInBrowser": "Ouvrir dans un navigateur"
-"about":
-    "title": "A propos"

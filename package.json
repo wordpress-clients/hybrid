@@ -1,6 +1,6 @@
 {
   "name": "wordpress-hybrid-client",
-  "version": "3.0.0-alpha01",
+  "version": "3.0.0.alpha01",
   "description": "Build amazing iOS and Android applications for your WordPress website for free!",
   "repository": {
     "type": "git",

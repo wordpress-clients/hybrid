@@ -22,3 +22,5 @@ ionic generate component movie-list --componentsDir ./config/components/
 ```shell
 ionic generate component movie-item --componentsDir ./config/components/
 ```
+
+./node_modules/.bin/ionic generate page test --pagesDir ./config/pages

@@ -8,11 +8,11 @@ api:
 # Static metas (for SEO purpose)
 # Each page will dynamically overwrite those
 metas:
-    title: 'You app title'
+    title: 'Your app title'
     description: 'Your app description'
     themeColor: '#4e8ef7'
     # Open graph
-    ogTitle: 'You app title'
+    ogTitle: 'Your app title'
     ogType: 'website'
     ogUrl: 'https://yourDomain.com'
     ogImage: 'https://yourDomain.com/thumbnail.jpg'

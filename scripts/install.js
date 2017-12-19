@@ -1,23 +1,26 @@
 #!/usr/bin/env node
 
-var fs = require('fs-extra');
+const fs = require('fs-extra');
+const path = require('path');
 
-copy('../dist/config.cson', '../config/config.cson');
-copy('../dist/menu.json', '../config/menu.json');
-copy('../dist/config.xml', '../config.xml');
-copy('../dist/config.scss', '../config/config.scss');
-copy('../dist/index.js', '../config/index.js', true);
-copy('../dist/templates', '../config/templates');
-copy('../dist/icons', '../config/icons');
-copy('../dist/manifest.json', '../config/manifest.json');
-copy('../release.sh.dist', '../release.sh');
+const ROOT = path.join(__dirname, '..');
+const DIST = path.join(__dirname, '..', '/dist/');
+
+console.log("=============================================");
+console.log("Starting WordPress Hybrid Client Installation");
+console.log("=============================================");
+
+copy(path.join(DIST, 'config'), path.join(ROOT, 'config'));
+copy(path.join(DIST, 'root', 'config.xml'), path.join(ROOT, 'config.xml'));
+copy(path.join(DIST, 'root', 'ionic.config.json'), path.join(ROOT, 'ionic.config.json'));
 
 function copy(source, target, overwrite) {
+    overwrite = process.env.CI ? true : overwrite;
     if (!overwrite && fs.existsSync(target)) {
         console.log('the destination already exist, will not overwrite: ' + target);
         return;
     }
-    fs.copy(source, target, function(err) {
+    fs.copy(source, target, function (err) {
         if (err) return console.error(err)
         console.log('success: ' + target)
     })

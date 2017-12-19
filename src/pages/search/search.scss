@@ -1,0 +1,21 @@
+page-search {
+    ion-content{
+        background-color: $list-bg-color !important;
+    }
+    ion-toolbar{
+        padding: 0 !important;
+    }
+    .search-content{
+        position: relative;
+    }
+}
+
+ion-app {
+    &.md {
+        page-search  {
+            ion-toolbar{
+                min-height: 42px !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "name": "wordpress-clients/hybrid",
+    "description": "Build WordPress based PWA, iOS, Android & Windows phones apps in minutes!",
+    "repository": "https://github.com/wordpress-clients/hybrid.git",
+    "keywords": [
+        "wordpress",
+        "ionic",
+        "pwa",
+        "hybrid"
+    ],
+    "scripts": {
+        "postdeploy": "npm run build:pwa"
+    }
+}

@@ -42,7 +42,13 @@ legacy/
 cordova.plugin.backup
 before_build.md
 /config.xml
+/ionic.config.json
+www/
+myapp/
+/config/
+src/**/*.js
+src/**/*.js.map
 
-# v1 compatibility
-/config.scss
-/config.json
+.io-config.json
+.sourcemaps
+.temp

@@ -1,0 +1,21 @@
+language: node_js
+services:
+  - docker
+node_js:
+  - "7"
+cache:
+  yarn: true
+before_install:
+  - docker build -t shprink/wordpress-pwa .
+  - docker run -p 5000:8080 -d shprink/wordpress-pwa
+script:
+    - npm rebuild node-sass
+    - npm run build:pwa
+    - npm run test-ci
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: www
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: develop

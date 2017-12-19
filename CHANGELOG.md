@@ -1,3 +1,16 @@
+
+
+<a name="3.0.0.alpha01"></a>
+### 3.0.0.alpha01 (2017-12-19)
+
+Complete rewrite with Ionic 2+ (Angular 2+)
+
+Details: <https://github.com/wordpress-clients/hybrid/pull/344>
+
+There is no way to upgrade v2 to v3.
+
+To start a new project follow the docs: <https://wordpress-clients.gitbooks.io/pwa-hybrid/>
+
 <a name="2.0.3"></a>
 ### 2.0.3 (2017-07-11)
 

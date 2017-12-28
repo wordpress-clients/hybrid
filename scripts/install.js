@@ -13,6 +13,7 @@ console.log("=============================================");
 copy(path.join(DIST, 'config'), path.join(ROOT, 'config'));
 copy(path.join(DIST, 'root', 'config.xml'), path.join(ROOT, 'config.xml'));
 copy(path.join(DIST, 'root', 'ionic.config.json'), path.join(ROOT, 'ionic.config.json'));
+copy(path.join(DIST, 'resources'), path.join(ROOT, 'resources'));
 
 function copy(source, target, overwrite) {
     overwrite = process.env.CI ? true : overwrite;

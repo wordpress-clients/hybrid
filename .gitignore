@@ -46,6 +46,7 @@ before_build.md
 www/
 myapp/
 /config/
+/resources/
 src/**/*.js
 src/**/*.js.map
 

@@ -119,16 +119,15 @@ statusBar:
     style: 'default' # 'default' | 'light' | 'blackTranslucent' | 'blackOpaque' # http://ionicframework.com/docs/native/status-bar/
 
 admob:
-    enabled: false
-    android:
-        bannerID: null
-        bannerPosition: 'BOTTOM_CENTER'
-        interstitialID: null
-    ios:
-        bannerID: null
-        bannerPosition: 'BOTTOM_CENTER'
-        interstitialID: null
-    windows:
-        bannerID: null
-        bannerPosition: 'BOTTOM_CENTER'
-        interstitialID: null
+    bannerEnabled: false
+    interstitialEnabled: false
+    config:
+        publisherId: null
+        interstitialAdId: null
+        bannerAtTop: false
+        overlap: false
+        offsetTopBar: false
+        isTesting: false
+        autoShow: true
+        forChild: null
+        forFamily: null

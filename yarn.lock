@@ -94,6 +94,10 @@
   dependencies:
     tsickle "^0.21.0"
 
+"@ionic-native/admob-free@^4.5.2":
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/@ionic-native/admob-free/-/admob-free-4.5.2.tgz#28445619d9d438c797c00c7695539fea643c4dce"
+
 "@ionic-native/core@^3.4.2":
   version "3.14.0"
   resolved "https://registry.yarnpkg.com/@ionic-native/core/-/core-3.14.0.tgz#796ea9fb1ad1188eb30205c7bca982c8271747be"
@@ -352,6 +356,10 @@ alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
 amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
+
+android-versions@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/android-versions/-/android-versions-1.2.1.tgz#3f50baf693e73a512c3c5403542291cead900063"
 
 angular2-moment@^1.1.0:
   version "1.7.0"

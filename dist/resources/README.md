@@ -1,0 +1,2 @@
+To generate your own splashscreen and icons you should modify `icon.png` and `splash.png` with your own design (keep the same size!) and run `ionic:resources` to generate custom icons and splash screens for your
+app.

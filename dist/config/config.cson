@@ -21,3 +21,11 @@ metas:
     # Twitter card
     twitterSite: ''
     twitterCreator: '' # e.g @julienrenaux
+
+admob:
+    bannerEnabled: false
+    interstitialEnabled: false
+    config:
+        publisherId: null
+        interstitialAdId: null
+        isTesting: true

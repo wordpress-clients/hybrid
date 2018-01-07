@@ -22,10 +22,10 @@
 - [X] Syntax highlighter
 - [X] Social sharing
 - [X] Docker build
+- [X] Admob support
+- [ ] App rate plugin
 - [ ] Comments
 - [ ] Push Notifications
-- [ ] Admob support
-- [ ] App rate plugin
 - [ ] Login via JWT
 
 ## Sponsors

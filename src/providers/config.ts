@@ -37,4 +37,5 @@ export class Config {
     // Native
     getPushNotifications = (path = '', otherwise = undefined) => this.get(`pushNotifications.${path}`, otherwise);
     getStatusBar = (path = '', otherwise = undefined) => this.get(`statusBar.${path}`, otherwise);
+    getAdMob = (path = '', otherwise = undefined) => this.get(`admob.${path}`, otherwise);
 }

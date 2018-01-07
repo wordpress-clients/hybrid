@@ -1,4 +1,9 @@
-<a name="3.0.0.alpha01"></a>
+<a name="3.0.0.alpha03"></a>
+### 3.0.0-alpha03 (2018-01-07)
+
+Adds admobs support
+
+<a name="3.0.0.alpha02"></a>
 ### 3.0.0-alpha02 (2017-12-19)
 
 Fix unvalid version name

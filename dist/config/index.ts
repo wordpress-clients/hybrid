@@ -10,6 +10,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Push } from '@ionic-native/push';
 import { Toast } from '@ionic-native/toast';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { AdMobFree } from '@ionic-native/admob-free';
 import { Storage } from '@ionic/storage';
 
 import { MomentModule } from 'angular2-moment';
@@ -94,6 +95,7 @@ export function appInitializerTranslateFactory(translate: TranslateService, inje
         Push,
         Toast,
         SocialSharing,
+        AdMobFree,
         { provide: Storage, useFactory: provideStorage },
         // { provide: Settings, useFactory: provideSettings, deps: [ Storage ] },
         // Keep this to enable Ionic's runtime error handling during development

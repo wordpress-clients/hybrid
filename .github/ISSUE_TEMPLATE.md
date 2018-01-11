@@ -1,7 +1,7 @@
 * OS: 
 * WordpressClient version:
-* Node version:
-* NPM version:
+* Node version (`node -v`):
+* Yarn version (`yarn -v`):
 
 --- 
 

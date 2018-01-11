@@ -1,5 +1,5 @@
 * OS: 
-* WPHC version:
+* WordpressClient version:
 * Node version:
 * NPM version:
 

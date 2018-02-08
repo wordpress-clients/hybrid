@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <script data-ionic="inject">
+    (function(w){var i=w.Ionic=w.Ionic||{};i.version='3.8.0';i.angular='4.4.4';i.staticDir='build/';})(window);
+  </script>
+  <meta charset="UTF-8">
+  <title>Your app title</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src *; img-src *;style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+  <meta name="description" content="Your app description">
+
+  <!-- open graph http://ogp.me/ -->
+  <meta property="og:title" content="Your app title" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourDomain.com" />
+  <meta property="og:image" content="https://yourDomain.com/thumbnail.jpg" />
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="400" />
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="theme-color" content="#4e8ef7">
+
+  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <!-- cordova.js required for cordova apps -->
+  <script src="cordova.js"></script>
+
+  <link href="build/main.css" rel="preload" as="style">
+  <link href="build/polyfills.js" rel="preload" as="script">
+  <link href="build/vendor.js" rel="preload" as="script">
+  <link href="build/main.js" rel="preload" as="script">
+
+</head>
+<body>
+
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app></ion-app>
+
+  <script type="text/javascript">
+    /* First CSS File */
+    var giftofspeed = document.createElement('link');
+    giftofspeed.rel = 'stylesheet';
+    giftofspeed.href = 'build/main.css';
+    giftofspeed.type = 'text/css';
+    var godefer = document.getElementsByTagName('link')[0];
+    godefer.parentNode.insertBefore(giftofspeed, godefer);
+  </script>
+
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js"></script>
+  <script src="build/vendor.js"></script>
+
+  <!-- The bundle js is generated during the build process -->
+  <script src="build/main.js"></script>
+
+<script type="text/javascript" src="build/vendor.js"></script><script type="text/javascript" src="build/main.js"></script></body>
+</html>
